@@ -14,30 +14,12 @@ const RULES: Dictionary = {
 }
 
 var gamemode_resource: GamemodeBase
-var rt_stats: Dictionary = {
-	"player_move": "",
-	"ai_move": "",
-	
-	"player_points": 0,
-	"ai_points": 0,
-	
-	"player_wins": 0,
-	"player_losses": 0,
-	"draws": 0,
-	
-	"current_streak": 0,
-	"best_streak": 0,
-	
-	"rounds_played": 0,
-	"total_rounds": -1
-}
+var rt_stats: Dictionary = {}
 
 var last_tracked_second: int = -1
 
 # Godot Specific
 func _ready() -> void:
-	_start_game()
-	
 	for btn in move_btns.get_children():
 		btn.pressed.connect(_on_move_btn_pressed.bind(btn))
 				
@@ -109,6 +91,8 @@ func _update_ui():
 	
 # Game Logic
 func _start_game():
+	rt_stats = $GamemodeHandler.setup_game(gamemode_resource)
+	
 	_update_ui()
 	
 	_start_round()
@@ -156,3 +140,5 @@ func _on_continue_btn_pressed():
 
 func on_screen_change(information: Dictionary):
 	gamemode_resource = information.get("gamemode_resource")
+
+	_start_game()
