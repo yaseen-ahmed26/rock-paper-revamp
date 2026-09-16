@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cfo70do7yw2jn"]
+
+[ext_resource type="Script" uid="uid://c542vggv3uden" path="res://rps_selection/rps_selection.gd" id="1_3o2jl"]
+
+[node name="rps_selection" type="Control" unique_id=2029808321]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3o2jl")
+
+[node name="GamemodeButtons" type="VBoxContainer" parent="." unique_id=1488858579]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 456.0
+offset_right = 545.0
+offset_bottom = 1033.0
+
+[node name="Endless" type="Button" parent="GamemodeButtons" unique_id=1642225740]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Endless"
+
+[node name="StartButton" type="Button" parent="." unique_id=1990179656]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -144.0
+offset_right = -35.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]
