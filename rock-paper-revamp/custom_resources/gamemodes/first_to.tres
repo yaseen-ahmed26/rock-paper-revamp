@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="GamemodeBase" format=3 uid="uid://d341uwvd1je86"]
+
+[ext_resource type="Script" uid="uid://c0lrubhbf7mss" path="res://custom_resources/gamemodes/scripts/gamemode_base.gd" id="1_ablcf"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_n1api"]
+
+[resource]
+script = ExtResource("1_ablcf")
+display_name = "First To"
+description = "First to 3 points wins"
+custom_end_condition = true
+metadata/_custom_type_script = "uid://c0lrubhbf7mss"

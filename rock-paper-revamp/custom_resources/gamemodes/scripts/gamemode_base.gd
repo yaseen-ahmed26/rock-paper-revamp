@@ -24,5 +24,7 @@ enum ID {
 @export var stats_to_edit: Array[StatChange]
 ## End the game when the stat reaches a certain value
 @export var end_when_stat_at: Dictionary[String, Variant]
+## If True, ignores the end condition completely.
+@export var ignore_end_condition: bool = false
 ## Uses a match statement with the ID for custom logic. 
 @export var custom_end_condition: bool = false
