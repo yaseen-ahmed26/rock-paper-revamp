@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jdt58mdrawj1"]
+
+[ext_resource type="Script" uid="uid://soe6pi5nwfeb" path="res://ui_controller.gd" id="1_3ga5c"]
+
+[node name="ui_controller" type="Control" unique_id=1465920982]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ga5c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1513549206]
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=431096076]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
