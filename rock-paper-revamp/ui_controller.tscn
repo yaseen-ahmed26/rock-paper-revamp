@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jdt58mdrawj1"]
 
 [ext_resource type="Script" uid="uid://soe6pi5nwfeb" path="res://ui_controller.gd" id="1_3ga5c"]
+[ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://rps_game/rps_game.tscn" id="2_1ajqp"]
 
 [node name="ui_controller" type="Control" unique_id=1465920982]
 layout_mode = 3
@@ -22,3 +23,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="rps_game" parent="CanvasLayer" unique_id=1532588308 instance=ExtResource("2_1ajqp")]

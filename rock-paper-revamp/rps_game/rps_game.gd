@@ -4,6 +4,7 @@ extends Control
 @onready var time_left: RichTextLabel = $TimeLeft
 @onready var move_btns: HBoxContainer = $MoveButtons
 @onready var continue_btn: Button = $ContinueButton
+@onready var streak: RichTextLabel = $Streak
 
 const MOVES: Array = ["rock", "paper", "scissors"]
 const RULES: Dictionary = {
@@ -21,7 +22,10 @@ var rt_stats: Dictionary = {
 	
 	"player_wins": 0,
 	"player_losses": 0,
-	"draws": 0
+	"draws": 0,
+	
+	"current_streak": 0,
+	"best_streak": 0
 }
 
 var last_tracked_second: int = -1
@@ -69,6 +73,18 @@ func _determine_outcome():
 		rt_stats["ai_points"] += 1
 		return "loss"
 
+func _determine_streak(outcome: String):
+	if outcome == "draw":
+		return
+	
+	if outcome == "loss":			
+		rt_stats["current_streak"] = 0
+	elif outcome == "win":
+		rt_stats["current_streak"] += 1
+		
+	if rt_stats.get("current_streak") > rt_stats.get("best_streak"):
+		rt_stats["best_streak"] = rt_stats["current_streak"]
+
 func _toggle_move_btns(state: bool):
 	for btn: Button in move_btns.get_children():
 		btn.disabled = state
@@ -96,9 +112,10 @@ func _end_round():
 	round_timer.stop()
 	_toggle_move_btns(true)
 	
-	rt_stats["ai_move"] = MOVES.pick_random()
+	rt_stats["ai_move"] = "paper"
 	
 	var outcome = _determine_outcome()
+	_determine_streak(outcome)
 	
 	$RoundEnd.visible = true
 	$RoundEnd.text = "AI picked %s against your %s, %s" % [
@@ -109,6 +126,10 @@ func _end_round():
 	$Scoreboard.text = "You: %d | AI: %d" % [
 		rt_stats.get("player_points"),
 		rt_stats.get("ai_points")
+	]
+	$Streak.text = "Streak: %d\nBest: %d" % [
+		rt_stats.get("current_streak"),
+		rt_stats.get("best_streak")
 	]
 	
 	continue_btn.visible = true
