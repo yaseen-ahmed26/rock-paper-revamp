@@ -88,13 +88,20 @@ func _determine_streak(outcome: String):
 func _toggle_move_btns(state: bool):
 	for btn: Button in move_btns.get_children():
 		btn.disabled = state
-
-# Game Logic
-func _start_game():
+		
+func _update_ui():
 	$Scoreboard.text = "You: %d | AI: %d" % [
 		rt_stats.get("player_points"),
 		rt_stats.get("ai_points")
 	]
+	$Streak.text = "Streak: %d\nBest: %d" % [
+		rt_stats.get("current_streak"),
+		rt_stats.get("best_streak")
+	]
+
+# Game Logic
+func _start_game():
+	_update_ui()
 	
 	_start_round()
 	
@@ -123,15 +130,8 @@ func _end_round():
 		rt_stats.get("player_move").capitalize(),
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
-	$Scoreboard.text = "You: %d | AI: %d" % [
-		rt_stats.get("player_points"),
-		rt_stats.get("ai_points")
-	]
-	$Streak.text = "Streak: %d\nBest: %d" % [
-		rt_stats.get("current_streak"),
-		rt_stats.get("best_streak")
-	]
 	
+	_update_ui()
 	continue_btn.visible = true
 	
 func _end_game():
