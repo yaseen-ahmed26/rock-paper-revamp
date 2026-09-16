@@ -13,6 +13,7 @@ const RULES: Dictionary = {
 	"scissors": "paper",
 }
 
+var gamemode: String = ""
 var rt_stats: Dictionary = {
 	"player_move": "",
 	"ai_move": "",
@@ -25,7 +26,10 @@ var rt_stats: Dictionary = {
 	"draws": 0,
 	
 	"current_streak": 0,
-	"best_streak": 0
+	"best_streak": 0,
+	
+	"rounds_played": 0,
+	"total_rounds": -1
 }
 
 var last_tracked_second: int = -1
@@ -98,7 +102,11 @@ func _update_ui():
 		rt_stats.get("current_streak"),
 		rt_stats.get("best_streak")
 	]
-
+	$RoundsPlayed.text = "Round: %d/%s" % [
+		rt_stats.get("rounds_played"),
+		"inf" if rt_stats.get("total_rounds") == -1 else str(rt_stats.get("total_rounds"))
+	]
+	
 # Game Logic
 func _start_game():
 	_update_ui()
@@ -131,6 +139,8 @@ func _end_round():
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
 	
+	rt_stats["rounds_played"] += 1
+	
 	_update_ui()
 	continue_btn.visible = true
 	
@@ -143,3 +153,6 @@ func _on_move_btn_pressed(btn: Button):
 
 func _on_continue_btn_pressed():
 	_start_round()
+
+func on_screen_change(information: Dictionary):
+	gamemode = information.get("gamemode")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://rps_game/rps_game.gd" id="1_ybur4"]
 
 [node name="rps_game" type="Control" unique_id=1532588308]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,6 +72,15 @@ offset_bottom = 204.0
 theme_override_font_sizes/normal_font_size = 48
 text = "Streak: 0
 Best: 0"
+
+[node name="RoundsPlayed" type="RichTextLabel" parent="." unique_id=1459284669]
+layout_mode = 1
+offset_left = 1583.0
+offset_top = 46.0
+offset_right = 1868.0
+offset_bottom = 124.0
+theme_override_font_sizes/normal_font_size = 48
+text = "Round 1/inf"
 
 [node name="Scoreboard" type="RichTextLabel" parent="." unique_id=1760286959]
 layout_mode = 1
