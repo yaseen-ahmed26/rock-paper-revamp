@@ -13,7 +13,7 @@ const RULES: Dictionary = {
 	"scissors": "paper",
 }
 
-var gamemode: String = ""
+var gamemode_resource: GamemodeBase
 var rt_stats: Dictionary = {
 	"player_move": "",
 	"ai_move": "",
@@ -155,4 +155,4 @@ func _on_continue_btn_pressed():
 	_start_round()
 
 func on_screen_change(information: Dictionary):
-	gamemode = information.get("gamemode")
+	gamemode_resource = information.get("gamemode_resource")
