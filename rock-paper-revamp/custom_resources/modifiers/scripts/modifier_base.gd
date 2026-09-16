@@ -2,7 +2,7 @@ extends Resource
 class_name ModifierBase
 
 const SHOW_IF: Dictionary = {
-	"apply_on_start": ["stats_to_edit"],
+	"apply_on_start": ["stats_to_edit_start"],
 	"has_chance": ["chance_to_apply"],
 	"apply_every_x": ["apply_every"],
 	"edit_stats_on_apply": ["stats_to_edit_apply"]

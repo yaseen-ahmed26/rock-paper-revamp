@@ -43,21 +43,27 @@ func _determine_outcome():
 	var player_move = rt_stats.get("player_move")
 	var computer_move = rt_stats.get("ai_move")
 	
+	var outcome: String = ""
+	
 	if player_move == "":
-		rt_stats["player_losses"] += 1
-		rt_stats["ai_points"] += 1
-		return "loss"
+		rt_stats["losses"] += 1
+		rt_stats["computer_points"] += 1
+		outcome = "loss"
 	elif player_move == computer_move:
 		rt_stats["draws"] += 1
-		return "draw"
+		outcome = "draw"
 	elif RULES.get(player_move) == computer_move:
-		rt_stats["player_wins"] += 1
+		rt_stats["wins"] += 1
 		rt_stats["player_points"] += 1
-		return "win"
+		outcome = "win"
 	else:
-		rt_stats["player_losses"] += 1
-		rt_stats["ai_points"] += 1
-		return "loss"
+		rt_stats["losses"] += 1
+		rt_stats["computer_points"] += 1
+		outcome = "loss"
+	
+	rt_stats["previous_outcome"].append(outcome)
+	
+	return outcome
 
 func _determine_streak(outcome: String):
 	if outcome == "draw":
@@ -78,7 +84,7 @@ func _toggle_move_btns(state: bool):
 func _update_ui():
 	$Scoreboard.text = "You: %d | AI: %d" % [
 		rt_stats.get("player_points"),
-		rt_stats.get("ai_points")
+		rt_stats.get("computer_points")
 	]
 	$Streak.text = "Streak: %d\nBest: %d" % [
 		rt_stats.get("current_streak"),
@@ -99,31 +105,39 @@ func _start_game():
 	
 func _start_round():
 	rt_stats["player_move"] = ""
-	rt_stats["ai_move"] = ""
+	rt_stats["computer_move"] = ""
 	
 	$RoundEnd.visible = false
 	continue_btn.visible = false
 	
 	_toggle_move_btns(false)
-	round_timer.start()
+	
+	round_timer.start(rt_stats.get("timer_length"))
 	
 func _end_round():
 	round_timer.stop()
 	_toggle_move_btns(true)
 	
-	rt_stats["ai_move"] = "paper"
+	rt_stats["computer_move"] = "paper"
+	
+	var player_move: String = rt_stats.get("player_move")
 	
 	var outcome = _determine_outcome()
 	_determine_streak(outcome)
 	
 	$RoundEnd.visible = true
 	$RoundEnd.text = "AI picked %s against your %s, %s" % [
-		rt_stats.get("ai_move").capitalize(),
-		rt_stats.get("player_move").capitalize(),
+		rt_stats.get("computer_move").capitalize(),
+		player_move.capitalize(),
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
 	
 	rt_stats["rounds_played"] += 1
+	rt_stats["player_history"].append(player_move)
+	rt_stats["computer_history"].append(rt_stats.get("computer_move"))
+	rt_stats["played_moves"][player_move] += 1
+	
+	print(rt_stats)
 	
 	_update_ui()
 	continue_btn.visible = true
