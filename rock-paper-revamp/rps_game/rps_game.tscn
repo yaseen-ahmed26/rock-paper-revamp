@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://beosahy8j7bes"]
+
+[ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://rps_game/rps_game.gd" id="1_ybur4"]
+
+[node name="rps_game" type="Control" unique_id=1532588308]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ybur4")
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=720391326]
+
+[node name="MoveButtons" type="HBoxContainer" parent="." unique_id=328885685]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -471.0
+offset_top = 293.0
+offset_right = 471.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Rock" type="Button" parent="MoveButtons" unique_id=1266863930]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 42
+text = "Rock"
+
+[node name="Paper" type="Button" parent="MoveButtons" unique_id=1697466638]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 42
+text = "Paper"
+
+[node name="Scissors" type="Button" parent="MoveButtons" unique_id=417781502]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 42
+text = "Scissors"
+
+[node name="TimeLeft" type="RichTextLabel" parent="." unique_id=584951318]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_top = 68.0
+offset_right = 194.0
+offset_bottom = 182.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 70
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scoreboard" type="RichTextLabel" parent="." unique_id=1760286959]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -361.0
+offset_top = 180.0
+offset_right = 361.0
+offset_bottom = 258.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 52
+text = "You: 1 | AI: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundEnd" type="RichTextLabel" parent="." unique_id=790821278]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -691.0
+offset_top = 467.0
+offset_right = 691.0
+offset_bottom = 545.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 52
+text = "AI picked Rock against your Paper. You lost!"
+horizontal_alignment = 1
+vertical_alignment = 1
