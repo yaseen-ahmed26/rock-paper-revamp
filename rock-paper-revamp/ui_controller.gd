@@ -6,7 +6,7 @@ extends Control
 var current_screen: Control
 
 func _ready() -> void:	
-	current_screen = $CanvasLayer/rps_selection
+	current_screen = $CanvasLayer/main_menu
 		
 	Signals.change_screen.connect(_on_change_screen)
 	

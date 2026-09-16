@@ -1,11 +1,14 @@
 extends Control
 
+@onready var menu_buttons: VBoxContainer = $MenuButtons
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	for btn: Button in menu_buttons.get_children():
+		btn.pressed.connect(_on_menu_btn_pressed.bind(btn))
+		
+func _on_menu_btn_pressed(btn: Button):
+	match btn.name:
+		"Play":
+			Signals.change_screen.emit("rps_selection")
+		"Quit":
+			get_tree().quit()
