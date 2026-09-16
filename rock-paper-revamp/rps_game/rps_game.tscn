@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_ybur4")
 
 [node name="RoundTimer" type="Timer" parent="." unique_id=720391326]
+wait_time = 5.0
 
 [node name="MoveButtons" type="HBoxContainer" parent="." unique_id=328885685]
 layout_mode = 1
@@ -90,3 +91,21 @@ theme_override_font_sizes/normal_font_size = 52
 text = "AI picked Rock against your Paper. You lost!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="." unique_id=1706732755]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -144.0
+offset_right = -35.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_btn_pressed"]
