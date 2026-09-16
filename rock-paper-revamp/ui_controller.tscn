@@ -15,8 +15,13 @@ script = ExtResource("1_3ga5c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1513549206]
 
+[node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("2_rlpp8")]
+
+[node name="rps_game" parent="CanvasLayer" unique_id=1532588308 instance=ExtResource("2_1ajqp")]
+visible = false
+
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=431096076]
-modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,8 +29,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("2_rlpp8")]
-
-[node name="rps_game" parent="CanvasLayer" unique_id=1532588308 instance=ExtResource("2_1ajqp")]
-visible = false
