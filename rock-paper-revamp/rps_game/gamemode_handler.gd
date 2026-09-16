@@ -81,7 +81,6 @@ func setup_game(gamemode: GamemodeBase):
 func check_round_end(stats: Dictionary, gamemode: GamemodeBase):
 	if gamemode.ignore_end_condition: return false
 	
-	# covers best_of
 	if gamemode.end_at_total_rounds:
 		if stats.get("total_rounds") == -1:
 			print("Gamemode '%s' cannot force end at max rounds played when it is set to -1" % gamemode.display_name)

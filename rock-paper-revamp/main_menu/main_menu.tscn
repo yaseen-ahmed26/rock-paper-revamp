@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://wj46ygbmpnl5"]
+
+[ext_resource type="Script" uid="uid://ccnofbw3bs2bj" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+
+[node name="main_menu" type="Control" unique_id=771054830]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa53l")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=723658857]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -416.0
+offset_right = 500.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 80
+text = "Rock Paper Revamped"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=2015590246]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -184.0
+offset_right = 223.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="MenuButtons" unique_id=969999681]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
+
+[node name="Quit" type="Button" parent="MenuButtons" unique_id=528483674]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "QUIT"

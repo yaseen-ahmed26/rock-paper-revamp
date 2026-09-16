@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://soe6pi5nwfeb" path="res://ui_controller.gd" id="1_3ga5c"]
 [ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://rps_game/rps_game.tscn" id="2_1ajqp"]
 [ext_resource type="PackedScene" uid="uid://cfo70do7yw2jn" path="res://rps_selection/rps_selection.tscn" id="2_rlpp8"]
+[ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://main_menu/main_menu.tscn" id="4_dy358"]
 
 [node name="ui_controller" type="Control" unique_id=1465920982]
 layout_mode = 3
@@ -16,9 +17,12 @@ script = ExtResource("1_3ga5c")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1513549206]
 
 [node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("2_rlpp8")]
+visible = false
 
 [node name="rps_game" parent="CanvasLayer" unique_id=1532588308 instance=ExtResource("2_1ajqp")]
 visible = false
+
+[node name="main_menu" parent="CanvasLayer" unique_id=771054830 instance=ExtResource("4_dy358")]
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=431096076]
 self_modulate = Color(1, 1, 1, 0)
