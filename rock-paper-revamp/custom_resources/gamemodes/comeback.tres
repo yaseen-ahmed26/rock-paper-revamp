@@ -23,4 +23,5 @@ id = 3
 display_name = "Comeback"
 description = "AI starts at 3 points, make a come back in 8 rounds"
 stats_to_edit = Array[ExtResource("2_66421")]([SubResource("Resource_7yq6s"), SubResource("Resource_oyvi8")])
+end_at_total_rounds = true
 metadata/_custom_type_script = "uid://c0lrubhbf7mss"

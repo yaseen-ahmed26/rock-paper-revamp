@@ -18,6 +18,8 @@ var rt_stats: Dictionary = {}
 
 var last_tracked_second: int = -1
 
+var game_over: bool = false
+
 # Godot Specific
 func _ready() -> void:
 	for btn in move_btns.get_children():
@@ -41,7 +43,7 @@ func _process(_delta: float) -> void:
 # Helpers
 func _determine_outcome():
 	var player_move = rt_stats.get("player_move")
-	var computer_move = rt_stats.get("ai_move")
+	var computer_move = rt_stats.get("computer_move")
 	
 	var outcome: String = ""
 	
@@ -136,21 +138,28 @@ func _end_round():
 	rt_stats["player_history"].append(player_move)
 	rt_stats["computer_history"].append(rt_stats.get("computer_move"))
 	rt_stats["played_moves"][player_move] += 1
-	
-	print(rt_stats)
-	
+		
 	_update_ui()
+	
+	game_over = $GamemodeHandler.check_round_end(rt_stats, gamemode_resource)
+	
+	if game_over:
+		continue_btn.text = "End"
+		
 	continue_btn.visible = true
 	
 func _end_game():
-	pass
+	Signals.change_screen.emit("rps_selection")
 	
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
 	rt_stats["player_move"] = btn.name.to_lower()
 
 func _on_continue_btn_pressed():
-	_start_round()
+	if game_over:
+		_end_game()
+	else:
+		_start_round()
 
 func on_screen_change(information: Dictionary):
 	gamemode_resource = information.get("gamemode_resource")

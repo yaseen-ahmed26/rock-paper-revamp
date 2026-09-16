@@ -16,5 +16,5 @@ id = 1
 display_name = "Best of"
 description = "Best of 5 rounds"
 stats_to_edit = Array[ExtResource("2_3kive")]([SubResource("Resource_fb74e")])
-ignore_end_condition = true
+end_at_total_rounds = true
 metadata/_custom_type_script = "uid://c0lrubhbf7mss"

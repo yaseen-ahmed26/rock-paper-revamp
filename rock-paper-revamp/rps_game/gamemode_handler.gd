@@ -1,5 +1,12 @@
 extends Node
 
+"""
+Round End Priority:
+	- Force Max Rounds Played
+	- Stat Threshold Met
+	- Custom Logic
+"""
+
 const DEFAULT_GAME_STATS: Dictionary = {
 	"player_move": "",
 	"computer_move": "",
@@ -70,3 +77,39 @@ func setup_game(gamemode: GamemodeBase):
 			_apply_stat_edit(stats, change)
 
 	return stats
+
+func check_round_end(stats: Dictionary, gamemode: GamemodeBase):
+	if gamemode.ignore_end_condition: return false
+	
+	# covers best_of
+	if gamemode.end_at_total_rounds:
+		if stats.get("total_rounds") == -1:
+			print("Gamemode '%s' cannot force end at max rounds played when it is set to -1" % gamemode.display_name)
+			return false
+		
+		if stats.get("rounds_played") == stats.get("total_rounds"):
+			return true
+		else:
+			return false
+	elif gamemode.end_at_stat_threhold:
+		var thresholds_met: int = 0
+		
+		for k in gamemode.stat_thresholds.keys():
+			var v = gamemode.stat_thresholds[k]
+			
+			if stats.get(k) == v: thresholds_met += 1
+			
+		if thresholds_met == gamemode.stat_thresholds.size():
+			return true
+		else:
+			return false
+	elif gamemode.custom_end_condition:
+		match gamemode.id:
+			GamemodeBase.ID.FIRST_TO:
+				if stats.get("player_points") == stats.get("max_points") or stats.get("computer_points") == stats.get("max_points"):
+					return true
+				else:
+					return false
+			_:
+				print("%s has 'custom_end_condition' set to True but no custom end condition has been written" % gamemode.display_name)
+				return false
