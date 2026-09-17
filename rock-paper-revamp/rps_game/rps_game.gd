@@ -90,6 +90,7 @@ func _start_game():
 func _start_round():
 	game_stats.player_move = ""
 	game_stats.computer_move = ""
+	game_stats.outcome = ""
 	
 	game_stats.rounds_played += 1
 	
@@ -98,7 +99,7 @@ func _start_round():
 	
 	_toggle_move_btns(false)
 	
-	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_START, "")
+	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_START)
 	
 	_update_ui()
 	
@@ -113,7 +114,7 @@ func _end_round():
 	var player_move: String = game_stats.player_move
 	
 	var outcome = _determine_outcome()
-	game_stats.record_outcome(outcome)
+	game_stats.record_round_stats(outcome)
 	
 	$RoundEnd.visible = true
 	$RoundEnd.text = "AI picked %s against your %s, %s" % [
@@ -122,7 +123,7 @@ func _end_round():
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
 		
-	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END, outcome)	
+	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END)	
 		
 	_update_ui()
 	

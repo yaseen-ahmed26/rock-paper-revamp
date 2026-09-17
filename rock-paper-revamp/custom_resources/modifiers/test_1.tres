@@ -1,32 +1,12 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dnc8r4pwtt3ci"]
 
-[ext_resource type="Script" uid="uid://cbp0ijdc1j4k8" path="res://custom_resources/modifiers/scripts/modifier_base_.gd" id="1_tnuel"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/modifier_effect.gd" id="1_0ltog"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/modifier_base.gd" id="1_tnuel"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_2ueq3"]
-
-[sub_resource type="Resource" id="Resource_tnuel"]
-script = ExtResource("2_2ueq3")
-target_stat = "player_points"
-value = 1
-metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
-
-[sub_resource type="Resource" id="Resource_ynb1k"]
-script = ExtResource("2_2ueq3")
-target_stat = "player_points"
-value = 2
-metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/modifier_trigger.gd" id="4_5qxf7"]
 
 [resource]
 script = ExtResource("1_tnuel")
-display_name = "Test Modifier"
-description = "A test"
-timing = 1
-apply_on_start = true
-apply_every_x = true
-apply_on_outcome = true
-edit_stats_on_apply = true
-stats_to_edit_start = Array[ExtResource("2_2ueq3")]([SubResource("Resource_ynb1k")])
-chance_to_apply = 0.2
-apply_every = 2
-outcome_needed = "win"
-stats_to_edit_apply = Array[ExtResource("2_2ueq3")]([SubResource("Resource_tnuel")])
-metadata/_custom_type_script = "uid://cbp0ijdc1j4k8"
+display_name = "test 1"
+description = "Test modifier"
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

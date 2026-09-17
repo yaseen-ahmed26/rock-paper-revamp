@@ -1,5 +1,5 @@
 extends ModifierTrigger
-class_name TriggerChance
+class_name ChanceTrigger
 
 ## The chance needed for the trigger to be met.
 @export_range(0.0, 1.0, 0.01) var probability: float = 0.0

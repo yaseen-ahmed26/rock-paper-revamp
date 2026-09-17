@@ -52,8 +52,9 @@ func apply_round_outcome(outcome: String):
 		"draw":
 			draws += 1
 
-func record_round_stats(outcome: String) -> void:
-	previous_outcome.append(outcome)
+func record_round_stats(round_outcome: String) -> void:
+	outcome = round_outcome
+	previous_outcome.append(round_outcome)
 	
 	if player_move in played_moves:
 		played_moves[player_move] += 1
