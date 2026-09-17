@@ -56,7 +56,7 @@ func _on_modifier_btn_pressed(btn: Button):
 		selected_modifier_btns.append(btn)
 
 func _on_start_btn_pressed() -> void:
-	var modifier_resources = []
+	var modifier_resources: Array[ModifierBase] = []
 	
 	for btn: Button in selected_modifier_btns:
 		modifier_resources.append(btn.get_meta("Resource"))

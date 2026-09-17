@@ -14,7 +14,7 @@ const RULES: Dictionary = {
 }
 
 var gamemode_resource: GamemodeBase
-var modifier_resource: Array[ModifierBase]
+var modifiers: Array[ModifierBase] = []
 
 var game_stats: GameStats
 
@@ -81,7 +81,7 @@ func _update_ui():
 # Game Logic
 func _start_game():	
 	game_stats = $GamemodeHandler.create_game_stats(gamemode_resource)
-	$ModifierHandler.apply_initial_modifiers(game_stats, modifier_resource)
+	$ModifierHandler.apply_initial_modifiers(game_stats, modifiers)
 	
 	_update_ui()
 	
@@ -98,7 +98,7 @@ func _start_round():
 	
 	_toggle_move_btns(false)
 	
-	$ModifierHandler.use_modifiers(game_stats, modifier_resource, ModifierBase.ApplyAt.ROUND_START, "")
+	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_START, "")
 	
 	_update_ui()
 	
@@ -122,7 +122,7 @@ func _end_round():
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
 		
-	$ModifierHandler.use_modifiers(game_stats, modifier_resource, ModifierBase.ApplyAt.ROUND_END, outcome)	
+	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END, outcome)	
 		
 	_update_ui()
 	
@@ -148,6 +148,6 @@ func _on_continue_btn_pressed():
 
 func on_screen_change(information: Dictionary):
 	gamemode_resource = information.get("gamemode_resource")
-	modifier_resource = information.get("modifier_resource")
+	modifiers = information.get("modifier_resource")
 	
 	_start_game()
