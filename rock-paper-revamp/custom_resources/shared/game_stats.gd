@@ -4,7 +4,7 @@ extends RefCounted
 var player_move: String = ""
 var computer_move: String = ""
 
-var player_points: int = 0
+var player_points: float = 0
 var computer_points: int = 0
 
 var wins: int = 0
@@ -18,6 +18,14 @@ var rounds_played: int = 0
 var total_rounds: int = -1
 var timer_length: float = 5.0
 var max_points: int = -1
+
+var base_points_on_win: float = 1.0
+var base_points_on_loss: float = 1.0
+
+var bonus_points_on_win: float = 0
+var bonus_points_on_loss: float = 0
+
+var global_point_multiplier: float = 1.0
 
 var previous_outcome: Array[String] = []
 var player_history: Array[String] = []
@@ -43,12 +51,12 @@ func record_outcome(outcome: String) -> void:
 	match outcome:
 		"win":
 			wins += 1
-			player_points += 1
+			player_points += ((base_points_on_win + bonus_points_on_win) * global_point_multiplier) 
 			current_streak += 1
 			best_streak = maxi(best_streak, current_streak)
 		"loss":
 			losses += 1
-			computer_points += 1
+			computer_points += ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 
 			current_streak = 0
 		"draw":
 			draws += 1
