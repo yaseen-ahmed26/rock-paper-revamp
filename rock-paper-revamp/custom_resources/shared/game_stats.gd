@@ -3,6 +3,7 @@ extends RefCounted
 
 var player_move: String = ""
 var computer_move: String = ""
+var outcome: String = ""
 
 var player_points: float = 0
 var computer_points: float = 0
