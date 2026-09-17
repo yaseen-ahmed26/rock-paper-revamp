@@ -14,6 +14,7 @@ const RULES: Dictionary = {
 }
 
 var gamemode_resource: GamemodeBase
+var modifier_resource: ModifierBase
 var rt_stats: Dictionary = {}
 
 var last_tracked_second: int = -1
@@ -100,6 +101,7 @@ func _update_ui():
 # Game Logic
 func _start_game():
 	rt_stats = $GamemodeHandler.setup_game(gamemode_resource)
+	rt_stats = $ModifierHandler.apply_modifiers(rt_stats, modifier_resource)
 	
 	_update_ui()
 	
@@ -163,5 +165,6 @@ func _on_continue_btn_pressed():
 
 func on_screen_change(information: Dictionary):
 	gamemode_resource = information.get("gamemode_resource")
-
+	modifier_resource = information.get("modifier_resource")
+	
 	_start_game()
