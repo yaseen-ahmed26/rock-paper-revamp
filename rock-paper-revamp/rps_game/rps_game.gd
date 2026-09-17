@@ -15,7 +15,8 @@ const RULES: Dictionary = {
 
 var gamemode_resource: GamemodeBase
 var modifier_resource: ModifierBase
-var rt_stats: Dictionary = {}
+
+var game_stats: GameStats
 
 var last_tracked_second: int = -1
 
@@ -43,42 +44,21 @@ func _process(_delta: float) -> void:
 
 # Helpers
 func _determine_outcome():
-	var player_move = rt_stats.get("player_move")
-	var computer_move = rt_stats.get("computer_move")
+	var player_move = game_stats.player_move
+	var computer_move = game_stats.computer_move
 	
 	var outcome: String = ""
 	
 	if player_move == "":
-		rt_stats["losses"] += 1
-		rt_stats["computer_points"] += 1
 		outcome = "loss"
 	elif player_move == computer_move:
-		rt_stats["draws"] += 1
 		outcome = "draw"
 	elif RULES.get(player_move) == computer_move:
-		rt_stats["wins"] += 1
-		rt_stats["player_points"] += 1
 		outcome = "win"
 	else:
-		rt_stats["losses"] += 1
-		rt_stats["computer_points"] += 1
 		outcome = "loss"
 	
-	rt_stats["previous_outcome"].append(outcome)
-	
 	return outcome
-
-func _determine_streak(outcome: String):
-	if outcome == "draw":
-		return
-	
-	if outcome == "loss":			
-		rt_stats["current_streak"] = 0
-	elif outcome == "win":
-		rt_stats["current_streak"] += 1
-		
-	if rt_stats.get("current_streak") > rt_stats.get("best_streak"):
-		rt_stats["best_streak"] = rt_stats["current_streak"]
 
 func _toggle_move_btns(state: bool):
 	for btn: Button in move_btns.get_children():
@@ -86,64 +66,59 @@ func _toggle_move_btns(state: bool):
 		
 func _update_ui():
 	$Scoreboard.text = "You: %d | AI: %d" % [
-		rt_stats.get("player_points"),
-		rt_stats.get("computer_points")
+		game_stats.player_points,
+		game_stats.computer_points
 	]
 	$Streak.text = "Streak: %d\nBest: %d" % [
-		rt_stats.get("current_streak"),
-		rt_stats.get("best_streak")
+		game_stats.current_streak,
+		game_stats.best_streak
 	]
 	$RoundsPlayed.text = "Round: %d/%s" % [
-		rt_stats.get("rounds_played"),
-		"inf" if rt_stats.get("total_rounds") == -1 else str(rt_stats.get("total_rounds"))
+		game_stats.rounds_played,
+		"inf" if game_stats.total_rounds == -1 else str(game_stats.total_rounds)
 	]
 	
 # Game Logic
 func _start_game():
-	rt_stats = $GamemodeHandler.setup_game(gamemode_resource)
-	rt_stats = $ModifierHandler.apply_modifiers(rt_stats, modifier_resource)
+	game_stats = $GamemodeHandler.create_game_stats(gamemode_resource)
+	$ModifierHandler.apply_initial_modifiers(game_stats, modifier_resource)
 	
 	_update_ui()
 	
 	_start_round()
 	
 func _start_round():
-	rt_stats["player_move"] = ""
-	rt_stats["computer_move"] = ""
+	game_stats.player_move = ""
+	game_stats.computer_move = ""
 	
 	$RoundEnd.visible = false
 	continue_btn.visible = false
 	
 	_toggle_move_btns(false)
 	
-	round_timer.start(rt_stats.get("timer_length"))
+	round_timer.start(game_stats.timer_length)
 	
 func _end_round():
 	round_timer.stop()
 	_toggle_move_btns(true)
 	
-	rt_stats["computer_move"] = "paper"
+	game_stats.computer_move = "paper"
 	
-	var player_move: String = rt_stats.get("player_move")
+	var player_move: String = game_stats.player_move
 	
 	var outcome = _determine_outcome()
-	_determine_streak(outcome)
+	game_stats.record_outcome(outcome)
 	
 	$RoundEnd.visible = true
 	$RoundEnd.text = "AI picked %s against your %s, %s" % [
-		rt_stats.get("computer_move").capitalize(),
+		game_stats.computer_move.capitalize(),
 		player_move.capitalize(),
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
-	
-	rt_stats["rounds_played"] += 1
-	rt_stats["player_history"].append(player_move)
-	rt_stats["computer_history"].append(rt_stats.get("computer_move"))
-	rt_stats["played_moves"][player_move] += 1
 		
 	_update_ui()
 	
-	game_over = $GamemodeHandler.check_round_end(rt_stats, gamemode_resource)
+	game_over = $GamemodeHandler.check_round_end(game_stats, gamemode_resource)
 	
 	if game_over:
 		continue_btn.text = "End"
@@ -155,7 +130,7 @@ func _end_game():
 	
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
-	rt_stats["player_move"] = btn.name.to_lower()
+	game_stats.player_move = btn.name.to_lower()
 
 func _on_continue_btn_pressed():
 	if game_over:

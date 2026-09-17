@@ -29,17 +29,17 @@ var played_moves: Dictionary = {
 	"scissors": 0,
 }
 
-func record_outcome(outcome: String, p_move: String, c_move: String) -> void:
+func record_outcome(outcome: String) -> void:
 	rounds_played += 1
 	previous_outcome.append(outcome)
 	
-	if p_move in played_moves:
-		played_moves[p_move] += 1
-		player_history.append(p_move)
+	if player_move in played_moves:
+		played_moves[player_move] += 1
+		player_history.append(player_move)
 	else:
 		player_history.append("none")
 		
-	computer_history.append(c_move)
+	computer_history.append(computer_move)
 
 	match outcome:
 		"win":
