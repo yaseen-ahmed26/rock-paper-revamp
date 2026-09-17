@@ -14,7 +14,7 @@ const RULES: Dictionary = {
 }
 
 var gamemode_resource: GamemodeBase
-var modifier_resource: ModifierBase
+var modifier_resource: Array[ModifierBase]
 
 var game_stats: GameStats
 

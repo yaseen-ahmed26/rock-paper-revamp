@@ -6,7 +6,7 @@ extends Control
 @onready var template_button: Button = $TemplateButton
 
 var selected_gamemode_btn: Button
-var selected_modifier_btn: Button
+var selected_modifier_btns: Array[Button]
 
 func _ready() -> void:
 	for gamemode in gamemode_pool:
@@ -46,17 +46,25 @@ func _on_gamemode_btn_pressed(btn: Button):
 	selected_gamemode_btn = btn
 
 func _on_modifier_btn_pressed(btn: Button):
-	if selected_modifier_btn:
-		selected_modifier_btn.text = selected_modifier_btn.get_meta("Resource").display_name
-		
-	btn.text = "[>] " + btn.text
-	selected_modifier_btn = btn
+	if selected_modifier_btns.size() == 5: return
+	
+	if selected_modifier_btns.has(btn):
+		btn.text = btn.get_meta("Resource").display_name
+		selected_modifier_btns.erase(btn)
+	else:
+		btn.text = "[>] " + btn.text
+		selected_modifier_btns.append(btn)
 
 func _on_start_btn_pressed() -> void:
+	var modifier_resources = []
+	
+	for btn: Button in selected_modifier_btns:
+		modifier_resources.append(btn.get_meta("Resource"))
+	
 	Signals.change_screen.emit(
 		"rps_game",
 		{
 			"gamemode_resource": selected_gamemode_btn.get_meta("Resource"),
-			"modifier_resource": selected_modifier_btn.get_meta("Resource")
+			"modifier_resource": modifier_resources
 		}
 	)
