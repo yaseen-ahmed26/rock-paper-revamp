@@ -5,7 +5,7 @@ var player_move: String = ""
 var computer_move: String = ""
 
 var player_points: float = 0
-var computer_points: int = 0
+var computer_points: float = 0
 
 var wins: int = 0
 var losses: int = 0
@@ -37,17 +37,7 @@ var played_moves: Dictionary = {
 	"scissors": 0,
 }
 
-func record_outcome(outcome: String) -> void:
-	previous_outcome.append(outcome)
-	
-	if player_move in played_moves:
-		played_moves[player_move] += 1
-		player_history.append(player_move)
-	else:
-		player_history.append("none")
-		
-	computer_history.append(computer_move)
-
+func apply_round_outcome(outcome: String):
 	match outcome:
 		"win":
 			wins += 1
@@ -60,6 +50,17 @@ func record_outcome(outcome: String) -> void:
 			current_streak = 0
 		"draw":
 			draws += 1
+
+func record_round_stats(outcome: String) -> void:
+	previous_outcome.append(outcome)
+	
+	if player_move in played_moves:
+		played_moves[player_move] += 1
+		player_history.append(player_move)
+	else:
+		player_history.append("none")
+		
+	computer_history.append(computer_move)
 
 func apply_stat_change(stat_name: String, operation: int, value: Variant):
 	var current = get(stat_name)
