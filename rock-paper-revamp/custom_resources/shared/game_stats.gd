@@ -30,7 +30,6 @@ var played_moves: Dictionary = {
 }
 
 func record_outcome(outcome: String) -> void:
-	rounds_played += 1
 	previous_outcome.append(outcome)
 	
 	if player_move in played_moves:
@@ -71,3 +70,5 @@ func apply_stat_change(stat_name: String, operation: int, value: Variant):
 			set(stat_name, current * value)
 		StatChange.Operation.SET:
 			set(stat_name, value)
+
+	print("(GameStats) %s has been edited" % stat_name)

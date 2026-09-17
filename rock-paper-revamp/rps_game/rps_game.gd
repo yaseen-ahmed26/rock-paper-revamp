@@ -79,7 +79,7 @@ func _update_ui():
 	]
 	
 # Game Logic
-func _start_game():
+func _start_game():	
 	game_stats = $GamemodeHandler.create_game_stats(gamemode_resource)
 	$ModifierHandler.apply_initial_modifiers(game_stats, modifier_resource)
 	
@@ -91,10 +91,16 @@ func _start_round():
 	game_stats.player_move = ""
 	game_stats.computer_move = ""
 	
+	game_stats.rounds_played += 1
+	
 	$RoundEnd.visible = false
 	continue_btn.visible = false
 	
 	_toggle_move_btns(false)
+	
+	$ModifierHandler.use_modifiers(game_stats, modifier_resource, ModifierBase.ApplyAt.ROUND_START, "")
+	
+	_update_ui()
 	
 	round_timer.start(game_stats.timer_length)
 	
@@ -115,6 +121,8 @@ func _end_round():
 		player_move.capitalize(),
 		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
 	]
+		
+	$ModifierHandler.use_modifiers(game_stats, modifier_resource, ModifierBase.ApplyAt.ROUND_END, outcome)	
 		
 	_update_ui()
 	

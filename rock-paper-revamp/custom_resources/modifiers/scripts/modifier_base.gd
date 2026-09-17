@@ -5,7 +5,8 @@ const SHOW_IF: Dictionary = {
 	"apply_on_start": ["stats_to_edit_start"],
 	"has_chance": ["chance_to_apply"],
 	"apply_every_x": ["apply_every"],
-	"edit_stats_on_apply": ["stats_to_edit_apply"]
+	"edit_stats_on_apply": ["stats_to_edit_apply"],
+	"apply_on_outcome": ["outcome_needed"]
 }
 
 enum ID {
@@ -16,6 +17,10 @@ enum Group {
 	POINTS,
 	OUTCOME,
 	MISC
+}
+enum ApplyAt {
+	ROUND_START,
+	ROUND_END
 }
 
 @export_category("Metadata")
@@ -29,6 +34,7 @@ enum Group {
 @export var message: String
 ## The group this Modifier belongs to, affects the order in which it is applied.
 @export var group: Group
+@export var timing: ApplyAt
 ## The modifiers to blacklist when this one is selected.
 @export var modifier_blacklist: Array[ID]
 
@@ -41,6 +47,8 @@ enum Group {
 @export var has_chance: bool = false
 ## If True, sets the modifier to only apply every X rounds.
 @export var apply_every_x: bool = false
+## If True, set which outcome is needed to apply
+@export var apply_on_outcome: bool = false
 ## If True, set which stats should be edited 
 @export var edit_stats_on_apply: bool = false
 ## If True, ignores all other flags and uses the ID to apply custom logic
@@ -50,8 +58,10 @@ enum Group {
 ## The stats to edit when the game starts.
 @export var stats_to_edit_start: Array[StatChange]
 ## The chance at which this Modifier applies.
-@export_range(0.01, 1.0) var chance_to_apply
+@export_range(0.0, 1.0, 0.01) var chance_to_apply
 ## Applies this Modifier every X round. (e.g. applies every 3 rounds)
 @export var apply_every: int
+## The outcome in which is needed to apply
+@export var outcome_needed: String
 ## The stats to edit when the Modifier is applied.
 @export var stats_to_edit_apply: Array[StatChange]
