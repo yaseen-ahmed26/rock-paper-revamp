@@ -7,8 +7,77 @@
 [ext_resource type="Resource" uid="uid://dx50ptju3lua3" path="res://custom_resources/gamemodes/comeback.tres" id="5_yqfff"]
 [ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="6_oiecb"]
 [ext_resource type="Resource" uid="uid://dghkrhc178x4g" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
-[ext_resource type="Script" uid="uid://cbp0ijdc1j4k8" path="res://custom_resources/modifiers/scripts/modifier_base.gd" id="8_0mnpd"]
 [ext_resource type="Resource" uid="uid://dnc8r4pwtt3ci" path="res://custom_resources/modifiers/test_1.tres" id="9_yqfff"]
+
+[sub_resource type="GDScript" id="GDScript_ran54"]
+script/source = "extends Resource
+class_name ModifierBase_
+
+const SHOW_IF: Dictionary = {
+	\"apply_on_start\": [\"stats_to_edit_start\"],
+	\"has_chance\": [\"chance_to_apply\"],
+	\"apply_every_x\": [\"apply_every\"],
+	\"edit_stats_on_apply\": [\"stats_to_edit_apply\"],
+	\"apply_on_outcome\": [\"outcome_needed\"]
+}
+
+enum ID {
+	TEST_1
+}
+enum Group {
+	UI,
+	POINTS,
+	OUTCOME,
+	MISC
+}
+enum ApplyAt {
+	ROUND_START,
+	ROUND_END
+}
+
+@export_category(\"Metadata\")
+## The unique ID for this Modifier
+@export var id: ID
+## The name shown on UI
+@export var display_name: String
+## The description of this Modifier, shown on the menus
+@export var description: String
+## The text shown when this modifier applies or happens.
+@export var message: String
+## The group this Modifier belongs to, affects the order in which it is applied.
+@export var group: Group
+@export var timing: ApplyAt
+## The modifiers to blacklist when this one is selected.
+@export var modifier_blacklist: Array[ID]
+
+@export_category(\"Flags\")
+## If True, remove the modifier from the pool once it has been applied.
+@export var one_shot: bool = false
+## Edit the initial stats before the game starts. Works the same as gamemodes but are applied after.
+@export var apply_on_start: bool = false
+## If True, set a chance for the Modifier to apply.
+@export var has_chance: bool = false
+## If True, sets the modifier to only apply every X rounds.
+@export var apply_every_x: bool = false
+## If True, set which outcome is needed to apply
+@export var apply_on_outcome: bool = false
+## If True, set which stats should be edited 
+@export var edit_stats_on_apply: bool = false
+## If True, ignores all other flags and uses the ID to apply custom logic
+@export var custom: bool = false
+
+@export_category(\"Properties\")
+## The stats to edit when the game starts.
+@export var stats_to_edit_start: Array[StatChange]
+## The chance at which this Modifier applies.
+@export_range(0.0, 1.0, 0.01) var chance_to_apply
+## Applies this Modifier every X round. (e.g. applies every 3 rounds)
+@export var apply_every: int
+## The outcome in which is needed to apply
+@export var outcome_needed: String
+## The stats to edit when the Modifier is applied.
+@export var stats_to_edit_apply: Array[StatChange]
+"
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
@@ -19,7 +88,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("3_ran54"), ExtResource("4_0mnpd"), ExtResource("5_yqfff"), ExtResource("6_oiecb"), ExtResource("7_3y6wd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_yqfff")])
+modifier_pool = Array[SubResource("GDScript_ran54")]([ExtResource("9_yqfff")])
 
 [node name="TemplateButton" type="Button" parent="." unique_id=1642225740]
 visible = false
