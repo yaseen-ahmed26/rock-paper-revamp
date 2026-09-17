@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dnc8r4pwtt3ci"]
+
+[ext_resource type="Script" uid="uid://cbp0ijdc1j4k8" path="res://custom_resources/modifiers/scripts/modifier_base.gd" id="1_tnuel"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_2ueq3"]
+
+[resource]
+script = ExtResource("1_tnuel")
+display_name = "Test Modifier"
+description = "A test"
+chance_to_apply = null
+metadata/_custom_type_script = "uid://cbp0ijdc1j4k8"

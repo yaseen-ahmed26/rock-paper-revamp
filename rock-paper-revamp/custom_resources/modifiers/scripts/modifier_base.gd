@@ -8,7 +8,9 @@ const SHOW_IF: Dictionary = {
 	"edit_stats_on_apply": ["stats_to_edit_apply"]
 }
 
-enum ID {}
+enum ID {
+	TEST_1
+}
 enum Group {
 	UI,
 	POINTS,
