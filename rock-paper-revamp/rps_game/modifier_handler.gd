@@ -30,8 +30,18 @@ func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: Mod
 			var met: bool = trigger.is_met(stats)
 		
 			if met: triggers_met += 1
-			
-		if triggers_met == modifier.triggers.size():
+		
+		var apply_modifier: bool = false
+		
+		if modifier.triggers.size() != 0:
+			if modifier.trigger_type == ModifierBase.TriggerType.ALL_REQUIRED:
+				apply_modifier = triggers_met == modifier.triggers.size()
+			elif modifier.trigger_type == ModifierBase.TriggerType.ANY:
+				apply_modifier = triggers_met >= 1 # and modifier.triggers.size() < 1
+		else:
+			apply_modifier = true
+		
+		if apply_modifier:
 			for effect in modifier.effects:
 				effect.apply(stats)
 

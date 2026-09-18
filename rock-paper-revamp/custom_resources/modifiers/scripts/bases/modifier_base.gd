@@ -15,6 +15,10 @@ enum ApplyAt {
 	ROUND_END,
 	EVERY_SECOND
 }
+enum TriggerType {
+	ALL_REQUIRED,
+	ANY
+}
 
 @export_category("Metadata")
 ## The unique ID for this Modifier
@@ -27,6 +31,8 @@ enum ApplyAt {
 @export var group: Group
 ## When the Modifier should be applied.
 @export var timing: ApplyAt
+## Dictates how many triggers need to be met to apply the Modifier
+@export var trigger_type: TriggerType
 ## If True, only applies the Modifier once, then it is removed from the list.
 @export var one_shot: bool = false
 ## The modifiers to blacklist when this one is selected.
