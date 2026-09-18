@@ -46,12 +46,12 @@ func _on_gamemode_btn_pressed(btn: Button):
 	selected_gamemode_btn = btn
 
 func _on_modifier_btn_pressed(btn: Button):
-	if selected_modifier_btns.size() == 5: return
-	
 	if selected_modifier_btns.has(btn):
 		btn.text = btn.get_meta("Resource").display_name
 		selected_modifier_btns.erase(btn)
 	else:
+		if selected_modifier_btns.size() == 5: return
+		
 		btn.text = "[>] " + btn.text
 		selected_modifier_btns.append(btn)
 
