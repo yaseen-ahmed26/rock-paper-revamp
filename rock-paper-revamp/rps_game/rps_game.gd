@@ -114,7 +114,9 @@ func _end_round():
 	var player_move: String = game_stats.player_move
 	
 	var outcome = _determine_outcome()
+	
 	game_stats.record_round_stats(outcome)
+	game_stats.apply_round_outcome(outcome)
 	
 	$RoundEnd.visible = true
 	$RoundEnd.text = "AI picked %s against your %s, %s" % [

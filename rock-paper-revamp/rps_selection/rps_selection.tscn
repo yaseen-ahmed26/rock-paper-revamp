@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dx50ptju3lua3" path="res://custom_resources/gamemodes/comeback.tres" id="5_yqfff"]
 [ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="6_oiecb"]
 [ext_resource type="Resource" uid="uid://dghkrhc178x4g" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
-[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/modifier_base.gd" id="8_0mnpd"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
 [ext_resource type="Resource" uid="uid://dnc8r4pwtt3ci" path="res://custom_resources/modifiers/test_1.tres" id="9_yqfff"]
 
 [node name="rps_selection" type="Control" unique_id=2029808321]

@@ -64,22 +64,22 @@ func record_round_stats(round_outcome: String) -> void:
 		
 	computer_history.append(computer_move)
 
-func apply_stat_change(stat_name: String, operation: int, value: Variant):
-	var current = get(stat_name)
+func apply_stat_change(stat_change: StatChange):
+	var current = get(stat_change.target_stat)
 	if current == null:
-		push_warning("Stat not found on GameStats: ", stat_name)
+		push_warning("Stat not found on GameStats: ", stat_change.target_stat)
 		return
 		
-	match operation:
+	match stat_change.operation:
 		StatChange.Operation.ADD:
-			set(stat_name, current + value)
+			set(stat_change.target_stat, current + stat_change.value)
 		StatChange.Operation.SUBTRACT:
-			set(stat_name, current - value)
+			set(stat_change.target_stat, current - stat_change.value)
 		StatChange.Operation.DIVIDE:
-			set(stat_name, current / value)
+			set(stat_change.target_stat, current / stat_change.value)
 		StatChange.Operation.MULTIPLY:
-			set(stat_name, current * value)
+			set(stat_change.target_stat, current * stat_change.value)
 		StatChange.Operation.SET:
-			set(stat_name, value)
+			set(stat_change.target_stat, stat_change.value)
 
-	print("(GameStats) %s has been edited" % stat_name)
+	print("(GameStats) %s has been edited" % stat_change.target_stat)

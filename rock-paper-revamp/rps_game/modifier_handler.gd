@@ -13,7 +13,7 @@ func apply_initial_modifiers(stats: GameStats, modifiers: Array[ModifierBase]):
 		if modifier.stats_to_edit.is_empty(): continue
 		
 		for change: StatChange in modifier.stats_to_edit_start:
-			stats.apply_stat_change(change.target_stat, change.operation, change.value)
+			stats.apply_stat_change(change)
 
 func _parse_custom_modifier(stats: GameStats, modifier: ModifierBase):
 	pass
@@ -30,4 +30,6 @@ func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: Mod
 			if met: triggers_met += 1
 			
 		if triggers_met == modifier.triggers.size():
-			print("All triggers met")
+			for effect in modifier.effects:
+				print("applying")
+				effect.apply(stats)

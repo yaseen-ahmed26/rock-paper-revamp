@@ -12,7 +12,7 @@ func create_game_stats(gamemode: GamemodeBase):
 
 	if not gamemode.stats_to_edit.is_empty():
 		for change: StatChange in gamemode.stats_to_edit:
-			game_stats.apply_stat_change(change.target_stat, change.operation, change.value)
+			game_stats.apply_stat_change(change)
 
 	return game_stats
 
