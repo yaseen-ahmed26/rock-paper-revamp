@@ -12,7 +12,8 @@ enum Group {
 }
 enum ApplyAt {
 	ROUND_START,
-	ROUND_END
+	ROUND_END,
+	EVERY_SECOND
 }
 
 @export_category("Metadata")

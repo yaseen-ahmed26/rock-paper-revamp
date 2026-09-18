@@ -16,6 +16,8 @@ script = ExtResource("1_ybur4")
 [node name="RoundTimer" type="Timer" parent="." unique_id=720391326]
 wait_time = 5.0
 
+[node name="ModifierTimer" type="Timer" parent="." unique_id=1699236194]
+
 [node name="MoveButtons" type="HBoxContainer" parent="." unique_id=328885685]
 layout_mode = 1
 anchors_preset = 8

@@ -1,5 +1,6 @@
 extends Control
 
+@onready var modifier_timer: Timer = $ModifierTimer
 @onready var round_timer: Timer = $RoundTimer
 @onready var time_left: RichTextLabel = $TimeLeft
 @onready var move_btns: HBoxContainer = $MoveButtons
@@ -28,6 +29,7 @@ func _ready() -> void:
 		btn.pressed.connect(_on_move_btn_pressed.bind(btn))
 				
 	round_timer.timeout.connect(_end_round)
+	modifier_timer.timeout.connect(_on_modifier_timeout)
 
 func _process(_delta: float) -> void:
 	if round_timer.is_stopped(): return
@@ -100,9 +102,11 @@ func _start_round():
 	_update_ui()
 	
 	round_timer.start(game_stats.timer_length)
+	modifier_timer.start(1.0)
 	
 func _end_round():
 	round_timer.stop()
+	modifier_timer.stop()
 	_toggle_move_btns(true)
 	
 	game_stats.computer_move = "paper"
@@ -153,3 +157,7 @@ func on_screen_change(information: Dictionary):
 	modifiers = information.get("modifier_resource")
 	
 	_start_game()
+
+func _on_modifier_timeout():
+	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.EVERY_SECOND)
+	_update_ui()
