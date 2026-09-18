@@ -13,8 +13,8 @@ var player_move: String = ""
 var computer_move: String = ""
 var outcome: RoundOutcome
 
-var player_points: float = 0
-var computer_points: float = 0
+var player_points: float = 0.0
+var computer_points: float = 0.0
 
 var wins: int = 0
 var losses: int = 0
@@ -78,8 +78,9 @@ func record_round_stats() -> void:
 
 func apply_stat_change(stat_change: StatChange):
 	var current = get(stat_change.target_stat)
+	
 	if current == null:
-		push_warning("Stat not found on GameStats: ", stat_change.target_stat)
+		push_warning("(GameStats) '%s' is not a valid stat" % stat_change.target_stat)
 		return
 		
 	match stat_change.operation:
@@ -94,4 +95,4 @@ func apply_stat_change(stat_change: StatChange):
 		StatChange.Operation.SET:
 			set(stat_change.target_stat, stat_change.value)
 
-	print("(GameStats) %s has been edited" % stat_change.target_stat)
+	print("(GameStats) '%s' has been edited" % stat_change.target_stat)
