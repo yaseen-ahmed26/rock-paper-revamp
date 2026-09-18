@@ -12,7 +12,7 @@ func apply_initial_modifiers(stats: GameStats, modifiers: Array[ModifierBase]):
 	for modifier in modifiers:
 		if modifier.stats_to_edit.is_empty(): continue
 		
-		for change: StatChange in modifier.stats_to_edit_start:
+		for change: StatChange in modifier.stats_to_edit:
 			stats.apply_stat_change(change)
 
 func _parse_custom_modifier(stats: GameStats, modifier: ModifierBase):
