@@ -106,10 +106,11 @@ func _end_round():
 	_toggle_move_btns(true)
 	
 	game_stats.computer_move = "paper"
-	
 	var player_move: String = game_stats.player_move
 	
 	game_stats.outcome = _determine_outcome()
+	
+	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END)	
 	
 	game_stats.record_round_stats()
 	game_stats.apply_round_outcome()
@@ -124,9 +125,7 @@ func _end_round():
 		if game_stats.outcome == GameStats.RoundOutcome.LOSS
 		else "It's a draw"
 	]
-		
-	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END)	
-		
+				
 	_update_ui()
 	
 	game_over = $GamemodeHandler.check_round_end(game_stats, gamemode_resource)
