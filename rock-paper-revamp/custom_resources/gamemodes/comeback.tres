@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
 [sub_resource type="Resource" id="Resource_oyvi8"]
 script = ExtResource("2_66421")
 operation = 4
-target_stat = "ai_points"
+target_stat = "computer_points"
 value = 3
 metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
 
