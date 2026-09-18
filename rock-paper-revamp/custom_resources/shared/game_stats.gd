@@ -46,21 +46,24 @@ var played_moves: Dictionary = {
 	"scissors": 0,
 }
 
+var outcome_multiplier: int = 1
+
 func apply_round_outcome():
 	if outcome == RoundOutcome.DISCARD: return
 	
-	match outcome:
-		RoundOutcome.WIN:
-			wins += 1
-			player_points += ((base_points_on_win + bonus_points_on_win) * global_point_multiplier) 
-			current_streak += 1
-			best_streak = maxi(best_streak, current_streak)
-		RoundOutcome.LOSS:
-			losses += 1
-			computer_points += ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 
-			current_streak = 0
-		RoundOutcome.DRAW:
-			draws += 1
+	for i in outcome_multiplier:
+		match outcome:
+			RoundOutcome.WIN:
+				wins += 1
+				player_points += ((base_points_on_win + bonus_points_on_win) * global_point_multiplier) 
+				current_streak += 1
+				best_streak = maxi(best_streak, current_streak)
+			RoundOutcome.LOSS:
+				losses += 1
+				computer_points += ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 
+				current_streak = 0
+			RoundOutcome.DRAW:
+				draws += 1
 
 func record_round_stats() -> void:
 	previous_outcome.append(RoundOutcome.keys()[outcome])

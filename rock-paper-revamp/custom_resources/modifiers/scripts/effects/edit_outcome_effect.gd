@@ -1,7 +1,7 @@
 extends ModifierEffect
 class_name EditOutcomeEffect
 
-const SHOW_IF: Dictionary = {
+const SHOW_IF_EDIT: Dictionary = {
 	"force_outcome": "force_specific_outcome"
 }
 
@@ -9,7 +9,7 @@ const SHOW_IF: Dictionary = {
 @export var invert: bool = false
 ## Cancel out the current outcome.
 @export var discard: bool = false
-## Override the round outcome and set a new one.
+## Override the round outcome and set a new one. Note that this overrides Invert and Discard if they are both set to True.
 @export var force_specific_outcome: bool = false
 ## How many times to apply the current outcome. Resets on new round.
 @export var multiply: int = 1 
