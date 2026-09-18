@@ -89,7 +89,7 @@ func _start_round():
 	game_stats.player_move = ""
 	game_stats.computer_move = ""
 	game_stats.outcome = GameStats.RoundOutcome.CLEARED
-	
+	game_stats.outcome_multiplier = 1
 	game_stats.rounds_played += 1
 	
 	$RoundEnd.visible = false
