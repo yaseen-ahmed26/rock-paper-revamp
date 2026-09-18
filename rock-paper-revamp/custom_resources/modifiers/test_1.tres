@@ -3,10 +3,26 @@
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_0ltog"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_2ueq3"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_5qxf7"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="2_66ury"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_66ury"]
+[ext_resource type="Script" uid="uid://cy32uleuvbseq" path="res://custom_resources/modifiers/scripts/triggers/point_difference_trrigger.gd" id="6_vc3ap"]
+
+[sub_resource type="Resource" id="Resource_yqfff"]
+script = ExtResource("2_66ury")
+target = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_0mnpd"]
+script = ExtResource("6_vc3ap")
+how_much_by = 1.0
+metadata/_custom_type_script = "uid://cy32uleuvbseq"
 
 [resource]
 script = ExtResource("2_5qxf7")
 display_name = "test 1"
 description = "Test modifier"
+timing = 1
+triggers = Array[ExtResource("4_66ury")]([SubResource("Resource_0mnpd")])
+effects = Array[ExtResource("1_0ltog")]([SubResource("Resource_yqfff")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"
