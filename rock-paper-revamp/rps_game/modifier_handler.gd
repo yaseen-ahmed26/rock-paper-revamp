@@ -19,6 +19,8 @@ func _parse_custom_modifier(stats: GameStats, modifier: ModifierBase):
 	pass
 
 func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: ModifierBase.ApplyAt):
+	var modifiers_to_remove: Array[ModifierBase] = []
+	
 	for modifier in modifiers:
 		if timing != modifier.timing: continue
 		
@@ -32,3 +34,9 @@ func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: Mod
 		if triggers_met == modifier.triggers.size():
 			for effect in modifier.effects:
 				effect.apply(stats)
+
+			if modifier.one_shot:
+				modifiers_to_remove.append(modifier)
+
+	for modifier in modifiers_to_remove:
+		owner.modifiers.erase(modifier)

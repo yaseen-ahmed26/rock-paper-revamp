@@ -26,6 +26,8 @@ enum ApplyAt {
 @export var group: Group
 ## When the Modifier should be applied.
 @export var timing: ApplyAt
+## If True, only applies the Modifier once, then it is removed from the list.
+@export var one_shot: bool = false
 ## The modifiers to blacklist when this one is selected.
 @export var modifier_blacklist: Array[ID]
 ## Stat changes apply when the game starts up
