@@ -31,5 +31,4 @@ func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: Mod
 			
 		if triggers_met == modifier.triggers.size():
 			for effect in modifier.effects:
-				print("applying")
 				effect.apply(stats)

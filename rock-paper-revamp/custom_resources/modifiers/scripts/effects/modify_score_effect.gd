@@ -22,7 +22,6 @@ enum Target {
 @export var value: float
 
 func apply(game_stats: GameStats):
-	print("a")
 	var p_stat_change: StatChange = StatChange.new()
 	var a_stat_change: StatChange = StatChange.new()
 	

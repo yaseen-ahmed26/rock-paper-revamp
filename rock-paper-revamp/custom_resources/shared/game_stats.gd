@@ -1,9 +1,17 @@
 class_name GameStats
 extends RefCounted
 
+enum RoundOutcome {
+	WIN,
+	LOSS,
+	DRAW,
+	DISCARD,
+	CLEARED
+}
+
 var player_move: String = ""
 var computer_move: String = ""
-var outcome: String = ""
+var outcome: RoundOutcome
 
 var player_points: float = 0
 var computer_points: float = 0
@@ -38,23 +46,24 @@ var played_moves: Dictionary = {
 	"scissors": 0,
 }
 
-func apply_round_outcome(outcome: String):
+func apply_round_outcome():
+	if outcome == RoundOutcome.DISCARD: return
+	
 	match outcome:
-		"win":
+		RoundOutcome.WIN:
 			wins += 1
 			player_points += ((base_points_on_win + bonus_points_on_win) * global_point_multiplier) 
 			current_streak += 1
 			best_streak = maxi(best_streak, current_streak)
-		"loss":
+		RoundOutcome.LOSS:
 			losses += 1
 			computer_points += ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 
 			current_streak = 0
-		"draw":
+		RoundOutcome.DRAW:
 			draws += 1
 
-func record_round_stats(round_outcome: String) -> void:
-	outcome = round_outcome
-	previous_outcome.append(round_outcome)
+func record_round_stats() -> void:
+	previous_outcome.append(RoundOutcome.keys()[outcome])
 	
 	if player_move in played_moves:
 		played_moves[player_move] += 1

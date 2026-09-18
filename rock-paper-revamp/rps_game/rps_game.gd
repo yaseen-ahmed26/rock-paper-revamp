@@ -46,19 +46,15 @@ func _process(_delta: float) -> void:
 func _determine_outcome():
 	var player_move = game_stats.player_move
 	var computer_move = game_stats.computer_move
-	
-	var outcome: String = ""
-	
+
 	if player_move == "":
-		outcome = "loss"
+		return GameStats.RoundOutcome.LOSS
 	elif player_move == computer_move:
-		outcome = "draw"
+		return GameStats.RoundOutcome.DRAW
 	elif RULES.get(player_move) == computer_move:
-		outcome = "win"
+		return GameStats.RoundOutcome.WIN
 	else:
-		outcome = "loss"
-	
-	return outcome
+		return GameStats.RoundOutcome.LOSS
 
 func _toggle_move_btns(state: bool):
 	for btn: Button in move_btns.get_children():
@@ -90,7 +86,7 @@ func _start_game():
 func _start_round():
 	game_stats.player_move = ""
 	game_stats.computer_move = ""
-	game_stats.outcome = ""
+	game_stats.outcome = GameStats.RoundOutcome.CLEARED
 	
 	game_stats.rounds_played += 1
 	
@@ -113,16 +109,20 @@ func _end_round():
 	
 	var player_move: String = game_stats.player_move
 	
-	var outcome = _determine_outcome()
+	game_stats.outcome = _determine_outcome()
 	
-	game_stats.record_round_stats(outcome)
-	game_stats.apply_round_outcome(outcome)
+	game_stats.record_round_stats()
+	game_stats.apply_round_outcome()
 	
 	$RoundEnd.visible = true
 	$RoundEnd.text = "AI picked %s against your %s, %s" % [
 		game_stats.computer_move.capitalize(),
 		player_move.capitalize(),
-		"You won" if outcome == "win" else "You lost" if outcome == "loss" else "It's a draw"
+		"You won" 
+		if game_stats.outcome == GameStats.RoundOutcome.WIN
+		else "You lost" 
+		if game_stats.outcome == GameStats.RoundOutcome.LOSS
+		else "It's a draw"
 	]
 		
 	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END)	

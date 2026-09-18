@@ -15,11 +15,11 @@ func is_met(game_stats: GameStats) -> bool:
 	if required_outcome == RequiredOutcome.ANY:
 		return true
 			
-	if game_stats.outcome == "win" and required_outcome == RequiredOutcome.WIN:
+	if game_stats.outcome == GameStats.RoundOutcome.WIN and required_outcome == RequiredOutcome.WIN:
 		return true
-	elif game_stats.outcome == "draw" and required_outcome == RequiredOutcome.DRAW:
+	elif game_stats.outcome == GameStats.RoundOutcome.DRAW and required_outcome == RequiredOutcome.DRAW:
 		return true
-	elif game_stats.outcome == "loss" and required_outcome == RequiredOutcome.LOSS:
+	elif game_stats.outcome == GameStats.RoundOutcome.LOSS and required_outcome == RequiredOutcome.LOSS:
 		return true
 		
 	return false
