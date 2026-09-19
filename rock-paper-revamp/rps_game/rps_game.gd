@@ -81,7 +81,7 @@ func _update_ui():
 		
 		btn.text = stat.display_text
 		btn.visible = stat.visible
-		btn.disabled = not stat.enabled
+		btn.disabled = stat.lock
 		
 		btn.set_meta("Value", stat.actual_move)
 	
@@ -100,6 +100,7 @@ func _start_round():
 	game_stats.outcome = GameStats.RoundOutcome.CLEARED
 	game_stats.outcome_multiplier = 1
 	game_stats.rounds_played += 1
+	game_stats.reset_btn_state()
 	
 	$RoundEnd.visible = false
 	continue_btn.visible = false
@@ -153,6 +154,7 @@ func _end_game():
 	
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
+	print(btn.get_meta("Value"))
 	game_stats.player_move = btn.get_meta("Value")
 
 func _on_continue_btn_pressed():

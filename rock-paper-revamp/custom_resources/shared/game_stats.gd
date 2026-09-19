@@ -74,7 +74,7 @@ func reset_btn_state():
 	btn_stats.clear()
 	
 	for move in DEFAULT_MOVES:
-		btn_stats[move] = MoveStat.new(move.capitalize(), move, true, true)
+		btn_stats[move] = MoveStat.new(move.capitalize(), move, false, true)
 
 func apply_round_outcome():
 	if outcome == RoundOutcome.DISCARD: return
