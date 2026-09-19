@@ -76,6 +76,15 @@ func _update_ui():
 		"inf" if game_stats.total_rounds == -1 else str(game_stats.total_rounds)
 	]
 	
+	for btn: Button in move_btns.get_children():
+		var stat: MoveStat = game_stats.btn_stats.get(btn.name.to_lower())
+		
+		btn.text = stat.display_text
+		btn.visible = stat.visible
+		btn.disabled = not stat.enabled
+		
+		btn.set_meta("Value", stat.actual_move)
+	
 # Game Logic
 func _start_game():	
 	game_stats = $GamemodeHandler.create_game_stats(gamemode_resource)

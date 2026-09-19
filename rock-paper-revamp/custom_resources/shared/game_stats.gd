@@ -24,6 +24,8 @@ enum RoundOutcome {
 	CLEARED
 }
 
+const DEFAULT_MOVES: Array[String] = ["rock", "paper", "scissors"]
+
 var player_move: String = ""
 var computer_move: String = ""
 var outcome: RoundOutcome
@@ -64,6 +66,15 @@ var played_moves: Dictionary = {
 var outcome_multiplier: int = 1
 
 var btn_stats: Dictionary[String, MoveStat] = {}
+
+func _init() -> void:
+	reset_btn_state()
+
+func reset_btn_state():
+	btn_stats.clear()
+	
+	for move in DEFAULT_MOVES:
+		btn_stats[move] = MoveStat.new(move.capitalize(), move, true, true)
 
 func apply_round_outcome():
 	if outcome == RoundOutcome.DISCARD: return
