@@ -154,7 +154,6 @@ func _end_game():
 	
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
-	print(btn.get_meta("Value"))
 	game_stats.player_move = btn.get_meta("Value")
 
 func _on_continue_btn_pressed():
