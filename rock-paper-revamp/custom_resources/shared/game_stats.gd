@@ -63,6 +63,8 @@ var played_moves: Dictionary = {
 
 var outcome_multiplier: int = 1
 
+var btn_stats: Dictionary[String, MoveStat] = {}
+
 func apply_round_outcome():
 	if outcome == RoundOutcome.DISCARD: return
 	
