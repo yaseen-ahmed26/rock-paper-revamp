@@ -24,6 +24,8 @@ enum MoveTarget {
 @export var lock_move: bool = false
 ## Swap the actual value of the move buttom. Does not need to be the same as the display text.
 @export var swap_value_to: String
+## The new point value of the move
+@export var new_point_value: float = 0.0
 
 func apply(game_stats: GameStats):
 	var move_to_replace: String
@@ -41,7 +43,9 @@ func apply(game_stats: GameStats):
 	var new_move_stat: MoveStat = MoveStat.new(
 		new_display_text if not new_display_text.is_empty() else move_to_replace.capitalize(), 
 		swap_value_to.to_lower() if not swap_value_to.is_empty() else move_to_replace, 
-		lock_move
+		lock_move,
+		true,
+		new_point_value
 	)
 
 	game_stats.btn_stats[move_to_replace] = new_move_stat

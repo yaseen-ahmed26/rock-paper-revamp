@@ -79,11 +79,13 @@ func reset_btn_state():
 func apply_round_outcome():
 	if outcome == RoundOutcome.DISCARD: return
 	
+	var move_bonus: float = btn_stats[player_move].point_bonus
+	
 	for i in outcome_multiplier:
 		match outcome:
 			RoundOutcome.WIN:
 				wins += 1
-				player_points += ((base_points_on_win + bonus_points_on_win) * global_point_multiplier) 
+				player_points += ((base_points_on_win + bonus_points_on_win + move_bonus) * global_point_multiplier) 
 				current_streak += 1
 				best_streak = maxi(best_streak, current_streak)
 			RoundOutcome.LOSS:

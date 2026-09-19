@@ -8,5 +8,4 @@
 [resource]
 script = ExtResource("2_rf3x4")
 display_name = "test 1"
-timing = 1
 metadata/_custom_type_script = "uid://d2bvcnih05ama"
