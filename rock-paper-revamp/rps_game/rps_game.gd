@@ -153,7 +153,7 @@ func _end_game():
 	
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
-	game_stats.player_move = btn.name.to_lower()
+	game_stats.player_move = btn.get_meta("Value")
 
 func _on_continue_btn_pressed():
 	if game_over:
