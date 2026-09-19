@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="6_oiecb"]
 [ext_resource type="Resource" uid="uid://dghkrhc178x4g" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
-[ext_resource type="Resource" uid="uid://dnc8r4pwtt3ci" path="res://custom_resources/modifiers/test_1.tres" id="9_yqfff"]
+[ext_resource type="Resource" uid="uid://evnxxe1cafbt" path="res://custom_resources/modifiers/test1.tres" id="9_0mnpd"]
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
@@ -19,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("3_ran54"), ExtResource("4_0mnpd"), ExtResource("5_yqfff"), ExtResource("6_oiecb"), ExtResource("7_3y6wd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_yqfff")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd")])
 
 [node name="TemplateButton" type="Button" parent="." unique_id=1642225740]
 visible = false

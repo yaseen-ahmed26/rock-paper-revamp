@@ -15,10 +15,9 @@ func apply_initial_modifiers(stats: GameStats, modifiers: Array[ModifierBase]):
 		for change: StatChange in modifier.stats_to_edit:
 			stats.apply_stat_change(change)
 
-func _parse_custom_modifier(stats: GameStats, modifier: ModifierBase):
-	pass
-
 func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: ModifierBase.ApplyAt):
+	if stats.rounds_played == 1: return
+	
 	var modifiers_to_remove: Array[ModifierBase] = []
 	
 	for modifier in modifiers:
