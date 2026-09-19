@@ -11,5 +11,5 @@ enum Operation {
 
 @export_category("Properties")
 @export var operation: Operation
-@export var target_stat: String
+@export var target_stat: GameStats.StatNames
 @export var value: Variant

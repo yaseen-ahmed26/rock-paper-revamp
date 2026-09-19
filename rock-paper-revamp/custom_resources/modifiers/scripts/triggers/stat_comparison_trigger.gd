@@ -10,12 +10,12 @@ enum Operator {
 	LESS_EQUAL
 }
 
-@export var target_stat: String
+@export var target_stat: GameStats.StatNames
 @export var operator: Operator = Operator.EQUAL
 @export var target_value: float = 0.0
 
 func is_met(game_stats: GameStats):
-	var current_value = game_stats.get(target_stat)
+	var current_value = game_stats.get(game_stats.get_lower_stat(target_stat))
 	
 	if current_value == null:
 		push_warning("(StatComparisonTrigger) '%s' is not a valid property in GameStats" % target_stat)

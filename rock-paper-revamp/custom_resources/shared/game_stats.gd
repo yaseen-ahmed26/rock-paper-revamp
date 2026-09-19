@@ -2,10 +2,10 @@ class_name GameStats
 extends RefCounted
 
 enum StatNames {
-	PLAYER_MOVE,
-	COMPUTER_MOVE,
 	PLAYER_POINTS,
 	COMPUTER_POINTS,
+	CURRENT_STREAK,
+	BEST_STREAK,
 	TOTAL_ROUNDS,
 	TIMER_LENGTH,
 	MAX_POINTS,
@@ -92,7 +92,9 @@ func record_round_stats() -> void:
 	computer_history.append(computer_move)
 
 func apply_stat_change(stat_change: StatChange):
-	var current = get(stat_change.target_stat)
+	var lower_stat = get_lower_stat(stat_change.target_stat)
+	print(lower_stat)
+	var current = get(lower_stat)
 	
 	if current == null:
 		push_warning("(GameStats) '%s' is not a valid stat" % stat_change.target_stat)
@@ -100,14 +102,17 @@ func apply_stat_change(stat_change: StatChange):
 		
 	match stat_change.operation:
 		StatChange.Operation.ADD:
-			set(stat_change.target_stat, current + stat_change.value)
+			set(lower_stat, current + stat_change.value)
 		StatChange.Operation.SUBTRACT:
-			set(stat_change.target_stat, current - stat_change.value)
+			set(lower_stat, current - stat_change.value)
 		StatChange.Operation.DIVIDE:
-			set(stat_change.target_stat, current / stat_change.value)
+			set(lower_stat, current / stat_change.value)
 		StatChange.Operation.MULTIPLY:
-			set(stat_change.target_stat, current * stat_change.value)
+			set(lower_stat, current * stat_change.value)
 		StatChange.Operation.SET:
-			set(stat_change.target_stat, stat_change.value)
+			set(lower_stat, stat_change.value)
 
-	print("(GameStats) '%s' has been edited" % stat_change.target_stat)
+	print("(GameStats) '%s' has been edited" % lower_stat)
+
+func get_lower_stat(stat_name):
+	return StatNames.keys()[stat_name].to_lower()

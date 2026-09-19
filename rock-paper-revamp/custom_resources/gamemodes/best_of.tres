@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_fb74e"]
 script = ExtResource("2_3kive")
 operation = 4
-target_stat = "total_rounds"
+target_stat = 4
 value = 5
 metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
 
