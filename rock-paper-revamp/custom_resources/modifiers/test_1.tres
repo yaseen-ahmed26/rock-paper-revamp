@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_5qxf7"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="2_66ury"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_66ury"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/modifiers/scripts/triggers/rounds_played_trigger.gd" id="6_66ury"]
 
 [sub_resource type="Resource" id="Resource_jy8yp"]
 script = ExtResource("2_66ury")
@@ -12,10 +13,17 @@ target = 1
 value = 2.0
 metadata/_custom_type_script = "uid://dwedrynnemxjg"
 
+[sub_resource type="Resource" id="Resource_vc3ap"]
+script = ExtResource("6_66ury")
+type = 1
+rounds = 4
+metadata/_custom_type_script = "uid://c3l2l837kfdsp"
+
 [resource]
 script = ExtResource("2_5qxf7")
 display_name = "test 1"
 description = "Test modifier"
 timing = 1
+triggers = Array[ExtResource("4_66ury")]([SubResource("Resource_vc3ap")])
 effects = Array[ExtResource("1_0ltog")]([SubResource("Resource_jy8yp")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

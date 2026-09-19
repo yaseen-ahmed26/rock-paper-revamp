@@ -93,7 +93,6 @@ func record_round_stats() -> void:
 
 func apply_stat_change(stat_change: StatChange):
 	var lower_stat = get_lower_stat(stat_change.target_stat)
-	print(lower_stat)
 	var current = get(lower_stat)
 	
 	if current == null:
