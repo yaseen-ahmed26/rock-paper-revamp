@@ -8,7 +8,7 @@ const SHOW_IF_STAT: Dictionary = {
 ## The method to apply the value
 @export var operation: StatChange.Operation
 ## The name of the stat to change.
-@export var stat_name: String
+@export var stat_name: GameStats.StatNames
 ## If True, set minimum and maximum values to randomise the stat change.
 @export var randomise: bool = false
 ## The value to update the score
