@@ -31,8 +31,8 @@ func apply(game_stats: GameStats):
 	p_stat_change.value = value
 	a_stat_change.value = value
 	
-	p_stat_change.target_stat = "player_points"
-	a_stat_change.target_stat = "computer_points"
+	p_stat_change.target_stat = GameStats.StatNames.PLAYER_POINTS
+	a_stat_change.target_stat = GameStats.StatNames.COMPUTER_POINTS
 	
 	match target:
 		Target.PLAYER:
