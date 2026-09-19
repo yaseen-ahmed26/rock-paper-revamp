@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dl7pn0tynjg05"]
+
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_2rstg"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="2_ovfpx"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_pwyvy"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_ovfpx"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_so1xd"]
+[ext_resource type="Script" uid="uid://cbiofxr7451ny" path="res://custom_resources/modifiers/scripts/triggers/every_xround_trigger.gd" id="6_so1xd"]
+
+[sub_resource type="Resource" id="Resource_0ijj4"]
+script = ExtResource("2_ovfpx")
+invert = true
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_wspus"]
+script = ExtResource("6_so1xd")
+metadata/_custom_type_script = "uid://cbiofxr7451ny"
+
+[resource]
+script = ExtResource("2_pwyvy")
+id = 9
+display_name = "Rule Reversal"
+description = "Every 3 rounds, the rules are flipped. Wins become losses and losses become wins."
+group = 2
+timing = 1
+triggers = Array[ExtResource("4_so1xd")]([SubResource("Resource_wspus")])
+effects = Array[ExtResource("1_2rstg")]([SubResource("Resource_0ijj4")])
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

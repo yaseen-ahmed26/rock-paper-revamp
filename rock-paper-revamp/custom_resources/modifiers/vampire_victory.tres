@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://bcin3364o8x50"]
+
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_p11cr"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="2_upywg"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_v2hrg"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_jwgg0"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_upywg"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/modifiers/scripts/triggers/outcome_trigger.gd" id="6_q1fw8"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/modifiers/scripts/triggers/stat_comparison_trigger.gd" id="7_k25wr"]
+
+[sub_resource type="Resource" id="Resource_ucvjm"]
+script = ExtResource("2_upywg")
+discard = true
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_k25wr"]
+script = ExtResource("6_q1fw8")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_iw7mu"]
+script = ExtResource("7_k25wr")
+target_stat = 1
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[resource]
+script = ExtResource("2_v2hrg")
+id = 3
+display_name = "Vampire Victory"
+description = "You only gain the win if the AI has points to steal"
+group = 1
+timing = 1
+triggers = Array[ExtResource("4_upywg")]([SubResource("Resource_k25wr"), SubResource("Resource_iw7mu")])
+effects = Array[ExtResource("1_p11cr")]([SubResource("Resource_ucvjm")])
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

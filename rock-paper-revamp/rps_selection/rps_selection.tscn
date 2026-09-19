@@ -8,7 +8,17 @@
 [ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="6_oiecb"]
 [ext_resource type="Resource" uid="uid://dghkrhc178x4g" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
-[ext_resource type="Resource" uid="uid://evnxxe1cafbt" path="res://custom_resources/modifiers/test1.tres" id="9_0mnpd"]
+[ext_resource type="Resource" uid="uid://x8c86s23xhkc" path="res://custom_resources/modifiers/point_perk.tres" id="9_0mnpd"]
+[ext_resource type="Resource" uid="uid://brdsf40lybkj4" path="res://custom_resources/modifiers/artificial_advantage.tres" id="10_yqfff"]
+[ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/double_down.tres" id="11_oiecb"]
+[ext_resource type="Resource" uid="uid://jrctkrktpuaj" path="res://custom_resources/modifiers/tax_toll.tres" id="12_3y6wd"]
+[ext_resource type="Resource" uid="uid://bhvtg4p1blcsw" path="res://custom_resources/modifiers/safety_shield.tres" id="13_yrpsb"]
+[ext_resource type="Resource" uid="uid://dl7pn0tynjg05" path="res://custom_resources/modifiers/rule_reversal.tres" id="14_qmatd"]
+[ext_resource type="Resource" uid="uid://ddib4salimeri" path="res://custom_resources/modifiers/fifty_fifty.tres" id="15_4oi77"]
+[ext_resource type="Resource" uid="uid://vhxjsakk7d6i" path="res://custom_resources/modifiers/pity_points.tres" id="16_v8b7o"]
+[ext_resource type="Resource" uid="uid://vcwqqnvg6vou" path="res://custom_resources/modifiers/choice_cooldown.tres" id="17_2y74n"]
+[ext_resource type="Resource" uid="uid://dxr2sfqeuk7pa" path="res://custom_resources/modifiers/copy_cat.tres" id="18_2y74n"]
+[ext_resource type="Resource" uid="uid://bcin3364o8x50" path="res://custom_resources/modifiers/vampire_victory.tres" id="19_yfyho"]
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
@@ -19,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("3_ran54"), ExtResource("4_0mnpd"), ExtResource("5_yqfff"), ExtResource("6_oiecb"), ExtResource("7_3y6wd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho")])
 
 [node name="TemplateButton" type="Button" parent="." unique_id=1642225740]
 visible = false

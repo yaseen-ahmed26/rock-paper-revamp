@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://vhxjsakk7d6i"]
+
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_j0yed"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="2_i4c7f"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_xvggd"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_qxx2d"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_i4c7f"]
+[ext_resource type="Script" uid="uid://de3b7c8w0krhi" path="res://custom_resources/modifiers/scripts/triggers/chance_trigger.gd" id="6_rsn4q"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/modifiers/scripts/triggers/outcome_trigger.gd" id="7_5s3f1"]
+
+[sub_resource type="Resource" id="Resource_v8b7o"]
+script = ExtResource("2_i4c7f")
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_4oi77"]
+script = ExtResource("6_rsn4q")
+probability = 0.1
+metadata/_custom_type_script = "uid://de3b7c8w0krhi"
+
+[sub_resource type="Resource" id="Resource_duceo"]
+script = ExtResource("7_5s3f1")
+required_outcome = 1
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[resource]
+script = ExtResource("2_xvggd")
+id = 13
+display_name = "Pity Points"
+description = "Every loss has a 10% to award you a point anyways."
+group = 1
+timing = 1
+triggers = Array[ExtResource("4_i4c7f")]([SubResource("Resource_4oi77"), SubResource("Resource_duceo")])
+effects = Array[ExtResource("1_j0yed")]([SubResource("Resource_v8b7o")])
+metadata/_custom_type_script = "uid://d2bvcnih05ama"
