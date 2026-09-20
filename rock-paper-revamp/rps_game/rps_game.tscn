@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://beosahy8j7bes"]
 
 [ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://rps_game/rps_game.gd" id="1_ybur4"]
-[ext_resource type="Script" uid="uid://dxcqio4h2b21l" path="res://rps_game/gamemode_handler.gd" id="2_iw8co"]
 [ext_resource type="Script" uid="uid://chxbyiml4kfew" path="res://rps_game/modifier_handler.gd" id="3_ynb1k"]
 
 [node name="rps_game" type="Control" unique_id=1532588308]
@@ -130,9 +129,6 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Continue"
-
-[node name="GamemodeHandler" type="Node" parent="." unique_id=1516874693]
-script = ExtResource("2_iw8co")
 
 [node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
 script = ExtResource("3_ynb1k")

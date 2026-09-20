@@ -7,19 +7,16 @@ extends Control
 @onready var continue_btn: Button = $ContinueButton
 @onready var streak: RichTextLabel = $Streak
 
-const MOVES: Array = ["rock", "paper", "scissors"]
 const RULES: Dictionary = {
 	"rock": "scissors",
 	"paper": "rock",
 	"scissors": "paper",
 }
 
-var gamemode_resource: GamemodeBase
+var gamemode: GamemodeBase
 var modifiers: Array[ModifierBase] = []
 
 var game_stats: GameStats
-
-var last_tracked_second: int = -1
 
 var game_over: bool = false
 
@@ -34,15 +31,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if round_timer.is_stopped(): return
 	
-	var total_seconds: int = int(round_timer.time_left)
-	var seconds = total_seconds % 60
-	
+	var seconds: int = int(round_timer.time_left) % 60	
 	time_left.text = "00:%02d" % [seconds]
-	
-	var current_second: int = floor(round_timer.time_left) + 1
-	
-	if current_second < last_tracked_second:
-		last_tracked_second = current_second
 
 # Helpers
 func _determine_outcome():
@@ -86,12 +76,13 @@ func _update_ui():
 		btn.set_meta("Value", stat.actual_move)
 	
 # Game Logic
-func _start_game():	
-	game_stats = $GamemodeHandler.create_game_stats(gamemode_resource)
+func _start_game():
+	game_stats = GameStats.new()
+	
+	gamemode.apply_stats_edit(game_stats)
 	$ModifierHandler.apply_initial_modifiers(game_stats, modifiers)
 	
 	_update_ui()
-	
 	_start_round()
 	
 func _start_round():
@@ -142,7 +133,7 @@ func _end_round():
 				
 	_update_ui()
 	
-	game_over = $GamemodeHandler.check_round_end(game_stats, gamemode_resource)
+	game_over = gamemode.is_game_over(game_stats)
 	
 	if game_over:
 		continue_btn.text = "End"
@@ -163,7 +154,7 @@ func _on_continue_btn_pressed():
 		_start_round()
 
 func on_screen_change(information: Dictionary):
-	gamemode_resource = information.get("gamemode_resource")
+	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
 	
 	_start_game()
