@@ -53,6 +53,6 @@ enum TriggerType {
 ## Stat changes apply when the game starts up
 @export var stats_to_edit: Array[StatChange]
 ## The triggers needed for this Modifier to apply
-@export var triggers: Array[ModifierTrigger]
+@export var triggers: Array[GameplayTrigger]
 ## The effects that are applied when all triggers have been met.
 @export var effects: Array[ModifierEffect]

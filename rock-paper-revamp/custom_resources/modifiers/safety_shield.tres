@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="2_dw1oo"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_hoe22"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_dw1oo"]
-[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_7d0mp"]
-[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/modifiers/scripts/triggers/outcome_trigger.gd" id="6_7d0mp"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_dw1oo"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="6_7d0mp"]
 
 [sub_resource type="Resource" id="Resource_yrpsb"]
 script = ExtResource("2_dw1oo")
@@ -25,6 +25,6 @@ description = "Your first loss is discarded. This happens only once."
 group = 2
 timing = 1
 one_shot = true
-triggers = Array[ExtResource("4_7d0mp")]([SubResource("Resource_3y6wd")])
+triggers = Array[ExtResource("5_dw1oo")]([SubResource("Resource_3y6wd")])
 effects = Array[ExtResource("1_6lpiy")]([SubResource("Resource_yrpsb")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

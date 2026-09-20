@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_aj26n"]
 [ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="2_o8yci"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_o8yci"]
-[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_dd3ol"]
-[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/modifiers/scripts/triggers/rounds_played_trigger.gd" id="6_dd3ol"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_o8yci"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/shared/triggers/rounds_played_trigger.gd" id="6_dd3ol"]
 
 [sub_resource type="Resource" id="Resource_wgstj"]
 script = ExtResource("2_o8yci")
@@ -23,6 +23,6 @@ id = 12
 display_name = "Double Down"
 description = "On Round 4, outcomes (win/loss) apply twice."
 one_shot = true
-triggers = Array[ExtResource("4_dd3ol")]([SubResource("Resource_ryh13")])
+triggers = Array[ExtResource("5_o8yci")]([SubResource("Resource_ryh13")])
 effects = Array[ExtResource("1_i2a4t")]([SubResource("Resource_wgstj")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

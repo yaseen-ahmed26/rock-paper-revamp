@@ -1,4 +1,4 @@
-extends ModifierTrigger
+extends GameplayTrigger
 class_name EveryXRoundTrigger
 
 ## The number of rounds this happens at.

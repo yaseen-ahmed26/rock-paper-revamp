@@ -1,4 +1,4 @@
-extends ModifierTrigger
+extends GameplayTrigger
 class_name ChanceTrigger
 
 ## The chance needed for the trigger to be met.

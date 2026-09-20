@@ -1,4 +1,4 @@
-extends ModifierTrigger
+extends GameplayTrigger
 class_name PointDifferenceTrigger
 
 enum Target {

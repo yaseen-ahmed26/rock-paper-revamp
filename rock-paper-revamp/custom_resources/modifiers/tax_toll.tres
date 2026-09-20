@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_qqv7r"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="2_wqpl1"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_wqpl1"]
-[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="4_bcror"]
-[ext_resource type="Script" uid="uid://cbiofxr7451ny" path="res://custom_resources/modifiers/scripts/triggers/every_xround_trigger.gd" id="6_bcror"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_wqpl1"]
+[ext_resource type="Script" uid="uid://cbiofxr7451ny" path="res://custom_resources/shared/triggers/every_xround_trigger.gd" id="6_bcror"]
 
 [sub_resource type="Resource" id="Resource_3y6wd"]
 script = ExtResource("2_wqpl1")
@@ -25,6 +25,6 @@ display_name = "Tax Toll"
 description = "Every 3 rounds, the person with the most points loses 2. Skipped if drawing."
 group = 1
 timing = 1
-triggers = Array[ExtResource("4_bcror")]([SubResource("Resource_oiecb")])
+triggers = Array[ExtResource("5_wqpl1")]([SubResource("Resource_oiecb")])
 effects = Array[ExtResource("1_rcdkd")]([SubResource("Resource_3y6wd")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c3dh67ar4sxak" path="res://custom_resources/modifiers/scripts/effects/edit_move_effect.gd" id="2_gmuj5"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="3_8pj1i"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="4_ucg32"]
-[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/modifiers/scripts/bases/modifier_trigger.gd" id="5_jqdjo"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_cgj84"]
 
 [sub_resource type="Resource" id="Resource_36o6g"]
 script = ExtResource("2_gmuj5")
