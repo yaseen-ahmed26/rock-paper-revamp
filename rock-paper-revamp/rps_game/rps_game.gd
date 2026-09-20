@@ -129,6 +129,8 @@ func _end_round():
 		else "You lost" 
 		if game_stats.outcome == GameStats.RoundOutcome.LOSS
 		else "It's a draw"
+		if game_stats.outcome == GameStats.RoundOutcome.DRAW
+		else "Round discarded"
 	]
 				
 	_update_ui()
