@@ -1,0 +1,2 @@
+extends GamemodeBase
+class_name EndlessGamemode
