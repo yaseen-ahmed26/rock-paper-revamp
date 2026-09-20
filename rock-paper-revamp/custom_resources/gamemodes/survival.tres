@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SurvivalGamemode" format=3 uid="uid://bini64moj23e3"]
+
+[ext_resource type="Script" uid="uid://cy7pfilt2th7r" path="res://custom_resources/gamemodes/scripts/survival_gamemode.gd" id="1_6dyra"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_7fnff"]
+
+[resource]
+script = ExtResource("1_6dyra")
+id = 2
+display_name = "Survival"
+description = "Don't lose your streak"
+metadata/_custom_type_script = "uid://cy7pfilt2th7r"

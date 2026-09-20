@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://cfo70do7yw2jn"]
 
 [ext_resource type="Script" uid="uid://c542vggv3uden" path="res://rps_selection/rps_selection.gd" id="1_3o2jl"]
+[ext_resource type="Script" uid="uid://c0lrubhbf7mss" path="res://custom_resources/gamemodes/scripts/gamemode_base.gd" id="2_rqfj8"]
+[ext_resource type="Resource" uid="uid://cqpsy7c0siakh" path="res://custom_resources/gamemodes/best_of.tres" id="3_ran54"]
+[ext_resource type="Resource" uid="uid://ctiyhvl5fpbqu" path="res://custom_resources/gamemodes/endless.tres" id="4_0mnpd"]
+[ext_resource type="Resource" uid="uid://dx50ptju3lua3" path="res://custom_resources/gamemodes/comeback.tres" id="5_yqfff"]
+[ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="6_oiecb"]
+[ext_resource type="Resource" uid="uid://bini64moj23e3" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
 [ext_resource type="Resource" uid="uid://x8c86s23xhkc" path="res://custom_resources/modifiers/point_perk.tres" id="9_0mnpd"]
 [ext_resource type="Resource" uid="uid://brdsf40lybkj4" path="res://custom_resources/modifiers/artificial_advantage.tres" id="10_yqfff"]
@@ -22,6 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3o2jl")
+gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("4_0mnpd")])
 modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho")])
 
 [node name="TemplateButton" type="Button" parent="." unique_id=1642225740]

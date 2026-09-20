@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ComebackGamemode" format=3 uid="uid://dx50ptju3lua3"]
+
+[ext_resource type="Script" uid="uid://b3g4vgwpu7ym6" path="res://custom_resources/gamemodes/scripts/comeback_gamemode.gd" id="1_fgdss"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_66421"]
+
+[resource]
+script = ExtResource("1_fgdss")
+id = 3
+display_name = "Comeback"
+description = "AI starts off with 3 points and there's only 8 rounds"
+metadata/_custom_type_script = "uid://b3g4vgwpu7ym6"
