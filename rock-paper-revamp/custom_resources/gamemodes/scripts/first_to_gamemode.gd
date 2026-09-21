@@ -3,6 +3,16 @@ class_name FirstToGamemode
 
 @export var point_threshold: float = 3.0
 
+func get_customisable_settings():
+	return {
+		"point_threshold": { 
+			"label": "Max Points", 
+			"min": 1, 
+			"max": 10, 
+			"step": 1 
+		},
+	}
+
 func apply_stats_edit(_game_stats: GameStats):
 	pass
 
