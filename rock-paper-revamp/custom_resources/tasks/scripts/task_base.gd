@@ -5,6 +5,11 @@ enum ID {
 	TEST_1
 }
 
+enum Timing {
+	ROUND_END,
+	MATCH_END
+}
+
 @export_category("Metadata")
 ## The unqiue ID for this Task
 @export var id: ID
@@ -12,6 +17,8 @@ enum ID {
 @export var display_name: String
 ## The description of the Task
 @export var description: String
+## When to check if this Task has been completed
+@export var timing: Timing
 ## The triggers for this Task to be completed
 @export var triggers: Array[GameplayTrigger]
 

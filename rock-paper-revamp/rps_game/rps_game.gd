@@ -132,10 +132,9 @@ func _end_round():
 				
 	_update_ui()
 	
-	if not task_completed:
+	if not task_completed and task.timing == TaskBase.Timing.ROUND_END:
+		print("CHECKING")
 		task_completed = task.check_completion(game_stats)
-		
-		if task_completed: print("Task Completed!")
 		
 	game_over = gamemode.is_game_over(game_stats)
 	
@@ -145,6 +144,10 @@ func _end_round():
 	continue_btn.visible = true
 	
 func _end_game():
+	if not task_completed and task.timing == TaskBase.Timing.MATCH_END:
+		print("CHECKING MATCH END")
+		task_completed = task.check_completion(game_stats)
+	
 	Signals.change_screen.emit("rps_selection")
 	
 # Button & Siganl Connections
