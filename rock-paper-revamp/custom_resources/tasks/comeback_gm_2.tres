@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TaskBase" format=3 uid="uid://uv2qe2nf1361"]
+
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_02ktd"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_pbcee"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="3_pbcee"]
+
+[sub_resource type="Resource" id="Resource_jbylr"]
+script = ExtResource("3_pbcee")
+target_stat = 1
+operator = 2
+target_value = 3.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[resource]
+script = ExtResource("1_02ktd")
+id = 3
+display_name = "I have no tolerance"
+description = "Don't let the AI get a point beyond it's lead"
+timing = 1
+triggers = Array[ExtResource("2_pbcee")]([SubResource("Resource_jbylr")])
+invert_triggers = true
+metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

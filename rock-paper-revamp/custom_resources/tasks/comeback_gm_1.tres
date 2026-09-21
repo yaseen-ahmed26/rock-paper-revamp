@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TaskBase" format=3 uid="uid://dh8x1bja6pswo"]
+
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_pms7l"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_7u787"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/shared/triggers/rounds_played_trigger.gd" id="3_6fxr2"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="4_ivr3l"]
+
+[sub_resource type="Resource" id="Resource_ynb1k"]
+script = ExtResource("3_6fxr2")
+rounds = 8
+metadata/_custom_type_script = "uid://c3l2l837kfdsp"
+
+[sub_resource type="Resource" id="Resource_7k8io"]
+script = ExtResource("4_ivr3l")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[resource]
+script = ExtResource("1_pms7l")
+id = 2
+display_name = "Buzz Buzz!"
+description = "Win the final round"
+triggers = Array[ExtResource("2_7u787")]([SubResource("Resource_ynb1k"), SubResource("Resource_7k8io")])
+metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

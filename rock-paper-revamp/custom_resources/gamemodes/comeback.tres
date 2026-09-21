@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b3g4vgwpu7ym6" path="res://custom_resources/gamemodes/scripts/comeback_gamemode.gd" id="1_fgdss"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_66421"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="3_oyvi8"]
+[ext_resource type="Resource" uid="uid://dh8x1bja6pswo" path="res://custom_resources/tasks/comeback_gm_1.tres" id="4_8immi"]
+[ext_resource type="Resource" uid="uid://uv2qe2nf1361" path="res://custom_resources/tasks/comeback_gm_2.tres" id="5_7l5fs"]
 
 [resource]
 script = ExtResource("1_fgdss")
 id = 3
 display_name = "Comeback"
 description = "AI starts off with 3 points and there's only 8 rounds"
+task_pool = Array[ExtResource("3_oyvi8")]([ExtResource("4_8immi"), ExtResource("5_7l5fs")])
 metadata/_custom_type_script = "uid://b3g4vgwpu7ym6"

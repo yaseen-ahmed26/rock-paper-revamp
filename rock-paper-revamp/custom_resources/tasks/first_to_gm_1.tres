@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TaskBase" format=3 uid="uid://bmdyjj0seb7fm"]
+
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_e47jr"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_vlq22"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/shared/triggers/rounds_played_trigger.gd" id="3_v2mcc"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="4_7tbcs"]
+
+[sub_resource type="Resource" id="Resource_ynb1k"]
+script = ExtResource("3_v2mcc")
+type = 1
+rounds = 1
+metadata/_custom_type_script = "uid://c3l2l837kfdsp"
+
+[sub_resource type="Resource" id="Resource_jy8yp"]
+script = ExtResource("4_7tbcs")
+required_outcome = 2
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[resource]
+script = ExtResource("1_e47jr")
+display_name = "Anti-climatic Start"
+description = "Draw the first round."
+triggers = Array[ExtResource("2_vlq22")]([SubResource("Resource_ynb1k"), SubResource("Resource_jy8yp")])
+metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TaskBase" format=3 uid="uid://cvr41nhhd6krg"]
+
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_25cdh"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_k6ivj"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="3_ex0yw"]
+
+[sub_resource type="Resource" id="Resource_ynb1k"]
+script = ExtResource("3_ex0yw")
+operator = 3
+target_value = 3.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_jy8yp"]
+script = ExtResource("3_ex0yw")
+target_stat = 1
+target_value = 2.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[resource]
+script = ExtResource("1_25cdh")
+id = 1
+display_name = "This isn't Comeback..."
+description = "Win the game after the AI has 2 points"
+triggers = Array[ExtResource("2_k6ivj")]([SubResource("Resource_ynb1k"), SubResource("Resource_jy8yp")])
+metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

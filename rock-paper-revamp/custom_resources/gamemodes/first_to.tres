@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bfo6dh4k4nac4" path="res://custom_resources/gamemodes/scripts/first_to_gamemode.gd" id="1_ablcf"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_n1api"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="3_fc6ku"]
+[ext_resource type="Resource" uid="uid://bmdyjj0seb7fm" path="res://custom_resources/tasks/first_to_gm_1.tres" id="4_pp26v"]
+[ext_resource type="Resource" uid="uid://cvr41nhhd6krg" path="res://custom_resources/tasks/first_to_gm_2.tres" id="5_0ktlf"]
 
 [resource]
 script = ExtResource("1_ablcf")
 display_name = "First to 3"
 description = "The first one to 3 points wins"
+task_pool = Array[ExtResource("3_fc6ku")]([ExtResource("4_pp26v"), ExtResource("5_0ktlf")])
 metadata/_custom_type_script = "uid://bfo6dh4k4nac4"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TaskBase" format=3 uid="uid://bgf24tnlryl3d"]
+
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_5wkeb"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_rvpst"]
+[ext_resource type="Script" uid="uid://cy32uleuvbseq" path="res://custom_resources/shared/triggers/point_difference_trigger.gd" id="3_rvpst"]
+
+[sub_resource type="Resource" id="Resource_7aprj"]
+script = ExtResource("3_rvpst")
+target = 1
+how_much_by = 2.0
+metadata/_custom_type_script = "uid://cy32uleuvbseq"
+
+[resource]
+script = ExtResource("1_5wkeb")
+id = 5
+display_name = "Wire to Wire"
+description = "Lead by 2 points or more by the end of round 5"
+timing = 1
+triggers = Array[ExtResource("2_rvpst")]([SubResource("Resource_7aprj")])
+metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

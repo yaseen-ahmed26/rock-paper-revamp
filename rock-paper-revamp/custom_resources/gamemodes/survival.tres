@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cy7pfilt2th7r" path="res://custom_resources/gamemodes/scripts/survival_gamemode.gd" id="1_6dyra"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_7fnff"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="3_8x1nt"]
+[ext_resource type="Resource" uid="uid://cc0fnf04skaym" path="res://custom_resources/tasks/survival_gm_1.tres" id="4_n5sou"]
 
 [resource]
 script = ExtResource("1_6dyra")
 id = 2
 display_name = "Survival"
 description = "Don't lose your streak"
+task_pool = Array[ExtResource("3_8x1nt")]([ExtResource("4_n5sou")])
 metadata/_custom_type_script = "uid://cy7pfilt2th7r"

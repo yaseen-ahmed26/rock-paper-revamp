@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://rwt6wti4yr2i" path="res://custom_resources/gamemodes/scripts/best_of_gamemode.gd" id="1_0w48q"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_3kive"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="3_fb74e"]
+[ext_resource type="Resource" uid="uid://bgf24tnlryl3d" path="res://custom_resources/tasks/best_of_gm_1.tres" id="4_y8mwf"]
 
 [resource]
 script = ExtResource("1_0w48q")
 id = 1
 display_name = "Best of 5"
 description = "5 rounds max"
+task_pool = Array[ExtResource("3_fb74e")]([ExtResource("4_y8mwf")])
 metadata/_custom_type_script = "uid://rwt6wti4yr2i"
