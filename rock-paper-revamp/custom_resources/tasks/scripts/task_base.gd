@@ -1,0 +1,38 @@
+extends Resource
+class_name TaskBase
+
+enum ID {
+	TEST_1
+}
+
+@export_category("Metadata")
+## The unqiue ID for this Task
+@export var id: ID
+## The name that is displayed on UI
+@export var display_name: String
+## The description of the Task
+@export var description: String
+## The triggers for this Task to be completed
+@export var triggers: Array[GameplayTrigger]
+
+@export_category("Flags")
+## If true, then all triggers need return false for the task to be completed.
+@export var invert_triggers: bool = false
+
+func check_completion(game_stats: GameStats):
+	if triggers.is_empty():
+		print("No triggers set for Task '%s'" % ID.keys()[id].to_lower())
+		return false
+	
+	var triggers_met: int = 0
+	
+	for trigger: GameplayTrigger in triggers:
+		var completed: bool = trigger.is_met(game_stats)
+		
+		if completed != invert_triggers:
+			triggers_met += 1
+	
+	if triggers_met == triggers.size():
+		return true
+	
+	return false
