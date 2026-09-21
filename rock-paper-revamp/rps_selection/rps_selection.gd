@@ -28,7 +28,8 @@ func create_btn(info, parent):
 	clone.visible = true
 	clone.tooltip_text = info.description
 	
-	clone.set_meta("Resource", info)
+	var resource_duplicate = info.duplicate(true)
+	clone.set_meta("Resource", resource_duplicate)
 	
 	if parent == $GamemodeButtons:
 		clone.pressed.connect(_on_gamemode_btn_pressed.bind(clone))
