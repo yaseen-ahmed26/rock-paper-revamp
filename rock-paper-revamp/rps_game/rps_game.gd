@@ -15,10 +15,12 @@ const RULES: Dictionary = {
 
 var gamemode: GamemodeBase
 var modifiers: Array[ModifierBase] = []
+var task: TaskBase
 
 var game_stats: GameStats
 
 var game_over: bool = false
+var task_completed: bool = false
 
 # Godot Specific
 func _ready() -> void:
@@ -130,6 +132,11 @@ func _end_round():
 				
 	_update_ui()
 	
+	if not task_completed:
+		task_completed = task.check_completion(game_stats)
+		
+		if task_completed: print("Task Completed!")
+		
 	game_over = gamemode.is_game_over(game_stats)
 	
 	if game_over:
@@ -153,6 +160,7 @@ func _on_continue_btn_pressed():
 func on_screen_change(information: Dictionary):
 	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
+	task = information.get("task_resource")
 	
 	_start_game()
 

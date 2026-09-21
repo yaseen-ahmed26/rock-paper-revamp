@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_pohc3"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_57shl"]
+[ext_resource type="Script" uid="uid://ddrw07o1dupdk" path="res://custom_resources/shared/triggers/modifier_trigger.gd" id="3_57shl"]
+
+[sub_resource type="Resource" id="Resource_iw8co"]
+script = ExtResource("3_57shl")
+target_modifier = 5
+operator = 0
+count = 0
+metadata/_custom_type_script = "uid://ddrw07o1dupdk"
 
 [resource]
 script = ExtResource("1_pohc3")
 display_name = "Test 1"
 description = "test"
+triggers = Array[ExtResource("2_57shl")]([SubResource("Resource_iw8co")])
 metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

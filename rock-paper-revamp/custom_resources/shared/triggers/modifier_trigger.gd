@@ -26,7 +26,7 @@ func is_met(game_stats: GameStats) -> bool:
 	
 	match scope:
 		Scope.WHOLE_MATCH:
-			activations = game_stats.modifier_activation_counts.get(target_modifier, 0)
+			activations = game_stats.modifier_usage_count.get(target_modifier, 0)
 		Scope.CURRENT_ROUND_ONLY:
 			activations = 1 if target_modifier in game_stats.round_activated_modifiers else 0
 

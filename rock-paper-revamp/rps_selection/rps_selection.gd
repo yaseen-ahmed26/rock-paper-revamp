@@ -65,6 +65,7 @@ func _on_start_btn_pressed() -> void:
 		"rps_game",
 		{
 			"gamemode_resource": selected_gamemode_btn.get_meta("Resource"),
-			"modifier_resource": modifier_resources
+			"modifier_resource": modifier_resources,
+			"task_resource": preload("res://custom_resources/tasks/test_1.tres")
 		}
 	)
