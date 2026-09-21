@@ -86,12 +86,7 @@ func _start_game():
 	_start_round()
 	
 func _start_round():
-	game_stats.player_move = ""
-	game_stats.computer_move = ""
-	game_stats.outcome = GameStats.RoundOutcome.CLEARED
-
-	game_stats.rounds_played += 1
-	game_stats.reset_btn_state()
+	game_stats.reset_round()
 	
 	$RoundEnd.visible = false
 	continue_btn.visible = false

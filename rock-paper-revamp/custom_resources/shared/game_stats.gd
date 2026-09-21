@@ -140,5 +140,14 @@ func apply_stat_change(stat_change: StatChange):
 
 	print("(GameStats) '%s' has been edited" % lower_stat)
 
+func reset_round():
+	player_move = ""
+	computer_move = ""
+	outcome = RoundOutcome.CLEARED
+	rounds_played += 1
+	round_activated_modifiers.clear()
+	
+	reset_btn_state()
+
 func get_lower_stat(stat_name):
 	return StatNames.keys()[stat_name].to_lower()
