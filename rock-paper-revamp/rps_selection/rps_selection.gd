@@ -35,6 +35,22 @@ func create_btn(info, parent):
 	else:
 		clone.pressed.connect(_on_modifier_btn_pressed.bind(clone))
 
+func _update_tasks():
+	var resource: GamemodeBase = selected_gamemode_btn.get_meta("Resource")
+	
+	if resource:
+		for btn in $TaskButtons.get_children():
+			btn.queue_free()
+		
+		for task in resource.task_pool:
+			var clone: Button = template_button.duplicate(true)
+			$TaskButtons.add_child(clone)
+			
+			clone.name = task.display_name.to_lower()
+			clone.text = "%s: %s" % [task.display_name, task.description]
+			clone.visible = true
+			clone.tooltip_text = task.description
+			
 # Button & Signal Connections
 func _on_gamemode_btn_pressed(btn: Button):
 	if selected_gamemode_btn:
@@ -44,6 +60,8 @@ func _on_gamemode_btn_pressed(btn: Button):
 	
 	btn.text = "[>] " + btn.text
 	selected_gamemode_btn = btn
+	
+	_update_tasks()
 
 func _on_modifier_btn_pressed(btn: Button):
 	if selected_modifier_btns.has(btn):
@@ -66,6 +84,5 @@ func _on_start_btn_pressed() -> void:
 		{
 			"gamemode_resource": selected_gamemode_btn.get_meta("Resource"),
 			"modifier_resource": modifier_resources,
-			"task_resource": preload("res://custom_resources/tasks/test_1.tres")
 		}
 	)
