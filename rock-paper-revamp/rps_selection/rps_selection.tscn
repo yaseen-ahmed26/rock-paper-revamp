@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://vcwqqnvg6vou" path="res://custom_resources/modifiers/choice_cooldown.tres" id="17_2y74n"]
 [ext_resource type="Resource" uid="uid://dxr2sfqeuk7pa" path="res://custom_resources/modifiers/copy_cat.tres" id="18_2y74n"]
 [ext_resource type="Resource" uid="uid://bcin3364o8x50" path="res://custom_resources/modifiers/vampire_victory.tres" id="19_yfyho"]
+[ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
@@ -61,6 +62,84 @@ offset_left = 656.0
 offset_top = 456.0
 offset_right = 1152.0
 offset_bottom = 1033.0
+
+[node name="GamemodeParameters" type="VBoxContainer" parent="." unique_id=155142734]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -486.0
+offset_top = -99.0
+offset_right = -244.0
+offset_bottom = 301.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="TemplateStep" type="Panel" parent="GamemodeParameters" unique_id=1574051351]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+script = ExtResource("20_k2fvl")
+
+[node name="TitleLabel" type="RichTextLabel" parent="GamemodeParameters/TemplateStep" unique_id=1159862314]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -41.0
+grow_horizontal = 2
+text = "Property Name Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountLabel" type="RichTextLabel" parent="GamemodeParameters/TemplateStep" unique_id=1431354490]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="Button" parent="GamemodeParameters/TemplateStep" unique_id=141895011]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 29.0
+offset_top = -16.0
+offset_right = 61.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+
+[node name="MinusButton" type="Button" parent="GamemodeParameters/TemplateStep" unique_id=231677762]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -16.0
+offset_right = -29.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "-"
 
 [node name="StartButton" type="Button" parent="." unique_id=1990179656]
 layout_mode = 1

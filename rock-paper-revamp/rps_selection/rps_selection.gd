@@ -4,6 +4,7 @@ extends Control
 @export var modifier_pool: Array[ModifierBase]
 
 @onready var template_button: Button = $TemplateButton
+@onready var template_step: Panel = $GamemodeParameters/TemplateStep
 
 var selected_gamemode_btn: Button
 var selected_modifier_btns: Array[Button]
@@ -51,7 +52,38 @@ func _update_tasks():
 			clone.text = "%s: %s" % [task.display_name, task.description]
 			clone.visible = true
 			clone.tooltip_text = task.description
-			
+
+func _update_paramters(gamemode: GamemodeBase):
+	var settings = gamemode.get_customisable_settings()
+	
+	for child in $GamemodeParameters.get_children():
+		if child == template_step: continue
+		child.queue_free()
+	
+	if settings.is_empty(): return
+
+	for setting in settings:
+		var config: Dictionary = settings[setting]
+		var value = gamemode.get(setting)
+
+		var clone = template_step.duplicate()
+		$GamemodeParameters.add_child(clone)
+		
+		clone.name = setting.to_lower()
+		clone.visible = true
+		clone.setup(
+			config.get("label"),
+			float(value),
+			config.get("min"),
+			config.get("max"),
+			config.get("step")	
+		)
+		
+		clone.value_changed.connect(func(new_val):
+			var is_integer = typeof(value) == TYPE_INT
+			gamemode.set(setting, int(new_val) if is_integer else new_val)
+		)
+
 # Button & Signal Connections
 func _on_gamemode_btn_pressed(btn: Button):
 	if selected_gamemode_btn:
@@ -63,6 +95,7 @@ func _on_gamemode_btn_pressed(btn: Button):
 	selected_gamemode_btn = btn
 	
 	_update_tasks()
+	_update_paramters(btn.get_meta("Resource"))
 
 func _on_modifier_btn_pressed(btn: Button):
 	if selected_modifier_btns.has(btn):
