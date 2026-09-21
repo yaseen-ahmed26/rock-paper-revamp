@@ -47,5 +47,7 @@ func use_modifiers(stats: GameStats, modifiers: Array[ModifierBase], timing: Mod
 			if modifier.one_shot:
 				modifiers_to_remove.append(modifier)
 
+			stats.add_used_modifier(modifier.id)
+
 	for modifier in modifiers_to_remove:
 		owner.modifiers.erase(modifier)
