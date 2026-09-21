@@ -44,12 +44,10 @@ func check_completion(game_stats: GameStats):
 	var triggers_met: int = 0
 	
 	for trigger: GameplayTrigger in triggers:
-		var completed: bool = trigger.is_met(game_stats)
-		
-		if completed != invert_triggers:
+		if trigger.is_met(game_stats):			
 			triggers_met += 1
 	
-	if triggers_met == triggers.size():
-		return true
+	if invert_triggers:
+		return triggers_met == 0
 	
-	return false
+	return triggers_met == triggers.size()
