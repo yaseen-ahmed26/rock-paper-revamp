@@ -20,6 +20,8 @@ enum ID {
 @export var modifier_blacklist: Array[ModifierBase.ID]
 ## The stats to change when the game starts
 @export var stats_to_edit: Array[StatChange]
+## The task list for this specific gamemode
+@export var task_pool: Array[TaskBase]
 
 func apply_stats_edit(_game_stats: GameStats):
 	pass

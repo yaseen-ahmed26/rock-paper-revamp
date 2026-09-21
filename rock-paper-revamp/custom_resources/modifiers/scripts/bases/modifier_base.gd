@@ -56,3 +56,5 @@ enum TriggerType {
 @export var triggers: Array[GameplayTrigger]
 ## The effects that are applied when all triggers have been met.
 @export var effects: Array[ModifierEffect]
+## The task list for this specific Modifier
+@export var task_pool: Array[TaskBase]

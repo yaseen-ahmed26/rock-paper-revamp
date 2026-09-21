@@ -133,7 +133,6 @@ func _end_round():
 	_update_ui()
 	
 	if not task_completed and task.timing == TaskBase.Timing.ROUND_END:
-		print("CHECKING")
 		task_completed = task.check_completion(game_stats)
 		
 	game_over = gamemode.is_game_over(game_stats)
@@ -145,7 +144,6 @@ func _end_round():
 	
 func _end_game():
 	if not task_completed and task.timing == TaskBase.Timing.MATCH_END:
-		print("CHECKING MATCH END")
 		task_completed = task.check_completion(game_stats)
 	
 	Signals.change_screen.emit("rps_selection")
