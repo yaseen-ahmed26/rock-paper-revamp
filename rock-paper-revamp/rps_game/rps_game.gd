@@ -14,6 +14,7 @@ const RULES: Dictionary = {
 }
 
 var gamemode: GamemodeBase
+var computer: ComputerBase
 var modifiers: Array[ModifierBase] = []
 
 var game_stats: GameStats
@@ -105,7 +106,7 @@ func _end_round():
 	modifier_timer.stop()
 	_toggle_move_btns(true)
 	
-	game_stats.computer_move = "paper"
+	game_stats.computer_move = computer.pick_move(game_stats)
 	var player_move: String = game_stats.player_move
 	
 	game_stats.outcome = _determine_outcome()
@@ -169,6 +170,7 @@ func _on_continue_btn_pressed():
 func on_screen_change(information: Dictionary):
 	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
+	computer = information.get("computer_resource")
 	
 	_start_game()
 
