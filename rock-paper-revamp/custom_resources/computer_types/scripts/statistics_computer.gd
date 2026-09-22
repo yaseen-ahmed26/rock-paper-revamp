@@ -12,7 +12,7 @@ const COUNTERS: Dictionary = {
 	"scissors": "rock"
 }
 
-func get_move(stats: GameStats):
+func pick_move(stats: GameStats):
 	if stats.rounds_played == 1:
 		return GameStats.DEFAULT_MOVES.pick_random()
 

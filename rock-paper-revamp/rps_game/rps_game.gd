@@ -171,7 +171,7 @@ func on_screen_change(information: Dictionary):
 	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
 	computer = information.get("computer_resource")
-	
+	print(gamemode.display_name)
 	_start_game()
 
 func _on_modifier_timeout():

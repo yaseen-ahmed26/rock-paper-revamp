@@ -32,4 +32,4 @@ func apply_stats_edit(_game_stats: GameStats):
 	pass
 
 func is_game_over(_game_stats: GameStats):
-	pass
+	return false
