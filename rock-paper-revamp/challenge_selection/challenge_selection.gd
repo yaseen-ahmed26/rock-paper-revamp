@@ -28,7 +28,7 @@ func _create_challenge_btns():
 func _update_challenge_info(challenge: ChallengeBase):
 	$ChallengeInfo/ChallengeName.text = challenge.display_name
 	$ChallengeInfo/Description.text = challenge.description
-	$ChallengeInfo/Modifiers.text = challenge.get_modifier_names().join(", ")
+	$ChallengeInfo/Modifiers.text = ", ".join(challenge.get_modifier_names())
 	$ChallengeInfo/Gamemode.text = challenge.get_gamemode_name()
 	
 # Buttons & Signal Connections
