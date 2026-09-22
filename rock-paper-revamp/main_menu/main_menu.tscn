@@ -49,6 +49,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "PLAY"
 
+[node name="Challenges" type="Button" parent="MenuButtons" unique_id=2082929848]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "CHALLENGES"
+
 [node name="Quit" type="Button" parent="MenuButtons" unique_id=528483674]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
