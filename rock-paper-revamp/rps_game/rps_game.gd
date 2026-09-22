@@ -54,15 +54,15 @@ func _toggle_move_btns(state: bool):
 		btn.disabled = state
 		
 func _update_ui():
-	$Scoreboard.text = "You: %d | AI: %d" % [
+	$Scoreboard.text = "[You] %d · %d [AI]" % [
 		game_stats.player_points,
 		game_stats.computer_points
 	]
-	$Streak.text = "Streak: %d\nBest: %d" % [
+	$Streak.text = "Streak [%d]\nBest [%d]" % [
 		game_stats.current_streak,
 		game_stats.best_streak
 	]
-	$RoundsPlayed.text = "Round: %d/%s" % [
+	$RoundsPlayed.text = "Round [%d/%s]" % [
 		game_stats.rounds_played,
 		"inf" if game_stats.total_rounds == -1 else str(game_stats.total_rounds)
 	]
@@ -89,6 +89,7 @@ func _start_game():
 func _start_round():
 	game_stats.reset_round()
 	
+	$MovesPicked.visible = false
 	$RoundEnd.visible = false
 	continue_btn.visible = false
 	
@@ -117,17 +118,21 @@ func _end_round():
 	game_stats.apply_round_outcome()
 	
 	$RoundEnd.visible = true
-	$RoundEnd.text = "AI picked %s against your %s, %s" % [
-		game_stats.computer_move.capitalize(),
+	$MovesPicked.visible = true
+	
+	$MovesPicked.text = "[color=white]You picked [color=gold]%s [color=white]against your opponent's [color=gold]%s" % [
 		player_move.capitalize(),
-		"You won" 
-		if game_stats.outcome == GameStats.RoundOutcome.WIN
-		else "You lost" 
-		if game_stats.outcome == GameStats.RoundOutcome.LOSS
-		else "It's a draw"
-		if game_stats.outcome == GameStats.RoundOutcome.DRAW
-		else "Round discarded"
+		game_stats.computer_move.capitalize()
 	]
+	
+	if game_stats.outcome == GameStats.RoundOutcome.WIN:
+		$RoundEnd.text = "You won the round! +%d points to you" % game_stats.get_points_on_win()
+	elif game_stats.outcome == GameStats.RoundOutcome.LOSS:
+		$RoundEnd.text = "You lost the round, +%d points to opponent" % game_stats.get_points_on_loss()
+	elif game_stats.outcome == GameStats.RoundOutcome.DRAW:
+		$RoundEnd.text = "Round draw, No points awarded"
+	elif game_stats.outcome == GameStats.RoundOutcome.DISCARD:
+		$RoundEnd.text = "Round has been discarded, No points awarded"
 				
 	_update_ui()
 	

@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://beosahy8j7bes"]
 
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_j8q1b"]
 [ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://rps_game/rps_game.gd" id="1_ybur4"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="2_cm4xy"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="3_j8q1b"]
 [ext_resource type="Script" uid="uid://chxbyiml4kfew" path="res://rps_game/modifier_handler.gd" id="3_ynb1k"]
+[ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="4_isxwt"]
+[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="5_81c6f"]
 
 [node name="rps_game" type="Control" unique_id=1532588308]
 layout_mode = 3
@@ -10,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_j8q1b")
 script = ExtResource("1_ybur4")
 
 [node name="RoundTimer" type="Timer" parent="." unique_id=720391326]
@@ -25,29 +31,47 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -471.0
-offset_top = 293.0
+offset_top = 306.0
 offset_right = 471.0
-offset_bottom = 397.0
+offset_bottom = 384.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 18
 
 [node name="Rock" type="Button" parent="MoveButtons" unique_id=1266863930]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("2_cm4xy")
+theme_override_styles/pressed = ExtResource("3_j8q1b")
+theme_override_styles/hover = ExtResource("4_isxwt")
+theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Rock"
 
 [node name="Paper" type="Button" parent="MoveButtons" unique_id=1697466638]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("2_cm4xy")
+theme_override_styles/pressed = ExtResource("3_j8q1b")
+theme_override_styles/hover = ExtResource("4_isxwt")
+theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Paper"
 
 [node name="Scissors" type="Button" parent="MoveButtons" unique_id=417781502]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("2_cm4xy")
+theme_override_styles/pressed = ExtResource("3_j8q1b")
+theme_override_styles/hover = ExtResource("4_isxwt")
+theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Scissors"
 
 [node name="TimeLeft" type="RichTextLabel" parent="." unique_id=584951318]
@@ -71,7 +95,7 @@ offset_left = 37.0
 offset_top = 43.0
 offset_right = 322.0
 offset_bottom = 204.0
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 34
 text = "Streak: 0
 Best: 0"
 
@@ -81,8 +105,9 @@ offset_left = 1583.0
 offset_top = 46.0
 offset_right = 1868.0
 offset_bottom = 124.0
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 34
 text = "Round 1/inf"
+horizontal_alignment = 2
 
 [node name="Scoreboard" type="RichTextLabel" parent="." unique_id=1760286959]
 layout_mode = 1
@@ -105,30 +130,52 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -691.0
-offset_top = 467.0
+offset_top = 482.0
 offset_right = 691.0
-offset_bottom = 545.0
+offset_bottom = 560.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 52
+theme_override_font_sizes/normal_font_size = 42
 text = "AI picked Rock against your Paper. You lost!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="." unique_id=1706732755]
+[node name="MovesPicked" type="RichTextLabel" parent="." unique_id=1026983236]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -691.0
+offset_top = 394.0
+offset_right = 691.0
+offset_bottom = 472.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "You picked rock against the AI's Paper"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="." unique_id=270497526]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -434.0
-offset_top = -144.0
-offset_right = -35.0
-offset_bottom = -41.0
+offset_left = -379.0
+offset_top = -136.0
+offset_right = -55.0
+offset_bottom = -61.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 48
-text = "Continue"
+theme_override_styles/normal = ExtResource("3_j8q1b")
+theme_override_styles/pressed = ExtResource("2_cm4xy")
+theme_override_styles/hover = ExtResource("2_cm4xy")
+theme_override_styles/disabled = ExtResource("5_81c6f")
+text = "Next"
 
 [node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
 script = ExtResource("3_ynb1k")

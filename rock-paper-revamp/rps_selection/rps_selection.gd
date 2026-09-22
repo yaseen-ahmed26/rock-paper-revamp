@@ -4,8 +4,10 @@ extends Control
 @export var modifier_pool: Array[ModifierBase]
 @export var computer_pool: Array[ComputerBase]
 
-@onready var template_button: Button = $TemplateButton
-@onready var template_step: Panel = $GamemodeParameters/TemplateStep
+@onready var gm_template_button: Button = $GamemodeTemplateButton
+@onready var template_step: Panel = $GamemodeSettings/Holder/TemplateStep
+@onready var md_template_button: Button = $ModifierTemplateButton
+@onready var ct_template_button: Button = $ComputerTemplateButton
 
 var selected_gamemode_btn: Button
 var selected_modifier_btns: Array[Button]
@@ -13,20 +15,20 @@ var selected_computer_btn: Button
 
 func _ready() -> void:
 	for gamemode in gamemode_pool:
-		create_btn(gamemode, $GamemodeButtons)
+		create_btn(gamemode, $Gamemodes/Holder, gm_template_button)
 		
 	for modifier in modifier_pool:
-		create_btn(modifier, $ModifierButtons)
+		create_btn(modifier, $Modifiers/Holder, md_template_button)
 		
 	for computer in computer_pool:
-		create_btn(computer, $ComputerButtons)
+		create_btn(computer, $Computers/Holder, ct_template_button)
 
 func _process(_delta: float) -> void:
 	pass
 
 # Helpers
-func create_btn(info, parent):
-	var clone: Button = template_button.duplicate(true)
+func create_btn(info, parent, template: Button):
+	var clone: Button = template.duplicate(true)
 	parent.add_child(clone)
 	
 	clone.name = info.display_name.to_lower()
@@ -37,23 +39,31 @@ func create_btn(info, parent):
 	var resource_duplicate = info.duplicate(true)
 	clone.set_meta("Resource", resource_duplicate)
 	
-	if parent == $GamemodeButtons:
+	if parent == $Gamemodes/Holder:
 		clone.pressed.connect(_on_gamemode_btn_pressed.bind(clone))
-	elif parent == $ModifierButtons:
+	elif parent == $Modifiers/Holder:
 		clone.pressed.connect(_on_modifier_btn_pressed.bind(clone))
-	elif parent == $ComputerButtons:
+	elif parent == $Computers/Holder:
 		clone.pressed.connect(_on_computer_btn_pressed.bind(clone))
 
 func _update_tasks():
 	var resource: GamemodeBase = selected_gamemode_btn.get_meta("Resource")
 	
 	if resource:
-		for btn in $TaskButtons.get_children():
-			btn.queue_free()
+		for label in $GamemodeTasks/Holder.get_children():
+			if label.name == "Template": continue
+			label.queue_free()
+			
+		if resource.task_pool.is_empty():
+			$GamemodeTasks/NoPropertiesLabel.text = "[color=gold]%s [color=white]has no tasks" % resource.display_name
+			$GamemodeTasks/NoPropertiesLabel.visible = true
+			return
+		
+		$GamemodeTasks/NoPropertiesLabel.visible = false
 		
 		for task in resource.task_pool:
-			var clone: Button = template_button.duplicate(true)
-			$TaskButtons.add_child(clone)
+			var clone: RichTextLabel = $GamemodeTasks/Holder/Template.duplicate(true)
+			$GamemodeTasks/Holder.add_child(clone)
 			
 			clone.name = task.display_name.to_lower()
 			clone.text = "%s: %s" % [task.display_name, task.description]
@@ -63,18 +73,23 @@ func _update_tasks():
 func _update_paramters(gamemode: GamemodeBase):
 	var settings = gamemode.get_customisable_settings()
 	
-	for child in $GamemodeParameters.get_children():
+	for child in $GamemodeSettings/Holder.get_children():
 		if child == template_step: continue
 		child.queue_free()
 	
-	if settings.is_empty(): return
+	if settings.is_empty(): 
+		$GamemodeSettings/NoPropertiesLabel.text = "[color=gold]%s [color=white]has no properties to edit" % gamemode.display_name
+		$GamemodeSettings/NoPropertiesLabel.visible = true
+		return
+
+	$GamemodeSettings/NoPropertiesLabel.visible = false
 
 	for setting in settings:
 		var config: Dictionary = settings[setting]
 		var value = gamemode.get(setting)
 
 		var clone = template_step.duplicate()
-		$GamemodeParameters.add_child(clone)
+		$GamemodeSettings/Holder.add_child(clone)
 		
 		clone.name = setting.to_lower()
 		clone.visible = true
@@ -94,12 +109,20 @@ func _update_paramters(gamemode: GamemodeBase):
 # Button & Signal Connections
 func _on_gamemode_btn_pressed(btn: Button):
 	if selected_gamemode_btn:
+		var old_selected = selected_gamemode_btn.get_node("SelectedLabel")
+		if old_selected: old_selected.visible = false
+		
 		selected_gamemode_btn.text = selected_gamemode_btn.get_meta("Resource").display_name
 	
 	$StartButton.disabled = false
 	
-	btn.text = "[>] " + btn.text
+	var selected = btn.get_node("SelectedLabel")
+	if selected: selected.visible = true
+	
 	selected_gamemode_btn = btn
+	
+	var resource: GamemodeBase = btn.get_meta("Resource")
+	$Gamemodes/Description.text = "[color=gold]%s: [color=white]%s" % [resource.display_name, resource.description]
 	
 	_update_tasks()
 	_update_paramters(btn.get_meta("Resource"))
@@ -108,10 +131,15 @@ func _on_modifier_btn_pressed(btn: Button):
 	if selected_modifier_btns.has(btn):
 		btn.text = btn.get_meta("Resource").display_name
 		selected_modifier_btns.erase(btn)
+		
+		var old_selected = btn.get_node("SelectedLabel")
+		if old_selected: old_selected.visible = false
 	else:
 		if selected_modifier_btns.size() == 5: return
 		
-		btn.text = "[>] " + btn.text
+		var selected = btn.get_node("SelectedLabel")
+		if selected: selected.visible = true
+		
 		selected_modifier_btns.append(btn)
 
 func _on_start_btn_pressed() -> void:
@@ -131,10 +159,16 @@ func _on_start_btn_pressed() -> void:
 
 func _on_computer_btn_pressed(btn: Button):
 	if selected_computer_btn:
-		selected_computer_btn.text = selected_computer_btn.get_meta("Resource").display_name
+		var old_selected = selected_computer_btn.get_node("SelectedLabel")
+		if old_selected: old_selected.visible = false
 		
-	btn.text = "[>] " + btn.text
+	var selected = btn.get_node("SelectedLabel")
+	if selected: selected.visible = true
+	
 	selected_computer_btn = btn
-
+	
+	var resource: ComputerBase = btn.get_meta("Resource")
+	$Computers/Description.text = "[color=gold]%s: [color=white]%s" % [resource.display_name, resource.description]
+	
 func _on_return_btn_pressed() -> void:
 	Signals.change_screen.emit("main_menu")

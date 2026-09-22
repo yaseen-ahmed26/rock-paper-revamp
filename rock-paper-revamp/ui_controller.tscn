@@ -17,6 +17,25 @@ script = ExtResource("1_3ga5c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1513549206]
 
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=2073901899]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.33333334, 0.52156866, 1)
+
+[node name="Inner" type="ColorRect" parent="CanvasLayer/Background" unique_id=1857787642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.23529412, 0.37254903, 1)
+
 [node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("2_rlpp8")]
 visible = false
 

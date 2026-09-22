@@ -151,3 +151,10 @@ func reset_round():
 
 func get_lower_stat(stat_name):
 	return StatNames.keys()[stat_name].to_lower()
+
+func get_points_on_win():
+	var move_bonus: float = btn_stats[player_move].point_bonus
+	return ((base_points_on_win + bonus_points_on_win + move_bonus) * global_point_multiplier) 
+
+func get_points_on_loss():
+	return ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 

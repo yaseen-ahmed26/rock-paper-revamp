@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://wj46ygbmpnl5"]
 
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_6tl50"]
 [ext_resource type="Script" uid="uid://ccnofbw3bs2bj" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="3_t6bnd"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="4_6tl50"]
+[ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="5_6at21"]
+[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_og6xe"]
 
 [node name="main_menu" type="Control" unique_id=771054830]
 layout_mode = 3
@@ -9,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6tl50")
 script = ExtResource("1_oa53l")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=723658857]
@@ -18,16 +24,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -416.0
-offset_right = 500.0
-offset_bottom = -278.0
+offset_left = -603.0
+offset_top = -480.0
+offset_right = 603.0
+offset_bottom = -342.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 80
 text = "Rock Paper Revamped"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="Title" unique_id=608305398]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=2015590246]
 layout_mode = 1
@@ -36,25 +52,47 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -223.0
+offset_left = -248.0
 offset_top = -184.0
-offset_right = 223.0
+offset_right = 248.0
 offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="Play" type="Button" parent="MenuButtons" unique_id=969999681]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_styles/pressed = ExtResource("4_6tl50")
+theme_override_styles/hover = ExtResource("5_6at21")
+theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "PLAY"
 
 [node name="Challenges" type="Button" parent="MenuButtons" unique_id=2082929848]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_styles/pressed = ExtResource("4_6tl50")
+theme_override_styles/hover = ExtResource("5_6at21")
+theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "CHALLENGES"
 
 [node name="Quit" type="Button" parent="MenuButtons" unique_id=528483674]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_styles/pressed = ExtResource("4_6tl50")
+theme_override_styles/hover = ExtResource("5_6at21")
+theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "QUIT"

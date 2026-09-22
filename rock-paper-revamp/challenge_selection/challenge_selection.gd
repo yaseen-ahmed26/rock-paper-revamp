@@ -2,7 +2,7 @@ extends Control
 
 @export var challenge_pool: Array[ChallengeBase]
 
-@onready var template_button: Button = $TemplateButton
+@onready var template_button: Button = $ChallengeTemplateButton
 
 var selected_challenge_btn: Button
 
@@ -13,7 +13,7 @@ func _ready() -> void:
 func _create_challenge_btns():
 	for challenge in challenge_pool:
 		var clone: Button = template_button.duplicate(true)
-		$ChallengeButtons.add_child(clone)
+		$Challenges/Holder.add_child(clone)
 		
 		clone.name = challenge.display_name.to_lower()
 		clone.text = challenge.display_name
@@ -28,8 +28,8 @@ func _create_challenge_btns():
 func _update_challenge_info(challenge: ChallengeBase):
 	$ChallengeInfo/ChallengeName.text = challenge.display_name
 	$ChallengeInfo/Description.text = challenge.description
-	$ChallengeInfo/Modifiers.text = ", ".join(challenge.get_modifier_names())
-	$ChallengeInfo/Gamemode.text = challenge.get_gamemode_name()
+	$ChallengeInfo/Modifiers.text = "Modifiers: " + ", ".join(challenge.get_modifier_names())
+	$ChallengeInfo/Gamemode.text = "Gamemode: " + challenge.get_gamemode_name()
 	
 # Buttons & Signal Connections
 func _on_start_btn_pressed():
@@ -49,10 +49,13 @@ func _on_return_btn_pressed():
 func _on_challenge_btn_pressed(btn: Button):
 	if selected_challenge_btn:
 		selected_challenge_btn.text = selected_challenge_btn.get_meta("Resource").display_name
+		var old_selected = selected_challenge_btn.get_node("SelectedLabel")
+		if old_selected: old_selected.visible = false
 	
 	$StartButton.disabled = false
 	
-	btn.text = "[>] " + btn.text
 	selected_challenge_btn = btn
+	var selected = btn.get_node("SelectedLabel")
+	if selected: selected.visible = true
 
 	_update_challenge_info(btn.get_meta("Resource"))
