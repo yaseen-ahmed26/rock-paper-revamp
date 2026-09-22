@@ -130,13 +130,11 @@ func _on_start_btn_pressed() -> void:
 	)
 
 func _on_computer_btn_pressed(btn: Button):
-	if selected_gamemode_btn:
-		selected_gamemode_btn.text = selected_gamemode_btn.get_meta("Resource").display_name
-	
-	$StartButton.disabled = false
-	
+	if selected_computer_btn:
+		selected_computer_btn.text = selected_computer_btn.get_meta("Resource").display_name
+		
 	btn.text = "[>] " + btn.text
-	selected_gamemode_btn = btn
+	selected_computer_btn = btn
 
 func _on_return_btn_pressed() -> void:
 	Signals.change_screen.emit("main_menu")
