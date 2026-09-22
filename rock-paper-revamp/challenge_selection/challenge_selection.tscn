@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://blnyfekenvkrv"]
+
+[ext_resource type="Script" uid="uid://cw30lbe636f34" path="res://challenge_selection/challenge_selection.gd" id="1_uj304"]
+
+[node name="challenge_selection" type="Control" unique_id=573053736]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uj304")
+
+[node name="ContinueButton" type="Button" parent="." unique_id=1228267701]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -144.0
+offset_right = -35.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1917304867]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1884.0
+offset_top = -144.0
+offset_right = -1485.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Return"
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1498511181]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -683.0
+offset_top = 52.0
+offset_right = 683.0
+offset_bottom = 217.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 72
+text = "Challenges"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChallengeButtons" type="VBoxContainer" parent="." unique_id=1911968487]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -494.0
+offset_top = -279.0
+offset_right = -68.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChallengeInfo" type="Panel" parent="." unique_id=910123929]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 260.0
+offset_top = -223.0
+offset_right = 746.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChallengeName" type="RichTextLabel" parent="ChallengeInfo" unique_id=1500842876]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_top = 52.0
+offset_right = 486.0
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Name "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="ChallengeInfo" unique_id=802372374]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_top = 156.0
+offset_right = 486.0
+offset_bottom = 256.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Description"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Modifiers" type="RichTextLabel" parent="ChallengeInfo" unique_id=776760287]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_top = 260.0
+offset_right = 486.0
+offset_bottom = 360.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Modifiers:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gamemode" type="RichTextLabel" parent="ChallengeInfo" unique_id=1438543545]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 0
+offset_top = 364.0
+offset_right = 486.0
+offset_bottom = 464.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Gamemode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TemplateButton" type="Button" parent="." unique_id=1435241774]
+visible = false
+layout_mode = 0
+offset_left = 49.0
+offset_top = 456.0
+offset_right = 328.0
+offset_bottom = 509.0
+theme_override_font_sizes/font_size = 32
+text = "Endless"
