@@ -31,3 +31,6 @@ func get_modifier_names():
 		modifier_names.append(modifier.display_name)
 	
 	return modifier_names	
+
+func get_gamemode_name():
+	return locked_gamemode.display_name
