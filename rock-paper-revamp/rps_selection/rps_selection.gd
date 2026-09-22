@@ -120,3 +120,7 @@ func _on_start_btn_pressed() -> void:
 			"modifier_resource": modifier_resources,
 		}
 	)
+
+
+func _on_return_btn_pressed() -> void:
+	Signals.change_screen.emit("main_menu")

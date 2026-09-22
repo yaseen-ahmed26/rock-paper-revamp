@@ -47,7 +47,7 @@ layout_mode = 0
 offset_left = 49.0
 offset_top = 456.0
 offset_right = 545.0
-offset_bottom = 1033.0
+offset_bottom = 894.0
 
 [node name="TaskButtons" type="VBoxContainer" parent="." unique_id=1620867579]
 layout_mode = 0
@@ -158,4 +158,21 @@ theme_override_font_sizes/font_size = 48
 disabled = true
 text = "Start"
 
+[node name="ReturnButton" type="Button" parent="." unique_id=1225181819]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1884.0
+offset_top = -144.0
+offset_right = -1485.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Return"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_btn_pressed"]
