@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GambleComputer" format=3 uid="uid://c6x10ss5u3lsm"]
+
+[ext_resource type="Script" uid="uid://bq84ptkacsrf8" path="res://custom_resources/computer_types/scripts/gamble_computer.gd" id="1_ddetc"]
+
+[resource]
+script = ExtResource("1_ddetc")
+display_name = "The Gambler"
+description = "Take a guess, why not?"
+metadata/_custom_type_script = "uid://bq84ptkacsrf8"

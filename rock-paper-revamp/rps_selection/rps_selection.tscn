@@ -19,7 +19,10 @@
 [ext_resource type="Resource" uid="uid://vcwqqnvg6vou" path="res://custom_resources/modifiers/choice_cooldown.tres" id="17_2y74n"]
 [ext_resource type="Resource" uid="uid://dxr2sfqeuk7pa" path="res://custom_resources/modifiers/copy_cat.tres" id="18_2y74n"]
 [ext_resource type="Resource" uid="uid://bcin3364o8x50" path="res://custom_resources/modifiers/vampire_victory.tres" id="19_yfyho"]
+[ext_resource type="Script" uid="uid://n0n4mcge7f3v" path="res://custom_resources/computer_types/scripts/computer_base.gd" id="20_27unx"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
+[ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="21_5v4jf"]
+[ext_resource type="Resource" uid="uid://coxbuyn3xbe6e" path="res://custom_resources/computer_types/statistics_computer.tres" id="22_rf0ia"]
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
@@ -31,6 +34,7 @@ grow_vertical = 2
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("4_0mnpd")])
 modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho")])
+computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia")])
 
 [node name="TemplateButton" type="Button" parent="." unique_id=1642225740]
 visible = false
@@ -55,6 +59,13 @@ offset_left = 49.0
 offset_top = 106.0
 offset_right = 1108.0
 offset_bottom = 419.0
+
+[node name="ComputerButtons" type="VBoxContainer" parent="." unique_id=331892715]
+layout_mode = 0
+offset_left = 1148.0
+offset_top = 64.0
+offset_right = 1853.0
+offset_bottom = 377.0
 
 [node name="ModifierButtons" type="VBoxContainer" parent="." unique_id=2000130078]
 layout_mode = 0

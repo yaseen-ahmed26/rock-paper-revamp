@@ -2,12 +2,14 @@ extends Control
 
 @export var gamemode_pool: Array[GamemodeBase]
 @export var modifier_pool: Array[ModifierBase]
+@export var computer_pool: Array[ComputerBase]
 
 @onready var template_button: Button = $TemplateButton
 @onready var template_step: Panel = $GamemodeParameters/TemplateStep
 
 var selected_gamemode_btn: Button
 var selected_modifier_btns: Array[Button]
+var selected_computer_btn: Button
 
 func _ready() -> void:
 	for gamemode in gamemode_pool:
@@ -15,6 +17,9 @@ func _ready() -> void:
 		
 	for modifier in modifier_pool:
 		create_btn(modifier, $ModifierButtons)
+		
+	for computer in computer_pool:
+		create_btn(computer, $ComputerButtons)
 
 func _process(_delta: float) -> void:
 	pass
@@ -34,8 +39,10 @@ func create_btn(info, parent):
 	
 	if parent == $GamemodeButtons:
 		clone.pressed.connect(_on_gamemode_btn_pressed.bind(clone))
-	else:
+	elif parent == $ModifierButtons:
 		clone.pressed.connect(_on_modifier_btn_pressed.bind(clone))
+	elif parent == $ComputerButtons:
+		clone.pressed.connect(_on_computer_btn_pressed.bind(clone))
 
 func _update_tasks():
 	var resource: GamemodeBase = selected_gamemode_btn.get_meta("Resource")
@@ -118,9 +125,18 @@ func _on_start_btn_pressed() -> void:
 		{
 			"gamemode_resource": selected_gamemode_btn.get_meta("Resource"),
 			"modifier_resource": modifier_resources,
+			"computer_resource": selected_computer_btn.get_meta("Resource"),
 		}
 	)
 
+func _on_computer_btn_pressed(btn: Button):
+	if selected_gamemode_btn:
+		selected_gamemode_btn.text = selected_gamemode_btn.get_meta("Resource").display_name
+	
+	$StartButton.disabled = false
+	
+	btn.text = "[>] " + btn.text
+	selected_gamemode_btn = btn
 
 func _on_return_btn_pressed() -> void:
 	Signals.change_screen.emit("main_menu")

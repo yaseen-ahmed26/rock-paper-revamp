@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StatisticsComputer" format=3 uid="uid://coxbuyn3xbe6e"]
+
+[ext_resource type="Script" uid="uid://bsohplplb4cb7" path="res://custom_resources/computer_types/scripts/statistics_computer.gd" id="1_fte1y"]
+
+[resource]
+script = ExtResource("1_fte1y")
+id = 1
+display_name = "Statistics Guy"
+description = "The one who analyses your played moves like a spreadsheet"
+metadata/_custom_type_script = "uid://bsohplplb4cb7"
