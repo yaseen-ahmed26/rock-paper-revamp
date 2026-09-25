@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://blnyfekenvkrv"]
 
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_584du"]
 [ext_resource type="Script" uid="uid://cw30lbe636f34" path="res://challenge_selection/challenge_selection.gd" id="1_uj304"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_xauxh"]
 [ext_resource type="Resource" uid="uid://dbtqfcar5da0r" path="res://custom_resources/challenges/inverted_death.tres" id="3_6erqi"]
@@ -30,16 +31,16 @@ content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0, 0.11764706, 0.19607843, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+bg_color = Color(0, 0.11764706, 0.19607843, 0.5411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 corner_detail = 5
 
 [node name="challenge_selection" type="Control" unique_id=573053736]
@@ -49,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_584du")
 script = ExtResource("1_uj304")
 challenge_pool = Array[ExtResource("2_xauxh")]([ExtResource("3_6erqi")])
 
@@ -80,6 +82,25 @@ offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="Description" type="RichTextLabel" parent="." unique_id=848586894]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = -323.0
+offset_right = 614.0
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "In [color=green]Challenges [color=white]you cannot choose the Gamemode, Opponent or Modifiers. Once you beat it, you unlock a [color=green]Modifier"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ReturnButton" type="Button" parent="." unique_id=802591762]
 layout_mode = 1
 anchors_preset = 3
@@ -87,64 +108,66 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1903.0
-offset_top = -95.0
-offset_right = -1446.0
-offset_bottom = -20.0
+offset_left = -1901.0
+offset_top = -101.0
+offset_right = -1614.0
+offset_bottom = -48.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 48
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("4_t58ff")
 theme_override_styles/pressed = ExtResource("5_41hw2")
 theme_override_styles/hover = ExtResource("5_41hw2")
 text = "Return"
 
-[node name="StartButton" type="Button" parent="." unique_id=1546326340]
+[node name="StartButton" type="Button" parent="." unique_id=138563052]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -413.0
-offset_top = -95.0
-offset_right = -16.0
-offset_bottom = -20.0
+offset_left = -309.0
+offset_top = -101.0
+offset_right = -22.0
+offset_bottom = -48.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 48
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("4_t58ff")
 theme_override_styles/pressed = ExtResource("5_41hw2")
 theme_override_styles/hover = ExtResource("5_41hw2")
-theme_override_styles/disabled = ExtResource("6_584du")
 disabled = true
-text = "Play"
+text = "Start"
 
 [node name="Challenges" type="Panel" parent="." unique_id=11020564]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 301.0
-offset_right = 1335.0
-offset_bottom = 968.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -557.0
+offset_top = -195.0
+offset_right = 85.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_t58ff")
 
 [node name="Title" type="RichTextLabel" parent="Challenges" unique_id=160033235]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -657.0
-offset_top = 15.0
-offset_right = 657.0
-offset_bottom = 93.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 83.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "CHALLENGES"
+text = "AVAILABLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -158,18 +181,18 @@ offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Holder" type="VBoxContainer" parent="Challenges" unique_id=747370064]
+[node name="Holder" type="GridContainer" parent="Challenges" unique_id=2113910138]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 43.0
-offset_top = 129.0
+offset_top = 125.0
 offset_right = -43.0
-offset_bottom = -43.0
+offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 15
+columns = 2
 
 [node name="ChallengeTemplateButton" type="Button" parent="." unique_id=1597124917]
 visible = false
@@ -205,78 +228,89 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ChallengeInfo" type="Panel" parent="." unique_id=1717502126]
-layout_mode = 0
-offset_left = 1359.0
-offset_top = 301.0
-offset_right = 1904.0
-offset_bottom = 961.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_584du")
-
-[node name="ChallengeName" type="RichTextLabel" parent="ChallengeInfo" unique_id=1500842876]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 0
-offset_left = 43.0
-offset_top = 147.0
-offset_right = 502.0
-offset_bottom = 247.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -170.0
+offset_right = 567.0
+offset_bottom = 376.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 32
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_584du")
 
 [node name="Description" type="RichTextLabel" parent="ChallengeInfo" unique_id=802372374]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 0
-offset_left = 43.0
-offset_top = 262.0
-offset_right = 502.0
-offset_bottom = 362.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 32
+offset_left = 16.0
+offset_top = 114.0
+offset_right = 451.0
+offset_bottom = 214.0
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Description of the challenge goes here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Modifiers" type="RichTextLabel" parent="ChallengeInfo" unique_id=776760287]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 0
-offset_left = 43.0
-offset_top = 377.0
-offset_right = 502.0
-offset_bottom = 477.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 46.0
+offset_top = 308.0
+offset_right = 451.0
+offset_bottom = 512.0
 theme_override_font_sizes/normal_font_size = 25
-horizontal_alignment = 1
-vertical_alignment = 1
+bbcode_enabled = true
+text = "Modifiers: 
+- Safety Shield
+- Choice Cooldown
+- Vampire Victory"
 
-[node name="Gamemode" type="RichTextLabel" parent="ChallengeInfo" unique_id=1438543545]
-custom_minimum_size = Vector2(0, 100)
+[node name="Computer" type="RichTextLabel" parent="ChallengeInfo" unique_id=1634090650]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 492.0
-offset_right = 502.0
-offset_bottom = 592.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 267.0
+offset_right = 451.0
+offset_bottom = 303.0
 theme_override_font_sizes/normal_font_size = 25
-horizontal_alignment = 1
+bbcode_enabled = true
+text = "Opponent: The Gambler"
+vertical_alignment = 1
+
+[node name="Computer2" type="RichTextLabel" parent="ChallengeInfo" unique_id=1050238204]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 459.0
+offset_right = 451.0
+offset_bottom = 495.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Reward: None yet"
+vertical_alignment = 1
+
+[node name="Gamemode" type="RichTextLabel" parent="ChallengeInfo" unique_id=1566842268]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 226.0
+offset_right = 451.0
+offset_bottom = 262.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Gamemode: Survival"
 vertical_alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="ChallengeInfo" unique_id=1096421461]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -266.5
-offset_top = 15.0
-offset_right = 266.5
-offset_bottom = 93.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "INFORMATION"
+text = "Inverted Death"
 horizontal_alignment = 1
 vertical_alignment = 1
 

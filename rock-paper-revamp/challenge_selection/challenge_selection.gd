@@ -26,10 +26,10 @@ func _create_challenge_btns():
 		clone.pressed.connect(_on_challenge_btn_pressed.bind(clone))
 
 func _update_challenge_info(challenge: ChallengeBase):
-	$ChallengeInfo/ChallengeName.text = challenge.display_name
+	$ChallengeInfo/Title.text = challenge.display_name
 	$ChallengeInfo/Description.text = challenge.description
-	$ChallengeInfo/Modifiers.text = "Modifiers: " + ", ".join(challenge.get_modifier_names())
-	$ChallengeInfo/Gamemode.text = "Gamemode: " + challenge.get_gamemode_name()
+	$ChallengeInfo/Modifiers.text = "[color=gold]Modifiers: \n[color=white]- " + "\n- ".join(challenge.get_modifier_names())
+	$ChallengeInfo/Gamemode.text = "[color=gold]Gamemode: [color=white]" + challenge.get_gamemode_name()
 	
 # Buttons & Signal Connections
 func _on_start_btn_pressed():
