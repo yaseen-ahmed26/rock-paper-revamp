@@ -114,12 +114,15 @@ func _on_gamemode_btn_pressed(btn: Button):
 		
 		selected_gamemode_btn.text = selected_gamemode_btn.get_meta("Resource").display_name
 	
-	$StartButton.disabled = false
+	selected_gamemode_btn = btn
+	
+	if selected_computer_btn and selected_gamemode_btn:
+		$StartButton.disabled = false
+	else:
+		$StartButton.disabled = true
 	
 	var selected = btn.get_node("SelectedLabel")
 	if selected: selected.visible = true
-	
-	selected_gamemode_btn = btn
 	
 	var resource: GamemodeBase = btn.get_meta("Resource")
 	$Gamemodes/Description.text = "[color=gold]%s: [color=white]%s" % [resource.display_name, resource.description]
@@ -166,6 +169,11 @@ func _on_computer_btn_pressed(btn: Button):
 	if selected: selected.visible = true
 	
 	selected_computer_btn = btn
+	
+	if selected_computer_btn and selected_gamemode_btn:
+		$StartButton.disabled = false
+	else:
+		$StartButton.disabled = true
 	
 	var resource: ComputerBase = btn.get_meta("Resource")
 	$Computers/Description.text = "[color=gold]%s: [color=white]%s" % [resource.display_name, resource.description]
