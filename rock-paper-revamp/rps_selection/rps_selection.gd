@@ -135,6 +135,11 @@ func _on_gamemode_btn_pressed(btn: Button):
 	
 	$Gamemodes/Description.text = resource.description
 	
+	if selected_computer_btn and selected_gamemode:
+		$StartButton.disabled = false
+	else:
+		$StartButton.disabled = true
+	
 	_on_pick_gamemode_btn_pressed()
 	_update_paramters(resource)
 	_update_tasks(resource)
