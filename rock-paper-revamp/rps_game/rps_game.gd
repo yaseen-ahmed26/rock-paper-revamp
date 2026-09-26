@@ -139,6 +139,15 @@ func _set_overlay_info():
 # Modifier Helpers
 func _animate_used_modifiers() -> void:
 	for mod_id in game_stats.round_activated_modifiers:
+		var current_modifier: ModifierBase
+		
+		for modifier in modifiers:
+			if modifier.id == mod_id:
+				current_modifier = modifier
+		
+		if not current_modifier: continue
+		if current_modifier.exclude_badge: continue
+		
 		var lower_id: String = ModifierBase.ID.keys()[mod_id].to_lower()
 		var label = modifiers_active.get_node(lower_id)
 		
