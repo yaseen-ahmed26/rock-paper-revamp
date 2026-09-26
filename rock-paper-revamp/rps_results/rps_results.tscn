@@ -452,3 +452,7 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1139321141]
 libraries/ = SubResource("AnimationLibrary_suytl")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_btn_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]

@@ -283,7 +283,12 @@ func _end_game():
 		if task_completed:
 			print("%s has been completed!" % task.display_name)
 	
-	Signals.change_screen.emit("rps_selection")
+	Signals.change_screen.emit("rps_results", {
+		"stats": game_stats,
+		"gamemode_name": gamemode.display_name,
+		"opponent_name": computer.display_name,
+		"modifier_count": modifiers.size()
+	})
 
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
