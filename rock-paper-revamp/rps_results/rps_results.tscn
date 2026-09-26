@@ -1,0 +1,454 @@
+[gd_scene format=3 uid="uid://bxshdhv2jslts"]
+
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_86bf1"]
+[ext_resource type="Script" uid="uid://c1pscoi6e3xtx" path="res://rps_results/rps_results.gd" id="2_qqsv3"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="3_suytl"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="4_qcdt5"]
+[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="5_fvl05"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgijt"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.11764706, 0.19607843, 0.5411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="Animation" id="Animation_86bf1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Points:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2023, 375)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RoundBreakdown:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2023, 659)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RoundsPlayed:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2023, 517)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayedMoves:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MatchMeta:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RestartButton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(801, 1135)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ReturnButton:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(424, 1135)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("StartButton:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1175, 1135)]
+}
+
+[sub_resource type="Animation" id="Animation_qqsv3"]
+resource_name = "show_results"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Points:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2023, 375), Vector2(387, 375)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RoundBreakdown:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2023, 659), Vector2(2023, 659), Vector2(387, 659)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RoundsPlayed:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2023, 517), Vector2(2023, 517), Vector2(387, 517)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayedMoves:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MatchMeta:modulate")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RestartButton:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(801, 1135), Vector2(801, 1135), Vector2(801, 983)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ReturnButton:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(424, 1135), Vector2(424, 1135), Vector2(424, 983)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("StartButton:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1175, 1135), Vector2(1175, 1135), Vector2(1175, 983)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_suytl"]
+_data = {
+&"RESET": SubResource("Animation_86bf1"),
+&"show_results": SubResource("Animation_qqsv3")
+}
+
+[node name="rps_results" type="Control" unique_id=1683650170]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_86bf1")
+script = ExtResource("2_qqsv3")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1491749790]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -505.0
+offset_right = 303.0
+offset_bottom = -419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 54
+text = "Results"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="Title" unique_id=207376591]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=1876163371]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = -406.0
+offset_right = 614.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "View how well you did against your opponent. Did bad? [color=green]Retry[color=white], or [color=green]start a new game[color=white]."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="." unique_id=925063318]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4171875
+anchor_top = 0.91018516
+anchor_right = 0.5953125
+anchor_bottom = 0.9675926
+offset_top = 152.0
+offset_bottom = 151.9989
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_suytl")
+theme_override_styles/pressed = ExtResource("4_qcdt5")
+theme_override_styles/hover = ExtResource("4_qcdt5")
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnButton" type="Button" parent="." unique_id=560134346]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22083333
+anchor_top = 0.91018516
+anchor_right = 0.39895833
+anchor_bottom = 0.9675926
+offset_top = 152.0
+offset_bottom = 151.9989
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_suytl")
+theme_override_styles/pressed = ExtResource("4_qcdt5")
+theme_override_styles/hover = ExtResource("4_qcdt5")
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="Button" parent="." unique_id=5875996]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6119792
+anchor_top = 0.91018516
+anchor_right = 0.79010415
+anchor_bottom = 0.9675926
+offset_top = 152.0
+offset_bottom = 151.9989
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_suytl")
+theme_override_styles/pressed = ExtResource("4_qcdt5")
+theme_override_styles/hover = ExtResource("4_qcdt5")
+theme_override_styles/disabled = ExtResource("5_fvl05")
+text = "New Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="MatchMeta" type="RichTextLabel" parent="." unique_id=2122130501]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -612.0
+offset_top = -238.0
+offset_right = 616.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Gamemode: [color=gold]First to [color=white]| Opponent: [color=gold]The Gambler [color=white]| Modifiers: [color=gold]3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayedMoves" type="RichTextLabel" parent="." unique_id=986217867]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -610.0
+offset_top = 239.0
+offset_right = 618.0
+offset_bottom = 301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "And you also played [color=gold]Rock 4 times[color=white], [color=gold]Scissors 2 times [color=white]and [color=gold]Scissors 1 time[color=white]."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="Panel" parent="." unique_id=1796255788]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 0
+offset_left = 2023.0
+offset_top = 375.0
+offset_right = 3169.0005
+offset_bottom = 485.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jgijt")
+
+[node name="Label" type="RichTextLabel" parent="Points" unique_id=1362332689]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[color=white][You] [color=red]2 [color=white]• [color=gold]5 [color=white][AI]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundsPlayed" type="Panel" parent="." unique_id=392733359]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 0
+offset_left = 2023.0
+offset_top = 517.0
+offset_right = 3169.0024
+offset_bottom = 627.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jgijt")
+
+[node name="Label" type="RichTextLabel" parent="RoundsPlayed" unique_id=1468641933]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Played [color=gold]5/5 [color=white]rounds with a [color=gold]3 [color=white]best win streak"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundBreakdown" type="Panel" parent="." unique_id=700833456]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 0
+offset_left = 2023.0
+offset_top = 659.0
+offset_right = 3168.9993
+offset_bottom = 769.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jgijt")
+
+[node name="Label" type="RichTextLabel" parent="RoundBreakdown" unique_id=2137715149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[Wins] [color=gold]5 [color=white
+]| [Losses] [color=gold]4 [color=white]| [Draws] [color=gold]0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1139321141]
+libraries/ = SubResource("AnimationLibrary_suytl")
