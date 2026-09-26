@@ -105,7 +105,6 @@ func _start_round():
 func _end_round():
 	round_timer.stop()
 	modifier_timer.stop()
-	_toggle_move_btns(true)
 	
 	game_stats.computer_move = computer.pick_move(game_stats)
 	var player_move: String = game_stats.player_move
@@ -148,7 +147,8 @@ func _end_round():
 	
 	if game_over:
 		continue_btn.text = "End"
-		
+	
+	_toggle_move_btns(true)
 	continue_btn.visible = true
 	
 func _end_game():
