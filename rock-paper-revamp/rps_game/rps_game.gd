@@ -19,6 +19,7 @@ var modifiers: Array[ModifierBase] = []
 var game_stats: GameStats
 
 var game_over: bool = false
+var game_paused: bool = false
 
 # Godot Specific
 func _ready() -> void:
@@ -30,6 +31,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if round_timer.is_stopped(): return
+	if game_paused: return
 	
 	var seconds: int = int(round_timer.time_left) % 60	
 	time_left.text = "00:%02d" % [seconds]
@@ -46,6 +48,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_3:
 				var btn = move_btns.get_node("scissors")
 				_on_move_btn_pressed(btn)
+			KEY_ESCAPE:
+				_show_overlay()
 
 # Helpers
 func _determine_outcome():
@@ -93,10 +97,27 @@ func _update_ui():
 		btn.disabled = stat.lock
 		
 		btn.set_meta("Value", stat.actual_move)
+
+func _show_overlay():
+	var tween: Tween = create_tween()
+	var overlay: ColorRect = $Overlay
 	
+	if game_paused:
+		tween.tween_property(overlay, "modulate:a", 0.0, 0.5)
+		overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	else:
+		tween.tween_property(overlay, "modulate:a", 1.0, 0.5)
+		overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	
+	game_paused = not game_paused
+
+	$RoundTimer.paused = game_paused
+	$ModifierTimer.paused = game_paused
+
 # Game Logic
 func _restart_game():
 	game_over = false
+	game_paused = false
 	_start_game()
 
 func _start_game():
@@ -194,7 +215,7 @@ func _end_game():
 			print("%s has been completed!" % task.display_name)
 	
 	Signals.change_screen.emit("rps_selection")
-	
+
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
 	if not game_stats.player_move.is_empty():
