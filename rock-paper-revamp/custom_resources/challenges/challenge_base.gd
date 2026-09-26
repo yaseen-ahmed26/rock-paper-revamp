@@ -2,7 +2,10 @@ extends Resource
 class_name ChallengeBase
 
 enum ID {
-	INVERTED_DEATH
+	INVERTED_DEATH,
+	PRESSURE_COOKER,
+	DEFICIT_HUSTLE,
+	CALCULATED_RISK
 }
 
 enum Difficulty {

@@ -5,8 +5,11 @@
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_xauxh"]
 [ext_resource type="Resource" uid="uid://dbtqfcar5da0r" path="res://custom_resources/challenges/inverted_death.tres" id="3_6erqi"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="4_t58ff"]
+[ext_resource type="Resource" uid="uid://cvra6lkuow374" path="res://custom_resources/challenges/deficit_hustle.tres" id="5_6b2la"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="5_41hw2"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_584du"]
+[ext_resource type="Resource" uid="uid://bellvy1a6cvv6" path="res://custom_resources/challenges/calculated_risk.tres" id="6_e8w8b"]
+[ext_resource type="Resource" uid="uid://nxqm3sefovvv" path="res://custom_resources/challenges/pressure_cooker.tres" id="7_1sq0s"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="7_41hw2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t58ff"]
@@ -52,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_584du")
 script = ExtResource("1_uj304")
-challenge_pool = Array[ExtResource("2_xauxh")]([ExtResource("3_6erqi")])
+challenge_pool = Array[ExtResource("2_xauxh")]([ExtResource("3_6erqi"), ExtResource("5_6b2la"), ExtResource("6_e8w8b"), ExtResource("7_1sq0s")])
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1690062627]
 layout_mode = 1
@@ -192,15 +195,16 @@ offset_right = -43.0
 offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="ChallengeTemplateButton" type="Button" parent="." unique_id=1597124917]
+[node name="TemplateButton" type="Button" parent="Challenges/Holder" unique_id=1597124917]
 visible = false
-layout_mode = 0
-offset_left = -401.0
-offset_top = 456.0
-offset_right = -122.0
-offset_bottom = 509.0
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
@@ -209,8 +213,9 @@ theme_override_styles/pressed = ExtResource("4_t58ff")
 theme_override_styles/hover = ExtResource("7_41hw2")
 theme_override_styles/disabled = ExtResource("6_584du")
 text = "Endless"
+autowrap_mode = 2
 
-[node name="SelectedLabel" type="RichTextLabel" parent="ChallengeTemplateButton" unique_id=1466183607]
+[node name="SelectedLabel" type="RichTextLabel" parent="Challenges/Holder/TemplateButton" unique_id=1466183607]
 visible = false
 layout_mode = 1
 anchors_preset = -1

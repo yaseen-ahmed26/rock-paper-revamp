@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ChallengeBase" format=3 uid="uid://nxqm3sefovvv"]
+
+[ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="1_ly6a6"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_uvhg5"]
+[ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="2_lucfw"]
+[ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_ptc0q"]
+[ext_resource type="Resource" uid="uid://qwqhc23swyyr" path="res://custom_resources/modifiers/duel_decay.tres" id="4_3ryyu"]
+[ext_resource type="Resource" uid="uid://i5wc3mxyy125" path="res://custom_resources/modifiers/gridlocked_growth.tres" id="5_p1y6x"]
+[ext_resource type="Resource" uid="uid://ddib4salimeri" path="res://custom_resources/modifiers/fifty_fifty.tres" id="6_mf6rh"]
+
+[resource]
+script = ExtResource("2_ptc0q")
+id = 1
+display_name = "Pressure Cooker"
+description = "Draws ramp up the multiplier and drain your timer."
+difficulty = 1
+reward = "None"
+locked_gamemode = ExtResource("2_lucfw")
+locked_modifiers = Array[ExtResource("1_uvhg5")]([ExtResource("4_3ryyu"), ExtResource("5_p1y6x"), ExtResource("6_mf6rh")])
+locked_computer = ExtResource("1_ly6a6")
+metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

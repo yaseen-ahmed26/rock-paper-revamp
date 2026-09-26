@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dfwyckbxsb68e"]
+
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_gi67h"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_il362"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="2_qd2c1"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_pfmij"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_qd2c1"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_ip07k"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="7_ip07k"]
+[ext_resource type="Script" uid="uid://cy32uleuvbseq" path="res://custom_resources/shared/triggers/point_difference_trigger.gd" id="8_w3iba"]
+
+[sub_resource type="Resource" id="Resource_gxhd6"]
+script = ExtResource("2_qd2c1")
+multiply = 2
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_w3iba"]
+script = ExtResource("7_ip07k")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_arfw3"]
+script = ExtResource("8_w3iba")
+target = 1
+position = 1
+how_much_by = 2.0
+metadata/_custom_type_script = "uid://cy32uleuvbseq"
+
+[resource]
+script = ExtResource("2_il362")
+id = 14
+display_name = "Helping Hand"
+description = "If you are losing by 2 or more points, your next win is doubled."
+group = 2
+timing = 1
+triggers = Array[ExtResource("5_ip07k")]([SubResource("Resource_w3iba"), SubResource("Resource_arfw3")])
+effects = Array[ExtResource("1_gi67h")]([SubResource("Resource_gxhd6")])
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

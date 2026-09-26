@@ -1,8 +1,8 @@
 extends Control
 
 @export var challenge_pool: Array[ChallengeBase]
+@onready var template_button: Button = $Challenges/Holder/TemplateButton
 
-@onready var template_button: Button = $ChallengeTemplateButton
 
 var selected_challenge_btn: Button
 
