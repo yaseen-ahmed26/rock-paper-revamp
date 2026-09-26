@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ChallengeBase" format=3 uid="uid://dbtqfcar5da0r"]
 
 [ext_resource type="Resource" uid="uid://bini64moj23e3" path="res://custom_resources/gamemodes/survival.tres" id="1_4blso"]
+[ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="1_mpymf"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_rwhai"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_obdqj"]
 [ext_resource type="Resource" uid="uid://dl7pn0tynjg05" path="res://custom_resources/modifiers/rule_reversal.tres" id="3_mpymf"]
@@ -11,6 +12,8 @@
 script = ExtResource("2_obdqj")
 display_name = "Inverted Death"
 description = "Lose your streak by losing.. or winning..?"
+reward = "None"
 locked_gamemode = ExtResource("1_4blso")
 locked_modifiers = Array[ExtResource("1_rwhai")]([ExtResource("3_mpymf"), ExtResource("4_534tb"), ExtResource("5_lx1ti")])
+locked_computer = ExtResource("1_mpymf")
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

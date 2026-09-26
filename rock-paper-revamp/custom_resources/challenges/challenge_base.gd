@@ -16,10 +16,12 @@ enum Difficulty {
 @export var display_name: String
 @export var description: String
 @export var difficulty: Difficulty
+@export var reward: String
 
 @export_group("Rules")
 @export var locked_gamemode: GamemodeBase
 @export var locked_modifiers: Array[ModifierBase]
+@export var locked_computer: ComputerBase
 
 func get_lower_difficulty():
 	return Difficulty.keys()[difficulty].to_lower()
@@ -34,3 +36,6 @@ func get_modifier_names():
 
 func get_gamemode_name():
 	return locked_gamemode.display_name
+
+func get_opponent_name():
+	return locked_computer.display_name
