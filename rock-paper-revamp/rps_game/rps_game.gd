@@ -96,6 +96,11 @@ func _update_ui():
 		btn.visible = stat.visible
 		btn.disabled = stat.lock
 		
+		if stat.lock:
+			btn.get_node("Keybind").visible = false
+		else:
+			btn.get_node("Keybind").visible = true
+		
 		btn.set_meta("Value", stat.actual_move)
 
 func _show_overlay():
@@ -234,6 +239,8 @@ func _end_game():
 
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
+	if btn.disabled: return
+	
 	if not game_stats.player_move.is_empty():
 		var old_btn: Button = move_btns.get_node(game_stats.player_move)
 		old_btn.get_node("SelectedLabel").visible = false
