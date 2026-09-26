@@ -34,6 +34,19 @@ func _process(_delta: float) -> void:
 	var seconds: int = int(round_timer.time_left) % 60	
 	time_left.text = "00:%02d" % [seconds]
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_1:
+				var btn = move_btns.get_node("rock")
+				_on_move_btn_pressed(btn)
+			KEY_2:
+				var btn = move_btns.get_node("paper")
+				_on_move_btn_pressed(btn)
+			KEY_3:
+				var btn = move_btns.get_node("scissors")
+				_on_move_btn_pressed(btn)
+
 # Helpers
 func _determine_outcome():
 	var player_move = game_stats.player_move
@@ -52,6 +65,11 @@ func _toggle_move_btns(state: bool):
 	for btn: Button in move_btns.get_children():
 		btn.disabled = state
 		
+		if state:
+			btn.get_node("Keybind").visible = false
+		else:
+			btn.get_node("Keybind").visible = true
+		
 func _update_ui():
 	$Scoreboard.text = "[You] %d • %d [AI]" % [
 		game_stats.player_points,
@@ -69,6 +87,7 @@ func _update_ui():
 	for btn: Button in move_btns.get_children():
 		var stat: MoveStat = game_stats.btn_stats.get(btn.name.to_lower())
 		
+		btn.name = stat.actual_move
 		btn.text = stat.display_text
 		btn.visible = stat.visible
 		btn.disabled = stat.lock
@@ -90,6 +109,10 @@ func _start_game():
 	_start_round()
 	
 func _start_round():
+	if not game_stats.player_move.is_empty():
+		var old_btn: Button = move_btns.get_node(game_stats.player_move)	
+		old_btn.get_node("SelectedLabel").visible = false
+	
 	game_stats.reset_round()
 	
 	$MovesPicked.visible = false
@@ -174,7 +197,14 @@ func _end_game():
 	
 # Button & Siganl Connections
 func _on_move_btn_pressed(btn: Button):
+	if not game_stats.player_move.is_empty():
+		var old_btn: Button = move_btns.get_node(game_stats.player_move)
+		old_btn.get_node("SelectedLabel").visible = false
+	
 	game_stats.player_move = btn.get_meta("Value")
+
+	var selected_label = btn.get_node("SelectedLabel")
+	if selected_label: selected_label.visible = true
 
 func on_screen_change(information: Dictionary):
 	gamemode = information.get("gamemode_resource")

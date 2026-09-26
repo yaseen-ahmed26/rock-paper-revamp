@@ -43,36 +43,120 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("2_cm4xy")
 theme_override_styles/pressed = ExtResource("3_j8q1b")
 theme_override_styles/hover = ExtResource("4_isxwt")
 theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Rock"
 
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Rock" unique_id=1393121460]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[color=gold]SELECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Rock" unique_id=1567809039]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -28.0
+offset_right = 69.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "[1]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Paper" type="Button" parent="MoveButtons" unique_id=1697466638]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("2_cm4xy")
 theme_override_styles/pressed = ExtResource("3_j8q1b")
 theme_override_styles/hover = ExtResource("4_isxwt")
 theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Paper"
 
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1675664823]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -28.0
+offset_right = 70.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "[2]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1341792947]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[color=gold]SELECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Scissors" type="Button" parent="MoveButtons" unique_id=417781502]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("2_cm4xy")
 theme_override_styles/pressed = ExtResource("3_j8q1b")
 theme_override_styles/hover = ExtResource("4_isxwt")
 theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Scissors"
+
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=978563079]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[color=gold]SELECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=1374204262]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -28.0
+offset_right = 69.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "[3]"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimeLeft" type="RichTextLabel" parent="." unique_id=584951318]
 layout_mode = 1
