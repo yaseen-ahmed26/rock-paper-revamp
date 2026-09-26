@@ -24,8 +24,8 @@ func _ready() -> void:
 	for modifier in modifier_pool:
 		_create_btn(
 			modifier,
-			$Modifiers/Holder,
-			$Modifiers/Holder/TemplateButton,
+			$Modifiers/ScrollContainer/Holder,
+			$Modifiers/ScrollContainer/Holder/TemplateButton,
 			_on_modifier_btn_pressed
 		)
 		
