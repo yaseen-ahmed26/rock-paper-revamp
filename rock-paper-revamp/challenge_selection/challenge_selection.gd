@@ -30,6 +30,8 @@ func _update_challenge_info(challenge: ChallengeBase):
 	$ChallengeInfo/Description.text = challenge.description
 	$ChallengeInfo/Modifiers.text = "[color=gold]Modifiers: \n[color=white]- " + "\n- ".join(challenge.get_modifier_names())
 	$ChallengeInfo/Gamemode.text = "[color=gold]Gamemode: [color=white]" + challenge.get_gamemode_name()
+	$ChallengeInfo/Reward.text = "[color=gold]Reward: [color=white]" + challenge.reward
+	$ChallengeInfo/Computer.text = "[color=gold]Opponent: [color=white]" + challenge.get_opponent_name()
 	
 # Buttons & Signal Connections
 func _on_start_btn_pressed():
@@ -40,6 +42,7 @@ func _on_start_btn_pressed():
 		{
 			"gamemode_resource": challenge.locked_gamemode,
 			"modifier_resource": challenge.locked_modifiers,
+			"computer_resource": challenge.locked_computer,
 		}
 	)
 	

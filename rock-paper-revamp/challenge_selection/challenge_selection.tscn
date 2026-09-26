@@ -251,7 +251,6 @@ offset_right = 451.0
 offset_bottom = 214.0
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "Description of the challenge goes here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -264,10 +263,6 @@ offset_right = 451.0
 offset_bottom = 512.0
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "Modifiers: 
-- Safety Shield
-- Choice Cooldown
-- Vampire Victory"
 
 [node name="Computer" type="RichTextLabel" parent="ChallengeInfo" unique_id=1634090650]
 layout_mode = 0
@@ -277,10 +272,9 @@ offset_right = 451.0
 offset_bottom = 303.0
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "Opponent: The Gambler"
 vertical_alignment = 1
 
-[node name="Computer2" type="RichTextLabel" parent="ChallengeInfo" unique_id=1050238204]
+[node name="Reward" type="RichTextLabel" parent="ChallengeInfo" unique_id=1050238204]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 459.0
@@ -288,7 +282,6 @@ offset_right = 451.0
 offset_bottom = 495.0
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "Reward: None yet"
 vertical_alignment = 1
 
 [node name="Gamemode" type="RichTextLabel" parent="ChallengeInfo" unique_id=1566842268]
@@ -299,7 +292,6 @@ offset_right = 451.0
 offset_bottom = 262.0
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "Gamemode: Survival"
 vertical_alignment = 1
 
 [node name="Title" type="RichTextLabel" parent="ChallengeInfo" unique_id=1096421461]
@@ -310,7 +302,7 @@ offset_bottom = 96.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "Inverted Death"
+text = "None Selected"
 horizontal_alignment = 1
 vertical_alignment = 1
 
