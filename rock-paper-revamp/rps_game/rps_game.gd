@@ -5,6 +5,7 @@ extends Control
 @onready var time_left: RichTextLabel = $TimeLeft
 @onready var move_btns: HBoxContainer = $MoveButtons
 @onready var streak: RichTextLabel = $Streak
+@onready var modifiers_active: VBoxContainer = $ModifiersActive
 
 const RULES: Dictionary = {
 	"rock": "scissors",
@@ -103,6 +104,7 @@ func _update_ui():
 		
 		btn.set_meta("Value", stat.actual_move)
 
+# Overlay Logic
 func _show_overlay():
 	var tween: Tween = create_tween()
 	var overlay: ColorRect = $Overlay
@@ -134,6 +136,33 @@ func _set_overlay_info():
 		gamemode.description
 	]
 
+# Modifier Helpers
+func _animate_used_modifiers() -> void:
+	for mod_id in game_stats.round_activated_modifiers:
+		var lower_id: String = ModifierBase.ID.keys()[mod_id].to_lower()
+		var label = modifiers_active.get_node(lower_id)
+		
+		_flash_label(label)
+
+func _flash_label(label: RichTextLabel) -> void:
+	label.visible = true
+	label.modulate = Color.GREEN
+	
+	await get_tree().create_timer(0.5).timeout
+	label.modulate = Color.WHITE
+
+	await get_tree().create_timer(0.5).timeout
+	label.modulate = Color.GREEN
+	
+	await get_tree().create_timer(0.5).timeout
+	label.modulate = Color.WHITE
+	
+	await get_tree().create_timer(0.5).timeout
+	label.modulate = Color.GREEN
+
+	await get_tree().create_timer(0.5).timeout
+	label.visible = false
+
 # Game Logic
 func _restart_game():
 	game_over = false
@@ -141,6 +170,15 @@ func _restart_game():
 	_start_game()
 
 func _start_game():
+	for modifier in modifiers:
+		var clone = $ModifiersActive/Template.duplicate()
+		var lower_id: String = ModifierBase.ID.keys()[modifier.id].to_lower()
+		$ModifiersActive.add_child(clone)
+	
+		clone.text = modifier.display_name
+		clone.visible = false
+		clone.name = lower_id
+	
 	game_stats = GameStats.new()
 	
 	gamemode.apply_stats_edit(game_stats)
@@ -182,6 +220,7 @@ func _end_round():
 	game_stats.outcome = _determine_outcome()
 	
 	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END)	
+	_animate_used_modifiers()
 	
 	game_stats.record_round_stats()
 	game_stats.apply_round_outcome()

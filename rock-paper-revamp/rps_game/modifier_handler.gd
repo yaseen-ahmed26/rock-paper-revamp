@@ -1,13 +1,5 @@
 extends Node
 
-"""
-1. Loop through all Modifiers and apply them
-2. Apply some Modifiers at some points
-	- Round Start
-	- Round End
-	- Every Second
-"""
-
 func apply_initial_modifiers(stats: GameStats, modifiers: Array[ModifierBase]):
 	for modifier in modifiers:
 		if modifier.stats_to_edit.is_empty(): continue

@@ -239,8 +239,27 @@ text = "You picked rock against the AI's Paper"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
-script = ExtResource("3_ynb1k")
+[node name="ModifiersActive" type="VBoxContainer" parent="." unique_id=2124778655]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 45.0
+offset_top = -214.0
+offset_right = 269.0
+offset_bottom = 214.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Template" type="RichTextLabel" parent="ModifiersActive" unique_id=1285784742]
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 21
+text = "Safety Shield"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ActionButton" type="Button" parent="." unique_id=904768575]
 layout_mode = 0
@@ -357,6 +376,9 @@ Max Points: 3
 Modifiers Active: [Safety Shield, Choice Cooldown, Vampire Victory]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
+script = ExtResource("3_ynb1k")
 
 [connection signal="pressed" from="ActionButton" to="." method="_on_action_btn_pressed"]
 [connection signal="pressed" from="Overlay/QuitButton" to="." method="_on_quit_btn_pressed"]
