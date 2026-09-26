@@ -19,5 +19,6 @@ display_name = "Artificial Advantage"
 description = "The AI gets an extra poiint when you lose"
 group = 1
 timing = 1
+exclude_badge = true
 stats_to_edit = Array[ExtResource("3_gwajy")]([SubResource("Resource_eafm8")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

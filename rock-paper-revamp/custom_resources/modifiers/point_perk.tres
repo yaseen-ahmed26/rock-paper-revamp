@@ -19,5 +19,6 @@ display_name = "Point Perk"
 description = "Get an additional point for every win"
 group = 1
 timing = 1
+exclude_badge = true
 stats_to_edit = Array[ExtResource("3_pbm5a")]([SubResource("Resource_q8ye8")])
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

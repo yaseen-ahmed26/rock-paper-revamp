@@ -15,7 +15,13 @@ enum ID {
 	RANDOM_RESET,
 	FIFTY_FIFTY,
 	DOUBLE_DOWN,
-	PITY_POINTS
+	PITY_POINTS,
+	HELPING_HAND,
+	REPEAT_REWARD,
+	DUEL_DECAY,
+	WINNERS_WEAKNESS,
+	GRIDLOCKED_GROWTH,
+	HEINOUS_HEIST
 }
 enum Group {
 	UI,
@@ -46,8 +52,10 @@ enum TriggerType {
 @export var timing: ApplyAt
 ## Dictates how many triggers need to be met to apply the Modifier
 @export var trigger_type: TriggerType
-## If True, only applies the Modifier once, then it is removed from the list.
+## If true, only applies the Modifier once, then it is removed from the list.
 @export var one_shot: bool = false
+## If true, when this Modifier is applied, it does not flash a badge on the UI.
+@export var exclude_badge: bool = false
 ## The modifiers to blacklist when this one is selected.
 @export var modifier_blacklist: Array[ID]
 ## Stat changes apply when the game starts up
