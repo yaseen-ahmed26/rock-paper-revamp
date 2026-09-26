@@ -114,6 +114,21 @@ func _show_overlay():
 	$RoundTimer.paused = game_paused
 	$ModifierTimer.paused = game_paused
 
+func _set_overlay_info():
+	var modifier_names: Array = []
+	for m in modifiers: 
+		modifier_names.append(m.display_name)
+	
+	$Overlay/MatchInfo.text = "Max Points: %s\nMax Rounds: %s\nModifiers Active:\n[%s]" % [
+		"Infinite" if game_stats.max_points == -1 else str(game_stats.max_points),
+		"Infinite" if game_stats.total_rounds == -1 else str(game_stats.total_rounds),
+		", ".join(modifier_names)
+	]
+	$Overlay/GamemodeInfo.text = "[color=gold]%s: [color=white]%s" % [
+		gamemode.display_name,
+		gamemode.description
+	]
+
 # Game Logic
 func _restart_game():
 	game_over = false
@@ -127,6 +142,7 @@ func _start_game():
 	$ModifierHandler.apply_initial_modifiers(game_stats, modifiers)
 	
 	_update_ui()
+	_set_overlay_info()
 	_start_round()
 	
 func _start_round():
