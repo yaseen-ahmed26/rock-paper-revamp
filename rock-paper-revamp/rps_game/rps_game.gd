@@ -4,7 +4,6 @@ extends Control
 @onready var round_timer: Timer = $RoundTimer
 @onready var time_left: RichTextLabel = $TimeLeft
 @onready var move_btns: HBoxContainer = $MoveButtons
-@onready var continue_btn: Button = $ContinueButton
 @onready var streak: RichTextLabel = $Streak
 
 const RULES: Dictionary = {
@@ -54,11 +53,11 @@ func _toggle_move_btns(state: bool):
 		btn.disabled = state
 		
 func _update_ui():
-	$Scoreboard.text = "[You] %d · %d [AI]" % [
+	$Scoreboard.text = "[You] %d • %d [AI]" % [
 		game_stats.player_points,
 		game_stats.computer_points
 	]
-	$Streak.text = "Streak [%d]\nBest [%d]" % [
+	$Streak.text = "[%d] Streak\n[%d] Best" % [
 		game_stats.current_streak,
 		game_stats.best_streak
 	]
@@ -77,6 +76,10 @@ func _update_ui():
 		btn.set_meta("Value", stat.actual_move)
 	
 # Game Logic
+func _restart_game():
+	game_over = false
+	_start_game()
+
 func _start_game():
 	game_stats = GameStats.new()
 	
@@ -91,7 +94,9 @@ func _start_round():
 	
 	$MovesPicked.visible = false
 	$RoundEnd.visible = false
-	continue_btn.visible = false
+
+	$ActionButton.text = "End Round"
+	$ActionButton.set_meta("Mode", "RoundEnd")
 	
 	_toggle_move_btns(false)
 	
@@ -115,12 +120,14 @@ func _end_round():
 	
 	game_stats.record_round_stats()
 	game_stats.apply_round_outcome()
-	
+		
 	$RoundEnd.visible = true
 	$MovesPicked.visible = true
 	
-	$MovesPicked.text = "[color=white]You picked [color=gold]%s [color=white]against your opponent's [color=gold]%s" % [
+	$TimeLeft.text = "00:00"
+	$MovesPicked.text = "[color=white]You picked [color=gold]%s [color=white]against %s's [color=gold]%s" % [
 		player_move.capitalize(),
+		computer.display_name,
 		game_stats.computer_move.capitalize()
 	]
 	
@@ -144,12 +151,15 @@ func _end_round():
 			print("%s has been completed!" % task.display_name)
 		
 	game_over = gamemode.is_game_over(game_stats)
-	
+		
 	if game_over:
-		continue_btn.text = "End"
+		$ActionButton.text = "End Game"
+		$ActionButton.set_meta("Mode", "GameOver")
+	else:
+		$ActionButton.text = "Next Round"
+		$ActionButton.set_meta("Mode", "NextRound")
 	
 	_toggle_move_btns(true)
-	continue_btn.visible = true
 	
 func _end_game():
 	for task in gamemode.task_pool:
@@ -166,19 +176,35 @@ func _end_game():
 func _on_move_btn_pressed(btn: Button):
 	game_stats.player_move = btn.get_meta("Value")
 
-func _on_continue_btn_pressed():
-	if game_over:
-		_end_game()
-	else:
-		_start_round()
-
 func on_screen_change(information: Dictionary):
 	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
 	computer = information.get("computer_resource")
-	print(gamemode.display_name)
+	
 	_start_game()
 
 func _on_modifier_timeout():
 	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.EVERY_SECOND)
 	_update_ui()
+
+func _on_continue_btn_pressed():
+	if game_over:
+		_end_game()
+	else:
+		_start_round()
+		
+func _on_restart_btn_pressed():
+	_restart_game()
+	
+func _on_quit_btn_pressed():
+	_end_game()
+	
+func _on_action_btn_pressed():
+	var mode: String = $ActionButton.get_meta("Mode")
+	
+	if mode == "RoundEnd":
+		_end_round()
+	elif mode == "GameOver":
+		_end_game()
+	elif mode == "NextRound":
+		_start_round()

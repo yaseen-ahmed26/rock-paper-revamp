@@ -31,9 +31,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -471.0
-offset_top = 306.0
+offset_top = 226.0
 offset_right = 471.0
-offset_bottom = 384.0
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 18
@@ -91,20 +91,20 @@ vertical_alignment = 1
 
 [node name="Streak" type="RichTextLabel" parent="." unique_id=116353562]
 layout_mode = 1
-offset_left = 37.0
-offset_top = 43.0
-offset_right = 322.0
-offset_bottom = 204.0
+offset_left = 25.0
+offset_top = 58.0
+offset_right = 310.0
+offset_bottom = 219.0
 theme_override_font_sizes/normal_font_size = 34
 text = "Streak: 0
 Best: 0"
 
 [node name="RoundsPlayed" type="RichTextLabel" parent="." unique_id=1459284669]
 layout_mode = 1
-offset_left = 1583.0
-offset_top = 46.0
-offset_right = 1868.0
-offset_bottom = 124.0
+offset_left = 1513.0
+offset_top = 58.0
+offset_right = 1900.0
+offset_bottom = 164.0
 theme_override_font_sizes/normal_font_size = 34
 text = "Round 1/inf"
 horizontal_alignment = 2
@@ -155,29 +155,125 @@ text = "You picked rock against the AI's Paper"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ContinueButton" type="Button" parent="." unique_id=270497526]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -379.0
-offset_top = -136.0
-offset_right = -55.0
-offset_bottom = -61.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
+script = ExtResource("3_ynb1k")
+
+[node name="ActionButton" type="Button" parent="." unique_id=904768575]
+layout_mode = 0
+offset_left = 1553.0
+offset_top = 983.0
+offset_right = 1895.0
+offset_bottom = 1045.0
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 48
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("3_j8q1b")
 theme_override_styles/pressed = ExtResource("2_cm4xy")
 theme_override_styles/hover = ExtResource("2_cm4xy")
 theme_override_styles/disabled = ExtResource("5_81c6f")
-text = "Next"
+text = "End Round"
 
-[node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
-script = ExtResource("3_ynb1k")
+[node name="Overlay" type="ColorRect" parent="." unique_id=844011000]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.77254903)
 
-[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_btn_pressed"]
+[node name="QuitButton" type="Button" parent="Overlay" unique_id=578843416]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 983.0
+offset_right = 944.0
+offset_bottom = 1045.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q1b")
+theme_override_styles/pressed = ExtResource("2_cm4xy")
+theme_override_styles/hover = ExtResource("2_cm4xy")
+text = "End Match"
+
+[node name="RestartButton" type="Button" parent="Overlay" unique_id=1686045618]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 983.0
+offset_right = 1318.0
+offset_bottom = 1045.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q1b")
+theme_override_styles/pressed = ExtResource("2_cm4xy")
+theme_override_styles/hover = ExtResource("2_cm4xy")
+theme_override_styles/disabled = ExtResource("5_81c6f")
+text = "Restart"
+
+[node name="Paused" type="RichTextLabel" parent="Overlay" unique_id=1432275614]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -59.0
+offset_right = 449.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 72
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GamemodeInfo" type="RichTextLabel" parent="Overlay" unique_id=1910058929]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -500.0
+offset_right = 449.0
+offset_bottom = -382.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 44
+bbcode_enabled = true
+text = "[color=gold]First to 3:[color=white] Be the first to 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MatchInfo" type="RichTextLabel" parent="Overlay" unique_id=1328972586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -413.0
+offset_right = 449.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Max Rounds: 5
+Max Points: 3
+Modifiers Active: [Safety Shield, Choice Cooldown, Vampire Victory]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_btn_pressed"]
+[connection signal="pressed" from="Overlay/QuitButton" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="Overlay/RestartButton" to="." method="_on_restart_btn_pressed"]
