@@ -604,6 +604,7 @@ theme_override_constants/v_separation = 15
 columns = 4
 
 [node name="TemplateButton" type="Button" parent="Modifiers/ScrollContainer/Holder" unique_id=420197797]
+visible = false
 custom_minimum_size = Vector2(160, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -670,10 +671,12 @@ theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
 theme_override_styles/disabled = ExtResource("27_rtsuo")
-text = "Artifical Advantage"
+disabled = true
 autowrap_mode = 3
+metadata/Position = 0
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/InfoButtons/1" unique_id=2039931848]
+visible = false
 layout_mode = 1
 offset_top = 1.0
 offset_right = 40.0
@@ -693,10 +696,12 @@ theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
 theme_override_styles/disabled = ExtResource("27_rtsuo")
-text = "Choice Cooldown"
+disabled = true
 autowrap_mode = 3
+metadata/Position = 1
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/InfoButtons/2" unique_id=607486449]
+visible = false
 layout_mode = 1
 offset_top = 1.0
 offset_right = 40.0
@@ -716,10 +721,12 @@ theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
 theme_override_styles/disabled = ExtResource("27_rtsuo")
-text = "Safety Shield"
+disabled = true
 autowrap_mode = 3
+metadata/Position = 2
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/InfoButtons/3" unique_id=338673607]
+visible = false
 layout_mode = 1
 offset_top = 1.0
 offset_right = 40.0
@@ -739,10 +746,12 @@ theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
 theme_override_styles/disabled = ExtResource("27_rtsuo")
-text = "Winner's Weakness"
+disabled = true
 autowrap_mode = 3
+metadata/Position = 3
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/InfoButtons/4" unique_id=797929705]
+visible = false
 layout_mode = 1
 offset_top = 1.0
 offset_right = 40.0
@@ -762,10 +771,12 @@ theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
 theme_override_styles/disabled = ExtResource("27_rtsuo")
-text = "Vampire Victory"
+disabled = true
 autowrap_mode = 3
+metadata/Position = 4
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/InfoButtons/5" unique_id=958607392]
+visible = false
 layout_mode = 1
 offset_top = 1.0
 offset_right = 40.0
