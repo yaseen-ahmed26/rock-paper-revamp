@@ -232,4 +232,12 @@ func _on_clear_selection_btn_pressed():
 	pass
 	
 func _on_pick_random_btn_pressed():
-	pass
+	if selected_modifier_btns.size() == 5: return
+		
+	var modifier_btns = $Modifiers/ScrollContainer/Holder.get_children()
+	
+	for btn in modifier_btns:
+		if btn.name == "TemplateButton": modifier_btns.erase(btn)
+		if btn in selected_modifier_btns: modifier_btns.erase(btn)
+	
+	_on_modifier_btn_pressed(modifier_btns.pick_random())
