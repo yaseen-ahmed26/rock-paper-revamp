@@ -11,10 +11,10 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0, 0.11764706, 0.19607843, 0.6627451)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -116,13 +116,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Gamemodes" type="Panel" parent="ColorRect" unique_id=650413635]
+[node name="Matches" type="Panel" parent="ColorRect" unique_id=650413635]
 layout_mode = 1
 offset_right = 457.0
 offset_bottom = 313.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qk7hg")
 
-[node name="Title" type="RichTextLabel" parent="ColorRect/Gamemodes" unique_id=1800550690]
+[node name="Title" type="RichTextLabel" parent="ColorRect/Matches" unique_id=1800550690]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -134,7 +134,7 @@ text = "MATCHES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Underline" type="ColorRect" parent="ColorRect/Gamemodes/Title" unique_id=1428793721]
+[node name="Underline" type="ColorRect" parent="ColorRect/Matches/Title" unique_id=1428793721]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -144,7 +144,7 @@ offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Description" type="RichTextLabel" parent="ColorRect/Gamemodes" unique_id=1893190159]
+[node name="Description" type="RichTextLabel" parent="ColorRect/Matches" unique_id=1893190159]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -258,7 +258,7 @@ offset_right = 213.5
 offset_bottom = 275.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "First to: 5
 Best Of: 5
@@ -267,12 +267,7 @@ Survival: 5
 Endless: 5
 
 The Gambler: 5
-Statistics Guy: 5
-
-Challenges Complete:
-[Pressure Cooker, Deficit Hustle]
-
-Tasks Completed: 5"
+Statistics Guy: 5"
 vertical_alignment = 1
 
 [node name="Modifiers" type="Panel" parent="ColorRect" unique_id=18563703]
@@ -318,31 +313,8 @@ offset_right = 135.5
 offset_bottom = 275.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-21
-22
-23
-24
-25
-26"
 vertical_alignment = 1
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
