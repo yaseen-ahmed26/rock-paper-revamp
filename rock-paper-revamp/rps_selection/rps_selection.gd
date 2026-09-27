@@ -6,6 +6,7 @@ extends Control
 
 @onready var gm_btn_holder: VBoxContainer = $Gamemodes/PickGamemodeBtn/BtnHolder
 @onready var info_buttons: HBoxContainer = $Modifiers/InfoButtons
+@onready var modifier_overlay: ColorRect = $ModifierOverlay
 
 var selected_gamemode: GamemodeBase
 
@@ -37,6 +38,9 @@ func _ready() -> void:
 			$Computers/Holder/TemplateButton,
 			_on_computer_btn_pressed
 		)
+		
+	for btn in $Modifiers/InfoButtons.get_children():
+		btn.pressed.connect(_on_modifier_info_btn_pressed.bind(btn))
 	
 # General Helpers
 func _create_btn(info, parent, template_btn, press_connection):
@@ -226,7 +230,14 @@ func _on_start_btn_pressed() -> void:
 
 # Modifier Buttons	
 func _on_modifier_info_btn_pressed(btn: Button):
-	pass
+	modifier_overlay.get_node("Background/Title").text = btn.get_meta("ModifierBase").display_name
+	modifier_overlay.get_node("Background/Description").text = btn.get_meta("ModifierBase").description
+
+	var tween: Tween = create_tween()
+	tween.tween_property(modifier_overlay, "modulate:a", 1.0, 0.5)
+	await tween.finished
+	modifier_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	$ModifierOverlay/Background/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 func _on_clear_selection_btn_pressed():
 	for btn in selected_modifier_btns:
@@ -246,3 +257,11 @@ func _on_pick_random_btn_pressed():
 		if btn in selected_modifier_btns: modifier_btns.erase(btn)
 	
 	_on_modifier_btn_pressed(modifier_btns.pick_random())
+
+
+func _on_close_overlay_pressed() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(modifier_overlay, "modulate:a", 0.0, 0.5)
+	await tween.finished
+	modifier_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$ModifierOverlay/Background/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_IGNORE

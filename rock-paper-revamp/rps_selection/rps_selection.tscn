@@ -160,6 +160,57 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiy8h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcuj6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm54m"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
 anchors_preset = 15
@@ -977,8 +1028,87 @@ theme_override_styles/disabled = ExtResource("27_rtsuo")
 disabled = true
 text = "Start"
 
+[node name="ModifierOverlay" type="ColorRect" parent="." unique_id=1501518141]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="Background" type="Panel" parent="ModifierOverlay" unique_id=746327841]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -267.0
+offset_right = 441.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uiy8h")
+
+[node name="Title" type="RichTextLabel" parent="ModifierOverlay/Background" unique_id=1914892821]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 77.0
+offset_right = 360.0
+offset_bottom = 170.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 40
+text = "Modifier Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="ModifierOverlay/Background" unique_id=662676345]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 168.0
+offset_right = 360.0
+offset_bottom = 368.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Modifier Description"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseOverlay" type="Button" parent="ModifierOverlay/Background" unique_id=1048905697]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 173.0
+offset_right = 154.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_gcuj6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lm54m")
+text = "Close"
+
 [connection signal="pressed" from="Gamemodes/PickGamemodeBtn" to="." method="_on_pick_gamemode_btn_pressed"]
 [connection signal="pressed" from="Modifiers/ClearModifiersButton" to="." method="_on_clear_selection_btn_pressed"]
 [connection signal="pressed" from="Modifiers/PickRandomButton" to="." method="_on_pick_random_btn_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="ModifierOverlay/Background/CloseOverlay" to="." method="_on_close_overlay_pressed"]
