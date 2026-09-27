@@ -135,6 +135,12 @@ func _set_overlay_info():
 		gamemode.display_name,
 		gamemode.description
 	]
+	$Overlay/Tasks.text = "Tasks:\n"
+	for t in gamemode.task_pool:
+		$Overlay/Tasks.text = $Overlay/Tasks.text + "[color=gold]%s: [color=white]%s\n" % [
+			t.display_name,
+			t.description
+		]
 
 # Modifier Helpers
 func _animate_used_modifiers() -> void:
