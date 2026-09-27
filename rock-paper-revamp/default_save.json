@@ -1,0 +1,51 @@
+{
+	"points_won": 0,
+	"points_lost": 0,
+	"rounds_played": 0,
+	"matches_played": 0,
+	"total_wins": 0,
+	"total_losses": 0,
+	"total_draws": 0,
+	"played_rock": 0,
+	"played_scissors": 0,
+	"played_paper": 0,
+	"gamemodes": {
+		"first_to": 0,
+		"best_of": 0,
+		"comeback": 0,
+		"survival": 0,
+		"endless": 0
+	},
+	"opponents": {
+		"the_gambler": 0,
+		"statistics_guy": 0
+	},
+	"modifiers": {
+		"copy_cat": 0,
+		"choice_cooldown": 0,
+		"thought_tax": 0,
+		"vampire_victory": 0,
+		"rolling_run": 0,
+		"safety_shield": 0,
+		"tax_toll": 0,
+		"point_perk": 0,
+		"artifical_advantage": 0,
+		"rule_reversal": 0,
+		"random_reset": 0,
+		"fifty_fifty": 0,
+		"double_down": 0,
+		"pity_points": 0,
+		"helping_hand": 0,
+		"repeat_reward": 0,
+		"duel_decay": 0,
+		"winners_weakness": 0,
+		"gridlocked_growth": 0,
+		"heinous_heist": 0,
+		"hot_hand": 0,
+		"momentary_match": 0,
+		"last_laugh": 0,
+		"scissor_specialist": 0,
+		"jackpot_juice": 0,
+		"inverted_inflation": 0
+	}
+}

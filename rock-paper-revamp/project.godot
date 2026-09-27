@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Signals="*uid://b22ckaj3mvpry"
+SaveManager="*uid://g0taq2sy5keb"
 
 [debug]
 

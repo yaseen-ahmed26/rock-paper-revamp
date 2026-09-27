@@ -289,6 +289,8 @@ func _end_game():
 		if task_completed:
 			print("%s has been completed!" % task.display_name)
 	
+	SaveManager.record_match(game_stats, gamemode, computer, modifiers)
+	
 	Signals.change_screen.emit("rps_results", {
 		"stats": game_stats,
 		"gamemode_name": gamemode.display_name,
