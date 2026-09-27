@@ -1,0 +1,348 @@
+[gd_scene format=3 uid="uid://512nbemcbdjh"]
+
+[ext_resource type="Script" uid="uid://salfsw4678o3" path="res://profile_screen/profile_screen.gd" id="1_ju6hb"]
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_qk7hg"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="3_u6r08"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="4_hro26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk7hg"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.11764706, 0.19607843, 0.6627451)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[node name="profile_screen" type="Control" unique_id=849068084]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qk7hg")
+script = ExtResource("1_ju6hb")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=148955062]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -505.0
+offset_right = 303.0
+offset_bottom = -419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 54
+text = "Profile"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="Title" unique_id=926646775]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=1971647727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = -406.0
+offset_right = 614.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "View all your [color=green]lifetime stats[color=white]."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1253548428]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -97.0
+offset_right = 171.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_u6r08")
+theme_override_styles/pressed = ExtResource("4_hro26")
+theme_override_styles/hover = ExtResource("4_hro26")
+text = "Return"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1076574744]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -627.0
+offset_top = -268.0
+offset_right = 627.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Gamemodes" type="Panel" parent="ColorRect" unique_id=650413635]
+layout_mode = 1
+offset_right = 457.0
+offset_bottom = 313.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qk7hg")
+
+[node name="Title" type="RichTextLabel" parent="ColorRect/Gamemodes" unique_id=1800550690]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "MATCHES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="ColorRect/Gamemodes/Title" unique_id=1428793721]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="ColorRect/Gamemodes" unique_id=1893190159]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -47.5
+offset_right = 210.5
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "Points Won: 5
+Points Lost: 24
+Rounds Played: 235
+Matches Played: 24
+5 Wins, 3 Losses, 53 Draws"
+vertical_alignment = 1
+
+[node name="Moves" type="Panel" parent="ColorRect" unique_id=252447582]
+layout_mode = 1
+offset_top = 324.0
+offset_right = 457.0
+offset_bottom = 596.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qk7hg")
+
+[node name="Title" type="RichTextLabel" parent="ColorRect/Moves" unique_id=23027331]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "MOVES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="ColorRect/Moves/Title" unique_id=1026254297]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="ColorRect/Moves" unique_id=1889981000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -47.5
+offset_right = 210.5
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "Played Rock: 5 
+Played Siccsors: 5
+Played Paper: 12"
+vertical_alignment = 1
+
+[node name="General" type="Panel" parent="ColorRect" unique_id=1746938391]
+layout_mode = 1
+offset_left = 468.0
+offset_top = -1.0
+offset_right = 925.0
+offset_bottom = 596.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qk7hg")
+
+[node name="Title" type="RichTextLabel" parent="ColorRect/General" unique_id=1508261898]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "OPPONENTS & GAMEMODES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="ColorRect/General/Title" unique_id=1967591135]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="ColorRect/General" unique_id=184247176]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -186.5
+offset_right = 213.5
+offset_bottom = 275.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "First to: 5
+Best Of: 5
+Comeback: 5
+Survival: 5
+Endless: 5
+
+The Gambler: 5
+Statistics Guy: 5
+
+Challenges Complete:
+[Pressure Cooker, Deficit Hustle]
+
+Tasks Completed: 5"
+vertical_alignment = 1
+
+[node name="Modifiers" type="Panel" parent="ColorRect" unique_id=18563703]
+layout_mode = 1
+offset_left = 937.0
+offset_top = -1.0
+offset_right = 1254.0
+offset_bottom = 596.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qk7hg")
+
+[node name="Title" type="RichTextLabel" parent="ColorRect/Modifiers" unique_id=325038903]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "MODIFIERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="ColorRect/Modifiers/Title" unique_id=1759158009]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="ColorRect/Modifiers" unique_id=830404210]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.5
+offset_top = -186.5
+offset_right = 135.5
+offset_bottom = 275.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+21
+22
+23
+24
+25
+26"
+vertical_alignment = 1

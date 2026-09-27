@@ -12,5 +12,7 @@ func _on_menu_btn_pressed(btn: Button):
 			Signals.change_screen.emit("rps_selection")
 		"Challenges":
 			Signals.change_screen.emit("challenge_selection")
+		"Profile":
+			Signals.change_screen.emit("profile_screen")
 		"Quit":
 			get_tree().quit()

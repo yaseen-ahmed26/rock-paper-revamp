@@ -85,6 +85,18 @@ theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "CHALLENGES"
 
+[node name="Profile" type="Button" parent="MenuButtons" unique_id=1636967754]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_styles/pressed = ExtResource("4_6tl50")
+theme_override_styles/hover = ExtResource("5_6at21")
+theme_override_styles/disabled = ExtResource("6_og6xe")
+text = "PROFILE"
+
 [node name="Quit" type="Button" parent="MenuButtons" unique_id=528483674]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2

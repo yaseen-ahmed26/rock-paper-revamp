@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://main_menu/main_menu.tscn" id="4_dy358"]
 [ext_resource type="PackedScene" uid="uid://blnyfekenvkrv" path="res://challenge_selection/challenge_selection.tscn" id="5_6nawd"]
 [ext_resource type="PackedScene" uid="uid://bxshdhv2jslts" path="res://rps_results/rps_results.tscn" id="6_q20ay"]
+[ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://profile_screen/profile_screen.tscn" id="7_5q4yu"]
 
 [node name="ui_controller" type="Control" unique_id=1465920982]
 layout_mode = 3
@@ -49,6 +50,9 @@ visible = false
 visible = false
 
 [node name="rps_results" parent="CanvasLayer" unique_id=1683650170 instance=ExtResource("6_q20ay")]
+visible = false
+
+[node name="profile_screen" parent="CanvasLayer" unique_id=849068084 instance=ExtResource("7_5q4yu")]
 visible = false
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=431096076]
