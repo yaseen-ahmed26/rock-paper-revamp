@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://d0dxgj6b7momp"]
+
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_c7ody"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_4qj3e"]
+[ext_resource type="Script" uid="uid://c2qcyypl4oy3w" path="res://custom_resources/modifiers/scripts/effects/modify_stat_effect.gd" id="2_j86qp"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_j86qp"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_21n6v"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_yyv4l"]
+
+[sub_resource type="Resource" id="Resource_gcktg"]
+script = ExtResource("2_j86qp")
+stat_name = 11
+value = 0.1
+metadata/_custom_type_script = "uid://c2qcyypl4oy3w"
+
+[resource]
+script = ExtResource("2_4qj3e")
+id = 25
+display_name = "Inverted Inflation"
+description = "Every round increases the point multiplier by 0.1x"
+group = 1
+timing = 1
+effects = Array[ExtResource("1_c7ody")]([SubResource("Resource_gcktg")])
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

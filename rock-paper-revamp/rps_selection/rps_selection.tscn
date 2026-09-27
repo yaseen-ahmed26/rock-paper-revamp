@@ -33,7 +33,13 @@
 [ext_resource type="Resource" uid="uid://i5wc3mxyy125" path="res://custom_resources/modifiers/gridlocked_growth.tres" id="25_wrns6"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="26_wbtam"]
 [ext_resource type="Resource" uid="uid://cl6dpa5p80pow" path="res://custom_resources/modifiers/heinous_heist.tres" id="26_wrns6"]
+[ext_resource type="Resource" uid="uid://bv2u3r2sgi1wy" path="res://custom_resources/modifiers/hot_hand.tres" id="27_gcuj6"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="27_rtsuo"]
+[ext_resource type="Resource" uid="uid://dj74a6yni5c3j" path="res://custom_resources/modifiers/last_laugh.tres" id="28_lm54m"]
+[ext_resource type="Resource" uid="uid://4nakv84rixov" path="res://custom_resources/modifiers/jackpot_juice.tres" id="29_qamvo"]
+[ext_resource type="Resource" uid="uid://c17glsabmijsr" path="res://custom_resources/modifiers/momentary_match.tres" id="30_jfgkb"]
+[ext_resource type="Resource" uid="uid://d0dxgj6b7momp" path="res://custom_resources/modifiers/inverted_inflation.tres" id="31_4g4y5"]
+[ext_resource type="Resource" uid="uid://cmkhh5xob85w5" path="res://custom_resources/modifiers/scissor_specialist.tres" id="32_3d228"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvc85"]
 content_margin_left = 0.0
@@ -221,7 +227,7 @@ grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("4_0mnpd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho"), ExtResource("21_cvc85"), ExtResource("22_fllau"), ExtResource("23_wbtam"), ExtResource("24_8rcoj"), ExtResource("25_wrns6"), ExtResource("26_wrns6")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho"), ExtResource("21_cvc85"), ExtResource("22_fllau"), ExtResource("23_wbtam"), ExtResource("24_8rcoj"), ExtResource("25_wrns6"), ExtResource("26_wrns6"), ExtResource("27_gcuj6"), ExtResource("28_lm54m"), ExtResource("29_qamvo"), ExtResource("30_jfgkb"), ExtResource("31_4g4y5"), ExtResource("32_3d228")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia")])
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=609072858]

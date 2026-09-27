@@ -7,7 +7,7 @@ extends Control
 
 func on_screen_change(_details):
 	var save_data = SaveManager.save_data
-	print(save_data)
+
 	matches_description.text = "Points Won: %d\nPoints Lost: %d\nRounds Played: %d\nMatches Played: %d\n%d Wins, %d Losses, %d Draws" % [
 		save_data.get("points_won"),
 		save_data.get("points_lost"),
