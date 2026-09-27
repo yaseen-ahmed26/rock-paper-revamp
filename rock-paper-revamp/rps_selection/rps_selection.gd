@@ -229,7 +229,12 @@ func _on_modifier_info_btn_pressed(btn: Button):
 	pass
 	
 func _on_clear_selection_btn_pressed():
-	pass
+	for btn in selected_modifier_btns:
+		btn.get_node("SelectedLabel").visible = false
+	
+	selected_modifier_btns.clear()
+	
+	_update_info_btns()
 	
 func _on_pick_random_btn_pressed():
 	if selected_modifier_btns.size() == 5: return

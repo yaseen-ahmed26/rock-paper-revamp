@@ -978,6 +978,7 @@ disabled = true
 text = "Start"
 
 [connection signal="pressed" from="Gamemodes/PickGamemodeBtn" to="." method="_on_pick_gamemode_btn_pressed"]
+[connection signal="pressed" from="Modifiers/ClearModifiersButton" to="." method="_on_clear_selection_btn_pressed"]
 [connection signal="pressed" from="Modifiers/PickRandomButton" to="." method="_on_pick_random_btn_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]
