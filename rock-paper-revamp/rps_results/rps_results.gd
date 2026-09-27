@@ -9,6 +9,8 @@ var rounds_played_template := "Played [color=gold]%d/%s [color=white]rounds with
 var points_breakdown := "[Wins] [color=gold]%d [color=white]| [Losses] [color=gold]%d [color=white]| [Draws] [color=gold]%d"
 
 func on_screen_change(details: Dictionary):
+	animation_player.play("RESET")
+	
 	var stats: GameStats = details.get("stats")
 	
 	$MatchMeta.text = match_meta_template % [
