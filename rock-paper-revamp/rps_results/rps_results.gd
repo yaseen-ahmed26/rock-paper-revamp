@@ -40,7 +40,7 @@ func on_screen_change(details: Dictionary):
 	animation_player.play("show_results")
 	
 func _on_restart_btn_pressed():
-	pass
+	Signals.change_screen.emit("rps_game", {"restart": true})
 	
 func _on_return_btn_pressed():
 	Signals.change_screen.emit("main_menu")

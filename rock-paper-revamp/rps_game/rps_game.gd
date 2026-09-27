@@ -296,7 +296,7 @@ func _end_game():
 		"modifier_count": modifiers.size()
 	})
 
-# Button & Siganl Connections
+# Button & Signal Connections
 func _on_move_btn_pressed(btn: Button):
 	if btn.disabled: return
 	
@@ -310,6 +310,10 @@ func _on_move_btn_pressed(btn: Button):
 	if selected_label: selected_label.visible = true
 
 func on_screen_change(information: Dictionary):
+	if information.get("restart"): 
+		_restart_game() 
+		return
+	
 	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
 	computer = information.get("computer_resource")
