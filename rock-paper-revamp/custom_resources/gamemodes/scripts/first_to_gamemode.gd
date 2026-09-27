@@ -17,4 +17,4 @@ func apply_stats_edit(_game_stats: GameStats):
 	pass
 
 func is_game_over(game_stats: GameStats):
-	return game_stats.player_points == point_threshold or game_stats.computer_points == point_threshold
+	return game_stats.player_points >= point_threshold or game_stats.computer_points >= point_threshold
