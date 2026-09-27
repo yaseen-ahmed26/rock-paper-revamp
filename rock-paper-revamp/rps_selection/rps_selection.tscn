@@ -27,7 +27,7 @@
 [ext_resource type="Resource" uid="uid://chv5pjll132ui" path="res://custom_resources/modifiers/repeat_reward.tres" id="22_fllau"]
 [ext_resource type="Resource" uid="uid://coxbuyn3xbe6e" path="res://custom_resources/computer_types/statistics_computer.tres" id="22_rf0ia"]
 [ext_resource type="Resource" uid="uid://qwqhc23swyyr" path="res://custom_resources/modifiers/duel_decay.tres" id="23_wbtam"]
-[ext_resource type="Resource" uid="uid://hw5oaspc7cn2" path="res://custom_resources/modifiers/winners_wealness.tres" id="24_8rcoj"]
+[ext_resource type="Resource" uid="uid://hw5oaspc7cn2" path="res://custom_resources/modifiers/winners_weakness.tres" id="24_8rcoj"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="24_cvc85"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="25_fllau"]
 [ext_resource type="Resource" uid="uid://i5wc3mxyy125" path="res://custom_resources/modifiers/gridlocked_growth.tres" id="25_wrns6"]
@@ -988,7 +988,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "Pick your [color=green]Gamemode, Modifiers [color=white]and [color=green]Opponent[color=white], then face against them!"
+text = "Pick your [color=green]Gamemode, Modifiers [color=white]and [color=green]Opponent[color=white], then face them!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

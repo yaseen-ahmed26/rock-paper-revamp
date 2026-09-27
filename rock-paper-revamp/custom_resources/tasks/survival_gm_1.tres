@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://ceqvcnakgclt5"
 [resource]
 script = ExtResource("1_s6yml")
 id = 4
-display_name = "Take a breathe"
-description = "Get a draw whilst holding a streak of 3 or more"
+display_name = "Take a Breath"
+description = "Get a draw whilst holding a streak of 3 or more."
 triggers = Array[ExtResource("2_kxju3")]([SubResource("Resource_sbesh"), SubResource("Resource_evdjf")])
 metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

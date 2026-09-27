@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("1_ablcf")
-display_name = "First to 3"
-description = "The first one to 3 points wins"
+display_name = "First to "
+description = "The first one to X points wins!"
 task_pool = Array[ExtResource("3_fc6ku")]([ExtResource("4_pp26v"), ExtResource("5_0ktlf")])
 metadata/_custom_type_script = "uid://bfo6dh4k4nac4"

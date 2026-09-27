@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://dx50ptju3lua3" path="res://custom_resources/gamemodes/comeback.tres" id="2_gv7a5"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_ie3bn"]
 [ext_resource type="Resource" uid="uid://dfwyckbxsb68e" path="res://custom_resources/modifiers/helping_hand.tres" id="4_kphmx"]
-[ext_resource type="Resource" uid="uid://hw5oaspc7cn2" path="res://custom_resources/modifiers/winners_wealness.tres" id="5_q68py"]
+[ext_resource type="Resource" uid="uid://hw5oaspc7cn2" path="res://custom_resources/modifiers/winners_weakness.tres" id="5_q68py"]
 [ext_resource type="Resource" uid="uid://cl6dpa5p80pow" path="res://custom_resources/modifiers/heinous_heist.tres" id="6_7bhmj"]
 
 [resource]

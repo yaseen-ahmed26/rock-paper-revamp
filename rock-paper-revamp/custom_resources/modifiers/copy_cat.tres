@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://bly083c3u8yha"
 [resource]
 script = ExtResource("2_b288q")
 display_name = "Copy Cat"
-description = "+1 points if you win the round with the move the AI used last round"
+description = "Gain an additional point if you win the round with the move the AI used last round."
 group = 1
 timing = 1
 triggers = Array[ExtResource("5_4yud0")]([SubResource("Resource_fe4wf"), SubResource("Resource_lps0f")])

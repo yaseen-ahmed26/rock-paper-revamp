@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://8swuc0rprwki" path="res://custom_resources/gamemodes/scripts/endless_gamemode.gd" id="1_1ub0c"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_wkixh"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="3_wkixh"]
 
 [resource]
 script = ExtResource("1_1ub0c")
 id = 4
 display_name = "Endless"
-description = "No rules"
+description = "No rules, no max rounds or points. Free for all!"
 metadata/_custom_type_script = "uid://8swuc0rprwki"

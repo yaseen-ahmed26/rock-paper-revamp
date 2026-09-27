@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_0w48q")
 id = 1
-display_name = "Best of 5"
-description = "5 rounds max"
+display_name = "Best of"
+description = "Play the best of X rounds."
 task_pool = Array[ExtResource("3_fb74e")]([ExtResource("4_y8mwf")])
 metadata/_custom_type_script = "uid://rwt6wti4yr2i"

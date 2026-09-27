@@ -9,6 +9,6 @@
 script = ExtResource("1_6dyra")
 id = 2
 display_name = "Survival"
-description = "Don't lose your streak"
+description = "Don't lose your win streak"
 task_pool = Array[ExtResource("3_8x1nt")]([ExtResource("4_n5sou")])
 metadata/_custom_type_script = "uid://cy7pfilt2th7r"

@@ -14,8 +14,8 @@ metadata/_custom_type_script = "uid://5af3r3b1yoqf"
 [resource]
 script = ExtResource("1_02ktd")
 id = 3
-display_name = "I have no tolerance"
-description = "Don't let the AI get a point beyond it's lead"
+display_name = "I Have No Tolerance"
+description = "Don't let the AI get a point beyond it's lead."
 timing = 1
 triggers = Array[ExtResource("2_pbcee")]([SubResource("Resource_jbylr")])
 invert_triggers = true

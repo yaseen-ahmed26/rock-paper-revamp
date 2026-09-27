@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ddetc")
 display_name = "The Gambler"
-description = "Take a guess, why not?"
+description = "Aren't you also just gambling? Hey I think this bot is you!"
 metadata/_custom_type_script = "uid://bq84ptkacsrf8"

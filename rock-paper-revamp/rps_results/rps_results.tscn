@@ -281,7 +281,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "View how well you did against your opponent. Did bad? [color=green]Retry[color=white], or [color=green]start a new game[color=white]."
+text = "View how well you did against your opponent. Did badly? [color=green]Retry[color=white], or [color=green]start a new game[color=white]."
 horizontal_alignment = 1
 vertical_alignment = 1
 
