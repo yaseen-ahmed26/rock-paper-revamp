@@ -1,15 +1,5 @@
 extends Node
 
-"""
-1. Needs to load local data
-2. Needs to load online data
-	- Fallback to local if there is none
-3. Needs to save game
-	- Handle additive 
-4. Needs to setup .cfg files
-	- Also sections
-"""
-
 const DEVICE_CFG_FILE_PATH: String = "user://device.cfg"
 const SAVE_CFG_FILE_PATH: String = "user://save.cfg"
 const DEFAULT_DEVICE_CFG = {
@@ -24,6 +14,7 @@ var device_config: ConfigFile = ConfigFile.new()
 var save_config: ConfigFile = ConfigFile.new()
 
 var save_data: Dictionary = {}
+var access_token: String
 
 # Godot Specific
 func _ready() -> void:
@@ -114,6 +105,8 @@ func _save_local():
 		save_config.set_value("Save", k, v)
 		
 	save_config.save(SAVE_CFG_FILE_PATH)
+	
+	if is_peck_connected(): _save_online()
 
 func record_match(stats: GameStats, gamemode: GamemodeBase, opponent: ComputerBase, modifiers: Array[ModifierBase]):
 	var delta: Dictionary = {
@@ -151,10 +144,33 @@ func record_match(stats: GameStats, gamemode: GamemodeBase, opponent: ComputerBa
 	
 # Online
 func _load_online():
-	pass
+	var details = await RequestManager.send_request(
+			true,
+			HTTPClient.METHOD_GET,
+			["Authorization: Bearer %s" % access_token]
+		)
+		
+	if not details[0]:
+		print("An error occurred getting save data")
+	else:
+		for k in details[1].keys():
+			var v = details[1][k]
+			save_config.set_value("Save", k, v)
+			
+	save_config.save(SAVE_CFG_FILE_PATH)
 
 func _save_online():
-	pass
+	var data = {
+		"version_number": 1.0,
+		"save_data": save_data
+	}
+	
+	var _details = await RequestManager.send_request(
+		true,
+		HTTPClient.METHOD_PUT,
+		["Content-Type: application/json", "Authorization: Bearer %s" % access_token],
+		JSON.stringify(data),
+	)
 
 func account_connected():
 	pass
@@ -170,76 +186,18 @@ func _load_game():
 	_load_cfg_files()
 	
 	if is_peck_connected():
-		# Make HTTP request
-		# Then we'd overwrite the local save
-		# THEN load
-		pass
+		await _load_online()
 	
 	var details = _load_local()
 	
 	if details[0]: save_data = details[1]
 
+func update_tokens(new_tokens: Dictionary):
+	access_token = new_tokens.access_token
+	
+	device_config.set_value("Device", "refresh_token", new_tokens.refresh_token)
+	device_config.save(DEVICE_CFG_FILE_PATH)
 
-#
-#func save_game() -> void:
-	#for key in save_data.keys():
-		#save_config.set_value(SECTION_NAME, key, save_data[key])
-	#
-	#var error = save_config.save(SAVE_CFG_FILE_PATH)
-	#
-	#if error != OK:
-		#push_error("Failed to save config: %d" % error)
-#
-#func add_stats(delta: Dictionary) -> void:
-	#_merge_additive(save_data, delta)
-	#save_game()
-#
-#func _merge_additive(target: Dictionary, source: Dictionary):
-	#for key in source.keys():
-		#if not target.has(key):
-			#target[key] = source[key]
-		#elif typeof(target[key]) == TYPE_DICTIONARY and typeof(source[key]) == TYPE_DICTIONARY:
-			#_merge_additive(target[key], source[key])
-		#elif typeof(target[key]) in [TYPE_INT, TYPE_FLOAT] and typeof(source[key]) in [TYPE_INT, TYPE_FLOAT]:
-			#target[key] += source[key]
-		#else:
-			#target[key] = source[key]
-#
-#func _fill_missing_keys(target: Dictionary, template: Dictionary) -> void:
-	#for key in template.keys():
-		#if not target.has(key):
-			#target[key] = template[key]
-		#elif typeof(target[key]) == TYPE_DICTIONARY and typeof(template[key]) == TYPE_DICTIONARY:
-			#_fill_missing_keys(target[key], template[key])
-#
-## Game Integration Helper
-#func record_match(stats: GameStats, gamemode: GamemodeBase, opponent: ComputerBase, modifiers: Array[ModifierBase]):
-	#var delta: Dictionary = {
-		#"points_won": int(stats.player_points),
-		#"points_lost": int(stats.computer_points),
-		#"rounds_played": stats.rounds_played,
-		#"matches_played": 1,
-		#"total_wins": stats.wins,
-		#"total_losses": stats.losses,
-		#"total_draws": stats.draws,
-		#"played_rock": stats.played_moves.get("rock", 0),
-		#"played_paper": stats.played_moves.get("paper", 0),
-		#"played_scissors": stats.played_moves.get("scissors", 0),
-		#"gamemodes": {},
-		#"opponents": {},
-		#"modifiers": {}
-	#}
-#
-	#if gamemode:
-		#var gm_key: String = GamemodeBase.ID.keys()[gamemode.id].to_lower()
-		#delta["gamemodes"][gm_key] = 1
-#
-	#if opponent:
-		#var opp_key: String = opponent.display_name.to_lower().replace(" ", "_")
-		#delta["opponents"][opp_key] = 1
-#
-	#for mod in modifiers:
-		#var mod_key: String = ModifierBase.ID.keys()[mod.id].to_lower()
-		#delta["modifiers"][mod_key] = 1
-#
-	#add_stats(delta)
+func get_refresh_token():
+	var refresh_token = device_config.get_value("Device", "refresh_token")
+	return refresh_token

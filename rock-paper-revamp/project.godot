@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Signals="*uid://b22ckaj3mvpry"
 SaveManager="*uid://g0taq2sy5keb"
+RequestManager="*uid://ct1ks275c07hi"
 
 [debug]
 
