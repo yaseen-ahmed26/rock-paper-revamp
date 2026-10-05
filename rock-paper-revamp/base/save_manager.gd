@@ -85,20 +85,13 @@ func _load_local():
 			var default_v = default_save.get(stat)
 			save_config.set_value("Save", stat, default_v)
 			
-			save_config.save(SAVE_CFG_FILE_PATH)
-			
 			saved_stats[stat] = default_v
+
+	save_config.save(SAVE_CFG_FILE_PATH)
 
 	return [true, saved_stats]
 	
 func _merge_delta(delta):
-	print("Save Data:")
-	print(save_data)
-	print("--------------------------")
-	print("Delta:")
-	print(delta)
-	print("--------------------------")
-	
 	for k in save_data:
 		var saved_v = save_data[k]
 		var delta_v = delta[k]
@@ -168,13 +161,13 @@ func account_connected():
 
 # Logic
 func _load_game():
-	_load_cfg_files()
-	
 	if not _check_cfg_exists(DEVICE_CFG_FILE_PATH):
 		_setup_device_cfg()
 		
 	if not _check_cfg_exists(SAVE_CFG_FILE_PATH):
 		_setup_save_cfg()
+		
+	_load_cfg_files()
 	
 	if is_peck_connected():
 		# Make HTTP request
