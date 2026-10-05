@@ -47,5 +47,7 @@
 		"scissor_specialist": 0,
 		"jackpot_juice": 0,
 		"inverted_inflation": 0
-	}
+	},
+	"completed_tasks": [],
+	"completed_challenges": [],
 }
