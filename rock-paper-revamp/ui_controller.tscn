@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blnyfekenvkrv" path="res://challenge_selection/challenge_selection.tscn" id="5_6nawd"]
 [ext_resource type="PackedScene" uid="uid://bxshdhv2jslts" path="res://rps_results/rps_results.tscn" id="6_q20ay"]
 [ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://profile_screen/profile_screen.tscn" id="7_5q4yu"]
+[ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://splash_screen/splash_screen.tscn" id="8_wxsgv"]
 
 [node name="ui_controller" type="Control" unique_id=1465920982]
 layout_mode = 3
@@ -45,6 +46,7 @@ visible = false
 visible = false
 
 [node name="main_menu" parent="CanvasLayer" unique_id=771054830 instance=ExtResource("4_dy358")]
+visible = false
 
 [node name="challenge_selection" parent="CanvasLayer" unique_id=573053736 instance=ExtResource("5_6nawd")]
 visible = false
@@ -54,6 +56,9 @@ visible = false
 
 [node name="profile_screen" parent="CanvasLayer" unique_id=849068084 instance=ExtResource("7_5q4yu")]
 visible = false
+
+[node name="splash_screen" parent="CanvasLayer" unique_id=1403261879 instance=ExtResource("8_wxsgv")]
+mouse_filter = 2
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=431096076]
 self_modulate = Color(1, 1, 1, 0)

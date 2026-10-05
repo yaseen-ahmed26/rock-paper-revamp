@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dog0n1x6axob6"]
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_eqcml"]
+[ext_resource type="Script" uid="uid://dtyjxal0i6yqn" path="res://connect_account/connect_account.gd" id="2_uqjxg"]
 
 [node name="connect_account" type="Control" unique_id=1339535195]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_eqcml")
+script = ExtResource("2_uqjxg")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=526281028]
 layout_mode = 1
