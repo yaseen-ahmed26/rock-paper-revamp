@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://8r63dxl4p6ct"]
 
-[ext_resource type="FontFile" uid="uid://d1m7672l582k" path="res://assets/jbmono_bold.ttf" id="1_xlrvx"]
+[ext_resource type="FontFile" uid="uid://cdsr1rolpf6vk" path="res://assets/jbmono_bold.ttf" id="1_xlrvx"]
 
 [resource]
 default_font = ExtResource("1_xlrvx")
