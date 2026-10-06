@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://cy7dxghbk8b80"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://custom_resources/modals/scripts/modal_base.gd" id="1_wf8b4"]
+
+[resource]
+script = ExtResource("1_wf8b4")
+modal_id = "redirect_to_website"
+title = "EXTERNAL"
+primary_text = "You will be redirect to the Peck website."
+secondary_text = "Manage your account there."
+continue_btn_text = "Continue"
+show_cancel_btn = true
+cancel_btn_text = "Cancel"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"

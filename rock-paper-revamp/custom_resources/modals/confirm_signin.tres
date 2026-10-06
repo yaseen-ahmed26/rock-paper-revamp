@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://vytv7bdqqwso"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://custom_resources/modals/scripts/modal_base.gd" id="1_vdgcg"]
+
+[resource]
+script = ExtResource("1_vdgcg")
+modal_id = "confim_sign_in"
+title = "NOTICE"
+primary_text = "Connect your Peck account and save your game data. Access your data from any device."
+secondary_text = "Your existing data will be linked to this account."
+continue_btn_text = "Continue"
+show_cancel_btn = true
+cancel_btn_text = "Cancel"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"

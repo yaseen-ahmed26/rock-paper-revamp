@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://dt2olghj6it7j"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://custom_resources/modals/scripts/modal_base.gd" id="1_c8ifc"]
+
+[resource]
+script = ExtResource("1_c8ifc")
+modal_id = "websocket_expiried"
+title = "CODE EXPIRED"
+primary_text = "The link code has expired."
+secondary_text = "Would you like to continue linking your Peck account?"
+continue_btn_text = "Yes"
+show_cancel_btn = true
+cancel_btn_text = "No"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"

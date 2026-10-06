@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://bsmpy0xs6pxq1"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://custom_resources/modals/scripts/modal_base.gd" id="1_7i85l"]
+
+[resource]
+script = ExtResource("1_7i85l")
+modal_id = "link_success"
+title = "[color=green]SUCCESS"
+primary_text = "Hello, [color=gold]%s"
+secondary_text = "Success, thank you for connecting your Peck account!"
+continue_btn_text = "Continue"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"
