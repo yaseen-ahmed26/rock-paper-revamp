@@ -160,6 +160,7 @@ offset_right = 397.0
 offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wxsgv")
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer/Modal/Background" unique_id=1368790291]
@@ -175,7 +176,8 @@ offset_right = 260.0
 offset_bottom = -256.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 54
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "TITLE"
 horizontal_alignment = 1
@@ -194,6 +196,7 @@ offset_right = 343.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 38
 bbcode_enabled = true
 text = "The top line of text goes here and can fit 2 lines."
@@ -213,6 +216,7 @@ offset_right = 343.0
 offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "The bottom line goes here and can only be one line."
@@ -232,6 +236,7 @@ offset_right = 219.0
 offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 26
 
 [node name="CancelButton" type="Button" parent="CanvasLayer/Modal/Background/Buttons" unique_id=718726721]
