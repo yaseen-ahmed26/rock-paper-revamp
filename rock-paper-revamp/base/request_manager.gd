@@ -1,8 +1,5 @@
 extends Node
 
-var saves_url: String = "http://127.0.0.1:8000/api/saves/rpr/me"
-var refresh_url: String = "http://127.0.0.1:8000/api/auth/refresh"
-
 func _ready() -> void:
 	pass
 
@@ -11,7 +8,7 @@ func send_request(use_saves_url: bool, method: HTTPClient.Method, headers: Array
 	add_child(http_request)
 
 	var error: Error
-	var url: String = saves_url if use_saves_url else refresh_url
+	var url: String = Constants.SAVES_URL if use_saves_url else Constants.REFRESH_URL
 
 	if method == HTTPClient.METHOD_GET:
 		error = http_request.request(url, headers)

@@ -1,13 +1,7 @@
 extends Control
 
-const COUNTRIES: Dictionary[String, String] = {
-	"GB": "United Kingdom"
-}
-
 var client: HTTPClient = HTTPClient.new()
 var socket: WebSocketPeer = WebSocketPeer.new()
-
-var websocket_url: String = "ws://127.0.0.1:8000/api/codes/ws"
 
 var connected = false
 var code: String = ""
@@ -66,7 +60,7 @@ func start_websocket():
 	
 	set_process(true)
 	
-	var error = socket.connect_to_url(websocket_url + "?" + query_string)
+	var error = socket.connect_to_url(Constants.WEBSOCKET_URL + "?" + query_string)
 	
 	if error != OK:
 		print("failed to connect to the websocket: ", error)
@@ -79,7 +73,7 @@ func _get_user_country() -> String:
 	if locale_parts.size() > 1:
 		country_code = locale_parts[1].left(2).to_upper() 
 	
-	var country_name: String = COUNTRIES.get(country_code, country_code)
+	var country_name: String = Constants.COUNTRIES.get(country_code, country_code)
 	
 	return country_name
 

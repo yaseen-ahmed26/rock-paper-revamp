@@ -1,14 +1,5 @@
 extends Node
 
-const DEVICE_CFG_FILE_PATH: String = "user://device.cfg"
-const SAVE_CFG_FILE_PATH: String = "user://save.cfg"
-const DEFAULT_DEVICE_CFG = {
-	"username": "",
-	"refresh_token": "",
-	"save_id": "",
-	"peck_connected": false
-}
-
 var default_save: Dictionary = {}
 
 var device_config: ConfigFile = ConfigFile.new()
@@ -36,12 +27,12 @@ func _check_cfg_exists(file_path):
 	return false
 
 func _load_cfg_files():
-	var device_error = device_config.load(DEVICE_CFG_FILE_PATH)
+	var device_error = device_config.load(Constants.DEVICE_CFG_FILE_PATH)
 
 	if device_error != OK:
 		print("An error occurred whilst laoding 'device.cfg': ", device_error)
 
-	var save_error = save_config.load(SAVE_CFG_FILE_PATH)
+	var save_error = save_config.load(Constants.SAVE_CFG_FILE_PATH)
 
 	if save_error != OK:
 		print("An error occurred whilst laoding 'save.cfg': ", save_error)
@@ -53,15 +44,15 @@ func _setup_save_cfg():
 	
 		save_config.set_value("Save", k, v)
 	
-	save_config.save(SAVE_CFG_FILE_PATH)
+	save_config.save(Constants.SAVE_CFG_FILE_PATH)
 	
 func _setup_device_cfg():
-	for k in DEFAULT_DEVICE_CFG.keys():
-		var v = DEFAULT_DEVICE_CFG[k]
+	for k in Constants.DEFAULT_DEVICE_CFG.keys():
+		var v = Constants.DEFAULT_DEVICE_CFG[k]
 		
 		device_config.set_value("Device", k, v)
 	
-	device_config.save(DEVICE_CFG_FILE_PATH)
+	device_config.save(Constants.DEVICE_CFG_FILE_PATH)
 
 func is_peck_connected():
 	return device_config.get_value("Device", "peck_connected", false)
@@ -79,7 +70,7 @@ func _load_local():
 			
 			saved_stats[stat] = default_v
 
-	save_config.save(SAVE_CFG_FILE_PATH)
+	save_config.save(Constants.SAVE_CFG_FILE_PATH)
 
 	return [true, saved_stats]
 	
@@ -106,7 +97,7 @@ func _save_local():
 		var v = save_data[k]
 		save_config.set_value("Save", k, v)
 		
-	save_config.save(SAVE_CFG_FILE_PATH)
+	save_config.save(Constants.SAVE_CFG_FILE_PATH)
 	
 	if is_peck_connected(): _save_online()
 
@@ -169,7 +160,7 @@ func _load_online():
 			var v = details[1][k]
 			save_config.set_value("Save", k, v)
 			
-	save_config.save(SAVE_CFG_FILE_PATH)
+	save_config.save(Constants.SAVE_CFG_FILE_PATH)
 
 func _save_online():
 	var data = {
@@ -189,7 +180,7 @@ func connect_account(user_data: Dictionary):
 	device_config.set_value("Device", "username", user_data.username)
 	device_config.set_value("Device", "refresh_token", user_data.refresh_token)
 
-	device_config.save(DEVICE_CFG_FILE_PATH)
+	device_config.save(Constants.DEVICE_CFG_FILE_PATH)
 	
 	if user_data.save.is_empty():
 		_save_local()
@@ -202,10 +193,10 @@ func connect_account(user_data: Dictionary):
 
 # Logic
 func _load_game():
-	if not _check_cfg_exists(DEVICE_CFG_FILE_PATH):
+	if not _check_cfg_exists(Constants.DEVICE_CFG_FILE_PATH):
 		_setup_device_cfg()
 		
-	if not _check_cfg_exists(SAVE_CFG_FILE_PATH):
+	if not _check_cfg_exists(Constants.SAVE_CFG_FILE_PATH):
 		_setup_save_cfg()
 		
 	_load_cfg_files()
@@ -221,7 +212,7 @@ func update_tokens(new_tokens: Dictionary):
 	access_token = new_tokens.access_token
 	
 	device_config.set_value("Device", "refresh_token", new_tokens.refresh_token)
-	device_config.save(DEVICE_CFG_FILE_PATH)
+	device_config.save(Constants.DEVICE_CFG_FILE_PATH)
 
 func get_refresh_token():
 	var refresh_token = device_config.get_value("Device", "refresh_token")
