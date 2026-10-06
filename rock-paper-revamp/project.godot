@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Signals="*uid://b22ckaj3mvpry"
 SaveManager="*uid://g0taq2sy5keb"
 RequestManager="*uid://ct1ks275c07hi"
+PlayerManager="*uid://bf0rt7c2v0vqr"
 
 [debug]
 

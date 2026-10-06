@@ -1,0 +1,20 @@
+extends Node
+
+func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase]):
+	var amount: int = 0
+	
+	amount += Constants.TOKENS_PER_GAME
+	
+	if game_stats.player_points > game_stats.computer_points:
+		amount += Constants.TOKENS_ON_WIN
+	else:
+		amount += Constants.TOKENS_ON_LOSS
+		
+	amount += (modifiers.size() * Constants.TOKENS_PER_MODIFIER)
+	
+	SaveManager.save_data["tokens"] += amount
+	
+	return amount
+
+func purchase_modifier(modifier: ModifierBase):
+	SaveManager.save_data["tokens"] -= modifier.purchase_cost
