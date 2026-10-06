@@ -55,6 +55,10 @@ func _create_btn(info, parent, template_btn, press_connection):
 	var resource_duplicate = info.duplicate(true)
 	clone.set_meta("Resource", resource_duplicate)
 	
+	if info is ModifierBase:
+		if info.icon:
+			clone.icon = info.icon
+	
 	clone.pressed.connect(press_connection.bind(clone))
 
 # Gamemode Helpers
