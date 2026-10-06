@@ -83,13 +83,13 @@ func _get_user_country() -> String:
 	
 	return country_name
 
-func _account_link_success(username: String, save: Dictionary):
+func _account_link_success(username: String, _save: Dictionary):
 	Signals.show_modal.emit(link_success_modal, [username])
 		
 	var confirmation = await Signals.modal_response
 	
 	if confirmation:
-		Signals.change_screen.emit("game")
+		Signals.change_screen.emit("main_menu")
 	
 func _websocket_expired():
 	Signals.show_modal.emit(websocket_expired_modal)
