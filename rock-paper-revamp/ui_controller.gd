@@ -10,6 +10,7 @@ func _ready() -> void:
 		
 	Signals.change_screen.connect(_on_change_screen)
 	
+	
 func _on_change_screen(to_show: String, arguments: Variant = null):
 	fade.mouse_filter = MouseFilter.MOUSE_FILTER_STOP
 	
