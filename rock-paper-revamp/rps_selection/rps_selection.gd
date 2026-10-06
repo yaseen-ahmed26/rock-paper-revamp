@@ -17,6 +17,8 @@ var locked_modifiers: Dictionary = {}
 
 # Godot
 func _ready() -> void:
+	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+	
 	for gamemode in gamemode_pool:
 		_create_btn(
 			gamemode,
