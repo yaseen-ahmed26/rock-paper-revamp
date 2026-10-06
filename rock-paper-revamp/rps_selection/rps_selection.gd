@@ -72,7 +72,18 @@ func _create_btn(info, parent, template_btn, press_connection):
 			else:
 				if not lower in completed_challenges:
 					clone.get_node("Locked").visible = true
-	
+		elif info.requires_purchase:
+			var lower = ModifierBase.ID.keys()[info.id].to_lower()
+			
+			if not lower in SaveManager.save_data.get("bought_modifiers"):
+				var purchase = clone.get_node("Purchase")
+				var buy_btn = purchase.get_node("BuyButton")
+				
+				purchase.visible = true
+				buy_btn.text = "%d Tokens" % info.purchase_cost
+				
+				buy_btn.pressed.connect(_on_buy_modifier_pressed.bind(clone))
+		
 	clone.pressed.connect(press_connection.bind(clone))
 
 # Gamemode Helpers
@@ -281,3 +292,10 @@ func _on_close_overlay_pressed() -> void:
 	await tween.finished
 	modifier_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$ModifierOverlay/Background/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+
+func _on_buy_modifier_pressed(btn: Button) -> void:
+	if PlayerManager.purchase_modifier(btn.get_meta("Resource")):
+		var purchase = btn.get_node("Purchase")
+		purchase.visible = false
+		$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))

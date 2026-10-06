@@ -178,6 +178,57 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfgkb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.8392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g4y5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.28485027, 0.28485027, 0.28485027, 0.8392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d228"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.28485027, 0.28485027, 0.28485027, 0.8392157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiy8h"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -696,6 +747,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.58431375)
 
 [node name="Label" type="RichTextLabel" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Locked" unique_id=1394714031]
@@ -712,11 +764,41 @@ text = "[color=red]LOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Purchase" type="ColorRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton" unique_id=390602911]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="BuyButton" type="Button" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Purchase" unique_id=1393752277]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -15.0
+offset_right = 61.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jfgkb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4g4y5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3d228")
+text = "130 Tokens"
+
 [node name="SelectedLabel" type="RichTextLabel" parent="Modifiers/ScrollContainer/Holder/TemplateButton" unique_id=743731535]
 visible = false
 layout_mode = 1
 offset_right = 35.0
 offset_bottom = 35.0
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[color=gold]✓"

@@ -92,7 +92,7 @@ func _merge_delta(delta):
 				for new_item in delta_v.keys():
 					saved_v[new_item] += delta_v[new_item]
 	
-func _save_local():
+func save_local():
 	for k in save_data.keys():
 		var v = save_data[k]
 		save_config.set_value("Save", k, v)
@@ -144,7 +144,7 @@ func record_match(
 		delta["completed_challenges"].append(lower)
 	
 	_merge_delta(delta)
-	_save_local()
+	save_local()
 	
 # Online
 func _load_online():
@@ -184,11 +184,11 @@ func connect_account(user_data: Dictionary):
 	device_config.save(Constants.DEVICE_CFG_FILE_PATH)
 	
 	if user_data.save.is_empty():
-		_save_local()
+		save_local()
 		_save_online()
 	else:
 		save_data = user_data.save
-		_save_local()
+		save_local()
 	
 	access_token = user_data.access_token
 
