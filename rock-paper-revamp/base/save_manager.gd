@@ -109,7 +109,13 @@ func _save_local():
 	
 	if is_peck_connected(): _save_online()
 
-func record_match(stats: GameStats, gamemode: GamemodeBase, opponent: ComputerBase, modifiers: Array[ModifierBase]):
+func record_match(
+	stats: GameStats,
+	gamemode: GamemodeBase, 
+	opponent: ComputerBase, 
+	modifiers: Array[ModifierBase], 
+	challenge: ChallengeBase = null
+):
 	var delta: Dictionary = {
 		"points_won": int(stats.player_points),
 		"points_lost": int(stats.computer_points),
@@ -140,6 +146,10 @@ func record_match(stats: GameStats, gamemode: GamemodeBase, opponent: ComputerBa
 		var mod_key: String = ModifierBase.ID.keys()[mod.id].to_lower()
 		delta["modifiers"][mod_key] = 1
 		
+	if challenge:
+		var lower = ChallengeBase.ID.keys()[challenge.id].to_lower()
+		delta["completed_challenges"].append(lower)
+	
 	_merge_delta(delta)
 	_save_local()
 	

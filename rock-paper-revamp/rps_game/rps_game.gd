@@ -16,6 +16,7 @@ const RULES: Dictionary = {
 var gamemode: GamemodeBase
 var computer: ComputerBase
 var modifiers: Array[ModifierBase] = []
+var challenge: ChallengeBase
 
 var game_stats: GameStats
 
@@ -289,7 +290,7 @@ func _end_game():
 		if task_completed:
 			print("%s has been completed!" % task.display_name)
 	
-	SaveManager.record_match(game_stats, gamemode, computer, modifiers)
+	SaveManager.record_match(game_stats, gamemode, computer, modifiers, challenge)
 	
 	Signals.change_screen.emit("rps_results", {
 		"stats": game_stats,
@@ -319,6 +320,7 @@ func on_screen_change(information: Dictionary):
 	gamemode = information.get("gamemode_resource")
 	modifiers = information.get("modifier_resource")
 	computer = information.get("computer_resource")
+	challenge = information.get("challenge", null)
 	
 	_start_game()
 

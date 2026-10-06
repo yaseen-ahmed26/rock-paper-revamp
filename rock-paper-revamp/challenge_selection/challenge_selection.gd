@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Helpers
 func _create_challenge_btns():
+	print(SaveManager.save_data.get("completed_challenges"))
 	for challenge in challenge_pool:
 		var clone: Button = template_button.duplicate(true)
 		$Challenges/Holder.add_child(clone)
@@ -43,6 +44,7 @@ func _on_start_btn_pressed():
 			"gamemode_resource": challenge.locked_gamemode,
 			"modifier_resource": challenge.locked_modifiers,
 			"computer_resource": challenge.locked_computer,
+			"challenge": challenge
 		}
 	)
 	
