@@ -23,4 +23,6 @@ group = 1
 icon = ExtResource("3_21n6v")
 timing = 1
 effects = Array[ExtResource("1_c7ody")]([SubResource("Resource_gcktg")])
+requires_purchase = true
+purchase_cost = 100
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

@@ -22,4 +22,6 @@ group = 1
 icon = ExtResource("2_pbm5a")
 timing = 1
 stats_to_edit = Array[ExtResource("3_pbm5a")]([SubResource("Resource_q8ye8")])
+requires_purchase = true
+purchase_cost = 60
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

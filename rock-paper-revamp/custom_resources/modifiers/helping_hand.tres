@@ -37,4 +37,6 @@ icon = ExtResource("3_ip07k")
 timing = 1
 triggers = Array[ExtResource("5_ip07k")]([SubResource("Resource_w3iba"), SubResource("Resource_arfw3")])
 effects = Array[ExtResource("1_gi67h")]([SubResource("Resource_gxhd6")])
+requires_purchase = true
+purchase_cost = 50
 metadata/_custom_type_script = "uid://d2bvcnih05ama"
