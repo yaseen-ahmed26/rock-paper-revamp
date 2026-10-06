@@ -297,8 +297,12 @@ func _on_close_overlay_pressed() -> void:
 func _on_buy_modifier_pressed(btn: Button) -> void:
 	if PlayerManager.purchase_modifier(btn.get_meta("Resource")):
 		var purchase = btn.get_node("Purchase")
-		purchase.visible = false
 		$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+		
+		var tween: Tween = create_tween()
+		tween.tween_property(purchase, "position", purchase.position + Vector2(0, 100), 0.3)
+		await tween.finished
+		purchase.visible = false
 
 func on_screen_change(_args):
 	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
