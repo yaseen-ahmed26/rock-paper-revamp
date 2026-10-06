@@ -64,6 +64,8 @@ func _create_btn(info, parent, template_btn, press_connection):
 			clone.icon = info.icon
 		
 		if info.modifier_locked:
+			clone.text = ""
+			
 			var lower = ChallengeBase.ID.keys()[info.challenge_required_id].to_lower()
 			var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
 			
@@ -72,10 +74,12 @@ func _create_btn(info, parent, template_btn, press_connection):
 			else:
 				if not lower in completed_challenges:
 					clone.get_node("Locked").visible = true
-		elif info.requires_purchase:
+		elif info.requires_purchase:	
 			var lower = ModifierBase.ID.keys()[info.id].to_lower()
 			
 			if not lower in SaveManager.save_data.get("bought_modifiers"):
+				clone.text = ""
+				
 				var purchase = clone.get_node("Purchase")
 				var buy_btn = purchase.get_node("BuyButton")
 				
@@ -296,6 +300,7 @@ func _on_close_overlay_pressed() -> void:
 
 func _on_buy_modifier_pressed(btn: Button) -> void:
 	if PlayerManager.purchase_modifier(btn.get_meta("Resource")):
+		btn.text = btn.get_meta("Resource").display_name
 		var purchase = btn.get_node("Purchase")
 		$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
 		
