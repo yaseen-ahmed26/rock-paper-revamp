@@ -358,5 +358,23 @@ text = "Project"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SkipText" type="RichTextLabel" parent="." unique_id=468853912]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -392.0
+offset_top = -108.0
+offset_right = -37.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+text = "Press any key to skip"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1263701141]
 libraries/ = SubResource("AnimationLibrary_7ckco")

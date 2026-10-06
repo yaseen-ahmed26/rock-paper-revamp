@@ -107,7 +107,7 @@ func _websocket_expired():
 	
 func _on_message_received(message):
 	var parsed = JSON.parse_string(message)
-
+	
 	if parsed.type == "information":
 		$Code.text = "[color=green]%s" % parsed.login_code
 		code = parsed.login_code
