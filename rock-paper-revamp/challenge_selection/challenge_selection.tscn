@@ -100,7 +100,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "[color=green]Challenges [color=white]are preset levels. You cannot choose the Gamemode, Opponent or Modifiers."
+text = "[color=green]Challenges [color=white]are preset levels. You cannot choose the Gamemode, Opponent or Modifiers. Once you complete a Challenge, you unlock a [color=green]Modifier[color=white]."
 horizontal_alignment = 1
 vertical_alignment = 1
 

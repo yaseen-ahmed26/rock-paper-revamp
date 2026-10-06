@@ -12,7 +12,7 @@
 script = ExtResource("2_obdqj")
 display_name = "Inverted Death"
 description = "How do you lose your streak? Winning or losing?"
-reward = "None"
+reward = "Rule Reversal"
 locked_gamemode = ExtResource("1_4blso")
 locked_modifiers = Array[ExtResource("1_rwhai")]([ExtResource("3_mpymf"), ExtResource("4_534tb"), ExtResource("5_lx1ti")])
 locked_computer = ExtResource("1_mpymf")
