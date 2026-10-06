@@ -5,6 +5,7 @@ const SAVE_CFG_FILE_PATH: String = "user://save.cfg"
 const DEFAULT_DEVICE_CFG = {
 	"username": "",
 	"refresh_token": "",
+	"save_id": "",
 	"peck_connected": false
 }
 
@@ -179,8 +180,12 @@ func connect_account(user_data: Dictionary):
 
 	device_config.save(DEVICE_CFG_FILE_PATH)
 	
-	_save_local()
-	_save_online()
+	if user_data.save.is_empty():
+		_save_local()
+		_save_online()
+	else:
+		save_data = user_data.save
+		_save_local()
 	
 	access_token = user_data.access_token
 

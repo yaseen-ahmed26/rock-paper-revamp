@@ -59,7 +59,7 @@ func start_websocket():
 	var websocket_metadata = {
 		"os": os_name,
 		"country": country_name,
-		"game_id": "biscuit"
+		"game_id": "rpr"
 	}
 	
 	var query_string = client.query_string_from_dict(websocket_metadata)
