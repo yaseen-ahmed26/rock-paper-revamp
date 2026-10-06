@@ -95,6 +95,7 @@ func _merge_delta(delta):
 				save_data[k] += delta_v
 			TYPE_ARRAY:
 				for i in delta_v:
+					if i in save_data[k]: continue
 					save_data[k].append(i)
 			TYPE_DICTIONARY:
 				for new_item in delta_v.keys():
