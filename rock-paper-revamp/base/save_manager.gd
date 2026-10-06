@@ -172,8 +172,18 @@ func _save_online():
 		JSON.stringify(data),
 	)
 
-func account_connected():
-	pass
+func connect_account(user_data: Dictionary):
+	device_config.set_value("Device", "peck_connected", true)
+	device_config.set_value("Device", "save_id", user_data.save_id)
+	device_config.set_value("Device", "username", user_data.username)
+	device_config.set_value("Device", "refresh_token", user_data.refresh_token)
+
+	device_config.save(DEVICE_CFG_FILE_PATH)
+	
+	_save_local()
+	_save_online()
+	
+	access_token = user_data.access_token
 
 # Logic
 func _load_game():
