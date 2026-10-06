@@ -299,3 +299,19 @@ func _on_buy_modifier_pressed(btn: Button) -> void:
 		var purchase = btn.get_node("Purchase")
 		purchase.visible = false
 		$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+
+func on_screen_change(_args):
+	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+	
+	for btn: Button in $Modifiers/ScrollContainer/Holder.get_children():
+		if btn.name == "TemplateButton": continue
+		
+		var modifier: ModifierBase = btn.get_meta("Resource")
+		
+		if not modifier.modifier_locked: continue
+
+		var lower = ChallengeBase.ID.keys()[modifier.challenge_required_id].to_lower()
+		var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
+		
+		if lower in completed_challenges:
+			btn.get_node("Locked").visible = false

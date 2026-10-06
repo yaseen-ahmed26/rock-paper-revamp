@@ -75,7 +75,7 @@ func _load_local():
 	return [true, saved_stats]
 	
 func _merge_delta(delta):
-	for k in save_data:
+	for k in save_data:		
 		var saved_v = save_data[k]
 		var delta_v = delta[k]
 	
