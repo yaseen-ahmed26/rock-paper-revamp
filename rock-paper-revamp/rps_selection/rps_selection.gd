@@ -13,6 +13,8 @@ var selected_gamemode: GamemodeBase
 var selected_modifier_btns: Array[Button] = []
 var selected_computer_btn: Button
 
+var locked_modifiers: Dictionary = {}
+
 # Godot
 func _ready() -> void:
 	for gamemode in gamemode_pool:
@@ -58,6 +60,16 @@ func _create_btn(info, parent, template_btn, press_connection):
 	if info is ModifierBase:
 		if info.icon:
 			clone.icon = info.icon
+		
+		if info.modifier_locked:
+			var lower = ChallengeBase.ID.keys()[info.challenge_required_id].to_lower()
+			var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
+			
+			if completed_challenges.is_empty():
+				clone.get_node("Locked").visible = true
+			else:
+				if not lower in completed_challenges:
+					clone.get_node("Locked").visible = true
 	
 	clone.pressed.connect(press_connection.bind(clone))
 
@@ -121,8 +133,6 @@ func _update_tasks(resource: GamemodeBase):
 
 # Modifier Helpers
 func _update_info_btns():
-	# loop through all the btns, refresh them
-	# set name, text, meta etc
 	for btn: Button in info_buttons.get_children():
 		var btn_position: int = btn.get_meta("Position")
 
