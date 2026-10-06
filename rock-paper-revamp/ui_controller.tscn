@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bxshdhv2jslts" path="res://rps_results/rps_results.tscn" id="6_q20ay"]
 [ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://profile_screen/profile_screen.tscn" id="7_5q4yu"]
 [ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://splash_screen/splash_screen.tscn" id="8_wxsgv"]
+[ext_resource type="PackedScene" uid="uid://dog0n1x6axob6" path="res://connect_account/connect_account.tscn" id="10_p4p2l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxsgv"]
 content_margin_left = 0.0
@@ -123,6 +124,9 @@ visible = false
 
 [node name="splash_screen" parent="CanvasLayer" unique_id=1403261879 instance=ExtResource("8_wxsgv")]
 mouse_filter = 2
+
+[node name="connect_account" parent="CanvasLayer" unique_id=1339535195 instance=ExtResource("10_p4p2l")]
+visible = false
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=431096076]
 self_modulate = Color(1, 1, 1, 0)

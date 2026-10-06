@@ -174,7 +174,6 @@ func _save_online():
 
 func connect_account(user_data: Dictionary):
 	device_config.set_value("Device", "peck_connected", true)
-	device_config.set_value("Device", "save_id", user_data.save_id)
 	device_config.set_value("Device", "username", user_data.username)
 	device_config.set_value("Device", "refresh_token", user_data.refresh_token)
 

@@ -12,6 +12,9 @@ var websocket_url: String = "ws://127.0.0.1:8000/api/codes/ws"
 var connected = false
 var code: String = ""
 
+var link_success_modal: ModalBase = preload("res://custom_resources/modals/link_success.tres")
+var websocket_expired_modal = preload("res://custom_resources/modals/websocket_expired.tres")
+
 func _ready() -> void:	
 	set_process(false)
 
@@ -81,19 +84,15 @@ func _get_user_country() -> String:
 	return country_name
 
 func _account_link_success(username: String, save: Dictionary):
-	Signals.show_modal.emit("account_link", [username])
+	Signals.show_modal.emit(link_success_modal, [username])
 		
 	var confirmation = await Signals.modal_response
 	
 	if confirmation:
 		Signals.change_screen.emit("game")
-		
-		if save.is_empty():
-			await get_tree().create_timer(1.0).timeout
-			Signals.show_modal.emit("welcome_bonus")
 	
 func _websocket_expired():
-	Signals.show_modal.emit("websocket_expired")
+	Signals.show_modal.emit(websocket_expired_modal)
 	
 	$Code.text = "-------"
 	# $copy_code_btn.disabled = true
@@ -132,7 +131,7 @@ func _on_connected() -> void:
 	# socket.send_text(json_string)
 	pass
 
-func on_screen_change():
+func on_screen_change(_arguments):
 	start_websocket()
 	
 func _on_copy_code_btn_pressed() -> void:
