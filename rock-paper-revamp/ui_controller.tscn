@@ -9,6 +9,68 @@
 [ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://profile_screen/profile_screen.tscn" id="7_5q4yu"]
 [ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://splash_screen/splash_screen.tscn" id="8_wxsgv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxsgv"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx04s"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4p2l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4yodi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
 [node name="ui_controller" type="Control" unique_id=1465920982]
 layout_mode = 3
 anchors_preset = 15
@@ -69,3 +131,119 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Modal" type="Panel" parent="CanvasLayer" unique_id=1946446615]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="Panel" parent="CanvasLayer/Modal" unique_id=8618622]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.0
+offset_top = -243.0
+offset_right = 397.0
+offset_bottom = 243.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wxsgv")
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/Modal/Background" unique_id=1368790291]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -346.0
+offset_right = 260.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 54
+bbcode_enabled = true
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Primary" type="RichTextLabel" parent="CanvasLayer/Modal/Background" unique_id=1838031893]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -174.0
+offset_right = 343.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 38
+bbcode_enabled = true
+text = "The top line of text goes here and can fit 2 lines."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Secondary" type="RichTextLabel" parent="CanvasLayer/Modal/Background" unique_id=1811927798]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = 2.0
+offset_right = 343.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "The bottom line goes here and can only be one line."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Modal/Background" unique_id=2072410244]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = 118.0
+offset_right = 219.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 26
+
+[node name="CancelButton" type="Button" parent="CanvasLayer/Modal/Background/Buttons" unique_id=718726721]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx04s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4p2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4yodi")
+text = "Cancel"
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer/Modal/Background/Buttons" unique_id=1208132390]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_qx04s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p4p2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4yodi")
+text = "Continue"

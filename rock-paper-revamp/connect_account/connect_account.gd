@@ -95,13 +95,13 @@ func _account_link_success(username: String, save: Dictionary):
 func _websocket_expired():
 	Signals.show_modal.emit("websocket_expired")
 	
-	$code.text = "-------"
-	$copy_code_btn.disabled = true
+	$Code.text = "-------"
+	# $copy_code_btn.disabled = true
 	
 	var confirmation = await Signals.modal_response
 	
 	if confirmation:
-		$copy_code_btn.disabled = false
+		# $copy_code_btn.disabled = false
 		start_websocket()
 	else:
 		Signals.change_screen.emit("main_menu")
@@ -110,7 +110,7 @@ func _on_message_received(message):
 	var parsed = JSON.parse_string(message)
 
 	if parsed.type == "information":
-		$code.text = "[color=green]%s" % parsed.login_code
+		$Code.text = "[color=green]%s" % parsed.login_code
 		code = parsed.login_code
 	elif parsed.type == "user_data":	
 		SaveManager.connect_account(parsed)
@@ -129,9 +129,7 @@ func _send_message(message: String) -> void:
 
 func _on_connected() -> void:	
 	# var json_string = JSON.stringify(player_data)
-	
 	# socket.send_text(json_string)
-	print("websocket connected")
 	pass
 
 func on_screen_change():
