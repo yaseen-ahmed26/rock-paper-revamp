@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_cgj84"]
 [ext_resource type="Script" uid="uid://c3dh67ar4sxak" path="res://custom_resources/modifiers/scripts/effects/edit_move_effect.gd" id="2_gmuj5"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="3_8pj1i"]
+[ext_resource type="Texture2D" uid="uid://debm2frx5c22q" path="res://assets/icons/modifiers/choice_cooldown.svg" id="3_ucg32"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="4_ucg32"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_cgj84"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="5_gmuj5"]
@@ -20,4 +21,5 @@ display_name = "Choice Cooldown"
 description = "The move you just used is locked for the next round."
 one_shot = true
 effects = Array[ExtResource("1_cgj84")]([SubResource("Resource_36o6g")])
+icon = ExtResource("3_ucg32")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

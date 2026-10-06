@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://brdsf40lybkj4"]
 
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_5d70k"]
+[ext_resource type="Texture2D" uid="uid://bd7ggug1c67tc" path="res://assets/icons/modifiers/artifical_advantage.svg" id="2_gwajy"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_nnqup"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_gwajy"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="4_5d70k"]
@@ -21,4 +22,5 @@ group = 1
 timing = 1
 exclude_badge = true
 stats_to_edit = Array[ExtResource("3_gwajy")]([SubResource("Resource_eafm8")])
+icon = ExtResource("2_gwajy")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_6l0hr"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="2_fb2y6"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_ls4sw"]
+[ext_resource type="Texture2D" uid="uid://dxo4twk1ukm52" path="res://assets/icons/modifiers/heinous_heist.svg" id="3_cfnsp"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_fb2y6"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_cfnsp"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_t5ksj"]
@@ -30,4 +31,5 @@ timing = 1
 one_shot = true
 triggers = Array[ExtResource("5_t5ksj")]([SubResource("Resource_chf6d")])
 effects = Array[ExtResource("1_6l0hr")]([SubResource("Resource_0lknv")])
+icon = ExtResource("3_cfnsp")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

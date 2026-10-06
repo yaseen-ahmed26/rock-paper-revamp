@@ -72,3 +72,4 @@ enum TriggerType {
 @export var effects: Array[ModifierEffect]
 ## The task list for this specific Modifier
 @export var task_pool: Array[TaskBase]
+@export var icon: Texture

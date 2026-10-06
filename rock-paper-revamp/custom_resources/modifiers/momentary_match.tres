@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_wplwi"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="2_cc88d"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_dgahv"]
+[ext_resource type="Texture2D" uid="uid://da3pjarytrra7" path="res://assets/icons/modifiers/momentary_match.svg" id="3_6t3oh"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_i3cu3"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_cc88d"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_6t3oh"]
@@ -40,4 +41,5 @@ group = 1
 timing = 1
 triggers = Array[ExtResource("5_6t3oh")]([SubResource("Resource_gggej"), SubResource("Resource_6acxy")])
 effects = Array[ExtResource("1_wplwi")]([SubResource("Resource_qish6"), SubResource("Resource_81c53")])
+icon = ExtResource("3_6t3oh")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

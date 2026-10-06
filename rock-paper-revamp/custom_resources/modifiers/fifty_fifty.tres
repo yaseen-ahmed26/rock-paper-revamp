@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="2_cvujk"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_rgral"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_03ctf"]
+[ext_resource type="Texture2D" uid="uid://nt2ncilno6o" path="res://assets/icons/modifiers/fifty_fifty.svg" id="3_qla0q"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="5_0a5gs"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_cvujk"]
 [ext_resource type="Script" uid="uid://de3b7c8w0krhi" path="res://custom_resources/shared/triggers/chance_trigger.gd" id="6_0a5gs"]
@@ -34,4 +35,5 @@ group = 2
 timing = 1
 triggers = Array[ExtResource("5_cvujk")]([SubResource("Resource_0gy02"), SubResource("Resource_qla0q")])
 effects = Array[ExtResource("1_p71hw")]([SubResource("Resource_0a5gs")])
+icon = ExtResource("3_qla0q")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

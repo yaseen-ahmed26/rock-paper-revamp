@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://x8c86s23xhkc"]
 
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_h4t64"]
+[ext_resource type="Texture2D" uid="uid://cn10cyuhysx1a" path="res://assets/icons/modifiers/point_perk.svg" id="2_pbm5a"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_yksg4"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_pbm5a"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="4_h4t64"]
@@ -21,4 +22,5 @@ group = 1
 timing = 1
 exclude_badge = true
 stats_to_edit = Array[ExtResource("3_pbm5a")]([SubResource("Resource_q8ye8")])
+icon = ExtResource("2_pbm5a")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"
