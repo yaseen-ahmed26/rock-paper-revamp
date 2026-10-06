@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jdt58mdrawj1"]
 
 [ext_resource type="Script" uid="uid://soe6pi5nwfeb" path="res://ui_controller.gd" id="1_3ga5c"]
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_qx04s"]
 [ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://rps_game/rps_game.tscn" id="2_1ajqp"]
 [ext_resource type="PackedScene" uid="uid://cfo70do7yw2jn" path="res://rps_selection/rps_selection.tscn" id="2_rlpp8"]
 [ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://main_menu/main_menu.tscn" id="4_dy358"]
@@ -78,6 +79,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_qx04s")
 script = ExtResource("1_3ga5c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1513549206]

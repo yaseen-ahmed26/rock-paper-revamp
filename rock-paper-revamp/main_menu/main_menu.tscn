@@ -109,7 +109,7 @@ theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "QUIT"
 
-[node name="Peck" type="Button" parent="." unique_id=1204115556]
+[node name="PeckButton" type="Button" parent="." unique_id=1204115556]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -127,3 +127,5 @@ theme_override_styles/pressed = ExtResource("4_6tl50")
 theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "Peck"
+
+[connection signal="pressed" from="PeckButton" to="." method="_on_peck_button_pressed"]
