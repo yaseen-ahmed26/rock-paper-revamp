@@ -54,6 +54,9 @@ func _on_show_modal(modal_base: ModalBase, details: Array = []):
 	modal.get_node("Background/Secondary").text = modal_base.secondary_text
 	continue_button.text = modal_base.continue_btn_text
 	
+	continue_button.mouse_filter = Control.MOUSE_FILTER_STOP
+	modal.get_node("Background/Secondary").mouse_filter = Control.MOUSE_FILTER_STOP
+	
 	if not details.is_empty():
 		modal.get_node("Background/Primary").text = modal.get_node("Background/Primary").text % details
 		
@@ -77,7 +80,9 @@ func _on_option_btn_pressed(btn: Button):
 	
 	await tween_out.finished
 	
+	continue_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	modal.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	modal.get_node("Background/Secondary").mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_secondary_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(meta)
