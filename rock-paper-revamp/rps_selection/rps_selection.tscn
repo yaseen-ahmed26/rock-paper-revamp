@@ -40,6 +40,10 @@
 [ext_resource type="Resource" uid="uid://c17glsabmijsr" path="res://custom_resources/modifiers/momentary_match.tres" id="30_jfgkb"]
 [ext_resource type="Resource" uid="uid://d0dxgj6b7momp" path="res://custom_resources/modifiers/inverted_inflation.tres" id="31_4g4y5"]
 [ext_resource type="Resource" uid="uid://cmkhh5xob85w5" path="res://custom_resources/modifiers/scissor_specialist.tres" id="32_3d228"]
+[ext_resource type="Resource" uid="uid://byk3gy7y418ip" path="res://custom_resources/modifiers/desperation_deal.tres" id="33_lm54m"]
+[ext_resource type="Resource" uid="uid://c4mx5ctlr8wxf" path="res://custom_resources/modifiers/thought_tax.tres" id="34_4g4y5"]
+[ext_resource type="Resource" uid="uid://d3o86utkcpwp5" path="res://custom_resources/modifiers/shattered_stalemate.tres" id="35_3d228"]
+[ext_resource type="Resource" uid="uid://dja27pn7786ak" path="res://custom_resources/modifiers/random_reset.tres" id="36_gc7lw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvc85"]
 content_margin_left = 0.0
@@ -290,7 +294,7 @@ grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("4_0mnpd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho"), ExtResource("21_cvc85"), ExtResource("22_fllau"), ExtResource("23_wbtam"), ExtResource("24_8rcoj"), ExtResource("25_wrns6"), ExtResource("26_wrns6"), ExtResource("27_gcuj6"), ExtResource("28_lm54m"), ExtResource("29_qamvo"), ExtResource("30_jfgkb"), ExtResource("31_4g4y5"), ExtResource("32_3d228")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho"), ExtResource("21_cvc85"), ExtResource("22_fllau"), ExtResource("23_wbtam"), ExtResource("24_8rcoj"), ExtResource("25_wrns6"), ExtResource("26_wrns6"), ExtResource("27_gcuj6"), ExtResource("28_lm54m"), ExtResource("29_qamvo"), ExtResource("30_jfgkb"), ExtResource("31_4g4y5"), ExtResource("32_3d228"), ExtResource("33_lm54m"), ExtResource("34_4g4y5"), ExtResource("35_3d228"), ExtResource("36_gc7lw")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia")])
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=609072858]

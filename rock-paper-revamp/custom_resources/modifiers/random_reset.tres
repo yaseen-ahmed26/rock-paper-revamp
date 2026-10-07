@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dja27pn7786ak"]
+
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="1_iu8yg"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_t0q2e"]
+[ext_resource type="Script" uid="uid://c3dh67ar4sxak" path="res://custom_resources/modifiers/scripts/effects/edit_move_effect.gd" id="2_t65iv"]
+[ext_resource type="Texture2D" uid="uid://beox71ks1a2h7" path="res://assets/icons/modifiers/random_reset.svg" id="3_qppe0"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_t65iv"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_qppe0"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_foaji"]
+
+[sub_resource type="Resource" id="Resource_lxxak"]
+script = ExtResource("2_t65iv")
+move_target = 5
+lock_move = true
+metadata/_custom_type_script = "uid://c3dh67ar4sxak"
+
+[resource]
+script = ExtResource("2_t0q2e")
+id = 10
+display_name = "Random Reset"
+description = "One random move is locked per round but you gain 1 point every win."
+group = 2
+icon = ExtResource("3_qppe0")
+effects = Array[ExtResource("1_iu8yg")]([SubResource("Resource_lxxak")])
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

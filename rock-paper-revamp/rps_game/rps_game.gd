@@ -77,7 +77,7 @@ func _toggle_move_btns(state: bool):
 			btn.get_node("Keybind").visible = true
 		
 func _update_ui():
-	$Scoreboard.text = "[You] %d • %d [AI]" % [
+	$Scoreboard.text = "[You] %.1f • %1.f [AI]" % [
 		game_stats.player_points,
 		game_stats.computer_points
 	]
