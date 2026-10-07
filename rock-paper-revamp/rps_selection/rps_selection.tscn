@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://bini64moj23e3" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
 [ext_resource type="Resource" uid="uid://x8c86s23xhkc" path="res://custom_resources/modifiers/point_perk.tres" id="9_0mnpd"]
-[ext_resource type="Resource" uid="uid://dykob2r13w7h8" path="res://custom_resources/gamemodes/scripts/race_to.tres" id="9_3d228"]
+[ext_resource type="Resource" uid="uid://dykob2r13w7h8" path="res://custom_resources/gamemodes/race_to.tres" id="9_3d228"]
 [ext_resource type="Resource" uid="uid://brdsf40lybkj4" path="res://custom_resources/modifiers/artificial_advantage.tres" id="10_yqfff"]
 [ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/double_down.tres" id="11_oiecb"]
 [ext_resource type="Resource" uid="uid://jrctkrktpuaj" path="res://custom_resources/modifiers/tax_toll.tres" id="12_3y6wd"]
@@ -394,7 +394,7 @@ offset_right = 193.5
 offset_bottom = 131.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 horizontal_alignment = 1
 

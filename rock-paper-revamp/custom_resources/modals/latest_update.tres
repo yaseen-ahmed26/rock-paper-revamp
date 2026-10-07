@@ -6,7 +6,7 @@
 script = ExtResource("1_h5wf8")
 modal_id = "latest_update"
 title = "INFORMATION"
-primary_text = "Menu icons, 4 new modifiers, 1 gamemode, 1 opponent, Tokens, Challenge rewards and more!"
+primary_text = "Menu icons, 4 new modifiers, Race to Zero gamemode, Sequencer opponent, Tokens, Challenge rewards and more!"
 secondary_text = "More information can be found on our website [color=green][url=https://peck.projecthatchlings.xyz/]here[/url]"
 continue_btn_text = "Close"
 metadata/_custom_type_script = "uid://denwbd5pg8uov"
