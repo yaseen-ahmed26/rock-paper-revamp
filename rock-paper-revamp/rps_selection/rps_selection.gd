@@ -17,6 +17,8 @@ var locked_modifiers: Dictionary = {}
 
 var current_overlay: Panel
 
+var selectable_modifiers = []
+
 # Godot
 func _ready() -> void:
 	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
@@ -89,6 +91,8 @@ func _create_btn(info, parent, template_btn, press_connection):
 				buy_btn.text = "%d Tokens" % info.purchase_cost
 				
 				buy_btn.pressed.connect(_on_buy_modifier_pressed.bind(clone))
+		else:
+			selectable_modifiers.append(clone)
 		
 	clone.pressed.connect(press_connection.bind(clone))
 
@@ -285,15 +289,7 @@ func _on_clear_selection_btn_pressed():
 	_update_info_btns()
 	
 func _on_pick_random_btn_pressed():
-	if selected_modifier_btns.size() == 5: return
-		
-	var modifier_btns = $Modifiers/ScrollContainer/Holder.get_children()
-	
-	for btn in modifier_btns:
-		if btn.name == "TemplateButton": modifier_btns.erase(btn)
-		if btn in selected_modifier_btns: modifier_btns.erase(btn)
-	
-	_on_modifier_btn_pressed(modifier_btns.pick_random())
+	_show_overlay($Overlay/Tokens)
 
 func _on_close_overlay_pressed() -> void:
 	var tween: Tween = create_tween()
