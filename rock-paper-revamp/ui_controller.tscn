@@ -233,7 +233,6 @@ offset_right = 371.0
 offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "The bottom line goes here and can only be one line."
@@ -275,3 +274,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qx04s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p4p2l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4yodi")
 text = "Continue"
+
+[connection signal="meta_clicked" from="CanvasLayer/Modal/Background/Secondary" to="." method="_on_secondary_meta_clicked"]

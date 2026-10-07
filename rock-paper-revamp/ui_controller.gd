@@ -78,3 +78,6 @@ func _on_option_btn_pressed(btn: Button):
 	await tween_out.finished
 	
 	modal.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _on_secondary_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(meta)
