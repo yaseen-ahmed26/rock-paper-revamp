@@ -15,11 +15,13 @@
 		"best_of": 0,
 		"comeback": 0,
 		"survival": 0,
+		"race_to_last": 0,
 		"endless": 0
 	},
 	"opponents": {
 		"the_gambler": 0,
-		"statistics_guy": 0
+		"statistics_guy": 0,
+		"alternator": 0
 	},
 	"modifiers": {
 		"copy_cat": 0,
@@ -47,7 +49,9 @@
 		"last_laugh": 0,
 		"scissor_specialist": 0,
 		"jackpot_juice": 0,
-		"inverted_inflation": 0
+		"inverted_inflation": 0,
+		"desperation_deal": 0,
+		"shattered_stalemate": 0
 	},
 	"completed_tasks": [],
 	"completed_challenges": [],
