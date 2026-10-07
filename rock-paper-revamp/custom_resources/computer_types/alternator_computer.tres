@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AlternatorComputer" format=3 uid="uid://b2h2qglcgcmin"]
+
+[ext_resource type="Script" uid="uid://nif6u56v5283" path="res://custom_resources/computer_types/scripts/alternator.gd" id="1_31vav"]
+
+[resource]
+script = ExtResource("1_31vav")
+id = 2
+display_name = "Sequencer"
+description = "He plays a set sequence of moves.. until you disrupt him."
+metadata/_custom_type_script = "uid://nif6u56v5283"
