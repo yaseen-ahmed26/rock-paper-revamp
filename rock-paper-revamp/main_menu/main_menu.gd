@@ -6,6 +6,7 @@ extends Control
 var redirect_modal: ModalBase = preload("res://custom_resources/modals/redirect_to_website.tres")
 var confirm_sign_modal: ModalBase = preload("res://custom_resources/modals/confirm_sign_in.tres")
 var why_revamped_modal: ModalBase = preload("res://custom_resources/modals/why_revamped.tres")
+var latest_update_modal: ModalBase = preload("res://custom_resources/modals/latest_update.tres")
 
 func _ready() -> void:
 	for btn: Button in menu_buttons.get_children():
@@ -33,6 +34,8 @@ func _on_side_btn_pressed(btn: Button):
 	match btn.name:
 		"Revamped":
 			Signals.show_modal.emit(why_revamped_modal)
+		"Updates":
+			Signals.show_modal.emit(latest_update_modal)
 	
 func _on_side_btn_hover_enter(btn: Button):
 	var hover_label = btn.get_node_or_null("HoverLabel")
