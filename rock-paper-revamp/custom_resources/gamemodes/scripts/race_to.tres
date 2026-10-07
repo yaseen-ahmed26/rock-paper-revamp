@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RaceToGamemode" format=3 uid="uid://dykob2r13w7h8"]
+
+[ext_resource type="Script" uid="uid://bw1ofrurcagc6" path="res://custom_resources/gamemodes/scripts/race_to_zero.gd" id="1_2npos"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_vv448"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="3_nth2g"]
+
+[resource]
+script = ExtResource("1_2npos")
+starting_points = 8.0
+id = 5
+display_name = "Race to Zero"
+description = "Be the first to deplete all your points!"
+notice = "Setting 'Total Rounds' setting to -1 will result in infinite rounds!"
+metadata/_custom_type_script = "uid://bw1ofrurcagc6"

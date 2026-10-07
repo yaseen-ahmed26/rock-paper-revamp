@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://bini64moj23e3" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
 [ext_resource type="Resource" uid="uid://x8c86s23xhkc" path="res://custom_resources/modifiers/point_perk.tres" id="9_0mnpd"]
+[ext_resource type="Resource" uid="uid://dykob2r13w7h8" path="res://custom_resources/gamemodes/scripts/race_to.tres" id="9_3d228"]
 [ext_resource type="Resource" uid="uid://brdsf40lybkj4" path="res://custom_resources/modifiers/artificial_advantage.tres" id="10_yqfff"]
 [ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/double_down.tres" id="11_oiecb"]
 [ext_resource type="Resource" uid="uid://jrctkrktpuaj" path="res://custom_resources/modifiers/tax_toll.tres" id="12_3y6wd"]
@@ -293,7 +294,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
-gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("4_0mnpd")])
+gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("9_3d228"), ExtResource("4_0mnpd")])
 modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("9_0mnpd"), ExtResource("10_yqfff"), ExtResource("11_oiecb"), ExtResource("12_3y6wd"), ExtResource("13_yrpsb"), ExtResource("14_qmatd"), ExtResource("15_4oi77"), ExtResource("16_v8b7o"), ExtResource("17_2y74n"), ExtResource("18_2y74n"), ExtResource("19_yfyho"), ExtResource("21_cvc85"), ExtResource("22_fllau"), ExtResource("23_wbtam"), ExtResource("24_8rcoj"), ExtResource("25_wrns6"), ExtResource("26_wrns6"), ExtResource("27_gcuj6"), ExtResource("28_lm54m"), ExtResource("29_qamvo"), ExtResource("30_jfgkb"), ExtResource("31_4g4y5"), ExtResource("32_3d228"), ExtResource("33_lm54m"), ExtResource("34_4g4y5"), ExtResource("35_3d228"), ExtResource("36_gc7lw")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia")])
 
