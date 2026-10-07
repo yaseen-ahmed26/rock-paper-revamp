@@ -1,6 +1,6 @@
 extends Node
 
-func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase]):
+func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase], tasks_competed: int):
 	var amount: int = 0
 	
 	amount += Constants.TOKENS_PER_GAME
@@ -11,6 +11,7 @@ func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase]):
 		amount += Constants.TOKENS_ON_LOSS
 		
 	amount += (modifiers.size() * Constants.TOKENS_PER_MODIFIER)
+	amount += (tasks_competed * Constants.TOKENS_PER_TASK)
 	
 	SaveManager.save_data["tokens"] += amount
 	

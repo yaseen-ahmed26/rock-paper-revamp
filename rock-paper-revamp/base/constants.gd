@@ -5,6 +5,7 @@ const TOKENS_PER_GAME = 5
 const TOKENS_ON_WIN = 10
 const TOKENS_ON_LOSS = 4
 const TOKENS_PER_MODIFIER = 2
+const TOKENS_PER_TASK = 5
 
 # connect_account.gd
 const WEBSOCKET_URL: String = "ws://127.0.0.1:8000/api/codes/ws"

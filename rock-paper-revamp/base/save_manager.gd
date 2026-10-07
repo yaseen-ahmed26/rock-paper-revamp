@@ -112,7 +112,7 @@ func record_match(
 	challenge: ChallengeBase = null
 ):
 	var delta: Dictionary = {
-		"tokens": PlayerManager.calculate_tokens(stats, modifiers),
+		"tokens": PlayerManager.calculate_tokens(stats, modifiers, tasks_completed),
 		"points_won": int(stats.player_points),
 		"points_lost": int(stats.computer_points),
 		"rounds_played": stats.rounds_played,
