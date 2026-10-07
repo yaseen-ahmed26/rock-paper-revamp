@@ -9,6 +9,8 @@ const SHOW_IF_EDIT: Dictionary = {
 @export var invert: bool = false
 ## Cancel out the current outcome.
 @export var discard: bool = false
+## Cancel out the current outcome.
+@export var random_winner: bool = false
 ## Override the round outcome and set a new one. Note that this overrides Invert and Discard if they are both set to True.
 @export var force_specific_outcome: bool = false
 ## How many times to apply the current outcome. Resets on new round.
@@ -17,7 +19,9 @@ const SHOW_IF_EDIT: Dictionary = {
 @export var new_outcome: GameStats.RoundOutcome = GameStats.RoundOutcome.DRAW
 
 func apply(game_stats: GameStats) -> void:
-	if force_specific_outcome:
+	if random_winner:
+		game_stats.outcome = [GameStats.RoundOutcome.WIN, GameStats.RoundOutcome.LOSS].pick_random()
+	elif force_specific_outcome:
 		game_stats.outcome = new_outcome
 	elif discard:
 		game_stats.outcome = GameStats.RoundOutcome.DISCARD
