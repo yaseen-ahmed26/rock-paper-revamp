@@ -94,7 +94,10 @@ func add_used_modifier(modifier_id: ModifierBase.ID):
 func apply_round_outcome():
 	if outcome == RoundOutcome.DISCARD: return
 	
-	var move_bonus: float = btn_stats[player_move].point_bonus
+	var move_bonus: float = 0.0
+	
+	if not player_move.is_empty():
+		move_bonus = btn_stats[player_move].point_bonus
 
 	for i in outcome_multiplier:
 		match outcome:
