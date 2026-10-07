@@ -50,6 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_6at21")
+enabled = false
 icons = Array[Texture2D]([ExtResource("4_g1omr"), ExtResource("5_kwfav"), ExtResource("6_n70vs"), ExtResource("7_tr6y3"), ExtResource("8_l18n7"), ExtResource("9_conbw"), ExtResource("10_pv4yd"), ExtResource("11_6jtit"), ExtResource("12_p01wi"), ExtResource("13_koqfm"), ExtResource("14_qk1ns"), ExtResource("15_vlony"), ExtResource("16_8wd0k"), ExtResource("17_t7u00"), ExtResource("18_08nat"), ExtResource("19_pjjpu"), ExtResource("20_td1kt"), ExtResource("21_v8p65"), ExtResource("22_5dxmf"), ExtResource("23_vpnst"), ExtResource("24_ihep4"), ExtResource("25_eqsep")])
 
 [node name="IconTemplate" type="TextureRect" parent="IconWaterfall" unique_id=419135703]

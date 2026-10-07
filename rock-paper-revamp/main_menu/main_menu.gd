@@ -2,6 +2,7 @@ extends Control
 
 @onready var menu_buttons: VBoxContainer = $MenuButtons
 @onready var side_buttons: VBoxContainer = $SideButtons
+@onready var icon_waterfall: Control = $IconWaterfall
 
 var redirect_modal: ModalBase = preload("res://custom_resources/modals/redirect_to_website.tres")
 var confirm_sign_modal: ModalBase = preload("res://custom_resources/modals/confirm_sign_in.tres")
@@ -29,6 +30,8 @@ func _on_menu_btn_pressed(btn: Button):
 			Signals.change_screen.emit("credits_screen")
 		"Quit":
 			get_tree().quit()
+			
+	icon_waterfall.enabled = false
 
 func _on_side_btn_pressed(btn: Button):
 	match btn.name:
@@ -55,3 +58,6 @@ func _on_peck_button_pressed():
 		
 		if response:
 			Signals.change_screen.emit("connect_account")
+
+func on_screen_change(_args):
+	icon_waterfall.enabled = true
