@@ -92,26 +92,26 @@ func _create_btn(info, parent, template_btn, press_connection):
 
 # Gamemode Helpers
 func _update_paramters(gamemode: GamemodeBase):
-	var template_step = $Gamemodes/Settings/Holder/TemplateStep
+	var template_step = $Overlay/GamemodeSettings/Holder/TemplateStep
 	var settings = gamemode.get_customisable_settings()
 	
-	for child in $Gamemodes/Settings/Holder.get_children():
+	for child in $Overlay/GamemodeSettings/Holder.get_children():
 		if child == template_step: continue
 		child.queue_free()
 	
-	if settings.is_empty(): 
-		$Gamemodes/Settings/NoPropertiesLabel.text = "[color=gold]%s [color=white]has no properties" % gamemode.display_name
-		$Gamemodes/Settings/NoPropertiesLabel.visible = true
+	if settings.is_empty():
+		$Gamemodes/ShowSettingsBtn.disabled = true
 		return
-
-	$Gamemodes/Settings/NoPropertiesLabel.visible = false
+	
+	$Gamemodes/ShowSettingsBtn.disabled = false
+	$Overlay/GamemodeSettings/Title.text = gamemode.display_name + " Settings"
 
 	for setting in settings:
 		var config: Dictionary = settings[setting]
 		var value = gamemode.get(setting)
 
 		var clone = template_step.duplicate()
-		$Gamemodes/Settings/Holder.add_child(clone)
+		$Overlay/GamemodeSettings/Holder.add_child(clone)
 		
 		clone.name = setting.to_lower()
 		clone.visible = true
@@ -129,20 +129,20 @@ func _update_paramters(gamemode: GamemodeBase):
 		)
 
 func _update_tasks(resource: GamemodeBase):	
-	for label in $Gamemodes/Tasks/Holder.get_children():
+	for label in $Overlay/GamemodeTasks/Holder.get_children():
 		if label.name == "Template": continue
 		label.queue_free()
 		
-	if resource.task_pool.is_empty():
-		$Gamemodes/Tasks/NoPropertiesLabel.text = "[color=gold]%s [color=white]has no tasks" % resource.display_name
-		$Gamemodes/Tasks/NoPropertiesLabel.visible = true
+	if resource.task_pool.is_empty(): 
+		$Gamemodes/ShowTasksBtn.disabled = true
 		return
 	
-	$Gamemodes/Tasks/NoPropertiesLabel.visible = false
+	$Gamemodes/ShowTasksBtn.disabled = false
+	$Overlay/GamemodeTasks/Title.text = resource.display_name + " Tasks"
 	
 	for task in resource.task_pool:
-		var clone: RichTextLabel = $Gamemodes/Tasks/Holder/Template.duplicate(true)
-		$Gamemodes/Tasks/Holder.add_child(clone)
+		var clone: RichTextLabel = $Overlay/GamemodeTasks/Holder/Template.duplicate(true)
+		$Overlay/GamemodeTasks/Holder.add_child(clone)
 		
 		clone.name = task.display_name.to_lower()
 		clone.text = "[color=gold]%s: [color=white]%s" % [task.display_name, task.description]
@@ -180,16 +180,10 @@ func _on_pick_gamemode_btn_pressed():
 		btn.set_meta("Open", false)
 		gm_btn_holder.visible = false
 		btn.text = "Pick Gamemode" if not selected_gamemode else selected_gamemode.display_name
-		
-		$Gamemodes/Description.visible = true
-		$Gamemodes/Settings.visible = true
 	else:
 		btn.set_meta("Open", true)
 		gm_btn_holder.visible = true
 		btn.text = "CLOSE"
-		
-		$Gamemodes/Description.visible = false
-		$Gamemodes/Settings.visible = false
 
 func _on_gamemode_btn_pressed(btn: Button):
 	var resource: GamemodeBase = btn.get_meta("Resource")
@@ -287,7 +281,6 @@ func _on_pick_random_btn_pressed():
 	
 	_on_modifier_btn_pressed(modifier_btns.pick_random())
 
-
 func _on_close_overlay_pressed() -> void:
 	var tween: Tween = create_tween()
 	tween.tween_property(overlay, "modulate:a", 0.0, 0.5)
@@ -330,3 +323,9 @@ func _show_overlay(screen: Panel):
 	await tween.finished
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	$Overlay/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_STOP
+
+func _on_show_tasks_btn_pressed() -> void:
+	_show_overlay($Overlay/GamemodeTasks)
+
+func _on_show_settings_btn_pressed() -> void:
+	_show_overlay($Overlay/GamemodeSettings)
