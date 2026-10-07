@@ -17,6 +17,7 @@ var gamemode: GamemodeBase
 var computer: ComputerBase
 var modifiers: Array[ModifierBase] = []
 var challenge: ChallengeBase
+var tasks_completed = 0
 
 var game_stats: GameStats
 
@@ -104,6 +105,15 @@ func _update_ui():
 			btn.get_node("Keybind").visible = true
 		
 		btn.set_meta("Value", stat.actual_move)
+
+func _check_completed_tasks():
+	for task in gamemode.task_pool:
+		if task.timing != TaskBase.Timing.ROUND_END: continue
+		
+		var complete = task.check_completion(game_stats)
+	
+		if complete:
+			tasks_completed += 1
 
 # Overlay Logic
 func _show_overlay():
@@ -261,14 +271,7 @@ func _end_round():
 		$RoundEnd.text = "Round has been discarded, No points awarded"
 				
 	_update_ui()
-	
-	for task in gamemode.task_pool:
-		if task.timing != TaskBase.Timing.ROUND_END: continue
-		
-		var task_completed = task.check_completion(game_stats)
-	
-		if task_completed:
-			print("%s has been completed!" % task.display_name)
+	_check_completed_tasks()
 		
 	game_over = gamemode.is_game_over(game_stats)
 		
@@ -282,15 +285,9 @@ func _end_round():
 	_toggle_move_btns(true)
 	
 func _end_game():
-	for task in gamemode.task_pool:
-		if task.timing != TaskBase.Timing.MATCH_END: continue
-		
-		var task_completed = task.check_completion(game_stats)
+	_check_completed_tasks()
 	
-		if task_completed:
-			print("%s has been completed!" % task.display_name)
-	
-	SaveManager.record_match(game_stats, gamemode, computer, modifiers, challenge)
+	SaveManager.record_match(game_stats, gamemode, computer, modifiers, tasks_completed, challenge)
 	
 	Signals.change_screen.emit("rps_results", {
 		"stats": game_stats,

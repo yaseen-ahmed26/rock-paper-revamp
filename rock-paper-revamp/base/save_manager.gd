@@ -107,7 +107,8 @@ func record_match(
 	stats: GameStats,
 	gamemode: GamemodeBase, 
 	opponent: ComputerBase, 
-	modifiers: Array[ModifierBase], 
+	modifiers: Array[ModifierBase],
+	tasks_completed: int,
 	challenge: ChallengeBase = null
 ):
 	var delta: Dictionary = {
