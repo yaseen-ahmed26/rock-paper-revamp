@@ -125,7 +125,7 @@ theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "QUIT"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1125502485]
+[node name="SideButtons" type="VBoxContainer" parent="." unique_id=1125502485]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -138,7 +138,7 @@ grow_vertical = 0
 theme_override_constants/separation = 22
 alignment = 2
 
-[node name="Revamped" type="Button" parent="VBoxContainer" unique_id=1934386151]
+[node name="Revamped" type="Button" parent="SideButtons" unique_id=1934386151]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("4_6tl50")
@@ -147,7 +147,7 @@ theme_override_styles/hover = ExtResource("3_t6bnd")
 icon = ExtResource("7_ia84y")
 expand_icon = true
 
-[node name="HoverLabel" type="RichTextLabel" parent="VBoxContainer/Revamped" unique_id=1491826398]
+[node name="HoverLabel" type="RichTextLabel" parent="SideButtons/Revamped" unique_id=1491826398]
 visible = false
 layout_mode = 1
 anchors_preset = 6
@@ -165,7 +165,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "Why Revamped?"
 vertical_alignment = 1
 
-[node name="Updates" type="Button" parent="VBoxContainer" unique_id=1107345201]
+[node name="Updates" type="Button" parent="SideButtons" unique_id=1107345201]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("4_6tl50")
@@ -174,7 +174,7 @@ theme_override_styles/hover = ExtResource("3_t6bnd")
 icon = ExtResource("8_6at21")
 expand_icon = true
 
-[node name="HoverLabel" type="RichTextLabel" parent="VBoxContainer/Updates" unique_id=591994750]
+[node name="HoverLabel" type="RichTextLabel" parent="SideButtons/Updates" unique_id=591994750]
 visible = false
 layout_mode = 1
 anchors_preset = 6
