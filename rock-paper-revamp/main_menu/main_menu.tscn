@@ -2,12 +2,35 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_6tl50"]
 [ext_resource type="Script" uid="uid://ccnofbw3bs2bj" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Script" uid="uid://c5wujtc7wwq4i" path="res://main_menu/waterfall.gd" id="3_6at21"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="3_t6bnd"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="4_6tl50"]
+[ext_resource type="Texture2D" uid="uid://bn5xcyv8lxisp" path="res://assets/icons/modifiers/copy_cat.svg" id="4_g1omr"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="5_6at21"]
+[ext_resource type="Texture2D" uid="uid://dj0ebaxy0rlnu" path="res://assets/icons/modifiers/hot_hand.svg" id="5_kwfav"]
+[ext_resource type="Texture2D" uid="uid://cggynoh6f8wjd" path="res://assets/icons/modifiers/tax_toll.svg" id="6_n70vs"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_og6xe"]
 [ext_resource type="Texture2D" uid="uid://bs1c01wwxvd04" path="res://assets/icons/menu/revamped.svg" id="7_ia84y"]
+[ext_resource type="Texture2D" uid="uid://oebgklt1svnx" path="res://assets/icons/modifiers/duel_decay.svg" id="7_tr6y3"]
 [ext_resource type="Texture2D" uid="uid://1pw3w0plydc" path="res://assets/icons/menu/updates.svg" id="8_6at21"]
+[ext_resource type="Texture2D" uid="uid://rsowjd8wmisa" path="res://assets/icons/modifiers/last_laugh.svg" id="8_l18n7"]
+[ext_resource type="Texture2D" uid="uid://cn10cyuhysx1a" path="res://assets/icons/modifiers/point_perk.svg" id="9_conbw"]
+[ext_resource type="Texture2D" uid="uid://dqrupxv472vt4" path="res://assets/icons/modifiers/double_down.svg" id="10_pv4yd"]
+[ext_resource type="Texture2D" uid="uid://nt2ncilno6o" path="res://assets/icons/modifiers/fifty_fifty.svg" id="11_6jtit"]
+[ext_resource type="Texture2D" uid="uid://m7vf6ndanalb" path="res://assets/icons/modifiers/pity_points.svg" id="12_p01wi"]
+[ext_resource type="Texture2D" uid="uid://dei5o2r6s48h5" path="res://assets/icons/modifiers/thought_tax.svg" id="13_koqfm"]
+[ext_resource type="Texture2D" uid="uid://b2knkhspf0mhm" path="res://assets/icons/modifiers/helping_hand.svg" id="14_qk1ns"]
+[ext_resource type="Texture2D" uid="uid://beox71ks1a2h7" path="res://assets/icons/modifiers/random_reset.svg" id="15_vlony"]
+[ext_resource type="Texture2D" uid="uid://dxo4twk1ukm52" path="res://assets/icons/modifiers/heinous_heist.svg" id="16_8wd0k"]
+[ext_resource type="Texture2D" uid="uid://ddld2qi5tdg3w" path="res://assets/icons/modifiers/jackpot_juice.svg" id="17_t7u00"]
+[ext_resource type="Texture2D" uid="uid://h07yp2by5dgp" path="res://assets/icons/modifiers/repeat_reward.svg" id="18_08nat"]
+[ext_resource type="Texture2D" uid="uid://do0gv8sy8473p" path="res://assets/icons/modifiers/rule_reversal.svg" id="19_pjjpu"]
+[ext_resource type="Texture2D" uid="uid://c3lg8onwpjswk" path="res://assets/icons/modifiers/safety_shield.svg" id="20_td1kt"]
+[ext_resource type="Texture2D" uid="uid://debm2frx5c22q" path="res://assets/icons/modifiers/choice_cooldown.svg" id="21_v8p65"]
+[ext_resource type="Texture2D" uid="uid://da3pjarytrra7" path="res://assets/icons/modifiers/momentary_match.svg" id="22_5dxmf"]
+[ext_resource type="Texture2D" uid="uid://bk0hg01avjd0g" path="res://assets/icons/modifiers/vampire_victory.svg" id="23_vpnst"]
+[ext_resource type="Texture2D" uid="uid://bd7ggug1c67tc" path="res://assets/icons/modifiers/artifical_advantage.svg" id="24_ihep4"]
+[ext_resource type="Texture2D" uid="uid://bdpc03y1l7wi7" path="res://assets/icons/modifiers/shattered_stalemate.svg" id="25_eqsep"]
 
 [node name="main_menu" type="Control" unique_id=771054830]
 layout_mode = 3
@@ -19,6 +42,25 @@ grow_vertical = 2
 theme = ExtResource("1_6tl50")
 script = ExtResource("1_oa53l")
 
+[node name="IconWaterfall" type="Control" parent="." unique_id=1855803293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_6at21")
+icons = Array[Texture2D]([ExtResource("4_g1omr"), ExtResource("5_kwfav"), ExtResource("6_n70vs"), ExtResource("7_tr6y3"), ExtResource("8_l18n7"), ExtResource("9_conbw"), ExtResource("10_pv4yd"), ExtResource("11_6jtit"), ExtResource("12_p01wi"), ExtResource("13_koqfm"), ExtResource("14_qk1ns"), ExtResource("15_vlony"), ExtResource("16_8wd0k"), ExtResource("17_t7u00"), ExtResource("18_08nat"), ExtResource("19_pjjpu"), ExtResource("20_td1kt"), ExtResource("21_v8p65"), ExtResource("22_5dxmf"), ExtResource("23_vpnst"), ExtResource("24_ihep4"), ExtResource("25_eqsep")])
+
+[node name="IconTemplate" type="TextureRect" parent="IconWaterfall" unique_id=419135703]
+modulate = Color(0.44705883, 0.44705883, 0.44705883, 0.7058824)
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+pivot_offset = Vector2(40, 40)
+mouse_filter = 2
+expand_mode = 1
+
 [node name="Title" type="RichTextLabel" parent="." unique_id=723658857]
 layout_mode = 1
 anchors_preset = 8
@@ -26,13 +68,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -603.0
+offset_left = -455.0
 offset_top = -480.0
-offset_right = 603.0
+offset_right = 455.0
 offset_bottom = -342.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/normal_font_size = 62
 text = "Rock Paper Revamped"
 horizontal_alignment = 1
 vertical_alignment = 1
