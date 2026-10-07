@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://chxbyiml4kfew" path="res://rps_game/modifier_handler.gd" id="3_ynb1k"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="4_isxwt"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="5_81c6f"]
+[ext_resource type="Texture2D" uid="uid://bgcrlmrgi3cns" path="res://assets/icons/menu/rock.png" id="7_isxwt"]
+[ext_resource type="Texture2D" uid="uid://cv8ckqnk758sf" path="res://assets/icons/menu/paper.png" id="8_l0q4v"]
+[ext_resource type="Texture2D" uid="uid://fmfe63gfuoo3" path="res://assets/icons/menu/scissors.png" id="9_ttdvg"]
 
 [node name="rps_game" type="Control" unique_id=1532588308]
 layout_mode = 3
@@ -78,6 +81,22 @@ text = "[1]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Icon" type="TextureRect" parent="MoveButtons/Rock" unique_id=1507580825]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -20.0
+offset_right = -16.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_isxwt")
+expand_mode = 1
+
 [node name="Paper" type="Button" parent="MoveButtons" unique_id=1697466638]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -118,6 +137,22 @@ text = "[color=gold]SELECTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Icon" type="TextureRect" parent="MoveButtons/Paper" unique_id=738853268]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -20.0
+offset_right = -15.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_l0q4v")
+expand_mode = 1
+
 [node name="Scissors" type="Button" parent="MoveButtons" unique_id=417781502]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -157,6 +192,22 @@ theme_override_font_sizes/normal_font_size = 22
 text = "[3]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MoveButtons/Scissors" unique_id=1619651412]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -20.0
+offset_right = -14.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("9_ttdvg")
+expand_mode = 1
 
 [node name="TimeLeft" type="RichTextLabel" parent="." unique_id=584951318]
 layout_mode = 1
