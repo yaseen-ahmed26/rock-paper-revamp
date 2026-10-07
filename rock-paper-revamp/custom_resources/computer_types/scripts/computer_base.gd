@@ -3,7 +3,9 @@ class_name ComputerBase
 
 enum ID {
 	GAMBLE,
-	STATISTICS
+	STATISTICS,
+	ALTERNATOR,
+	SMART_ONE
 }
 
 @export_group("Metadata")

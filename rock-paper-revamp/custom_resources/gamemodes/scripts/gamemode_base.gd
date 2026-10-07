@@ -6,7 +6,8 @@ enum ID {
 	BEST_OF,
 	SURVIVAL,
 	COMEBACK,
-	ENDLESS
+	ENDLESS,
+	RACE_TO_LAST
 }
 
 @export_group("Metadata")
