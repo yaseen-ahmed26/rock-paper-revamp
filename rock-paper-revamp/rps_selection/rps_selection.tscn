@@ -375,6 +375,23 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 horizontal_alignment = 1
 
+[node name="Notice" type="RichTextLabel" parent="Gamemodes" unique_id=1056866657]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.5
+offset_top = 6.5
+offset_right = 193.5
+offset_bottom = 131.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+horizontal_alignment = 1
+
 [node name="PickGamemodeBtn" type="Button" parent="Gamemodes" unique_id=228762237]
 layout_mode = 1
 anchors_preset = 5
@@ -451,6 +468,7 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
+theme_override_styles/disabled = ExtResource("27_rtsuo")
 disabled = true
 text = "Tasks"
 metadata/Open = false
@@ -468,6 +486,7 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = ExtResource("26_wbtam")
 theme_override_styles/pressed = ExtResource("24_cvc85")
 theme_override_styles/hover = ExtResource("24_cvc85")
+theme_override_styles/disabled = ExtResource("27_rtsuo")
 disabled = true
 text = "Settings"
 metadata/Open = false

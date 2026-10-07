@@ -199,6 +199,12 @@ func _on_gamemode_btn_pressed(btn: Button):
 	
 	$Gamemodes/Description.text = resource.description
 	
+	if not resource.notice.is_empty():
+		$Gamemodes/Notice.text = "[color=red]NOTICE\n[color=white]" + resource.notice
+		$Gamemodes/Notice.visible = true
+	else:
+		$Gamemodes/Notice.visible = false
+	
 	if selected_computer_btn and selected_gamemode:
 		$StartButton.disabled = false
 	else:

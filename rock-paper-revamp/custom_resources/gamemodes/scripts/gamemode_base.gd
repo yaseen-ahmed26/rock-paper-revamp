@@ -16,6 +16,8 @@ enum ID {
 @export var display_name: String
 ## The description of the gamemode
 @export var description: String
+## A notice to display on the UI for a custom message.
+@export var notice: String
 
 @export_group("Rules")
 ## The modifiers to blacklist. This applies before the modifier blacklist
