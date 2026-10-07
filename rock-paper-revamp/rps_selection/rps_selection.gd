@@ -15,6 +15,8 @@ var selected_computer_btn: Button
 
 var locked_modifiers: Dictionary = {}
 
+var current_overlay: Panel
+
 # Godot
 func _ready() -> void:
 	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
@@ -180,10 +182,16 @@ func _on_pick_gamemode_btn_pressed():
 		btn.set_meta("Open", false)
 		gm_btn_holder.visible = false
 		btn.text = "Pick Gamemode" if not selected_gamemode else selected_gamemode.display_name
+		
+		$Gamemodes/ShowSettingsBtn.visible = true
+		$Gamemodes/ShowTasksBtn.visible = true
 	else:
 		btn.set_meta("Open", true)
 		gm_btn_holder.visible = true
 		btn.text = "CLOSE"
+		
+		$Gamemodes/ShowSettingsBtn.visible = false
+		$Gamemodes/ShowTasksBtn.visible = false
 
 func _on_gamemode_btn_pressed(btn: Button):
 	var resource: GamemodeBase = btn.get_meta("Resource")
@@ -316,6 +324,10 @@ func on_screen_change(_args):
 			btn.get_node("Locked").visible = false
 
 func _show_overlay(screen: Panel):
+	if current_overlay:
+		current_overlay.visible = false
+	
+	current_overlay = screen
 	screen.visible = true
 	
 	var tween: Tween = create_tween()
