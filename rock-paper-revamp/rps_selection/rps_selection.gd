@@ -6,7 +6,7 @@ extends Control
 
 @onready var gm_btn_holder: VBoxContainer = $Gamemodes/PickGamemodeBtn/BtnHolder
 @onready var info_buttons: HBoxContainer = $Modifiers/InfoButtons
-@onready var modifier_overlay: ColorRect = $ModifierOverlay
+@onready var overlay: ColorRect = $Overlay
 
 var selected_gamemode: GamemodeBase
 
@@ -261,14 +261,12 @@ func _on_start_btn_pressed() -> void:
 
 # Modifier Buttons	
 func _on_modifier_info_btn_pressed(btn: Button):
-	modifier_overlay.get_node("Background/Title").text = btn.get_meta("ModifierBase").display_name
-	modifier_overlay.get_node("Background/Description").text = btn.get_meta("ModifierBase").description
-
-	var tween: Tween = create_tween()
-	tween.tween_property(modifier_overlay, "modulate:a", 1.0, 0.5)
-	await tween.finished
-	modifier_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
-	$ModifierOverlay/Background/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	var modifier_screen: Panel = $Overlay/Modifier
+	
+	modifier_screen.get_node("Title").text = btn.get_meta("ModifierBase").display_name
+	modifier_screen.get_node("Description").text = btn.get_meta("ModifierBase").description
+	
+	_show_overlay(modifier_screen)
 	
 func _on_clear_selection_btn_pressed():
 	for btn in selected_modifier_btns:
@@ -292,11 +290,10 @@ func _on_pick_random_btn_pressed():
 
 func _on_close_overlay_pressed() -> void:
 	var tween: Tween = create_tween()
-	tween.tween_property(modifier_overlay, "modulate:a", 0.0, 0.5)
+	tween.tween_property(overlay, "modulate:a", 0.0, 0.5)
 	await tween.finished
-	modifier_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	$ModifierOverlay/Background/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
+	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$Overlay/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _on_buy_modifier_pressed(btn: Button) -> void:
 	if PlayerManager.purchase_modifier(btn.get_meta("Resource")):
@@ -324,3 +321,12 @@ func on_screen_change(_args):
 		
 		if lower in completed_challenges:
 			btn.get_node("Locked").visible = false
+
+func _show_overlay(screen: Panel):
+	screen.visible = true
+	
+	var tween: Tween = create_tween()
+	tween.tween_property(overlay, "modulate:a", 1.0, 0.5)
+	await tween.finished
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+	$Overlay/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_STOP
