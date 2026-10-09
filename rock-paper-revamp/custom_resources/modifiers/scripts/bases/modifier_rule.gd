@@ -13,9 +13,9 @@ func check_and_apply(stats: GameStats, internal_state: ModifierInternal):
 		var met: bool 
 		
 		if trigger is InternalModifierTrigger:
-			trigger.is_met(internal_state)
+			met = trigger.is_met(internal_state) if internal_state else false
 		else:
-			trigger.is_met(stats)
+			met = trigger.is_met(stats)
 		if met: triggers_met += 1
 		
 	if triggers_met == triggers.size():
