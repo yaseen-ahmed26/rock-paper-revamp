@@ -165,8 +165,7 @@ func _animate_used_modifiers() -> void:
 		if not current_modifier: continue
 		if current_modifier.exclude_badge: continue
 		
-		var lower_id: String = ModifierBase.ID.keys()[mod_id].to_lower()
-		var label = modifiers_active.get_node(lower_id)
+		var label = modifiers_active.get_node(str(current_modifier.id))
 		
 		_flash_label(label)
 
@@ -196,16 +195,22 @@ func _restart_game():
 	_start_game()
 
 func _start_game():
+	game_stats = GameStats.new()
+	
 	for modifier in modifiers:
 		var clone = $ModifiersActive/Template.duplicate()
-		var lower_id: String = ModifierBase.ID.keys()[modifier.id].to_lower()
 		$ModifiersActive.add_child(clone)
 	
 		clone.text = modifier.display_name
 		clone.visible = false
-		clone.name = lower_id
-	
-	game_stats = GameStats.new()
+		clone.name = modifier.id
+		
+		modifier.setup()
+		
+		if modifier.starting_stat_changes.is_empty(): continue
+		
+		for change: StatChange in modifier.starting_stat_changes:
+			game_stats.apply_stat_change(change)
 	
 	gamemode.apply_stats_edit(game_stats)
 	$ModifierHandler.apply_initial_modifiers(game_stats, modifiers)

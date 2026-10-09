@@ -8,7 +8,7 @@ class_name ModifierInternal
 
 var charges: int = 0
 
-func _initalize():
+func initalize():
 	charges = starting_charges
 
 func add_charge():

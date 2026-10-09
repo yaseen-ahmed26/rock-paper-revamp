@@ -73,11 +73,15 @@ enum Group {
 
 var skip: bool = false
 
+func setup():
+	for rule in rules:
+		rule.initalize()
+
 func check_rules_and_apply(stats: GameStats):
 	var rules_met: int = 0
 	
 	for rule in rules:
-		var met = rule.check_and_apply(stats)
+		var met = rule.check_and_apply(stats, internal_state)
 		if met: rules_met += 1
 	
 	if rules_met >= 1 and one_shot:

@@ -70,8 +70,8 @@ var outcome_multiplier: int = 1
 
 var btn_stats: Dictionary[String, MoveStat] = {}
 
-var round_activated_modifiers: Array[ModifierBase.ID] = []
-var modifier_usage_count: Dictionary[ModifierBase.ID, int] = {}
+var round_activated_modifiers: Array[StringName] = []
+var modifier_usage_count: Dictionary[StringName, int] = {}
 
 func _init() -> void:
 	reset_btn_state()
@@ -82,7 +82,7 @@ func reset_btn_state():
 	for move in DEFAULT_MOVES:
 		btn_stats[move] = MoveStat.new(move.capitalize(), move, false, true)
 
-func add_used_modifier(modifier_id: ModifierBase.ID):
+func add_used_modifier(modifier_id: StringName):
 	if not round_activated_modifiers.has(modifier_id):
 		round_activated_modifiers.append(modifier_id)
 

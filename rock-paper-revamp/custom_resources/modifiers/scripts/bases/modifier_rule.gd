@@ -6,14 +6,14 @@ class_name ModifierRule
 ## The effects applied when this rule has been met.
 @export var effects: Array[ModifierEffect]
 
-func check_and_apply(stats: GameStats, modifier: ModifierBase):
+func check_and_apply(stats: GameStats, internal_state: ModifierInternal):
 	var triggers_met: int = 0
 	
 	for trigger in triggers:
 		var met: bool 
 		
 		if trigger is InternalModifierTrigger:
-			trigger.is_met(modifier.internal_state)
+			trigger.is_met(internal_state)
 		else:
 			trigger.is_met(stats)
 		if met: triggers_met += 1
@@ -21,7 +21,7 @@ func check_and_apply(stats: GameStats, modifier: ModifierBase):
 	if triggers_met == triggers.size():
 		for effect in effects:
 			if effect is InternalModifierEffect:
-				effect.apply(modifier.internal_state)
+				effect.apply(internal_state)
 			else:
 				effect.apply(stats)
 	else:
