@@ -4,11 +4,8 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_rwhai"]
 [ext_resource type="Script" uid="uid://b3g4vgwpu7ym6" path="res://custom_resources/gamemodes/scripts/comeback_gamemode.gd" id="2_lx1ti"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_obdqj"]
-[ext_resource type="Resource" uid="uid://dl7pn0tynjg05" path="res://custom_resources/modifiers/rule_reversal.tres" id="3_mpymf"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_riyip"]
-[ext_resource type="Resource" uid="uid://bhvtg4p1blcsw" path="res://custom_resources/modifiers/safety_shield.tres" id="4_534tb"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_mw7wy"]
-[ext_resource type="Resource" uid="uid://vcwqqnvg6vou" path="res://custom_resources/modifiers/choice_cooldown.tres" id="5_lx1ti"]
 
 [sub_resource type="Resource" id="Resource_4y136"]
 script = ExtResource("2_lx1ti")
@@ -25,6 +22,5 @@ display_name = "Inverted Death"
 description = "Don't lose.. or don't win. It's one them anyways."
 reward = "Rule Reversal"
 locked_gamemode = SubResource("Resource_4y136")
-locked_modifiers = Array[ExtResource("1_rwhai")]([ExtResource("3_mpymf"), ExtResource("4_534tb"), ExtResource("5_lx1ti")])
 locked_computer = ExtResource("1_mpymf")
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

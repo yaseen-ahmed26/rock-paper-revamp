@@ -67,7 +67,7 @@ func _create_btn(info, parent, template_btn, press_connection):
 		if info.icon:
 			clone.icon = info.icon
 		
-		if info.modifier_locked:
+		if info.challenge_required:
 			clone.text = ""
 			
 			var lower = ChallengeBase.ID.keys()[info.challenge_required_id].to_lower()
@@ -315,12 +315,11 @@ func on_screen_change(_args):
 		
 		var modifier: ModifierBase = btn.get_meta("Resource")
 		
-		if not modifier.modifier_locked: continue
+		if not modifier.challenge_required: continue
 
-		var lower = ChallengeBase.ID.keys()[modifier.challenge_required_id].to_lower()
 		var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
 		
-		if lower in completed_challenges:
+		if modifier.challenge_id in completed_challenges:
 			btn.get_node("Locked").visible = false
 
 func _show_overlay(screen: Panel):

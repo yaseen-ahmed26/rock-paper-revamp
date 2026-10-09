@@ -5,10 +5,7 @@
 [ext_resource type="Script" uid="uid://rwt6wti4yr2i" path="res://custom_resources/gamemodes/scripts/best_of_gamemode.gd" id="2_4y136"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_dn3tk"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_3gmi1"]
-[ext_resource type="Resource" uid="uid://chv5pjll132ui" path="res://custom_resources/modifiers/repeat_reward.tres" id="4_4y136"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_htudk"]
-[ext_resource type="Resource" uid="uid://bhvtg4p1blcsw" path="res://custom_resources/modifiers/safety_shield.tres" id="5_3gmi1"]
-[ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/double_down.tres" id="6_htudk"]
 
 [sub_resource type="Resource" id="Resource_4yodi"]
 script = ExtResource("2_4y136")
@@ -25,6 +22,5 @@ description = "Greed tempts you to repeat moves against an AI built to punish pr
 difficulty = 1
 reward = "Repeat Reward"
 locked_gamemode = SubResource("Resource_4yodi")
-locked_modifiers = Array[ExtResource("1_ar5gn")]([ExtResource("4_4y136"), ExtResource("5_3gmi1"), ExtResource("6_htudk")])
 locked_computer = ExtResource("1_7lmsa")
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

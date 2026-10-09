@@ -8,7 +8,9 @@
 [ext_resource type="Resource" uid="uid://dx50ptju3lua3" path="res://custom_resources/gamemodes/comeback.tres" id="5_yqfff"]
 [ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="6_oiecb"]
 [ext_resource type="Resource" uid="uid://bini64moj23e3" path="res://custom_resources/gamemodes/survival.tres" id="7_3y6wd"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="8_0mnpd"]
 [ext_resource type="Resource" uid="uid://dykob2r13w7h8" path="res://custom_resources/gamemodes/race_to.tres" id="9_3d228"]
+[ext_resource type="Resource" uid="uid://fvn8ry0h0i56" path="res://custom_resources/modifiers/1_test_modifier.tres" id="11_k2fvl"]
 [ext_resource type="Script" uid="uid://n0n4mcge7f3v" path="res://custom_resources/computer_types/scripts/computer_base.gd" id="20_27unx"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
 [ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="21_5v4jf"]
@@ -268,6 +270,7 @@ grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("9_3d228"), ExtResource("4_0mnpd")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("11_k2fvl")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia"), ExtResource("41_gc7lw")])
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=609072858]

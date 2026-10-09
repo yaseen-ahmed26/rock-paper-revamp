@@ -213,8 +213,7 @@ func _start_game():
 			game_stats.apply_stat_change(change)
 	
 	gamemode.apply_stats_edit(game_stats)
-	$ModifierHandler.apply_initial_modifiers(game_stats, modifiers)
-	
+		
 	_update_ui()
 	_set_overlay_info()
 	_start_round()
