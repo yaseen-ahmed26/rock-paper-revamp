@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://cs1od7kqjht1k"]
+
+[ext_resource type="Script" uid="uid://c13poh6shdcuh" path="res://settings_screen/settings_sreen.gd" id="1_28mpy"]
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_re3qk"]
+[ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="3_xk8fg"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="4_vnao1"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="5_4etpo"]
+[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_v63nm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj8s6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.11764706, 0.19607843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
+[node name="settings_sreen" type="Control" unique_id=1983250911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_re3qk")
+script = ExtResource("1_28mpy")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=2005527064]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -505.0
+offset_right = 303.0
+offset_bottom = -419.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 54
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Underline" type="ColorRect" parent="Title" unique_id=1564369614]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=1976513343]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = -406.0
+offset_right = 614.0
+offset_bottom = -344.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Change your [color=green]preferences [color=white]here."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1305889969]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -311.0
+offset_right = 289.0
+offset_bottom = 404.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="WindowType" type="Panel" parent="VBoxContainer" unique_id=534341132]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
+
+[node name="Title" type="RichTextLabel" parent="VBoxContainer/WindowType" unique_id=408804215]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -47.0
+offset_right = 245.0
+offset_bottom = 47.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Window Type"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectWindowBtn" type="Button" parent="VBoxContainer/WindowType" unique_id=1123944270]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -21.5
+offset_right = 256.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("3_xk8fg")
+theme_override_styles/pressed = ExtResource("4_vnao1")
+theme_override_styles/hover = ExtResource("4_vnao1")
+text = "Borderless Windowed"
+metadata/Open = false
+
+[node name="BtnHolder" type="VBoxContainer" parent="VBoxContainer/WindowType/SelectWindowBtn" unique_id=496276519]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="TemplateButton" type="Button" parent="VBoxContainer/WindowType/SelectWindowBtn/BtnHolder" unique_id=2077464003]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("4_vnao1")
+theme_override_styles/pressed = ExtResource("5_4etpo")
+theme_override_styles/hover = ExtResource("3_xk8fg")
+theme_override_styles/disabled = ExtResource("6_v63nm")
+text = "Endless"
+
+[node name="SelectedLabel" type="RichTextLabel" parent="VBoxContainer/WindowType/SelectWindowBtn/BtnHolder/TemplateButton" unique_id=553838900]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014336891
+anchor_top = 0.051886793
+anchor_right = 0.19354838
+anchor_bottom = 0.9481132
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=gold][>]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnButton" type="Button" parent="." unique_id=134288899]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -97.0
+offset_right = 171.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("5_4etpo")
+theme_override_styles/pressed = ExtResource("4_vnao1")
+theme_override_styles/hover = ExtResource("4_vnao1")
+text = "Return"
