@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://fvn8ry0h0i56"]
+
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_uuh51"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_5sjke"]
+
+[resource]
+script = ExtResource("1_uuh51")
+metadata/_custom_type_script = "uid://d2bvcnih05ama"
