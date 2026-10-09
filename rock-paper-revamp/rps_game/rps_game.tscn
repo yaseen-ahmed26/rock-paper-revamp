@@ -8,7 +8,110 @@
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="5_81c6f"]
 [ext_resource type="Texture2D" uid="uid://bgcrlmrgi3cns" path="res://assets/icons/menu/rock.png" id="7_isxwt"]
 [ext_resource type="Texture2D" uid="uid://cv8ckqnk758sf" path="res://assets/icons/menu/paper.png" id="8_l0q4v"]
-[ext_resource type="Texture2D" uid="uid://fmfe63gfuoo3" path="res://assets/icons/menu/scissors.png" id="9_ttdvg"]
+[ext_resource type="Texture2D" uid="uid://cbwj5dktgyxy6" path="res://assets/icons/rps_game/card_design.png" id="10_l0q4v"]
+[ext_resource type="Texture2D" uid="uid://bafo16haficgj" path="res://assets/icons/rps_game/card_back.png" id="11_ttdvg"]
+[ext_resource type="Texture2D" uid="uid://1flnqlg86mcc" path="res://assets/icons/modifiers/scissor_specialist.svg" id="12_llugh"]
+
+[sub_resource type="Animation" id="Animation_ttdvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_llugh"]
+resource_name = "flip_player_card"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snbil"]
+_data = {
+&"RESET": SubResource("Animation_ttdvg"),
+&"flip_player_card": SubResource("Animation_llugh")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llugh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.06344611, 0, 0.5446918, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1000
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+corner_radius_bottom_left = 1000
+corner_detail = 20
 
 [node name="rps_game" type="Control" unique_id=1532588308]
 layout_mode = 3
@@ -25,22 +128,23 @@ wait_time = 5.0
 
 [node name="ModifierTimer" type="Timer" parent="." unique_id=1699236194]
 
-[node name="MoveButtons" type="HBoxContainer" parent="." unique_id=328885685]
+[node name="MoveButtons" type="VBoxContainer" parent="." unique_id=437985943]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -471.0
-offset_top = 226.0
-offset_right = 471.0
-offset_bottom = 304.0
+offset_left = -647.0
+offset_top = -168.0
+offset_right = -547.0
+offset_bottom = 168.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 18
 
 [node name="Rock" type="Button" parent="MoveButtons" unique_id=1266863930]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -50,7 +154,9 @@ theme_override_styles/normal = ExtResource("2_cm4xy")
 theme_override_styles/pressed = ExtResource("3_j8q1b")
 theme_override_styles/hover = ExtResource("4_isxwt")
 theme_override_styles/disabled = ExtResource("5_81c6f")
-text = "Rock"
+icon = ExtResource("7_isxwt")
+icon_alignment = 1
+expand_icon = true
 
 [node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Rock" unique_id=1393121460]
 visible = false
@@ -70,9 +176,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
+offset_left = -63.0
 offset_top = -28.0
-offset_right = 69.0
+offset_right = -4.0
 offset_bottom = 28.0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 22
@@ -80,23 +186,8 @@ text = "[1]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Icon" type="TextureRect" parent="MoveButtons/Rock" unique_id=1507580825]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -20.0
-offset_right = -16.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("7_isxwt")
-expand_mode = 1
-
-[node name="Paper" type="Button" parent="MoveButtons" unique_id=1697466638]
+[node name="Paper" type="Button" parent="MoveButtons" unique_id=2099804517]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -106,16 +197,31 @@ theme_override_styles/normal = ExtResource("2_cm4xy")
 theme_override_styles/pressed = ExtResource("3_j8q1b")
 theme_override_styles/hover = ExtResource("4_isxwt")
 theme_override_styles/disabled = ExtResource("5_81c6f")
-text = "Paper"
+icon = ExtResource("8_l0q4v")
+icon_alignment = 1
+expand_icon = true
 
-[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1675664823]
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1342516220]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -56.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[color=gold]SELECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1751655994]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 11.0
+offset_left = -63.0
 offset_top = -28.0
-offset_right = 70.0
+offset_right = -4.0
 offset_bottom = 28.0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 22
@@ -123,36 +229,8 @@ text = "[2]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1341792947]
-visible = false
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = -56.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 22
-bbcode_enabled = true
-text = "[color=gold]SELECTED"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="MoveButtons/Paper" unique_id=738853268]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -20.0
-offset_right = -15.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("8_l0q4v")
-expand_mode = 1
-
-[node name="Scissors" type="Button" parent="MoveButtons" unique_id=417781502]
+[node name="Scissors" type="Button" parent="MoveButtons" unique_id=362736112]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -162,9 +240,11 @@ theme_override_styles/normal = ExtResource("2_cm4xy")
 theme_override_styles/pressed = ExtResource("3_j8q1b")
 theme_override_styles/hover = ExtResource("4_isxwt")
 theme_override_styles/disabled = ExtResource("5_81c6f")
-text = "Scissors"
+icon = ExtResource("12_llugh")
+icon_alignment = 1
+expand_icon = true
 
-[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=978563079]
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=1401046294]
 visible = false
 layout_mode = 1
 anchors_preset = 10
@@ -177,49 +257,18 @@ text = "[color=gold]SELECTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=1374204262]
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=1052405234]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
+offset_left = -63.0
 offset_top = -28.0
-offset_right = 69.0
+offset_right = -4.0
 offset_bottom = 28.0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 22
 text = "[3]"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="MoveButtons/Scissors" unique_id=1619651412]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = -20.0
-offset_right = -14.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("9_ttdvg")
-expand_mode = 1
-
-[node name="TimeLeft" type="RichTextLabel" parent="." unique_id=584951318]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -194.0
-offset_top = 68.0
-offset_right = 194.0
-offset_bottom = 182.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 70
-text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -235,26 +284,19 @@ Best: 0"
 
 [node name="RoundsPlayed" type="RichTextLabel" parent="." unique_id=1459284669]
 layout_mode = 1
-offset_left = 1513.0
-offset_top = 58.0
-offset_right = 1900.0
-offset_bottom = 164.0
-theme_override_font_sizes/normal_font_size = 34
-text = "Round 1/inf"
-horizontal_alignment = 2
-
-[node name="Scoreboard" type="RichTextLabel" parent="." unique_id=1760286959]
-layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -361.0
-offset_top = 180.0
-offset_right = 361.0
-offset_bottom = 258.0
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = 99.0
+offset_right = 129.0
+offset_bottom = 183.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 52
-text = "You: 1 | AI: 1"
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 34
+text = "Round 1/2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -264,32 +306,17 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -691.0
-offset_top = 482.0
+offset_top = 72.0
 offset_right = 691.0
-offset_bottom = 560.0
+offset_bottom = 150.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 42
-text = "AI picked Rock against your Paper. You lost!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MovesPicked" type="RichTextLabel" parent="." unique_id=1026983236]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -691.0
-offset_top = 394.0
-offset_right = 691.0
-offset_bottom = 472.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "You picked rock against the AI's Paper"
+theme_override_font_sizes/normal_font_size = 38
+text = "You lost, +1 point to The Gambler!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ModifiersActive" type="VBoxContainer" parent="." unique_id=2124778655]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -328,6 +355,7 @@ theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "End Round"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=844011000]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -441,6 +469,186 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "Tasks:
 None!"
+
+[node name="PlayerCard" type="TextureRect" parent="." unique_id=947189762]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -210.0
+offset_right = -210.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 210)
+texture = ExtResource("10_l0q4v")
+expand_mode = 1
+
+[node name="RearDesign" type="TextureRect" parent="PlayerCard" unique_id=1817349683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ttdvg")
+expand_mode = 1
+
+[node name="FrontDesign" type="TextureRect" parent="PlayerCard" unique_id=192112922]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -73.0
+offset_right = 70.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_llugh")
+expand_mode = 1
+
+[node name="AICard" type="TextureRect" parent="." unique_id=2140386350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -210.0
+offset_right = 510.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 210)
+texture = ExtResource("10_l0q4v")
+expand_mode = 1
+
+[node name="RearDesign" type="TextureRect" parent="AICard" unique_id=214851226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ttdvg")
+expand_mode = 1
+
+[node name="FrontDesign" type="TextureRect" parent="AICard" unique_id=846982876]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -73.0
+offset_right = 70.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_llugh")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=268858103]
+libraries/ = SubResource("AnimationLibrary_snbil")
+
+[node name="Timer" type="Panel" parent="." unique_id=1671261737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -85.0
+offset_right = 85.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_llugh")
+
+[node name="Label" type="RichTextLabel" parent="Timer" unique_id=1841407122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 70
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerScore" type="RichTextLabel" parent="." unique_id=868108866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -295.0
+offset_right = -165.0
+offset_bottom = -232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "You [color=gold][0]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PlayerScore" unique_id=292827495]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AIScore" type="RichTextLabel" parent="." unique_id=685178727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.0
+offset_top = -295.0
+offset_right = 546.0
+offset_bottom = -232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[color=gold][0] [color=white]The Gambler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="AIScore" unique_id=806418286]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="pressed" from="ActionButton" to="." method="_on_action_btn_pressed"]
 [connection signal="pressed" from="Overlay/QuitButton" to="." method="_on_quit_btn_pressed"]
