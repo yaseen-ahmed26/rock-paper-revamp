@@ -6,15 +6,16 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_uuh51"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_5sjke"]
 
-[sub_resource type="Resource" id="Resource_86bf1"]
+[sub_resource type="Resource" id="Resource_k2fvl"]
 script = ExtResource("1_ih2gi")
+max_charges = 2
 metadata/_custom_type_script = "uid://g13g4ik8oom7"
 
 [resource]
 script = ExtResource("1_uuh51")
-challenge_required = true
-challenge_id = &"a"
-internal_state = SubResource("Resource_86bf1")
+timing = 1
+has_internal = true
+internal_state = SubResource("Resource_k2fvl")
 id = &"test_modifier"
 display_name = "Test Modifier"
 description = "This is a test of the new modifier system to see if it works. I hope so!"

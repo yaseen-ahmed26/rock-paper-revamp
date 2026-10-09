@@ -74,8 +74,10 @@ enum Group {
 var applied: bool = false
 
 func setup():
-	for rule in rules:
-		rule.initalize()
+	applied = false
+	
+	if internal_state:
+		internal_state.initalize()
 
 func check_rules_and_apply(stats: GameStats, apply_timing: ApplyAt):
 	if stats.rounds_played == 1: return

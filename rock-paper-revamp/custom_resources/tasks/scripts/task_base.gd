@@ -1,44 +1,24 @@
-extends Resource
+extends DescribedBase
 class_name TaskBase
-
-enum ID {
-	FIRST_TO_GM_1,
-	FIRST_TO_GM_2,
-	COMEBACK_GM_1,
-	COMEBACK_GM_2,
-	SURVIVAL_GM_1,
-	BEST_OF_GM_1,
-	RULE_REVERSAL_MD_1,
-	DOUBLE_DOWN_MD_1,
-	COPY_CAT_MD_1,
-	COPY_CAT_MD_2,
-	TAX_TOLL_MD_1
-}
 
 enum Timing {
 	ROUND_END,
 	MATCH_END
 }
 
-@export_category("Metadata")
-## The unqiue ID for this Task
-@export var id: ID
-## The name that is displayed on UI
-@export var display_name: String
-## The description of the Task
-@export var description: String
+@export_group("General")
 ## When to check if this Task has been completed
 @export var timing: Timing
 ## The triggers for this Task to be completed
 @export var triggers: Array[GameplayTrigger]
 
-@export_category("Flags")
+@export_group("Flags")
 ## If true, then all triggers need return false for the task to be completed.
 @export var invert_triggers: bool = false
 
 func check_completion(game_stats: GameStats):
 	if triggers.is_empty():
-		print("No triggers set for Task '%s'" % ID.keys()[id].to_lower())
+		print("No triggers set for Task '%s'" % id)
 		return false
 	
 	var triggers_met: int = 0

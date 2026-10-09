@@ -9,18 +9,16 @@
 
 [sub_resource type="Resource" id="Resource_4yodi"]
 script = ExtResource("2_4y136")
-id = 1
 display_name = "Best of 5"
 description = "You only have 5 rounds, beat the challenge quick!"
 metadata/_custom_type_script = "uid://rwt6wti4yr2i"
 
 [resource]
 script = ExtResource("2_dn3tk")
-id = 3
-display_name = "Calculated Risk"
-description = "Greed tempts you to repeat moves against an AI built to punish predictable patterns."
 difficulty = 1
 reward = "Repeat Reward"
 locked_gamemode = SubResource("Resource_4yodi")
 locked_computer = ExtResource("1_7lmsa")
+display_name = "Calculated Risk"
+description = "Greed tempts you to repeat moves against an AI built to punish predictable patterns."
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

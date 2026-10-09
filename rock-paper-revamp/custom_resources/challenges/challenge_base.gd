@@ -1,12 +1,5 @@
-extends Resource
+extends DescribedBase
 class_name ChallengeBase
-
-enum ID {
-	INVERTED_DEATH,
-	PRESSURE_COOKER,
-	DEFICIT_HUSTLE,
-	CALCULATED_RISK
-}
 
 enum Difficulty {
 	EASY,
@@ -14,14 +7,13 @@ enum Difficulty {
 	HARD
 }
 
-@export_group("Metadata")
-@export var id: ID
-@export var display_name: String
-@export var description: String
+@export_group("Challenge Described")
+## The difficulty to show on UI. This is purely cosmetic.
 @export var difficulty: Difficulty
+## The name of the reward that this challenge unlocks. This is shown purely for UI, actual reward unlocking is handled elsewhere.
 @export var reward: String
 
-@export_group("Rules")
+@export_group("General")
 @export var locked_gamemode: GamemodeBase
 @export var locked_modifiers: Array[ModifierBase]
 @export var locked_computer: ComputerBase
