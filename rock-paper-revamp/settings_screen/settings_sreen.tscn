@@ -202,3 +202,6 @@ theme_override_styles/normal = ExtResource("5_4etpo")
 theme_override_styles/pressed = ExtResource("4_vnao1")
 theme_override_styles/hover = ExtResource("4_vnao1")
 text = "Return"
+
+[connection signal="pressed" from="VBoxContainer/WindowType/SelectWindowBtn" to="." method="_on_select_window_btn_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
