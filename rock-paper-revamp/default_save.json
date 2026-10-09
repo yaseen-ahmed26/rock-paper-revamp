@@ -19,8 +19,8 @@
 		"endless": 0
 	},
 	"opponents": {
-		"the_gambler": 0,
-		"statistics_guy": 0,
+		"gamble": 0,
+		"statistics": 0,
 		"alternator": 0
 	},
 	"modifiers": {

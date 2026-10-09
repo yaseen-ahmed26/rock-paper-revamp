@@ -135,7 +135,7 @@ func record_match(
 		delta["gamemodes"][gm_key] = 1
 
 	if opponent:
-		var opp_key: String = opponent.display_name.to_lower().replace(" ", "_")
+		var opp_key: String = ComputerBase.ID.keys()[opponent.id].to_lower()
 		delta["opponents"][opp_key] = 1
 
 	for mod in modifiers:

@@ -5,7 +5,7 @@ extends Control
 var match_meta_template := "Gamemode: [color=gold]%s [color=white]| Opponent: [color=gold]%s [color=white]| Modifiers: [color=gold]%d"
 var played_moves_template := "And you also played [color=gold]Rock %d times[color=white], [color=gold]Paper %d times [color=white]and [color=gold]Scissors %d times[color=white]."
 var points_template := "[You] %d • %d [AI]"
-var rounds_played_template := "Played [color=gold]%d/%s [color=white]rounds with a best with streak of[color=gold]%d"
+var rounds_played_template := "Played [color=gold]%d/%s [color=white]rounds with a best with streak of [color=gold]%d"
 var points_breakdown := "[Wins] [color=gold]%d [color=white]| [Losses] [color=gold]%d [color=white]| [Draws] [color=gold]%d"
 
 func on_screen_change(details: Dictionary):
