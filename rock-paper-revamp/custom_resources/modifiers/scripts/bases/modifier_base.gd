@@ -43,7 +43,7 @@ enum Group {
 ## The modifiers to blacklist when this one is selected. Note that this uses the ID (found in Shared Described), keep in mind of spelling errors. This does warn if that ID is not found when the game runs.
 @export var blacklist: Array[StringName]
 ## The rules of the modifier. Each rule contains Array[ModifierTrigger] and Array[ModifierEffect]. These rules do not need to be the same, i.e. if/elif/else.
-# @export var rules: Array[ModifierRule]
+@export var rules: Array[ModifierRule]
 
 @export_group("Flags")
 ## If true, only applies the modifier once. 
@@ -57,7 +57,7 @@ enum Group {
 ## If true, then this modifier has a mastery that is a stronger version of the base.
 @export var has_mastery: bool = false
 ## If true, then this modifier has it's own internal state. For example, charges. 
-# @export var has_internal: bool = false
+@export var has_internal: bool = false
 
 @export_group("Advanced")
 ## The ID of the challenge required in order to unlock this modifier. Note that this uses the ID (found in Shared Described), keep in mind of spelling errors. This does warn if that ID is not found when the game runs.
@@ -69,4 +69,4 @@ enum Group {
 ## The stronger base version of this modifier.
 # @export var mastery_version: ModifierMastery
 ## It's own internal state, contains charges.
-# @export var internal_state: ModifierInternal
+@export var internal_state: ModifierInternal
