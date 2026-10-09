@@ -131,19 +131,16 @@ func record_match(
 	}
 
 	if gamemode:
-		var gm_key: String = GamemodeBase.ID.keys()[gamemode.id].to_lower()
-		delta["gamemodes"][gm_key] = 1
+		delta["gamemodes"][gamemode.id] = 1
 
 	if opponent:
-		var opp_key: String = ComputerBase.ID.keys()[opponent.id].to_lower()
-		delta["opponents"][opp_key] = 1
+		delta["opponents"][opponent.id] = 1
 
 	for modifier in modifiers:
 		delta["modifiers"][modifier.id] = 1
 		
 	if challenge:
-		var lower = ChallengeBase.ID.keys()[challenge.id].to_lower()
-		delta["completed_challenges"].append(lower)
+		delta["completed_challenges"].append(challenge.id)
 	
 	_merge_delta(delta)
 	save_local()
