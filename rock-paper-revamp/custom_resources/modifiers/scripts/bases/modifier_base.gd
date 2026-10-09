@@ -71,13 +71,16 @@ enum Group {
 ## It's own internal state, contains charges.
 @export var internal_state: ModifierInternal
 
-var skip: bool = false
+var applied: bool = false
 
 func setup():
 	for rule in rules:
 		rule.initalize()
 
-func check_rules_and_apply(stats: GameStats):
+func check_rules_and_apply(stats: GameStats, apply_timing: ApplyAt):
+	if stats.rounds_played == 1: return
+	if apply_timing != timing: return
+	
 	var rules_met: int = 0
 	
 	for rule in rules:
@@ -85,4 +88,4 @@ func check_rules_and_apply(stats: GameStats):
 		if met: rules_met += 1
 	
 	if rules_met >= 1 and one_shot:
-		skip = true
+		applied = true

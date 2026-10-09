@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://rps_game/rps_game.gd" id="1_ybur4"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="2_cm4xy"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="3_j8q1b"]
-[ext_resource type="Script" uid="uid://chxbyiml4kfew" path="res://rps_game/modifier_handler.gd" id="3_ynb1k"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="4_isxwt"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="5_81c6f"]
 [ext_resource type="Texture2D" uid="uid://bgcrlmrgi3cns" path="res://assets/icons/menu/rock.png" id="7_isxwt"]
@@ -442,9 +441,6 @@ theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "Tasks:
 None!"
-
-[node name="ModifierHandler" type="Node" parent="." unique_id=847753061]
-script = ExtResource("3_ynb1k")
 
 [connection signal="pressed" from="ActionButton" to="." method="_on_action_btn_pressed"]
 [connection signal="pressed" from="Overlay/QuitButton" to="." method="_on_quit_btn_pressed"]

@@ -234,7 +234,9 @@ func _start_round():
 	
 	_toggle_move_btns(false)
 	
-	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_START)
+	for modifier in modifiers:
+		if modifier.applied: continue
+		modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.ROUND_START)
 	
 	_update_ui()
 	
@@ -250,7 +252,10 @@ func _end_round():
 	
 	game_stats.outcome = _determine_outcome()
 	
-	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.ROUND_END)	
+	for modifier in modifiers:
+		if modifier.applied: continue
+		modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.ROUND_END)
+	
 	_animate_used_modifiers()
 	
 	game_stats.record_round_stats()
@@ -327,7 +332,10 @@ func on_screen_change(information: Dictionary):
 	_start_game()
 
 func _on_modifier_timeout():
-	$ModifierHandler.use_modifiers(game_stats, modifiers, ModifierBase.ApplyAt.EVERY_SECOND)
+	for modifier in modifiers:
+		if modifier.applied: continue
+		modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.EVERY_SECOND)
+		
 	_update_ui()
 
 func _on_continue_btn_pressed():
