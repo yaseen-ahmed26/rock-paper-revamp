@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_31vav")
-id = 2
+id = &"sequencer"
 display_name = "Sequencer"
 description = "He plays a set sequence of moves.. until you disrupt him."
 metadata/_custom_type_script = "uid://nif6u56v5283"

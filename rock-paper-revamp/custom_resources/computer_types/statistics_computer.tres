@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_fte1y")
-id = 1
+id = &"statistics_guy"
 display_name = "Statistics Guy"
 description = "The one who analyses your played moves like a spreadsheet"
 metadata/_custom_type_script = "uid://bsohplplb4cb7"

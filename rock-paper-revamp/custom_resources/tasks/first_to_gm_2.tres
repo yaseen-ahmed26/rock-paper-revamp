@@ -18,8 +18,8 @@ metadata/_custom_type_script = "uid://5af3r3b1yoqf"
 
 [resource]
 script = ExtResource("1_25cdh")
-id = 1
+triggers = Array[ExtResource("2_k6ivj")]([SubResource("Resource_ynb1k"), SubResource("Resource_jy8yp")])
+id = &"first_to_task_2"
 display_name = "This isn't Comeback.."
 description = "Win the game after the AI has 2 points"
-triggers = Array[ExtResource("2_k6ivj")]([SubResource("Resource_ynb1k"), SubResource("Resource_jy8yp")])
 metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

@@ -11,9 +11,9 @@ metadata/_custom_type_script = "uid://ceqvcnakgclt5"
 
 [resource]
 script = ExtResource("1_pms7l")
-id = 2
-display_name = "Buzz Buzz!"
-description = "Win the final round whilst losing."
 timing = 1
 triggers = Array[ExtResource("2_7u787")]([SubResource("Resource_7k8io")])
+id = &"comeback_task_1"
+display_name = "Buzz Buzz!"
+description = "Win the final round whilst losing."
 metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

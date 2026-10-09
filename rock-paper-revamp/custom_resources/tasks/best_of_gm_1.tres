@@ -12,9 +12,9 @@ metadata/_custom_type_script = "uid://cy32uleuvbseq"
 
 [resource]
 script = ExtResource("1_5wkeb")
-id = 5
-display_name = "Wire to Wire"
-description = "Win the game with 3 points."
 timing = 1
 triggers = Array[ExtResource("2_rvpst")]([SubResource("Resource_7aprj")])
+id = &"best_of_task_1"
+display_name = "Wire to Wire"
+description = "Win the game with 3 points."
 metadata/_custom_type_script = "uid://dh4tpgw57t5e7"

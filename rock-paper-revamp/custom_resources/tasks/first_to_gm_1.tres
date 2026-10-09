@@ -18,7 +18,8 @@ metadata/_custom_type_script = "uid://ceqvcnakgclt5"
 
 [resource]
 script = ExtResource("1_e47jr")
+triggers = Array[ExtResource("2_vlq22")]([SubResource("Resource_ynb1k"), SubResource("Resource_jy8yp")])
+id = &"first_to_task_1"
 display_name = "Anticlimatic Start"
 description = "Draw the first round."
-triggers = Array[ExtResource("2_vlq22")]([SubResource("Resource_ynb1k"), SubResource("Resource_jy8yp")])
 metadata/_custom_type_script = "uid://dh4tpgw57t5e7"
