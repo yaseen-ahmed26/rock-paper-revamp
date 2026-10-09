@@ -138,9 +138,8 @@ func record_match(
 		var opp_key: String = ComputerBase.ID.keys()[opponent.id].to_lower()
 		delta["opponents"][opp_key] = 1
 
-	for mod in modifiers:
-		var mod_key: String = ModifierBase.ID.keys()[mod.id].to_lower()
-		delta["modifiers"][mod_key] = 1
+	for modifier in modifiers:
+		delta["modifiers"][modifier.id] = 1
 		
 	if challenge:
 		var lower = ChallengeBase.ID.keys()[challenge.id].to_lower()

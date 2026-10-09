@@ -22,7 +22,7 @@ enum ID {
 
 @export_group("Rules")
 ## The modifiers to blacklist. This applies before the modifier blacklist
-@export var modifier_blacklist: Array[ModifierBase.ID]
+# @export var modifier_blacklist: Array[ModifierBase.ID]
 ## The stats to change when the game starts
 @export var stats_to_edit: Array[StatChange]
 ## The task list for this specific gamemode

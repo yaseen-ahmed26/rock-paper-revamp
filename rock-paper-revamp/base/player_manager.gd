@@ -19,10 +19,8 @@ func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase], tas
 
 func purchase_modifier(modifier: ModifierBase):
 	if SaveManager.save_data.get("tokens") >= modifier.purchase_cost:
-		var lower = ModifierBase.ID.keys()[modifier.id].to_lower()	
-
 		SaveManager.save_data["tokens"] -= modifier.purchase_cost
-		SaveManager.save_data["bought_modifiers"].append(lower)
+		SaveManager.save_data["bought_modifiers"].append(modifier.id)
 		
 		SaveManager.save_local()
 		

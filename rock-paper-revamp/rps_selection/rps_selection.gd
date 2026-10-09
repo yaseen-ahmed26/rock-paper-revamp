@@ -78,10 +78,8 @@ func _create_btn(info, parent, template_btn, press_connection):
 			else:
 				if not lower in completed_challenges:
 					clone.get_node("Locked").visible = true
-		elif info.requires_purchase:	
-			var lower = ModifierBase.ID.keys()[info.id].to_lower()
-			
-			if not lower in SaveManager.save_data.get("bought_modifiers"):
+		elif info.requires_purchase:				
+			if not info.id in SaveManager.save_data.get("bought_modifiers"):
 				clone.text = ""
 				
 				var purchase = clone.get_node("Purchase")
@@ -170,7 +168,7 @@ func _update_info_btns():
 		var modifier_btn = selected_modifier_btns[btn_position]
 		var info: ModifierBase = modifier_btn.get_meta("Resource")
 		
-		btn.name = ModifierBase.ID.keys()[info.id].to_lower()
+		btn.name = str(info.id)
 		btn.text = info.display_name
 		btn.disabled = false
 		
