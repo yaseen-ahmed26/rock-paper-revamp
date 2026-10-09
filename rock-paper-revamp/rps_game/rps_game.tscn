@@ -12,6 +12,23 @@
 [ext_resource type="Texture2D" uid="uid://bafo16haficgj" path="res://assets/icons/rps_game/card_back.png" id="11_ttdvg"]
 [ext_resource type="Texture2D" uid="uid://1flnqlg86mcc" path="res://assets/icons/modifiers/scissor_specialist.svg" id="12_llugh"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llugh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.06344611, 0, 0.5446918, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1000
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+corner_radius_bottom_left = 1000
+corner_detail = 20
+
 [sub_resource type="Animation" id="Animation_ttdvg"]
 length = 0.001
 tracks/0/type = "value"
@@ -50,9 +67,172 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AICard:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AICard/RearDesign:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AICard/FrontDesign:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_snbil"]
+resource_name = "flip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AICard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AICard/RearDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AICard/FrontDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_qlcjl"]
+resource_name = "unflip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AICard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AICard/RearDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AICard/FrontDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snbil"]
+_data = {
+&"RESET": SubResource("Animation_ttdvg"),
+&"flip_card": SubResource("Animation_snbil"),
+&"unflip_card": SubResource("Animation_qlcjl")
+}
 
 [sub_resource type="Animation" id="Animation_llugh"]
-resource_name = "flip_player_card"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mo31w"]
+resource_name = "flip_card"
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,28 +270,52 @@ tracks/2/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_snbil"]
-_data = {
-&"RESET": SubResource("Animation_ttdvg"),
-&"flip_player_card": SubResource("Animation_llugh")
+[sub_resource type="Animation" id="Animation_x0y8y"]
+resource_name = "unflip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llugh"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.06344611, 0, 0.5446918, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 1000
-corner_radius_top_right = 1000
-corner_radius_bottom_right = 1000
-corner_radius_bottom_left = 1000
-corner_detail = 20
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlcjl"]
+_data = {
+&"RESET": SubResource("Animation_llugh"),
+&"flip_card": SubResource("Animation_mo31w"),
+&"unflip_card": SubResource("Animation_x0y8y")
+}
 
 [node name="rps_game" type="Control" unique_id=1532588308]
 layout_mode = 3
@@ -147,6 +351,7 @@ theme_override_constants/separation = 18
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
@@ -161,13 +366,15 @@ expand_icon = true
 [node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Rock" unique_id=1393121460]
 visible = false
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = -56.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 22
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[color=gold]SELECTED"
+text = "[color=gold]✓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -190,6 +397,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
@@ -201,16 +409,18 @@ icon = ExtResource("8_l0q4v")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1342516220]
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=947428098]
 visible = false
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = -56.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 22
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[color=gold]SELECTED"
+text = "[color=gold]✓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -233,6 +443,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
@@ -244,16 +455,18 @@ icon = ExtResource("12_llugh")
 icon_alignment = 1
 expand_icon = true
 
-[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=1401046294]
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=388179037]
 visible = false
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = -56.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 22
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
-text = "[color=gold]SELECTED"
+text = "[color=gold]✓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -345,6 +558,7 @@ offset_top = 983.0
 offset_right = 1895.0
 offset_bottom = 1045.0
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
@@ -373,6 +587,7 @@ offset_top = 983.0
 offset_right = 944.0
 offset_bottom = 1045.0
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
@@ -388,6 +603,7 @@ offset_top = 983.0
 offset_right = 1318.0
 offset_bottom = 1045.0
 size_flags_horizontal = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
@@ -560,9 +776,6 @@ grow_vertical = 2
 texture = ExtResource("12_llugh")
 expand_mode = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=268858103]
-libraries/ = SubResource("AnimationLibrary_snbil")
-
 [node name="Timer" type="Panel" parent="." unique_id=1671261737]
 layout_mode = 1
 anchors_preset = 8
@@ -586,6 +799,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
 text = "12"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -649,6 +863,12 @@ anchor_bottom = 1.0
 offset_top = -2.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="AIAnimation" type="AnimationPlayer" parent="." unique_id=268858103]
+libraries/ = SubResource("AnimationLibrary_snbil")
+
+[node name="PlayerAnimation" type="AnimationPlayer" parent="." unique_id=1103861573]
+libraries/ = SubResource("AnimationLibrary_qlcjl")
 
 [connection signal="pressed" from="ActionButton" to="." method="_on_action_btn_pressed"]
 [connection signal="pressed" from="Overlay/QuitButton" to="." method="_on_quit_btn_pressed"]
