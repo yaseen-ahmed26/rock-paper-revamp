@@ -7,11 +7,11 @@
 
 [resource]
 script = ExtResource("2_ie3bn")
-id = 2
-display_name = "Deficit Hustle"
-description = "Start on the back foot, exploit the deficit bonuses"
 difficulty = 1
 reward = "Winner's Weakness"
 locked_gamemode = ExtResource("2_gv7a5")
 locked_computer = ExtResource("1_3rrnb")
+id = &"deficit_hustle"
+display_name = "Deficit Hustle"
+description = "Start on the back foot, exploit the deficit bonuses"
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

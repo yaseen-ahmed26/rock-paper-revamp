@@ -7,11 +7,11 @@
 
 [resource]
 script = ExtResource("2_ptc0q")
-id = 1
-display_name = "Pressure Cooker"
-description = "Draws ramp up the multiplier and drain your timer."
 difficulty = 1
 reward = "Gridlocked Growth"
 locked_gamemode = ExtResource("2_lucfw")
 locked_computer = ExtResource("1_ly6a6")
+id = &"pressure_cooker"
+display_name = "Pressure Cooker"
+description = "Draws ramp up the multiplier and drain your timer."
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

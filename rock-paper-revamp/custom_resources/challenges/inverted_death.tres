@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ChallengeBase" format=3 uid="uid://dbtqfcar5da0r"]
 
 [ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="1_mpymf"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_rwhai"]
 [ext_resource type="Script" uid="uid://b3g4vgwpu7ym6" path="res://custom_resources/gamemodes/scripts/comeback_gamemode.gd" id="2_lx1ti"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_obdqj"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_riyip"]
@@ -10,19 +11,16 @@
 script = ExtResource("2_lx1ti")
 ai_starting_points = 5.0
 total_rounds = 12
-id = 3
 display_name = "Comeback"
 description = "Don't lose.. or don't win. It's one them anyways."
 metadata/_custom_type_script = "uid://b3g4vgwpu7ym6"
 
 [resource]
 script = ExtResource("2_obdqj")
-id = null
-display_name = "Inverted Death"
-description = "Don't lose.. or don't win. It's one them anyways."
-difficulty = null
 reward = "Rule Reversal"
 locked_gamemode = SubResource("Resource_4y136")
-locked_modifiers = null
 locked_computer = ExtResource("1_mpymf")
+id = &"inverted_death"
+display_name = "Inverted Death"
+description = "Don't lose.. or don't win. It's one them anyways."
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"

@@ -19,6 +19,7 @@ difficulty = 1
 reward = "Repeat Reward"
 locked_gamemode = SubResource("Resource_4yodi")
 locked_computer = ExtResource("1_7lmsa")
+id = &"calculated_risk"
 display_name = "Calculated Risk"
 description = "Greed tempts you to repeat moves against an AI built to punish predictable patterns."
 metadata/_custom_type_script = "uid://b3cyec6p4kq7r"
