@@ -16,9 +16,9 @@ var selected: String
 func _ready() -> void:
 	_create_window_btns()
 	
-	var saved_index: int = SaveManager.player.settings.get("WindowType")
-	selected = WINDOW_TYPES[saved_index]
-	$VBoxContainer/WindowType/SelectWindowBtn.text = selected
+ 	#var saved_index: int = SaveManager.player.settings.get("WindowType")
+	#selected = WINDOW_TYPES[saved_index]
+	#$VBoxContainer/WindowType/SelectWindowBtn.text = selected
 
 func _create_window_btns():
 	for i in WINDOW_TYPES.size():

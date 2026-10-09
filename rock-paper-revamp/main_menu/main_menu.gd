@@ -26,6 +26,8 @@ func _on_menu_btn_pressed(btn: Button):
 			Signals.change_screen.emit("challenge_selection")
 		"Profile":
 			Signals.change_screen.emit("profile_screen")
+		"Settings":
+			Signals.change_screen.emit("settings_screen")
 		"Credits":
 			Signals.change_screen.emit("credits_screen")
 		"Quit":
