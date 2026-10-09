@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_1ub0c")
-id = 4
+notice = "Endless does not award any Tokens."
+id = &"endless"
 display_name = "Endless"
 description = "No rules, no max rounds or points. Free for all!"
-notice = "Endless does not award any Tokens."
 metadata/_custom_type_script = "uid://8swuc0rprwki"

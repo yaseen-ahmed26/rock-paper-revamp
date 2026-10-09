@@ -8,8 +8,8 @@
 
 [resource]
 script = ExtResource("1_fgdss")
-id = 3
-display_name = "Comeback"
-description = "8 rounds and the AI has a 3 point head start."
 task_pool = Array[ExtResource("3_oyvi8")]([ExtResource("4_8immi"), ExtResource("5_7l5fs")])
+id = &"comeback"
+display_name = "Comeback"
+description = "The AI has a head start and you only have limited rounds!"
 metadata/_custom_type_script = "uid://b3g4vgwpu7ym6"

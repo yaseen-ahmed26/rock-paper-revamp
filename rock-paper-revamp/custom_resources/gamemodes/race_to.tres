@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("1_0qlfj")
 starting_points = 8.0
-id = 5
+notice = "Setting 'Total Rounds' to -1 will result in infinite rounds!"
+id = &"race_to_zero"
 display_name = "Race to Zero"
 description = "Be the first to deplete all your points!"
-notice = "Setting 'Total Rounds' to -1 will result in infinite rounds!"
 metadata/_custom_type_script = "uid://bw1ofrurcagc6"
