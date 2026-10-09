@@ -1,9 +1,15 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://fvn8ry0h0i56"]
 
 [ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_c3vct"]
+[ext_resource type="Script" uid="uid://g13g4ik8oom7" path="res://custom_resources/modifiers/scripts/bases/modifier_internal.gd" id="1_ih2gi"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_uuh51"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="2_5sjke"]
 
+[sub_resource type="Resource" id="Resource_86bf1"]
+script = ExtResource("1_ih2gi")
+metadata/_custom_type_script = "uid://g13g4ik8oom7"
+
 [resource]
 script = ExtResource("1_uuh51")
+internal_state = SubResource("Resource_86bf1")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"
