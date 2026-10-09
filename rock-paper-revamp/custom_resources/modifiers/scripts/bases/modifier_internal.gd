@@ -1,7 +1,6 @@
 extends Resource
 class_name ModifierInternal
 
-@export_group("Charges")
 ## The number of charges it starts with. This cannot exceed max charges.
 @export var starting_charges: int
 ## The max amount of charges it can have.
