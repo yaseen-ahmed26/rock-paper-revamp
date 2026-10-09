@@ -70,13 +70,12 @@ func _create_btn(info, parent, template_btn, press_connection):
 		if info.challenge_required:
 			clone.text = ""
 			
-			var lower = ChallengeBase.ID.keys()[info.challenge_required_id].to_lower()
 			var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
 			
 			if completed_challenges.is_empty():
 				clone.get_node("Locked").visible = true
 			else:
-				if not lower in completed_challenges:
+				if not info.challenge_id in completed_challenges:
 					clone.get_node("Locked").visible = true
 		elif info.requires_purchase:				
 			if not info.id in SaveManager.save_data.get("bought_modifiers"):

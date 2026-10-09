@@ -12,6 +12,8 @@ metadata/_custom_type_script = "uid://g13g4ik8oom7"
 
 [resource]
 script = ExtResource("1_uuh51")
+challenge_required = true
+challenge_id = &"a"
 internal_state = SubResource("Resource_86bf1")
 id = &"test_modifier"
 display_name = "Test Modifier"
