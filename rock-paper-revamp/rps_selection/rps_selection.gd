@@ -4,6 +4,14 @@ extends Control
 @onready var info_buttons: HBoxContainer = $Modifiers/InfoButtons
 @onready var overlay: ColorRect = $Overlay
 
+const TIER_DETAILS: Dictionary = {
+	1: "Free",
+	2: "Basic",
+	3: "Legacy",
+	4: "Advanced",
+	5: "Special",
+}
+
 var selected_gamemode: GamemodeBase
 
 var selected_modifier_btns: Array[Button] = []
@@ -27,13 +35,14 @@ func _ready() -> void:
 			_on_gamemode_btn_pressed
 		)
 		
-	for modifier in ContentManager.modifiers.values():
-		_create_btn(
-			modifier,
-			$Modifiers/ScrollContainer/Holder,
-			$Modifiers/ScrollContainer/Holder/TemplateButton,
-			_on_modifier_btn_pressed
-		)
+	#for modifier in ContentManager.modifiers.values():
+		#_create_btn(
+			#modifier,
+			#$Modifiers/ScrollContainer/Holder,
+			#$Modifiers/ScrollContainer/Holder/TemplateButton,
+			#_on_modifier_btn_pressed
+		#)
+	_sort_modifiers()
 		
 	for computer in ContentManager.computers.values():
 		_create_btn(
@@ -45,7 +54,37 @@ func _ready() -> void:
 		
 	for btn in $Modifiers/InfoButtons.get_children():
 		btn.pressed.connect(_on_modifier_info_btn_pressed.bind(btn))
+
+func _sort_modifiers() -> void:
+	var tiers: Dictionary = {}
 	
+	for mod in ContentManager.modifiers.values():
+		if not tiers.has(mod.tier):
+			tiers[mod.tier] = []
+		
+		tiers[mod.tier].append(mod)
+
+	var root_vbox = $Modifiers/ScrollContainer/Holder
+	var sorted_tiers = tiers.keys()
+	sorted_tiers.sort()
+
+	for t in sorted_tiers:
+		var header := Label.new()
+		header.text = "Tier %d - %s" % [t, TIER_DETAILS.get(t)]
+		header.add_theme_font_size_override("font_size", 20)
+		root_vbox.add_child(header)
+
+		var grid := GridContainer.new()
+		grid.columns = 4
+		
+		grid.add_theme_constant_override("h_separation", 15)
+		grid.add_theme_constant_override("v_separation", 15)
+		
+		root_vbox.add_child(grid)
+
+		for mod in tiers[t]:
+			_create_btn(mod, grid, $TemplateButton, _on_modifier_btn_pressed)
+
 # General Helpers
 func _create_btn(info, parent, template_btn, press_connection):
 	var clone: Button = template_btn.duplicate(true)
@@ -304,18 +343,21 @@ func _on_buy_modifier_pressed(btn: Button) -> void:
 
 func on_screen_change(_args):
 	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
-	
-	for btn: Button in $Modifiers/ScrollContainer/Holder.get_children():
-		if btn.name == "TemplateButton": continue
 		
-		var modifier: ModifierBase = btn.get_meta("Resource")
+	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
+	
+	for child in all_descendants:
+		if child.name == "TemplateButton": continue
+		if child.name == "BuyButton": continue
+		
+		var modifier: ModifierBase = child.get_meta("Resource")
 		
 		if not modifier.challenge_required: continue
 
 		var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
 		
 		if modifier.challenge_id in completed_challenges:
-			btn.get_node("Locked").visible = false
+			child.get_node("Locked").visible = false
 
 func _show_overlay(screen: Panel):
 	if current_overlay:

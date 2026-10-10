@@ -9,23 +9,6 @@
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="26_wbtam"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="27_rtsuo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvc85"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0.11764706, 0.19607843, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-corner_detail = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qamvo"]
 bg_color = Color(1.540184e-06, 0.49159884, 0.7614299, 1)
 border_width_left = 3
@@ -87,6 +70,23 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvc85"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.11764706, 0.19607843, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiy8h"]
@@ -257,6 +257,88 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
+
+[node name="TemplateButton" type="Button" parent="." unique_id=420197797]
+visible = false
+custom_minimum_size = Vector2(160, 100)
+layout_mode = 0
+offset_left = 960.5
+offset_top = 643.0
+offset_right = 1120.5
+offset_bottom = 743.0
+theme_override_colors/font_color = Color(0.9847904, 0.75452054, 7.70092e-07, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("24_cvc85")
+theme_override_styles/pressed = ExtResource("25_fllau")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qamvo")
+theme_override_styles/disabled = ExtResource("27_rtsuo")
+text = "Choice Cooldown"
+autowrap_mode = 3
+icon_alignment = 1
+expand_icon = true
+
+[node name="Locked" type="ColorRect" parent="TemplateButton" unique_id=211162985]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="Icon" type="TextureRect" parent="TemplateButton/Locked" unique_id=1690055647]
+layout_mode = 0
+offset_left = -8.5
+offset_top = -7.0
+offset_right = 19.5
+offset_bottom = 21.0
+rotation = -0.2268928
+pivot_offset = Vector2(14, 14)
+texture = ExtResource("7_ran54")
+expand_mode = 1
+
+[node name="Purchase" type="ColorRect" parent="TemplateButton" unique_id=390602911]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="BuyButton" type="Button" parent="TemplateButton/Purchase" unique_id=1393752277]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.5
+offset_top = -39.0
+offset_right = -15.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jfgkb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4g4y5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3d228")
+text = "130 Tokens"
+
+[node name="SelectedLabel" type="RichTextLabel" parent="TemplateButton" unique_id=743731535]
+visible = false
+layout_mode = 1
+offset_right = 35.0
+offset_bottom = 35.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[color=gold]✓"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Gamemodes" type="Panel" parent="." unique_id=399795051]
 layout_mode = 1
@@ -472,91 +554,11 @@ offset_top = 234.0
 offset_right = 791.0
 offset_bottom = 623.0
 
-[node name="Holder" type="GridContainer" parent="Modifiers/ScrollContainer" unique_id=1707060995]
+[node name="Holder" type="VBoxContainer" parent="Modifiers/ScrollContainer" unique_id=1383187398]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
-columns = 4
-
-[node name="TemplateButton" type="Button" parent="Modifiers/ScrollContainer/Holder" unique_id=420197797]
-visible = false
-custom_minimum_size = Vector2(160, 100)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9847904, 0.75452054, 7.70092e-07, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("24_cvc85")
-theme_override_styles/pressed = ExtResource("25_fllau")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qamvo")
-theme_override_styles/disabled = ExtResource("27_rtsuo")
-text = "Choice Cooldown"
-autowrap_mode = 3
-icon_alignment = 1
-expand_icon = true
-
-[node name="Locked" type="ColorRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton" unique_id=211162985]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.58431375)
-
-[node name="Icon" type="TextureRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Locked" unique_id=1690055647]
-layout_mode = 0
-offset_left = -8.5
-offset_top = -7.0
-offset_right = 19.5
-offset_bottom = 21.0
-rotation = -0.2268928
-pivot_offset = Vector2(14, 14)
-texture = ExtResource("7_ran54")
-expand_mode = 1
-
-[node name="Purchase" type="ColorRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton" unique_id=390602911]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.58431375)
-
-[node name="BuyButton" type="Button" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Purchase" unique_id=1393752277]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.5
-offset_top = -39.0
-offset_right = -15.5
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_jfgkb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4g4y5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3d228")
-text = "130 Tokens"
-
-[node name="SelectedLabel" type="RichTextLabel" parent="Modifiers/ScrollContainer/Holder/TemplateButton" unique_id=743731535]
-visible = false
-layout_mode = 1
-offset_right = 35.0
-offset_bottom = 35.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 26
-bbcode_enabled = true
-text = "[color=gold]✓"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/separation = 16
 
 [node name="InfoButtons" type="HBoxContainer" parent="Modifiers" unique_id=1355482778]
 layout_mode = 0

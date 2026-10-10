@@ -31,7 +31,7 @@ enum Group {
 
 @export_group("Modifier Described")
 ## The tier in which it belongs to. This is used for UI and does not affect the modifier is anyway.
-@export_range(1, 5, 1) var tier: int
+@export_range(1, 5, 1) var tier: int = 1
 
 @export_group("General")
 ## When the modifier should be applied.
