@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://duvwhcdbpr5bw"]
+
+[ext_resource type="Script" uid="uid://bt0gaseawjwnp" path="res://addons/modifier_resource_helper/resource_helper_dialog.gd" id="1_ifs1n"]
+
+[node name="resource_helper_dialog" type="ConfirmationDialog" unique_id=294695380]
+oversampling_override = 1.0
+title = "Create Modiifer"
+position = Vector2i(0, 36)
+size = Vector2i(500, 600)
+visible = true
+ok_button_text = "Create"
+script = ExtResource("1_ifs1n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=298187994]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 492.0
+offset_bottom = 551.0
+
+[node name="ModifierName" type="RichTextLabel" parent="VBoxContainer" unique_id=168718292]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Name"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ModifierName" unique_id=216823375]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -15.5
+offset_right = 203.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Name"
+
+[node name="Description" type="RichTextLabel" parent="VBoxContainer" unique_id=571589039]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Description"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Description" unique_id=44539227]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -15.5
+offset_right = 203.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Description"
+
+[node name="PurchaseNeeded" type="RichTextLabel" parent="VBoxContainer" unique_id=936801523]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Purchase Needed"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/PurchaseNeeded" unique_id=1300153451]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -12.0
+offset_right = -64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cost" type="RichTextLabel" parent="VBoxContainer/PurchaseNeeded" unique_id=632436991]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -29.0
+offset_right = 148.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "Cost"
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/PurchaseNeeded/Cost" unique_id=1163785126]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.5
+offset_right = 62.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+custom_arrow_step = 1.0
+
+[node name="ChallengeRequired" type="RichTextLabel" parent="VBoxContainer" unique_id=1614504274]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Challenge Needed"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/ChallengeRequired" unique_id=1090689091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -12.0
+offset_right = -64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChallengeID" type="RichTextLabel" parent="VBoxContainer/ChallengeRequired" unique_id=451872605]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -29.0
+offset_right = 187.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "ID"
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/ChallengeRequired/ChallengeID" unique_id=111580347]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -15.5
+offset_right = 100.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Challenge ID"
+
+[node name="HasInternal" type="RichTextLabel" parent="VBoxContainer" unique_id=1846647358]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Has Internal"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HasInternal" unique_id=494544030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -12.0
+offset_right = -64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExcludeBadge" type="RichTextLabel" parent="VBoxContainer" unique_id=427971547]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exclude Badge"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/ExcludeBadge" unique_id=1930793439]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -12.0
+offset_right = -64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NumberOfRules" type="RichTextLabel" parent="VBoxContainer" unique_id=443456183]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Number of Rules"
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/NumberOfRules" unique_id=856701030]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -15.5
+offset_right = -16.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 5.0
+
+[node name="Tier" type="RichTextLabel" parent="VBoxContainer" unique_id=444980562]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Tier"
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Tier" unique_id=1844398025]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -15.5
+offset_right = -16.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 5.0
+
+[connection signal="text_submitted" from="VBoxContainer/ModifierName/LineEdit" to="." method="_on_name_line_edit_submitted"]
+[connection signal="text_submitted" from="VBoxContainer/Description/LineEdit" to="." method="_on_desc_line_edit_submitted"]
+[connection signal="toggled" from="VBoxContainer/PurchaseNeeded/CheckBox" to="." method="_on_purchased_needed_checkbox_toggle"]
+[connection signal="toggled" from="VBoxContainer/ChallengeRequired/CheckBox" to="." method="_on_challenge_required_checkbox_toggle"]
+[connection signal="text_submitted" from="VBoxContainer/ChallengeRequired/ChallengeID/LineEdit" to="." method="_on_challenge_id_line_edit_submitted"]
