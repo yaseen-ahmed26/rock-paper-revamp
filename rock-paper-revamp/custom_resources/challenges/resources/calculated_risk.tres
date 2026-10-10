@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ChallengeBase" format=3 uid="uid://bellvy1a6cvv6"]
 
-[ext_resource type="Resource" uid="uid://coxbuyn3xbe6e" path="res://custom_resources/computer_types/statistics_computer.tres" id="1_7lmsa"]
+[ext_resource type="Resource" uid="uid://coxbuyn3xbe6e" path="res://custom_resources/computer_types/resources/statistics_computer.tres" id="1_7lmsa"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_ar5gn"]
 [ext_resource type="Script" uid="uid://rwt6wti4yr2i" path="res://custom_resources/gamemodes/scripts/best_of_gamemode.gd" id="2_4y136"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_dn3tk"]

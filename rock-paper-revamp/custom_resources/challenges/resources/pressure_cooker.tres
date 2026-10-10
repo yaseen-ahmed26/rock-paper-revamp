@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ChallengeBase" format=3 uid="uid://nxqm3sefovvv"]
 
-[ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="1_ly6a6"]
+[ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/resources/gambler_computer.tres" id="1_ly6a6"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_uvhg5"]
-[ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/first_to.tres" id="2_lucfw"]
+[ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/resources/first_to.tres" id="2_lucfw"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_ptc0q"]
 
 [resource]
