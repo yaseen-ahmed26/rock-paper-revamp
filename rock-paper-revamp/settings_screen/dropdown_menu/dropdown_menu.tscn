@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://dqm8icokphh3r"]
+
+[ext_resource type="Script" uid="uid://54wankvdp0km" path="res://settings_screen/dropdown_menu/dropdown_menu.gd" id="1_0osqh"]
+[ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="1_tufu4"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="2_0osqh"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="3_1gf75"]
+[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="4_50n3o"]
+[ext_resource type="Texture2D" uid="uid://cft6r5q87sme3" path="res://assets/icons/menu/info.png" id="6_1gf75"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj8s6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.11764706, 0.19607843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44293296, 0.7646287, 0.9999996, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0osqh"]
+bg_color = Color(2.8878452e-07, 0.45885003, 0.71388054, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1gf75"]
+bg_color = Color(0, 0.34808475, 0.54602015, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50n3o"]
+bg_color = Color(0, 0.34808475, 0.54602015, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_afpuc"]
+bg_color = Color(2.8878452e-07, 0.45885003, 0.71388054, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7m4d"]
+bg_color = Color(0, 0.34808475, 0.54602015, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1ht2"]
+bg_color = Color(0, 0.34808475, 0.54602015, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+corner_detail = 20
+
+[node name="dropdown_menu" type="Panel" unique_id=1667180580]
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -50.0
+offset_right = 289.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
+script = ExtResource("1_0osqh")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=343240659]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -47.0
+offset_right = 203.0
+offset_bottom = 47.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Label Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="." unique_id=2047362676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -21.5
+offset_right = 227.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0osqh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1gf75")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50n3o")
+text = "Button Text"
+metadata/Open = false
+
+[node name="BtnHolder" type="VBoxContainer" parent="MenuButton" unique_id=1979187131]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="TemplateButton" type="Button" parent="MenuButton/BtnHolder" unique_id=1850717649]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("2_0osqh")
+theme_override_styles/pressed = ExtResource("3_1gf75")
+theme_override_styles/hover = ExtResource("1_tufu4")
+theme_override_styles/disabled = ExtResource("4_50n3o")
+text = "Endless"
+
+[node name="SelectedLabel" type="RichTextLabel" parent="MenuButton/BtnHolder/TemplateButton" unique_id=2032841793]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014336891
+anchor_top = 0.051886793
+anchor_right = 0.19354838
+anchor_bottom = 0.9481132
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=gold][>]"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DescriptionButton" type="Button" parent="." unique_id=587091385]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -17.5
+offset_right = -12.0
+offset_bottom = 17.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_afpuc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7m4d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n1ht2")
+icon = ExtResource("6_1gf75")
+expand_icon = true
+
+[node name="Label" type="RichTextLabel" parent="DescriptionButton" unique_id=1697355412]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -70.0
+offset_right = 299.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Hover button description text goes here"
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="DescriptionButton" to="." method="_on_description_button_mouse_entered"]
+[connection signal="mouse_exited" from="DescriptionButton" to="." method="_on_description_button_mouse_exited"]
