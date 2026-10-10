@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://bwy1qverpf8jg"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_6aufa"]
+[ext_resource type="Texture2D" uid="uid://debm2frx5c22q" path="res://assets/icons/modifiers/choice_cooldown.svg" id="1_8pj1i"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_yok13"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_cgj84"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="3_ucg32"]
+[ext_resource type="Script" uid="uid://c3dh67ar4sxak" path="res://custom_resources/modifiers/scripts/effects/edit_move_effect.gd" id="4_jqdjo"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_pg2ya"]
+
+[sub_resource type="Resource" id="Resource_8pj1i"]
+script = ExtResource("4_jqdjo")
+move_target = 3
+lock_move = true
+metadata/_custom_type_script = "uid://c3dh67ar4sxak"
+
+[sub_resource type="Resource" id="Resource_gmuj5"]
+script = ExtResource("1_6aufa")
+effects = Array[ExtResource("3_ucg32")]([SubResource("Resource_8pj1i")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[resource]
+script = ExtResource("2_yok13")
+rules = Array[ExtResource("1_6aufa")]([SubResource("Resource_gmuj5")])
+id = &"choice_cooldown"
+display_name = "Choice Cooldown"
+description = "The move you used last round is locked for the next."
+icon = ExtResource("1_8pj1i")
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

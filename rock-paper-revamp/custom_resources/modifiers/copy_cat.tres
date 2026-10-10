@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dxr2sfqeuk7pa"]
+
+[ext_resource type="Texture2D" uid="uid://bn5xcyv8lxisp" path="res://assets/icons/modifiers/copy_cat.svg" id="1_lps0f"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_piy7l"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_fe4wf"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_rfoo4"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_b288q"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="3_lps0f"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="4_8x4f8"]
+[ext_resource type="Script" uid="uid://bly083c3u8yha" path="res://custom_resources/shared/triggers/history_match_trigger.gd" id="5_to1qx"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="6_u72tt"]
+
+[sub_resource type="Resource" id="Resource_8x4f8"]
+script = ExtResource("3_lps0f")
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_4yud0"]
+script = ExtResource("5_to1qx")
+metadata/_custom_type_script = "uid://bly083c3u8yha"
+
+[sub_resource type="Resource" id="Resource_fe4wf"]
+script = ExtResource("6_u72tt")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_kxfpi"]
+script = ExtResource("1_piy7l")
+triggers = Array[ExtResource("4_8x4f8")]([SubResource("Resource_4yud0"), SubResource("Resource_fe4wf")])
+effects = Array[ExtResource("2_fe4wf")]([SubResource("Resource_8x4f8")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[resource]
+script = ExtResource("2_rfoo4")
+tier = 2
+timing = 1
+group = 1
+rules = Array[ExtResource("1_piy7l")]([SubResource("Resource_kxfpi")])
+requires_purchase = true
+purchase_cost = 30
+id = &"copy_cat"
+display_name = "Copy Cat"
+description = "Gain an +1 point if you win the round with the move the AI used last.	"
+icon = ExtResource("1_lps0f")
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

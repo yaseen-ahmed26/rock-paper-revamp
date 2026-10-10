@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://byk3gy7y418ip"]
+
+[ext_resource type="Texture2D" uid="uid://cggbsgnk57jm1" path="res://assets/icons/modifiers/desperation_deal.svg" id="1_07hba"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_rjcid"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_5w22n"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_87sje"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="3_07hba"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_n4sdg"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="4_8uo41"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="5_72tfk"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="6_mi5ed"]
+[ext_resource type="Script" uid="uid://bly083c3u8yha" path="res://custom_resources/shared/triggers/history_match_trigger.gd" id="7_ij3cd"]
+
+[sub_resource type="Resource" id="Resource_07hba"]
+script = ExtResource("3_07hba")
+value = 4.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_jfa1e"]
+script = ExtResource("5_72tfk")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_g63yf"]
+script = ExtResource("6_mi5ed")
+target_stat = 13
+target_value = 2.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_87sje"]
+script = ExtResource("7_ij3cd")
+metadata/_custom_type_script = "uid://bly083c3u8yha"
+
+[sub_resource type="Resource" id="Resource_kq71o"]
+script = ExtResource("1_rjcid")
+triggers = Array[ExtResource("4_8uo41")]([SubResource("Resource_jfa1e"), SubResource("Resource_g63yf"), SubResource("Resource_87sje")])
+effects = Array[ExtResource("2_87sje")]([SubResource("Resource_07hba")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[resource]
+script = ExtResource("2_5w22n")
+tier = 3
+timing = 1
+group = 3
+rules = Array[ExtResource("1_rjcid")]([SubResource("Resource_kq71o")])
+one_shot = true
+requires_purchase = true
+purchase_cost = 40
+id = &"desperation_deal"
+display_name = "Desperation Deal"
+description = "After 2 total losses, winning with the AI's last move gives you +4 points. This can only happen once."
+icon = ExtResource("1_07hba")
+metadata/_custom_type_script = "uid://d2bvcnih05ama"

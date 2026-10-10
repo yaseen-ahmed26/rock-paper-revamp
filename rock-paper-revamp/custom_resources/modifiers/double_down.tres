@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://7ox1qxhpykqp"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_h8gti"]
+[ext_resource type="Texture2D" uid="uid://dqrupxv472vt4" path="res://assets/icons/modifiers/double_down.svg" id="1_ryh13"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_i2a4t"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_aj26n"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="3_wgstj"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="4_8r1aq"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="5_idoby"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/shared/triggers/rounds_played_trigger.gd" id="6_7pyap"]
+
+[sub_resource type="Resource" id="Resource_wgstj"]
+script = ExtResource("4_8r1aq")
+multiply = 2
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_ryh13"]
+script = ExtResource("6_7pyap")
+rounds = 4
+metadata/_custom_type_script = "uid://c3l2l837kfdsp"
+
+[sub_resource type="Resource" id="Resource_o8yci"]
+script = ExtResource("1_h8gti")
+triggers = Array[ExtResource("5_idoby")]([SubResource("Resource_ryh13")])
+effects = Array[ExtResource("3_wgstj")]([SubResource("Resource_wgstj")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[resource]
+script = ExtResource("2_i2a4t")
+tier = 3
+timing = 1
+group = 1
+rules = Array[ExtResource("1_h8gti")]([SubResource("Resource_o8yci")])
+requires_purchase = true
+purchase_cost = 50
+id = &"double_down"
+display_name = "Double Down"
+description = "On Round 4, all future rounds have their outcomes doubled."
+icon = ExtResource("1_ryh13")
+metadata/_custom_type_script = "uid://d2bvcnih05ama"
