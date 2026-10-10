@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dl7pn0tynjg05"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_pwyvy"]
+[ext_resource type="Texture2D" uid="uid://do0gv8sy8473p" path="res://assets/icons/modifiers/rule_reversal.svg" id="1_wspus"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_ovfpx"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_so1xd"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="4_0ijj4"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_wspus"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_0ijj4"]
+[ext_resource type="Script" uid="uid://cbiofxr7451ny" path="res://custom_resources/shared/triggers/every_xround_trigger.gd" id="6_htdt6"]
+
+[sub_resource type="Resource" id="Resource_kmsgq"]
+script = ExtResource("4_0ijj4")
+invert = true
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_s8kbf"]
+script = ExtResource("6_htdt6")
+metadata/_custom_type_script = "uid://cbiofxr7451ny"
+
+[sub_resource type="Resource" id="Resource_htdt6"]
+script = ExtResource("1_pwyvy")
+triggers = Array[ExtResource("3_so1xd")]([SubResource("Resource_s8kbf")])
+effects = Array[ExtResource("2_ovfpx")]([SubResource("Resource_kmsgq")])
+
+[resource]
+script = ExtResource("4_wspus")
+tier = 5
+timing = 1
+group = 1
+rules = Array[ExtResource("1_pwyvy")]([SubResource("Resource_htdt6")])
+challenge_required = true
+challenge_id = &"inverted_death"
+id = &"rule_reversal"
+display_name = "Rule Reversal"
+description = "Every 3 rounds, the rules are flipped."
+icon = ExtResource("1_wspus")

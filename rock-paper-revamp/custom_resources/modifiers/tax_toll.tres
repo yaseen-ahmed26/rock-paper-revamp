@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://jrctkrktpuaj"]
+
+[ext_resource type="Texture2D" uid="uid://cggynoh6f8wjd" path="res://assets/icons/modifiers/tax_toll.svg" id="1_k4p4w"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_qqv7r"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_wqpl1"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_bcror"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="4_1h752"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_k4p4w"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_1h752"]
+[ext_resource type="Script" uid="uid://cbiofxr7451ny" path="res://custom_resources/shared/triggers/every_xround_trigger.gd" id="6_w57si"]
+
+[sub_resource type="Resource" id="Resource_epvol"]
+script = ExtResource("4_1h752")
+target = 3
+operation = 1
+value = 2.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_esfij"]
+script = ExtResource("6_w57si")
+metadata/_custom_type_script = "uid://cbiofxr7451ny"
+
+[sub_resource type="Resource" id="Resource_w57si"]
+script = ExtResource("1_qqv7r")
+triggers = Array[ExtResource("3_bcror")]([SubResource("Resource_esfij")])
+effects = Array[ExtResource("2_wqpl1")]([SubResource("Resource_epvol")])
+
+[resource]
+script = ExtResource("4_k4p4w")
+tier = 2
+timing = 1
+group = 1
+rules = Array[ExtResource("1_qqv7r")]([SubResource("Resource_w57si")])
+requires_purchase = true
+purchase_cost = 30
+id = &"tax_toll"
+display_name = "Tax Toll"
+description = "Every 3 rounds, the person with the most points loses 2. Skipped if drawing."
+icon = ExtResource("1_k4p4w")

@@ -32,11 +32,12 @@ metadata/_custom_type_script = "uid://cfktrpopf1vy8"
 
 [resource]
 script = ExtResource("2_rfoo4")
-tier = 2
+tier = 5
 timing = 1
 group = 1
 rules = Array[ExtResource("1_piy7l")]([SubResource("Resource_kxfpi")])
-requires_purchase = true
+challenge_required = true
+challenge_id = &"calcilated_risk"
 purchase_cost = 30
 id = &"copy_cat"
 display_name = "Copy Cat"

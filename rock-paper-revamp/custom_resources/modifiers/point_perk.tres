@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://x8c86s23xhkc"]
+
+[ext_resource type="Texture2D" uid="uid://cn10cyuhysx1a" path="res://assets/icons/modifiers/point_perk.svg" id="1_h4t64"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_sx68s"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="2_h4t64"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_yksg4"]
+
+[sub_resource type="Resource" id="Resource_pbm5a"]
+script = ExtResource("3_yksg4")
+target_stat = 8
+value = 1.0
+metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
+
+[resource]
+script = ExtResource("2_h4t64")
+tier = 3
+group = 3
+starting_stat_changes = Array[ExtResource("3_yksg4")]([SubResource("Resource_pbm5a")])
+exclude_badge = true
+requires_purchase = true
+purchase_cost = 50
+id = &"point_perk"
+display_name = "Point Perk"
+description = "Get an additional point for every win."
+icon = ExtResource("1_h4t64")

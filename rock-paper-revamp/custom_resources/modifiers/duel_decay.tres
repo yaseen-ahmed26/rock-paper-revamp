@@ -36,6 +36,8 @@ metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
 [resource]
 script = ExtResource("4_tk20a")
 tier = 1
+timing = 1
+group = 4
 starting_stat_changes = Array[ExtResource("5_gsujr")]([SubResource("Resource_52qt1")])
 rules = Array[ExtResource("1_y6bkg")]([SubResource("Resource_0usn3")])
 id = &"duel_decay"

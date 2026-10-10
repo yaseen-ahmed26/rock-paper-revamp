@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://ccu8tj5v7vh3v"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_000co"]
+[ext_resource type="Texture2D" uid="uid://48yjjuq8du67" path="res://assets/icons/modifiers/winners_weakness.svg" id="1_ha81j"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_1d02f"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_bqg0f"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_0ue0a"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="4_5vgr6"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_ha81j"]
+[ext_resource type="Script" uid="uid://c2qcyypl4oy3w" path="res://custom_resources/modifiers/scripts/effects/modify_stat_effect.gd" id="5_jjkod"]
+[ext_resource type="Script" uid="uid://cbiofxr7451ny" path="res://custom_resources/shared/triggers/every_xround_trigger.gd" id="7_3220w"]
+
+[sub_resource type="Resource" id="Resource_3220w"]
+script = ExtResource("4_5vgr6")
+target = 3
+operation = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_27723"]
+script = ExtResource("5_jjkod")
+stat_name = 8
+value = 1.0
+metadata/_custom_type_script = "uid://c2qcyypl4oy3w"
+
+[sub_resource type="Resource" id="Resource_hv2l2"]
+script = ExtResource("5_jjkod")
+stat_name = 10
+value = 1.0
+metadata/_custom_type_script = "uid://c2qcyypl4oy3w"
+
+[sub_resource type="Resource" id="Resource_jjkod"]
+script = ExtResource("7_3220w")
+metadata/_custom_type_script = "uid://cbiofxr7451ny"
+
+[sub_resource type="Resource" id="Resource_5vgr6"]
+script = ExtResource("1_000co")
+triggers = Array[ExtResource("3_bqg0f")]([SubResource("Resource_jjkod")])
+effects = Array[ExtResource("2_1d02f")]([SubResource("Resource_3220w"), SubResource("Resource_27723"), SubResource("Resource_hv2l2")])
+
+[resource]
+script = ExtResource("4_0ue0a")
+tier = 5
+rules = Array[ExtResource("1_000co")]([SubResource("Resource_5vgr6")])
+challenge_required = true
+challenge_id = &"deficit_hustle"
+id = &"winner\'s_weakness"
+display_name = "Winner's Weakness"
+description = "Every 3 rounds, the leader loses 1 point but wins and losses award 1 additional point."
+icon = ExtResource("1_ha81j")

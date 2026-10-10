@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://vhxjsakk7d6i"]
+
+[ext_resource type="Texture2D" uid="uid://m7vf6ndanalb" path="res://assets/icons/modifiers/pity_points.svg" id="1_5s3f1"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_xvggd"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_qxx2d"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_i4c7f"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="4_8ilnf"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_rsn4q"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_5s3f1"]
+[ext_resource type="Script" uid="uid://de3b7c8w0krhi" path="res://custom_resources/shared/triggers/chance_trigger.gd" id="6_ypj2r"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="7_f0olk"]
+
+[sub_resource type="Resource" id="Resource_8rcoj"]
+script = ExtResource("4_8ilnf")
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_wbtam"]
+script = ExtResource("6_ypj2r")
+probability = 0.1
+metadata/_custom_type_script = "uid://de3b7c8w0krhi"
+
+[sub_resource type="Resource" id="Resource_rtsuo"]
+script = ExtResource("7_f0olk")
+required_outcome = 1
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_8ilnf"]
+script = ExtResource("1_xvggd")
+triggers = Array[ExtResource("3_i4c7f")]([SubResource("Resource_wbtam"), SubResource("Resource_rtsuo")])
+effects = Array[ExtResource("2_qxx2d")]([SubResource("Resource_8rcoj")])
+
+[resource]
+script = ExtResource("4_rsn4q")
+tier = 1
+timing = 1
+group = 3
+rules = Array[ExtResource("1_xvggd")]([SubResource("Resource_8ilnf")])
+id = &"pity_points"
+display_name = "Pity Points"
+description = "Every loss has a 10% chance to award you a point anyway."
+icon = ExtResource("1_5s3f1")

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://bcin3364o8x50"]
+
+[ext_resource type="Texture2D" uid="uid://bk0hg01avjd0g" path="res://assets/icons/modifiers/vampire_victory.svg" id="1_k25wr"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_v2hrg"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_jwgg0"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="3_q1fw8"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_upywg"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_q1fw8"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="5_iw7mu"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_k25wr"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="6_ucvjm"]
+
+[sub_resource type="Resource" id="Resource_bl324"]
+script = ExtResource("3_q1fw8")
+target = 1
+operation = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_ucvjm"]
+script = ExtResource("5_iw7mu")
+target_stat = 1
+operator = 2
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_yn8yr"]
+script = ExtResource("6_ucvjm")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_iw7mu"]
+script = ExtResource("1_v2hrg")
+triggers = Array[ExtResource("3_upywg")]([SubResource("Resource_ucvjm"), SubResource("Resource_yn8yr")])
+effects = Array[ExtResource("2_jwgg0")]([SubResource("Resource_bl324")])
+
+[sub_resource type="Resource" id="Resource_3k6r2"]
+script = ExtResource("5_k25wr")
+target_stat = 1
+value = 2.0
+metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
+
+[resource]
+script = ExtResource("4_q1fw8")
+tier = 4
+timing = 1
+group = 3
+starting_stat_changes = Array[ExtResource("5_k25wr")]([SubResource("Resource_3k6r2")])
+rules = Array[ExtResource("1_v2hrg")]([SubResource("Resource_iw7mu")])
+requires_purchase = true
+purchase_cost = 60
+id = &"vampire_victory"
+display_name = "Vampire Victory"
+description = "The AI starts off with 2 points and you only gain the win if the AI has points to steal. However when you win, the AI loses a point."
+icon = ExtResource("1_k25wr")

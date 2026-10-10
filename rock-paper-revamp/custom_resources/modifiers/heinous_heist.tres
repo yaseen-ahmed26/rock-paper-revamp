@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://cl6dpa5p80pow"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_6l0hr"]
+[ext_resource type="Texture2D" uid="uid://dxo4twk1ukm52" path="res://assets/icons/modifiers/heinous_heist.svg" id="1_cfnsp"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_ls4sw"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_fb2y6"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_cfnsp"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="4_t5ksj"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_t5ksj"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/shared/triggers/rounds_played_trigger.gd" id="6_0lknv"]
+
+[sub_resource type="Resource" id="Resource_51lq7"]
+script = ExtResource("4_t5ksj")
+target = 2
+operation = 1
+value = 2.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_chf6d"]
+script = ExtResource("6_0lknv")
+rounds = 5
+metadata/_custom_type_script = "uid://c3l2l837kfdsp"
+
+[sub_resource type="Resource" id="Resource_0lknv"]
+script = ExtResource("1_6l0hr")
+triggers = Array[ExtResource("3_fb2y6")]([SubResource("Resource_chf6d")])
+effects = Array[ExtResource("2_ls4sw")]([SubResource("Resource_51lq7")])
+
+[resource]
+script = ExtResource("4_cfnsp")
+tier = 1
+timing = 1
+group = 3
+rules = Array[ExtResource("1_6l0hr")]([SubResource("Resource_0lknv")])
+one_shot = true
+id = &"heinous_heist"
+display_name = "Heinous Heist"
+description = "On Round 5, both players lose 2 points. This can go into the negatives."
+icon = ExtResource("1_cfnsp")

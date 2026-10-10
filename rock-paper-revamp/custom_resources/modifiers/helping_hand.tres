@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://dfwyckbxsb68e"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_gi67h"]
+[ext_resource type="Texture2D" uid="uid://b2knkhspf0mhm" path="res://assets/icons/modifiers/helping_hand.svg" id="1_ip07k"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_il362"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_pfmij"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_qd2c1"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="4_w3iba"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_ip07k"]
+[ext_resource type="Script" uid="uid://cy32uleuvbseq" path="res://custom_resources/shared/triggers/point_difference_trigger.gd" id="6_arfw3"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="7_gxhd6"]
+
+[sub_resource type="Resource" id="Resource_gxhd6"]
+script = ExtResource("4_w3iba")
+multiply = 2
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_arfw3"]
+script = ExtResource("6_arfw3")
+target = 1
+position = 1
+how_much_by = 2.0
+metadata/_custom_type_script = "uid://cy32uleuvbseq"
+
+[sub_resource type="Resource" id="Resource_sftmq"]
+script = ExtResource("7_gxhd6")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_w3iba"]
+script = ExtResource("1_gi67h")
+triggers = Array[ExtResource("3_pfmij")]([SubResource("Resource_arfw3"), SubResource("Resource_sftmq")])
+effects = Array[ExtResource("2_il362")]([SubResource("Resource_gxhd6")])
+
+[resource]
+script = ExtResource("4_qd2c1")
+tier = 2
+timing = 1
+group = 3
+rules = Array[ExtResource("1_gi67h")]([SubResource("Resource_w3iba")])
+requires_purchase = true
+purchase_cost = 20
+id = &"helping_hand"
+display_name = "Helping Hand"
+description = "If you are losing by 2 or more points, your next win is doubled."
+icon = ExtResource("1_ip07k")

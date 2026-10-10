@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://bhvtg4p1blcsw"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_hoe22"]
+[ext_resource type="Texture2D" uid="uid://c3lg8onwpjswk" path="res://assets/icons/modifiers/safety_shield.svg" id="1_nacgp"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_dw1oo"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_7d0mp"]
+[ext_resource type="Script" uid="uid://cp0poc5ol5ror" path="res://custom_resources/modifiers/scripts/effects/edit_outcome_effect.gd" id="4_6sle4"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_nacgp"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_6sle4"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="6_rahnm"]
+
+[sub_resource type="Resource" id="Resource_14ae4"]
+script = ExtResource("4_6sle4")
+discard = true
+metadata/_custom_type_script = "uid://cp0poc5ol5ror"
+
+[sub_resource type="Resource" id="Resource_8n0dr"]
+script = ExtResource("6_rahnm")
+required_outcome = 1
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_rahnm"]
+script = ExtResource("1_hoe22")
+triggers = Array[ExtResource("3_7d0mp")]([SubResource("Resource_8n0dr")])
+effects = Array[ExtResource("2_dw1oo")]([SubResource("Resource_14ae4")])
+
+[resource]
+script = ExtResource("4_nacgp")
+tier = 3
+timing = 1
+group = 1
+rules = Array[ExtResource("1_hoe22")]([SubResource("Resource_rahnm")])
+one_shot = true
+requires_purchase = true
+purchase_cost = 40
+id = &"safety_shield"
+display_name = "Safety Shield"
+description = "Your first loss is discarded. This happens only once."
+icon = ExtResource("1_nacgp")

@@ -16,14 +16,32 @@
 [ext_resource type="Resource" uid="uid://byk3gy7y418ip" path="res://custom_resources/modifiers/desperation_deal.tres" id="14_27unx"]
 [ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/double_down.tres" id="15_5v4jf"]
 [ext_resource type="Resource" uid="uid://qwqhc23swyyr" path="res://custom_resources/modifiers/duel_decay.tres" id="16_rf0ia"]
+[ext_resource type="Resource" uid="uid://i5wc3mxyy125" path="res://custom_resources/modifiers/gridlocked_growth.tres" id="17_s2nso"]
+[ext_resource type="Resource" uid="uid://dfwyckbxsb68e" path="res://custom_resources/modifiers/helping_hand.tres" id="18_s6tvf"]
+[ext_resource type="Resource" uid="uid://cl6dpa5p80pow" path="res://custom_resources/modifiers/heinous_heist.tres" id="19_cvc85"]
 [ext_resource type="Script" uid="uid://n0n4mcge7f3v" path="res://custom_resources/computer_types/scripts/computer_base.gd" id="20_27unx"]
+[ext_resource type="Resource" uid="uid://bv2u3r2sgi1wy" path="res://custom_resources/modifiers/hot_hand.tres" id="20_fllau"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
 [ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="21_5v4jf"]
+[ext_resource type="Resource" uid="uid://d0dxgj6b7momp" path="res://custom_resources/modifiers/inverted_inflation.tres" id="21_wbtam"]
 [ext_resource type="Resource" uid="uid://coxbuyn3xbe6e" path="res://custom_resources/computer_types/statistics_computer.tres" id="22_rf0ia"]
+[ext_resource type="Resource" uid="uid://4nakv84rixov" path="res://custom_resources/modifiers/jackpot_juice.tres" id="22_wbtam"]
+[ext_resource type="Resource" uid="uid://dj74a6yni5c3j" path="res://custom_resources/modifiers/last_laugh.tres" id="23_wrns6"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="24_cvc85"]
+[ext_resource type="Resource" uid="uid://x8c86s23xhkc" path="res://custom_resources/modifiers/point_perk.tres" id="24_fcxpn"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="25_fllau"]
+[ext_resource type="Resource" uid="uid://vhxjsakk7d6i" path="res://custom_resources/modifiers/pity_points.tres" id="25_imyym"]
+[ext_resource type="Resource" uid="uid://dja27pn7786ak" path="res://custom_resources/modifiers/random_reset.tres" id="26_uiy8h"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="26_wbtam"]
+[ext_resource type="Resource" uid="uid://dl7pn0tynjg05" path="res://custom_resources/modifiers/rule_reversal.tres" id="27_gcuj6"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="27_rtsuo"]
+[ext_resource type="Resource" uid="uid://bhvtg4p1blcsw" path="res://custom_resources/modifiers/safety_shield.tres" id="28_lm54m"]
+[ext_resource type="Resource" uid="uid://cmkhh5xob85w5" path="res://custom_resources/modifiers/scissor_specialist.tres" id="29_qamvo"]
+[ext_resource type="Resource" uid="uid://d3o86utkcpwp5" path="res://custom_resources/modifiers/shattered_stalemate.tres" id="30_jfgkb"]
+[ext_resource type="Resource" uid="uid://jrctkrktpuaj" path="res://custom_resources/modifiers/tax_toll.tres" id="31_jfgkb"]
+[ext_resource type="Resource" uid="uid://c4mx5ctlr8wxf" path="res://custom_resources/modifiers/thought_tax.tres" id="32_4g4y5"]
+[ext_resource type="Resource" uid="uid://bcin3364o8x50" path="res://custom_resources/modifiers/vampire_victory.tres" id="33_3d228"]
+[ext_resource type="Resource" uid="uid://ccu8tj5v7vh3v" path="res://custom_resources/modifiers/winner's_weakness.tres" id="34_gc7lw"]
 [ext_resource type="Resource" uid="uid://b2h2qglcgcmin" path="res://custom_resources/computer_types/alternator_computer.tres" id="41_gc7lw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvc85"]
@@ -275,7 +293,7 @@ grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("9_3d228"), ExtResource("4_0mnpd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("11_k2fvl"), ExtResource("12_l82kn"), ExtResource("13_l673e"), ExtResource("14_27unx"), ExtResource("15_5v4jf"), ExtResource("16_rf0ia")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("11_k2fvl"), ExtResource("12_l82kn"), ExtResource("13_l673e"), ExtResource("14_27unx"), ExtResource("15_5v4jf"), ExtResource("16_rf0ia"), ExtResource("17_s2nso"), ExtResource("18_s6tvf"), ExtResource("19_cvc85"), ExtResource("20_fllau"), ExtResource("21_wbtam"), ExtResource("22_wbtam"), ExtResource("23_wrns6"), ExtResource("24_fcxpn"), ExtResource("25_imyym"), ExtResource("26_uiy8h"), ExtResource("27_gcuj6"), ExtResource("28_lm54m"), ExtResource("29_qamvo"), ExtResource("30_jfgkb"), ExtResource("31_jfgkb"), ExtResource("32_4g4y5"), ExtResource("33_3d228"), ExtResource("34_gc7lw")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia"), ExtResource("41_gc7lw")])
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=609072858]
