@@ -10,6 +10,7 @@ extends ConfirmationDialog
 @onready var exclude_badge: RichTextLabel = $VBoxContainer/ExcludeBadge
 @onready var one_shot: RichTextLabel = $VBoxContainer/OneShot
 @onready var tier: RichTextLabel = $VBoxContainer/Tier
+@onready var stat_changes: RichTextLabel = $VBoxContainer/StatChanges
 
 func _on_purchased_needed_checkbox_toggle(toggle: bool):
 	var label = $VBoxContainer/PurchaseNeeded
@@ -36,5 +37,6 @@ func get_data() -> Dictionary:
 		"has_internal": has_internal.get_node("CheckBox").button_pressed,
 		"exclude_badge": exclude_badge.get_node("CheckBox").button_pressed,
 		"one_shot": one_shot.get_node("CheckBox").button_pressed,
-		"tier": tier.get_node("SpinBox").value
+		"tier": tier.get_node("SpinBox").value,
+		"stat_changes": stat_changes.get_node("SpinBox").value
 	}
