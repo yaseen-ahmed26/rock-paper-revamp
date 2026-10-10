@@ -1,6 +1,5 @@
 extends Control
 
-@export var challenge_pool: Array[ChallengeBase]
 @onready var template_button: Button = $Challenges/Holder/TemplateButton
 
 var selected_challenge_btn: Button
@@ -10,7 +9,7 @@ func _ready() -> void:
 
 # Helpers
 func _create_challenge_btns():
-	for challenge in challenge_pool:
+	for challenge in ContentManager.challenges.values():
 		var clone: Button = template_button.duplicate(true)
 		$Challenges/Holder.add_child(clone)
 		

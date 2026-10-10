@@ -1,9 +1,5 @@
 extends Control
 
-@export var gamemode_pool: Array[GamemodeBase]
-@export var modifier_pool: Array[ModifierBase]
-@export var computer_pool: Array[ComputerBase]
-
 @onready var gm_btn_holder: VBoxContainer = $Gamemodes/PickGamemodeBtn/BtnHolder
 @onready var info_buttons: HBoxContainer = $Modifiers/InfoButtons
 @onready var overlay: ColorRect = $Overlay
@@ -23,7 +19,7 @@ var selectable_modifiers = []
 func _ready() -> void:
 	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
 	
-	for gamemode in gamemode_pool:
+	for gamemode in ContentManager.gamemodes.values():
 		_create_btn(
 			gamemode,
 			gm_btn_holder,
@@ -31,7 +27,7 @@ func _ready() -> void:
 			_on_gamemode_btn_pressed
 		)
 		
-	for modifier in modifier_pool:
+	for modifier in ContentManager.modifiers.values():
 		_create_btn(
 			modifier,
 			$Modifiers/ScrollContainer/Holder,
@@ -39,7 +35,7 @@ func _ready() -> void:
 			_on_modifier_btn_pressed
 		)
 		
-	for computer in computer_pool:
+	for computer in ContentManager.computers.values():
 		_create_btn(
 			computer,
 			$Computers/Holder,

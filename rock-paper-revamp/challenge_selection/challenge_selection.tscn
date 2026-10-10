@@ -2,14 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_584du"]
 [ext_resource type="Script" uid="uid://cw30lbe636f34" path="res://challenge_selection/challenge_selection.gd" id="1_uj304"]
-[ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_xauxh"]
-[ext_resource type="Resource" uid="uid://dbtqfcar5da0r" path="res://custom_resources/challenges/resources/inverted_death.tres" id="3_6erqi"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="4_t58ff"]
-[ext_resource type="Resource" uid="uid://cvra6lkuow374" path="res://custom_resources/challenges/resources/deficit_hustle.tres" id="5_6b2la"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="5_41hw2"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_584du"]
-[ext_resource type="Resource" uid="uid://bellvy1a6cvv6" path="res://custom_resources/challenges/resources/calculated_risk.tres" id="6_e8w8b"]
-[ext_resource type="Resource" uid="uid://nxqm3sefovvv" path="res://custom_resources/challenges/resources/pressure_cooker.tres" id="7_1sq0s"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="7_41hw2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t58ff"]
@@ -55,7 +50,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_584du")
 script = ExtResource("1_uj304")
-challenge_pool = Array[ExtResource("2_xauxh")]([ExtResource("3_6erqi"), ExtResource("5_6b2la"), ExtResource("6_e8w8b"), ExtResource("7_1sq0s")])
 
 [node name="Challenges" type="Panel" parent="." unique_id=11020564]
 layout_mode = 1
