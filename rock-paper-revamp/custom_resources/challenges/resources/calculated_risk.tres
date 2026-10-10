@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_dn3tk"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="3_3gmi1"]
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="4_htudk"]
+[ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/resources/double_down.tres" id="7_cc3l4"]
+[ext_resource type="Resource" uid="uid://dxr2sfqeuk7pa" path="res://custom_resources/modifiers/resources/copy_cat.tres" id="8_4aawp"]
+[ext_resource type="Resource" uid="uid://dj74a6yni5c3j" path="res://custom_resources/modifiers/resources/last_laugh.tres" id="8_anfw5"]
 
 [sub_resource type="Resource" id="Resource_4yodi"]
 script = ExtResource("2_4y136")
@@ -16,8 +19,9 @@ metadata/_custom_type_script = "uid://rwt6wti4yr2i"
 [resource]
 script = ExtResource("2_dn3tk")
 difficulty = 1
-reward = "Repeat Reward"
+reward = "Copy Cat"
 locked_gamemode = SubResource("Resource_4yodi")
+locked_modifiers = Array[ExtResource("1_ar5gn")]([ExtResource("7_cc3l4"), ExtResource("8_anfw5"), ExtResource("8_4aawp")])
 locked_computer = ExtResource("1_7lmsa")
 id = &"calculated_risk"
 display_name = "Calculated Risk"

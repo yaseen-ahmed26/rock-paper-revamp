@@ -4,12 +4,16 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_uvhg5"]
 [ext_resource type="Resource" uid="uid://d341uwvd1je86" path="res://custom_resources/gamemodes/resources/first_to.tres" id="2_lucfw"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_ptc0q"]
+[ext_resource type="Resource" uid="uid://qwqhc23swyyr" path="res://custom_resources/modifiers/resources/duel_decay.tres" id="4_sl2ou"]
+[ext_resource type="Resource" uid="uid://i5wc3mxyy125" path="res://custom_resources/modifiers/resources/gridlocked_growth.tres" id="5_1n6gs"]
+[ext_resource type="Resource" uid="uid://ddib4salimeri" path="res://custom_resources/modifiers/resources/fifty_fifty.tres" id="6_qx2ki"]
 
 [resource]
 script = ExtResource("2_ptc0q")
 difficulty = 1
 reward = "Gridlocked Growth"
 locked_gamemode = ExtResource("2_lucfw")
+locked_modifiers = Array[ExtResource("1_uvhg5")]([ExtResource("4_sl2ou"), ExtResource("5_1n6gs"), ExtResource("6_qx2ki")])
 locked_computer = ExtResource("1_ly6a6")
 id = &"pressure_cooker"
 display_name = "Pressure Cooker"

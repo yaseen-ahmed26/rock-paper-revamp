@@ -4,12 +4,16 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="1_fbx1w"]
 [ext_resource type="Resource" uid="uid://dx50ptju3lua3" path="res://custom_resources/gamemodes/resources/comeback.tres" id="2_gv7a5"]
 [ext_resource type="Script" uid="uid://b3cyec6p4kq7r" path="res://custom_resources/challenges/challenge_base.gd" id="2_ie3bn"]
+[ext_resource type="Resource" uid="uid://dfwyckbxsb68e" path="res://custom_resources/modifiers/resources/helping_hand.tres" id="4_wxurq"]
+[ext_resource type="Resource" uid="uid://ccu8tj5v7vh3v" path="res://custom_resources/modifiers/resources/winners_weakness.tres" id="5_3tvkt"]
+[ext_resource type="Resource" uid="uid://cl6dpa5p80pow" path="res://custom_resources/modifiers/resources/heinous_heist.tres" id="6_rw4qv"]
 
 [resource]
 script = ExtResource("2_ie3bn")
 difficulty = 1
 reward = "Winner's Weakness"
 locked_gamemode = ExtResource("2_gv7a5")
+locked_modifiers = Array[ExtResource("1_fbx1w")]([ExtResource("4_wxurq"), ExtResource("5_3tvkt"), ExtResource("6_rw4qv")])
 locked_computer = ExtResource("1_3rrnb")
 id = &"deficit_hustle"
 display_name = "Deficit Hustle"

@@ -32,6 +32,7 @@ grow_vertical = 2
 alignment = 1
 
 [node name="WindowTypes" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("3_8rung")]
+visible = false
 layout_mode = 2
 label_text = "Window Type"
 description = "Set the window type of the game."
