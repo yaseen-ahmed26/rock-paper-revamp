@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c542vggv3uden" path="res://rps_selection/rps_selection.gd" id="1_3o2jl"]
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_s6tvf"]
+[ext_resource type="Texture2D" uid="uid://bdcx0fxaic7b0" path="res://assets/icons/general/red_lock.png" id="7_ran54"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="24_cvc85"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="25_fllau"]
@@ -42,12 +43,12 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.8392157)
+bg_color = Color(0, 0, 0, 0.47058824)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.3854925, 0.38549247, 0.38549247, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -59,7 +60,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.28485027, 0.28485027, 0.28485027, 0.8392157)
+bg_color = Color(0.28627452, 0.28627452, 0.28627452, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -76,7 +77,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.28485027, 0.28485027, 0.28485027, 0.8392157)
+bg_color = Color(0.28627452, 0.28627452, 0.28627452, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -506,19 +507,16 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.58431375)
 
-[node name="Label" type="RichTextLabel" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Locked" unique_id=1394714031]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 28
-bbcode_enabled = true
-text = "[color=red]LOCKED"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Icon" type="TextureRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Locked" unique_id=1690055647]
+layout_mode = 0
+offset_left = -8.5
+offset_top = -7.0
+offset_right = 19.5
+offset_bottom = 21.0
+rotation = -0.2268928
+pivot_offset = Vector2(14, 14)
+texture = ExtResource("7_ran54")
+expand_mode = 1
 
 [node name="Purchase" type="ColorRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton" unique_id=390602911]
 visible = false
@@ -532,17 +530,16 @@ color = Color(0, 0, 0, 0.58431375)
 
 [node name="BuyButton" type="Button" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Purchase" unique_id=1393752277]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -61.5
-offset_top = -15.0
-offset_right = 61.5
-offset_bottom = 15.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.5
+offset_top = -39.0
+offset_right = -15.5
+offset_bottom = -9.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_jfgkb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4g4y5")
