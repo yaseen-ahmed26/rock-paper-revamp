@@ -14,7 +14,7 @@ enum Operator {
 	LESS_EQUAL
 }
 
-@export var target_modifier: ModifierBase.ID
+@export var target_modifier: StringName
 @export var scope: Scope = Scope.WHOLE_MATCH
 ## The operator to comapre with.
 @export var operator: Operator = Operator.GREATER_EQUAL
