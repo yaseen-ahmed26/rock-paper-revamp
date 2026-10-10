@@ -27,9 +27,9 @@ var game_over: bool = false
 var game_paused: bool = false
 
 var card_icons: Dictionary[String, Texture] = {
-	"rock": preload("res://assets/icons/menu/rock.png"),
-	"paper": preload("res://assets/icons/menu/paper.png"),
-	"scissors": preload("res://assets/icons/menu/scissors.png")
+	"rock": preload("res://assets/icons/rps_game/rock.png"),
+	"paper": preload("res://assets/icons/rps_game/paper.png"),
+	"scissors": preload("res://assets/icons/rps_game/scissors.png")
 }
 
 # Godot Specific

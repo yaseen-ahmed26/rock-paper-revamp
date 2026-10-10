@@ -2,27 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_fqeiw"]
 [ext_resource type="Script" uid="uid://c13poh6shdcuh" path="res://settings_screen/settings_screen.gd" id="2_hfw7f"]
-[ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="3_kg5hh"]
+[ext_resource type="PackedScene" uid="uid://dqm8icokphh3r" path="res://settings_screen/dropdown_menu/dropdown_menu.tscn" id="3_8rung"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="4_kkdf6"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="5_m5c8u"]
-[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_nfhny"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj8s6"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0.11764706, 0.19607843, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 5
 
 [node name="settings_sreen" type="Control" unique_id=1983250911]
 layout_mode = 3
@@ -49,90 +31,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="WindowType" type="Panel" parent="VBoxContainer" unique_id=534341132]
-custom_minimum_size = Vector2(0, 100)
+[node name="WindowTypes" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("3_8rung")]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
-
-[node name="Title" type="RichTextLabel" parent="VBoxContainer/WindowType" unique_id=408804215]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 3.0
-offset_top = -47.0
-offset_right = 245.0
-offset_bottom = 47.0
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 26
-bbcode_enabled = true
-text = "Window Type"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SelectWindowBtn" type="Button" parent="VBoxContainer/WindowType" unique_id=1123944270]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -38.0
-offset_top = -21.5
-offset_right = 256.0
-offset_bottom = 21.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = ExtResource("3_kg5hh")
-theme_override_styles/pressed = ExtResource("4_kkdf6")
-theme_override_styles/hover = ExtResource("4_kkdf6")
-text = "Borderless Windowed"
-metadata/Open = false
-
-[node name="BtnHolder" type="VBoxContainer" parent="VBoxContainer/WindowType/SelectWindowBtn" unique_id=496276519]
-visible = false
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 7.0
-offset_bottom = 283.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 8
-
-[node name="TemplateButton" type="Button" parent="VBoxContainer/WindowType/SelectWindowBtn/BtnHolder" unique_id=2077464003]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 26
-theme_override_styles/normal = ExtResource("4_kkdf6")
-theme_override_styles/pressed = ExtResource("5_m5c8u")
-theme_override_styles/hover = ExtResource("3_kg5hh")
-theme_override_styles/disabled = ExtResource("6_nfhny")
-text = "Endless"
-
-[node name="SelectedLabel" type="RichTextLabel" parent="VBoxContainer/WindowType/SelectWindowBtn/BtnHolder/TemplateButton" unique_id=553838900]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.014336891
-anchor_top = 0.051886793
-anchor_right = 0.19354838
-anchor_bottom = 0.9481132
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[color=gold][>]"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+label_text = "Window Type"
+description = "Set the window type of the game."
+open_btn_text = ""
+menu_options = Array[String](["Fullscreen", "Window Mode", "Borderless Window", "Borderless Fullscreen"])
 
 [node name="ReturnButton" type="Button" parent="." unique_id=134288899]
 layout_mode = 1
@@ -156,5 +60,4 @@ theme_override_styles/pressed = ExtResource("4_kkdf6")
 theme_override_styles/hover = ExtResource("4_kkdf6")
 text = "Return"
 
-[connection signal="pressed" from="VBoxContainer/WindowType/SelectWindowBtn" to="." method="_on_select_window_btn_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
