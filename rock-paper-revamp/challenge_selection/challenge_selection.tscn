@@ -57,53 +57,6 @@ theme = ExtResource("1_584du")
 script = ExtResource("1_uj304")
 challenge_pool = Array[ExtResource("2_xauxh")]([ExtResource("3_6erqi"), ExtResource("5_6b2la"), ExtResource("6_e8w8b"), ExtResource("7_1sq0s")])
 
-[node name="Title" type="RichTextLabel" parent="." unique_id=1690062627]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -303.0
-offset_top = -508.0
-offset_right = 303.0
-offset_bottom = -370.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 54
-text = "Challenges"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Underline" type="ColorRect" parent="Title" unique_id=1490503267]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Description" type="RichTextLabel" parent="." unique_id=848586894]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -614.0
-offset_top = -351.0
-offset_right = 614.0
-offset_bottom = -289.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 22
-bbcode_enabled = true
-text = "[color=green]Challenges [color=white]are preset levels. You cannot choose the Gamemode, Opponent or Modifiers. Once you complete a Challenge, you unlock a [color=green]Modifier[color=white]."
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Challenges" type="Panel" parent="." unique_id=11020564]
 layout_mode = 1
 anchors_preset = 8

@@ -296,34 +296,6 @@ gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResour
 modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("11_k2fvl"), ExtResource("12_l82kn"), ExtResource("13_l673e"), ExtResource("14_27unx"), ExtResource("15_5v4jf"), ExtResource("16_rf0ia"), ExtResource("17_s2nso"), ExtResource("18_s6tvf"), ExtResource("19_cvc85"), ExtResource("20_fllau"), ExtResource("21_wbtam"), ExtResource("22_wbtam"), ExtResource("23_wrns6"), ExtResource("24_fcxpn"), ExtResource("25_imyym"), ExtResource("26_uiy8h"), ExtResource("27_gcuj6"), ExtResource("28_lm54m"), ExtResource("29_qamvo"), ExtResource("30_jfgkb"), ExtResource("31_jfgkb"), ExtResource("32_4g4y5"), ExtResource("33_3d228"), ExtResource("34_gc7lw")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia"), ExtResource("41_gc7lw")])
 
-[node name="Title" type="RichTextLabel" parent="." unique_id=609072858]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -303.0
-offset_top = -505.0
-offset_right = 303.0
-offset_bottom = -419.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 54
-text = "Selection"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Underline" type="ColorRect" parent="Title" unique_id=120420438]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -4.0
-grow_horizontal = 2
-grow_vertical = 0
-
 [node name="Gamemodes" type="Panel" parent="." unique_id=399795051]
 layout_mode = 1
 anchors_preset = 8
@@ -897,25 +869,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Description" type="RichTextLabel" parent="." unique_id=1610420072]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -614.0
-offset_top = -406.0
-offset_right = 614.0
-offset_bottom = -344.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 22
-bbcode_enabled = true
-text = "Pick your [color=green]Gamemode, Modifiers [color=white]and [color=green]Opponent[color=white], then face them!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
