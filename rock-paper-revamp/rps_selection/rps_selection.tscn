@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://dxr2sfqeuk7pa" path="res://custom_resources/modifiers/copy_cat.tres" id="13_l673e"]
 [ext_resource type="Resource" uid="uid://byk3gy7y418ip" path="res://custom_resources/modifiers/desperation_deal.tres" id="14_27unx"]
 [ext_resource type="Resource" uid="uid://7ox1qxhpykqp" path="res://custom_resources/modifiers/double_down.tres" id="15_5v4jf"]
+[ext_resource type="Resource" uid="uid://qwqhc23swyyr" path="res://custom_resources/modifiers/duel_decay.tres" id="16_rf0ia"]
 [ext_resource type="Script" uid="uid://n0n4mcge7f3v" path="res://custom_resources/computer_types/scripts/computer_base.gd" id="20_27unx"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
 [ext_resource type="Resource" uid="uid://c6x10ss5u3lsm" path="res://custom_resources/computer_types/gambler_computer.tres" id="21_5v4jf"]
@@ -274,7 +275,7 @@ grow_vertical = 2
 theme = ExtResource("1_s6tvf")
 script = ExtResource("1_3o2jl")
 gamemode_pool = Array[ExtResource("2_rqfj8")]([ExtResource("6_oiecb"), ExtResource("3_ran54"), ExtResource("7_3y6wd"), ExtResource("5_yqfff"), ExtResource("9_3d228"), ExtResource("4_0mnpd")])
-modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("11_k2fvl"), ExtResource("12_l82kn"), ExtResource("13_l673e"), ExtResource("14_27unx"), ExtResource("15_5v4jf")])
+modifier_pool = Array[ExtResource("8_0mnpd")]([ExtResource("11_k2fvl"), ExtResource("12_l82kn"), ExtResource("13_l673e"), ExtResource("14_27unx"), ExtResource("15_5v4jf"), ExtResource("16_rf0ia")])
 computer_pool = Array[ExtResource("20_27unx")]([ExtResource("21_5v4jf"), ExtResource("22_rf0ia"), ExtResource("41_gc7lw")])
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=609072858]

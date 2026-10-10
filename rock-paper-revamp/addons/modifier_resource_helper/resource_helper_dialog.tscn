@@ -205,6 +205,26 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="OneShot" type="RichTextLabel" parent="VBoxContainer" unique_id=2032240184]
+layout_mode = 2
+size_flags_vertical = 3
+text = "One Shot"
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/OneShot" unique_id=2145223507]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -12.0
+offset_right = -64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="NumberOfRules" type="RichTextLabel" parent="VBoxContainer" unique_id=443456183]
 layout_mode = 2
 size_flags_vertical = 3
@@ -245,7 +265,9 @@ offset_right = -16.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+min_value = 1.0
 max_value = 5.0
+value = 1.0
 
 [connection signal="text_submitted" from="VBoxContainer/ModifierName/LineEdit" to="." method="_on_name_line_edit_submitted"]
 [connection signal="text_submitted" from="VBoxContainer/Description/LineEdit" to="." method="_on_desc_line_edit_submitted"]
