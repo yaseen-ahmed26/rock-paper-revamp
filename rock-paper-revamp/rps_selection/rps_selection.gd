@@ -99,6 +99,8 @@ func _create_btn(info, parent, template_btn, press_connection):
 	clone.set_meta("Resource", resource_duplicate)
 	
 	if info is ModifierBase:
+		clone.set_meta("Locked", false)
+		
 		if info.icon:
 			clone.icon = info.icon
 		
@@ -113,6 +115,7 @@ func _create_btn(info, parent, template_btn, press_connection):
 			else:
 				if not info.challenge_id in completed_challenges:
 					clone.get_node("Locked").visible = true
+					clone.set_meta("Locked", true)
 		elif info.requires_purchase:				
 			if not info.id in SaveManager.save_data.get("bought_modifiers"):
 				clone.text = ""
@@ -124,6 +127,7 @@ func _create_btn(info, parent, template_btn, press_connection):
 				buy_btn.text = "%d Tokens" % info.purchase_cost
 				
 				buy_btn.pressed.connect(_on_buy_modifier_pressed.bind(clone))
+				clone.set_meta("Locked", true)
 		else:
 			selectable_modifiers.append(clone)
 		
@@ -325,6 +329,11 @@ func _on_pick_random_btn_pressed():
 	_show_overlay($Overlay/Tokens)
 
 func _on_close_overlay_pressed() -> void:
+	var old_btns: Array[Node] = current_overlay.find_children("*", "Button", true, false)
+		
+	for btn: Button in old_btns:
+		btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	var tween: Tween = create_tween()
 	tween.tween_property(overlay, "modulate:a", 0.0, 0.5)
 	await tween.finished
@@ -333,6 +342,7 @@ func _on_close_overlay_pressed() -> void:
 
 func _on_buy_modifier_pressed(btn: Button) -> void:
 	if PlayerManager.purchase_modifier(btn.get_meta("Resource")):
+		btn.set_meta("Locked", false)
 		btn.text = btn.get_meta("Resource").display_name
 		var purchase = btn.get_node("Purchase")
 		$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
@@ -359,13 +369,24 @@ func on_screen_change(_args):
 		
 		if modifier.challenge_id in completed_challenges:
 			child.get_node("Locked").visible = false
+			child.set_meta("Locked", false)
 
 func _show_overlay(screen: Panel):
 	if current_overlay:
 		current_overlay.visible = false
+		
+		var old_btns: Array[Node] = current_overlay.find_children("*", "Button", true, false)
+		
+		for btn: Button in old_btns:
+			btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	current_overlay = screen
 	screen.visible = true
+	
+	var all_descendants: Array[Node] = screen.find_children("*", "Button", true, false)
+	
+	for btn in all_descendants:
+		btn.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	var tween: Tween = create_tween()
 	tween.tween_property(overlay, "modulate:a", 1.0, 0.5)
@@ -378,6 +399,9 @@ func _on_show_tasks_btn_pressed() -> void:
 
 func _on_show_settings_btn_pressed() -> void:
 	_show_overlay($Overlay/GamemodeSettings)
+
+func _on_filter_modifier_btn_pressed():
+	_show_overlay($Overlay/FilterModifiers)
 
 func _on_search_bar_text_changed(new_text: String) -> void:
 	var query: String = new_text.to_lower().strip_edges()
@@ -392,3 +416,37 @@ func _on_search_bar_text_changed(new_text: String) -> void:
 			child.visible = true
 		else:
 			child.visible = query in child.name.capitalize().to_lower()
+
+func _on_filter_locked_btn_pressed():
+	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
+	
+	for child in all_descendants:
+		if child.name == "TemplateButton": continue
+		if child.name == "BuyButton": continue
+		
+		if child.get_meta("Locked"):
+			child.visible = false
+		else:
+			child.visible = true
+		
+func _on_filter_unlocked_btn_pressed():
+	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
+	
+	for child in all_descendants:
+		if child.name == "TemplateButton": continue
+		if child.name == "BuyButton": continue
+
+		if child.get_meta("Locked"):
+			child.visible = true
+		else:
+			child.visible = false
+
+
+func _on_clear_filters_pressed() -> void:
+	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
+	
+	for child in all_descendants:
+		if child.name == "TemplateButton": continue
+		if child.name == "BuyButton": continue
+		
+		child.visible = true
