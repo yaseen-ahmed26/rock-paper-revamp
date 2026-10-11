@@ -36,6 +36,18 @@ func setup(default_option: int = 0):
 		
 		clone.pressed.connect(_on_option_btn_pressed.bind(clone))
 
+func enable():
+	$MenuButton.disabled = false
+	
+func disable():
+	close_menu()
+	$MenuButton.disabled = true
+
+func force_specific_option(index: int = selected_option):
+	var btn = btn_holder.get_child(index)
+	
+	if btn: _on_option_btn_pressed(btn)
+
 func close_menu():
 	var btn = $MenuButton
 	

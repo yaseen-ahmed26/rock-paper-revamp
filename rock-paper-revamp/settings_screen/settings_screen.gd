@@ -35,8 +35,11 @@ func _on_resolution_btn_pressed(index: int, options: Array):
 func _on_vsync_toggled(toggled: bool):
 	if toggled:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+		max_framerate.disable()
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+		max_framerate.enable()
+		max_framerate.force_specific_option()
 
 func _on_max_framerate_btn_pressed(index: int, options: Array):
 	Engine.max_fps = options[index]

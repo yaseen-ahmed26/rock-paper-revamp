@@ -141,6 +141,7 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_0osqh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1gf75")
 theme_override_styles/hover = SubResource("StyleBoxFlat_50n3o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_50n3o")
 text = "Button Text"
 metadata/Open = false
 

@@ -7,6 +7,23 @@
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="4_kkdf6"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="5_m5c8u"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj8s6"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0.11764706, 0.19607843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44293296, 0.7646287, 0.9999996, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+
 [node name="settings_sreen" type="Control" unique_id=1983250911]
 layout_mode = 3
 anchors_preset = 15
@@ -35,6 +52,7 @@ alignment = 1
 
 [node name="WindowTypes" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("3_8rung")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
 label_text = "Window Type"
 description = "Set the window type of the game."
 open_btn_text = ""
@@ -42,6 +60,7 @@ menu_options = Array[String](["Fullscreen", "Window Mode", "Borderless Window", 
 
 [node name="Resolution" parent="VBoxContainer" unique_id=1064248056 instance=ExtResource("3_8rung")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
 label_text = "Resolution"
 description = "Set the size of the window."
 open_btn_text = ""
@@ -55,6 +74,7 @@ description = "Syncs your GPU's frame rate with your monitor's refresh rate."
 
 [node name="MaxFramerate" parent="VBoxContainer" unique_id=1609942627 instance=ExtResource("3_8rung")]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
 label_text = "Max Framerate"
 description = "Set the max amount of framerate. Note this is disabled when VSync is on."
 open_btn_text = ""
