@@ -109,6 +109,7 @@ func _create_btn(info, parent, template_btn, press_connection):
 			
 			if completed_challenges.is_empty():
 				clone.get_node("Locked").visible = true
+				clone.set_meta("Locked", true)
 			else:
 				if not info.challenge_id in completed_challenges:
 					clone.get_node("Locked").visible = true
@@ -377,3 +378,17 @@ func _on_show_tasks_btn_pressed() -> void:
 
 func _on_show_settings_btn_pressed() -> void:
 	_show_overlay($Overlay/GamemodeSettings)
+
+func _on_search_bar_text_changed(new_text: String) -> void:
+	var query: String = new_text.to_lower().strip_edges()
+	
+	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
+	
+	for child in all_descendants:		
+		if child.name == "TemplateButton": continue
+		if child.name == "BuyButton": continue
+		
+		if query == "":
+			child.visible = true
+		else:
+			child.visible = query in child.name.capitalize().to_lower()
