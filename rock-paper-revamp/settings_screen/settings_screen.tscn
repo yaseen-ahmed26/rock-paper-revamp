@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_fqeiw"]
 [ext_resource type="Script" uid="uid://c13poh6shdcuh" path="res://settings_screen/settings_screen.gd" id="2_hfw7f"]
 [ext_resource type="PackedScene" uid="uid://dqm8icokphh3r" path="res://settings_screen/dropdown_menu/dropdown_menu.tscn" id="3_8rung"]
+[ext_resource type="PackedScene" uid="uid://bnd00gogv861d" path="res://settings_screen/checkbox/checkbox.tscn" id="4_fqeiw"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="4_kkdf6"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="5_m5c8u"]
 
@@ -45,6 +46,11 @@ label_text = "Resolution"
 description = "Set the size of the window."
 open_btn_text = ""
 menu_options = Array[String](["1152 x 648", "1280 x 720", "1920 x 1080"])
+
+[node name="VSync" parent="VBoxContainer" unique_id=165660727 instance=ExtResource("4_fqeiw")]
+layout_mode = 2
+label_text = "VSync"
+description = "Syncs your GPU's frame rate with your monitor's refresh rate."
 
 [node name="ReturnButton" type="Button" parent="." unique_id=134288899]
 layout_mode = 1
