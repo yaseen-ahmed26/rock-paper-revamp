@@ -5,6 +5,7 @@ extends Panel
 @export var description: String = "Description"
 @export var open_btn_text: String = "Button Text"
 @export var menu_options: Array[String] = []
+@export var menu_correspondants: Array[Variant] = []
 
 @onready var template_button: Button = $TemplateButton
 @onready var btn_holder: VBoxContainer = $MenuButton/BtnHolder
@@ -54,7 +55,7 @@ func _on_option_btn_pressed(btn: Button):
 	$MenuButton.text = btn.text
 	selected_option = index
 	
-	option_btn_pressed.emit(index)
+	option_btn_pressed.emit(index, menu_correspondants)
 	close_menu()
 
 func _on_menu_btn_pressed():

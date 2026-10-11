@@ -14,7 +14,7 @@ func _ready() -> void:
 	v_sync.setup()
 	v_sync.checkbox_toggled.connect(_on_vsync_toggled)
 
-func _on_window_btn_pressed(index: int):
+func _on_window_btn_pressed(index: int, _options: Array):
 	match index:
 		0:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
@@ -29,11 +29,8 @@ func _on_window_btn_pressed(index: int):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 
-func _on_resolution_btn_pressed(index: int):
-	match index:
-		0: DisplayServer.window_set_size(Vector2i(1152, 648))
-		1: DisplayServer.window_set_size(Vector2i(1280, 720))
-		2: DisplayServer.window_set_size(Vector2i(1920, 1080))
+func _on_resolution_btn_pressed(index: int, options: Array[Vector2i]):
+	DisplayServer.window_set_size(options[index])
 
 func _on_vsync_toggled(toggled: bool):
 	if toggled:

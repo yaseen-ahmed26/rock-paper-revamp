@@ -46,6 +46,7 @@ label_text = "Resolution"
 description = "Set the size of the window."
 open_btn_text = ""
 menu_options = Array[String](["1152 x 648", "1280 x 720", "1920 x 1080"])
+menu_correspondants = [Vector2i(1152, 648), Vector2i(1280, 720), Vector2i(1920, 1080)]
 
 [node name="VSync" parent="VBoxContainer" unique_id=165660727 instance=ExtResource("4_fqeiw")]
 layout_mode = 2
