@@ -31,6 +31,25 @@
 [ext_resource type="Texture2D" uid="uid://bk0hg01avjd0g" path="res://assets/icons/modifiers/vampire_victory.svg" id="23_vpnst"]
 [ext_resource type="Texture2D" uid="uid://bd7ggug1c67tc" path="res://assets/icons/modifiers/artifical_advantage.svg" id="24_ihep4"]
 [ext_resource type="Texture2D" uid="uid://bdpc03y1l7wi7" path="res://assets/icons/modifiers/shattered_stalemate.svg" id="25_eqsep"]
+[ext_resource type="Texture2D" uid="uid://bsmbqcveaxri8" path="res://assets/icons/menu/play.png" id="30_conbw"]
+[ext_resource type="Texture2D" uid="uid://dauj37ao2ojuy" path="res://assets/icons/menu/trophy.png" id="30_qk1ns"]
+[ext_resource type="Texture2D" uid="uid://b4o4tncxnihcf" path="res://assets/icons/menu/profile.png" id="31_vlony"]
+[ext_resource type="Texture2D" uid="uid://di5ibis6jcws0" path="res://assets/icons/menu/credits_2.png" id="32_8wd0k"]
+[ext_resource type="Texture2D" uid="uid://dika4003qo07y" path="res://assets/icons/menu/settings.png" id="33_t7u00"]
+[ext_resource type="Texture2D" uid="uid://dcqwwok80jrnc" path="res://assets/icons/menu/exit.png" id="34_08nat"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_conbw"]
+bg_color = Color(0, 0.34808475, 0.54602015, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 14
 
 [node name="main_menu" type="Control" unique_id=771054830]
 layout_mode = 3
@@ -96,9 +115,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -248.0
+offset_left = -247.0
 offset_top = -184.0
-offset_right = 248.0
+offset_right = 249.0
 offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -109,9 +128,9 @@ alignment = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
 theme_override_styles/pressed = ExtResource("4_6tl50")
 theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
@@ -119,65 +138,159 @@ text = "PLAY"
 icon_alignment = 1
 expand_icon = true
 
-[node name="Challenges" type="Button" parent="MenuButtons" unique_id=2082929848]
+[node name="Icon" type="TextureRect" parent="MenuButtons/Play" unique_id=634581777]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -17.5
+offset_right = 44.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_conbw")
+expand_mode = 1
+
+[node name="Challenges" type="Button" parent="MenuButtons" unique_id=1469201689]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
 theme_override_styles/pressed = ExtResource("4_6tl50")
 theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "CHALLENGES"
+icon_alignment = 1
+expand_icon = true
 
-[node name="Profile" type="Button" parent="MenuButtons" unique_id=1636967754]
+[node name="Icon" type="TextureRect" parent="MenuButtons/Challenges" unique_id=1488771466]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -17.5
+offset_right = 44.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_qk1ns")
+expand_mode = 1
+
+[node name="Profile" type="Button" parent="MenuButtons" unique_id=1639399438]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
 theme_override_styles/pressed = ExtResource("4_6tl50")
 theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "PROFILE"
+icon_alignment = 1
+expand_icon = true
 
-[node name="Settings" type="Button" parent="MenuButtons" unique_id=358743879]
+[node name="Icon" type="TextureRect" parent="MenuButtons/Profile" unique_id=1006288896]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -17.5
+offset_right = 44.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("31_vlony")
+expand_mode = 1
+
+[node name="Credits" type="Button" parent="MenuButtons" unique_id=1886862919]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = ExtResource("3_t6bnd")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
-text = "SETTINGS"
-
-[node name="Credits" type="Button" parent="MenuButtons" unique_id=1247989585]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
 theme_override_styles/pressed = ExtResource("4_6tl50")
 theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "CREDITS"
+icon_alignment = 1
+expand_icon = true
 
-[node name="Quit" type="Button" parent="MenuButtons" unique_id=528483674]
+[node name="Icon" type="TextureRect" parent="MenuButtons/Credits" unique_id=78354037]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -17.5
+offset_right = 44.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_8wd0k")
+expand_mode = 1
+
+[node name="Settings" type="Button" parent="MenuButtons" unique_id=1984765273]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = ExtResource("3_t6bnd")
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
+theme_override_styles/pressed = ExtResource("4_6tl50")
+theme_override_styles/hover = ExtResource("5_6at21")
+theme_override_styles/disabled = ExtResource("6_og6xe")
+text = "SETTINGS"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="MenuButtons/Settings" unique_id=1201399717]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -17.5
+offset_right = 44.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("33_t7u00")
+expand_mode = 1
+
+[node name="Quit" type="Button" parent="MenuButtons" unique_id=980312941]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
 theme_override_styles/pressed = ExtResource("4_6tl50")
 theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "QUIT"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="MenuButtons/Quit" unique_id=1638688543]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -17.5
+offset_right = 44.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("34_08nat")
+expand_mode = 1
 
 [node name="SideButtons" type="VBoxContainer" parent="." unique_id=1125502485]
 layout_mode = 1
