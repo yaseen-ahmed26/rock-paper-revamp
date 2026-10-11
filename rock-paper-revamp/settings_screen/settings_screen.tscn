@@ -53,6 +53,14 @@ layout_mode = 2
 label_text = "VSync"
 description = "Syncs your GPU's frame rate with your monitor's refresh rate."
 
+[node name="MaxFramerate" parent="VBoxContainer" unique_id=1609942627 instance=ExtResource("3_8rung")]
+layout_mode = 2
+label_text = "Max Framerate"
+description = "Set the max amount of framerate. Note this is disabled when VSync is on."
+open_btn_text = ""
+menu_options = Array[String](["Unlimited", "30", "60", "120", "144", "240"])
+menu_correspondants = [0, 30, 60, 120, 144, 240]
+
 [node name="ReturnButton" type="Button" parent="." unique_id=134288899]
 layout_mode = 1
 anchors_preset = 7
