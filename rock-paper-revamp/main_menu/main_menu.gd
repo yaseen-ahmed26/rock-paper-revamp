@@ -8,6 +8,8 @@ var redirect_modal: ModalBase = preload("res://custom_resources/modals/redirect_
 var confirm_sign_modal: ModalBase = preload("res://custom_resources/modals/confirm_sign_in.tres")
 var why_revamped_modal: ModalBase = preload("res://custom_resources/modals/why_revamped.tres")
 var latest_update_modal: ModalBase = preload("res://custom_resources/modals/latest_update.tres")
+var refusal_no_internet = preload("res://custom_resources/modals/refusal_no_internet.tres")
+var refusal_server_down = preload("res://custom_resources/modals/refusal_server_down.tres")
 
 func _ready() -> void:
 	for btn: Button in menu_buttons.get_children():
@@ -52,6 +54,13 @@ func _on_side_btn_hover_exit(btn: Button):
 	if hover_label: hover_label.visible = false
 
 func _on_peck_button_pressed():
+	if PeckManager.no_internet:
+		Signals.show_modal.emit(refusal_no_internet)
+		return
+	elif PeckManager.peck_server_down:
+		Signals.show_modal.emit(refusal_server_down)
+		return
+	
 	if PeckManager.is_account_connected():
 		Signals.show_modal.emit(redirect_modal)
 	else:

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://y1uoleotdihy"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://custom_resources/modals/scripts/modal_base.gd" id="1_kad8w"]
+
+[resource]
+script = ExtResource("1_kad8w")
+modal_id = "connect_account_refusal_server_down"
+title = "NOTICE"
+primary_text = "Sorry, but our Server is currently down."
+secondary_text = "Please try again later."
+continue_btn_text = "Close"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"
