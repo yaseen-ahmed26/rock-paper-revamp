@@ -170,6 +170,8 @@ func save_settings(settings: Dictionary):
 	
 	device_config.save(Constants.DEVICE_CFG_FILE_PATH)
 
+	local_saved_settings = settings
+
 # Contingency
 func safe_exit():
 	print("Safe exit has ran.")
