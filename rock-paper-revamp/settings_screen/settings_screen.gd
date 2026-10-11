@@ -1,18 +1,33 @@
 extends Control
 
-@onready var window_types: Panel = $VBoxContainer/WindowTypes
-@onready var resolution: Panel = $VBoxContainer/Resolution
-@onready var v_sync: Panel = $VBoxContainer/VSync
-@onready var max_framerate: Panel = $VBoxContainer/MaxFramerate
+@onready var window_type: Panel = $VBoxContainer/window_type
+@onready var resolution: Panel = $VBoxContainer/resolution
+@onready var v_sync: Panel = $VBoxContainer/v_sync
+@onready var max_framerate: Panel = $VBoxContainer/max_framerate
+
+var setting_callbacks: Dictionary[String, Callable] = {
+	"window_type": _on_window_btn_pressed,
+	"resolution": _on_resolution_btn_pressed,
+	"max_framerate": _on_max_framerate_btn_pressed,
+	"v_sync": _on_vsync_toggled
+}
 
 func _ready() -> void:
-	for child in $VBoxContainer.get_children():
-		child.setup()
-	
-	window_types.option_btn_pressed.connect(_on_window_btn_pressed)
-	resolution.option_btn_pressed.connect(_on_resolution_btn_pressed)
-	v_sync.checkbox_toggled.connect(_on_vsync_toggled)
-	max_framerate.option_btn_pressed.connect(_on_max_framerate_btn_pressed)
+	for k in SaveManager.local_saved_settings.keys():
+		var v = SaveManager.local_saved_settings[k]
+		
+		var setting = $VBoxContainer.get_node_or_null(k)
+		
+		if setting:		
+			var callback = setting_callbacks.get(k)
+
+			if setting is SettingDropdown:
+				callback.bind(v, setting.menu_correspondants).call()
+			elif setting is SettingCheckbox:
+				callback.bind(v).call()
+			
+			setting.setup(v)
+			setting.setting_changed.connect(callback)
 
 func _on_window_btn_pressed(index: int, _options: Array):
 	match index:
@@ -44,12 +59,14 @@ func _on_vsync_toggled(toggled: bool):
 func _on_max_framerate_btn_pressed(index: int, options: Array):
 	Engine.max_fps = options[index]
 
-func save_settings():
-	var settings = {}
+func _save_settings():
+	var settings: Dictionary = {}
 	
 	for child in $VBoxContainer.get_children():
 		settings[child.name] = child.get_option()
+	
+	SaveManager.save_settings(settings)
 
 func _on_return_button_pressed() -> void:
 	Signals.change_screen.emit("main_menu")
-	save_settings()
+	_save_settings()

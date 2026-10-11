@@ -6,6 +6,7 @@ var device_config: ConfigFile = ConfigFile.new()
 var save_config: ConfigFile = ConfigFile.new()
 
 var local_saved_data: Dictionary = {}
+var local_saved_settings: Dictionary = {}
 
 # Godot Specific
 func _ready() -> void:
@@ -145,10 +146,29 @@ func _load_game():
 		_setup_save_cfg()
 		
 	_load_cfg_files()
+	_load_settings()
 	
 	var details = _load_local()
 	
 	if details[0]: local_saved_data = details[1]
+
+# Settings
+func _load_settings():
+	var section_keys = device_config.get_section_keys("Settings")
+	
+	for k in section_keys:
+		var v  = device_config.get_value("Settings", k)
+		
+		local_saved_settings[k] = v
+
+func save_settings(settings: Dictionary):
+	print("Saving settings locally.")
+	
+	for k in settings.keys():
+		var v = settings[k]
+		device_config.set_value("Settings", k, v)
+	
+	device_config.save(Constants.DEVICE_CFG_FILE_PATH)
 
 # Contingency
 func safe_exit():

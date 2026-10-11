@@ -50,34 +50,31 @@ grow_vertical = 2
 theme_override_constants/separation = 60
 alignment = 1
 
-[node name="WindowTypes" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("3_8rung")]
+[node name="window_type" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("3_8rung")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
 label_text = "Window Type"
 description = "Set the window type of the game."
-open_btn_text = ""
 menu_options = Array[String](["Fullscreen", "Window Mode", "Borderless Window", "Borderless Fullscreen"])
 
-[node name="Resolution" parent="VBoxContainer" unique_id=1064248056 instance=ExtResource("3_8rung")]
+[node name="resolution" parent="VBoxContainer" unique_id=1064248056 instance=ExtResource("3_8rung")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
 label_text = "Resolution"
 description = "Set the size of the window."
-open_btn_text = ""
 menu_options = Array[String](["1152 x 648", "1280 x 720", "1920 x 1080"])
 menu_correspondants = [Vector2i(1152, 648), Vector2i(1280, 720), Vector2i(1920, 1080)]
 
-[node name="VSync" parent="VBoxContainer" unique_id=165660727 instance=ExtResource("4_fqeiw")]
+[node name="v_sync" parent="VBoxContainer" unique_id=165660727 instance=ExtResource("4_fqeiw")]
 layout_mode = 2
 label_text = "VSync"
 description = "Syncs your GPU's frame rate with your monitor's refresh rate."
 
-[node name="MaxFramerate" parent="VBoxContainer" unique_id=1609942627 instance=ExtResource("3_8rung")]
+[node name="max_framerate" parent="VBoxContainer" unique_id=1609942627 instance=ExtResource("3_8rung")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oj8s6")
 label_text = "Max Framerate"
 description = "Set the max amount of framerate. Note this is disabled when VSync is on."
-open_btn_text = ""
 menu_options = Array[String](["Unlimited", "30", "60", "120", "144", "240"])
 menu_correspondants = [0, 30, 60, 120, 144, 240]
 
