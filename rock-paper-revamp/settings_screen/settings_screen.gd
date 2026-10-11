@@ -44,5 +44,12 @@ func _on_vsync_toggled(toggled: bool):
 func _on_max_framerate_btn_pressed(index: int, options: Array):
 	Engine.max_fps = options[index]
 
+func save_settings():
+	var settings = {}
+	
+	for child in $VBoxContainer.get_children():
+		settings[child.name] = child.get_option()
+
 func _on_return_button_pressed() -> void:
 	Signals.change_screen.emit("main_menu")
+	save_settings()

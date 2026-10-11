@@ -22,6 +22,9 @@ func disable(turn_off: bool = false):
 	
 	if turn_off: _on_menu_btn_pressed()
 
+func get_option():
+	return toggled
+
 func _on_menu_btn_pressed():	
 	toggled = not toggled
 	tick.visible = toggled

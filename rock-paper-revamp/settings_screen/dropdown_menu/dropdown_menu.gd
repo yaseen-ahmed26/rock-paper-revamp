@@ -43,6 +43,9 @@ func disable():
 	close_menu()
 	$MenuButton.disabled = true
 
+func get_option():
+	return selected_option
+
 func force_specific_option(index: int = selected_option):
 	var btn = btn_holder.get_child(index)
 	
