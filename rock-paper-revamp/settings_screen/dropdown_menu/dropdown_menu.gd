@@ -11,6 +11,8 @@ extends Panel
 
 signal option_btn_pressed(index: int)
 
+static var active_dropdown: Panel = null
+
 var selected_option: int
 
 func setup(default_option: int = 0):
@@ -33,6 +35,19 @@ func setup(default_option: int = 0):
 		
 		clone.pressed.connect(_on_option_btn_pressed.bind(clone))
 
+func close_menu():
+	var btn = $MenuButton
+	
+	btn.set_meta("Open", false)
+	btn_holder.hide()
+	
+	z_index = 0
+	
+	btn.text = btn_holder.get_child(selected_option).name.capitalize()
+	
+	if active_dropdown == self:
+		active_dropdown = null
+
 func _on_option_btn_pressed(btn: Button):
 	var index = btn.get_meta("Index")
 	
@@ -40,19 +55,20 @@ func _on_option_btn_pressed(btn: Button):
 	selected_option = index
 	
 	option_btn_pressed.emit(index)
+	close_menu()
 
 func _on_menu_btn_pressed():
 	var btn = $MenuButton
 	var open = btn.get_meta("Open")
 	
 	if open:
-		btn.set_meta("Open", false)
-		btn_holder.hide()
-		
-		z_index = 0
-		
-		btn.text = btn_holder.get_child(selected_option).name.capitalize()
+		close_menu()
 	else:
+		if active_dropdown and active_dropdown != self:
+			active_dropdown.close_menu()
+		
+		active_dropdown = self
+		
 		btn.set_meta("Open", true)
 		btn_holder.show()
 		
