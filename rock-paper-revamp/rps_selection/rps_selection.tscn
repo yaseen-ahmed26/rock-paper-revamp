@@ -1183,6 +1183,7 @@ alignment = 1
 visible = false
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Task Name: Task Description goes here and is not multi-line"
@@ -1234,6 +1235,7 @@ offset_right = 241.0
 offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 alignment = 1
 
