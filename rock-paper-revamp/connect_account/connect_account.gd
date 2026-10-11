@@ -131,9 +131,9 @@ func on_screen_change(_arguments):
 func _on_copy_code_btn_pressed() -> void:
 	DisplayServer.clipboard_set(code)
 
-	$copy_code_btn.text = "COPIED"
-	await get_tree().create_timer(2.0).timeout
-	$copy_code_btn.text = "Copy to clipboard"
+	$CopyCode.icon = load("res://assets/icons/general/tick.png")
+	await get_tree().create_timer(1.5).timeout
+	$CopyCode.icon = load("res://assets/icons/general/copy.png")
 
 func _on_welcome_meta_clicked(_meta: Variant) -> void:
 	OS.shell_open("https://peck.projecthatchlings.xyz/")

@@ -2,6 +2,58 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_eqcml"]
 [ext_resource type="Script" uid="uid://dtyjxal0i6yqn" path="res://connect_account/connect_account.gd" id="2_uqjxg"]
+[ext_resource type="Texture2D" uid="uid://bj0w2fylsfy0p" path="res://assets/icons/general/copy.png" id="3_xa6fy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kqas"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqdci"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.74978, 0.74978, 0.74977994, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa6fy"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.74978, 0.74978, 0.74977994, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
 
 [node name="connect_account" type="Control" unique_id=1339535195]
 layout_mode = 3
@@ -36,20 +88,6 @@ You will recieve a confirmation on the website."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QRCode" type="ColorRect" parent="." unique_id=1659247011]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 161.0
-offset_top = -126.0
-offset_right = 451.0
-offset_bottom = 154.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Code" type="RichTextLabel" parent="." unique_id=1387981852]
 layout_mode = 1
 anchors_preset = 8
@@ -57,16 +95,37 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 158.0
-offset_top = 167.0
-offset_right = 451.0
-offset_bottom = 243.0
+offset_left = 159.0
+offset_top = -18.0
+offset_right = 528.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
-text = "ABCDEFG"
+text = "-------"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CopyCode" type="Button" parent="." unique_id=715580654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 530.0
+offset_top = -8.0
+offset_right = 610.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1kqas")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dqdci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xa6fy")
+icon = ExtResource("3_xa6fy")
+icon_alignment = 1
+expand_icon = true
+
 [connection signal="meta_clicked" from="Instructions" to="." method="_on_welcome_meta_clicked"]
+[connection signal="pressed" from="CopyCode" to="." method="_on_copy_code_btn_pressed"]
