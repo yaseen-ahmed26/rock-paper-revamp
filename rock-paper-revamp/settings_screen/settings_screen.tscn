@@ -78,6 +78,11 @@ description = "Set the max amount of framerate. Note this is disabled when VSync
 menu_options = Array[String](["Unlimited", "30", "60", "120", "144", "240"])
 menu_correspondants = [0, 30, 60, 120, 144, 240]
 
+[node name="icon_waterfall" parent="VBoxContainer" unique_id=1181931009 instance=ExtResource("4_fqeiw")]
+layout_mode = 2
+label_text = "Icon Waterfall"
+description = "Enable/disable the icon waterfall on the main menu."
+
 [node name="ReturnButton" type="Button" parent="." unique_id=134288899]
 layout_mode = 1
 anchors_preset = 7

@@ -9,7 +9,8 @@ var setting_callbacks: Dictionary[String, Callable] = {
 	"window_type": _on_window_btn_pressed,
 	"resolution": _on_resolution_btn_pressed,
 	"max_framerate": _on_max_framerate_btn_pressed,
-	"v_sync": _on_vsync_toggled
+	"v_sync": _on_vsync_toggled,
+	"icon_waterfall": _on_icon_waterfall_toggled,
 }
 
 func _ready() -> void:
@@ -58,6 +59,9 @@ func _on_vsync_toggled(toggled: bool):
 
 func _on_max_framerate_btn_pressed(index: int, options: Array):
 	Engine.max_fps = options[index]
+
+func _on_icon_waterfall_toggled(_toggled: bool):
+	pass
 
 func _save_settings():
 	var settings: Dictionary = {}

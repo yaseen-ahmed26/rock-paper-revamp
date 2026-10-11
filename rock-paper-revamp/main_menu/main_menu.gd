@@ -35,7 +35,8 @@ func _on_menu_btn_pressed(btn: Button):
 		"Quit":
 			SaveManager.save_local()
 			get_tree().quit()
-			
+	
+	await get_tree().create_timer(0.5).timeout	
 	icon_waterfall.enabled = false
 
 func _on_side_btn_pressed(btn: Button):
@@ -72,4 +73,5 @@ func _on_peck_button_pressed():
 			Signals.change_screen.emit("connect_account")
 
 func on_screen_change(_args):
-	icon_waterfall.enabled = true
+	if SaveManager.local_saved_settings.get("icon_waterfall"):
+		icon_waterfall.enabled = true

@@ -12,6 +12,9 @@ var max_scale: float = 1.1
 var column_width: float = 1080.0
 var timer: float = 0.0
 
+func _ready() -> void:
+	enabled = SaveManager.local_saved_settings.get("icon_waterfall")
+
 func _process(delta: float) -> void:
 	if not enabled: return
 	
