@@ -1,7 +1,8 @@
 extends Control
 
-@export var enabled: bool = true
 @export var icons: Array[Texture2D] = []
+
+var enabled: bool = true
 
 var spawn_interval: float = 0.3
 var min_speed: float = 140.0
@@ -15,14 +16,12 @@ var timer: float = 0.0
 func _ready() -> void:
 	enabled = SaveManager.local_saved_settings.get("icon_waterfall")
 
-func _process(delta: float) -> void:
-	if not enabled: return
-	
+func _process(delta: float) -> void:	
 	timer += delta	
 	
-	if timer >= spawn_interval:		
+	if timer >= spawn_interval and enabled:	
 		timer = 0.0		
-		_spawn_icon()
+		_spawn_icon()	
 	
 	var screen_h = get_viewport_rect().size.y
 		
@@ -38,7 +37,7 @@ func _process(delta: float) -> void:
 		if child.position.y > screen_h + 100.0:			
 			child.queue_free()
 			
-func _spawn_icon() -> void:	
+func _spawn_icon() -> void:		
 	var rect = $IconTemplate.duplicate()
 	
 	rect.texture = icons.pick_random()	
@@ -58,4 +57,3 @@ func _spawn_icon() -> void:
 	
 	rect.position = Vector2(spawn_x, -120.0)	
 	add_child(rect)
-	
