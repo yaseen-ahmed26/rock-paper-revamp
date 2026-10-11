@@ -145,6 +145,7 @@ text = "Button Text"
 metadata/Open = false
 
 [node name="BtnHolder" type="VBoxContainer" parent="MenuButton" unique_id=1979187131]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

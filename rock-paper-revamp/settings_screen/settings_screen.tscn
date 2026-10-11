@@ -29,15 +29,22 @@ offset_right = 289.0
 offset_bottom = 404.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="WindowTypes" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("3_8rung")]
-visible = false
 layout_mode = 2
 label_text = "Window Type"
 description = "Set the window type of the game."
 open_btn_text = ""
 menu_options = Array[String](["Fullscreen", "Window Mode", "Borderless Window", "Borderless Fullscreen"])
+
+[node name="Resolution" parent="VBoxContainer" unique_id=1064248056 instance=ExtResource("3_8rung")]
+layout_mode = 2
+label_text = "Resolution"
+description = "Set the size of the window."
+open_btn_text = ""
+menu_options = Array[String](["1152 x 648", "1280 x 720", "1920 x 1080"])
 
 [node name="ReturnButton" type="Button" parent="." unique_id=134288899]
 layout_mode = 1

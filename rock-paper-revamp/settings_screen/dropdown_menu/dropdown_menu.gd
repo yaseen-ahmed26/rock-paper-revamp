@@ -47,12 +47,16 @@ func _on_menu_btn_pressed():
 	
 	if open:
 		btn.set_meta("Open", false)
-		btn_holder.visible = false
+		btn_holder.hide()
+		
+		z_index = 0
 		
 		btn.text = btn_holder.get_child(selected_option).name.capitalize()
 	else:
 		btn.set_meta("Open", true)
-		btn_holder.visible = true
+		btn_holder.show()
+		
+		z_index = 10
 		
 		btn.text = "CLOSE"
 
