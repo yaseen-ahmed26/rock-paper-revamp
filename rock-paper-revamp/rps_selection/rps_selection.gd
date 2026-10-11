@@ -25,7 +25,7 @@ var selectable_modifiers = []
 
 # Godot
 func _ready() -> void:
-	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+	$Tokens.text = "Tokens: " + str(int(SaveManager.local_saved_data.get("tokens")))
 	
 	for gamemode in ContentManager.gamemodes.values():
 		_create_btn(
@@ -105,7 +105,7 @@ func _create_btn(info, parent, template_btn, press_connection):
 			clone.icon = info.icon
 		
 		if info.challenge_required:			
-			var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
+			var completed_challenges: Array = SaveManager.local_saved_data.get("completed_challenges", [])
 			
 			if completed_challenges.is_empty():
 				clone.get_node("Locked").visible = true
@@ -117,7 +117,7 @@ func _create_btn(info, parent, template_btn, press_connection):
 					clone.set_meta("Locked", true)
 					clone.text = ""
 		elif info.requires_purchase:				
-			if not info.id in SaveManager.save_data.get("bought_modifiers"):
+			if not info.id in SaveManager.local_saved_data.get("bought_modifiers"):
 				clone.text = ""
 				
 				var purchase = clone.get_node("Purchase")
@@ -353,7 +353,7 @@ func _on_buy_modifier_pressed(btn: Button) -> void:
 		purchase.visible = false
 
 func on_screen_change(_args):
-	$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+	$Tokens.text = "Tokens: " + str(int(SaveManager.local_saved_data.get("tokens")))
 		
 	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
 	
@@ -365,7 +365,7 @@ func on_screen_change(_args):
 		
 		if not modifier.challenge_required: continue
 
-		var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
+		var completed_challenges: Array = SaveManager.local_saved_data.get("completed_challenges", [])
 		
 		if modifier.challenge_id in completed_challenges:
 			child.text = modifier.display_name

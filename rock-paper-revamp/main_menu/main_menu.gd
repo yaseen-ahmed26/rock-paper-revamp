@@ -31,6 +31,7 @@ func _on_menu_btn_pressed(btn: Button):
 		"Credits":
 			Signals.change_screen.emit("credits_screen")
 		"Quit":
+			SaveManager.save_local()
 			get_tree().quit()
 			
 	icon_waterfall.enabled = false
@@ -51,7 +52,7 @@ func _on_side_btn_hover_exit(btn: Button):
 	if hover_label: hover_label.visible = false
 
 func _on_peck_button_pressed():
-	if SaveManager.is_peck_connected():
+	if PeckManager.is_account_connected():
 		Signals.show_modal.emit(redirect_modal)
 	else:
 		Signals.show_modal.emit(confirm_sign_modal)

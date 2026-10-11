@@ -106,7 +106,7 @@ func _on_message_received(message):
 		$Code.text = "[color=green]%s" % parsed.login_code
 		code = parsed.login_code
 	elif parsed.type == "user_data":	
-		SaveManager.connect_account(parsed)
+		PeckManager.new_account_connected(parsed)
 		_account_link_success(parsed.username, parsed.save)
 		
 		socket.close()

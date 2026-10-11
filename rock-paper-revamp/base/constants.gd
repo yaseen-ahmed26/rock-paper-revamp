@@ -13,7 +13,8 @@ const COUNTRIES: Dictionary[String, String] = {
 	"GB": "United Kingdom"
 }
 
-# RequestManager
+# RequestManager, Peck
+const BASE_URL: String = "http://127.0.0.1:8000/"
 const SAVES_URL: String = "http://127.0.0.1:8000/api/saves/rpr/me"
 const REFRESH_URL: String = "http://127.0.0.1:8000/api/auth/refresh"
 
@@ -25,6 +26,12 @@ const DEFAULT_DEVICE_CFG = {
 	"refresh_token": "",
 	"save_id": "",
 	"peck_connected": false
+}
+const DEFAULT_DEVICE_SETTINGS_CFG = {
+	"window_type": 0,
+	"resolution": 2,
+	"vsync": false,
+	"max_framerate": 2
 }
 
 # ui_controller.gd

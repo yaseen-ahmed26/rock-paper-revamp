@@ -10,7 +10,7 @@ func _ready() -> void:
 # Helpers
 func _create_challenge_btns():
 	for challenge in ContentManager.challenges.values():
-		var completed_challenges = SaveManager.save_data.get("completed_challenges")
+		var completed_challenges = SaveManager.local_saved_data.get("completed_challenges")
 		
 		var clone: Button = template_button.duplicate(true)
 		$Challenges/Holder.add_child(clone)

@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Signals="*uid://b22ckaj3mvpry"
+PeckManager="*uid://il8i1n3dxj4a"
 SaveManager="*uid://g0taq2sy5keb"
-RequestManager="*uid://ct1ks275c07hi"
-PlayerManager="*uid://bf0rt7c2v0vqr"
 ContentManager="*uid://ubww3a6io1fm"
+PlayerManager="*uid://bf0rt7c2v0vqr"
+Signals="*uid://b22ckaj3mvpry"
 
 [debug]
 
