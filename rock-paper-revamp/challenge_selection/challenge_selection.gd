@@ -10,6 +10,8 @@ func _ready() -> void:
 # Helpers
 func _create_challenge_btns():
 	for challenge in ContentManager.challenges.values():
+		var completed_challenges = SaveManager.save_data.get("completed_challenges")
+		
 		var clone: Button = template_button.duplicate(true)
 		$Challenges/Holder.add_child(clone)
 		
@@ -17,19 +19,28 @@ func _create_challenge_btns():
 		clone.text = challenge.display_name
 		clone.visible = true
 		clone.tooltip_text = challenge.description
+		clone.set_meta("Completed", false)
 		
-		var resource_duplicate = challenge.duplicate(true)
+		var resource_duplicate: ChallengeBase = challenge.duplicate(true)
 		clone.set_meta("Resource", resource_duplicate)
+		
+		if resource_duplicate.id in completed_challenges:
+			clone.get_node("Completed").visible = true
+			clone.set_meta("Completed", true)
 		
 		clone.pressed.connect(_on_challenge_btn_pressed.bind(clone))
 
-func _update_challenge_info(challenge: ChallengeBase):
+func _update_challenge_info(challenge: ChallengeBase, completed: bool):
 	$ChallengeInfo/Title.text = challenge.display_name
 	$ChallengeInfo/Description.text = challenge.description
 	$ChallengeInfo/Modifiers.text = "[color=gold]Modifiers: \n[color=white]- " + "\n- ".join(challenge.get_modifier_names())
 	$ChallengeInfo/Gamemode.text = "[color=gold]Gamemode: [color=white]" + challenge.get_gamemode_name()
-	$ChallengeInfo/Reward.text = "[color=gold]Reward: [color=white]" + challenge.reward
 	$ChallengeInfo/Computer.text = "[color=gold]Opponent: [color=white]" + challenge.get_opponent_name()
+	
+	if not completed:
+		$ChallengeInfo/Reward.text = "[color=gold]Reward: [color=white]" + challenge.reward
+	else:
+		$ChallengeInfo/Reward.text = "[color=gold]Reward: [color=white]OBTAINED"
 	
 # Buttons & Signal Connections
 func _on_start_btn_pressed():
@@ -60,4 +71,4 @@ func _on_challenge_btn_pressed(btn: Button):
 	var selected = btn.get_node("SelectedLabel")
 	if selected: selected.visible = true
 
-	_update_challenge_info(btn.get_meta("Resource"))
+	_update_challenge_info(btn.get_meta("Resource"), btn.get_meta("Completed"))

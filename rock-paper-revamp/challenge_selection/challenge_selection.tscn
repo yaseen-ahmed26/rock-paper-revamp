@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="5_41hw2"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_584du"]
 [ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://ui/buttons/hover.tres" id="7_41hw2"]
+[ext_resource type="Texture2D" uid="uid://4u5ypoownwfd" path="res://assets/icons/menu/completed.png" id="7_584du"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t58ff"]
 content_margin_left = 0.0
@@ -74,7 +75,8 @@ offset_bottom = 83.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "AVAILABLE"
+text = "AVAILABLE
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -122,19 +124,30 @@ autowrap_mode = 2
 [node name="SelectedLabel" type="RichTextLabel" parent="Challenges/Holder/TemplateButton" unique_id=1466183607]
 visible = false
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.014336891
-anchor_top = 0.051886793
-anchor_right = 0.19354838
-anchor_bottom = 0.9481132
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 47.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
-text = "[color=gold][>]"
+text = "[color=gold]SELECTED"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
+
+[node name="Completed" type="TextureRect" parent="Challenges/Holder/TemplateButton" unique_id=2067381280]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -51.0
+offset_right = 50.0
+offset_bottom = -11.0
+grow_vertical = 0
+texture = ExtResource("7_584du")
+expand_mode = 1
 
 [node name="ChallengeInfo" type="Panel" parent="." unique_id=1717502126]
 layout_mode = 1
