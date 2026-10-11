@@ -104,18 +104,18 @@ func _create_btn(info, parent, template_btn, press_connection):
 		if info.icon:
 			clone.icon = info.icon
 		
-		if info.challenge_required:
-			clone.text = ""
-			
+		if info.challenge_required:			
 			var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
 			
 			if completed_challenges.is_empty():
 				clone.get_node("Locked").visible = true
 				clone.set_meta("Locked", true)
+				clone.text = ""
 			else:
 				if not info.challenge_id in completed_challenges:
 					clone.get_node("Locked").visible = true
 					clone.set_meta("Locked", true)
+					clone.text = ""
 		elif info.requires_purchase:				
 			if not info.id in SaveManager.save_data.get("bought_modifiers"):
 				clone.text = ""
@@ -368,6 +368,7 @@ func on_screen_change(_args):
 		var completed_challenges: Array = SaveManager.save_data.get("completed_challenges", [])
 		
 		if modifier.challenge_id in completed_challenges:
+			child.text = modifier.display_name
 			child.get_node("Locked").visible = false
 			child.set_meta("Locked", false)
 
