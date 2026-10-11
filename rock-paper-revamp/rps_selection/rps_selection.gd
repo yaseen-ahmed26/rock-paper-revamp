@@ -425,9 +425,9 @@ func _on_filter_locked_btn_pressed():
 		if child.name == "BuyButton": continue
 		
 		if child.get_meta("Locked"):
-			child.visible = false
-		else:
 			child.visible = true
+		else:
+			child.visible = false
 		
 func _on_filter_unlocked_btn_pressed():
 	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
@@ -437,9 +437,9 @@ func _on_filter_unlocked_btn_pressed():
 		if child.name == "BuyButton": continue
 
 		if child.get_meta("Locked"):
-			child.visible = true
-		else:
 			child.visible = false
+		else:
+			child.visible = true
 
 
 func _on_clear_filters_pressed() -> void:
