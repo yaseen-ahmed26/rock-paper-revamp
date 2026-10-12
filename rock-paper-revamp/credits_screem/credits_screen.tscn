@@ -37,7 +37,7 @@ theme_override_styles/pressed = ExtResource("3_1sdjw")
 theme_override_styles/hover = ExtResource("3_1sdjw")
 text = "Return"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1332772467]
+[node name="Description" type="RichTextLabel" parent="." unique_id=1332772467]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,17 +45,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -654.0
-offset_top = -140.0
+offset_top = -289.0
 offset_right = 654.0
-offset_bottom = 140.0
+offset_bottom = 289.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 34
 bbcode_enabled = true
-text = "Menu Icons sourced from [color=green][url=https://game-icons.net//]game-icons.net[/url][color=white] under a [color=gold]CC-BY 3.0[color=white]. 
-Authors: [color=gold]Lorc[color=white], [color=gold]Delapouite[color=white], [color=gold]sbed[color=white], [color=gold]Skoll[color=white] and [color=gold]Caro Asercion[color=white]."
+text = "Modifier icons sourced from [color=green][url=https://game-icons.net//]game-icons.net[/url][color=white] under a [color=gold]CC-BY 3.0[color=white]. 
+Authors: [color=gold]Lorc[color=white], [color=gold]Delapouite[color=white], [color=gold]sbed[color=white], [color=gold]Skoll[color=white] and [color=gold]Caro Asercion[color=white].
+
+Menu icons sourced from [color=green][url=https://www.flaticon.com/icon-fonts-most-downloaded?weight=bold&type=uicon]flaticon.com[/url]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="meta_clicked" from="Description" to="." method="_on_rich_text_label_meta_clicked"]
