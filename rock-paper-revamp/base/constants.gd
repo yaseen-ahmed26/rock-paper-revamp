@@ -8,15 +8,15 @@ const TOKENS_PER_MODIFIER = 2
 const TOKENS_PER_TASK = 5
 
 # connect_account.gd
-const WEBSOCKET_URL: String = "ws://127.0.0.1:8000/api/codes/ws"
+const WEBSOCKET_URL: String = "wss://server.snowstrix.com/api/codes/ws"
 const COUNTRIES: Dictionary[String, String] = {
 	"GB": "United Kingdom"
 }
 
 # RequestManager, Peck
-const BASE_URL: String = "http://127.0.0.1:8000/"
-const SAVES_URL: String = "http://127.0.0.1:8000/api/saves/rpr/me"
-const REFRESH_URL: String = "http://127.0.0.1:8000/api/auth/refresh"
+const BASE_URL: String = "https://server.snowstrix.com/"
+const SAVES_URL: String = "https://server.snowstrix.com//api/saves/rpr/me"
+const REFRESH_URL: String = "https://server.snowstrix.com//api/auth/refresh"
 
 # SaveManager
 const DEVICE_CFG_FILE_PATH: String = "user://device.cfg"
