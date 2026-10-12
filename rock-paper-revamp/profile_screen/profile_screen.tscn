@@ -198,7 +198,7 @@ offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Description" type="RichTextLabel" parent="ColorRect/General" unique_id=184247176]
+[node name="GamemodesHolder" type="VBoxContainer" parent="ColorRect/General" unique_id=497763407]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -206,22 +206,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -210.5
-offset_top = -186.5
+offset_top = -147.5
 offset_right = 213.5
-offset_bottom = 275.5
+offset_bottom = 40.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 26
-bbcode_enabled = true
-text = "First to: 5
-Best Of: 5
-Comeback: 5
-Survival: 5
-Endless: 5
+alignment = 1
 
-The Gambler: 5
-Statistics Guy: 5"
-vertical_alignment = 1
+[node name="OpponentsHolder" type="VBoxContainer" parent="ColorRect/General" unique_id=1212713363]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = 54.5
+offset_right = 213.5
+offset_bottom = 277.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="Modifiers" type="Panel" parent="ColorRect" unique_id=18563703]
 layout_mode = 1
@@ -253,7 +258,7 @@ offset_top = -4.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Description" type="RichTextLabel" parent="ColorRect/Modifiers" unique_id=830404210]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/Modifiers" unique_id=928896331]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -266,8 +271,26 @@ offset_right = 135.5
 offset_bottom = 275.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 16
+
+[node name="Holder" type="VBoxContainer" parent="ColorRect/Modifiers/ScrollContainer" unique_id=2013742035]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="Template" type="RichTextLabel" parent="." unique_id=1433099040]
+visible = false
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 0
+offset_left = 819.0
+offset_top = 383.0
+offset_right = 1243.0
+offset_bottom = 433.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
+text = "First to: 0"
 vertical_alignment = 1
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

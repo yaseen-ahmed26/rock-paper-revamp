@@ -15,13 +15,13 @@
 		"best_of": 0,
 		"comeback": 0,
 		"survival": 0,
-		"race_to_last": 0,
+		"race_to_zero": 0,
 		"endless": 0
 	},
 	"opponents": {
-		"gamble": 0,
-		"statistics": 0,
-		"alternator": 0
+		"sequencer": 0,
+		"statistics_guy": 0,
+		"the_gambler": 0
 	},
 	"modifiers": {
 		"copy_cat": 0,
