@@ -13,14 +13,14 @@ func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase], tas
 	amount += (modifiers.size() * Constants.TOKENS_PER_MODIFIER)
 	amount += (tasks_competed * Constants.TOKENS_PER_TASK)
 	
-	SaveManager.save_data["tokens"] += amount
+	SaveManager.local_saved_data["tokens"] += amount
 	
 	return amount
 
 func purchase_modifier(modifier: ModifierBase):
-	if SaveManager.save_data.get("tokens") >= modifier.purchase_cost:
-		SaveManager.save_data["tokens"] -= modifier.purchase_cost
-		SaveManager.save_data["bought_modifiers"].append(modifier.id)
+	if SaveManager.local_saved_data.get("tokens") >= modifier.purchase_cost:
+		SaveManager.local_saved_data["tokens"] -= modifier.purchase_cost
+		SaveManager.local_saved_data["bought_modifiers"].append(modifier.id)
 		
 		SaveManager.save_local()
 		
