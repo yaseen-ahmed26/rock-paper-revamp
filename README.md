@@ -1,6 +1,6 @@
 # Rock Paper Revamped
 
-> **Live Demo:** [Download from Itch.io](https://corporalchicken.itch.io/rpr)
+> **Live Demo:** [Download from Itch.io](https://snowstrixstudios.itch.io/rpr)
 >
 > Available for Windows and Linux.
 
