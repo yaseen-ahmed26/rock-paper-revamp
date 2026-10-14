@@ -7,6 +7,6 @@ script = ExtResource("1_00v1b")
 modal_id = "why_revamped"
 title = "INFORMATION"
 primary_text = "This was a remake of an old project that was very poorly made. TL;DR is 500 line match statements with hardcoded logic everywhere."
-secondary_text = "More information can be found on our website [color=green][url=https://peck.projecthatchlings.xyz/]here[/url]"
+secondary_text = "More information can be found on our website [color=green][url=https://peck.snowstrix.com/]here[/url]"
 continue_btn_text = "Close"
 metadata/_custom_type_script = "uid://denwbd5pg8uov"

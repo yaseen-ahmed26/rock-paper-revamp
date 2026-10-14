@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_h5wf8")
 modal_id = "latest_update"
-title = "INFORMATION"
+title = "v2.1 Update"
 primary_text = "Settings screen, UI remakes, bug fixes and more!"
-secondary_text = "More information can be found on our website [color=green][url=https://peck.projecthatchlings.xyz/]here[/url]"
+secondary_text = "More information can be found on our website [color=green][url=https://peck.snowstrix.com/]here[/url]"
 continue_btn_text = "Close"
 metadata/_custom_type_script = "uid://denwbd5pg8uov"

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://profile_screen/profile_screen.tscn" id="7_5q4yu"]
 [ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://splash_screen/splash_screen.tscn" id="8_wxsgv"]
 [ext_resource type="PackedScene" uid="uid://dog0n1x6axob6" path="res://connect_account/connect_account.tscn" id="10_p4p2l"]
-[ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://credits_screem/credits_screen.tscn" id="11_4yodi"]
+[ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://credits_screen/credits_screen.tscn" id="11_4yodi"]
 [ext_resource type="PackedScene" uid="uid://cs1od7kqjht1k" path="res://settings_screen/settings_screen.tscn" id="12_7bahs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bahs"]
