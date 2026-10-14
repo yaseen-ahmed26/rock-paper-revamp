@@ -28,7 +28,6 @@ effects = Array[ExtResource("2_ls4sw")]([SubResource("Resource_51lq7")])
 
 [resource]
 script = ExtResource("4_cfnsp")
-tier = 1
 timing = 1
 group = 3
 rules = Array[ExtResource("1_6l0hr")]([SubResource("Resource_0lknv")])

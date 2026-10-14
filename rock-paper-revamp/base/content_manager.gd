@@ -30,6 +30,10 @@ func _load_resources(path: String, target_dict: Dictionary) -> void:
 			var resource = load(path.path_join(clean_name))
 			
 			if resource:
+				if resource.exclude_from_loading:
+					file_name = directory.get_next()
+					continue
+				
 				var id: String = str(resource.id)
 				
 				if not id.is_empty():

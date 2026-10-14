@@ -10,3 +10,5 @@ class_name DescribedBase
 @export_multiline var description: String
 ## An optional icon, shown on UI.
 @export var icon: Texture
+## If True, the ContentManager does not load this resource and it will not appear in game.
+@export var exclude_from_loading: bool = false
