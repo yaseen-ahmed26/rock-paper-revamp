@@ -137,15 +137,16 @@ func _set_overlay_info():
 		gamemode.display_name,
 		gamemode.description
 	]
-	var lines: Array[String] = ["Tasks:"]
+	var lines: Array[String] = []
 
 	for task in gamemode.task_pool:
 		lines.append("[color=gold]%s: [color=white]%s" % [task.display_name, task.description])
 	
 	if lines.is_empty():
-		$Overlay/Tasks.text = "No Tasks"
+		$Overlay/Tasks.visible = false
 	else:
-		$Overlay/Tasks.text = "\n".join(lines)
+		$Overlay/Tasks.visible = true
+		$Overlay/Tasks.text = "Tasks: \n".join(lines)
 	
 func _toggle_move_btns(state: bool):
 	for btn in move_btns.get_children():
