@@ -378,4 +378,23 @@ theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "Peck"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1887183576]
+modulate = Color(1, 1, 1, 0.22352941)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -68.0
+offset_right = -5.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 20
+text = "v2.1.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="PeckButton" to="." method="_on_peck_button_pressed"]
