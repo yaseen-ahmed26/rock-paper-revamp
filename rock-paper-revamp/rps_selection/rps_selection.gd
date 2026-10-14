@@ -299,6 +299,8 @@ func _on_start_btn_pressed() -> void:
 	for btn: Button in selected_modifier_btns:
 		modifier_resources.append(btn.get_meta("Resource"))
 	
+	modifier_resources.sort_custom(func(a, b): return a.group < b.group)
+	
 	Signals.change_screen.emit(
 		"rps_game",
 		{

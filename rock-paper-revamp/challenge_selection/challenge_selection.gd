@@ -46,11 +46,14 @@ func _update_challenge_info(challenge: ChallengeBase, completed: bool):
 func _on_start_btn_pressed():
 	var challenge: ChallengeBase = selected_challenge_btn.get_meta("Resource")
 	
+	var modifier_duplicate = challenge.locked_modifiers.duplicate_deep()
+	modifier_duplicate.sort_custom(func(a, b): return a.group < b.group)
+	
 	Signals.change_screen.emit(
 		"rps_game",
 		{
 			"gamemode_resource": challenge.locked_gamemode,
-			"modifier_resource": challenge.locked_modifiers,
+			"modifier_resource": modifier_duplicate,
 			"computer_resource": challenge.locked_computer,
 			"challenge": challenge
 		}
