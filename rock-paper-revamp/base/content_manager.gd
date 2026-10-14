@@ -22,7 +22,9 @@ func _load_resources(path: String, target_dict: Dictionary) -> void:
 	var file_name = directory.get_next()
 			
 	while not file_name.is_empty():	
-		if directory.current_is_dir(): return
+		if directory.current_is_dir():
+			file_name = directory.get_next()
+			continue
 			
 		var clean_name = file_name.trim_suffix(".remap")
 	

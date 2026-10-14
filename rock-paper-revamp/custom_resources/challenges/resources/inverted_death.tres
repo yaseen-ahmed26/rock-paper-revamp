@@ -14,6 +14,7 @@
 script = ExtResource("2_lx1ti")
 ai_starting_points = 5.0
 total_rounds = 12
+id = &"comeback"
 display_name = "Comeback"
 description = "Don't lose.. or don't win. It's one them anyways."
 metadata/_custom_type_script = "uid://b3g4vgwpu7ym6"
