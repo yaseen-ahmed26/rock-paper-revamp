@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Constants="*uid://476u5escoq7k"
 PeckManager="*uid://il8i1n3dxj4a"
 SaveManager="*uid://g0taq2sy5keb"
 ContentManager="*uid://ubww3a6io1fm"

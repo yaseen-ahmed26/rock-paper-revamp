@@ -144,8 +144,8 @@ func check_connections():
 			print("Peck account connected, attempting to load data.")
 			_load_online_save()
 	
-	print("Peck Sever Down: ", peck_server_down)
-	print("Player Internet Connection: ", no_internet)
+	print("Peck Server Down: ", peck_server_down)
+	print("Player Internet Offline: ", no_internet)
 
 func _load_online_save():
 	print("Loading online data (initial).")

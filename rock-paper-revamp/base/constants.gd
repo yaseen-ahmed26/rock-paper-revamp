@@ -1,5 +1,22 @@
 extends Node
-class_name Constants
+
+# Peck
+var BASE_URL: String = "https://server.snowstrix.com/"
+var SAVES_URL: String = "https://server.snowstrix.com/api/saves/rpr/me"
+var REFRESH_URL: String = "https://server.snowstrix.com/api/auth/refresh"
+
+var WEBSOCKET_URL: String = "wss://server.snowstrix.com/api/codes/ws"
+
+
+func _ready() -> void:
+	if OS.has_feature("editor"):
+		BASE_URL = "http://127.0.0.1:8000/"
+		SAVES_URL = "http://127.0.0.1:8000/api/saves/rpr/me"
+		REFRESH_URL = "http://127.0.0.1:8000/api/auth/refresh"
+		WEBSOCKET_URL = "ws://127.0.0.1:8000/api/codes/ws"
+		print("Using local API base URL: " + BASE_URL)
+	else:
+		print("Using deployment API base URL: " + BASE_URL)
 
 const TOKENS_PER_GAME = 5
 const TOKENS_ON_WIN = 10
@@ -8,15 +25,9 @@ const TOKENS_PER_MODIFIER = 2
 const TOKENS_PER_TASK = 5
 
 # connect_account.gd
-const WEBSOCKET_URL: String = "wss://server.snowstrix.com/api/codes/ws"
 const COUNTRIES: Dictionary[String, String] = {
 	"GB": "United Kingdom"
 }
-
-# RequestManager, Peck
-const BASE_URL: String = "https://server.snowstrix.com/"
-const SAVES_URL: String = "https://server.snowstrix.com//api/saves/rpr/me"
-const REFRESH_URL: String = "https://server.snowstrix.com//api/auth/refresh"
 
 # SaveManager
 const DEVICE_CFG_FILE_PATH: String = "user://device.cfg"
