@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://c17glsabmijsr"]
+
+[ext_resource type="Texture2D" uid="uid://da3pjarytrra7" path="res://assets/icons/modifiers/momentary_match.svg" id="1_hqcqd"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_wplwi"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_dgahv"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_i3cu3"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_cc88d"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="4_wbux5"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_6t3oh"]
+[ext_resource type="Script" uid="uid://c3l2l837kfdsp" path="res://custom_resources/shared/triggers/rounds_played_trigger.gd" id="6_yyob8"]
+[ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="7_rb6en"]
+
+[sub_resource type="Resource" id="Resource_qish6"]
+script = ExtResource("4_wbux5")
+value = 3.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_81c53"]
+script = ExtResource("4_wbux5")
+target = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_nkleg"]
+script = ExtResource("6_yyob8")
+type = 1
+rounds = 3
+metadata/_custom_type_script = "uid://c3l2l837kfdsp"
+
+[sub_resource type="Resource" id="Resource_6acxy"]
+script = ExtResource("7_rb6en")
+required_outcome = 0
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_gggej"]
+script = ExtResource("1_wplwi")
+triggers = Array[ExtResource("3_i3cu3")]([SubResource("Resource_nkleg"), SubResource("Resource_6acxy")])
+effects = Array[ExtResource("2_dgahv")]([SubResource("Resource_qish6"), SubResource("Resource_81c53")])
+
+[resource]
+script = ExtResource("4_cc88d")
+tier = 2
+timing = 1
+group = 3
+rules = Array[ExtResource("1_wplwi")]([SubResource("Resource_gggej")])
+requires_purchase = true
+purchase_cost = 30
+id = &"momentary_match"
+display_name = "Momentary Match"
+description = "Wins in the first 3 rounds award 3 additional points, but also give the AI 1 point."
+icon = ExtResource("1_hqcqd")
+exclude_from_loading = true

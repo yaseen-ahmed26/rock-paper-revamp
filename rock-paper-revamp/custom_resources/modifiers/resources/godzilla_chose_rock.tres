@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://c12gxf2vlkdon"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_evrc7"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_taq4a"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="3_qopua"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_tpb4b"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_6fj7j"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_awkcm"]
+
+[sub_resource type="Resource" id="Resource_ibueo"]
+script = ExtResource("3_qopua")
+operation = 1
+value = 2019.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_4tyud"]
+script = ExtResource("3_qopua")
+target = 1
+value = 9102.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_aj8nx"]
+script = ExtResource("1_evrc7")
+effects = Array[ExtResource("2_taq4a")]([SubResource("Resource_ibueo"), SubResource("Resource_4tyud")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[resource]
+script = ExtResource("4_6fj7j")
+tier = 5
+timing = 1
+group = 3
+rules = Array[ExtResource("1_evrc7")]([SubResource("Resource_aj8nx")])
+one_shot = true
+challenge_required = true
+challenge_id = &"godzilla_boss_fight_totally_legit"
+id = &"godzilla_chose_rock"
+display_name = "Godzilla Chose Rock"
+description = "Godzilla has decided killing Ghidorah wasn't enough so he is now here to kill you!"
+exclude_from_loading = true
