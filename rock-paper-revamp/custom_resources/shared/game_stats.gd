@@ -66,6 +66,22 @@ var played_moves: Dictionary = {
 	"scissors": 0,
 }
 
+"""
+These are for the new The Loop gamemode
+Could either keep it in here or move it to it's own file
+Though likely the entire game will just change to
+The Loop's new ruleset.
+
+var house_move: String
+var next_house_move: String
+var house_history: Array[String] = []
+var house_bank: int = 12
+# Universal, AI and players will have access
+var possible_moves: Array[String] = ["rock", "paper", "scissors", "lizard", "spock"]
+var sniping_allowed: bool = true
+
+"""
+
 var outcome_multiplier: int = 1
 
 var btn_stats: Dictionary[String, MoveStat] = {}

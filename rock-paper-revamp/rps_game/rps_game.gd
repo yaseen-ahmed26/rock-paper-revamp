@@ -262,7 +262,7 @@ func _end_round():
 	round_timer.stop()
 	modifier_timer.stop()
 	
-	game_stats.computer_move = "paper" # computer.pick_move(game_stats)
+	game_stats.computer_move = computer.pick_move(game_stats)
 	var player_move: String = game_stats.player_move
 	
 	game_stats.outcome = _determine_outcome()
