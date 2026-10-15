@@ -199,6 +199,7 @@ func _toggle_overlay():
 
 # Logic
 func _hard_reset_game():
+	print("Hard reset of RPS has occurred.")
 	_soft_reset_game()
 	
 	gamemode = null
@@ -207,11 +208,18 @@ func _hard_reset_game():
 	challenge = null
 	
 func _soft_reset_game():
+	print("Soft reset of RPS has occurred.")
 	player_animation.play("RESET")
 	ai_animation.play("RESET")
 	tasks_completed = 0
 	
+	game_over = false
+	
+	if game_paused:
+		_toggle_overlay()
+	
 func _start_game():
+	print("Starting RPS game.")
 	game_stats = GameStats.new()
 	
 	for modifier in modifiers:		
