@@ -141,3 +141,6 @@ func _on_tasks_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	owner.show_overlay($"../Overlay/GamemodeSettings")
+
+func get_chosen_gamemode():
+	return current_gamemode

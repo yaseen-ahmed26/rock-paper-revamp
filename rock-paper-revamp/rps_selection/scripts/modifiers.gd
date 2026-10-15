@@ -227,6 +227,15 @@ func _on_filter_unlocked_btn_pressed():
 		else:
 			child.visible = true
 
+func _on_clear_filters_pressed():
+	var all_descendants: Array[Node] = $ScrollContainer/Holder.find_children("*", "Button", true, false)
+	
+	for child in all_descendants:
+		if child.name == "TemplateButton": continue
+		if child.name == "BuyButton": continue
+
+		child.visible = true
+
 func check_unlocks():
 	var all_descendants: Array[Node] = $ScrollContainer/Holder.find_children("*", "Button", true, false)
 	
@@ -244,3 +253,12 @@ func check_unlocks():
 			child.text = modifier.display_name
 			child.get_node("Locked").visible = false
 			child.set_meta("Locked", false)
+
+func get_chosen_modifiers() -> Array:
+	var modifiers: Array = []
+	
+	for btn: Button in selected_modifier_btns:
+		var resource = btn.get_meta("Resource")
+		modifiers.append(resource)
+		
+	return modifiers

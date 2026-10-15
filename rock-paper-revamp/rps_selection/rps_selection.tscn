@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cyqckuhbghe7q" path="res://assets/icons/menu/regular/gear_white.png" id="14_k2fvl"]
 [ext_resource type="Texture2D" uid="uid://dl7a0gihd2juu" path="res://assets/icons/menu/regular/filters_white.png" id="14_qmatd"]
 [ext_resource type="Texture2D" uid="uid://h07yp2by5dgp" path="res://assets/icons/modifiers/repeat_reward.svg" id="15_4oi77"]
+[ext_resource type="Texture2D" uid="uid://lm6f0ia4j30s" path="res://assets/icons/menu/regular/rules_white.png" id="15_yfyho"]
 [ext_resource type="Texture2D" uid="uid://cqvu352lekaaf" path="res://assets/icons/menu/regular/lock_white.png" id="16_duceo"]
 [ext_resource type="Texture2D" uid="uid://bdjv0oq12n010" path="res://assets/icons/menu/regular/page_white.png" id="17_v8b7o"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/scripts/sub/template_step.gd" id="20_k2fvl"]
@@ -433,6 +434,57 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rxju"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niqha"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2gsv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xk3n"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -666,6 +718,23 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhjve"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -1498,6 +1567,33 @@ text = "50,000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TokenInfoButton" type="Button" parent="." unique_id=1491175598]
+layout_mode = 0
+offset_left = 1527.0
+offset_top = 152.0
+offset_right = 1604.0
+offset_bottom = 229.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8rxju")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_niqha")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r2gsv")
+
+[node name="Icon" type="TextureRect" parent="TokenInfoButton" unique_id=128612745]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -22.5
+offset_right = 22.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_yfyho")
+expand_mode = 1
+
 [node name="ReturnButton" type="Button" parent="." unique_id=512917340]
 layout_mode = 0
 offset_left = 65.0
@@ -1532,7 +1628,6 @@ disabled = true
 text = "OPTIONS REMAIN"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1501518141]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -1934,8 +2029,9 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_gcuj6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rhjve")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lm54m")
-text = "Close"
+text = "[ESC] Close"
 
 [connection signal="pressed" from="Gamemodes/Card/TasksButton" to="Gamemodes" method="_on_tasks_button_pressed"]
 [connection signal="pressed" from="Gamemodes/Card/SettingsButton" to="Gamemodes" method="_on_settings_button_pressed"]
@@ -1944,9 +2040,10 @@ text = "Close"
 [connection signal="text_changed" from="Modifiers/SearchBar" to="Modifiers" method="_on_search_bar_text_changed"]
 [connection signal="pressed" from="Modifiers/ResetModifiers" to="Modifiers" method="_on_reset_modifiers_pressed"]
 [connection signal="pressed" from="Modifiers/FilterModifiers" to="Modifiers" method="_on_filter_modifier_btn_pressed"]
+[connection signal="pressed" from="TokenInfoButton" to="." method="_on_token_info_button_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="Overlay/FilterModifiers/Holder/FilterLocked" to="." method="_on_filter_locked_btn_pressed"]
-[connection signal="pressed" from="Overlay/FilterModifiers/Holder/FilterUnlocked" to="." method="_on_filter_unlocked_btn_pressed"]
-[connection signal="pressed" from="Overlay/FilterModifiers/Holder/ClearFilters" to="." method="_on_clear_filters_pressed"]
+[connection signal="pressed" from="Overlay/FilterModifiers/Holder/FilterLocked" to="Modifiers" method="_on_filter_locked_btn_pressed"]
+[connection signal="pressed" from="Overlay/FilterModifiers/Holder/FilterUnlocked" to="Modifiers" method="_on_filter_unlocked_btn_pressed"]
+[connection signal="pressed" from="Overlay/FilterModifiers/Holder/ClearFilters" to="Modifiers" method="_on_clear_filters_pressed"]
 [connection signal="pressed" from="Overlay/CloseOverlay" to="." method="_on_close_overlay_pressed"]

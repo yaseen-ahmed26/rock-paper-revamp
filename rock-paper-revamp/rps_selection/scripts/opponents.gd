@@ -56,3 +56,6 @@ func _on_computer_btn_pressed(btn: Button):
 	_select_opponent(btn)
 	
 	selected_computer_btn = btn
+
+func get_chosen_opponent():
+	return selected_computer_btn.get_meta("Resource")
