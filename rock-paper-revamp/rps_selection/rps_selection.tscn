@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c542vggv3uden" path="res://rps_selection/rps_selection.gd" id="1_3o2jl"]
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_s6tvf"]
+[ext_resource type="Script" uid="uid://pnq8pd262y6a" path="res://rps_selection/scripts/modifiers.gd" id="6_duceo"]
 [ext_resource type="Texture2D" uid="uid://bdcx0fxaic7b0" path="res://assets/icons/general/red_lock.png" id="7_ran54"]
 [ext_resource type="Texture2D" uid="uid://bupi5mg6ypq53" path="res://assets/icons/menu/regular/search_white.png" id="12_3y6wd"]
 [ext_resource type="Texture2D" uid="uid://bs1c01wwxvd04" path="res://assets/icons/menu/revamped.svg" id="12_yfyho"]
@@ -11,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://h07yp2by5dgp" path="res://assets/icons/modifiers/repeat_reward.svg" id="15_4oi77"]
 [ext_resource type="Texture2D" uid="uid://cqvu352lekaaf" path="res://assets/icons/menu/regular/lock_white.png" id="16_duceo"]
 [ext_resource type="Texture2D" uid="uid://bdjv0oq12n010" path="res://assets/icons/menu/regular/page_white.png" id="17_v8b7o"]
-[ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/template_step.gd" id="20_k2fvl"]
+[ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/scripts/sub/template_step.gd" id="20_k2fvl"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="24_cvc85"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="25_fllau"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="27_rtsuo"]
@@ -219,12 +220,34 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+bg_color = Color(0, 0, 0, 0.54901963)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3779187, 0.3779189, 0.37791884, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ms4sd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.54901963)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3779187, 0.3779189, 0.37791884, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfyho"]
 content_margin_left = 4.0
@@ -1012,6 +1035,7 @@ offset_top = 245.0
 offset_right = 1857.0
 offset_bottom = 945.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qmatd")
+script = ExtResource("6_duceo")
 
 [node name="Title" type="ColorRect" parent="Modifiers" unique_id=1843702378]
 layout_mode = 0
@@ -1060,6 +1084,7 @@ offset_top = -11.0
 offset_bottom = 11.0
 grow_horizontal = 0
 grow_vertical = 2
+bbcode_enabled = true
 text = "[0/3]"
 
 [node name="SelectedModifiers" type="VBoxContainer" parent="Modifiers" unique_id=2034513782]
@@ -1077,9 +1102,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_4oi77")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_duceo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8b7o")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2y74n")
+disabled = true
 text = "[ EMPTY ]"
+metadata/Position = 0
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/1" unique_id=781184852]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1101,9 +1129,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_4oi77")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_duceo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8b7o")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2y74n")
+disabled = true
 text = "[ EMPTY ]"
+metadata/Position = 1
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/2" unique_id=1646596519]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1124,10 +1155,13 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_4oi77")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_duceo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8b7o")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_2y74n")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ms4sd")
+disabled = true
 text = "[ EMPTY ]"
+metadata/Position = 2
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/3" unique_id=22906680]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1166,7 +1200,7 @@ offset_bottom = 95.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_yfyho")
 theme_override_styles/focus = SubResource("StyleBoxFlat_k2fvl")
 placeholder_text = "[ Search Modifiers ]"
-clear_button_enabled = true
+emoji_menu_enabled = false
 icon_expand_mode = 1
 
 [node name="SearchIcon" type="TextureRect" parent="Modifiers/SearchBar" unique_id=324060566]
@@ -1192,10 +1226,11 @@ offset_top = 65.0
 offset_right = 959.0
 offset_bottom = 95.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l82kn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l673e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_27unx")
-text = "RESET"
+text = "[ RESET ]"
 
 [node name="Icon" type="TextureRect" parent="Modifiers/ResetModifiers" unique_id=1915183171]
 layout_mode = 1
@@ -1220,10 +1255,11 @@ offset_top = 65.0
 offset_right = 1120.0
 offset_bottom = 95.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l82kn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l673e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_27unx")
-text = "FILTERS"
+text = "[ FILTERS ]"
 
 [node name="Icon" type="TextureRect" parent="Modifiers/FilterModifiers" unique_id=1445056938]
 layout_mode = 1
@@ -1388,7 +1424,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4g4y5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3d228")
 text = "130 Tokens"
 
-[node name="LockedIco" type="TextureRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Purchase" unique_id=1490968188]
+[node name="LockedIcon" type="TextureRect" parent="Modifiers/ScrollContainer/Holder/TemplateButton/Purchase" unique_id=1490968188]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1897,6 +1933,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gcuj6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lm54m")
 text = "Close"
 
+[connection signal="text_changed" from="Modifiers/SearchBar" to="Modifiers" method="_on_search_bar_text_changed"]
+[connection signal="pressed" from="Modifiers/ResetModifiers" to="Modifiers" method="_on_reset_modifiers_pressed"]
+[connection signal="pressed" from="Modifiers/FilterModifiers" to="Modifiers" method="_on_filter_modifier_btn_pressed"]
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_btn_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="Overlay/FilterModifiers/Holder/FilterLocked" to="." method="_on_filter_locked_btn_pressed"]
