@@ -200,6 +200,7 @@ func new_account_connected(user_data: Dictionary):
 		SaveManager.save_local()
 	else:
 		online_saved_data = user_data.save
+		SaveManager.local_saved_data = online_saved_data
 		SaveManager.save_local(online_saved_data)
 	
 	access_token = user_data.access_token

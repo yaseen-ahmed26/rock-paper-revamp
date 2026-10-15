@@ -96,7 +96,7 @@ func save_local(data = local_saved_data):
 		
 	save_config.save(Constants.SAVE_CFG_FILE_PATH)
 	
-	if PeckManager.is_account_connected(): PeckManager.save_data(data)
+	if PeckManager.is_account_connected(): await PeckManager.save_data(data)
 
 func record_match(
 	stats: GameStats,
