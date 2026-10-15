@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProfilerComputer" format=3 uid="uid://c0xhbk7shnucn"]
+
+[ext_resource type="Script" uid="uid://cpaaxv60blbux" path="res://custom_resources/computer_types/scripts/profiler_computer.gd" id="1_2a4oj"]
+
+[resource]
+script = ExtResource("1_2a4oj")
+id = &"the_profiler"
+display_name = "The Profiler"
+description = "He takes the best parts of all your other opponents and dynamically plays them when he feels like it."
+exclude_from_loading = true
+metadata/_custom_type_script = "uid://cpaaxv60blbux"

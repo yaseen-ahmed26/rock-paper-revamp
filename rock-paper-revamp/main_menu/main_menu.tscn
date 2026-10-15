@@ -153,6 +153,7 @@ texture = ExtResource("30_conbw")
 expand_mode = 1
 
 [node name="Loop" type="Button" parent="MenuButtons" unique_id=1298853553]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
