@@ -20,7 +20,7 @@ metadata/_custom_type_script = "uid://dwedrynnemxjg"
 [sub_resource type="Resource" id="Resource_ucvjm"]
 script = ExtResource("5_iw7mu")
 target_stat = 1
-operator = 2
+operator = 3
 metadata/_custom_type_script = "uid://5af3r3b1yoqf"
 
 [sub_resource type="Resource" id="Resource_yn8yr"]

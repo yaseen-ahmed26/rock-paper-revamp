@@ -32,7 +32,7 @@ func _on_change_screen(to_show: String, arguments: Variant = null):
 		return
 	
 	var tween_in: Tween = create_tween()
-	tween_in.tween_property(fade, "self_modulate:a", 1.0, 0.5)
+	tween_in.tween_property(fade, "self_modulate:a", 1.0, 0.3)
 	await tween_in.finished
 
 	current_screen.visible = false
@@ -54,10 +54,10 @@ func _on_change_screen(to_show: String, arguments: Variant = null):
 	
 	current_screen = new_screen
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	var tween_out: Tween = create_tween()
-	tween_out.tween_property(fade, "self_modulate:a", 0.0, 0.5)
+	tween_out.tween_property(fade, "self_modulate:a", 0.0, 0.3)
 	await tween_out.finished
 	
 	fade.mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
