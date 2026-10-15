@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://custom_resources/tasks/scripts/task_base.gd" id="1_5wkeb"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="2_rvpst"]
-[ext_resource type="Script" uid="uid://cy32uleuvbseq" path="res://custom_resources/shared/triggers/point_difference_trigger.gd" id="3_rvpst"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="3_rvpst"]
 
-[sub_resource type="Resource" id="Resource_7aprj"]
+[sub_resource type="Resource" id="Resource_7bahs"]
 script = ExtResource("3_rvpst")
-target = 1
-how_much_by = 2.0
-metadata/_custom_type_script = "uid://cy32uleuvbseq"
+operator = 3
+target_value = 3.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
 
 [resource]
 script = ExtResource("1_5wkeb")
 timing = 1
-triggers = Array[ExtResource("2_rvpst")]([SubResource("Resource_7aprj")])
+triggers = Array[ExtResource("2_rvpst")]([SubResource("Resource_7bahs")])
 id = &"best_of_task_1"
 display_name = "Wire to Wire"
 description = "Win the game with 3 points."
