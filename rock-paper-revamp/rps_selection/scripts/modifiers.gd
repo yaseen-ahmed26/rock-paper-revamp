@@ -250,7 +250,6 @@ func check_unlocks():
 		var completed_challenges: Array = SaveManager.local_saved_data.get("completed_challenges", [])
 		
 		if modifier.challenge_id in completed_challenges:
-			child.text = modifier.display_name
 			child.get_node("Locked").visible = false
 			child.set_meta("Locked", false)
 
