@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c542vggv3uden" path="res://rps_selection/rps_selection.gd" id="1_3o2jl"]
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_s6tvf"]
+[ext_resource type="Script" uid="uid://dlee3gpuuujaa" path="res://rps_selection/scripts/gamemodes.gd" id="3_v8b7o"]
 [ext_resource type="Script" uid="uid://pnq8pd262y6a" path="res://rps_selection/scripts/modifiers.gd" id="6_duceo"]
 [ext_resource type="Texture2D" uid="uid://bdcx0fxaic7b0" path="res://assets/icons/general/red_lock.png" id="7_ran54"]
 [ext_resource type="Texture2D" uid="uid://bupi5mg6ypq53" path="res://assets/icons/menu/regular/search_white.png" id="12_3y6wd"]
@@ -719,6 +720,7 @@ offset_right = 550.0
 offset_bottom = 564.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_qmatd")
+script = ExtResource("3_v8b7o")
 
 [node name="Title" type="ColorRect" parent="Gamemodes" unique_id=571108267]
 layout_mode = 0
@@ -746,7 +748,7 @@ text = "01. GAMEMODES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Background" type="Panel" parent="Gamemodes" unique_id=2127471278]
+[node name="Card" type="Panel" parent="Gamemodes" unique_id=2127471278]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -761,7 +763,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pkp2b")
 
-[node name="Header" type="Panel" parent="Gamemodes/Background" unique_id=508455082]
+[node name="Description" type="RichTextLabel" parent="Gamemodes/Card" unique_id=1699734307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -37.5
+offset_right = 72.5
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a big multiline description that has multiple words"
+vertical_alignment = 1
+
+[node name="Header" type="Panel" parent="Gamemodes/Card" unique_id=508455082]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -772,7 +790,7 @@ offset_bottom = 47.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_30fvn")
 
-[node name="Icon" type="TextureRect" parent="Gamemodes/Background/Header" unique_id=1848509335]
+[node name="Icon" type="TextureRect" parent="Gamemodes/Card/Header" unique_id=1848509335]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -785,7 +803,7 @@ grow_vertical = 2
 texture = ExtResource("12_yfyho")
 expand_mode = 1
 
-[node name="GamemodeName" type="RichTextLabel" parent="Gamemodes/Background/Header" unique_id=1888786462]
+[node name="GamemodeName" type="RichTextLabel" parent="Gamemodes/Card/Header" unique_id=1888786462]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -799,7 +817,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "[ RACE TO ZERO ]"
 vertical_alignment = 1
 
-[node name="TasksButton" type="Button" parent="Gamemodes" unique_id=1308904463]
+[node name="TasksButton" type="Button" parent="Gamemodes/Card" unique_id=1308904463]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -816,7 +834,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g4evm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_diptw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5jjnf")
 
-[node name="Icon" type="TextureRect" parent="Gamemodes/TasksButton" unique_id=767799220]
+[node name="Icon" type="TextureRect" parent="Gamemodes/Card/TasksButton" unique_id=767799220]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -833,7 +851,7 @@ mouse_filter = 2
 texture = ExtResource("17_v8b7o")
 expand_mode = 1
 
-[node name="SettingsButton" type="Button" parent="Gamemodes" unique_id=769340030]
+[node name="SettingsButton" type="Button" parent="Gamemodes/Card" unique_id=769340030]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -850,7 +868,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g4evm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_diptw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5jjnf")
 
-[node name="Icon" type="TextureRect" parent="Gamemodes/SettingsButton" unique_id=1045210907]
+[node name="Icon" type="TextureRect" parent="Gamemodes/Card/SettingsButton" unique_id=1045210907]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -866,22 +884,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("14_k2fvl")
 expand_mode = 1
-
-[node name="Description" type="RichTextLabel" parent="Gamemodes" unique_id=1699734307]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -141.5
-offset_top = -37.5
-offset_right = 72.5
-offset_bottom = 80.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "This is a big multiline description that has multiple words"
-vertical_alignment = 1
 
 [node name="Previous" type="Button" parent="Gamemodes" unique_id=307046612]
 layout_mode = 1
@@ -1933,6 +1935,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_gcuj6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_lm54m")
 text = "Close"
 
+[connection signal="pressed" from="Gamemodes/Card/TasksButton" to="Gamemodes" method="_on_tasks_button_pressed"]
+[connection signal="pressed" from="Gamemodes/Card/SettingsButton" to="Gamemodes" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Gamemodes/Previous" to="Gamemodes" method="_cyle_card_previous"]
+[connection signal="pressed" from="Gamemodes/Next" to="Gamemodes" method="_cyle_card_next"]
 [connection signal="text_changed" from="Modifiers/SearchBar" to="Modifiers" method="_on_search_bar_text_changed"]
 [connection signal="pressed" from="Modifiers/ResetModifiers" to="Modifiers" method="_on_reset_modifiers_pressed"]
 [connection signal="pressed" from="Modifiers/FilterModifiers" to="Modifiers" method="_on_filter_modifier_btn_pressed"]

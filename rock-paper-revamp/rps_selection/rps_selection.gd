@@ -4,16 +4,11 @@ extends Control
 #@onready var overlay: ColorRect = $Overlay
 #
 #
-#var selected_gamemode: GamemodeBase
 #
 #var selected_computer_btn: Button
-#
-#var locked_modifiers: Dictionary = {}
-#
+##
 #var current_overlay: Panel
-#
-#var selectable_modifiers = []
-#
+##
 ## Godot
 #func _ready() -> void:
 	#$Tokens.text = "Tokens: " + str(int(SaveManager.local_saved_data.get("tokens")))		
@@ -50,105 +45,9 @@ extends Control
 		#
 	#clone.pressed.connect(press_connection.bind(clone))
 #
-## Gamemode Helpers
-#func _update_paramters(gamemode: GamemodeBase):
-	#var template_step = $Overlay/GamemodeSettings/Holder/TemplateStep
-	#var settings = gamemode.get_customisable_settings()
-	#
-	#for child in $Overlay/GamemodeSettings/Holder.get_children():
-		#if child == template_step: continue
-		#child.queue_free()
-	#
-	#if settings.is_empty():
-		#$Gamemodes/ShowSettingsBtn.disabled = true
-		#return
-	#
-	#$Gamemodes/ShowSettingsBtn.disabled = false
-	#$Overlay/GamemodeSettings/Title.text = gamemode.display_name + " Settings"
-#
-	#for setting in settings:
-		#var config: Dictionary = settings[setting]
-		#var value = gamemode.get(setting)
-#
-		#var clone = template_step.duplicate()
-		#$Overlay/GamemodeSettings/Holder.add_child(clone)
-		#
-		#clone.name = setting.to_lower()
-		#clone.visible = true
-		#clone.setup(
-			#config.get("label"),
-			#float(value),
-			#config.get("min"),
-			#config.get("max"),
-			#config.get("step")	
-		#)
-		#
-		#clone.value_changed.connect(func(new_val):
-			#var is_integer = typeof(value) == TYPE_INT
-			#gamemode.set(setting, int(new_val) if is_integer else new_val)
-		#)
-#
-#func _update_tasks(resource: GamemodeBase):	
-	#for label in $Overlay/GamemodeTasks/Holder.get_children():
-		#if label.name == "Template": continue
-		#label.queue_free()
-		#
-	#if resource.task_pool.is_empty(): 
-		#$Gamemodes/ShowTasksBtn.disabled = true
-		#return
-	#
-	#$Gamemodes/ShowTasksBtn.disabled = false
-	#$Overlay/GamemodeTasks/Title.text = resource.display_name + " Tasks"
-	#
-	#for task in resource.task_pool:
-		#var clone: RichTextLabel = $Overlay/GamemodeTasks/Holder/Template.duplicate(true)
-		#$Overlay/GamemodeTasks/Holder.add_child(clone)
-		#
-		#clone.name = task.display_name.to_lower()
-		#clone.text = "[color=gold]%s: [color=white]%s" % [task.display_name, task.description]
-		#clone.visible = true
-#
 #
 ## Button & Signal Connections
-#func _on_pick_gamemode_btn_pressed():
-	#var btn = $Gamemodes/PickGamemodeBtn
-	#
-	#if btn.get_meta("Open"):
-		#btn.set_meta("Open", false)
-		#gm_btn_holder.visible = false
-		#btn.text = "Pick Gamemode" if not selected_gamemode else selected_gamemode.display_name
-		#
-		#$Gamemodes/ShowSettingsBtn.visible = true
-		#$Gamemodes/ShowTasksBtn.visible = true
-	#else:
-		#btn.set_meta("Open", true)
-		#gm_btn_holder.visible = true
-		#btn.text = "CLOSE"
-		#
-		#$Gamemodes/ShowSettingsBtn.visible = false
-		#$Gamemodes/ShowTasksBtn.visible = false
-#
-#func _on_gamemode_btn_pressed(btn: Button):
-	#var resource: GamemodeBase = btn.get_meta("Resource")
-	#selected_gamemode = resource
-	#
-	#$Gamemodes/Description.text = resource.description
-	#
-	#if not resource.notice.is_empty():
-		#$Gamemodes/Notice.text = "[color=red]NOTICE\n[color=white]" + resource.notice
-		#$Gamemodes/Notice.visible = true
-	#else:
-		#$Gamemodes/Notice.visible = false
-	#
-	#if selected_computer_btn and selected_gamemode:
-		#$StartButton.disabled = false
-	#else:
-		#$StartButton.disabled = true
-	#
-	#_on_pick_gamemode_btn_pressed()
-	#_update_paramters(resource)
-	#_update_tasks(resource)
-#
+
 #
 #func _on_computer_btn_pressed(btn: Button):
 	#if selected_computer_btn:
@@ -247,11 +146,5 @@ extends Control
 	#await tween.finished
 	#overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	#$Overlay/CloseOverlay.mouse_filter = Control.MOUSE_FILTER_STOP
-#
-#func _on_show_tasks_btn_pressed() -> void:
-	#_show_overlay($Overlay/GamemodeTasks)
-#
-#func _on_show_settings_btn_pressed() -> void:
-	#_show_overlay($Overlay/GamemodeSettings)
 #
 #
