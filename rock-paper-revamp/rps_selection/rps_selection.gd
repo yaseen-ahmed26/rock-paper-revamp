@@ -347,7 +347,7 @@ func _on_buy_modifier_pressed(btn: Button) -> void:
 		btn.set_meta("Locked", false)
 		btn.text = btn.get_meta("Resource").display_name
 		var purchase = btn.get_node("Purchase")
-		$Tokens.text = "Tokens: " + str(int(SaveManager.save_data.get("tokens")))
+		$Tokens.text = "Tokens: " + str(int(SaveManager.local_saved_data.get("tokens")))
 		
 		var tween: Tween = create_tween()
 		tween.tween_property(purchase, "position", purchase.position + Vector2(0, 100), 0.3)
