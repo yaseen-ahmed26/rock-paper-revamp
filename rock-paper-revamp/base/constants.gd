@@ -41,7 +41,7 @@ const DEFAULT_DEVICE_CFG = {
 const DEFAULT_DEVICE_SETTINGS_CFG = {
 	"window_type": 0,
 	"resolution": 2,
-	"vsync": false,
+	"v_sync": false,
 	"max_framerate": 2,
 	"icon_waterfall": true
 }
