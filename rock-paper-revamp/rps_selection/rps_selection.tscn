@@ -873,6 +873,7 @@ offset_bottom = 281.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ran54")
 theme_override_styles/focus = SubResource("StyleBoxFlat_0mnpd")
 placeholder_text = "Search for Modifiers"
+clear_button_enabled = true
 
 [node name="Computers" type="Panel" parent="." unique_id=367376071]
 layout_mode = 1

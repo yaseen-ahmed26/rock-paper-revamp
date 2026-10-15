@@ -78,11 +78,11 @@ func _determine_outcome():
 	else:
 		return GameStats.RoundOutcome.LOSS
 
-func _check_completed_tasks():
+func _check_completed_tasks(check_timing: TaskBase.Timing):
 	if gamemode.task_pool.is_empty(): return
 	
 	for task in gamemode.task_pool:
-		if task.timing != TaskBase.Timing.ROUND_END: continue
+		if task.timing != check_timing: continue
 		
 		var complete = task.check_completion(game_stats)
 	
@@ -289,7 +289,7 @@ func _end_round():
 		$RoundEnd.text = "Round has been discarded, No points awarded"
 				
 	_update_game_ui()
-	_check_completed_tasks()
+	_check_completed_tasks(TaskBase.Timing.ROUND_END)
 		
 	game_over = gamemode.is_game_over(game_stats)
 		
@@ -301,7 +301,7 @@ func _end_round():
 	_toggle_move_btns(true)
 	
 func _end_game():
-	_check_completed_tasks()
+	_check_completed_tasks(TaskBase.Timing.MATCH_END)
 	
 	SaveManager.record_match(game_stats, gamemode, computer, modifiers, tasks_completed, challenge)
 	

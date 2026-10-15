@@ -444,7 +444,6 @@ func _on_filter_unlocked_btn_pressed():
 		else:
 			child.visible = true
 
-
 func _on_clear_filters_pressed() -> void:
 	var all_descendants: Array[Node] = $Modifiers/ScrollContainer/Holder.find_children("*", "Button", true, false)
 	
