@@ -269,6 +269,7 @@ func _end_round():
 	_flip_cards()
 		
 	$RoundEnd.visible = true
+	timer_label.text = "00"
 		
 	if game_stats.outcome == GameStats.RoundOutcome.WIN:
 		$RoundEnd.text = "You won the round! +%d points to you" % game_stats.get_points_on_win()
