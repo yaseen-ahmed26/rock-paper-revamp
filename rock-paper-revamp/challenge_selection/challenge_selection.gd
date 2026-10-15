@@ -41,7 +41,22 @@ func _update_challenge_info(challenge: ChallengeBase, completed: bool):
 		$ChallengeInfo/Reward.text = "[color=gold]Reward: [color=white]" + challenge.reward
 	else:
 		$ChallengeInfo/Reward.text = "[color=gold]Reward: [color=white]OBTAINED"
+
+func _deselect_btn():
+	$ChallengeInfo/Title.text = ""
+	$ChallengeInfo/Description.text = ""
+	$ChallengeInfo/Modifiers.text = ""
+	$ChallengeInfo/Gamemode.text = ""
+	$ChallengeInfo/Computer.text = ""
+	$ChallengeInfo/Reward.text = ""
 	
+	if selected_challenge_btn:
+		selected_challenge_btn.text = selected_challenge_btn.get_meta("Resource").display_name
+		var old_selected = selected_challenge_btn.get_node("SelectedLabel")
+		if old_selected: old_selected.visible = false
+		
+		selected_challenge_btn = null
+
 # Buttons & Signal Connections
 func _on_start_btn_pressed():
 	var challenge: ChallengeBase = selected_challenge_btn.get_meta("Resource")
@@ -59,8 +74,11 @@ func _on_start_btn_pressed():
 		}
 	)
 	
+	_deselect_btn()
+	
 func _on_return_btn_pressed():
 	Signals.change_screen.emit("main_menu")
+	_deselect_btn()
 
 func _on_challenge_btn_pressed(btn: Button):
 	if selected_challenge_btn:
@@ -75,3 +93,12 @@ func _on_challenge_btn_pressed(btn: Button):
 	if selected: selected.visible = true
 
 	_update_challenge_info(btn.get_meta("Resource"), btn.get_meta("Completed"))
+
+func on_screen_change(_args):
+	var completed_challenges = SaveManager.local_saved_data.get("completed_challenges")
+	for challenge in ContentManager.challenges.values():
+		if challenge.id in completed_challenges:
+			var btn = $Challenges/Holder.get_node(challenge.display_name.to_lower())
+	
+			btn.get_node("Completed").visible = true
+			btn.set_meta("Completed", true)
