@@ -10,7 +10,7 @@ var online_saved_data: Dictionary = {}
 var access_token: String
 
 var prevent_api_check: bool = true
-
+ 
 func _ready() -> void:
 	_load_device_cfg()
 	await check_connections()

@@ -310,7 +310,9 @@ func _restart_game():
 
 # Button Connections
 # Move
-func _on_move_btn_pressed(btn: Button):	
+func _on_move_btn_pressed(btn: Button):
+	if btn.disabled: return
+	
 	if not game_stats.player_move.is_empty():
 		var old_btn: Button = move_btns.get_node(game_stats.player_move)
 		old_btn.get_node("SelectedLabel").visible = false
@@ -318,7 +320,6 @@ func _on_move_btn_pressed(btn: Button):
 	game_stats.player_move = btn.get_meta("Value")
 
 	btn.get_node("SelectedLabel").visible = true
-
 
 func _on_restart_btn_pressed():
 	_restart_game()
