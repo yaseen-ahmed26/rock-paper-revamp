@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_s6tvf"]
 [ext_resource type="Script" uid="uid://dlee3gpuuujaa" path="res://rps_selection/scripts/gamemodes.gd" id="3_v8b7o"]
 [ext_resource type="Script" uid="uid://pnq8pd262y6a" path="res://rps_selection/scripts/modifiers.gd" id="6_duceo"]
+[ext_resource type="Script" uid="uid://b4oi6gs7jotv6" path="res://rps_selection/scripts/opponents.gd" id="7_2y74n"]
 [ext_resource type="Texture2D" uid="uid://bdcx0fxaic7b0" path="res://assets/icons/general/red_lock.png" id="7_ran54"]
 [ext_resource type="Texture2D" uid="uid://bupi5mg6ypq53" path="res://assets/icons/menu/regular/search_white.png" id="12_3y6wd"]
 [ext_resource type="Texture2D" uid="uid://bs1c01wwxvd04" path="res://assets/icons/menu/revamped.svg" id="12_yfyho"]
@@ -925,6 +926,7 @@ offset_right = 550.0
 offset_bottom = 944.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnm4i")
+script = ExtResource("7_2y74n")
 
 [node name="Title" type="ColorRect" parent="Opponents" unique_id=148558496]
 layout_mode = 0
@@ -975,7 +977,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gc7lw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_klasx")
 
 [node name="Selected" type="RichTextLabel" parent="Opponents/Holder/TemplateButton" unique_id=571719757]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1011,7 +1013,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="Opponents/Holder/TemplateButton" unique_id=1480604924]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
