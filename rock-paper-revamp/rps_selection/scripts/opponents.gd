@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var template_button: Button = $Holder/TemplateButton
+@onready var template_button: Button = $TemplateButton
 
 const TWEEN_CYCLE_LENGTH: float = 0.45
 
@@ -9,6 +9,8 @@ var selected_computer_btn: Button
 func _ready() -> void:
 	for opponent in ContentManager.computers.values():
 		_create_btn(opponent)
+	
+	_select_opponent($Holder.get_children().pick_random())
 
 func _create_btn(computer: ComputerBase):
 	var clone: Button = template_button.duplicate(true)
@@ -37,6 +39,8 @@ func _select_opponent(btn: Button):
 	tween.tween_property(opponent_name, "position", Vector2(48, 5), TWEEN_CYCLE_LENGTH)
 	tween.tween_property(description, "modulate:a", 1.0, TWEEN_CYCLE_LENGTH)
 	
+	selected_computer_btn = btn
+	
 func _deselect_opponent(btn: Button):
 	var selected_label: RichTextLabel = btn.get_node("Selected")
 	var opponent_name: RichTextLabel = btn.get_node("OpponentName")
@@ -55,7 +59,5 @@ func _on_computer_btn_pressed(btn: Button):
 		
 	_select_opponent(btn)
 	
-	selected_computer_btn = btn
-
 func get_chosen_opponent():
 	return selected_computer_btn.get_meta("Resource")

@@ -1023,29 +1023,19 @@ text = "02. OPPONENTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Holder" type="VBoxContainer" parent="Opponents" unique_id=525895535]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 31.0
-offset_right = -3.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 16
-alignment = 1
-
-[node name="TemplateButton" type="Button" parent="Opponents/Holder" unique_id=514011876]
+[node name="TemplateButton" type="Button" parent="Opponents" unique_id=514011876]
 visible = false
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 3.0
+offset_top = 135.0
+offset_right = 482.0
+offset_bottom = 185.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_s6tvf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gc7lw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_klasx")
 
-[node name="Selected" type="RichTextLabel" parent="Opponents/Holder/TemplateButton" unique_id=571719757]
+[node name="Selected" type="RichTextLabel" parent="Opponents/TemplateButton" unique_id=571719757]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 4
@@ -1063,7 +1053,7 @@ text = "[color=gold]✓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OpponentName" type="RichTextLabel" parent="Opponents/Holder/TemplateButton" unique_id=1552266232]
+[node name="OpponentName" type="RichTextLabel" parent="Opponents/TemplateButton" unique_id=1552266232]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1081,7 +1071,7 @@ text = "Statistics Guy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="Opponents/Holder/TemplateButton" unique_id=1480604924]
+[node name="Description" type="RichTextLabel" parent="Opponents/TemplateButton" unique_id=1480604924]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -1100,6 +1090,20 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Opponent description goes here and will go multline"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Holder" type="VBoxContainer" parent="Opponents" unique_id=525895535]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 31.0
+offset_right = -3.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
 
 [node name="Modifiers" type="Panel" parent="." unique_id=695283519]
 layout_mode = 0
@@ -1624,8 +1628,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ddlcq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u5s5g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x3h4x")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_fsdrv")
-disabled = true
-text = "OPTIONS REMAIN"
+text = "[ START ]"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1501518141]
 modulate = Color(1, 1, 1, 0)
