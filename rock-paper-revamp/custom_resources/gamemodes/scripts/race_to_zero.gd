@@ -26,4 +26,4 @@ func apply_stats_edit(game_stats: GameStats):
 	game_stats.total_rounds = total_rounds if total_rounds != 0 else 1
 
 func is_game_over(game_stats: GameStats):
-	return game_stats.player_points == 0 or game_stats.computer_points == 0 or game_stats.rounds_played == total_rounds	
+	return game_stats.player_points <= 0 or game_stats.computer_points <= 0 or game_stats.rounds_played == total_rounds	
