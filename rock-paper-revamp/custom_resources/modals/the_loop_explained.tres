@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://dyk0y67t64h6r"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://custom_resources/modals/scripts/modal_base.gd" id="1_3w3sh"]
+
+[resource]
+script = ExtResource("1_3w3sh")
+modal_id = "the_loop_explained"
+title = "The Loop"
+primary_text = "The Loop is pure randomized chaos! 20 rounds with a new gamemode every 4, new opponent every 5 and up to 15 modiifers at once?!"
+secondary_text = "Sadly, you don't have enough modifiers unlocked to play. That's a shame, but I guess it's for the best."
+continue_btn_text = "*Sigh*"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"

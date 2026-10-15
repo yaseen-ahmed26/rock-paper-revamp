@@ -10,6 +10,7 @@ var why_revamped_modal: ModalBase = preload("res://custom_resources/modals/why_r
 var latest_update_modal: ModalBase = preload("res://custom_resources/modals/latest_update.tres")
 var refusal_no_internet = preload("res://custom_resources/modals/refusal_no_internet.tres")
 var refusal_server_down = preload("res://custom_resources/modals/refusal_server_down.tres")
+var the_loop_explained = preload("res://custom_resources/modals/the_loop_explained.tres")
 
 func _ready() -> void:
 	for btn: Button in menu_buttons.get_children():
@@ -24,6 +25,8 @@ func _on_menu_btn_pressed(btn: Button):
 	match btn.name:
 		"Play":
 			Signals.change_screen.emit("rps_selection")
+		"Loop":
+			Signals.show_modal.emit(the_loop_explained)
 		"Challenges":
 			Signals.change_screen.emit("challenge_selection")
 		"Profile":
