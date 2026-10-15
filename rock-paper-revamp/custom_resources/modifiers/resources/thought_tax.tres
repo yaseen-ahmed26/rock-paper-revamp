@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="3_rjfrk"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_bqyb1"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_nvf3g"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="6_cx00f"]
 
 [sub_resource type="Resource" id="Resource_4v0wp"]
 script = ExtResource("3_rjfrk")
@@ -14,8 +15,15 @@ operation = 1
 value = 0.5
 metadata/_custom_type_script = "uid://dwedrynnemxjg"
 
+[sub_resource type="Resource" id="Resource_fn4kr"]
+script = ExtResource("6_cx00f")
+operator = 3
+target_value = 1.1
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
 [sub_resource type="Resource" id="Resource_45nfm"]
 script = ExtResource("1_oketd")
+triggers = Array[ExtResource("3_pinxo")]([SubResource("Resource_fn4kr")])
 effects = Array[ExtResource("2_rjfrk")]([SubResource("Resource_4v0wp")])
 
 [sub_resource type="Resource" id="Resource_d0eog"]

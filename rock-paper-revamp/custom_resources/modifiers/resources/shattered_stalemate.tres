@@ -34,7 +34,7 @@ effects = Array[ExtResource("2_spo4m")]([SubResource("Resource_8nd52")])
 
 [resource]
 script = ExtResource("4_w0xvk")
-tier = 1
+timing = 1
 rules = Array[ExtResource("1_qnha4")]([SubResource("Resource_yqrl2")])
 id = &"shattered_stalemate"
 display_name = "Shattered Stalemate"
