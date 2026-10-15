@@ -55,6 +55,13 @@ func _ready() -> void:
 	for btn in $Modifiers/InfoButtons.get_children():
 		btn.pressed.connect(_on_modifier_info_btn_pressed.bind(btn))
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_ESCAPE:
+				if current_overlay and overlay.visible:				
+					_on_close_overlay_pressed()
+
 func _sort_modifiers() -> void:
 	var tiers: Dictionary = {}
 	

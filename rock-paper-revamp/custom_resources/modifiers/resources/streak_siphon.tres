@@ -35,3 +35,4 @@ rules = Array[ExtResource("1_omsks")]([SubResource("Resource_ogyy1")])
 id = &"streak_siphon"
 display_name = "Streak Siphon"
 description = "Whilst on a streak of 3 or higher, every win also removes a point from the AI."
+exclude_from_loading = true

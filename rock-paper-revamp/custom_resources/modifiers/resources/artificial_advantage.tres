@@ -92,3 +92,4 @@ id = &"artificial_advantage"
 display_name = "Artificial Advantage"
 description = "Losses award the AI 2 additional points. However once you get to 2 total losses, the longer you stay on 2 total losses, you steal 1 points back."
 icon = ExtResource("1_ueuoh")
+exclude_from_loading = true
