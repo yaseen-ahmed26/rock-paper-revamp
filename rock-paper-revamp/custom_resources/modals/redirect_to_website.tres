@@ -6,8 +6,8 @@
 script = ExtResource("1_wf8b4")
 modal_id = "redirect_to_website"
 title = "EXTERNAL"
-primary_text = "You will be redirect to the Peck website."
-secondary_text = "Manage your account there."
+primary_text = "You will be redirected to the Peck website."
+secondary_text = "Yoiu can manage your account there."
 continue_btn_text = "Continue"
 show_cancel_btn = true
 cancel_btn_text = "Cancel"

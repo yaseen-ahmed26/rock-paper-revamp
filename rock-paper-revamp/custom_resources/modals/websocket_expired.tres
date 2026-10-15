@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_c8ifc")
-modal_id = "websocket_expiried"
+modal_id = "websocket_expired"
 title = "CODE EXPIRED"
 primary_text = "The link code has expired."
 secondary_text = "Would you like to continue linking your Peck account?"

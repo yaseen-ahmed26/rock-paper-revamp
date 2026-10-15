@@ -41,6 +41,6 @@ challenge_id = &"calculated_risk"
 purchase_cost = 30
 id = &"copy_cat"
 display_name = "Copy Cat"
-description = "Gain an +1 point if you win the round with the move the AI used last.	"
+description = "Gain 1 additional point if you win the round with the move the AI used last.	"
 icon = ExtResource("1_lps0f")
 metadata/_custom_type_script = "uid://d2bvcnih05ama"

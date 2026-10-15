@@ -70,7 +70,7 @@ const SCENE_INFO: Dictionary = {
 	},
 	"credits_screen": {
 		"title": "Credits",
-		"description": "[color=green]Aseet [color=white]and [color=green]Creator [color=white]credits.",
+		"description": "[color=green]Asset [color=white]and [color=green]Creator [color=white]credits.",
 	},
 	"settings_screen": {
 		"title": "Settings",

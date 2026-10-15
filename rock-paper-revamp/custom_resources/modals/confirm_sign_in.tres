@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_vdgcg")
-modal_id = "confim_sign_in"
+modal_id = "confirm_sign_in"
 title = "NOTICE"
 primary_text = "Connect your Peck account and save your game data. Access your data from any device."
 secondary_text = "Your existing data will be linked to this account."

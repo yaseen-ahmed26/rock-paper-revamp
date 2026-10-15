@@ -3,10 +3,13 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var match_meta_template := "Gamemode: [color=gold]%s [color=white]| Opponent: [color=gold]%s [color=white]| Modifiers: [color=gold]%d"
-var played_moves_template := "And you also played [color=gold]Rock %d times[color=white], [color=gold]Paper %d times [color=white]and [color=gold]Scissors %d times[color=white]."
+var played_moves_template := "And you also played [color=gold]Rock %d %s[color=white], [color=gold]Paper %d %s [color=white]and [color=gold]Scissors %d %s[color=white]."
 var points_template := "[You] %d • %d [AI]"
-var rounds_played_template := "Played [color=gold]%d/%s [color=white]rounds with a best with streak of [color=gold]%d"
+var rounds_played_template := "Played [color=gold]%d/%s [color=white]rounds with a best win streak of [color=gold]%d"
 var points_breakdown := "[Wins] [color=gold]%d [color=white]| [Losses] [color=gold]%d [color=white]| [Draws] [color=gold]%d"
+
+func _played_times(amount) -> String:
+	return "time" if amount == 1 else "times"
 
 func on_screen_change(details: Dictionary):
 	animation_player.play("RESET")
@@ -20,8 +23,11 @@ func on_screen_change(details: Dictionary):
 	]
 	$PlayedMoves.text = played_moves_template % [
 		stats.played_moves.get("rock"),
+		_played_times(stats.played_moves.get("rock")),
 		stats.played_moves.get("paper"),
-		stats.played_moves.get("scissors")
+		_played_times(stats.played_moves.get("paper")),
+		stats.played_moves.get("scissors"),
+		_played_times(stats.played_moves.get("scissors"))
 	]
 	$Points/Label.text = points_template % [
 		stats.player_points,
