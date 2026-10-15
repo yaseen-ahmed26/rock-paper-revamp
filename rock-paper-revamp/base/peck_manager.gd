@@ -9,6 +9,8 @@ var online_saved_data: Dictionary = {}
 
 var access_token: String
 
+var prevent_api_check: bool = true
+
 func _ready() -> void:
 	_load_device_cfg()
 	await check_connections()
@@ -110,6 +112,15 @@ func send_http_request(
 		return [false, null, response_code]
 
 func check_connections():
+	if prevent_api_check:
+		if OS.has_feature("editor"):
+			print("(In Engine) 'prevent_api_check' is true, no initial API checks will be made.")
+			return
+		else:
+			print("'prevent_api_check' cannot be true in exported builds.")
+	else:
+		print("Starting API health check.")
+	
 	var details = await send_http_request(
 		HTTPClient.METHOD_GET,
 		Constants.BASE_URL,
