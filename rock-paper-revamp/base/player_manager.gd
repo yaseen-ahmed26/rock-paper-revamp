@@ -13,7 +13,7 @@ func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase], tas
 	amount += (modifiers.size() * Constants.TOKENS_PER_MODIFIER)
 	amount += (tasks_competed * Constants.TOKENS_PER_TASK)
 	
-	SaveManager.local_saved_data["tokens"] += amount
+	# SaveManager.local_saved_data["tokens"] += amount
 	
 	return amount
 

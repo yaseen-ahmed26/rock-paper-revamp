@@ -176,5 +176,5 @@ func save_settings(settings: Dictionary):
 func safe_exit():
 	print("Safe exit has ran.")
 	set_process(false)
-	await save_local(true)
+	await save_local()
 	get_tree().quit()
