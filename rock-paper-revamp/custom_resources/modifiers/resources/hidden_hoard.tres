@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://db1rxfpe34tm8"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_a0ii4"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_br3a6"]
+[ext_resource type="Script" uid="uid://c3dh67ar4sxak" path="res://custom_resources/modifiers/scripts/effects/edit_move_effect.gd" id="3_01s7q"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_njkwh"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_dauf0"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_126yk"]
+
+[sub_resource type="Resource" id="Resource_8tv1u"]
+script = ExtResource("3_01s7q")
+move_target = 5
+new_point_value = 3.0
+metadata/_custom_type_script = "uid://c3dh67ar4sxak"
+
+[sub_resource type="Resource" id="Resource_weq5r"]
+script = ExtResource("1_a0ii4")
+effects = Array[ExtResource("2_br3a6")]([SubResource("Resource_8tv1u")])
+
+[resource]
+script = ExtResource("4_dauf0")
+rules = Array[ExtResource("1_a0ii4")]([SubResource("Resource_weq5r")])
+id = &"hidden_hoard"
+display_name = "Hidden Hoard"
+description = "1 move is randomly assigned a 3 point bonus. However you will be unaware of this until you win."
+exclude_from_loading = true

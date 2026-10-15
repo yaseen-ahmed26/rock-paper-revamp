@@ -2,37 +2,93 @@
 
 [ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_nnqup"]
 [ext_resource type="Texture2D" uid="uid://bd7ggug1c67tc" path="res://assets/icons/modifiers/artifical_advantage.svg" id="1_ueuoh"]
+[ext_resource type="Script" uid="uid://g13g4ik8oom7" path="res://custom_resources/modifiers/scripts/bases/modifier_internal.gd" id="2_70y1j"]
 [ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_gwajy"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_1gjca"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_eafm8"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="4_xli11"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_wpdxu"]
 [ext_resource type="Script" uid="uid://ceqvcnakgclt5" path="res://custom_resources/shared/triggers/outcome_trigger.gd" id="6_70y1j"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="7_pewu8"]
 
-[sub_resource type="Resource" id="Resource_c3d4o"]
+[sub_resource type="Resource" id="Resource_ueuoh"]
+script = ExtResource("2_70y1j")
+max_charges = 3
+metadata/_custom_type_script = "uid://g13g4ik8oom7"
+
+[sub_resource type="Resource" id="Resource_6h15s"]
 script = ExtResource("4_xli11")
-target = 1
 value = 1.0
 metadata/_custom_type_script = "uid://dwedrynnemxjg"
 
-[sub_resource type="Resource" id="Resource_fcpwv"]
+[sub_resource type="Resource" id="Resource_dmobl"]
+script = ExtResource("4_xli11")
+target = 1
+operation = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_ni8wt"]
+script = ExtResource("7_pewu8")
+target_stat = 13
+target_value = 2.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_rfyjt"]
 script = ExtResource("6_70y1j")
-required_outcome = 1
+required_outcome = 0
 metadata/_custom_type_script = "uid://ceqvcnakgclt5"
 
-[sub_resource type="Resource" id="Resource_oyow0"]
+[sub_resource type="Resource" id="Resource_uaa4u"]
 script = ExtResource("1_nnqup")
-triggers = Array[ExtResource("3_1gjca")]([SubResource("Resource_fcpwv")])
-effects = Array[ExtResource("2_gwajy")]([SubResource("Resource_c3d4o")])
+triggers = Array[ExtResource("3_1gjca")]([SubResource("Resource_ni8wt"), SubResource("Resource_rfyjt")])
+effects = Array[ExtResource("2_gwajy")]([SubResource("Resource_6h15s"), SubResource("Resource_dmobl")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[sub_resource type="Resource" id="Resource_mebbs"]
+script = ExtResource("4_xli11")
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_x57ss"]
+script = ExtResource("4_xli11")
+target = 1
+operation = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_5mi2k"]
+script = ExtResource("6_70y1j")
+required_outcome = 2
+metadata/_custom_type_script = "uid://ceqvcnakgclt5"
+
+[sub_resource type="Resource" id="Resource_3cjac"]
+script = ExtResource("7_pewu8")
+target_stat = 13
+target_value = 2.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_f3sin"]
+script = ExtResource("1_nnqup")
+triggers = Array[ExtResource("3_1gjca")]([SubResource("Resource_5mi2k"), SubResource("Resource_3cjac")])
+effects = Array[ExtResource("2_gwajy")]([SubResource("Resource_mebbs"), SubResource("Resource_x57ss")])
+metadata/_custom_type_script = "uid://cfktrpopf1vy8"
+
+[sub_resource type="Resource" id="Resource_etmli"]
+script = ExtResource("5_wpdxu")
+target_stat = 10
+value = 2.0
+metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
 
 [resource]
 script = ExtResource("4_eafm8")
 timing = 1
 group = 3
-rules = Array[ExtResource("1_nnqup")]([SubResource("Resource_oyow0")])
+starting_stat_changes = Array[ExtResource("5_wpdxu")]([SubResource("Resource_etmli")])
+rules = Array[ExtResource("1_nnqup")]([SubResource("Resource_uaa4u"), SubResource("Resource_f3sin")])
 exclude_badge = true
+internal_state = SubResource("Resource_ueuoh")
 id = &"artificial_advantage"
 display_name = "Artificial Advantage"
-description = "Losses award the AI an additional point."
+description = "Losses award the AI 2 additional points. However once you get to 2 total losses, the longer you stay on 2 total losses, you steal 1 points back."
 icon = ExtResource("1_ueuoh")
-exclude_from_loading = true

@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://4tpoxe600dvj"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://custom_resources/modifiers/scripts/bases/modifier_rule.gd" id="1_omsks"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://custom_resources/modifiers/scripts/bases/modifier_effect.gd" id="2_5tjlu"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://custom_resources/modifiers/scripts/effects/modify_score_effect.gd" id="3_bnblu"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://custom_resources/shared/gameplay_trigger.gd" id="3_ug5d3"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://custom_resources/modifiers/scripts/bases/modifier_base.gd" id="4_h02uv"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://custom_resources/shared/stat_change.gd" id="5_7d5gv"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://custom_resources/shared/triggers/stat_comparison_trigger.gd" id="5_ejwmc"]
+
+[sub_resource type="Resource" id="Resource_xvnvp"]
+script = ExtResource("3_bnblu")
+target = 1
+operation = 1
+value = 1.0
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_68gru"]
+script = ExtResource("5_ejwmc")
+target_stat = 2
+operator = 3
+target_value = 3.0
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_ogyy1"]
+script = ExtResource("1_omsks")
+triggers = Array[ExtResource("3_ug5d3")]([SubResource("Resource_68gru")])
+effects = Array[ExtResource("2_5tjlu")]([SubResource("Resource_xvnvp")])
+
+[resource]
+script = ExtResource("4_h02uv")
+timing = 1
+group = 3
+rules = Array[ExtResource("1_omsks")]([SubResource("Resource_ogyy1")])
+id = &"streak_siphon"
+display_name = "Streak Siphon"
+description = "Whilst on a streak of 3 or higher, every win also removes a point from the AI."

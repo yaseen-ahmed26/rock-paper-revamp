@@ -62,7 +62,7 @@ func _populate_holder(array: Array, saved_values: Dictionary, holder: VBoxContai
 		holder.add_child(clone)
 		
 		clone.name = str(i.id)
-		clone.text = i.display_name + ": " + str(int(saved_values.get(i.id)))
+		clone.text = i.display_name + ": " + str(int(saved_values.get(i.id, 0)))
 		clone.visible = true
 
 func on_screen_change(_details):	
