@@ -254,8 +254,8 @@ func check_unlocks():
 			child.get_node("Locked").visible = false
 			child.set_meta("Locked", false)
 
-func get_chosen_modifiers():
-	var modifiers = []
+func get_chosen_modifiers() -> Array[ModifierBase]:
+	var modifiers: Array[ModifierBase] = []
 	
 	for btn: Button in selected_modifier_btns:
 		var resource = btn.get_meta("Resource")

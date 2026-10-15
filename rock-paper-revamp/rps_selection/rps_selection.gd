@@ -62,7 +62,7 @@ func _on_start_btn_pressed() -> void:
 	Signals.change_screen.emit(
 		"rps_game",
 		{
-			"gamemode_resource": $Gamemodes.get_chosen_gamemode() ,
+			"gamemode_resource": $Gamemodes.get_chosen_gamemode(),
 			"modifier_resource": $Modifiers.get_chosen_modifiers(),
 			"computer_resource": $Opponents.get_chosen_opponent(),
 		}
