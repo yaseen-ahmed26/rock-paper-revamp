@@ -6,6 +6,7 @@ extends Control
 var current_overlay: Panel
 
 func _ready() -> void:
+	overlay.visible = true
 	tokens.get_node("Label").text = str(int(SaveManager.local_saved_data.get("tokens")))		
 		
 func _unhandled_input(event: InputEvent) -> void:
