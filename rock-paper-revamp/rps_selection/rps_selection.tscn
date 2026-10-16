@@ -1180,7 +1180,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_duceo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8b7o")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2y74n")
 disabled = true
-text = "[ EMPTY ]"
+text = "-------"
 metadata/Position = 0
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/1" unique_id=781184852]
@@ -1207,7 +1207,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_duceo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8b7o")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2y74n")
 disabled = true
-text = "[ EMPTY ]"
+text = "-------"
 metadata/Position = 1
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/2" unique_id=1646596519]
@@ -1234,7 +1234,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_duceo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v8b7o")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_ms4sd")
 disabled = true
-text = "[ EMPTY ]"
+text = "-------"
 metadata/Position = 2
 
 [node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/3" unique_id=22906680]

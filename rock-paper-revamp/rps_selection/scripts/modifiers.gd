@@ -4,11 +4,11 @@ extends Panel
 
 const MAX_AMOUNT_MODIFIERS: int = 3
 const TIER_DETAILS: Dictionary = {
-	1: "Free",
-	2: "Basic",
-	3: "Legacy",
-	4: "Advanced",
-	5: "Special",
+	1: "FREE",
+	2: "BASIC",
+	3: "LEGACY",
+	4: "ADVANCED",
+	5: "SPECIAL",
 }
 
 var WHITE_BORDER: Color = Color("616161")
@@ -76,7 +76,7 @@ func _update_info_btns():
 		var btn_position: int = btn.get_meta("Position")
 
 		if (btn_position + 1) > selected_modifier_btns.size():
-			btn.text = "[ EMPTY ]"
+			btn.text = "-------"
 			btn.disabled = true
 			btn.get_node("NumberLabel").visible = false
 			
@@ -114,7 +114,7 @@ func _sort_modifiers() -> void:
 
 	for t in sorted_tiers:
 		var header := Label.new()
-		header.text = "TIER %d • [ %s ]" % [t, TIER_DETAILS.get(t)]
+		header.text = "Tier %d • [ %s ]" % [t, TIER_DETAILS.get(t)]
 		header.add_theme_font_size_override("font_size", 20)
 		root_vbox.add_child(header)
 
@@ -133,6 +133,7 @@ func _on_modifier_btn_pressed(btn: Button):
 	var existing_stylebox: StyleBoxFlat = btn.get_theme_stylebox("normal")
 	var duplicate_stylebox: StyleBoxFlat = existing_stylebox.duplicate()
 	var selected_panel = btn.get_node("SelectedPanel")
+	var info_rect = btn.get_node("Info")
 	
 	if selected_modifier_btns.has(btn):
 		selected_modifier_btns.erase(btn)
@@ -147,6 +148,18 @@ func _on_modifier_btn_pressed(btn: Button):
 		selected_panel.visible = true
 		duplicate_stylebox.border_color = BLUE_BORDER
 		btn.add_theme_stylebox_override("normal", duplicate_stylebox)
+		
+		var tween = create_tween()
+		var default_position = info_rect.get_node("Icon").position
+
+		for i in range(4):
+			var offset = Vector2(
+				randf_range(-6.0, 6.0),
+				randf_range(-6.0, 6.0)
+			)
+			tween.tween_property(info_rect.get_node("Icon"), "position", default_position + offset, 0.04)
+		
+		tween.tween_property(info_rect.get_node("Icon"), "position", default_position, 0.04)
 		
 	_update_info_btns()
 
