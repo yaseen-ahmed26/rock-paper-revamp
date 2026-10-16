@@ -73,8 +73,6 @@ func _update_card():
 		info_rect.get_node("ModifierName").text = modifier.display_name
 		info_rect.get_node("Icon").texture = modifier.icon
 	
-	
-	
 func _on_return_button_pressed() -> void:
 	Signals.change_screen.emit("main_menu")
 

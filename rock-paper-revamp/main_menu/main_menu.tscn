@@ -215,7 +215,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.020838426, 0.07526652, 1)
 
-[node name="BackgroundLight" type="TextureRect" parent="." unique_id=1303351577]
+[node name="Light" type="TextureRect" parent="Background" unique_id=1303351577]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
