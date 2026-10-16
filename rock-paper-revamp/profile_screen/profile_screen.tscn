@@ -11,6 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://cinbnc44g1vdy" path="res://assets/icons/menu/up_arrow.png" id="6_doypb"]
 [ext_resource type="Texture2D" uid="uid://soi4jrjumaly" path="res://assets/icons/menu/down_arrow.png" id="7_tt4ql"]
 
+[sub_resource type="Gradient" id="Gradient_tt4ql"]
+offsets = PackedFloat32Array(0, 0.95454544, 1)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 0.43529412, 0.43529412, 0.43529412, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iub3g"]
+gradient = SubResource("Gradient_tt4ql")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk7hg"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -103,7 +113,7 @@ grow_vertical = 2
 theme = ExtResource("1_qk7hg")
 script = ExtResource("1_ju6hb")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1307272520]
+[node name="Background" type="ColorRect" parent="." unique_id=1123200745]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,6 +121,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.020838426, 0.07526652, 1)
+
+[node name="Light" type="TextureRect" parent="Background" unique_id=1245746571]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_iub3g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1076574744]
 layout_mode = 1
@@ -483,7 +510,7 @@ anchor_bottom = 0.5
 offset_left = -210.5
 offset_top = -218.5
 offset_right = 213.5
-offset_bottom = -30.5
+offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -496,7 +523,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -210.5
-offset_top = 67.5
+offset_top = 132.5
 offset_right = 213.5
 offset_bottom = 277.5
 grow_horizontal = 2
@@ -532,8 +559,8 @@ color = Color(0.20784314, 0.20784314, 0.20784314, 1)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 289.0
-offset_bottom = 350.0
+offset_top = 350.0
+offset_bottom = 411.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
@@ -630,13 +657,16 @@ vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="Template" unique_id=60097415]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 6
+anchor_left = 1.0
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -20.0
-offset_right = -8.0
-offset_bottom = 20.0
+offset_left = -53.0
+offset_top = -14.0
+offset_right = -25.0
+offset_bottom = 14.0
+grow_horizontal = 0
 grow_vertical = 2
 expand_mode = 1
 
