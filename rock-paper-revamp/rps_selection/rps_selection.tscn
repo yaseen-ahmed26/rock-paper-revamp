@@ -6,15 +6,14 @@
 [ext_resource type="Script" uid="uid://pnq8pd262y6a" path="res://rps_selection/scripts/modifiers.gd" id="6_duceo"]
 [ext_resource type="Script" uid="uid://b4oi6gs7jotv6" path="res://rps_selection/scripts/opponents.gd" id="7_2y74n"]
 [ext_resource type="Texture2D" uid="uid://bdcx0fxaic7b0" path="res://assets/icons/general/red_lock.png" id="7_ran54"]
-[ext_resource type="Texture2D" uid="uid://bupi5mg6ypq53" path="res://assets/icons/menu/regular/search_white.png" id="12_3y6wd"]
-[ext_resource type="Texture2D" uid="uid://bs1c01wwxvd04" path="res://assets/icons/menu/revamped.svg" id="12_yfyho"]
-[ext_resource type="Texture2D" uid="uid://dkhjweifjshym" path="res://assets/icons/menu/regular/reset_white.png" id="13_yrpsb"]
-[ext_resource type="Texture2D" uid="uid://cyqckuhbghe7q" path="res://assets/icons/menu/regular/gear_white.png" id="14_k2fvl"]
-[ext_resource type="Texture2D" uid="uid://dl7a0gihd2juu" path="res://assets/icons/menu/regular/filters_white.png" id="14_qmatd"]
+[ext_resource type="Texture2D" uid="uid://bupi5mg6ypq53" path="res://assets/icons/menu/search_white.png" id="12_3y6wd"]
+[ext_resource type="Texture2D" uid="uid://dkhjweifjshym" path="res://assets/icons/menu/reset_white.png" id="13_yrpsb"]
+[ext_resource type="Texture2D" uid="uid://cyqckuhbghe7q" path="res://assets/icons/menu/gear_white.png" id="14_k2fvl"]
+[ext_resource type="Texture2D" uid="uid://dl7a0gihd2juu" path="res://assets/icons/menu/filters_white.png" id="14_qmatd"]
 [ext_resource type="Texture2D" uid="uid://h07yp2by5dgp" path="res://assets/icons/modifiers/repeat_reward.svg" id="15_4oi77"]
-[ext_resource type="Texture2D" uid="uid://lm6f0ia4j30s" path="res://assets/icons/menu/regular/rules_white.png" id="15_yfyho"]
-[ext_resource type="Texture2D" uid="uid://cqvu352lekaaf" path="res://assets/icons/menu/regular/lock_white.png" id="16_duceo"]
-[ext_resource type="Texture2D" uid="uid://bdjv0oq12n010" path="res://assets/icons/menu/regular/page_white.png" id="17_v8b7o"]
+[ext_resource type="Texture2D" uid="uid://lm6f0ia4j30s" path="res://assets/icons/menu/rules_white.png" id="15_yfyho"]
+[ext_resource type="Texture2D" uid="uid://cqvu352lekaaf" path="res://assets/icons/menu/lock_white.png" id="16_duceo"]
+[ext_resource type="Texture2D" uid="uid://bdjv0oq12n010" path="res://assets/icons/menu/page_white.png" id="17_v8b7o"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://rps_selection/scripts/sub/template_step.gd" id="20_k2fvl"]
 [ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://ui/buttons/standard.tres" id="24_cvc85"]
 [ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://ui/buttons/pressed.tres" id="25_fllau"]
@@ -870,7 +869,6 @@ offset_top = -19.5
 offset_right = 40.0
 offset_bottom = 15.5
 grow_vertical = 2
-texture = ExtResource("12_yfyho")
 expand_mode = 1
 
 [node name="GamemodeName" type="RichTextLabel" parent="Gamemodes/Card/Header" unique_id=1888786462]
@@ -1635,6 +1633,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_fsdrv")
 text = "[ START ]"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1501518141]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15

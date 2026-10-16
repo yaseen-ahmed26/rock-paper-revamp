@@ -10,9 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dj0ebaxy0rlnu" path="res://assets/icons/modifiers/hot_hand.svg" id="5_kwfav"]
 [ext_resource type="Texture2D" uid="uid://cggynoh6f8wjd" path="res://assets/icons/modifiers/tax_toll.svg" id="6_n70vs"]
 [ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://ui/buttons/disabled.tres" id="6_og6xe"]
-[ext_resource type="Texture2D" uid="uid://bs1c01wwxvd04" path="res://assets/icons/menu/revamped.svg" id="7_ia84y"]
 [ext_resource type="Texture2D" uid="uid://oebgklt1svnx" path="res://assets/icons/modifiers/duel_decay.svg" id="7_tr6y3"]
-[ext_resource type="Texture2D" uid="uid://1pw3w0plydc" path="res://assets/icons/menu/updates.svg" id="8_6at21"]
 [ext_resource type="Texture2D" uid="uid://rsowjd8wmisa" path="res://assets/icons/modifiers/last_laugh.svg" id="8_l18n7"]
 [ext_resource type="Texture2D" uid="uid://cn10cyuhysx1a" path="res://assets/icons/modifiers/point_perk.svg" id="9_conbw"]
 [ext_resource type="Texture2D" uid="uid://dqrupxv472vt4" path="res://assets/icons/modifiers/double_down.svg" id="10_pv4yd"]
@@ -31,25 +29,172 @@
 [ext_resource type="Texture2D" uid="uid://bk0hg01avjd0g" path="res://assets/icons/modifiers/vampire_victory.svg" id="23_vpnst"]
 [ext_resource type="Texture2D" uid="uid://bd7ggug1c67tc" path="res://assets/icons/modifiers/artifical_advantage.svg" id="24_ihep4"]
 [ext_resource type="Texture2D" uid="uid://bdpc03y1l7wi7" path="res://assets/icons/modifiers/shattered_stalemate.svg" id="25_eqsep"]
+[ext_resource type="Texture2D" uid="uid://c5m8pg7k1lbds" path="res://assets/icons/menu/user.png" id="28_pv4yd"]
+[ext_resource type="Texture2D" uid="uid://cyqckuhbghe7q" path="res://assets/icons/menu/gear_white.png" id="29_6jtit"]
 [ext_resource type="Texture2D" uid="uid://bsmbqcveaxri8" path="res://assets/icons/menu/play.png" id="30_conbw"]
 [ext_resource type="Texture2D" uid="uid://dauj37ao2ojuy" path="res://assets/icons/menu/trophy.png" id="30_qk1ns"]
-[ext_resource type="Texture2D" uid="uid://b4o4tncxnihcf" path="res://assets/icons/menu/profile.png" id="31_vlony"]
-[ext_resource type="Texture2D" uid="uid://di5ibis6jcws0" path="res://assets/icons/menu/credits_2.png" id="32_8wd0k"]
-[ext_resource type="Texture2D" uid="uid://dika4003qo07y" path="res://assets/icons/menu/settings.png" id="33_t7u00"]
+[ext_resource type="Texture2D" uid="uid://d3quoedwu8g3t" path="res://assets/icons/menu/info.png" id="30_vlony"]
+[ext_resource type="Texture2D" uid="uid://dpuuvtbjjraqw" path="res://assets/icons/menu/pin.png" id="31_8wd0k"]
+[ext_resource type="Texture2D" uid="uid://c48umhxjdjsew" path="res://assets/icons/menu/book.png" id="32_t7u00"]
+[ext_resource type="Texture2D" uid="uid://bqsik2tusn03" path="res://assets/icons/menu/eyes.png" id="33_08nat"]
 [ext_resource type="Texture2D" uid="uid://dcqwwok80jrnc" path="res://assets/icons/menu/exit.png" id="34_08nat"]
 
+[sub_resource type="Gradient" id="Gradient_vlony"]
+offsets = PackedFloat32Array(0, 0.95454544, 1)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 0.43529412, 0.43529412, 0.43529412, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l7yjw"]
+gradient = SubResource("Gradient_vlony")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_conbw"]
-bg_color = Color(0, 0.34808475, 0.54602015, 1)
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 14
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pv4yd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.39215687, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jtit"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2, 0.39215687, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p01wi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqfm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.18000486, 0.1800049, 0.1800048, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk1ns"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.18000486, 0.1800049, 0.1800048, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlony"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wd0k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8745098, 0, 0.13725491, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7u00"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8745098, 0, 0.13725491, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="main_menu" type="Control" unique_id=771054830]
 layout_mode = 3
@@ -60,6 +205,32 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6tl50")
 script = ExtResource("1_oa53l")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2117228424]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.020838426, 0.07526652, 1)
+
+[node name="BackgroundLight" type="TextureRect" parent="." unique_id=1303351577]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_l7yjw")
 
 [node name="IconWaterfall" type="Control" parent="." unique_id=1855803293]
 layout_mode = 1
@@ -72,7 +243,7 @@ script = ExtResource("3_6at21")
 icons = Array[Texture2D]([ExtResource("4_g1omr"), ExtResource("5_kwfav"), ExtResource("6_n70vs"), ExtResource("7_tr6y3"), ExtResource("8_l18n7"), ExtResource("9_conbw"), ExtResource("10_pv4yd"), ExtResource("11_6jtit"), ExtResource("12_p01wi"), ExtResource("13_koqfm"), ExtResource("14_qk1ns"), ExtResource("15_vlony"), ExtResource("16_8wd0k"), ExtResource("17_t7u00"), ExtResource("18_08nat"), ExtResource("19_pjjpu"), ExtResource("20_td1kt"), ExtResource("21_v8p65"), ExtResource("22_5dxmf"), ExtResource("23_vpnst"), ExtResource("24_ihep4"), ExtResource("25_eqsep")])
 
 [node name="IconTemplate" type="TextureRect" parent="IconWaterfall" unique_id=419135703]
-modulate = Color(0.44705883, 0.44705883, 0.44705883, 0.7058824)
+modulate = Color(1, 1, 1, 0.5882353)
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
@@ -94,7 +265,7 @@ offset_bottom = -342.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 62
-text = "Rock Paper Revamped"
+text = "ROCK PAPER REVAMPED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -116,9 +287,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -247.0
-offset_top = -184.0
+offset_top = -192.0
 offset_right = 249.0
-offset_bottom = 307.0
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
@@ -131,10 +302,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
-text = "PLAY"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
 icon_alignment = 1
 expand_icon = true
 
@@ -143,250 +312,360 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
+offset_left = 10.0
+offset_top = -16.0
+offset_right = 42.0
+offset_bottom = 16.0
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("30_conbw")
 expand_mode = 1
 
-[node name="Loop" type="Button" parent="MenuButtons" unique_id=1298853553]
-visible = false
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Play" unique_id=44924077]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -20.0
+offset_right = 118.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Challenges" type="Button" parent="MenuButtons" unique_id=952264082]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
-text = "THE LOOP"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Icon" type="TextureRect" parent="MenuButtons/Loop" unique_id=88539344]
-visible = false
+[node name="Icon" type="TextureRect" parent="MenuButtons/Challenges" unique_id=2111818084]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("30_conbw")
-expand_mode = 1
-
-[node name="Challenges" type="Button" parent="MenuButtons" unique_id=1469201689]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
-text = "CHALLENGES"
-icon_alignment = 1
-expand_icon = true
-
-[node name="Icon" type="TextureRect" parent="MenuButtons/Challenges" unique_id=1488771466]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
+offset_left = 10.0
+offset_top = -16.0
+offset_right = 42.0
+offset_bottom = 16.0
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("30_qk1ns")
 expand_mode = 1
 
-[node name="Profile" type="Button" parent="MenuButtons" unique_id=1639399438]
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Challenges" unique_id=1764302296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -20.0
+offset_right = 118.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "CHALLENGES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Profile" type="Button" parent="MenuButtons" unique_id=1561342830]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="MenuButtons/Profile" unique_id=2031972859]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -16.0
+offset_right = 42.0
+offset_bottom = 16.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("28_pv4yd")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Profile" unique_id=1284909285]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -20.0
+offset_right = 118.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
 text = "PROFILE"
-icon_alignment = 1
-expand_icon = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Icon" type="TextureRect" parent="MenuButtons/Profile" unique_id=1006288896]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("31_vlony")
-expand_mode = 1
-
-[node name="Credits" type="Button" parent="MenuButtons" unique_id=1886862919]
+[node name="Settings" type="Button" parent="MenuButtons" unique_id=1556280080]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
-text = "CREDITS"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Icon" type="TextureRect" parent="MenuButtons/Credits" unique_id=78354037]
+[node name="Icon" type="TextureRect" parent="MenuButtons/Settings" unique_id=1890769464]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
+offset_left = 10.0
+offset_top = -16.0
+offset_right = 42.0
+offset_bottom = 16.0
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("32_8wd0k")
+texture = ExtResource("29_6jtit")
 expand_mode = 1
 
-[node name="Settings" type="Button" parent="MenuButtons" unique_id=1984765273]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Settings" unique_id=586131005]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -20.0
+offset_right = 118.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
 text = "SETTINGS"
-icon_alignment = 1
-expand_icon = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Icon" type="TextureRect" parent="MenuButtons/Settings" unique_id=1201399717]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("33_t7u00")
-expand_mode = 1
-
-[node name="Quit" type="Button" parent="MenuButtons" unique_id=980312941]
+[node name="Extra" type="Button" parent="MenuButtons" unique_id=1474572039]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
-text = "QUIT"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Icon" type="TextureRect" parent="MenuButtons/Quit" unique_id=1638688543]
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Extra" unique_id=1012470615]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -20.0
+offset_right = 118.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "EXTRA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExtraButtons" type="HBoxContainer" parent="." unique_id=624887203]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = 73.0
+offset_right = 246.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="About" type="Button" parent="ExtraButtons" unique_id=1237858159]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/About" unique_id=460780208]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_vlony")
+expand_mode = 1
+
+[node name="Update" type="Button" parent="ExtraButtons" unique_id=1173142070]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/Update" unique_id=496415610]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("31_8wd0k")
+expand_mode = 1
+
+[node name="Credits" type="Button" parent="ExtraButtons" unique_id=401743867]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/Credits" unique_id=221558569]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_t7u00")
+expand_mode = 1
+
+[node name="Eyes" type="Button" parent="ExtraButtons" unique_id=1600438948]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/Eyes" unique_id=288293552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("33_08nat")
+expand_mode = 1
+
+[node name="Quit" type="Button" parent="." unique_id=1094470860]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 713.0
+offset_top = 834.0
+offset_right = 1209.0
+offset_bottom = 884.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vlony")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8wd0k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t7u00")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="Quit" unique_id=994092095]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 9.0
-offset_top = -17.5
-offset_right = 44.0
-offset_bottom = 17.5
+offset_left = 10.0
+offset_top = -16.0
+offset_right = 42.0
+offset_bottom = 16.0
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("34_08nat")
 expand_mode = 1
 
-[node name="SideButtons" type="VBoxContainer" parent="." unique_id=1125502485]
+[node name="Label" type="RichTextLabel" parent="Quit" unique_id=215524258]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = -424.0
-offset_right = 116.0
-offset_bottom = -135.0
-grow_vertical = 0
-theme_override_constants/separation = 22
-alignment = 2
-
-[node name="Revamped" type="Button" parent="SideButtons" unique_id=1934386151]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("4_6tl50")
-theme_override_styles/pressed = ExtResource("3_t6bnd")
-theme_override_styles/hover = ExtResource("3_t6bnd")
-icon = ExtResource("7_ia84y")
-expand_icon = true
-
-[node name="HoverLabel" type="RichTextLabel" parent="SideButtons/Revamped" unique_id=1491826398]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 13.0
+offset_left = -118.0
 offset_top = -20.0
-offset_right = 180.0
+offset_right = 118.0
 offset_bottom = 20.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "Why Revamped?"
-vertical_alignment = 1
-
-[node name="Updates" type="Button" parent="SideButtons" unique_id=1107345201]
-custom_minimum_size = Vector2(70, 70)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("4_6tl50")
-theme_override_styles/pressed = ExtResource("3_t6bnd")
-theme_override_styles/hover = ExtResource("3_t6bnd")
-icon = ExtResource("8_6at21")
-expand_icon = true
-
-[node name="HoverLabel" type="RichTextLabel" parent="SideButtons/Updates" unique_id=591994750]
-visible = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -20.0
-offset_right = 180.0
-offset_bottom = 20.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "Latest Update"
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "QUIT"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PeckButton" type="Button" parent="." unique_id=1204115556]
