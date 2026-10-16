@@ -507,7 +507,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExtraButtons" type="HBoxContainer" parent="." unique_id=624887203]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -515,17 +515,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -246.0
-offset_top = 73.0
+offset_top = 133.0
 offset_right = 246.0
-offset_bottom = 148.0
+offset_bottom = 208.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 14
 alignment = 1
 
 [node name="About" type="Button" parent="ExtraButtons" unique_id=1237858159]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
@@ -550,6 +552,7 @@ expand_mode = 1
 [node name="Update" type="Button" parent="ExtraButtons" unique_id=1173142070]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
@@ -574,6 +577,7 @@ expand_mode = 1
 [node name="Credits" type="Button" parent="ExtraButtons" unique_id=401743867]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
@@ -598,6 +602,7 @@ expand_mode = 1
 [node name="Eyes" type="Button" parent="ExtraButtons" unique_id=1600438948]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
@@ -687,8 +692,8 @@ theme_override_styles/hover = ExtResource("5_6at21")
 theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "Peck"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1887183576]
-modulate = Color(1, 1, 1, 0.22352941)
+[node name="Version" type="RichTextLabel" parent="." unique_id=1887183576]
+modulate = Color(1, 1, 1, 0.39607844)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -706,4 +711,23 @@ text = "v2.2.0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ExtraHoverLabel" type="RichTextLabel" parent="." unique_id=283251932]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = 225.0
+offset_right = 210.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PeckButton" to="." method="_on_peck_button_pressed"]
