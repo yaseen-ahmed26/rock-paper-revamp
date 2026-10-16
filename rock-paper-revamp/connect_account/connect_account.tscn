@@ -4,6 +4,16 @@
 [ext_resource type="Script" uid="uid://dtyjxal0i6yqn" path="res://connect_account/connect_account.gd" id="2_uqjxg"]
 [ext_resource type="Texture2D" uid="uid://bj0w2fylsfy0p" path="res://assets/icons/general/copy.png" id="3_xa6fy"]
 
+[sub_resource type="Gradient" id="Gradient_vlony"]
+offsets = PackedFloat32Array(0, 0.95454544, 1)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 0.43529412, 0.43529412, 0.43529412, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xa6fy"]
+gradient = SubResource("Gradient_vlony")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kqas"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -64,6 +74,33 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_eqcml")
 script = ExtResource("2_uqjxg")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1172780791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.020838426, 0.07526652, 1)
+
+[node name="Light" type="TextureRect" parent="Background" unique_id=1608666511]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_xa6fy")
 
 [node name="Instructions" type="RichTextLabel" parent="." unique_id=1373625169]
 layout_mode = 1

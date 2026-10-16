@@ -1633,6 +1633,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_fsdrv")
 text = "[ START ]"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=1501518141]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
