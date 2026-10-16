@@ -19,4 +19,5 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _proceed():
 	Signals.change_screen.emit("main_menu")
+	await get_tree().create_timer(0.3).timeout
 	self.queue_free()

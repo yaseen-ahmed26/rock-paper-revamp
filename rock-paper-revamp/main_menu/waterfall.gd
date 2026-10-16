@@ -10,7 +10,7 @@ var max_speed: float = 280.0
 var min_scale: float = 0.7
 var max_scale: float = 1.1
 
-var column_width: float = 360.0
+var column_width: float = 540.0
 var timer: float = 0.0
 
 func _ready() -> void:
