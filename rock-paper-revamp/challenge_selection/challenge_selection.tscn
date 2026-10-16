@@ -356,7 +356,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1sq0s")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_uwche")
 text = "[ START ]"
 
-[node name="Modifiers" type="Panel" parent="." unique_id=1898769295]
+[node name="Challenge" type="Panel" parent="." unique_id=1898769295]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -371,7 +371,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8uxxj")
 
-[node name="ModifierHeading" type="RichTextLabel" parent="Modifiers" unique_id=56184535]
+[node name="ModifierHeading" type="RichTextLabel" parent="Challenge" unique_id=56184535]
 layout_mode = 0
 offset_left = 485.5
 offset_top = 319.0
@@ -382,14 +382,14 @@ bbcode_enabled = true
 text = "3. [color=white][ [color=gold]MODIFIERS [color=white]]"
 vertical_alignment = 1
 
-[node name="Title" type="ColorRect" parent="Modifiers" unique_id=1232232288]
+[node name="Title" type="ColorRect" parent="Challenge" unique_id=1232232288]
 layout_mode = 0
 offset_left = 42.0
 offset_right = 293.5
 offset_bottom = 3.0
 color = Color(0, 0.019607844, 0.07450981, 1)
 
-[node name="Label" type="RichTextLabel" parent="Modifiers/Title" unique_id=448678030]
+[node name="Label" type="RichTextLabel" parent="Challenge/Title" unique_id=448678030]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -408,7 +408,7 @@ text = "CHALLENGE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Seperator" type="ColorRect" parent="Modifiers" unique_id=1053172819]
+[node name="Seperator" type="ColorRect" parent="Challenge" unique_id=1053172819]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -423,7 +423,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.20784314, 0.20784314, 0.20784314, 1)
 
-[node name="ChallengeIcon" type="TextureRect" parent="Modifiers" unique_id=2087066819]
+[node name="ChallengeIcon" type="TextureRect" parent="Challenge" unique_id=2087066819]
 layout_mode = 0
 offset_left = 124.5
 offset_top = 104.0
@@ -432,7 +432,7 @@ offset_bottom = 304.0
 texture = ExtResource("5_6b2la")
 expand_mode = 1
 
-[node name="ChallengeName" type="RichTextLabel" parent="Modifiers" unique_id=390938206]
+[node name="ChallengeName" type="RichTextLabel" parent="Challenge" unique_id=390938206]
 layout_mode = 0
 offset_left = 1.5
 offset_top = 352.0
@@ -443,7 +443,7 @@ text = "PRESSURE COOKER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ChallengeDescription" type="RichTextLabel" parent="Modifiers" unique_id=441672325]
+[node name="ChallengeDescription" type="RichTextLabel" parent="Challenge" unique_id=441672325]
 layout_mode = 0
 offset_left = 51.5
 offset_top = 412.0
@@ -454,7 +454,7 @@ text = "Challenge description goes here that is also multiline or is it"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GamemodeHeading" type="RichTextLabel" parent="Modifiers" unique_id=1996937847]
+[node name="GamemodeHeading" type="RichTextLabel" parent="Challenge" unique_id=1996937847]
 layout_mode = 0
 offset_left = 485.5
 offset_top = 54.0
@@ -465,7 +465,7 @@ bbcode_enabled = true
 text = "1. [color=white][ [color=gold]GAMEMODE [color=white]]"
 vertical_alignment = 1
 
-[node name="GamemodeName" type="Panel" parent="Modifiers" unique_id=1064433449]
+[node name="GamemodeName" type="Panel" parent="Challenge" unique_id=1064433449]
 layout_mode = 0
 offset_left = 506.5
 offset_top = 109.0
@@ -473,7 +473,7 @@ offset_right = 639.5
 offset_bottom = 151.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_584du")
 
-[node name="Label" type="RichTextLabel" parent="Modifiers/GamemodeName" unique_id=2055822075]
+[node name="Label" type="RichTextLabel" parent="Challenge/GamemodeName" unique_id=2055822075]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -484,7 +484,7 @@ text = "Race to Zero"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GamemodeDescription" type="Panel" parent="Modifiers" unique_id=1256148594]
+[node name="GamemodeDescription" type="Panel" parent="Challenge" unique_id=1256148594]
 layout_mode = 0
 offset_left = 653.5
 offset_top = 109.0
@@ -492,7 +492,7 @@ offset_right = 1176.5
 offset_bottom = 151.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_584du")
 
-[node name="Label" type="RichTextLabel" parent="Modifiers/GamemodeDescription" unique_id=1505603412]
+[node name="Label" type="RichTextLabel" parent="Challenge/GamemodeDescription" unique_id=1505603412]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -504,7 +504,7 @@ text = "The description of the gamemode goes here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OpponentHeading" type="RichTextLabel" parent="Modifiers" unique_id=436014131]
+[node name="OpponentHeading" type="RichTextLabel" parent="Challenge" unique_id=436014131]
 layout_mode = 0
 offset_left = 485.5
 offset_top = 181.0
@@ -515,7 +515,7 @@ bbcode_enabled = true
 text = "2. [color=white][ [color=gold]OPPONENT [color=white]]"
 vertical_alignment = 1
 
-[node name="RewardHeading" type="RichTextLabel" parent="Modifiers" unique_id=317076443]
+[node name="RewardHeading" type="RichTextLabel" parent="Challenge" unique_id=317076443]
 layout_mode = 0
 offset_left = 485.5
 offset_top = 564.0
@@ -526,7 +526,7 @@ bbcode_enabled = true
 text = "4. [color=white][ [color=gold]REWARD [color=white]]"
 vertical_alignment = 1
 
-[node name="RewardLabel" type="RichTextLabel" parent="Modifiers" unique_id=795285238]
+[node name="RewardLabel" type="RichTextLabel" parent="Challenge" unique_id=795285238]
 layout_mode = 0
 offset_left = 485.5
 offset_top = 624.0
@@ -537,7 +537,7 @@ bbcode_enabled = true
 text = "Winner's Weakness"
 vertical_alignment = 1
 
-[node name="OpponentName" type="Panel" parent="Modifiers" unique_id=21749407]
+[node name="OpponentName" type="Panel" parent="Challenge" unique_id=21749407]
 layout_mode = 0
 offset_left = 506.5
 offset_top = 236.0
@@ -545,7 +545,7 @@ offset_right = 691.5
 offset_bottom = 278.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_584du")
 
-[node name="Label" type="RichTextLabel" parent="Modifiers/OpponentName" unique_id=115598922]
+[node name="Label" type="RichTextLabel" parent="Challenge/OpponentName" unique_id=115598922]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -556,7 +556,7 @@ text = "Statistics Guy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OpponentDescription" type="Panel" parent="Modifiers" unique_id=762622634]
+[node name="OpponentDescription" type="Panel" parent="Challenge" unique_id=762622634]
 layout_mode = 0
 offset_left = 705.5
 offset_top = 236.0
@@ -564,7 +564,7 @@ offset_right = 1176.5
 offset_bottom = 278.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_584du")
 
-[node name="Label" type="RichTextLabel" parent="Modifiers/OpponentDescription" unique_id=1920202495]
+[node name="Label" type="RichTextLabel" parent="Challenge/OpponentDescription" unique_id=1920202495]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -576,8 +576,7 @@ text = "The description of the gamemode goes here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ModifierInfo" type="HBoxContainer" parent="Modifiers" unique_id=1552319068]
-visible = false
+[node name="ModifierInfo" type="HBoxContainer" parent="Challenge" unique_id=1552319068]
 layout_mode = 0
 offset_left = 485.5
 offset_top = 390.0
@@ -585,7 +584,8 @@ offset_right = 1024.5
 offset_bottom = 530.0
 theme_override_constants/separation = 18
 
-[node name="TemplateButton" type="Button" parent="Modifiers/ModifierInfo" unique_id=21378218]
+[node name="TemplateButton" type="Button" parent="Challenge/ModifierInfo" unique_id=21378218]
+visible = false
 custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9847904, 0.75452054, 7.70092e-07, 1)
@@ -598,7 +598,7 @@ autowrap_mode = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Info" type="ColorRect" parent="Modifiers/ModifierInfo/TemplateButton" unique_id=624981026]
+[node name="Info" type="ColorRect" parent="Challenge/ModifierInfo/TemplateButton" unique_id=624981026]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -608,7 +608,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ModifierName" type="RichTextLabel" parent="Modifiers/ModifierInfo/TemplateButton/Info" unique_id=1496193757]
+[node name="ModifierName" type="RichTextLabel" parent="Challenge/ModifierInfo/TemplateButton/Info" unique_id=1496193757]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -623,7 +623,7 @@ text = "Choice Cooldown"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Icon" type="TextureRect" parent="Modifiers/ModifierInfo/TemplateButton/Info" unique_id=446465940]
+[node name="Icon" type="TextureRect" parent="Challenge/ModifierInfo/TemplateButton/Info" unique_id=446465940]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -779,3 +779,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_6erqi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lqjxg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_t58ff")
 text = "[ESC] Close"
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
