@@ -600,6 +600,7 @@ texture = ExtResource("32_t7u00")
 expand_mode = 1
 
 [node name="Eyes" type="Button" parent="ExtraButtons" unique_id=1600438948]
+visible = false
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 mouse_filter = 2
