@@ -7,7 +7,6 @@ var REFRESH_URL: String = "https://server.snowstrix.com/api/auth/refresh"
 
 var WEBSOCKET_URL: String = "wss://server.snowstrix.com/api/codes/ws"
 
-
 func _ready() -> void:
 	if OS.has_feature("editor"):
 		BASE_URL = "http://127.0.0.1:8000/"
@@ -43,7 +42,8 @@ const DEFAULT_DEVICE_SETTINGS_CFG = {
 	"resolution": 2,
 	"v_sync": false,
 	"max_framerate": 2,
-	"icon_waterfall": true
+	"icon_waterfall": true,
+	"skip_splash": false
 }
 
 # ui_controller.gd

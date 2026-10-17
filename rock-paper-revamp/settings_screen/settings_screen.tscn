@@ -112,6 +112,12 @@ description = "Set the size of the window."
 menu_options = Array[String](["1152 x 648", "1280 x 720", "1920 x 1080"])
 menu_correspondants = [Vector2i(1152, 648), Vector2i(1280, 720), Vector2i(1920, 1080)]
 
+[node name="skip_splash" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("4_fqeiw")]
+layout_mode = 2
+size_flags_horizontal = 3
+label_text = "Skip Splash"
+description = "Automatically skip the splash screen when loading the game."
+
 [node name="max_framerate" parent="VBoxContainer" unique_id=1385803673 instance=ExtResource("3_8rung")]
 layout_mode = 2
 label_text = "Max Framerate"

@@ -21,14 +21,16 @@ func _ready() -> void:
 		
 		if setting:		
 			var callback = setting_callbacks.get(k)
-
-			if setting is SettingDropdown:
-				callback.bind(v, setting.menu_correspondants).call()
-			elif setting is SettingCheckbox:
-				callback.bind(v).call()
 			
+			if callback:
+				if setting is SettingDropdown:
+					callback.bind(v, setting.menu_correspondants).call()
+				elif setting is SettingCheckbox:
+					callback.bind(v).call()
+				
+				setting.setting_changed.connect(callback)			
+
 			setting.setup(v)
-			setting.setting_changed.connect(callback)
 
 func _on_window_btn_pressed(index: int, _options: Array):
 	match index:

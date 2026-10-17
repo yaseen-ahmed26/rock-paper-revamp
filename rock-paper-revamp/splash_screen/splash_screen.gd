@@ -5,6 +5,13 @@ extends Control
 var skipped: bool = false
 
 func _ready():
+	await get_tree().process_frame
+	
+	if SaveManager.local_saved_settings.get("skip_splash"):
+		skipped = true
+		_proceed()
+		return
+	
 	animation_player.play("splash")
 	await animation_player.animation_finished
 	
@@ -18,6 +25,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			_proceed()
 
 func _proceed():
+	if animation_player.is_playing():
+		animation_player.pause()
+	
 	Signals.change_screen.emit("main_menu")
 	await get_tree().create_timer(0.3).timeout
 	self.queue_free()
