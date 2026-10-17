@@ -162,11 +162,11 @@ func _update_action_btn(mode: String):
 	
 	match mode:
 		"RoundEnd":
-			action_button.text = "End Round"
+			action_button.text = "[ FINISH ]"
 		"GameOver":
-			action_button.text = "End Game"
+			action_button.text = "[ END GAME ]"
 		"NextRound":
-			action_button.text = "Next Round"
+			action_button.text = "[ PROCEED ]"
 	
 func _flip_cards():
 	$PlayerCard/FrontDesign.texture = card_icons.get(game_stats.player_move)
