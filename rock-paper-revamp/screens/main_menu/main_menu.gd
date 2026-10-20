@@ -11,19 +11,19 @@ const MENU_BTNS: Dictionary = {
 	"Settings": "settings_screen"
 }
 const SIDE_BTNS: Dictionary = {
-	"About": preload("res://custom_resources/modals/why_revamped.tres"),
-	"Update": preload("res://custom_resources/modals/latest_update.tres"),
+	"About": preload("res://content/modals/why_revamped.tres"),
+	"Update": preload("res://content/modals/latest_update.tres"),
 	# "Credits": "profile_screen",
-	"Eyes": preload("res://custom_resources/modals/the_loop_explained.tres")
+	"Eyes": preload("res://content/modals/the_loop_explained.tres")
 }
 
 const EXTRA_MENU_OPEN_POSITION := Vector2(714, 673)
 const EXTRA_MENU_HIDDEN_POSITION := Vector2(714, 613)
 
-var redirect_modal = preload("res://custom_resources/modals/redirect_to_website.tres")
-var confirm_sign_modal = preload("res://custom_resources/modals/confirm_sign_in.tres")
-var refusal_no_internet = preload("res://custom_resources/modals/refusal_no_internet.tres")
-var refusal_server_down = preload("res://custom_resources/modals/refusal_server_down.tres")
+var redirect_modal = preload("res://content/modals/redirect_to_website.tres")
+var confirm_sign_modal = preload("res://content/modals/confirm_sign_in.tres")
+var refusal_no_internet = preload("res://content/modals/refusal_no_internet.tres")
+var refusal_server_down = preload("res://content/modals/refusal_server_down.tres")
 
 var extra_menu_open: bool = false
 

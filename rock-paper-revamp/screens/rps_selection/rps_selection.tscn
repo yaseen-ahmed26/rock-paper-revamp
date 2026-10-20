@@ -15,9 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cqvu352lekaaf" path="res://assets/icons/lock_white.png" id="16_duceo"]
 [ext_resource type="Texture2D" uid="uid://bdjv0oq12n010" path="res://assets/icons/page_white.png" id="17_v8b7o"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://screens/rps_selection/scripts/sub/template_step.gd" id="20_k2fvl"]
-[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://old/ui/buttons/standard.tres" id="24_cvc85"]
-[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://old/ui/buttons/pressed.tres" id="25_fllau"]
-[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://old/ui/buttons/disabled.tres" id="27_rtsuo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmatd"]
 content_margin_left = 0.0
@@ -705,57 +702,6 @@ content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
 bg_color = Color(0.47233558, 0, 0.06490538, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcuj6"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhjve"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm54m"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -1987,10 +1933,6 @@ mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("25_fllau")
-theme_override_styles/pressed = ExtResource("24_cvc85")
-theme_override_styles/hover = ExtResource("24_cvc85")
-theme_override_styles/disabled = ExtResource("27_rtsuo")
 text = "Locked"
 
 [node name="FilterUnlocked" type="Button" parent="Overlay/FilterModifiers/Holder" unique_id=1342206689]
@@ -2000,10 +1942,6 @@ mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("25_fllau")
-theme_override_styles/pressed = ExtResource("24_cvc85")
-theme_override_styles/hover = ExtResource("24_cvc85")
-theme_override_styles/disabled = ExtResource("27_rtsuo")
 text = "Unlocked"
 
 [node name="ClearFilters" type="Button" parent="Overlay/FilterModifiers/Holder" unique_id=1154342461]
@@ -2013,10 +1951,6 @@ mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("25_fllau")
-theme_override_styles/pressed = ExtResource("24_cvc85")
-theme_override_styles/hover = ExtResource("24_cvc85")
-theme_override_styles/disabled = ExtResource("27_rtsuo")
 text = "Clear Filters"
 
 [node name="CloseOverlay" type="Button" parent="Overlay" unique_id=495324770]
@@ -2034,9 +1968,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_gcuj6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rhjve")
-theme_override_styles/hover = SubResource("StyleBoxFlat_lm54m")
 text = "[ESC] Close"
 
 [connection signal="pressed" from="Gamemodes/Card/TasksButton" to="Gamemodes" method="_on_tasks_button_pressed"]

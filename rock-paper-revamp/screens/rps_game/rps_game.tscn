@@ -2,77 +2,11 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_j8q1b"]
 [ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://screens/rps_game/rps_game.gd" id="1_ybur4"]
-[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://old/ui/buttons/standard.tres" id="2_cm4xy"]
-[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://old/ui/buttons/pressed.tres" id="3_j8q1b"]
-[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://old/ui/buttons/disabled.tres" id="5_81c6f"]
 [ext_resource type="Texture2D" uid="uid://bgcrlmrgi3cns" path="res://assets/icons/rock.png" id="7_isxwt"]
 [ext_resource type="Texture2D" uid="uid://cv8ckqnk758sf" path="res://assets/icons/paper.png" id="8_l0q4v"]
 [ext_resource type="Texture2D" uid="uid://cbwj5dktgyxy6" path="res://assets/cosmetics/card_design.png" id="10_l0q4v"]
 [ext_resource type="Texture2D" uid="uid://bafo16haficgj" path="res://assets/cosmetics/card_back.png" id="11_ttdvg"]
 [ext_resource type="Texture2D" uid="uid://1flnqlg86mcc" path="res://assets/icons/content/scissor_specialist.svg" id="12_llugh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0q4v"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttdvg"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snbil"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0.9098039, 0.4, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo31w"]
-bg_color = Color(0, 0.31692833, 0.5000401, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.5449743, 0.54497427, 0.54497427, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlcjl"]
 bg_color = Color(1.973361e-06, 0.6091103, 0.2557871, 1)
@@ -480,10 +414,6 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_l0q4v")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ttdvg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_snbil")
-theme_override_styles/disabled = ExtResource("5_81c6f")
 icon = ExtResource("7_isxwt")
 icon_alignment = 1
 expand_icon = true
@@ -526,10 +456,6 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_l0q4v")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ttdvg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_snbil")
-theme_override_styles/disabled = ExtResource("5_81c6f")
 icon = ExtResource("8_l0q4v")
 icon_alignment = 1
 expand_icon = true
@@ -572,10 +498,6 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_l0q4v")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ttdvg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_snbil")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_mo31w")
 icon = ExtResource("12_llugh")
 icon_alignment = 1
 expand_icon = true
@@ -894,9 +816,6 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("3_j8q1b")
-theme_override_styles/pressed = ExtResource("2_cm4xy")
-theme_override_styles/hover = ExtResource("2_cm4xy")
 text = "End Match"
 
 [node name="RestartButton" type="Button" parent="Overlay" unique_id=1686045618]
@@ -910,10 +829,6 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("3_j8q1b")
-theme_override_styles/pressed = ExtResource("2_cm4xy")
-theme_override_styles/hover = ExtResource("2_cm4xy")
-theme_override_styles/disabled = ExtResource("5_81c6f")
 text = "Restart"
 
 [node name="Paused" type="RichTextLabel" parent="Overlay" unique_id=1432275614]

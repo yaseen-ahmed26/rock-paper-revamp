@@ -6,10 +6,10 @@ var computers: Dictionary[StringName, ComputerBase] = {}
 var challenges: Dictionary[StringName, ChallengeBase] = {}
 
 func _ready() -> void:	
-	_load_resources("res://custom_resources/modifiers/resources/", modifiers)	
-	_load_resources("res://custom_resources/gamemodes/resources/", gamemodes)	
-	_load_resources("res://custom_resources/computer_types/resources/", computers)	
-	_load_resources("res://custom_resources/challenges/resources/", challenges)
+	_load_resources("res://content/modifiers/", modifiers)	
+	_load_resources("res://content/gamemodes/", gamemodes)	
+	_load_resources("res://content/opponents/", computers)	
+	_load_resources("res://content/challenges/", challenges)
 
 func _load_resources(path: String, target_dict: Dictionary) -> void:	
 	var directory = DirAccess.open(path)	

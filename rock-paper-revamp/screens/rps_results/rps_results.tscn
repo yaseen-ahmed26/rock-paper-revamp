@@ -2,9 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_86bf1"]
 [ext_resource type="Script" uid="uid://c1pscoi6e3xtx" path="res://screens/rps_results/rps_results.gd" id="2_qqsv3"]
-[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://old/ui/buttons/disabled.tres" id="5_fvl05"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcdt5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7a0j"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -20,39 +19,7 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf7av"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.9098039, 0.4, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmums"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.9098039, 0.4, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvl05"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bil6g"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -68,7 +35,7 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgijt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt57q"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -79,54 +46,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.87426054, 0, 0.13865358, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w52ro"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri7yi"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.9098039, 0.4, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5x33"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.9098039, 0.4, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -420,9 +339,9 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qcdt5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gf7av")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rmums")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o7a0j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bil6g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pt57q")
 text = "[ RESTART ]"
 metadata/_edit_use_anchors_ = true
 
@@ -439,9 +358,9 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_qcdt5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_fvl05")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jgijt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o7a0j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bil6g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pt57q")
 text = "[ MAIN MENU ]"
 metadata/_edit_use_anchors_ = true
 
@@ -458,10 +377,9 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_w52ro")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ri7yi")
-theme_override_styles/hover = SubResource("StyleBoxFlat_n5x33")
-theme_override_styles/disabled = ExtResource("5_fvl05")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o7a0j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bil6g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pt57q")
 text = "[ NEW GAME ]"
 metadata/_edit_use_anchors_ = true
 

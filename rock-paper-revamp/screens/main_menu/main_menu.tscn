@@ -3,13 +3,9 @@
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_6tl50"]
 [ext_resource type="Script" uid="uid://ccnofbw3bs2bj" path="res://screens/main_menu/main_menu.gd" id="1_oa53l"]
 [ext_resource type="Script" uid="uid://c5wujtc7wwq4i" path="res://screens/main_menu/waterfall.gd" id="3_6at21"]
-[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://old/ui/buttons/standard.tres" id="3_t6bnd"]
-[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://old/ui/buttons/pressed.tres" id="4_6tl50"]
 [ext_resource type="Texture2D" uid="uid://bn5xcyv8lxisp" path="res://assets/icons/content/copy_cat.svg" id="4_g1omr"]
-[ext_resource type="StyleBox" uid="uid://cwa5wjrc6f7q8" path="res://old/ui/buttons/hover.tres" id="5_6at21"]
 [ext_resource type="Texture2D" uid="uid://dj0ebaxy0rlnu" path="res://assets/icons/content/hot_hand.svg" id="5_kwfav"]
 [ext_resource type="Texture2D" uid="uid://cggynoh6f8wjd" path="res://assets/icons/content/tax_toll.svg" id="6_n70vs"]
-[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://old/ui/buttons/disabled.tres" id="6_og6xe"]
 [ext_resource type="Texture2D" uid="uid://oebgklt1svnx" path="res://assets/icons/content/duel_decay.svg" id="7_tr6y3"]
 [ext_resource type="Texture2D" uid="uid://rsowjd8wmisa" path="res://assets/icons/content/last_laugh.svg" id="8_l18n7"]
 [ext_resource type="Texture2D" uid="uid://cn10cyuhysx1a" path="res://assets/icons/content/point_perk.svg" id="9_conbw"]
@@ -687,10 +683,6 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("3_t6bnd")
-theme_override_styles/pressed = ExtResource("4_6tl50")
-theme_override_styles/hover = ExtResource("5_6at21")
-theme_override_styles/disabled = ExtResource("6_og6xe")
 text = "Peck"
 
 [node name="Version" type="RichTextLabel" parent="." unique_id=1887183576]

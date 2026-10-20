@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dqm8icokphh3r"]
 
 [ext_resource type="Script" uid="uid://54wankvdp0km" path="res://screens/settings_screen/dropdown_menu/dropdown_menu.gd" id="1_0osqh"]
-[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://old/ui/buttons/disabled.tres" id="4_50n3o"]
 [ext_resource type="Texture2D" uid="uid://d3quoedwu8g3t" path="res://assets/icons/info.png" id="6_1gf75"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntf0g"]
@@ -282,7 +281,6 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_6ircm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tufu4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0osqh")
-theme_override_styles/disabled = ExtResource("4_50n3o")
 text = "Endless"
 
 [node name="SelectedLabel" type="RichTextLabel" parent="TemplateButton" unique_id=2032841793]

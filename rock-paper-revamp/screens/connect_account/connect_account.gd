@@ -6,8 +6,8 @@ var socket: WebSocketPeer = WebSocketPeer.new()
 var connected = false
 var code: String = ""
 
-var link_success_modal: ModalBase = preload("res://custom_resources/modals/link_success.tres")
-var websocket_expired_modal = preload("res://custom_resources/modals/websocket_expired.tres")
+var link_success_modal: ModalBase = preload("res://content/modals/link_success.tres")
+var websocket_expired_modal = preload("res://content/modals/websocket_expired.tres")
 
 func _ready() -> void:	
 	set_process(false)
