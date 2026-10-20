@@ -794,7 +794,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=844011000]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15

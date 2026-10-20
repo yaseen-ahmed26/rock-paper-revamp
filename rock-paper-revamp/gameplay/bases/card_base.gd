@@ -36,7 +36,7 @@ enum Weight {
 ## For specials, how much combined weight this card requires to play. Includes Lead + Chain weight.
 @export var weight_requirement: int = 3
 ## For specials, he array of special effects this applies.
-@export var special_effects: Array[ModifierEffect] = []
+@export var special_effects: Array[GameplayEffect] = []
 
 func get_weight_value():
 	return Weight.NONE if is_special else int(weight)

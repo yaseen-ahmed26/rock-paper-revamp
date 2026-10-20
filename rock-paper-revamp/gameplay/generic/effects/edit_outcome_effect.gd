@@ -1,4 +1,4 @@
-extends ModifierEffect
+extends GameplayEffect
 class_name EditOutcomeEffect
 
 const SHOW_IF_EDIT: Dictionary = {

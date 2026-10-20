@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://c4mx5ctlr8wxf"]
 
-[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/modifier/modifier_rule.gd" id="1_oketd"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/generic/gameplay_rule.gd" id="1_oketd"]
 [ext_resource type="Texture2D" uid="uid://dei5o2r6s48h5" path="res://assets/icons/content/thought_tax.svg" id="1_pinxo"]
-[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/modifier/modifier_effect.gd" id="2_rjfrk"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_rjfrk"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_pinxo"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://gameplay/generic/effects/modify_score_effect.gd" id="3_rjfrk"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="4_bqyb1"]

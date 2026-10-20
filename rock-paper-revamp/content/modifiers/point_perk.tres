@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://x8c86s23xhkc"]
 
 [ext_resource type="Texture2D" uid="uid://cn10cyuhysx1a" path="res://assets/icons/content/point_perk.svg" id="1_h4t64"]
-[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/modifier/modifier_rule.gd" id="1_sx68s"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/generic/gameplay_rule.gd" id="1_sx68s"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="2_h4t64"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="3_yksg4"]
 

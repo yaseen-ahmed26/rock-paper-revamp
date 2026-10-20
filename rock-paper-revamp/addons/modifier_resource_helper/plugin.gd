@@ -35,7 +35,7 @@ func _on_dialog_confirmed(dialog: ConfirmationDialog):
 		modifier_base.challenge_id = data["challenge"].get("id")
 	
 	for i in data.get("number_of_rules"):
-		modifier_base.rules.append(ModifierRule.new())
+		modifier_base.rules.append(GameplayRule.new())
 		
 	for i in data.get("stat_changes"):
 		modifier_base.starting_stat_changes.append(StatChange.new())

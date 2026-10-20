@@ -1,4 +1,4 @@
-extends ModifierEffect
+extends GameplayEffect
 class_name ModifyStatEffect
 
 const SHOW_IF_STAT: Dictionary = {

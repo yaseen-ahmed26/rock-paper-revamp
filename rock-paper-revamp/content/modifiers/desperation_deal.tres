@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://byk3gy7y418ip"]
 
 [ext_resource type="Texture2D" uid="uid://cggbsgnk57jm1" path="res://assets/icons/content/desperation_deal.svg" id="1_07hba"]
-[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/modifier/modifier_rule.gd" id="1_rjcid"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/generic/gameplay_rule.gd" id="1_rjcid"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="2_5w22n"]
-[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/modifier/modifier_effect.gd" id="2_87sje"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_87sje"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://gameplay/generic/effects/modify_score_effect.gd" id="3_07hba"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="3_n4sdg"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="4_8uo41"]

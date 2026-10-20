@@ -1,4 +1,4 @@
-extends ModifierEffect
+extends GameplayEffect
 class_name ModifyScoreEffect
 
 enum Target {

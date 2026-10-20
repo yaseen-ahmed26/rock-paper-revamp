@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://brdsf40lybkj4"]
 
-[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/modifier/modifier_rule.gd" id="1_nnqup"]
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/generic/gameplay_rule.gd" id="1_nnqup"]
 [ext_resource type="Texture2D" uid="uid://bd7ggug1c67tc" path="res://assets/icons/content/artifical_advantage.svg" id="1_ueuoh"]
 [ext_resource type="Script" uid="uid://g13g4ik8oom7" path="res://gameplay/modifier/modifier_internal.gd" id="2_70y1j"]
-[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/modifier/modifier_effect.gd" id="2_gwajy"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_gwajy"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_1gjca"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="4_eafm8"]
 [ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://gameplay/generic/effects/modify_score_effect.gd" id="4_xli11"]
@@ -85,7 +85,7 @@ script = ExtResource("4_eafm8")
 timing = 1
 group = 3
 starting_stat_changes = Array[ExtResource("5_wpdxu")]([SubResource("Resource_etmli")])
-rules = Array[ExtResource("1_nnqup")]([SubResource("Resource_uaa4u"), SubResource("Resource_f3sin")])
+rules = Array[Resource]([SubResource("Resource_uaa4u"), SubResource("Resource_f3sin")])
 exclude_badge = true
 internal_state = SubResource("Resource_ueuoh")
 id = &"artificial_advantage"

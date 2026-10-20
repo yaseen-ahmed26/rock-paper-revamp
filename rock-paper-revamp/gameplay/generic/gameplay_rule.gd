@@ -1,10 +1,10 @@
 extends Resource
-class_name ModifierRule
+class_name GameplayRule
 
 ## The triggers required for this rule to be met.
 @export var triggers: Array[GameplayTrigger]
 ## The effects applied when this rule has been met.
-@export var effects: Array[ModifierEffect]
+@export var effects: Array[GameplayEffect]
 
 func check_and_apply(stats: GameStats, internal_state: ModifierInternal):
 	var triggers_met: int = 0
