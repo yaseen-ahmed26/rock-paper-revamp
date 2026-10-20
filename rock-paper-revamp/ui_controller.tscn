@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://jdt58mdrawj1"]
 
 [ext_resource type="Script" uid="uid://soe6pi5nwfeb" path="res://ui_controller.gd" id="1_3ga5c"]
-[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/standard.tres" id="1_qx04s"]
-[ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://rps_game/rps_game.tscn" id="2_1ajqp"]
-[ext_resource type="PackedScene" uid="uid://cfo70do7yw2jn" path="res://rps_selection/rps_selection.tscn" id="2_rlpp8"]
-[ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://main_menu/main_menu.tscn" id="4_dy358"]
-[ext_resource type="PackedScene" uid="uid://blnyfekenvkrv" path="res://challenge_selection/challenge_selection.tscn" id="5_6nawd"]
-[ext_resource type="PackedScene" uid="uid://bxshdhv2jslts" path="res://rps_results/rps_results.tscn" id="6_q20ay"]
-[ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://profile_screen/profile_screen.tscn" id="7_5q4yu"]
-[ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://splash_screen/splash_screen.tscn" id="8_wxsgv"]
-[ext_resource type="PackedScene" uid="uid://dog0n1x6axob6" path="res://connect_account/connect_account.tscn" id="10_p4p2l"]
-[ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://credits_screen/credits_screen.tscn" id="11_4yodi"]
-[ext_resource type="PackedScene" uid="uid://cs1od7kqjht1k" path="res://settings_screen/settings_screen.tscn" id="12_7bahs"]
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_7bahs"]
+[ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://screens/splash_screen/splash_screen.tscn" id="3_dgec0"]
+[ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://screens/main_menu/main_menu.tscn" id="4_lab58"]
+[ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://screens/profile_screen/profile_screen.tscn" id="5_4vu88"]
+[ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://screens/credits_screen/credits_screen.tscn" id="6_srujj"]
+[ext_resource type="PackedScene" uid="uid://cs1od7kqjht1k" path="res://screens/settings_screen/settings_screen.tscn" id="7_smdyi"]
+[ext_resource type="PackedScene" uid="uid://cfo70do7yw2jn" path="res://screens/rps_selection/rps_selection.tscn" id="8_mm5gi"]
+[ext_resource type="PackedScene" uid="uid://blnyfekenvkrv" path="res://screens/challenge_selection/challenge_selection.tscn" id="9_6crn1"]
+[ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://screens/rps_game/rps_game.tscn" id="10_8pwax"]
+[ext_resource type="PackedScene" uid="uid://bxshdhv2jslts" path="res://screens/rps_results/rps_results.tscn" id="11_rs37c"]
+[ext_resource type="PackedScene" uid="uid://dog0n1x6axob6" path="res://screens/connect_account/connect_account.tscn" id="12_1fyxq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bahs"]
 content_margin_left = 0.0
@@ -94,7 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_qx04s")
+theme = ExtResource("1_7bahs")
 script = ExtResource("1_3ga5c")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1513549206]
@@ -118,34 +118,34 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.23529412, 0.37254903, 1)
 
-[node name="splash_screen" parent="CanvasLayer" unique_id=1403261879 instance=ExtResource("8_wxsgv")]
+[node name="splash_screen" parent="CanvasLayer" unique_id=1403261879 instance=ExtResource("3_dgec0")]
 mouse_filter = 2
 
-[node name="main_menu" parent="CanvasLayer" unique_id=771054830 instance=ExtResource("4_dy358")]
+[node name="main_menu" parent="CanvasLayer" unique_id=771054830 instance=ExtResource("4_lab58")]
 visible = false
 
-[node name="profile_screen" parent="CanvasLayer" unique_id=849068084 instance=ExtResource("7_5q4yu")]
+[node name="profile_screen" parent="CanvasLayer" unique_id=849068084 instance=ExtResource("5_4vu88")]
 visible = false
 
-[node name="credits_screen" parent="CanvasLayer" unique_id=1581726153 instance=ExtResource("11_4yodi")]
+[node name="credits_screen" parent="CanvasLayer" unique_id=1581726153 instance=ExtResource("6_srujj")]
 visible = false
 
-[node name="settings_screen" parent="CanvasLayer" unique_id=1983250911 instance=ExtResource("12_7bahs")]
+[node name="settings_screen" parent="CanvasLayer" unique_id=1983250911 instance=ExtResource("7_smdyi")]
 visible = false
 
-[node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("2_rlpp8")]
+[node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("8_mm5gi")]
 visible = false
 
-[node name="challenge_selection" parent="CanvasLayer" unique_id=573053736 instance=ExtResource("5_6nawd")]
+[node name="challenge_selection" parent="CanvasLayer" unique_id=573053736 instance=ExtResource("9_6crn1")]
 visible = false
 
-[node name="rps_game" parent="CanvasLayer" unique_id=1532588308 instance=ExtResource("2_1ajqp")]
+[node name="rps_game" parent="CanvasLayer" unique_id=1532588308 instance=ExtResource("10_8pwax")]
 visible = false
 
-[node name="rps_results" parent="CanvasLayer" unique_id=1683650170 instance=ExtResource("6_q20ay")]
+[node name="rps_results" parent="CanvasLayer" unique_id=1683650170 instance=ExtResource("11_rs37c")]
 visible = false
 
-[node name="connect_account" parent="CanvasLayer" unique_id=1339535195 instance=ExtResource("10_p4p2l")]
+[node name="connect_account" parent="CanvasLayer" unique_id=1339535195 instance=ExtResource("12_1fyxq")]
 visible = false
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer" unique_id=1071695530]

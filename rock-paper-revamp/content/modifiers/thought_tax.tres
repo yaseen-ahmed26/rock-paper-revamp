@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://c4mx5ctlr8wxf"]
+
+[ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/modifier/modifier_rule.gd" id="1_oketd"]
+[ext_resource type="Texture2D" uid="uid://dei5o2r6s48h5" path="res://assets/icons/content/thought_tax.svg" id="1_pinxo"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/modifier/modifier_effect.gd" id="2_rjfrk"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_pinxo"]
+[ext_resource type="Script" uid="uid://dwedrynnemxjg" path="res://gameplay/generic/effects/modify_score_effect.gd" id="3_rjfrk"]
+[ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="4_bqyb1"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="5_nvf3g"]
+[ext_resource type="Script" uid="uid://5af3r3b1yoqf" path="res://gameplay/generic/triggers/stat_comparison_trigger.gd" id="6_cx00f"]
+
+[sub_resource type="Resource" id="Resource_4v0wp"]
+script = ExtResource("3_rjfrk")
+operation = 1
+value = 0.5
+metadata/_custom_type_script = "uid://dwedrynnemxjg"
+
+[sub_resource type="Resource" id="Resource_fn4kr"]
+script = ExtResource("6_cx00f")
+operator = 3
+target_value = 1.1
+metadata/_custom_type_script = "uid://5af3r3b1yoqf"
+
+[sub_resource type="Resource" id="Resource_45nfm"]
+script = ExtResource("1_oketd")
+triggers = Array[ExtResource("3_pinxo")]([SubResource("Resource_fn4kr")])
+effects = Array[ExtResource("2_rjfrk")]([SubResource("Resource_4v0wp")])
+
+[sub_resource type="Resource" id="Resource_d0eog"]
+script = ExtResource("5_nvf3g")
+target_stat = 8
+value = 3.0
+metadata/_custom_type_script = "uid://8r4n2kkpcmj0"
+
+[resource]
+script = ExtResource("4_bqyb1")
+tier = 3
+timing = 2
+group = 3
+starting_stat_changes = Array[ExtResource("5_nvf3g")]([SubResource("Resource_d0eog")])
+rules = Array[ExtResource("1_oketd")]([SubResource("Resource_45nfm")])
+exclude_badge = true
+requires_purchase = true
+purchase_cost = 50
+id = &"thought_tax"
+display_name = "Thought Tax"
+description = "You lose 0.5 points every second if you have at least 1 point but you gain 3 points on every win."
+icon = ExtResource("1_pinxo")

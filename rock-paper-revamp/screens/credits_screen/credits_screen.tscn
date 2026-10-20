@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://8fsmpbowuv0f"]
+
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_24w6d"]
+[ext_resource type="Script" uid="uid://b3xqi5k1ltjmq" path="res://screens/credits_screen/credits_screen.gd" id="1_xp4ur"]
+
+[sub_resource type="Gradient" id="Gradient_vlony"]
+offsets = PackedFloat32Array(0, 0.95454544, 1)
+colors = PackedColorArray(1, 1, 1, 0.3529412, 0.43529412, 0.43529412, 0.43529412, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pb4aj"]
+gradient = SubResource("Gradient_vlony")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8q0v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57c87"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8745098, 0, 0.13725491, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb4aj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.87426054, 0, 0.13865358, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="credits_screen" type="Control" unique_id=1581726153]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_24w6d")
+script = ExtResource("1_xp4ur")
+
+[node name="Background" type="ColorRect" parent="." unique_id=720800548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.020838426, 0.07526652, 1)
+
+[node name="Light" type="TextureRect" parent="Background" unique_id=1609915203]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_pb4aj")
+
+[node name="Description" type="RichTextLabel" parent="." unique_id=1332772467]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -654.0
+offset_top = -289.0
+offset_right = 654.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+text = "Modifier icons sourced from [color=green][url=https://game-icons.net//]game-icons.net[/url][color=white] under a [color=gold]CC-BY 3.0[color=white]. 
+Authors: [color=gold]Lorc[color=white], [color=gold]Delapouite[color=white], [color=gold]sbed[color=white], [color=gold]Skoll[color=white] and [color=gold]Caro Asercion[color=white].
+
+Menu icons sourced from [color=green][url=https://www.flaticon.com/icon-fonts-most-downloaded?weight=bold&type=uicon]flaticon.com[/url]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1315231841]
+layout_mode = 0
+anchor_left = 0.033854168
+anchor_top = 0.91018516
+anchor_right = 0.21197917
+anchor_bottom = 0.9675926
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8q0v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_57c87")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pb4aj")
+text = "[ RETURN ]"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="meta_clicked" from="Description" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

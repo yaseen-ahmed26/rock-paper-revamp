@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BestOfGamemode" format=3 uid="uid://cqpsy7c0siakh"]
+
+[ext_resource type="Script" uid="uid://rwt6wti4yr2i" path="res://gameplay/gamemodes/best_of_gamemode.gd" id="1_0w48q"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="2_3kive"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://gameplay/bases/task_base.gd" id="3_fb74e"]
+[ext_resource type="Resource" uid="uid://bgf24tnlryl3d" path="res://content/tasks/best_of_gm_1.tres" id="4_y8mwf"]
+
+[resource]
+script = ExtResource("1_0w48q")
+task_pool = Array[ExtResource("3_fb74e")]([ExtResource("4_y8mwf")])
+id = &"best_of"
+display_name = "Best of"
+description = "Play the best of X rounds."
+metadata/_custom_type_script = "uid://rwt6wti4yr2i"

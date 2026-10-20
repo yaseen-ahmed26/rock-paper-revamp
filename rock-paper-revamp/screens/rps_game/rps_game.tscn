@@ -1,0 +1,1004 @@
+[gd_scene format=3 uid="uid://beosahy8j7bes"]
+
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_j8q1b"]
+[ext_resource type="Script" uid="uid://bmnj1k5y77bb4" path="res://screens/rps_game/rps_game.gd" id="1_ybur4"]
+[ext_resource type="StyleBox" uid="uid://c3hmr76a6smyo" path="res://old/ui/buttons/standard.tres" id="2_cm4xy"]
+[ext_resource type="StyleBox" uid="uid://dp60in1yp6itd" path="res://old/ui/buttons/pressed.tres" id="3_j8q1b"]
+[ext_resource type="StyleBox" uid="uid://dmj4mhui5qtdm" path="res://old/ui/buttons/disabled.tres" id="5_81c6f"]
+[ext_resource type="Texture2D" uid="uid://bgcrlmrgi3cns" path="res://assets/icons/rock.png" id="7_isxwt"]
+[ext_resource type="Texture2D" uid="uid://cv8ckqnk758sf" path="res://assets/icons/paper.png" id="8_l0q4v"]
+[ext_resource type="Texture2D" uid="uid://cbwj5dktgyxy6" path="res://assets/cosmetics/card_design.png" id="10_l0q4v"]
+[ext_resource type="Texture2D" uid="uid://bafo16haficgj" path="res://assets/cosmetics/card_back.png" id="11_ttdvg"]
+[ext_resource type="Texture2D" uid="uid://1flnqlg86mcc" path="res://assets/icons/content/scissor_specialist.svg" id="12_llugh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0q4v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttdvg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snbil"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.9098039, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo31w"]
+bg_color = Color(0, 0.31692833, 0.5000401, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlcjl"]
+bg_color = Color(1.973361e-06, 0.6091103, 0.2557871, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.62967473, 0.62967473, 0.6296747, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(1, 1, 1, 0.63529414)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0y8y"]
+bg_color = Color(1.732707e-06, 0.7035907, 0.30000165, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.9098039, 0.4, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(1, 1, 1, 0.63529414)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cs01f"]
+bg_color = Color(1.732707e-06, 0.7035907, 0.30000165, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(1, 1, 1, 0.63529414)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdwcr"]
+bg_color = Color(1.973361e-06, 0.6091103, 0.2557871, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.62967473, 0.62967473, 0.6296747, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(1, 1, 1, 0.63529414)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llugh"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.19793725, 0.19793722, 0.19793722, 0.30588236)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.20871013, 0.20871016, 0.20871007, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 12
+
+[sub_resource type="Animation" id="Animation_ttdvg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AICard:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AICard/RearDesign:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AICard/FrontDesign:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_snbil"]
+resource_name = "flip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AICard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(-1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AICard/RearDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AICard/FrontDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_qlcjl"]
+resource_name = "unflip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AICard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AICard/RearDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AICard/FrontDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snbil"]
+_data = {
+&"RESET": SubResource("Animation_ttdvg"),
+&"flip_card": SubResource("Animation_snbil"),
+&"unflip_card": SubResource("Animation_qlcjl")
+}
+
+[sub_resource type="Animation" id="Animation_llugh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mo31w"]
+resource_name = "flip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_x0y8y"]
+resource_name = "unflip_card"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerCard:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7),
+"transitions": PackedFloat32Array(2, 0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCard/RearDesign:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerCard/FrontDesign:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlcjl"]
+_data = {
+&"RESET": SubResource("Animation_llugh"),
+&"flip_card": SubResource("Animation_mo31w"),
+&"unflip_card": SubResource("Animation_x0y8y")
+}
+
+[node name="rps_game" type="Control" unique_id=1532588308]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j8q1b")
+script = ExtResource("1_ybur4")
+
+[node name="Background" type="ColorRect" parent="." unique_id=937810746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.020838426, 0.07526652, 1)
+
+[node name="RoundTimer" type="Timer" parent="." unique_id=720391326]
+wait_time = 5.0
+
+[node name="ModifierTimer" type="Timer" parent="." unique_id=1699236194]
+
+[node name="MoveButtons" type="VBoxContainer" parent="." unique_id=437985943]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -647.0
+offset_top = -168.0
+offset_right = -547.0
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="Rock" type="Button" parent="MoveButtons" unique_id=1266863930]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0q4v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ttdvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_snbil")
+theme_override_styles/disabled = ExtResource("5_81c6f")
+icon = ExtResource("7_isxwt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Rock" unique_id=1393121460]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[color=gold]✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Rock" unique_id=1567809039]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -28.0
+offset_right = -4.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "[1]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Paper" type="Button" parent="MoveButtons" unique_id=2099804517]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0q4v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ttdvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_snbil")
+theme_override_styles/disabled = ExtResource("5_81c6f")
+icon = ExtResource("8_l0q4v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=947428098]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[color=gold]✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Paper" unique_id=1751655994]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -28.0
+offset_right = -4.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "[2]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scissors" type="Button" parent="MoveButtons" unique_id=362736112]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0q4v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ttdvg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_snbil")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mo31w")
+icon = ExtResource("12_llugh")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SelectedLabel" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=388179037]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[color=gold]✓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keybind" type="RichTextLabel" parent="MoveButtons/Scissors" unique_id=1052405234]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -28.0
+offset_right = -4.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 22
+text = "[3]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Streak" type="RichTextLabel" parent="." unique_id=116353562]
+layout_mode = 1
+offset_left = 33.0
+offset_top = 36.0
+offset_right = 318.0
+offset_bottom = 197.0
+theme_override_font_sizes/normal_font_size = 34
+text = "Streak: 0
+Best: 0"
+
+[node name="RoundsPlayed" type="RichTextLabel" parent="." unique_id=1459284669]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = 99.0
+offset_right = 129.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 34
+text = "Round 1/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RoundEnd" type="RichTextLabel" parent="." unique_id=790821278]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -691.0
+offset_top = 72.0
+offset_right = 691.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 38
+text = "You lost, +1 point to The Gambler!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModifiersActive" type="VBoxContainer" parent="." unique_id=2124778655]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 45.0
+offset_top = -214.0
+offset_right = 269.0
+offset_bottom = 214.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Template" type="RichTextLabel" parent="ModifiersActive" unique_id=1285784742]
+visible = false
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 21
+text = "Safety Shield"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionButton" type="Button" parent="." unique_id=2071283643]
+layout_mode = 0
+offset_left = 1521.0
+offset_top = 983.0
+offset_right = 1863.0
+offset_bottom = 1045.0
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_qlcjl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x0y8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cs01f")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_tdwcr")
+text = "[ START ]"
+
+[node name="PlayerCard" type="TextureRect" parent="." unique_id=947189762]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -210.0
+offset_right = -210.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 210)
+texture = ExtResource("10_l0q4v")
+expand_mode = 1
+
+[node name="RearDesign" type="TextureRect" parent="PlayerCard" unique_id=1817349683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ttdvg")
+expand_mode = 1
+
+[node name="FrontDesign" type="TextureRect" parent="PlayerCard" unique_id=192112922]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -73.0
+offset_right = 70.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_llugh")
+expand_mode = 1
+
+[node name="AICard" type="TextureRect" parent="." unique_id=2140386350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -210.0
+offset_right = 510.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 210)
+texture = ExtResource("10_l0q4v")
+expand_mode = 1
+
+[node name="RearDesign" type="TextureRect" parent="AICard" unique_id=214851226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ttdvg")
+expand_mode = 1
+
+[node name="FrontDesign" type="TextureRect" parent="AICard" unique_id=846982876]
+visible = false
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -73.0
+offset_right = 70.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_llugh")
+expand_mode = 1
+
+[node name="Timer" type="Panel" parent="." unique_id=1671261737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -85.0
+offset_right = 85.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_llugh")
+
+[node name="Label" type="RichTextLabel" parent="Timer" unique_id=1841407122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerScore" type="RichTextLabel" parent="." unique_id=868108866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -295.0
+offset_right = -165.0
+offset_bottom = -232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "You [color=gold][0]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="PlayerScore" unique_id=292827495]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AIScore" type="RichTextLabel" parent="." unique_id=685178727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 156.0
+offset_top = -295.0
+offset_right = 546.0
+offset_bottom = -232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[color=gold][0] [color=white]The Gambler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="AIScore" unique_id=806418286]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=844011000]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.77254903)
+
+[node name="QuitButton" type="Button" parent="Overlay" unique_id=578843416]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 983.0
+offset_right = 944.0
+offset_bottom = 1045.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q1b")
+theme_override_styles/pressed = ExtResource("2_cm4xy")
+theme_override_styles/hover = ExtResource("2_cm4xy")
+text = "End Match"
+
+[node name="RestartButton" type="Button" parent="Overlay" unique_id=1686045618]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 983.0
+offset_right = 1318.0
+offset_bottom = 1045.0
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q1b")
+theme_override_styles/pressed = ExtResource("2_cm4xy")
+theme_override_styles/hover = ExtResource("2_cm4xy")
+theme_override_styles/disabled = ExtResource("5_81c6f")
+text = "Restart"
+
+[node name="Paused" type="RichTextLabel" parent="Overlay" unique_id=1432275614]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -59.0
+offset_right = 449.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 72
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GamemodeInfo" type="RichTextLabel" parent="Overlay" unique_id=1910058929]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -927.0
+offset_top = -513.0
+offset_right = -29.0
+offset_bottom = -426.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=gold]First to 3:[color=white] Be the first to 3"
+vertical_alignment = 1
+
+[node name="MatchInfo" type="RichTextLabel" parent="Overlay" unique_id=1328972586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -927.0
+offset_top = -420.0
+offset_right = -165.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Max Rounds: 5
+Max Points: 3
+Modifiers Active: [Safety Shield, Choice Cooldown, Vampire Victory]"
+
+[node name="Tasks" type="RichTextLabel" parent="Overlay" unique_id=1064072342]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -927.0
+offset_top = -164.0
+offset_right = -165.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Tasks:
+None!"
+
+[node name="AIAnimation" type="AnimationPlayer" parent="." unique_id=268858103]
+libraries/ = SubResource("AnimationLibrary_snbil")
+
+[node name="PlayerAnimation" type="AnimationPlayer" parent="." unique_id=1103861573]
+libraries/ = SubResource("AnimationLibrary_qlcjl")
+
+[connection signal="pressed" from="ActionButton" to="." method="_on_action_btn_pressed"]
+[connection signal="pressed" from="Overlay/QuitButton" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="Overlay/RestartButton" to="." method="_on_restart_btn_pressed"]
