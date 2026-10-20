@@ -19,6 +19,13 @@ func _ready() -> void:
 		
 		var setting = $VBoxContainer.get_node_or_null(k)
 		
+		if setting: setting.setup(v)
+	
+	for k in SaveManager.local_saved_settings.keys():
+		var v = SaveManager.local_saved_settings[k]
+		
+		var setting = $VBoxContainer.get_node_or_null(k)
+		
 		if setting:		
 			var callback = setting_callbacks.get(k)
 			
@@ -29,8 +36,6 @@ func _ready() -> void:
 					callback.bind(v).call()
 				
 				setting.setting_changed.connect(callback)			
-
-			setting.setup(v)
 
 func _on_window_btn_pressed(index: int, _options: Array):
 	match index:
