@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LoopTestComputer" format=3 uid="uid://pebkpacdygp1"]
+
+[ext_resource type="Script" uid="uid://cqdght5f0gxst" path="res://gameplay/computers/loop_test.gd" id="1_xkyxf"]
+
+[resource]
+script = ExtResource("1_xkyxf")
+suit = 1
+weight = 1
+id = &"loop_test"
+display_name = "Loop Test"
+description = "Test bot for The Loop"
+metadata/_custom_type_script = "uid://cqdght5f0gxst"

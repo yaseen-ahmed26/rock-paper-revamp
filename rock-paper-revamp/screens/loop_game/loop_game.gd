@@ -23,7 +23,7 @@ enum Scenarios {
 
 # Needs refactoring
 # var gamemode: GamemodeBase = null
-# var computer: ComputerBase = null
+var computer: ComputerBase = null
 # var modifiers: Array[ModifierBase] = []
 # var challenge: ChallengeBase = null
 # var tasks_completed: int = 0
@@ -33,6 +33,8 @@ var game_over: bool = false
 
 func _ready() -> void:
 	if test_mode: _start_game()
+	
+	computer = ContentManager.computers.values()[0]
 	
 	ui_handler.move_chosen.connect(submit_moves)
 
@@ -104,23 +106,14 @@ func _start_round() -> void:
 
 		submit_moves(p_move, a_move)
 
-func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:
+func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:	
+	a_move = a_move if a_move != null else computer.pick_move(game_stats)
+	
 	game_stats.player_turn_move = p_move
 	game_stats.player_move = CardBase.Suit.keys()[p_move.get_effective_suit()].to_lower()
-
-	if a_move != null:
-		game_stats.computer_turn_move = a_move
-		game_stats.computer_move = CardBase.Suit.keys()[a_move.get_effective_suit()].to_lower()
-		game_stats.computer_state.consume_played_cards(a_move)
-	else:
-		# game_stats.computer_turn_move = computer.get_chosen_cards(game_stats)
-		
-		var a_cards: ChosenCards = ChosenCards.new()
-		a_cards.set_lead(game_stats.computer_state.hand.pick_random())
-		
-		game_stats.computer_turn_move = a_cards
-		game_stats.computer_move = CardBase.Suit.keys()[a_cards.get_effective_suit()].to_lower()
-		game_stats.computer_state.consume_played_cards(a_cards)
+	
+	game_stats.computer_turn_move = a_move
+	game_stats.computer_move = CardBase.Suit.keys()[a_move.get_effective_suit()].to_lower()
 		
 	# Special Cards
 	# if p_move.special_card:
@@ -133,6 +126,7 @@ func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:
 
 	# Remove played cards
 	game_stats.player_state.consume_played_cards(p_move)
+	game_stats.computer_state.consume_played_cards(a_move)
 
 	_end_round()
 

@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pch2d")
-scenario_to_test = 4
+scenario_to_test = 6
 
 [node name="UIHandler" type="Node" parent="." unique_id=770459276]
 script = ExtResource("2_uw7uq")

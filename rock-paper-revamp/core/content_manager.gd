@@ -10,7 +10,7 @@ var cards: Dictionary[StringName, CardBase] = {}
 func _ready() -> void:	
 	_load_resources("res://content/modifiers/", modifiers)	
 	_load_resources("res://content/gamemodes/", gamemodes)	
-	_load_resources("res://content/opponents/", computers)	
+	_load_resources("res://content/computers/", computers)	
 	_load_resources("res://content/challenges/", challenges)
 	_load_resources("res://content/cards/", cards)
 
