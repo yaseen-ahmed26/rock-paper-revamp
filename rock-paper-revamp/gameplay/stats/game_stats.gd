@@ -4,16 +4,15 @@ extends RefCounted
 enum StatNames {
 	PLAYER_POINTS,
 	COMPUTER_POINTS,
+	HOUSE_BANK,
+	PLAYER_DEFENSE,
+	COMPUTER_DEFENSE,
+	PLAYER_OVERSHIELD,
+	COMPUTER_OVERSHIELD,
 	CURRENT_STREAK,
 	BEST_STREAK,
 	TOTAL_ROUNDS,
 	TIMER_LENGTH,
-	MAX_POINTS,
-	BASE_POINTS_ON_WIN,
-	BONUS_POINTS_ON_WIN,
-	BASE_POINTS_ON_LOSS,
-	BONUS_POINTS_ON_LOSS,
-	GLOBAL_POINT_MULTIPLIER,
 	WINS,
 	LOSSES,
 	DRAWS
@@ -27,133 +26,123 @@ enum RoundOutcome {
 	CLEARED
 }
 
-const DEFAULT_MOVES: Array[String] = ["rock", "paper", "scissors"]
+enum ResolutionScenario {
+	NONE,
+	SCENARIO_A_HONEST_WIN_NEG_WEIGHT,
+	SCENARIO_B_HONEST_WIN_POS_WEIGHT,
+	SCENARIO_C_SNIPE_SUCCESS,
+	SCENARIO_D_DOUBLE_SNIPE_PENALTY,
+	SCENARIO_E_HONEST_SAME_SUIT_WEIGHT_WIN,
+	SCENARIO_F_SNIPE_FAILED_DEFENSE_IGNORED,
+	SCENARIO_G_HONEST_EXACT_TIE
+}
 
+const RPLS_BEATS: Dictionary = {
+	CardBase.Suit.ROCK: [CardBase.Suit.SCISSORS, CardBase.Suit.LIZARD],
+	CardBase.Suit.PAPER: [CardBase.Suit.ROCK, CardBase.Suit.SPOCK],
+	CardBase.Suit.SCISSORS: [CardBase.Suit.PAPER, CardBase.Suit.LIZARD],
+	CardBase.Suit.LIZARD: [CardBase.Suit.PAPER, CardBase.Suit.SPOCK],
+	CardBase.Suit.SPOCK: [CardBase.Suit.ROCK, CardBase.Suit.SCISSORS]
+}
+
+var player_state: PlayerState = PlayerState.new()
+var computer_state: PlayerState = PlayerState.new()
+
+var house_bank: int = 0
+var house_suit: CardBase.Suit = CardBase.Suit.ROCK
+var next_house_suit: CardBase.Suit = CardBase.Suit.PAPER
+var house_history: Array[String] = []
+
+var player_turn_move: ChosenCards = null
+var computer_turn_move: ChosenCards = null
 var player_move: String = ""
 var computer_move: String = ""
-var outcome: RoundOutcome
 
-var player_points: float = 0.0
-var computer_points: float = 0.0
+var outcome: RoundOutcome = RoundOutcome.CLEARED
+var last_scenario: ResolutionScenario = ResolutionScenario.NONE
+var last_round_summary: String = ""
+
+# These actually use the PlayerRoundState variables
+# These are purely for Triggers and Effects
+var player_points: float:
+	get: return float(player_state.bank)
+	set(val): player_state.bank = int(val)
+
+var computer_points: float:
+	get: return float(computer_state.bank)
+	set(val): computer_state.bank = int(val)
+
+var player_defense: int:
+	get: return player_state.defense
+	set(val): player_state.defense = val
+
+var computer_defense: int:
+	get: return computer_state.defense
+	set(val): computer_state.defense = val
+
+var player_overshield: int:
+	get: return player_state.overshield
+	set(val): player_state.overshield = val
+
+var computer_overshield: int:
+	get: return computer_state.overshield
+	set(val): computer_state.overshield = val
 
 var wins: int = 0
 var losses: int = 0
 var draws: int = 0
-
 var current_streak: int = 0
 var best_streak: int = 0
-
 var rounds_played: int = 0
 var total_rounds: int = -1
-var timer_length: float = 5.0
-var max_points: int = -1
-
-var base_points_on_win: float = 1.0
-var base_points_on_loss: float = 1.0
-
-var bonus_points_on_win: float = 0
-var bonus_points_on_loss: float = 0
-
-var global_point_multiplier: float = 1.0
+var timer_length: float = 15.0
 
 var previous_outcome: Array[String] = []
 var player_history: Array[String] = []
 var computer_history: Array[String] = []
-
-var played_moves: Dictionary = {
-	"rock": 0,
-	"paper": 0,
-	"scissors": 0,
-}
-
-"""
-These are for the new The Loop gamemode
-Could either keep it in here or move it to it's own file
-Though likely the entire game will just change to
-The Loop's new ruleset.
-
-var house_move: String
-var next_house_move: String
-var house_history: Array[String] = []
-var house_bank: int = 12
-# Universal, AI and players will have access
-var possible_moves: Array[String] = ["rock", "paper", "scissors", "lizard", "spock"]
-var sniping_allowed: bool = true
-
-"""
-
-var outcome_multiplier: int = 1
-
-var btn_stats: Dictionary[String, MoveStat] = {}
-
 var round_activated_modifiers: Array[StringName] = []
 var modifier_usage_count: Dictionary[StringName, int] = {}
 
 func _init() -> void:
-	reset_btn_state()
+	house_suit = pick_random_suit()
+	next_house_suit = pick_random_suit()
 
-func reset_btn_state():
-	btn_stats.clear()
-	
-	for move in DEFAULT_MOVES:
-		btn_stats[move] = MoveStat.new(move.capitalize(), move, false, true)
-
-func add_used_modifier(modifier_id: StringName):
-	if not round_activated_modifiers.has(modifier_id):
-		round_activated_modifiers.append(modifier_id)
-
-	if not modifier_usage_count.has(modifier_id):
-		modifier_usage_count[modifier_id] = 1
-	else:
-		modifier_usage_count[modifier_id] += 1
-
-func apply_round_outcome():
-	if outcome == RoundOutcome.DISCARD: return
-	
-	var move_bonus: float = 0.0
-	
-	if not player_move.is_empty():
-		move_bonus = btn_stats[player_move].point_bonus
-	
-	var points_to_add_player: float
-	var points_to_add_computer: float
-	
-	match outcome:
-		RoundOutcome.WIN:
-			wins += 1
-			points_to_add_player = ((base_points_on_win + bonus_points_on_win + move_bonus) * global_point_multiplier) 
-			current_streak += 1
-			best_streak = maxi(best_streak, current_streak)
-		RoundOutcome.LOSS:
-			losses += 1
-			points_to_add_computer = ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 
-			current_streak = 0
-		RoundOutcome.DRAW:
-			draws += 1
-			
-	for i in outcome_multiplier:
-		player_points += points_to_add_player
-		computer_points += points_to_add_computer
-
-func record_round_stats() -> void:
-	previous_outcome.append(RoundOutcome.keys()[outcome])
-	
-	if player_move in played_moves:
-		played_moves[player_move] += 1
-		player_history.append(player_move)
-	else:
-		player_history.append("none")
+static func does_suit_beat(attacker: CardBase.Suit, defender: CardBase.Suit):
+	if attacker == CardBase.Suit.NONE or defender == CardBase.Suit.NONE:
+		return false
 		
-	computer_history.append(computer_move)
+	return defender in RPLS_BEATS.get(attacker, [])
 
-func apply_stat_change(stat_change: StatChange):
-	var lower_stat = get_lower_stat(stat_change.target_stat)
+static func is_honest_move(move_suit: CardBase.Suit, current_house_suit: CardBase.Suit):
+	return does_suit_beat(move_suit, current_house_suit)
+
+func pick_random_suit() -> CardBase.Suit:
+	return CardBase.Suit.values().pick_random()
+
+func advance_house_suit() -> void:
+	house_history.append(CardBase.Suit.keys()[house_suit].to_lower())
+	house_suit = next_house_suit
+	next_house_suit = pick_random_suit()
+
+func reset_round() -> void:
+	player_turn_move = null
+	computer_turn_move = null
+	player_move = ""
+	computer_move = ""
+	outcome = RoundOutcome.CLEARED
+	last_scenario = ResolutionScenario.NONE
+	last_round_summary = ""
+	rounds_played += 1
+	house_bank += 1
+	round_activated_modifiers.clear()
+
+func apply_stat_change(stat_change: StatChange) -> void:
+	var lower_stat: String = StatNames.keys()[stat_change.target_stat].to_lower()
 	var current = get(lower_stat)
-	
 	if current == null:
-		push_warning("(GameStats) '%s' is not a valid stat" % stat_change.target_stat)
+		push_warning("(LoopGameStats) '%s' is not a valid stat" % lower_stat)
 		return
-		
+
 	match stat_change.operation:
 		StatChange.Operation.ADD:
 			set(lower_stat, current + stat_change.value)
@@ -166,23 +155,7 @@ func apply_stat_change(stat_change: StatChange):
 		StatChange.Operation.SET:
 			set(lower_stat, stat_change.value)
 
-	print("(GameStats) '%s' has been edited" % lower_stat)
-
-func reset_round():
-	player_move = ""
-	computer_move = ""
-	outcome = RoundOutcome.CLEARED
-	rounds_played += 1
-	round_activated_modifiers.clear()
-	
-	reset_btn_state()
-
-func get_lower_stat(stat_name):
-	return StatNames.keys()[stat_name].to_lower()
-
-func get_points_on_win():
-	var move_bonus: float = btn_stats[player_move].point_bonus
-	return ((base_points_on_win + bonus_points_on_win + move_bonus) * global_point_multiplier) 
-
-func get_points_on_loss():
-	return ((base_points_on_loss + bonus_points_on_loss) * global_point_multiplier) 
+func record_round_stats() -> void:
+	previous_outcome.append(RoundOutcome.keys()[outcome])
+	player_history.append(player_move if not player_move.is_empty() else "none")
+	computer_history.append(computer_move if not computer_move.is_empty() else "none")

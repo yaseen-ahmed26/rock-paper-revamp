@@ -21,8 +21,8 @@ var indicator_dots: Array[Control] = []
 
 func _ready() -> void:
 	_create_carosuel()
-	_update_card()
-	_update_carosuel()
+	# _update_card()
+	# _update_carosuel()
 
 func _create_carosuel():
 	var template: Panel = $CarosuelIndicator/Template

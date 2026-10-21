@@ -10,7 +10,7 @@ func _ready() -> void:
 	for opponent in ContentManager.computers.values():
 		_create_btn(opponent)
 	
-	_select_opponent($Holder.get_children().pick_random())
+	# _select_opponent($Holder.get_children().pick_random())
 
 func _create_btn(computer: ComputerBase):
 	var clone: Button = template_button.duplicate(true)

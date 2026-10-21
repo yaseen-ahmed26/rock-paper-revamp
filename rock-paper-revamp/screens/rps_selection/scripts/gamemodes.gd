@@ -14,7 +14,7 @@ var current_index: int = 0
 
 func _ready() -> void:
 	current_index = ContentManager.gamemodes.keys().find("endless")
-	_update_card()
+	# _update_card()
 
 func _update_settings(gamemode: GamemodeBase):
 	var settings = gamemode.get_customisable_settings()
