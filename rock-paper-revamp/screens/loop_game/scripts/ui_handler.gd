@@ -27,6 +27,15 @@ func _create_cards(hand: Array[CardBase]):
 		
 		clone.set_meta("CardBase", card.duplicate(true))
 
+func _remove_played_cards(chosen_cards: ChosenCards):
+	for child: Panel in player_hand_holder.get_children():
+		if child.name == "TemplateCard": continue
+		
+		var card_base: CardBase = child.get_meta("CardBase")
+
+		if card_base == chosen_cards.lead_card or card_base == chosen_cards.chain_card or card_base == chosen_cards.special_card:
+			child.queue_free()
+
 func _update_card_status():
 	for child: Panel in player_hand_holder.get_children():
 		if child.name == "TemplateCard": continue
@@ -87,5 +96,25 @@ func set_round_start_ui(game_stats: GameStats):
 func set_round_end_ui(game_stats: GameStats):
 	set_round_start_ui(game_stats)
 	
+	$"../RoundOutcome".visible = true
+	$"../ComputerPlayed".visible = true
+	
 	$"../RoundOutcome".text = game_stats.last_round_summary
 	
+	var opponent_card_details: Array = game_stats.computer_turn_move.get_full_card_details()
+	var opponent_played_lead: String = "a %s with a weight of %s" % [
+		opponent_card_details[0]["suit"].capitalize(), 
+		opponent_card_details[0]["weight"].capitalize()
+	] if opponent_card_details.size() > 0 else ""
+	
+	var opponent_played_chain: String = "%s %s" % [
+		opponent_card_details[1]["suit"], 
+		opponent_card_details[1]["weight"]
+	] if opponent_card_details.size() > 1 else ""
+	
+	$"../ComputerPlayed".text = "Opponent played %s %s" % [
+		opponent_played_lead if not opponent_played_lead.is_empty() else "no card",
+		opponent_played_chain if not opponent_played_chain.is_empty() else ""
+	] 
+	
+	_remove_played_cards(game_stats.player_turn_move)

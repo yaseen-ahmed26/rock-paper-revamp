@@ -163,7 +163,9 @@ func _end_round() -> void:
 	])
 	print("--------------------------------------------------")
 
-	round_resolved.emit(game_stats.outcome, game_stats.last_scenario, game_stats.last_round_summary)
+	# round_resolved.emit(game_stats.outcome, game_stats.last_scenario, game_stats.last_round_summary)
+	
+	ui_handler.set_round_end_ui(game_stats)
 	
 	# Gamemode would then check if the game is over
 
