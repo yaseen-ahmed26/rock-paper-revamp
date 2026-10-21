@@ -9,10 +9,10 @@ var chosen_cards: ChosenCards
 func _ready() -> void:
 	chosen_cards = ChosenCards.new()
 	
-func set_ui(game_stats: GameStats):
+func _create_cards(hand: Array[CardBase]):
 	var template_card: Panel = player_hand_holder.get_node("TemplateCard")
 		
-	for card: CardBase in game_stats.player_state.hand:
+	for card: CardBase in hand:
 		var clone: Panel = template_card.duplicate(true)
 		
 		player_hand_holder.add_child(clone)
@@ -56,3 +56,35 @@ func _on_set_chain_btn_pressed(card_panel: Panel):
 
 func _on_submit_moves_pressed() -> void:
 	move_chosen.emit(chosen_cards)
+
+func set_inital_ui(game_stats: GameStats):
+	$"../HouseSuits".visible = true
+	$"../RoundsPlayed".visible = true
+	$"../Banks".visible = true
+	
+	$"../HouseSuits".text = "House Suit: %s • Next Suit: %s" % [game_stats.house_suit, game_stats.next_house_suit]
+	$"../RoundsPlayed".text = "Rounds Played: %d/%s" % [game_stats.rounds_played, str(game_stats.total_rounds) if game_stats.total_rounds != -1 else "∞"]
+	$"../Banks".text = "Player Bank: %d • Computer Bank: %d • House Bank: %d" % [
+		game_stats.player_state.bank,
+		game_stats.computer_state.bank,
+		game_stats.house_bank
+	]
+	
+	_create_cards(game_stats.player_state.hand)
+
+func set_round_start_ui(game_stats: GameStats):
+	$"../HouseSuits".text = "House Suit: %s • Next Suit: %s" % [game_stats.house_suit, game_stats.next_house_suit]
+	$"../RoundsPlayed".text = "Rounds Played: %d/%s" % [game_stats.rounds_played, str(game_stats.total_rounds) if game_stats.total_rounds != -1 else "∞"]
+	$"../Banks".text = "Player Bank: %d • Computer Bank: %d • House Bank: %d" % [
+		game_stats.player_state.bank,
+		game_stats.computer_state.bank,
+		game_stats.house_bank
+	]
+	
+	$"../RoundOutcome".visible = false
+	$"../ComputerPlayed".visible = false
+
+func set_round_end_ui(game_stats: GameStats):
+	set_round_start_ui(game_stats)
+	
+	$"../RoundOutcome".text = game_stats.last_round_summary

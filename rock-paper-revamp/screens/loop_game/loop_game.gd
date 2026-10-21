@@ -62,7 +62,7 @@ func _start_game() -> void:
 	game_stats.player_state.setup(card_pool)
 	game_stats.computer_state.setup(card_pool)
 	
-	ui_handler.set_ui(game_stats)
+	ui_handler.set_inital_ui(game_stats)
 	
 	# Modifiers need to be refactored
 	# for modifier in modifiers:
@@ -105,6 +105,8 @@ func _start_round() -> void:
 		var a_move = ChosenCards.from_raw(test["a_suit"], test["a_weight"])
 
 		submit_moves(p_move, a_move)
+		
+	ui_handler.set_round_start_ui(game_stats)
 
 func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:	
 	a_move = a_move if a_move != null else computer.pick_move(game_stats)
