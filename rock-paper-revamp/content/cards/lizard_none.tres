@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_m6csv")
-suit = 3
+suit = 4
 weight = 0
 id = &"lizard_none"
 display_name = "Lizard (None)"

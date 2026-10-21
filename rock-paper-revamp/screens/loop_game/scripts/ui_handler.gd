@@ -40,7 +40,7 @@ func _update_card_status():
 
 func _on_set_lead_btn_pressed(card_panel: Panel):
 	var card_base: CardBase = card_panel.get_meta("CardBase")
-	
+
 	chosen_cards = ChosenCards.new()
 	
 	chosen_cards.set_lead(card_base)

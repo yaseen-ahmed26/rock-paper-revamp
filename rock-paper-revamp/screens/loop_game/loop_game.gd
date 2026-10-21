@@ -18,7 +18,7 @@ enum Scenarios {
 @onready var ui_handler: Node = $UIHandler
 
 # For testing
-@export var test_mode: bool = false
+@export var test_mode: bool = true
 @export var scenario_to_test: Scenarios
 
 # Needs refactoring

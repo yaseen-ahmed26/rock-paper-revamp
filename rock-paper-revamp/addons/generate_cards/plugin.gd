@@ -4,7 +4,7 @@ extends EditorPlugin
 const MODIFIER_SAVE_PATH: String = "res://content/cards/"
 
 func _enter_tree() -> void:
-	add_tool_menu_item("Create Cards", _create_modifier)
+	add_tool_menu_item("Generate Cards", _create_modifier)
 
 func _create_modifier():
 	for k in CardBase.Suit.keys():

@@ -7,12 +7,12 @@ const SHOW_IF: Dictionary = {
 }
 
 enum Suit {
-	NONE = -1,
-	ROCK = 0,
-	PAPER = 1,
-	SCISSORS = 2,
-	LIZARD = 3,
-	SPOCK = 4
+	NONE,
+	ROCK,
+	PAPER,
+	SCISSORS,
+	LIZARD,
+	SPOCK
 }
 
 enum Weight {
