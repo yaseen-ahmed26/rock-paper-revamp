@@ -1,0 +1,2 @@
+extends DescribedBase
+class_name ItemBase
