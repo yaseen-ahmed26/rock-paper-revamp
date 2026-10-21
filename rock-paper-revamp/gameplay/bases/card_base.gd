@@ -46,3 +46,6 @@ func get_suit_name():
 		return "none"
 	
 	return Suit.keys()[suit].to_lower()
+
+func get_weight_name():
+	return Weight.keys()[weight].to_lower()

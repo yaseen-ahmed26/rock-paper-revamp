@@ -80,3 +80,22 @@ func get_played_cards() -> Array[CardBase]:
 	if special_card: used.append(special_card)
 	
 	return used
+
+func get_full_card_details():
+	var details: Array = []
+	
+	if lead_card:
+		details.append(
+		{
+			"suit": lead_card.get_suit_name(),
+			"weight": lead_card.get_weight_name()
+		})
+		
+	if chain_card:
+		details.append(
+		{
+			"suit": chain_card.get_suit_name(),
+			"weight": chain_card.get_weight_name()
+		})
+	
+	return details

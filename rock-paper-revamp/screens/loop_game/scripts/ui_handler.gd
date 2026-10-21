@@ -88,3 +88,4 @@ func set_round_end_ui(game_stats: GameStats):
 	set_round_start_ui(game_stats)
 	
 	$"../RoundOutcome".text = game_stats.last_round_summary
+	

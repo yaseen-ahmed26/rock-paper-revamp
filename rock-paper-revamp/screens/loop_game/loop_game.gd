@@ -18,7 +18,7 @@ enum Scenarios {
 @onready var ui_handler: Node = $UIHandler
 
 # For testing
-@export var test_mode: bool = true
+@export var test_mode: bool = false
 @export var scenario_to_test: Scenarios
 
 # Needs refactoring
@@ -32,7 +32,8 @@ var game_stats: GameStats
 var game_over: bool = false
 
 func _ready() -> void:
-	if test_mode: _start_game()
+	#if test_mode: _start_game()
+	_start_game()
 	
 	computer = ContentManager.computers.values()[0]
 	
