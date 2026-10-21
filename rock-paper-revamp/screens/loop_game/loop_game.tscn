@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://mqu867itgkl0"]
 
+[ext_resource type="Script" uid="uid://xugksn8rs2gj" path="res://screens/loop_game/loop_game.gd" id="1_pch2d"]
+[ext_resource type="Script" uid="uid://04gkcmodm88g" path="res://screens/loop_game/scripts/ui_handler.gd" id="2_uw7uq"]
+
 [node name="loop_game" type="Control" unique_id=1046685852]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pch2d")
+
+[node name="UIHandler" type="Node" parent="." unique_id=770459276]
+script = ExtResource("2_uw7uq")
