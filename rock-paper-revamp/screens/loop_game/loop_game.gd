@@ -15,8 +15,10 @@ enum Scenarios {
 	RANDOMISE
 }
 
+@onready var ui_handler: Node = $UIHandler
+
 # For testing
-@export var test_mode: bool = true
+@export var test_mode: bool = false
 @export var scenario_to_test: Scenarios
 
 # Needs refactoring
@@ -31,6 +33,8 @@ var game_over: bool = false
 
 func _ready() -> void:
 	if test_mode: _start_game()
+	
+	ui_handler.move_chosen.connect(submit_moves)
 
 func on_screen_change(information: Dictionary) -> void:
 	if information.get("restart"):
@@ -55,6 +59,8 @@ func _start_game() -> void:
 
 	game_stats.player_state.setup(card_pool)
 	game_stats.computer_state.setup(card_pool)
+	
+	ui_handler.set_ui(game_stats)
 	
 	# Modifiers need to be refactored
 	# for modifier in modifiers:
@@ -98,13 +104,24 @@ func _start_round() -> void:
 
 		submit_moves(p_move, a_move)
 
-func submit_moves(p_move: ChosenCards, a_move: ChosenCards) -> void:
+func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:
 	game_stats.player_turn_move = p_move
-	game_stats.computer_turn_move = a_move
-
 	game_stats.player_move = CardBase.Suit.keys()[p_move.get_effective_suit()].to_lower()
-	game_stats.computer_move = CardBase.Suit.keys()[a_move.get_effective_suit()].to_lower()
 
+	if a_move != null:
+		game_stats.computer_turn_move = a_move
+		game_stats.computer_move = CardBase.Suit.keys()[a_move.get_effective_suit()].to_lower()
+		game_stats.computer_state.consume_played_cards(a_move)
+	else:
+		# game_stats.computer_turn_move = computer.get_chosen_cards(game_stats)
+		
+		var a_cards: ChosenCards = ChosenCards.new()
+		a_cards.set_lead(game_stats.computer_state.hand.pick_random())
+		
+		game_stats.computer_turn_move = a_cards
+		game_stats.computer_move = CardBase.Suit.keys()[a_cards.get_effective_suit()].to_lower()
+		game_stats.computer_state.consume_played_cards(a_cards)
+		
 	# Special Cards
 	# if p_move.special_card:
 	# 	for effect in p_move.special_card.special_effects:
@@ -116,7 +133,6 @@ func submit_moves(p_move: ChosenCards, a_move: ChosenCards) -> void:
 
 	# Remove played cards
 	game_stats.player_state.consume_played_cards(p_move)
-	game_stats.computer_state.consume_played_cards(a_move)
 
 	_end_round()
 

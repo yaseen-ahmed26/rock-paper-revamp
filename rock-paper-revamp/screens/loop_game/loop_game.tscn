@@ -11,6 +11,95 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pch2d")
+scenario_to_test = 4
 
 [node name="UIHandler" type="Node" parent="." unique_id=770459276]
 script = ExtResource("2_uw7uq")
+
+[node name="PlayerHand" type="HBoxContainer" parent="." unique_id=308035192]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -202.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TemplateCard" type="Panel" parent="PlayerHand" unique_id=614199324]
+visible = false
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+
+[node name="Suit" type="RichTextLabel" parent="PlayerHand/TemplateCard" unique_id=1138469268]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "Suit: Scissors"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight" type="RichTextLabel" parent="PlayerHand/TemplateCard" unique_id=1959353419]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 33.0
+offset_bottom = 84.0
+grow_horizontal = 2
+text = "Weight: Colossal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SetLead" type="Button" parent="PlayerHand/TemplateCard" unique_id=867298700]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.5
+offset_top = -79.0
+offset_right = 51.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Set Lead"
+
+[node name="SetChain" type="Button" parent="PlayerHand/TemplateCard" unique_id=1379844581]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.5
+offset_top = -44.0
+offset_right = 51.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+disabled = true
+text = "Set Chain"
+
+[node name="SubmitMoves" type="Button" parent="." unique_id=1187074059]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -213.0
+offset_top = -303.0
+offset_right = 213.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "SUBMIT"
+
+[connection signal="pressed" from="SubmitMoves" to="UIHandler" method="_on_submit_moves_pressed"]
