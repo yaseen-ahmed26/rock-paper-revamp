@@ -46,13 +46,15 @@ func on_screen_change(information: Dictionary) -> void:
 
 	_start_game()
 
-func _start_game(player_deck: Array[CardBase] = [], ai_deck: Array[CardBase] = []) -> void:
+func _start_game() -> void:
 	game_stats = GameStats.new()
 	game_over = false
 	# tasks_completed = 0
+	
+	var card_pool: Array[CardBase] = ContentManager.cards.values().duplicate_deep()
 
-	game_stats.player_state.setup(player_deck)
-	game_stats.computer_state.setup(ai_deck)
+	game_stats.player_state.setup(card_pool)
+	game_stats.computer_state.setup(card_pool)
 	
 	# Modifiers need to be refactored
 	# for modifier in modifiers:

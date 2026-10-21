@@ -12,13 +12,13 @@ var overshield: int = 0
 var deck: Array[CardBase] = []
 var hand: Array[CardBase] = []
 
-func setup(starting_deck: Array[CardBase] = []) -> void:
+func setup(card_pool: Array[CardBase]) -> void:
 	bank = STARTING_BANK
 	
 	defense = 0
 	overshield = 0
 	
-	deck = starting_deck.duplicate()
+	deck = card_pool.duplicate()
 	
 	deck.shuffle()
 	hand.clear()
