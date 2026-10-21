@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardBase" format=3 uid="uid://cqe8hsvhher7q"]
+
+[ext_resource type="Script" uid="uid://bt71pwf8pyu4j" path="res://gameplay/bases/card_base.gd" id="1_fluyu"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_2fvn2"]
+
+[resource]
+script = ExtResource("1_fluyu")
+id = &"rock_light"
+display_name = "Rock (Light)"
+description = "Suit: Rock • Weight: Light"

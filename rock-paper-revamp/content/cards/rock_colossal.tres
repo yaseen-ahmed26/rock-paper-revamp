@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardBase" format=3 uid="uid://bcsbr88phuk0e"]
+
+[ext_resource type="Script" uid="uid://bt71pwf8pyu4j" path="res://gameplay/bases/card_base.gd" id="1_oi5ow"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_8a3nx"]
+
+[resource]
+script = ExtResource("1_oi5ow")
+weight = 5
+id = &"rock_colossal"
+display_name = "Rock (Colossal)"
+description = "Suit: Rock • Weight: Colossal"

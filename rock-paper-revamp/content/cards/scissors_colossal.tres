@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardBase" format=3 uid="uid://sbxobulcsgu1"]
+
+[ext_resource type="Script" uid="uid://bt71pwf8pyu4j" path="res://gameplay/bases/card_base.gd" id="1_al8r1"]
+[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_nuntb"]
+
+[resource]
+script = ExtResource("1_al8r1")
+suit = 2
+weight = 5
+id = &"scissors_colossal"
+display_name = "Scissors (Colossal)"
+description = "Suit: Scissors • Weight: Colossal"
