@@ -22,7 +22,7 @@ enum Scenarios {
 @export var scenario_to_test: Scenarios
 
 # Needs refactoring
-# var gamemode: GamemodeBase = null
+var gamemode: GamemodeBase = null
 var computer: ComputerBase = null
 # var modifiers: Array[ModifierBase] = []
 # var challenge: ChallengeBase = null
@@ -167,9 +167,27 @@ func _end_round() -> void:
 	# round_resolved.emit(game_stats.outcome, game_stats.last_scenario, game_stats.last_round_summary)
 	
 	ui_handler.set_round_end_ui(game_stats)
-	
-	# Gamemode would then check if the game is over
+		
+	_check_hand_empty()
+		
+	# Temporary gamemode check
+	if gamemode:
+		if gamemode.is_game_over(game_stats):
+			_end_game()
 
+func _end_game():
+	pass
+
+func _check_hand_empty() -> void:	
+	# Temporary gamemode check
+	if gamemode:
+		if not gamemode.on_hand_emptied(game_stats, true):
+			game_stats.player_state.refill_hand()
+			ui_handler.refill_hand(game_stats.player_state.hand)
+			
+		if not gamemode.on_hand_emptied(game_stats, false):
+			game_stats.computer_state.refill_hand()
+	
 func _evaluate_round(house: CardBase.Suit, p_move: ChosenCards, a_move: ChosenCards) -> Dictionary:
 	# p: Player
 	# a: AI
