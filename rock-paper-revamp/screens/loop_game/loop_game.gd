@@ -24,7 +24,7 @@ enum Scenarios {
 # Needs refactoring
 var gamemode: GamemodeBase = null
 var computer: ComputerBase = null
-# var modifiers: Array[ModifierBase] = []
+var modifiers: Array[ModifierBase] = []
 # var challenge: ChallengeBase = null
 # var tasks_completed: int = 0
 
@@ -65,16 +65,15 @@ func _start_game() -> void:
 	game_stats.computer_state.setup(card_pool)
 	
 	ui_handler.set_inital_ui(game_stats)
-	
-	# Modifiers need to be refactored
-	# for modifier in modifiers:
-		# modifier.setup()
-		# for change: StatChange in modifier.starting_stat_changes:
-			# game_stats.apply_stat_change(change)
 
-	# Gamemodes need to be refactored
-	# if gamemode:
-	# 	gamemode.apply_stats_edit(game_stats)
+	for modifier in modifiers:
+		modifier.setup()
+		
+		for change: StatChange in modifier.starting_stat_changes:
+			game_stats.apply_stat_change(change)
+
+	if gamemode:
+		gamemode.apply_stats_edit(game_stats)
 
 	_start_round()
 
@@ -86,11 +85,7 @@ func _start_round() -> void:
 
 	game_stats.reset_round()
 
-	# Modifiers need to be refactored
-	# for modifier in modifiers:
-	# 	if modifier.applied: continue
-	
-	# 	modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.ROUND_START)
+	_apply_modifiers(ModifierBase.ApplyAt.ROUND_START)
 	
 	# Test stuff
 	if test_mode:
@@ -135,6 +130,8 @@ func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:
 	_end_round()
 
 func _end_round() -> void:
+	_apply_modifiers(ModifierBase.ApplyAt.PRE_EVALUATION)
+	
 	var resolution: Dictionary = _evaluate_round(
 		game_stats.house_suit,
 		game_stats.player_turn_move,
@@ -153,6 +150,8 @@ func _end_round() -> void:
 
 	_apply_points(resolution)
 	game_stats.record_round_stats()
+	
+	_apply_modifiers(ModifierBase.ApplyAt.ROUND_END)
 
 	_post_round_effects()
 	game_stats.advance_house_suit()
@@ -179,6 +178,12 @@ func _end_round() -> void:
 
 func _end_game():
 	pass
+
+func _apply_modifiers(timing: ModifierBase.ApplyAt):
+	for modifier in modifiers:
+		if modifier.applied: continue
+	
+		modifier.check_rules_and_apply(game_stats, timing)
 
 func _save_round_snapshot(resolution):
 	game_stats.current_round.current_round = game_stats.rounds_played

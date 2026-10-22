@@ -4,7 +4,6 @@ extends DescribedBase
 const SHOW_IF = {
 	"challenge_required": "challenge_id",
 	"requires_purchase": "purchase_cost",
-	"has_mastery": ["mastery_requirement", "mastery_version"],
 	"has_internal": "internal_state"
 }
 
@@ -54,7 +53,7 @@ enum Group {
 @export var challenge_required: bool = false
 ## If true, requires a purchase to unlock. Note that this is ignored if challenge_required is true.
 @export var requires_purchase: bool = false
-## If true, then this modifier has a mastery that is a stronger version of the base.
+## If true, then this modifier has a mastery variant. Note that this only displays it on the UI. It does not handle unlocking.
 @export var has_mastery: bool = false
 ## If true, then this modifier has it's own internal state. For example, charges. 
 @export var has_internal: bool = false
@@ -64,10 +63,6 @@ enum Group {
 @export var challenge_id: StringName
 ## The cost of the modifier.
 @export var purchase_cost: int
-## The usage requirement of the base modifier to unlock it's mastery.
-@export var mastery_requirement: int
-## The stronger base version of this modifier.
-# @export var mastery_version: ModifierMastery
 ## It's own internal state, contains charges.
 @export var internal_state: ModifierInternal
 

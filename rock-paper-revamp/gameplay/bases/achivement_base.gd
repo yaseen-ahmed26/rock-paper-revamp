@@ -18,5 +18,5 @@ const SHOW_IF = {
 @export var unlock_mastery: bool = true
 
 @export_group("Advanced")
-## The amount of tokens given when completed.
+## The ID of the modifier mastery to award.
 @export var mastery_id: int
