@@ -9,12 +9,12 @@ const SHOW_IF = {
 }
 
 enum ApplyAt {
-	## Applied right after a new round starts, before any moves are picked and the timer starts.
+	## Applied right after a new round, when the House suit is picked and hands are drawn.
 	ROUND_START,
-	## Applied right after the timer ends but applied BEFORE an outcome is decided and scores are awarded.
+	## Applied right after both players submit their moves but applied BEFORE any outcome is determined.
+	PRE_EVALUATION,
+	## Applied right after evaluation, when outcome and points have been decided and awarded.
 	ROUND_END,
-	## Applied every second the timer is running.
-	EVERY_SECOND
 }
 enum Group {
 	## Affects the player's move.
