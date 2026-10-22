@@ -21,3 +21,6 @@ func apply_stats_edit(_game_stats: GameStats):
 
 func is_game_over(_game_stats: GameStats):
 	return false
+
+func on_hand_emptied(_game_stats: GameStats):
+	return false

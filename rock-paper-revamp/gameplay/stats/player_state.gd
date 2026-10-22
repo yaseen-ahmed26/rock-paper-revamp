@@ -11,6 +11,7 @@ var overshield: int = 0
 
 var deck: Array[CardBase] = []
 var hand: Array[CardBase] = []
+var pile: Array[CardBase] = []
 
 func setup(card_pool: Array[CardBase]) -> void:
 	bank = STARTING_BANK
@@ -22,6 +23,7 @@ func setup(card_pool: Array[CardBase]) -> void:
 	
 	deck.shuffle()
 	hand.clear()
+	pile.clear()
 	
 	draw_initial_hand()
 
@@ -67,6 +69,7 @@ func decay_overshield() -> void:
 func consume_played_cards(turn_move: ChosenCards) -> void:
 	for card in turn_move.get_played_cards():
 		hand.erase(card)
+		pile.append(card)
 
 func tutor_card_on_loss(deck_card_index: int, hand_discard_index: int = -1) -> bool:
 	if deck.is_empty(): return false
@@ -92,4 +95,33 @@ func claim_empty_hand_reward(choose_overshield: bool, overshield_bonus: int = 2,
 	draw_initial_hand()
 
 func has_no_cards() -> bool:
-	return deck.is_empty() and hand.is_empty()
+	return deck.is_empty() and hand.is_empty() and pile.is_empty()
+	
+func draw_cards(amount: int) -> int:
+	var drawn_count: int = 0
+	
+	for i in range(amount):
+		if hand.size() >= MAX_HAND_SIZE: break
+			
+		if deck.is_empty():
+			if pile.is_empty(): break
+			
+			_recycle_pile()
+			
+		hand.append(deck.pop_back())
+		
+		drawn_count += 1
+		
+	return drawn_count
+
+func _recycle_pile() -> void:
+	deck = pile.duplicate()
+	pile.clear()
+	deck.shuffle()
+
+func refill_hand() -> int:
+	var needed: int = STARTING_HAND_SIZE - hand.size()
+	
+	if needed <= 0: return 0
+	
+	return draw_cards(needed)

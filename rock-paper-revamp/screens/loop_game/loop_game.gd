@@ -35,6 +35,7 @@ func _ready() -> void:
 	#if test_mode: _start_game()
 	_start_game()
 	
+	# Test
 	computer = ContentManager.computers.values()[0]
 	
 	ui_handler.move_chosen.connect(submit_moves)
