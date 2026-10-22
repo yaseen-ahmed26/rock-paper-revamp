@@ -379,6 +379,9 @@ func _apply_points(resolution) -> void:
 	var details: Dictionary = loser_state.take_bank_damage(raw_damage, ignore_defense) if raw_damage > 0 else {"blocked_damage": 0, "unshielded_damage": 0, "defense_broken": false}
 	winner_state.bank += (house_payout + details.unshielded_damage)
 
+	if house_payout > 0:
+		game_stats.house_bank = 0
+
 	if winner_is_player:
 		game_stats.current_round.player_bank_gained = house_payout + details.unshielded_damage
 		game_stats.current_round.computer_raw_damage_taken = raw_damage
