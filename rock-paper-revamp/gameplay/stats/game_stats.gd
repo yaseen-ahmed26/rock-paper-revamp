@@ -51,7 +51,6 @@ var computer_state: PlayerState = PlayerState.new()
 var house_bank: int = 0
 var house_suit: CardBase.Suit = CardBase.Suit.ROCK
 var next_house_suit: CardBase.Suit = CardBase.Suit.PAPER
-var house_history: Array[String] = []
 
 var player_turn_move: ChosenCards = null
 var computer_turn_move: ChosenCards = null
@@ -97,15 +96,16 @@ var rounds_played: int = 0
 var total_rounds: int = -1
 var timer_length: float = 15.0
 
-var previous_outcome: Array[String] = []
-var player_history: Array[String] = []
-var computer_history: Array[String] = []
 var round_activated_modifiers: Array[StringName] = []
 var modifier_usage_count: Dictionary[StringName, int] = {}
+
+var current_round: RoundStats
+var previous_rounds: Array[RoundStats] = []
 
 func _init() -> void:
 	house_suit = pick_random_suit()
 	next_house_suit = pick_random_suit()
+	current_round = RoundStats.new()
 
 static func does_suit_beat(attacker: CardBase.Suit, defender: CardBase.Suit):
 	if attacker == CardBase.Suit.NONE or defender == CardBase.Suit.NONE:
@@ -120,7 +120,6 @@ func pick_random_suit() -> CardBase.Suit:
 	return CardBase.Suit.values().pick_random()
 
 func advance_house_suit() -> void:
-	house_history.append(CardBase.Suit.keys()[house_suit].to_lower())
 	house_suit = next_house_suit
 	next_house_suit = pick_random_suit()
 
@@ -135,6 +134,8 @@ func reset_round() -> void:
 	rounds_played += 1
 	house_bank += 1
 	round_activated_modifiers.clear()
+	previous_rounds.append(current_round)
+	current_round = RoundStats.new()
 
 func apply_stat_change(stat_change: StatChange) -> void:
 	var lower_stat: String = StatNames.keys()[stat_change.target_stat].to_lower()
@@ -156,6 +157,4 @@ func apply_stat_change(stat_change: StatChange) -> void:
 			set(lower_stat, stat_change.value)
 
 func record_round_stats() -> void:
-	previous_outcome.append(RoundOutcome.keys()[outcome])
-	player_history.append(player_move if not player_move.is_empty() else "none")
-	computer_history.append(computer_move if not computer_move.is_empty() else "none")
+	pass

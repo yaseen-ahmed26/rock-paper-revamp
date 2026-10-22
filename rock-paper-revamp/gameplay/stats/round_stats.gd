@@ -6,7 +6,7 @@ var house_suit: CardBase.Suit = CardBase.Suit.ROCK
 var next_house_suit: CardBase.Suit = CardBase.Suit.PAPER
 
 var outcome: GameStats.RoundOutcome = GameStats.RoundOutcome.CLEARED
-var last_scenario: GameStats.ResolutionScenario = GameStats.ResolutionScenario.NONE
+var scenario: GameStats.ResolutionScenario = GameStats.ResolutionScenario.NONE
 var round_activated_modifiers: Array[StringName] = []
 
 var current_round: int = 0

@@ -143,7 +143,9 @@ func _end_round() -> void:
 	
 	game_stats.outcome = resolution["outcome"]
 	game_stats.last_scenario = resolution["scenario"]
-
+	
+	_save_round_snapshot(resolution)
+	
 	# for modifier in modifiers:
 	# 	if modifier.applied:
 	# 		continue
@@ -177,6 +179,21 @@ func _end_round() -> void:
 
 func _end_game():
 	pass
+
+func _save_round_snapshot(resolution):
+	game_stats.current_round.current_round = game_stats.rounds_played
+	game_stats.current_round.house_bank = game_stats.house_bank
+	game_stats.current_round.house_suit = game_stats.house_suit
+	game_stats.current_round.next_house_suit = game_stats.next_house_suit
+	game_stats.current_round.outcome = resolution["outcome"]
+	game_stats.current_round.scenario = resolution["scenario"]
+	game_stats.current_round.player_lead_card = game_stats.player_turn_move.lead_card
+	game_stats.current_round.player_chain_card = game_stats.player_turn_move.chain_card
+	game_stats.current_round.player_special_card = game_stats.player_turn_move.special_card
+	game_stats.current_round.computer_lead_card = game_stats.computer_turn_move.lead_card
+	game_stats.current_round.computer_chain_card = game_stats.computer_turn_move.chain_card
+	game_stats.current_round.computer_special_card = game_stats.computer_turn_move.special_card
+	
 
 func _check_hand_empty() -> void:	
 	# Temporary gamemode check
