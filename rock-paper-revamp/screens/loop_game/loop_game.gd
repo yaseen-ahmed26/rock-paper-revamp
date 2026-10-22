@@ -345,6 +345,14 @@ func _apply_points(resolution) -> void:
 			game_stats.house_bank += (p_lost + a_lost)
 			game_stats.last_round_summary = "Scenario D: Both lose 2 points due to Sniping. %d goes to the House." % (p_lost + a_lost)
 			
+			game_stats.current_round.player_raw_damage_taken = 2
+			game_stats.current_round.player_actual_points_lost = p_lost
+			game_stats.current_round.player_ignored_defense = true
+			game_stats.current_round.computer_raw_damage_taken = 2
+			game_stats.current_round.computer_actual_points_lost = a_lost
+			game_stats.current_round.computer_ignored_defense = true
+			return
+			
 		GameStats.ResolutionScenario.SCENARIO_E_HONEST_SAME_SUIT_WEIGHT_WIN:
 			raw_damage = weight_diff
 			game_stats.last_round_summary = "Scenario E: Same suit. Higher weight steals %d from Loser. House untouched." % raw_damage
@@ -360,6 +368,8 @@ func _apply_points(resolution) -> void:
 			game_stats.computer_state.defense += 1
 			game_stats.house_bank += 1
 			game_stats.last_round_summary = "Scenario G: Honest Tie. Both gain +1 Defense, +1 point added to House."
+		
+			return
 		
 	var details: Dictionary = loser_state.take_bank_damage(raw_damage, ignore_defense) if raw_damage > 0 else {"blocked_damage": 0, "unshielded_damage": 0, "defense_broken": false}
 	winner_state.bank += (house_payout + details.unshielded_damage)
