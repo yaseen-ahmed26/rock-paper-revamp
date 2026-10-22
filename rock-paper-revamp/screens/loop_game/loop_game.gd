@@ -303,6 +303,10 @@ func _apply_points(resolution) -> void:
 	
 	var house_bank: int = game_stats.house_bank
 
+	var raw_damage: int = 0
+	var ignore_defense: bool = false
+	var house_payout: int = 0
+
 	match game_stats.outcome:
 		GameStats.RoundOutcome.WIN:
 			game_stats.wins += 1
@@ -319,6 +323,8 @@ func _apply_points(resolution) -> void:
 			game_stats.house_bank = 0
 			winner_state.bank += game_stats.house_bank
 			game_stats.last_round_summary = "Scenario A: Winner gets %d from House. Loser loses 0 (weight diff %d)." % [house_bank, weight_diff]
+			
+			house_payout = house_bank
 
 		GameStats.ResolutionScenario.SCENARIO_B_HONEST_WIN_POS_WEIGHT:
 			game_stats.house_bank = 0
@@ -326,12 +332,17 @@ func _apply_points(resolution) -> void:
 			winner_state.bank += (house_bank + stolen)
 			game_stats.last_round_summary = "Scenario B: Winner gets %d from House and %d from Loser." % [house_bank, stolen]
 
+			house_payout = house_bank
+			raw_damage = weight_diff
+
 		GameStats.ResolutionScenario.SCENARIO_C_SNIPE_SUCCESS:
 			var snipe_bonus: int = ceili(float(maxi(0, weight_diff)) / 2.0)
 			var stolen: int = loser_state.take_bank_damage(1 + snipe_bonus, false)["unshielded_damage"]
 			winner_state.bank += stolen
 			game_stats.last_round_summary = "Scenario C: Sniper steals %d (1 base + halved weight) from Loser. House untouched." % [stolen, snipe_bonus]
-
+		
+			raw_damage = 1 + snipe_bonus
+					
 		GameStats.ResolutionScenario.SCENARIO_D_DOUBLE_SNIPE_PENALTY:
 			var p_lost: int = mini(game_stats.player_state.bank, 2)
 			var a_lost: int = mini(game_stats.computer_state.bank, 2)
@@ -339,23 +350,47 @@ func _apply_points(resolution) -> void:
 			game_stats.computer_state.bank -= a_lost
 			game_stats.house_bank += (p_lost + a_lost)
 			game_stats.last_round_summary = "Scenario D: Both lose 2 points due to Sniping. %d goes to the House." % (p_lost + a_lost)
-
+			
 		GameStats.ResolutionScenario.SCENARIO_E_HONEST_SAME_SUIT_WEIGHT_WIN:
 			var stolen: int = loser_state.take_bank_damage(weight_diff, false)["unshielded_damage"]
 			winner_state.bank += stolen
 			game_stats.last_round_summary = "Scenario E: Same suit. Higher weight steals %d from Loser. House untouched." % stolen
 
+			raw_damage = weight_diff
+
 		GameStats.ResolutionScenario.SCENARIO_F_SNIPE_FAILED_DEFENSE_IGNORED:
 			var stolen: int = loser_state.take_bank_damage(1, true)["unshielded_damage"]
 			winner_state.bank += stolen
 			game_stats.last_round_summary = "Scenario F: Failed Snipe. Honest player takes %d from Sniper, ignoring Sniper's defense." % stolen
-
+			
+			raw_damage = 1
+			ignore_defense = true
+			
 		GameStats.ResolutionScenario.SCENARIO_G_HONEST_EXACT_TIE:
 			game_stats.player_state.defense += 1
 			game_stats.computer_state.defense += 1
 			game_stats.house_bank += 1
 			game_stats.last_round_summary = "Scenario G: Honest Tie. Both gain +1 Defense, +1 point added to House."
+		
+		# Execute damage once
+	var details: Dictionary = loser_state.take_bank_damage(raw_damage, ignore_defense) if raw_damage > 0 else {"blocked_damage": 0, "unshielded_damage": 0, "defense_broken": false}
+	winner_state.bank += (house_payout + details.lost)
 
+	if winner_is_player:
+		game_stats.current_round.player_bank_gained = house_payout + details.unshielded_damage
+		game_stats.current_round.computer_raw_damage_taken = raw_damage
+		game_stats.current_round.computer_damage_blocked = details.blocked_damage
+		game_stats.current_round.computer_actual_points_lost = details.unshielded_damage
+		game_stats.current_round.computer_defense_broken = details.defense_broken
+		game_stats.current_round.computer_ignored_defense = ignore_defense
+	else:
+		game_stats.current_round.computer_bank_gained = house_payout + details.unshielded_damage
+		game_stats.current_round.player_raw_damage_taken = raw_damage
+		game_stats.current_round.player_damage_blocked = details.blocked_damage
+		game_stats.current_round.player_actual_points_lost = details.unshielded_damage
+		game_stats.current_round.player_defense_broken = details.defense_broken
+		game_stats.current_round.player_ignored_defense = ignore_defense
+		
 func _post_round_effects() -> void:
 	if game_stats.outcome == GameStats.RoundOutcome.LOSS:
 		loser_must_tutor_card.emit(true, game_stats.player_state.hand.size() >= PlayerState.MAX_HAND_SIZE)
