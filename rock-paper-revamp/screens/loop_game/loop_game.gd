@@ -322,13 +322,13 @@ func _apply_points(resolution) -> void:
 
 		GameStats.ResolutionScenario.SCENARIO_B_HONEST_WIN_POS_WEIGHT:
 			game_stats.house_bank = 0
-			var stolen: int = loser_state.take_bank_damage(weight_diff, false)
+			var stolen: int = loser_state.take_bank_damage(weight_diff, false)["unshielded_damage"]
 			winner_state.bank += (house_bank + stolen)
 			game_stats.last_round_summary = "Scenario B: Winner gets %d from House and %d from Loser." % [house_bank, stolen]
 
 		GameStats.ResolutionScenario.SCENARIO_C_SNIPE_SUCCESS:
 			var snipe_bonus: int = ceili(float(maxi(0, weight_diff)) / 2.0)
-			var stolen: int = loser_state.take_bank_damage(1 + snipe_bonus, false)
+			var stolen: int = loser_state.take_bank_damage(1 + snipe_bonus, false)["unshielded_damage"]
 			winner_state.bank += stolen
 			game_stats.last_round_summary = "Scenario C: Sniper steals %d (1 base + halved weight) from Loser. House untouched." % [stolen, snipe_bonus]
 
@@ -341,12 +341,12 @@ func _apply_points(resolution) -> void:
 			game_stats.last_round_summary = "Scenario D: Both lose 2 points due to Sniping. %d goes to the House." % (p_lost + a_lost)
 
 		GameStats.ResolutionScenario.SCENARIO_E_HONEST_SAME_SUIT_WEIGHT_WIN:
-			var stolen: int = loser_state.take_bank_damage(weight_diff, false)
+			var stolen: int = loser_state.take_bank_damage(weight_diff, false)["unshielded_damage"]
 			winner_state.bank += stolen
 			game_stats.last_round_summary = "Scenario E: Same suit. Higher weight steals %d from Loser. House untouched." % stolen
 
 		GameStats.ResolutionScenario.SCENARIO_F_SNIPE_FAILED_DEFENSE_IGNORED:
-			var stolen: int = loser_state.take_bank_damage(1, true)
+			var stolen: int = loser_state.take_bank_damage(1, true)["unshielded_damage"]
 			winner_state.bank += stolen
 			game_stats.last_round_summary = "Scenario F: Failed Snipe. Honest player takes %d from Sniper, ignoring Sniper's defense." % stolen
 
