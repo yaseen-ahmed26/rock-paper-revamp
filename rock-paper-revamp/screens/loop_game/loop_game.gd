@@ -194,7 +194,6 @@ func _save_round_snapshot(resolution):
 	game_stats.current_round.computer_chain_card = game_stats.computer_turn_move.chain_card
 	game_stats.current_round.computer_special_card = game_stats.computer_turn_move.special_card
 	
-
 func _check_hand_empty() -> void:	
 	# Temporary gamemode check
 	if gamemode:

@@ -32,27 +32,48 @@ func draw_initial_hand() -> void:
 		if hand.size() < MAX_HAND_SIZE and not deck.is_empty():
 			hand.append(deck.pop_back())
 
-func take_bank_damage(raw_damage: int, ignore_defense: bool = false) -> int:
-	if raw_damage <= 0: return 0
+func take_bank_damage(raw_damage: int, ignore_defense: bool = false) -> Dictionary:
+	var total_protection: int = overshield + defense
+	var blocked_damage: int = 0
+	var unshielded_damage: int = 0
+	
+	if raw_damage <= 0: 
+		return {
+			"blocked_damage": 0,
+			"unshielded_damage": 0,
+			"defense_broken": false
+		}
 
 	if ignore_defense:
 		_deplete_protection(raw_damage)
 		
-		var unshielded_loss: int = mini(bank, raw_damage)
-		bank -= unshielded_loss
+		unshielded_damage = mini(bank, raw_damage)
+		bank -= unshielded_damage
 		
-		return unshielded_loss
+		var defense_broken: bool = total_protection > 0 and (overshield + defense) == 0
+		
+		return {
+			"blocked_damage": 0,
+			"unshielded_damage": unshielded_damage,
+			"defense_broken": defense_broken
+		}
 
-	var blocked: int = mini((defense + overshield), raw_damage)
+	blocked_damage = mini((defense + overshield), raw_damage)
 	
-	_deplete_protection(blocked)
+	_deplete_protection(blocked_damage)
 
-	var remaining_damage: int = raw_damage - blocked
-	var actual_lost: int = mini(bank, remaining_damage)
+	var remaining_damage: int = raw_damage - blocked_damage
+	unshielded_damage = mini(bank, remaining_damage)
 	
-	bank -= actual_lost
+	bank -= unshielded_damage
 	
-	return actual_lost
+	var defense_broken: bool = total_protection > 0 and (overshield + defense) == 0
+	
+	return {
+		"blocked_damage": blocked_damage,
+		"unshielded_damage": unshielded_damage,
+		"defense_broken": defense_broken
+	}
 
 func _deplete_protection(amount: int) -> void:
 	if amount <= 0: return
