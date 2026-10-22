@@ -134,7 +134,6 @@ func reset_round() -> void:
 	rounds_played += 1
 	house_bank += 1
 	round_activated_modifiers.clear()
-	previous_rounds.append(current_round)
 	current_round = RoundStats.new()
 
 func apply_stat_change(stat_change: StatChange) -> void:
@@ -157,4 +156,4 @@ func apply_stat_change(stat_change: StatChange) -> void:
 			set(lower_stat, stat_change.value)
 
 func record_round_stats() -> void:
-	pass
+	previous_rounds.append(current_round)

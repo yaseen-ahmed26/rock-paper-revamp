@@ -397,7 +397,7 @@ func _apply_points(resolution) -> void:
 		game_stats.current_round.player_defense_broken = details.defense_broken
 		game_stats.current_round.player_ignored_defense = ignore_defense
 
-		_save_player_snapshot()
+	_save_player_snapshot()
 
 func _save_player_snapshot():
 	game_stats.current_round.current_streak = game_stats.current_streak
