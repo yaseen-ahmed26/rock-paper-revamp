@@ -351,6 +351,9 @@ func _apply_points(resolution) -> void:
 			game_stats.current_round.computer_raw_damage_taken = 2
 			game_stats.current_round.computer_actual_points_lost = a_lost
 			game_stats.current_round.computer_ignored_defense = true
+			
+			_save_player_snapshot()
+			
 			return
 			
 		GameStats.ResolutionScenario.SCENARIO_E_HONEST_SAME_SUIT_WEIGHT_WIN:
@@ -368,6 +371,8 @@ func _apply_points(resolution) -> void:
 			game_stats.computer_state.defense += 1
 			game_stats.house_bank += 1
 			game_stats.last_round_summary = "Scenario G: Honest Tie. Both gain +1 Defense, +1 point added to House."
+		
+			_save_player_snapshot()
 		
 			return
 		
@@ -388,7 +393,18 @@ func _apply_points(resolution) -> void:
 		game_stats.current_round.player_actual_points_lost = details.unshielded_damage
 		game_stats.current_round.player_defense_broken = details.defense_broken
 		game_stats.current_round.player_ignored_defense = ignore_defense
-		
+
+		_save_player_snapshot()
+
+func _save_player_snapshot():
+	game_stats.current_round.current_streak = game_stats.current_streak
+	game_stats.current_round.player_bank = game_stats.player_state.bank
+	game_stats.current_round.player_defense = game_stats.player_state.defense
+	game_stats.current_round.player_overshield = game_stats.player_state.overshield
+	game_stats.current_round.computer_bank = game_stats.computer_state.bank
+	game_stats.current_round.computer_defense = game_stats.computer_state.defense
+	game_stats.current_round.computer_overshield = game_stats.computer_state.overshield
+
 func _post_round_effects() -> void:
 	if game_stats.outcome == GameStats.RoundOutcome.LOSS:
 		loser_must_tutor_card.emit(true, game_stats.player_state.hand.size() >= PlayerState.MAX_HAND_SIZE)
