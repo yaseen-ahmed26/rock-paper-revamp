@@ -24,6 +24,7 @@ var player_overshield: int
 var player_lead_card: CardBase
 var player_chain_card: CardBase
 var player_special_card: CardBase
+var player_played_honest: bool
 
 var computer_raw_damage_taken: int = 0
 var computer_damage_blocked: int
@@ -37,3 +38,4 @@ var computer_overshield: int
 var computer_lead_card: CardBase
 var computer_chain_card: CardBase
 var computer_special_card: CardBase
+var computer_played_honest: bool
