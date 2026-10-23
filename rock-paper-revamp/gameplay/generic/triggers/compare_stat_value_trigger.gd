@@ -1,15 +1,6 @@
 extends GameplayTrigger
 class_name CompareStatValueTrigger
 
-enum Operator {
-	EQUAL,
-	NOT_EQUAL,
-	GREATER,
-	GREATER_EQUAL,
-	LESS,
-	LESS_EQUAL
-}
-
 @export var target_stat: GameStats.StatNames
 @export var operator: Operator = Operator.EQUAL
 @export var target_value: float = 0.0

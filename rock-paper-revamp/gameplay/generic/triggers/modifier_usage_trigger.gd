@@ -8,12 +8,6 @@ enum Scope {
 	CURRENT_ROUND_ONLY
 }
 
-enum Operator {
-	EQUAL,
-	GREATER_EQUAL,
-	LESS_EQUAL
-}
-
 @export var target_modifier: StringName
 @export var scope: Scope = Scope.WHOLE_MATCH
 ## The operator to comapre with.
