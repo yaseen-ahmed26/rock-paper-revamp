@@ -1,5 +1,5 @@
 extends GameplayTrigger
-class_name EveryXRoundTrigger
+class_name RoundModulusTrigger
 
 ## The number of rounds this happens at.
 @export var round_interval: int = 3

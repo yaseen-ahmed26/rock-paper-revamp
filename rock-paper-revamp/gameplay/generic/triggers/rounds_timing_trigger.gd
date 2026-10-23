@@ -1,5 +1,5 @@
 extends GameplayTrigger
-class_name RoundsPlayedTrigger
+class_name RoundsTimingTrigger
 
 enum Type {
 	DELAY_BY,

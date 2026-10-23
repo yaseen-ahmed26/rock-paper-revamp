@@ -1,5 +1,5 @@
 extends GameplayTrigger
-class_name StatComparisonTrigger
+class_name CompareStatValueTrigger
 
 enum Operator {
 	EQUAL,
