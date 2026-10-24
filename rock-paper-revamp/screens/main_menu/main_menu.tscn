@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bdpc03y1l7wi7" path="res://assets/icons/content/shattered_stalemate.svg" id="25_eqsep"]
 [ext_resource type="Texture2D" uid="uid://c5m8pg7k1lbds" path="res://assets/icons/user.png" id="28_pv4yd"]
 [ext_resource type="Texture2D" uid="uid://cyqckuhbghe7q" path="res://assets/icons/gear_white.png" id="29_6jtit"]
+[ext_resource type="Texture2D" uid="uid://cdy4k72qr54jq" path="res://assets/icons/carrot_right.png" id="30_3ss24"]
 [ext_resource type="Texture2D" uid="uid://bsmbqcveaxri8" path="res://assets/icons/play.png" id="30_conbw"]
 [ext_resource type="Texture2D" uid="uid://dauj37ao2ojuy" path="res://assets/icons/trophy.png" id="30_qk1ns"]
 [ext_resource type="Texture2D" uid="uid://d3quoedwu8g3t" path="res://assets/icons/info.png" id="30_vlony"]
@@ -191,6 +192,57 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ss24"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q0ab"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm0i4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.27387273, 0.27387273, 0.27387273, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
 
 [node name="main_menu" type="Control" unique_id=771054830]
 layout_mode = 3
@@ -519,6 +571,20 @@ text = "EXTRA"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Icon" type="TextureRect" parent="MenuButtons/Extra" unique_id=849656020]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -16.0
+offset_right = 41.0
+offset_bottom = 16.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_3ss24")
+expand_mode = 1
+
 [node name="ExtraButtons" type="HBoxContainer" parent="." unique_id=624887203]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -692,14 +758,17 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = -109.0
-offset_right = 288.0
-offset_bottom = -62.0
+offset_left = 26.0
+offset_top = -84.0
+offset_right = 235.0
+offset_bottom = -33.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ss24")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q0ab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mm0i4")
 text = "Peck"
 
 [node name="Version" type="RichTextLabel" parent="." unique_id=1887183576]

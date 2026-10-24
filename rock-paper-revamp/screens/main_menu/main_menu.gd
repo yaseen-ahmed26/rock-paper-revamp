@@ -28,6 +28,9 @@ var confirm_sign_modal = preload("res://content/modals/confirm_sign_in.tres")
 var refusal_no_internet = preload("res://content/modals/refusal_no_internet.tres")
 var refusal_server_down = preload("res://content/modals/refusal_server_down.tres")
 
+var open_carrot: Texture = preload("res://assets/icons/carrot_right.png")
+var closed_carrot: Texture = preload("res://assets/icons/carrot_down.png")
+
 var extra_menu_open: bool = false
 
 var not_on_screen: bool = false
