@@ -111,6 +111,8 @@ func _on_menu_button_pressed(btn: Button):
 	var screen_name = MENU_BTNS.get(btn.name)
 	Signals.change_screen.emit(screen_name)
 	
+	if extra_menu_open: _on_extra_button_pressed()
+	
 	var tween: Tween = create_tween()
 	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_SINE)
