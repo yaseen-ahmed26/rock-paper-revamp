@@ -3,6 +3,7 @@ extends Control
 @onready var menu_buttons: VBoxContainer = $MenuButtons
 @onready var extra_buttons: HBoxContainer = $ExtraButtons
 @onready var icon_waterfall: Control = $IconWaterfall
+@onready var light: TextureRect = $Background/Light
 
 const MENU_BTNS: Dictionary = {
 	"Play": "rps_selection",
@@ -27,6 +28,8 @@ var refusal_server_down = preload("res://content/modals/refusal_server_down.tres
 
 var extra_menu_open: bool = false
 
+var not_on_screen: bool = false
+
 func _ready() -> void:
 	for btn in menu_buttons.get_children():
 		btn.pressed.connect(_on_menu_button_pressed.bind(btn))
@@ -35,7 +38,8 @@ func _ready() -> void:
 		btn.pressed.connect(_on_side_btn_pressed.bind(btn))
 		btn.mouse_entered.connect(_on_side_btn_mouse_entered.bind(btn))
 		btn.mouse_exited.connect(_on_side_btn_mouse_exited.bind(btn))
-
+	
+	_tween_background_light()
 
 # Helpers
 func _tween_extra_menu(final_position, final_modulate, final_mouse_filter):
@@ -47,6 +51,24 @@ func _tween_extra_menu(final_position, final_modulate, final_mouse_filter):
 	var tween: Tween = create_tween().set_parallel(true)
 	tween.tween_property(extra_buttons, "position", final_position, 0.25) 
 	tween.tween_property(extra_buttons, "modulate:a", final_modulate, 0.25)
+
+func _tween_background_light():
+	if not_on_screen:
+		return
+	
+	light.modulate.a = 1.0
+	
+	var pulse_tween: Tween = create_tween().set_loops()
+	pulse_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	pulse_tween.tween_property(light, "modulate:a", randf_range(0.1, 0.3), 2.5)
+	pulse_tween.tween_property(light, "modulate:a", randf_range(0.4, 0.7), 2.5)
+	
+	var move_tween: Tween = create_tween().set_loops()
+	move_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	move_tween.tween_property(light, "position", Vector2(25, 75), 1.5).as_relative()
+	move_tween.tween_property(light, "position", Vector2(-25, -75), 1.5).as_relative()
 
 # Button Connections
 # Misc
