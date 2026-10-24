@@ -21,6 +21,8 @@ const SIDE_BTNS: Dictionary = {
 const EXTRA_MENU_OPEN_POSITION := Vector2(714, 673)
 const EXTRA_MENU_HIDDEN_POSITION := Vector2(714, 613)
 
+const MENU_BTN_ICON_VISIBLE := Vector2(9, 9)
+
 var redirect_modal = preload("res://content/modals/redirect_to_website.tres")
 var confirm_sign_modal = preload("res://content/modals/confirm_sign_in.tres")
 var refusal_no_internet = preload("res://content/modals/refusal_no_internet.tres")
@@ -29,6 +31,8 @@ var refusal_server_down = preload("res://content/modals/refusal_server_down.tres
 var extra_menu_open: bool = false
 
 var not_on_screen: bool = false
+
+var icon_tween: Tween
 
 func _ready() -> void:
 	for btn in menu_buttons.get_children():
@@ -40,6 +44,7 @@ func _ready() -> void:
 		btn.mouse_exited.connect(_on_side_btn_mouse_exited.bind(btn))
 	
 	_tween_background_light()
+	_animate_menu_elements()
 
 # Helpers
 func _tween_extra_menu(final_position, final_modulate, final_mouse_filter):
@@ -143,6 +148,28 @@ func _on_peck_button_pressed():
 		
 		if response:
 			Signals.change_screen.emit("connect_account")
+
+func _tween_menu_icons(icon: TextureRect):
+	if icon_tween:
+		await icon_tween.finished
+		icon_tween = null
+		
+	await get_tree().create_timer(randf_range(0.8, 1.1)).timeout
+	
+	icon_tween = create_tween()
+	icon_tween.set_parallel(true)
+	icon_tween.set_trans(Tween.TRANS_SINE)
+	
+	icon_tween.tween_property(icon, "position", MENU_BTN_ICON_VISIBLE, 0.6)
+	icon_tween.tween_property(icon, "modulate:a", 1.0, 0.6)
+
+func _animate_menu_elements():
+	for btn in menu_buttons.get_children():
+		if btn.name == "Extra": continue
+		
+		var icon: TextureRect = btn.get_node("Icon")
+		
+		_tween_menu_icons(icon)
 
 # Signal Connections
 func on_screen_change(_args):

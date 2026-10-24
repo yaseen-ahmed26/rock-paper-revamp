@@ -305,14 +305,18 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Play" unique_id=634581777]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
+offset_left = -16.0
 offset_top = -16.0
-offset_right = 42.0
+offset_right = 16.0
 offset_bottom = 16.0
+grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("30_conbw")
@@ -350,14 +354,18 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Challenges" unique_id=2111818084]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
+offset_left = -16.0
 offset_top = -16.0
-offset_right = 42.0
+offset_right = 16.0
 offset_bottom = 16.0
+grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("30_qk1ns")
@@ -395,14 +403,18 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Profile" unique_id=2031972859]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
+offset_left = -16.0
 offset_top = -16.0
-offset_right = 42.0
+offset_right = 16.0
 offset_bottom = 16.0
+grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("28_pv4yd")
@@ -440,14 +452,18 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Settings" unique_id=1890769464]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 10.0
+offset_left = -16.0
 offset_top = -16.0
-offset_right = 42.0
+offset_right = 16.0
 offset_bottom = 16.0
+grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("29_6jtit")
