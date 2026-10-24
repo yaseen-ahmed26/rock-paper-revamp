@@ -32,11 +32,12 @@ var game_stats: GameStats
 var game_over: bool = false
 
 func _ready() -> void:
-	#if test_mode: _start_game()
-	_start_game()
-	
 	# Test
 	computer = ContentManager.computers.values()[0]
+	modifiers.append(ContentManager.modifiers.values()[0])
+	
+	# if test_mode: _start_game()
+	_start_game()
 	
 	ui_handler.move_chosen.connect(submit_moves)
 
@@ -75,9 +76,9 @@ func _start_game() -> void:
 	if gamemode:
 		gamemode.apply_stats_edit(game_stats)
 
-	_start_round()
+	start_round()
 
-func _start_round() -> void:
+func start_round() -> void:
 	# Decay Overshield
 	if game_stats.rounds_played >= 1:
 		game_stats.player_state.decay_overshield()
@@ -127,9 +128,9 @@ func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:
 	game_stats.player_state.consume_played_cards(p_move)
 	game_stats.computer_state.consume_played_cards(a_move)
 
-	_end_round()
+	end_round()
 
-func _end_round() -> void:
+func end_round() -> void:
 	_apply_modifiers(ModifierBase.ApplyAt.PRE_EVALUATION)
 	
 	var resolution: Dictionary = _evaluate_round(
@@ -143,10 +144,9 @@ func _end_round() -> void:
 	
 	_save_round_snapshot(resolution)
 	
-	# for modifier in modifiers:
-	# 	if modifier.applied:
-	# 		continue
-	# 	modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.ROUND_END)
+	for modifier in modifiers:
+		if modifier.applied: continue
+		modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.ROUND_END)
 
 	_apply_points(resolution)
 	game_stats.record_round_stats()
