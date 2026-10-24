@@ -1,7 +1,7 @@
 extends GameplayEffect
 class_name ModifyScoreEffect
 
-enum Target {
+enum PropietaryTarget {
 	## Apply the change to the player
 	PLAYER,
 	## Apply the change to the AI
@@ -15,7 +15,7 @@ enum Target {
 }
 
 ## Who the point change should be applied to.
-@export var target: Target
+@export var target: PropietaryTarget
 ## The method to apply the value
 @export var operation: StatChange.Operation
 ## The value to update the score
@@ -35,19 +35,19 @@ func apply(game_stats: GameStats):
 	a_stat_change.target_stat = GameStats.StatNames.COMPUTER_POINTS
 	
 	match target:
-		Target.PLAYER:
+		PropietaryTarget.PLAYER:
 			game_stats.apply_stat_change(p_stat_change)
-		Target.AI:
+		PropietaryTarget.AI:
 			game_stats.apply_stat_change(a_stat_change)
-		Target.BOTH:
+		PropietaryTarget.BOTH:
 			game_stats.apply_stat_change(p_stat_change)
 			game_stats.apply_stat_change(a_stat_change)
-		Target.LEADER:
+		PropietaryTarget.LEADER:
 			if game_stats.player_points < game_stats.computer_points:
 				game_stats.apply_stat_change(a_stat_change)
 			elif game_stats.player_points > game_stats.computer_points:
 				game_stats.apply_stat_change(p_stat_change)
-		Target.LOSER:
+		PropietaryTarget.LOSER:
 			if game_stats.player_points > game_stats.computer_points:
 				game_stats.apply_stat_change(a_stat_change)
 			elif game_stats.player_points < game_stats.computer_points:
