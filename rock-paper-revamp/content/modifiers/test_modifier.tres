@@ -5,16 +5,16 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="2_5r6ol"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="3_s01h2"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_uaft4"]
-[ext_resource type="Script" uid="uid://de3b7c8w0krhi" path="res://gameplay/generic/triggers/chance_trigger.gd" id="4_3w5nr"]
+[ext_resource type="Script" uid="uid://cj3ag1g015u3e" path="res://gameplay/generic/triggers/card_suit_trigger.gd" id="4_3w5nr"]
 
-[sub_resource type="Resource" id="Resource_uw7uq"]
+[sub_resource type="Resource" id="Resource_3w5nr"]
 script = ExtResource("4_3w5nr")
-probability = 1.0
-metadata/_custom_type_script = "uid://de3b7c8w0krhi"
+suit = 2
+metadata/_custom_type_script = "uid://cj3ag1g015u3e"
 
 [sub_resource type="Resource" id="Resource_pch2d"]
 script = ExtResource("1_medog")
-triggers = Array[ExtResource("3_uaft4")]([SubResource("Resource_uw7uq")])
+triggers = Array[ExtResource("3_uaft4")]([SubResource("Resource_3w5nr")])
 metadata/_custom_type_script = "uid://cfktrpopf1vy8"
 
 [resource]

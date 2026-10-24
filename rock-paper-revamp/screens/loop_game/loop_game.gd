@@ -144,10 +144,6 @@ func end_round() -> void:
 	
 	_save_round_snapshot(resolution)
 	
-	for modifier in modifiers:
-		if modifier.applied: continue
-		modifier.check_rules_and_apply(game_stats, ModifierBase.ApplyAt.ROUND_END)
-
 	_apply_points(resolution)
 	game_stats.record_round_stats()
 	
