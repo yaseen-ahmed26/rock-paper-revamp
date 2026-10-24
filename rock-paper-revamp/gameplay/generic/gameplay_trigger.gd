@@ -14,6 +14,3 @@ enum Operator {
 	LESS,
 	LESS_EQUAL
 }
-
-func is_met(_game_stats: GameStats):
-	return false

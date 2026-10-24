@@ -1,15 +1,6 @@
 extends GameplayTrigger
 class_name InternalModifierTrigger
 
-enum Operator {
-	EQUAL,
-	NOT_EQUAL,
-	GREATER,
-	GREATER_EQUAL,
-	LESS,
-	LESS_EQUAL
-}
-
 @export var operator: Operator = Operator.EQUAL
 @export var target_value: int = 0
 
