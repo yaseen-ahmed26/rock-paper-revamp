@@ -108,8 +108,22 @@ func _on_menu_button_pressed(btn: Button):
 	var screen_name = MENU_BTNS.get(btn.name)
 	Signals.change_screen.emit(screen_name)
 	
-	await get_tree().create_timer(0.5).timeout	
+	var tween: Tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_SINE)
+	
+	var icon: TextureRect = btn.get_node("Icon")
+	
+	tween.tween_property(
+		icon, 
+		"position", 
+		icon.position + Vector2(200, 0), 
+		0.6
+	)
+	
+	await tween.finished
 	icon_waterfall.enabled = false
+	icon.position = MENU_BTN_ICON_VISIBLE
 
 # Side
 func _on_side_btn_mouse_entered(btn: Button):	
