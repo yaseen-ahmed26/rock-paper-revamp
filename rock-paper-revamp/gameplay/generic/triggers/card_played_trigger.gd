@@ -10,14 +10,10 @@ class_name CardPlayedTrigger
 
 func is_met(game_stats: GameStats):
 	var cards: ChosenCards = game_stats.player_turn_move if target == Target.PLAYER else game_stats.computer_turn_move
-	
-	var played_chain: bool = false
-	var played_special: bool = false
-	
-	if require_chain:
-		played_chain = true if cards.chain_card != null else false
-	
-	if require_special:
-		played_special = true if cards.special_card != null else false
 		
-	return played_chain and played_special
+	if require_chain and cards.chain_card == null:
+		return false
+	if require_special and cards.special_card == null:
+		return false
+		
+	return true
