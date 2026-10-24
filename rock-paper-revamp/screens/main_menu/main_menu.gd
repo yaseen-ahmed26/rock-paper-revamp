@@ -88,14 +88,14 @@ func _on_extra_button_pressed():
 			Control.MOUSE_FILTER_IGNORE
 		)
 		$ExtraHoverLabel.visible = false
-		$MenuButtons/Extra/Label.text = "Extra"
+		$MenuButtons/Extra/Icon.texture = open_carrot
 	else:
 		_tween_extra_menu(
 			EXTRA_MENU_OPEN_POSITION,
 			1.0,
 			Control.MOUSE_FILTER_STOP
 		)
-		$MenuButtons/Extra/Label.text = "CLOSE"
+		$MenuButtons/Extra/Icon.texture = closed_carrot
 		
 	extra_menu_open = not extra_menu_open
 	
