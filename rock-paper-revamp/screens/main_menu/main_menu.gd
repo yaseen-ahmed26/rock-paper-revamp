@@ -47,7 +47,6 @@ func _ready() -> void:
 		btn.mouse_exited.connect(_on_side_btn_mouse_exited.bind(btn))
 	
 	_tween_background_light()
-	_animate_menu_elements()
 
 # Helpers
 func _tween_extra_menu(final_position, final_modulate, final_mouse_filter):
@@ -173,6 +172,8 @@ func _tween_menu_icons(icon: TextureRect):
 		await icon_tween.finished
 		icon_tween = null
 		
+	icon.position = Vector2(50, 9)
+		
 	await get_tree().create_timer(randf_range(0.8, 1.1)).timeout
 	
 	icon_tween = create_tween()
@@ -194,3 +195,6 @@ func _animate_menu_elements():
 func on_screen_change(_args):
 	if SaveManager.local_saved_settings.get("icon_waterfall"):
 		icon_waterfall.enabled = true
+	
+	await get_tree().create_timer(1.0).timeout
+	_animate_menu_elements()

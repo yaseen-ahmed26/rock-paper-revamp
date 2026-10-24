@@ -9,7 +9,7 @@ func is_met(game_stats: GameStats):
 	var current_value = game_stats.get(game_stats.get_lower_stat(target_stat))
 	
 	if current_value == null:
-		push_warning("(StatComparisonTrigger) '%s' is not a valid property in GameStats" % target_stat)
+		push_warning("(CompareStatValueTrigger) '%s' is not a valid property in GameStats" % target_stat)
 		return false
 	
 	match operator:

@@ -157,3 +157,6 @@ func apply_stat_change(stat_change: StatChange) -> void:
 
 func record_round_stats() -> void:
 	previous_rounds.append(current_round)
+
+func get_lower_stat(stat_name):
+	return StatNames.keys()[stat_name].to_lower()
