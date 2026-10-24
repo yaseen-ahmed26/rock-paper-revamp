@@ -21,6 +21,8 @@ func _ready():
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.pressed:
+			if skipped: return
+			
 			skipped = true
 			_proceed()
 
