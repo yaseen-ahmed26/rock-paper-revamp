@@ -27,13 +27,13 @@ func _create_cards(hand: Array[CardBase]):
 		
 		clone.set_meta("CardBase", card.duplicate(true))
 
-func _remove_played_cards(chosen_cards: ChosenCards):
+func _remove_played_cards(played_cards: ChosenCards):
 	for child: Panel in player_hand_holder.get_children():
 		if child.name == "TemplateCard": continue
 		
 		var card_base: CardBase = child.get_meta("CardBase")
 
-		if card_base == chosen_cards.lead_card or card_base == chosen_cards.chain_card or card_base == chosen_cards.special_card:
+		if card_base == played_cards.lead_card or card_base == played_cards.chain_card or card_base == played_cards.special_card:
 			child.queue_free()
 
 func _update_card_status():

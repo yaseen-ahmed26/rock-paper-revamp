@@ -5,22 +5,16 @@
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="2_5r6ol"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="3_s01h2"]
 [ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_uaft4"]
-[ext_resource type="Script" uid="uid://cj3ag1g015u3e" path="res://gameplay/generic/triggers/card_suit_trigger.gd" id="4_3w5nr"]
 
-[sub_resource type="Resource" id="Resource_3w5nr"]
-script = ExtResource("4_3w5nr")
-suit = 2
-metadata/_custom_type_script = "uid://cj3ag1g015u3e"
-
-[sub_resource type="Resource" id="Resource_pch2d"]
+[sub_resource type="Resource" id="Resource_uaft4"]
 script = ExtResource("1_medog")
-triggers = Array[ExtResource("3_uaft4")]([SubResource("Resource_3w5nr")])
+triggers = Array[ExtResource("3_uaft4")]([null])
 metadata/_custom_type_script = "uid://cfktrpopf1vy8"
 
 [resource]
 script = ExtResource("2_5r6ol")
 timing = 2
-rules = Array[ExtResource("1_medog")]([SubResource("Resource_pch2d")])
+rules = Array[ExtResource("1_medog")]([SubResource("Resource_uaft4")])
 id = &"test_modifier"
 display_name = "Test Modifier"
 description = "Testing Testing"
