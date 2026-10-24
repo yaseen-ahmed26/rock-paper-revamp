@@ -18,7 +18,6 @@ func check_and_apply(stats: GameStats, internal_state: ModifierInternal):
 			met = trigger.is_met(stats)
 			
 		if met:
-			print("met")
 			print("'%s' has been met" % trigger.get_script().get_global_name())
 			triggers_met += 1
 		

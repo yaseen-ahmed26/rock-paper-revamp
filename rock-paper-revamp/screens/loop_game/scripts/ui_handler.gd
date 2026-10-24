@@ -65,6 +65,13 @@ func _on_set_chain_btn_pressed(card_panel: Panel):
 
 func _on_submit_moves_pressed() -> void:
 	move_chosen.emit(chosen_cards)
+	
+	var mode: String = $"../SubmitMoves".get_meta("Mode")
+	
+	if mode == "RoundEnd":
+		owner.end_round()
+	elif mode == "NextRound":
+		owner.start_round()
 
 func set_inital_ui(game_stats: GameStats):
 	$"../HouseSuits".visible = true
@@ -92,6 +99,9 @@ func set_round_start_ui(game_stats: GameStats):
 	
 	$"../RoundOutcome".visible = false
 	$"../ComputerPlayed".visible = false
+	
+	$"../SubmitMoves".text = "END ROUND"
+	$"../SubmitMoves".set_meta("Mode", "RoundEnd")
 
 func set_round_end_ui(game_stats: GameStats):
 	set_round_start_ui(game_stats)
@@ -116,5 +126,8 @@ func set_round_end_ui(game_stats: GameStats):
 		opponent_played_lead if not opponent_played_lead.is_empty() else "no card",
 		opponent_played_chain if not opponent_played_chain.is_empty() else ""
 	] 
+	
+	$"../SubmitMoves".text = "START ROUND"
+	$"../SubmitMoves".set_meta("Mode", "NextRound")
 	
 	_remove_played_cards(game_stats.player_turn_move)
