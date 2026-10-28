@@ -3,7 +3,8 @@ extends Control
 @onready var template_label: RichTextLabel = $Template
 
 func _ready() -> void:
-	_update_holders()
+	# _update_holders()
+	pass
 
 func _update_holders():
 	var save_data = SaveManager.local_saved_data

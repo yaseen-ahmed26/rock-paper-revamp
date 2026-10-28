@@ -1,186 +1,1572 @@
-[gd_scene format=3 uid="uid://mqu867itgkl0"]
+[gd_scene format=3 uid="uid://dx1mc2j7kyhni"]
 
-[ext_resource type="Script" uid="uid://xugksn8rs2gj" path="res://screens/loop_game/loop_game.gd" id="1_pch2d"]
-[ext_resource type="Script" uid="uid://04gkcmodm88g" path="res://screens/loop_game/scripts/ui_handler.gd" id="2_uw7uq"]
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_theme"]
 
-[node name="loop_game" type="Control" unique_id=1046685852]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcx6v"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.2775277, 0.27752778, 0.27752754, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pch2d"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.98039216, 0.8, 0.08235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uw7uq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr45h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.9098039, 0.4745098, 0.9764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_dark"]
+bg_color = Color(0.0705882, 0.0588235, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.168627, 0.133333, 0.278431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_suit"]
+size = Vector2(64, 64)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_icon"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_bg"]
+bg_color = Color(0.117647, 0.0941176, 0.211765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar_fill"]
+bg_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_house"]
+bg_color = Color(0.0941176, 0.0705882, 0.168627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.576471, 0.2, 0.917647, 0.2)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card_base"]
+bg_color = Color(0.105882, 0.0823529, 0.188235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.282353, 0.207843, 0.478431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_ready"]
+bg_color = Color(0.105882, 0.0823529, 0.192157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_pressed"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_hover"]
+bg_color = Color(0.576471, 0.2, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.913725, 0.835294, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_disabled"]
+bg_color = Color(0.109804, 0.0941176, 0.168627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.176471, 0.290196, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_cooldown_overlay"]
+bg_color = Color(0.0392157, 0.0313726, 0.0745098, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.270588, 0.231373, 0.368627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal_bg"]
+bg_color = Color(0.0784314, 0.0588235, 0.14902, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.65)
+shadow_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_normal"]
+bg_color = Color(0.494118, 0.133333, 0.807843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ukt1"]
+bg_color = Color(0.49411765, 0.13333334, 0.80784315, 0.49803922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="loop_game" type="Control" unique_id=465778752]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pch2d")
-scenario_to_test = 6
+theme = ExtResource("1_theme")
 
-[node name="UIHandler" type="Node" parent="." unique_id=770459276]
-script = ExtResource("2_uw7uq")
+[node name="UIHandler" type="Node" parent="." unique_id=1589990850]
 
-[node name="PlayerHand" type="HBoxContainer" parent="." unique_id=308035192]
+[node name="RoundTimer" type="Timer" parent="." unique_id=392416902]
+wait_time = 15.0
+one_shot = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=607799651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0431373, 0.0352941, 0.0784314, 1)
+
+[node name="PlayerHealth" type="Panel" parent="." unique_id=1406377783]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -202.0
-offset_bottom = -27.0
+offset_left = 17.0
+offset_top = -1064.0
+offset_right = -1072.0
+offset_bottom = -1045.0
 grow_horizontal = 2
 grow_vertical = 0
-alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_bcx6v")
 
-[node name="TemplateCard" type="Panel" parent="PlayerHand" unique_id=614199324]
-visible = false
-custom_minimum_size = Vector2(175, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerHealth" unique_id=841256934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Chunk" type="Panel" parent="PlayerHealth/HBoxContainer" unique_id=2121977357]
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pch2d")
 
-[node name="Suit" type="RichTextLabel" parent="PlayerHand/TemplateCard" unique_id=1138469268]
+[node name="Chunk2" type="Panel" parent="PlayerHealth/HBoxContainer" unique_id=1799306161]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uw7uq")
+
+[node name="Chunk3" type="Panel" parent="PlayerHealth/HBoxContainer" unique_id=555017868]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xr45h")
+
+[node name="PlayerName" type="Panel" parent="." unique_id=1996634544]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-offset_bottom = 51.0
+offset_left = -1903.0
+offset_top = 46.0
+offset_right = -1563.0
+offset_bottom = 138.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="Icon" type="TextureRect" parent="PlayerName" unique_id=1623564361]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 18.0
+offset_right = 322.0
+offset_bottom = 74.0
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerName" type="RichTextLabel" parent="PlayerName" unique_id=204436989]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -30.0
+offset_right = 88.0
+offset_bottom = 28.0
 grow_horizontal = 2
-text = "Suit: Scissors"
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=#c084fc]YOU[/color] //
+corporal.chicken"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weight" type="RichTextLabel" parent="PlayerHand/TemplateCard" unique_id=1959353419]
+[node name="ComputerHealth" type="Panel" parent="." unique_id=515837890]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-offset_top = 33.0
+anchor_bottom = 1.0
+offset_left = 1070.0
+offset_top = -1064.0
+offset_right = -19.0
+offset_bottom = -1045.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bcx6v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ComputerHealth" unique_id=266492087]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Chunk" type="Panel" parent="ComputerHealth/HBoxContainer" unique_id=360041587]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pch2d")
+
+[node name="Chunk2" type="Panel" parent="ComputerHealth/HBoxContainer" unique_id=803315170]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uw7uq")
+
+[node name="Chunk3" type="Panel" parent="ComputerHealth/HBoxContainer" unique_id=2114642351]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xr45h")
+
+[node name="ComputerName" type="Panel" parent="." unique_id=1991991258]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -361.0
+offset_top = 46.0
+offset_right = -21.0
+offset_bottom = 138.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="Icon" type="TextureRect" parent="ComputerName" unique_id=1862114204]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 74.0
+offset_bottom = 74.0
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ComputerName" type="RichTextLabel" parent="ComputerName" unique_id=713180322]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -35.0
+offset_right = 155.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=#c084fc]OPPONENT[/color] // 
+LOOP_BOT"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MatchMeta" type="Panel" parent="." unique_id=1937452925]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -943.0
+offset_top = -385.0
+offset_right = -735.0
+offset_bottom = -335.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="RoundsPlayed" type="RichTextLabel" parent="MatchMeta" unique_id=823708502]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#c084fc]ROUND[/color] 01 / 20"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Panel" parent="." unique_id=1204097176]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = 13.0
+offset_right = 104.0
+offset_bottom = 105.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="Icon" type="TextureRect" parent="Timer" unique_id=572772200]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 52.0
+offset_bottom = 50.0
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="Timer" unique_id=201785190]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -47.0
+offset_right = 78.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "[color=#c084fc]15.0[/color]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeBar" type="ProgressBar" parent="Timer" unique_id=1277813848]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -28.0
+offset_right = 160.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
+max_value = 15.0
+value = 15.0
+show_percentage = false
+
+[node name="RoundOutcome" type="Panel" parent="." unique_id=1864110623]
+visible = false
+layout_mode = 0
+offset_left = 592.0
+offset_top = 134.0
+offset_right = 1328.0
+offset_bottom = 218.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_house")
+
+[node name="Label" type="RichTextLabel" parent="RoundOutcome" unique_id=1317152820]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = -15.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "You played a Sniping move against your Opponet's Honest! -3 points."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="House" type="Panel" parent="." unique_id=993043107]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -266.0
+offset_right = 176.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_house")
+
+[node name="Title" type="RichTextLabel" parent="House" unique_id=1404128407]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 39.0
+offset_right = 332.0
+offset_bottom = 91.0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[color=#c084fc]THE HOUSE"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextSuit" type="Panel" parent="House" unique_id=440488976]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 309.0
+offset_right = 328.0
+offset_bottom = 375.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="Icon" type="TextureRect" parent="House/NextSuit" unique_id=1546845880]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -22.0
+offset_right = -10.0
+offset_bottom = 22.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hint" type="RichTextLabel" parent="House/NextSuit" unique_id=1806716388]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -15.0
+offset_right = 117.0
+offset_bottom = 15.0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#94a3b8]NEXT SUIT[/color]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="House/NextSuit" unique_id=1856432055]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 82.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[color=#c084fc]PAPER[/color]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CurrentSuit" type="Panel" parent="House" unique_id=1755226317]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 124.0
+offset_right = 328.0
+offset_bottom = 297.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="Icon" type="TextureRect" parent="House/CurrentSuit" unique_id=336595126]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -62.5
+offset_right = 143.0
+offset_bottom = 57.5
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hint" type="RichTextLabel" parent="House/CurrentSuit" unique_id=118315854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -47.5
+offset_right = 121.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "SUIT"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="House/CurrentSuit" unique_id=1312152008]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 138.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=#c084fc]PAPER[/color]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHand" type="Panel" parent="." unique_id=1216482494]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -932.0
+offset_top = -332.0
+offset_right = 564.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayerHand" unique_id=2016295677]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014037433
+anchor_top = 0.055384614
+anchor_right = 0.98596257
+anchor_bottom = 0.94461536
+offset_bottom = -0.88305664
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PlayerHand/ScrollContainer" unique_id=979447488]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="Template" type="Panel" parent="PlayerHand/ScrollContainer/VBoxContainer" unique_id=1509314878]
+visible = false
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="Icon" type="TextureRect" parent="PlayerHand/ScrollContainer/VBoxContainer/Template" unique_id=1039134502]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="PlayerHand/ScrollContainer/VBoxContainer/Template" unique_id=73493649]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight" type="RichTextLabel" parent="PlayerHand/ScrollContainer/VBoxContainer/Template" unique_id=1030010277]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Items" type="Panel" parent="." unique_id=715944790]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -380.0
+offset_top = 748.0
+offset_right = -18.0
+offset_bottom = 1055.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Items" unique_id=1402278597]
+layout_mode = 0
+offset_left = 19.164705
+offset_top = 15.999973
+offset_right = 342.8353
+offset_bottom = 290.99997
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Items/ScrollContainer" unique_id=966313589]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="Template" type="Button" parent="Items/ScrollContainer/HBoxContainer" unique_id=1395838881]
+visible = false
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_item_ready")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_primary_disabled")
+
+[node name="Icon" type="TextureRect" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=2035524055]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 22.0
+offset_right = 80.0
+offset_bottom = 86.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InfoLabel" type="RichTextLabel" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=1775809393]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 14.0
+offset_right = 310.83533
+offset_bottom = 99.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[color=#ffffff]ITEM SLOT 01[/color]
+[color=#94a3b8]The item description will go here and cannot be that long.[/color]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="RichTextLabel" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=261395267]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.417664
+offset_top = -9.0
+offset_right = 60.417664
+offset_bottom = 9.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "● READY TO USE"
+scroll_active = false
+
+[node name="Cooldown" type="Panel" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=1957921250]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_cooldown_overlay")
+
+[node name="Label" type="RichTextLabel" parent="Items/ScrollContainer/HBoxContainer/Template/Cooldown" unique_id=953364829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ef4444]ON COOLDOWN[/color]
+[color=#cbd5e1]2 ROUNDS LEFT"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ModifiersPanel" type="Panel" parent="." unique_id=265920539]
+visible = false
+layout_mode = 1
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 340.0
+offset_bottom = 636.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
+
+[node name="Heading" type="RichTextLabel" parent="ModifiersPanel" unique_id=2105911027]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 292.0
+offset_bottom = 42.0
+bbcode_enabled = true
+text = "[color=#a855f7]ACTIVE MODIFIERS[/color] [color=#64748b](0/15)[/color]"
+scroll_active = false
+
+[node name="ModifierList" type="VBoxContainer" parent="ModifiersPanel" unique_id=165352824]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 48.0
+offset_right = 294.0
+offset_bottom = 480.0
+theme_override_constants/separation = 8
+
+[node name="TemplateModifier" type="Panel" parent="ModifiersPanel/ModifierList" unique_id=1143773063]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="Icon" type="TextureRect" parent="ModifiersPanel/ModifierList/TemplateModifier" unique_id=786239053]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ModifierName" type="RichTextLabel" parent="ModifiersPanel/ModifierList/TemplateModifier" unique_id=863883554]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 8.0
+offset_right = 212.0
+offset_bottom = 44.0
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Modifier Name
+[color=#94a3b8]Tier 1[/color]"
+scroll_active = false
+
+[node name="ChargesLabel" type="RichTextLabel" parent="ModifiersPanel/ModifierList/TemplateModifier" unique_id=573483651]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 14.0
+offset_right = 268.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[right][color=#c084fc]2/3[/color][/right]"
+scroll_active = false
+
+[node name="EmptyHandRewardModal" type="Panel" parent="." unique_id=2072613967]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -150.0
+offset_right = 320.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal_bg")
+
+[node name="Title" type="RichTextLabel" parent="EmptyHandRewardModal" unique_id=577947365]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 616.0
+offset_bottom = 96.0
+bbcode_enabled = true
+text = "[center][color=#c084fc]HAND EMPTIED BONUS[/color]
+[color=#94a3b8]Choose a reward before drawing a fresh hand of 6 cards:[/color][/center]"
+scroll_active = false
+
+[node name="ClaimShieldBtn" type="Button" parent="EmptyHandRewardModal" unique_id=1202614183]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 128.0
+offset_right = 304.0
+offset_bottom = 248.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="EmptyHandRewardModal/ClaimShieldBtn" unique_id=1229676518]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 36.0
+offset_right = 68.0
 offset_bottom = 84.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="EmptyHandRewardModal/ClaimShieldBtn" unique_id=725136561]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 34.0
+offset_right = 252.0
+offset_bottom = 94.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#e879f9]+2 OVERSHIELD[/color]
+[font_size=12]Temporary protection[/font_size]"
+scroll_active = false
+
+[node name="ClaimBankBtn" type="Button" parent="EmptyHandRewardModal" unique_id=1879318556]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 128.0
+offset_right = 604.0
+offset_bottom = 248.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="EmptyHandRewardModal/ClaimBankBtn" unique_id=2008548463]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 36.0
+offset_right = 68.0
+offset_bottom = 84.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="EmptyHandRewardModal/ClaimBankBtn" unique_id=315373738]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 34.0
+offset_right = 252.0
+offset_bottom = 94.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#facc15]+2 BANK POINTS[/color]
+[font_size=12]Direct bank deposit[/font_size]"
+scroll_active = false
+
+[node name="PlayerCards" type="Node" parent="." unique_id=1733369448]
+
+[node name="Special" type="Panel" parent="PlayerCards" unique_id=1119777646]
+custom_minimum_size = Vector2(210, 273)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -697.98535
+offset_top = -244.7573
+offset_right = -487.98532
+offset_bottom = 28.242676
 grow_horizontal = 2
-text = "Weight: Colossal"
+grow_vertical = 2
+rotation = -0.2268928
+pivot_offset = Vector2(105, 136.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="SuitIcon" type="TextureRect" parent="PlayerCards/Special" unique_id=1567032032]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="PlayerCards/Special" unique_id=605084441]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SetLead" type="Button" parent="PlayerHand/TemplateCard" unique_id=867298700]
+[node name="Weight" type="RichTextLabel" parent="PlayerCards/Special" unique_id=1493964941]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Chain" type="Panel" parent="PlayerCards" unique_id=5352907]
+custom_minimum_size = Vector2(210, 273)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.1764
+offset_top = -215.8825
+offset_right = -340.1764
+offset_bottom = 57.117493
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.22514747
+pivot_offset = Vector2(105, 136.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="SuitIcon" type="TextureRect" parent="PlayerCards/Chain" unique_id=1659029104]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="PlayerCards/Chain" unique_id=1150381450]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight" type="RichTextLabel" parent="PlayerCards/Chain" unique_id=1254553719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lead" type="Panel" parent="PlayerCards" unique_id=268594230]
+custom_minimum_size = Vector2(210, 273)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -629.0
+offset_top = -163.0
+offset_right = -419.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0017453292
+pivot_offset = Vector2(105, 136.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="SuitIcon" type="TextureRect" parent="PlayerCards/Lead" unique_id=388614364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="PlayerCards/Lead" unique_id=1809758648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight" type="RichTextLabel" parent="PlayerCards/Lead" unique_id=1897556085]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="PlayerCards" unique_id=1277705722]
+offset_left = 308.0
+offset_top = 461.0
+offset_right = 562.0
+offset_bottom = 523.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ukt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Label" type="RichTextLabel" parent="PlayerCards/PlayButton" unique_id=247042315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -51.5
-offset_top = -79.0
-offset_right = 51.5
-offset_bottom = -48.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "Set Lead"
-
-[node name="SetChain" type="Button" parent="PlayerHand/TemplateCard" unique_id=1379844581]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -51.5
-offset_top = -44.0
-offset_right = 51.5
-offset_bottom = -13.0
-grow_horizontal = 2
-grow_vertical = 0
-disabled = true
-text = "Set Chain"
-
-[node name="SubmitMoves" type="Button" parent="." unique_id=1187074059]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -213.0
-offset_top = -303.0
-offset_right = 213.0
-offset_bottom = -230.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 32
-disabled = true
-text = "SUBMIT"
-metadata/Mode = "RoundEnd"
-
-[node name="RoundOutcome" type="RichTextLabel" parent="." unique_id=2111340570]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -532.0
-offset_top = 51.0
-offset_right = 532.0
-offset_bottom = 141.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 24
-text = "Round Outcome"
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "PLAY"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ComputerPlayed" type="RichTextLabel" parent="." unique_id=883898222]
-visible = false
-layout_mode = 1
-anchors_preset = 5
+[node name="ComputerCards" type="Node" parent="." unique_id=685091003]
+
+[node name="Special" type="Panel" parent="ComputerCards" unique_id=1930410111]
+custom_minimum_size = Vector2(210, 273)
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -532.0
-offset_top = 145.0
-offset_right = 532.0
-offset_bottom = 235.0
+anchor_bottom = 0.5
+offset_left = 336.01465
+offset_top = -244.87863
+offset_right = 546.01465
+offset_bottom = 28.121338
 grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.2268928
+pivot_offset = Vector2(105, 136.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Special" unique_id=1797972105]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="ComputerCards/Special" unique_id=827753133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 24
-text = "Opponent Played"
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Banks" type="RichTextLabel" parent="." unique_id=1064663593]
-visible = false
+[node name="Weight" type="RichTextLabel" parent="ComputerCards/Special" unique_id=96070745]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -532.0
-offset_top = 255.0
-offset_right = 532.0
-offset_bottom = 345.0
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 24
-text = "Player Bank: 23 • Computer Bank: 32 • House Bank: 54"
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HouseSuits" type="RichTextLabel" parent="." unique_id=617079644]
-visible = false
-layout_mode = 1
-anchors_preset = 5
+[node name="Chain" type="Panel" parent="ComputerCards" unique_id=741414214]
+custom_minimum_size = Vector2(210, 273)
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -532.0
-offset_top = 352.0
-offset_right = 532.0
-offset_bottom = 442.0
+anchor_bottom = 0.5
+offset_left = 483.8236
+offset_top = -216.00385
+offset_right = 693.8236
+offset_bottom = 56.996155
 grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.22514747
+pivot_offset = Vector2(105, 136.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Chain" unique_id=940219761]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="ComputerCards/Chain" unique_id=206841883]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 24
-text = "House Suit: Rock • Next Suit: Paper"
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RoundsPlayed" type="RichTextLabel" parent="." unique_id=1001860561]
-visible = false
+[node name="Weight" type="RichTextLabel" parent="ComputerCards/Chain" unique_id=505032623]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -532.0
-offset_top = 439.0
-offset_right = 532.0
-offset_bottom = 529.0
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 24
-text = "Rounds Played: 3/3"
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="SubmitMoves" to="UIHandler" method="_on_submit_moves_pressed"]
+[node name="Lead" type="Panel" parent="ComputerCards" unique_id=440389136]
+custom_minimum_size = Vector2(210, 273)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 405.0
+offset_top = -163.0
+offset_right = 615.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0017453292
+pivot_offset = Vector2(105, 136.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Lead" unique_id=2036381321]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -105.55847
+offset_right = 60.0
+offset_bottom = 14.441528
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_suit")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Suit" type="RichTextLabel" parent="ComputerCards/Lead" unique_id=2044891518]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 26.441528
+offset_right = 90.0
+offset_bottom = 69.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center][color=#ffffff]PAPER[/color][/center]"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weight" type="RichTextLabel" parent="ComputerCards/Lead" unique_id=11248500]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = 84.44153
+offset_right = 74.0
+offset_bottom = 108.44153
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoserTutorModal" type="Panel" parent="." unique_id=1425423562]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -220.0
+offset_right = 460.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal_bg")
+
+[node name="Title" type="RichTextLabel" parent="LoserTutorModal" unique_id=2083950645]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 896.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[center][color=#c084fc]ROUND LOST — TUTOR A CARD FROM YOUR DECK[/color]
+[color=#94a3b8]Select 1 card from your draw pile to add to your hand (discard 1 first if at 8/8 cards)[/color][/center]"
+scroll_active = false
+
+[node name="TutorCardList" type="HBoxContainer" parent="LoserTutorModal" unique_id=600265402]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 92.0
+offset_right = 892.0
+offset_bottom = 340.0
+theme_override_constants/separation = 12
+
+[node name="ConfirmTutorBtn" type="Button" parent="LoserTutorModal" unique_id=1932482941]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 360.0
+offset_right = 600.0
+offset_bottom = 420.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="LoserTutorModal/ConfirmTutorBtn" unique_id=1996444883]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 56.0
+offset_bottom = 46.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="LoserTutorModal/ConfirmTutorBtn" unique_id=2038790751]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 18.0
+offset_right = 264.0
+offset_bottom = 46.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]CONFIRM CARD[/center]"
+scroll_active = false
