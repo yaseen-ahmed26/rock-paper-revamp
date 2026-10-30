@@ -6,7 +6,7 @@ var chain_card: CardBase = null
 var special_card: CardBase = null
 
 # Testing
-var override_suit: CardBase.Suit = CardBase.Suit.NONE
+var override_suit: CardBase.Suit
 var override_weight: int = -1
 
 static func from_raw(p_suit: CardBase.Suit, p_weight: int) -> ChosenCards:
@@ -18,7 +18,7 @@ static func from_raw(p_suit: CardBase.Suit, p_weight: int) -> ChosenCards:
 	return move
 
 func set_lead(card: CardBase) -> bool:
-	if card.is_special or card.suit == CardBase.Suit.NONE: return false
+	if card.is_special: return false
 	
 	lead_card = card
 	chain_card = null
@@ -57,9 +57,9 @@ func set_special(card: CardBase) -> bool:
 	return true
 
 func get_effective_suit() -> CardBase.Suit:
-	if override_suit != CardBase.Suit.NONE: return override_suit
+	if override_suit: return override_suit
 	
-	return lead_card.suit if lead_card != null else CardBase.Suit.NONE
+	return lead_card.suit if lead_card != null else CardBase.Suit.ROCK
 
 func get_total_weight() -> int:
 	if override_weight >= 0: return override_weight

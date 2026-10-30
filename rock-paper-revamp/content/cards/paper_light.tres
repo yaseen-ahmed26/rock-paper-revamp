@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_wk82k")
-suit = 2
+suit = 1
 id = &"paper_light"
 display_name = "Paper (Light)"
 description = "Suit: Paper • Weight: Light"

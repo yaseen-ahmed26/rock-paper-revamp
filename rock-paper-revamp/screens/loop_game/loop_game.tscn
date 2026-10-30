@@ -1,6 +1,44 @@
 [gd_scene format=3 uid="uid://dx1mc2j7kyhni"]
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://04gkcmodm88g" path="res://screens/loop_game/scripts/ui_handler.gd" id="2_pch2d"]
+[ext_resource type="Script" uid="uid://xugksn8rs2gj" path="res://screens/loop_game/loop_game.gd" id="2_uw7uq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ukt1"]
+bg_color = Color(0.49411765, 0.13333334, 0.80784315, 0.49803922)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_pressed"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_hover"]
+bg_color = Color(0.576471, 0.2, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.913725, 0.835294, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcx6v"]
 content_margin_left = 0.0
@@ -25,10 +63,7 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0.98039216, 0.8, 0.08235294, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
 border_color = Color(1, 1, 1, 1)
 corner_detail = 5
 
@@ -38,10 +73,7 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
 border_color = Color(1, 1, 1, 1)
 corner_detail = 5
 
@@ -51,10 +83,7 @@ content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0.9098039, 0.4745098, 0.9764706, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 1
 border_color = Color(1, 1, 1, 1)
 corner_detail = 5
 
@@ -116,66 +145,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_ready"]
-bg_color = Color(0.105882, 0.0823529, 0.192157, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_pressed"]
-bg_color = Color(0.345098, 0.109804, 0.529412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_hover"]
-bg_color = Color(0.576471, 0.2, 0.917647, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.913725, 0.835294, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_disabled"]
-bg_color = Color(0.109804, 0.0941176, 0.168627, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.2, 0.176471, 0.290196, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_cooldown_overlay"]
-bg_color = Color(0.0392157, 0.0313726, 0.0745098, 0.88)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.270588, 0.231373, 0.368627, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal_bg"]
 bg_color = Color(0.0784314, 0.0588235, 0.14902, 0.98)
 border_width_left = 2
@@ -202,17 +171,43 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ukt1"]
-bg_color = Color(0.49411765, 0.13333334, 0.80784315, 0.49803922)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovib1"]
+bg_color = Color(0.0705882, 0.0588235, 0.113725, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.752941, 0.517647, 0.988235, 1)
+border_color = Color(0.168627, 0.133333, 0.278431, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28tp3"]
+bg_color = Color(0.105882, 0.0823529, 0.188235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.282353, 0.207843, 0.478431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhgot"]
+bg_color = Color(0.0705882, 0.0588235, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.168627, 0.133333, 0.278431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_l7yjw"]
 
 [node name="loop_game" type="Control" unique_id=465778752]
 layout_mode = 3
@@ -222,8 +217,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_theme")
+script = ExtResource("2_uw7uq")
 
-[node name="UIHandler" type="Node" parent="." unique_id=1589990850]
+[node name="UIHandler" type="Node" parent="." unique_id=1589990850 node_paths=PackedStringArray("action_btn", "house_panel", "hand_panel", "match_meta_panel", "player_cards", "computer_cards", "player_health", "computer_health", "round_end")]
+script = ExtResource("2_pch2d")
+action_btn = NodePath("../ActionButton")
+house_panel = NodePath("../House")
+hand_panel = NodePath("../PlayerHand")
+match_meta_panel = NodePath("../MatchMeta")
+player_cards = NodePath("../PlayerCards")
+computer_cards = NodePath("../ComputerCards")
+player_health = NodePath("../PlayerHealth")
+computer_health = NodePath("../ComputerHealth")
+round_end = NodePath("../RoundOutcome")
 
 [node name="RoundTimer" type="Timer" parent="." unique_id=392416902]
 wait_time = 15.0
@@ -238,6 +244,26 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0431373, 0.0352941, 0.0784314, 1)
+
+[node name="ActionButton" type="Button" parent="." unique_id=1277705722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = 111.0
+offset_right = 131.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ukt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+text = "END ROUND"
+metadata/State = "EndRound"
 
 [node name="PlayerHealth" type="Panel" parent="." unique_id=1406377783]
 layout_mode = 1
@@ -263,17 +289,20 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Chunk" type="Panel" parent="PlayerHealth/HBoxContainer" unique_id=2121977357]
-custom_minimum_size = Vector2(75, 0)
+visible = false
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pch2d")
 
 [node name="Chunk2" type="Panel" parent="PlayerHealth/HBoxContainer" unique_id=1799306161]
-custom_minimum_size = Vector2(75, 0)
+visible = false
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uw7uq")
 
 [node name="Chunk3" type="Panel" parent="PlayerHealth/HBoxContainer" unique_id=555017868]
-custom_minimum_size = Vector2(75, 0)
+visible = false
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xr45h")
 
@@ -345,16 +374,19 @@ theme_override_constants/separation = 0
 alignment = 2
 
 [node name="Chunk" type="Panel" parent="ComputerHealth/HBoxContainer" unique_id=360041587]
+visible = false
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pch2d")
 
 [node name="Chunk2" type="Panel" parent="ComputerHealth/HBoxContainer" unique_id=803315170]
+visible = false
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uw7uq")
 
 [node name="Chunk3" type="Panel" parent="ComputerHealth/HBoxContainer" unique_id=2114642351]
+visible = false
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xr45h")
@@ -494,12 +526,13 @@ value = 15.0
 show_percentage = false
 
 [node name="RoundOutcome" type="Panel" parent="." unique_id=1864110623]
-visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 592.0
 offset_top = 134.0
 offset_right = 1328.0
 offset_bottom = 218.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_house")
 
 [node name="Label" type="RichTextLabel" parent="RoundOutcome" unique_id=1317152820]
@@ -528,9 +561,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -176.0
-offset_top = -266.0
+offset_top = -304.0
 offset_right = 176.0
-offset_bottom = 121.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_house")
@@ -538,12 +571,25 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_panel_house")
 [node name="Title" type="RichTextLabel" parent="House" unique_id=1404128407]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 39.0
+offset_top = 19.0
 offset_right = 332.0
-offset_bottom = 91.0
+offset_bottom = 71.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[color=#c084fc]THE HOUSE"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bank" type="RichTextLabel" parent="House" unique_id=1709787519]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 64.0
+offset_right = 332.0
+offset_bottom = 116.0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Bank: 32"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -602,6 +648,7 @@ offset_right = 82.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
 bbcode_enabled = true
 text = "[color=#c084fc]PAPER[/color]"
 scroll_active = false
@@ -677,7 +724,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -932.0
 offset_top = -332.0
-offset_right = 564.0
+offset_right = 939.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -700,173 +747,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 12
-
-[node name="Template" type="Panel" parent="PlayerHand/ScrollContainer/VBoxContainer" unique_id=1509314878]
-visible = false
-custom_minimum_size = Vector2(210, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
-
-[node name="Icon" type="TextureRect" parent="PlayerHand/ScrollContainer/VBoxContainer/Template" unique_id=1039134502]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -105.55847
-offset_right = 60.0
-offset_bottom = 14.441528
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_suit")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Suit" type="RichTextLabel" parent="PlayerHand/ScrollContainer/VBoxContainer/Template" unique_id=73493649]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = 26.441528
-offset_right = 90.0
-offset_bottom = 69.44153
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[center][color=#ffffff]PAPER[/color][/center]"
-scroll_active = false
-shortcut_keys_enabled = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Weight" type="RichTextLabel" parent="PlayerHand/ScrollContainer/VBoxContainer/Template" unique_id=1030010277]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = 84.44153
-offset_right = 74.0
-offset_bottom = 108.44153
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 18
-bbcode_enabled = true
-text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Items" type="Panel" parent="." unique_id=715944790]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -380.0
-offset_top = 748.0
-offset_right = -18.0
-offset_bottom = 1055.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Items" unique_id=1402278597]
-layout_mode = 0
-offset_left = 19.164705
-offset_top = 15.999973
-offset_right = 342.8353
-offset_bottom = 290.99997
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Items/ScrollContainer" unique_id=966313589]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 16
-metadata/_edit_use_anchors_ = true
-
-[node name="Template" type="Button" parent="Items/ScrollContainer/HBoxContainer" unique_id=1395838881]
-visible = false
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_item_ready")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_primary_disabled")
-
-[node name="Icon" type="TextureRect" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=2035524055]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 22.0
-offset_right = 80.0
-offset_bottom = 86.0
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_suit")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="InfoLabel" type="RichTextLabel" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=1775809393]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 14.0
-offset_right = 310.83533
-offset_bottom = 99.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "[color=#ffffff]ITEM SLOT 01[/color]
-[color=#94a3b8]The item description will go here and cannot be that long.[/color]"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Status" type="RichTextLabel" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=261395267]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -60.417664
-offset_top = -9.0
-offset_right = 60.417664
-offset_bottom = 9.0
-grow_horizontal = 2
-mouse_filter = 2
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "● READY TO USE"
-scroll_active = false
-
-[node name="Cooldown" type="Panel" parent="Items/ScrollContainer/HBoxContainer/Template" unique_id=1957921250]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_item_cooldown_overlay")
-
-[node name="Label" type="RichTextLabel" parent="Items/ScrollContainer/HBoxContainer/Template/Cooldown" unique_id=953364829]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-bbcode_enabled = true
-text = "[color=#ef4444]ON COOLDOWN[/color]
-[color=#cbd5e1]2 ROUNDS LEFT"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
+alignment = 1
 
 [node name="ModifiersPanel" type="Panel" parent="." unique_id=265920539]
 visible = false
@@ -1026,23 +907,141 @@ text = "[color=#facc15]+2 BANK POINTS[/color]
 [font_size=12]Direct bank deposit[/font_size]"
 scroll_active = false
 
-[node name="PlayerCards" type="Node" parent="." unique_id=1733369448]
-
-[node name="Special" type="Panel" parent="PlayerCards" unique_id=1119777646]
-custom_minimum_size = Vector2(210, 273)
+[node name="PlayerCards" type="Panel" parent="." unique_id=1294722381]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -697.98535
-offset_top = -244.7573
-offset_right = -487.98532
-offset_bottom = 28.242676
+offset_left = -703.5
+offset_top = -275.0
+offset_right = -276.5
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ovib1")
+
+[node name="SpecialOutline" type="Panel" parent="PlayerCards" unique_id=1665836114 groups=["PlayerCardOutlines"]]
+custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.9853
+offset_top = -182.87862
+offset_right = -10.985291
+offset_bottom = 90.1214
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.2268928
 pivot_offset = Vector2(105, 136.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_28tp3")
+
+[node name="Label" type="RichTextLabel" parent="PlayerCards/SpecialOutline" unique_id=934247215]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.60399
+offset_top = 10.337279
+offset_right = 58.83088
+offset_bottom = 50.33728
+grow_horizontal = 2
+text = "SPECIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChainOutline" type="Panel" parent="PlayerCards" unique_id=881338049 groups=["PlayerCardOutlines"]]
+custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2.823578
+offset_top = -208.00385
+offset_right = 212.82358
+offset_bottom = 64.996155
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.22514747
+pivot_offset = Vector2(105, 136.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="Label" type="RichTextLabel" parent="PlayerCards/ChainOutline" unique_id=1966026467]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.488083
+offset_top = 11.916997
+offset_right = 63.946793
+offset_bottom = 51.916996
+grow_horizontal = 2
+text = "CHAIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeadOutline" type="Panel" parent="PlayerCards" unique_id=164747058 groups=["PlayerCardOutlines"]]
+custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -21.81694
+offset_right = 105.0
+offset_bottom = 251.18304
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0017453292
+pivot_offset = Vector2(105, 136.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
+
+[node name="Label" type="RichTextLabel" parent="PlayerCards/LeadOutline" unique_id=1653083544]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.217438
+offset_top = -20.0
+offset_right = 61.217438
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LEAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Special" type="Panel" parent="PlayerCards" unique_id=1119777646]
+visible = false
+custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.9853
+offset_top = -182.8786
+offset_right = -10.985291
+offset_bottom = 90.1214
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.2268928
+pivot_offset = Vector2(105, 136.5)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
 
 [node name="SuitIcon" type="TextureRect" parent="PlayerCards/Special" unique_id=1567032032]
@@ -1054,10 +1053,11 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
 offset_top = -105.55847
-offset_right = 60.0
+offset_right = 59.999992
 offset_bottom = 14.441528
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_suit")
 expand_mode = 1
 stretch_mode = 5
@@ -1075,6 +1075,7 @@ offset_right = 90.0
 offset_bottom = 69.44153
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][color=#ffffff]PAPER[/color][/center]"
@@ -1096,6 +1097,7 @@ offset_right = 74.0
 offset_bottom = 108.44153
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
@@ -1104,20 +1106,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Chain" type="Panel" parent="PlayerCards" unique_id=5352907]
+visible = false
 custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -550.1764
-offset_top = -215.8825
-offset_right = -340.1764
-offset_bottom = 57.117493
+offset_left = 2.823578
+offset_top = -208.00385
+offset_right = 212.82358
+offset_bottom = 64.996155
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.22514747
 pivot_offset = Vector2(105, 136.5)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
 
 [node name="SuitIcon" type="TextureRect" parent="PlayerCards/Chain" unique_id=1659029104]
@@ -1133,6 +1138,7 @@ offset_right = 60.0
 offset_bottom = 14.441528
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_suit")
 expand_mode = 1
 stretch_mode = 5
@@ -1150,6 +1156,7 @@ offset_right = 90.0
 offset_bottom = 69.44153
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][color=#ffffff]PAPER[/color][/center]"
@@ -1171,6 +1178,7 @@ offset_right = 74.0
 offset_bottom = 108.44153
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
@@ -1179,20 +1187,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lead" type="Panel" parent="PlayerCards" unique_id=268594230]
+visible = false
 custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -629.0
-offset_top = -163.0
-offset_right = -419.0
-offset_bottom = 110.0
+offset_left = -104.99999
+offset_top = -21.816956
+offset_right = 105.0
+offset_bottom = 251.18304
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0017453292
 pivot_offset = Vector2(105, 136.5)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
 
 [node name="SuitIcon" type="TextureRect" parent="PlayerCards/Lead" unique_id=388614364]
@@ -1208,6 +1219,7 @@ offset_right = 60.0
 offset_bottom = 14.441528
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_suit")
 expand_mode = 1
 stretch_mode = 5
@@ -1225,6 +1237,7 @@ offset_right = 90.0
 offset_bottom = 69.44153
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center][color=#ffffff]PAPER[/color][/center]"
@@ -1246,6 +1259,7 @@ offset_right = 74.0
 offset_bottom = 108.44153
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
@@ -1253,50 +1267,41 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayButton" type="Button" parent="PlayerCards" unique_id=1277705722]
-offset_left = 308.0
-offset_top = 461.0
-offset_right = 562.0
-offset_bottom = 523.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_8ukt1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
-
-[node name="Label" type="RichTextLabel" parent="PlayerCards/PlayButton" unique_id=247042315]
+[node name="ComputerCards" type="Panel" parent="." unique_id=140630833]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "PLAY"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ComputerCards" type="Node" parent="." unique_id=685091003]
-
-[node name="Special" type="Panel" parent="ComputerCards" unique_id=1930410111]
-custom_minimum_size = Vector2(210, 273)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.01465
-offset_top = -244.87863
-offset_right = 546.01465
-offset_bottom = 28.121338
+offset_left = 276.5
+offset_top = -275.0
+offset_right = 703.5
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yhgot")
+
+[node name="Special" type="Panel" parent="ComputerCards" unique_id=998351024]
+custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.9853
+offset_top = -182.87862
+offset_right = -10.985291
+offset_bottom = 90.1214
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.2268928
 pivot_offset = Vector2(105, 136.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
 
-[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Special" unique_id=1797972105]
+[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Special" unique_id=333129572]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1313,7 +1318,8 @@ texture = SubResource("PlaceholderTexture2D_suit")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Suit" type="RichTextLabel" parent="ComputerCards/Special" unique_id=827753133]
+[node name="Suit" type="RichTextLabel" parent="ComputerCards/Special" unique_id=1709839327]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1334,7 +1340,8 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weight" type="RichTextLabel" parent="ComputerCards/Special" unique_id=96070745]
+[node name="Weight" type="RichTextLabel" parent="ComputerCards/Special" unique_id=575131336]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1354,24 +1361,44 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Chain" type="Panel" parent="ComputerCards" unique_id=741414214]
+[node name="BackDesign" type="TextureRect" parent="ComputerCards/Special" unique_id=1908270171]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_l7yjw")
+
+[node name="Chain" type="Panel" parent="ComputerCards" unique_id=1278184614]
 custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 483.8236
-offset_top = -216.00385
-offset_right = 693.8236
-offset_bottom = 56.996155
+offset_left = 2.823578
+offset_top = -208.00385
+offset_right = 212.82358
+offset_bottom = 64.996155
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.22514747
 pivot_offset = Vector2(105, 136.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
 
-[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Chain" unique_id=940219761]
+[node name="BackDesign" type="TextureRect" parent="ComputerCards/Chain" unique_id=365365154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_l7yjw")
+
+[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Chain" unique_id=1862163475]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1388,7 +1415,8 @@ texture = SubResource("PlaceholderTexture2D_suit")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Suit" type="RichTextLabel" parent="ComputerCards/Chain" unique_id=206841883]
+[node name="Suit" type="RichTextLabel" parent="ComputerCards/Chain" unique_id=1362284555]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1409,7 +1437,8 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weight" type="RichTextLabel" parent="ComputerCards/Chain" unique_id=505032623]
+[node name="Weight" type="RichTextLabel" parent="ComputerCards/Chain" unique_id=1687521895]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1429,24 +1458,26 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Lead" type="Panel" parent="ComputerCards" unique_id=440389136]
+[node name="Lead" type="Panel" parent="ComputerCards" unique_id=1091247891]
 custom_minimum_size = Vector2(210, 273)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 405.0
-offset_top = -163.0
-offset_right = 615.0
-offset_bottom = 110.0
+offset_left = -105.0
+offset_top = -21.81694
+offset_right = 105.0
+offset_bottom = 251.18304
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.0017453292
 pivot_offset = Vector2(105, 136.5)
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_base")
 
-[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Lead" unique_id=2036381321]
+[node name="SuitIcon" type="TextureRect" parent="ComputerCards/Lead" unique_id=1806905551]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1463,7 +1494,8 @@ texture = SubResource("PlaceholderTexture2D_suit")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Suit" type="RichTextLabel" parent="ComputerCards/Lead" unique_id=2044891518]
+[node name="Suit" type="RichTextLabel" parent="ComputerCards/Lead" unique_id=1311740879]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1484,7 +1516,8 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Weight" type="RichTextLabel" parent="ComputerCards/Lead" unique_id=11248500]
+[node name="Weight" type="RichTextLabel" parent="ComputerCards/Lead" unique_id=1562140986]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1503,6 +1536,15 @@ text = "[center][color=#c084fc]HEAVY (4)[/color][/center]"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackDesign" type="TextureRect" parent="ComputerCards/Lead" unique_id=1499336239]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_l7yjw")
 
 [node name="LoserTutorModal" type="Panel" parent="." unique_id=1425423562]
 visible = false
@@ -1570,3 +1612,5 @@ mouse_filter = 2
 bbcode_enabled = true
 text = "[center]CONFIRM CARD[/center]"
 scroll_active = false
+
+[connection signal="pressed" from="ActionButton" to="UIHandler" method="_on_action_button_pressed"]

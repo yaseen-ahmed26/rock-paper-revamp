@@ -1,20 +1,12 @@
 [gd_resource type="Resource" script_class="ModifierBase" format=3 uid="uid://py4vhs4a56gn"]
 
 [ext_resource type="Script" uid="uid://cfktrpopf1vy8" path="res://gameplay/generic/gameplay_rule.gd" id="1_medog"]
-[ext_resource type="Script" uid="uid://dtn8oe8q1impv" path="res://gameplay/generic/gameplay_effect.gd" id="2_3w5nr"]
 [ext_resource type="Script" uid="uid://d2bvcnih05ama" path="res://gameplay/bases/modifier_base.gd" id="2_5r6ol"]
 [ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="3_s01h2"]
-[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_uaft4"]
-
-[sub_resource type="Resource" id="Resource_uaft4"]
-script = ExtResource("1_medog")
-triggers = Array[ExtResource("3_uaft4")]([null])
-metadata/_custom_type_script = "uid://cfktrpopf1vy8"
 
 [resource]
 script = ExtResource("2_5r6ol")
 timing = 2
-rules = Array[ExtResource("1_medog")]([SubResource("Resource_uaft4")])
 id = &"test_modifier"
 display_name = "Test Modifier"
 description = "Testing Testing"

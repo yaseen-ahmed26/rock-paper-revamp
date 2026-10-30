@@ -1,7 +1,7 @@
 class_name PlayerState
 extends RefCounted
 
-const STARTING_BANK: int = 12
+const STARTING_BANK: int = 4
 const STARTING_HAND_SIZE: int = 6
 const MAX_HAND_SIZE: int = 8
 

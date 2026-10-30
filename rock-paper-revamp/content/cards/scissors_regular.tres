@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_g2oam")
-suit = 3
+suit = 2
 weight = 2
 id = &"scissors_regular"
 display_name = "Scissors (Regular)"

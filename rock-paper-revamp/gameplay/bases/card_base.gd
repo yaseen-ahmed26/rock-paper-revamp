@@ -7,7 +7,6 @@ const SHOW_IF: Dictionary = {
 }
 
 enum Suit {
-	NONE,
 	ROCK,
 	PAPER,
 	SCISSORS,
@@ -42,7 +41,7 @@ func get_weight_value():
 	return Weight.NONE if is_special else int(weight)
 
 func get_suit_name():
-	if is_special or suit == Suit.NONE:
+	if is_special:
 		return "none"
 	
 	return Suit.keys()[suit].to_lower()

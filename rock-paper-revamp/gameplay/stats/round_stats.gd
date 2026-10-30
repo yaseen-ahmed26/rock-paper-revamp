@@ -2,8 +2,8 @@ extends RefCounted
 class_name RoundStats
 
 var house_bank: int = 0
-var house_suit: CardBase.Suit = CardBase.Suit.NONE
-var next_house_suit: CardBase.Suit = CardBase.Suit.NONE
+var house_suit: CardBase.Suit
+var next_house_suit: CardBase.Suit
 
 var outcome: GameStats.RoundOutcome = GameStats.RoundOutcome.CLEARED
 var scenario: GameStats.ResolutionScenario = GameStats.ResolutionScenario.NONE

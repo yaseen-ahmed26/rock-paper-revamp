@@ -108,9 +108,6 @@ func _init() -> void:
 	current_round = RoundStats.new()
 
 static func does_suit_beat(attacker: CardBase.Suit, defender: CardBase.Suit):
-	if attacker == CardBase.Suit.NONE or defender == CardBase.Suit.NONE:
-		return false
-		
 	return defender in RPLS_BEATS.get(attacker, [])
 
 static func is_honest_move(move_suit: CardBase.Suit, current_house_suit: CardBase.Suit):
@@ -160,3 +157,9 @@ func record_round_stats() -> void:
 
 func get_lower_stat(stat_name):
 	return StatNames.keys()[stat_name].to_lower()
+
+func get_lower_suit(suit: CardBase.Suit):
+	return CardBase.Suit.keys()[suit].to_lower()
+
+func get_lower_weight(weight: CardBase.Weight):
+	return CardBase.Weight.keys()[weight].to_lower()

@@ -16,6 +16,7 @@ enum Scenarios {
 }
 
 @onready var ui_handler: Node = $UIHandler
+@onready var round_timer: Timer = $RoundTimer
 
 # For testing
 @export var test_mode: bool = false
@@ -40,6 +41,7 @@ func _ready() -> void:
 	_start_game()
 	
 	ui_handler.move_chosen.connect(submit_moves)
+	round_timer.timeout.connect(end_round)
 
 func on_screen_change(information: Dictionary) -> void:
 	if information.get("restart"):
@@ -65,7 +67,7 @@ func _start_game() -> void:
 	game_stats.player_state.setup(card_pool)
 	game_stats.computer_state.setup(card_pool)
 	
-	ui_handler.set_inital_ui(game_stats)
+	ui_handler.on_game_start(game_stats)
 
 	for modifier in modifiers:
 		modifier.setup()
@@ -104,7 +106,7 @@ func start_round() -> void:
 
 		submit_moves(p_move, a_move)
 		
-	ui_handler.set_round_start_ui(game_stats)
+	ui_handler.on_round_start(game_stats)
 
 func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:	
 	a_move = a_move if a_move != null else computer.pick_move(game_stats)
@@ -163,7 +165,7 @@ func end_round() -> void:
 
 	# round_resolved.emit(game_stats.outcome, game_stats.last_scenario, game_stats.last_round_summary)
 	
-	ui_handler.set_round_end_ui(game_stats)
+	ui_handler.on_round_end(game_stats)
 		
 	_check_hand_empty()
 		
