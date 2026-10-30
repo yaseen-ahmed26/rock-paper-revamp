@@ -15,7 +15,7 @@ const SHOW_IF = {
 
 @export_group("General")
 ## The specific tasks for this contract.
-@export var subtasks: Array[GameplayRule]
+@export var subtasks: Array[GameplayTrigger]
 
 @export_group("Flags")
 ## If true, this contract awards Tokens when completed.
