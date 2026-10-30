@@ -4,6 +4,7 @@ var modifiers: Dictionary[StringName, ModifierBase] = {}
 var gamemodes: Dictionary[StringName, GamemodeBase] = {}
 var computers: Dictionary[StringName, ComputerBase] = {}
 var challenges: Dictionary[StringName, ChallengeBase] = {}
+var contracts: Dictionary[StringName, ContractBase]
 
 var cards: Dictionary[StringName, CardBase] = {}
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	_load_resources("res://content/computers/", computers)	
 	_load_resources("res://content/challenges/", challenges)
 	_load_resources("res://content/cards/", cards)
+	_load_resources("res://content/contracts/", contracts)
 
 func _load_resources(path: String, target_dict: Dictionary) -> void:	
 	var directory = DirAccess.open(path)	
@@ -75,3 +77,10 @@ func get_challenge_resource(id: String) -> ChallengeBase:
 		return
 	
 	return challenges.get(id)
+
+func get_contract_resource(id: StringName) -> ContractBase:
+	if not contracts.has(id):
+		print("No Contract found with ID of '%s'" % str(id))
+		return
+	
+	return contracts.get(id)
