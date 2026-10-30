@@ -1,5 +1,11 @@
 extends Node
 
+var active_contract: ContractBase = null
+
+func _ready() -> void:
+	active_contract = ContentManager.get_contract_resource(&"test_contract")
+	print(active_contract.display_name)
+
 func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase], tasks_competed: int):
 	var amount: int = 0
 	
