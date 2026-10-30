@@ -1,6 +1,7 @@
 extends Node
 
 var active_contract = {
+	"id": &"",
 	"base": null,
 	"total_tasks": 0,
 	"progress": {},
@@ -46,6 +47,7 @@ func set_contract_active(contract: ContractBase):
 	active_contract.completed = false
 	active_contract.reward_claimed = false
 	
+	active_contract.id = contract.id
 	active_contract.total_tasks = contract.subtasks.size()
 	
 	for subtask: ContractSubtask in contract.subtasks:
@@ -78,3 +80,11 @@ func check_contract_completion(game_stats: GameStats, timing: ModifierBase.Apply
 		
 	if tasks_completed == active_contract.get("total_tasks"):
 		active_contract.completed = true
+
+func get_total_completed_tasks():
+	var completed: int = 0
+	
+	for t in active_contract.progress.values():
+		if t.completed: completed += 1
+		
+	return completed

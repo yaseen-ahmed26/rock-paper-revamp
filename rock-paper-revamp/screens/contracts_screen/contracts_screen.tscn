@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://p2wna505btbi"]
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://d3lmxi42smokx" path="res://screens/contracts_screen/contracts_screen.gd" id="2_hlxtf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_secondary_normal"]
 bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
@@ -245,6 +246,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_theme")
+script = ExtResource("2_hlxtf")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1984625067]
 layout_mode = 1
@@ -306,9 +308,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
 
 [node name="Completed" type="RichTextLabel" parent="InformationBanner" unique_id=899237124]
 layout_mode = 0
-offset_left = 737.0
+offset_left = 729.0
 offset_top = 12.0
-offset_right = 963.0
+offset_right = 955.0
 offset_bottom = 47.0
 bbcode_enabled = true
 text = "[color=#94a3b8]COMPLETED:[/color] [color=#34d399]4 / 18[/color]"
@@ -323,7 +325,7 @@ offset_top = 12.0
 offset_right = 669.0
 offset_bottom = 47.0
 bbcode_enabled = true
-text = "[color=#a855f7]ACTIVE CONTRACT:[/color]  [color=#ffffff]CONTRACT NAME[/color]  •  [color=#94a3b8]1/3 Objectives[/color]"
+text = "[color=#a855f7]ACTIVE CONTRACT:[/color] [color=#ffffff]CONTRACT NAME[/color] • [color=#94a3b8]1/3 Objectives[/color]"
 scroll_active = false
 vertical_alignment = 1
 
@@ -482,6 +484,7 @@ theme_override_constants/v_separation = 16
 columns = 3
 
 [node name="TemplateActive" type="Button" parent="ContractsHolder/ScrollContainer/GridContainer" unique_id=1432940442]
+visible = false
 custom_minimum_size = Vector2(376, 210)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_card_active")
@@ -507,7 +510,7 @@ offset_right = 356.0
 offset_bottom = 86.0
 mouse_filter = 2
 bbcode_enabled = true
-text = "[color=#ffffff]SHATTERED STALEMATE[/color]
+text = "SHATTERED STALEMATE
 [color=#facc15]HARD"
 scroll_active = false
 
@@ -561,6 +564,7 @@ mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
 max_value = 3.0
+step = 1.0
 value = 1.0
 show_percentage = false
 
@@ -579,6 +583,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TemplateStatic" type="Button" parent="ContractsHolder/ScrollContainer/GridContainer" unique_id=1114412737]
+visible = false
 custom_minimum_size = Vector2(376, 210)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_hlxtf")
@@ -653,6 +658,7 @@ mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_bar_bg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bar_fill")
 max_value = 3.0
+step = 1.0
 value = 1.0
 show_percentage = false
 
@@ -671,6 +677,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TemplateCompleted" type="Button" parent="ContractsHolder/ScrollContainer/GridContainer" unique_id=1727565131]
+visible = false
 custom_minimum_size = Vector2(376, 210)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_dvds2")
@@ -848,7 +855,7 @@ offset_right = 564.0
 offset_bottom = 112.0
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[color=#ffffff]CONTRACT NAME"
+text = "CONTRACT NAME"
 scroll_active = false
 
 [node name="Difficulty" type="RichTextLabel" parent="SelectedContract" unique_id=530836635]
@@ -893,12 +900,13 @@ offset_right = 564.0
 offset_bottom = 680.0
 theme_override_constants/separation = 12
 
-[node name="TemplateStepComplete" type="Panel" parent="SelectedContract/SubtasksHolder" unique_id=330809952]
+[node name="TemplateComplete" type="Panel" parent="SelectedContract/SubtasksHolder" unique_id=330809952]
+visible = false
 custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_completed")
 
-[node name="Icon" type="TextureRect" parent="SelectedContract/SubtasksHolder/TemplateStepComplete" unique_id=1704280721]
+[node name="Icon" type="TextureRect" parent="SelectedContract/SubtasksHolder/TemplateComplete" unique_id=1704280721]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 22.0
@@ -908,7 +916,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="SelectedContract/SubtasksHolder/TemplateStepComplete" unique_id=1176912452]
+[node name="Label" type="RichTextLabel" parent="SelectedContract/SubtasksHolder/TemplateComplete" unique_id=1176912452]
 layout_mode = 0
 offset_left = 68.0
 offset_top = 16.0
@@ -916,17 +924,18 @@ offset_right = 516.0
 offset_bottom = 62.0
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "[color=#6ee7b7]STEP 01 — COMPLETED[/color]
+text = "[color=#6ee7b7]STEP %d — COMPLETED[/color]
 [color=#cbd5e1]Break an opponent's Defense in a single round.[/color]"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="TemplateStepIncomplete" type="Panel" parent="SelectedContract/SubtasksHolder" unique_id=551039721]
+[node name="TemplateIncomplete" type="Panel" parent="SelectedContract/SubtasksHolder" unique_id=551039721]
+visible = false
 custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_SubtaskBox")
 
-[node name="Icon" type="TextureRect" parent="SelectedContract/SubtasksHolder/TemplateStepIncomplete" unique_id=1574614422]
+[node name="Icon" type="TextureRect" parent="SelectedContract/SubtasksHolder/TemplateIncomplete" unique_id=1574614422]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 22.0
@@ -936,7 +945,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="SelectedContract/SubtasksHolder/TemplateStepIncomplete" unique_id=377579342]
+[node name="Label" type="RichTextLabel" parent="SelectedContract/SubtasksHolder/TemplateIncomplete" unique_id=377579342]
 layout_mode = 0
 offset_left = 68.0
 offset_top = 16.0
@@ -944,8 +953,8 @@ offset_right = 516.0
 offset_bottom = 62.0
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "[color=#94a3b8]STEP 03 — INCOMPLETE[/color]
-[color=#ffffff]Deal 4+ unshielded bank damage in one turn.[/color]"
+text = "[color=#94a3b8]STEP %d — INCOMPLETE[/color]
+Deal 4+ unshielded bank damage in one turn."
 scroll_active = false
 vertical_alignment = 1
 
@@ -970,6 +979,7 @@ text = "REWARD"
 scroll_active = false
 
 [node name="Icon" type="TextureRect" parent="SelectedContract/Reward" unique_id=1355110899]
+visible = false
 layout_mode = 0
 offset_left = 20.0
 offset_top = 52.0
@@ -1024,6 +1034,7 @@ offset_left = 28.0
 offset_top = 904.0
 offset_right = 564.0
 offset_bottom = 996.0
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
@@ -1040,18 +1051,3 @@ mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SelectedContract/ActivateButton" unique_id=419879918]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "ACTIVATE CONTRACT"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1

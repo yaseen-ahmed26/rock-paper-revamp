@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ContractBase" format=3 uid="uid://cme2whrh31vpe"]
+
+[ext_resource type="Script" uid="uid://bgvquwfrwsnek" path="res://gameplay/bases/contract_base.gd" id="1_ely8m"]
+[ext_resource type="Script" uid="uid://bf620hd5oskmx" path="res://gameplay/contracts/contract_subtask.gd" id="2_8t3ux"]
+[ext_resource type="Script" uid="uid://cjn1eubyrk1we" path="res://gameplay/generic/gameplay_trigger.gd" id="3_i3axq"]
+[ext_resource type="Script" uid="uid://cc0jltcna67ee" path="res://gameplay/generic/triggers/compare_stats_trigger.gd" id="4_6sgl1"]
+
+[sub_resource type="Resource" id="Resource_7y2x0"]
+script = ExtResource("4_6sgl1")
+metadata/_custom_type_script = "uid://cc0jltcna67ee"
+
+[sub_resource type="Resource" id="Resource_uo1id"]
+script = ExtResource("2_8t3ux")
+triggers = Array[ExtResource("3_i3axq")]([SubResource("Resource_7y2x0")])
+cosmetic_text = "a"
+metadata/_custom_type_script = "uid://bf620hd5oskmx"
+
+[resource]
+script = ExtResource("1_ely8m")
+difficulty = "Hard"
+reward = "1,000 Tokens"
+subtasks = Array[ExtResource("2_8t3ux")]([SubResource("Resource_uo1id")])
+token_reward = 1000
+id = &"test_contract_2"
+display_name = "Test Contract 2"
+description = "A Contract for testing 2."
+metadata/_custom_type_script = "uid://bgvquwfrwsnek"
