@@ -42,7 +42,7 @@ func purchase_modifier(modifier: ModifierBase):
 
 func set_contract_active(contract: ContractBase):
 	# Would also need to check if it's been completed.
-	
+
 	active_contract.base = contract
 	active_contract.completed = false
 	active_contract.reward_claimed = false

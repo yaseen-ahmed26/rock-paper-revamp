@@ -5,6 +5,8 @@ extends Control
 @onready var grid_container: GridContainer = $ContractsHolder/ScrollContainer/GridContainer
 @onready var information_banner: Panel = $InformationBanner
 
+var chosen_contract: ContractBase
+
 func _ready() -> void:
 	_set_inital()
 	_create_btns()
@@ -121,5 +123,30 @@ func _update_inspector(contract: ContractBase):
 	
 		_update_inspector_subtasks(contract, false)
 
+func _update_existing_btns():
+	# TEMP
+	# This would be change so each template is it's own scene
+	# that we just toggle between states.
+	
+	var template_active = grid_container.get_node("TemplateActive")
+	var template_static = grid_container.get_node("TemplateStatic")
+	var template_completed = grid_container.get_node("TemplateCompleted")
+	
+	for child in grid_container.get_children():
+		if child == template_active: continue
+		if child == template_static: continue
+		if child == template_completed: continue	
+		
+		child.queue_free()
+		
+	_create_btns()
+
 func _on_contract_btn_pressed(btn: Button):
 	_update_inspector(btn.get_meta("ContractBase"))
+	chosen_contract = btn.get_meta("ContractBase")
+
+func _on_activate_btn_pressed() -> void:
+	PlayerManager.set_contract_active(chosen_contract)
+	_update_inspector(chosen_contract)
+	_set_inital()
+	_update_existing_btns()

@@ -1051,3 +1051,5 @@ mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="pressed" from="SelectedContract/ActivateButton" to="." method="_on_activate_btn_pressed"]
