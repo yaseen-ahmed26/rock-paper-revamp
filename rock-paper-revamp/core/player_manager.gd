@@ -1,11 +1,16 @@
 extends Node
 
-var active_contract: ContractBase = null
+var active_contract = {
+	"base": null,
+	"total_tasks": 0,
+	"progress": {},
+	"completed": false,
+	"reward_claimed": false
+}
 
 func _ready() -> void:
-	active_contract = ContentManager.get_contract_resource(&"test_contract")
-	print(active_contract.display_name)
-
+	set_contract_active(ContentManager.get_contract_resource(&"test_contract"))
+	
 func calculate_tokens(game_stats: GameStats, modifiers: Array[ModifierBase], tasks_competed: int):
 	var amount: int = 0
 	
@@ -33,3 +38,43 @@ func purchase_modifier(modifier: ModifierBase):
 		return true
 	else:
 		return false
+
+func set_contract_active(contract: ContractBase):
+	# Would also need to check if it's been completed.
+	
+	active_contract.base = contract
+	active_contract.completed = false
+	active_contract.reward_claimed = false
+	
+	active_contract.total_tasks = contract.subtasks.size()
+	
+	for subtask: ContractSubtask in contract.subtasks:
+		active_contract.progress[contract.subtasks.find(subtask)] = {
+			"progress_made": 0,
+			"progress_needed": subtask.completion_amount,
+			"completed": false
+		}
+
+func check_contract_completion(game_stats: GameStats, timing: ModifierBase.ApplyAt):
+	if active_contract.completed: return
+	
+	var contract: ContractBase = active_contract.base
+	var tasks_completed: int = 0
+	
+	for subtask: ContractSubtask in contract.subtasks:
+		var task_index: int = contract.subtasks.find(subtask)
+		var saved_progress: Dictionary = active_contract.progress.get(task_index)
+		
+		if saved_progress.get("completed"):
+			tasks_completed += 1	
+			continue
+		
+		if subtask.check_completion(game_stats, timing):			
+			saved_progress.progress_made += 1
+			
+			if saved_progress.progress_made >= saved_progress.progress_needed:
+				saved_progress.completed = true
+				tasks_completed += 1		
+		
+	if tasks_completed == active_contract.get("total_tasks"):
+		active_contract.completed = true

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bf620hd5oskmx" path="res://gameplay/contracts/contract_subtask.gd" id="2_tylkx"]
 [ext_resource type="Script" uid="uid://bkxdv8hdqu3h8" path="res://gameplay/generic/triggers/card_weight_trigger.gd" id="4_pyfda"]
 [ext_resource type="Script" uid="uid://ynqdoxtoejnr" path="res://gameplay/generic/triggers/honest_move_trigger.gd" id="5_74p5e"]
+[ext_resource type="Script" uid="uid://duqy0m4jqs06j" path="res://gameplay/generic/triggers/house_bank_trigger.gd" id="6_74p5e"]
 
 [sub_resource type="Resource" id="Resource_pyfda"]
 script = ExtResource("4_pyfda")
@@ -14,6 +15,7 @@ metadata/_custom_type_script = "uid://bkxdv8hdqu3h8"
 
 [sub_resource type="Resource" id="Resource_tylkx"]
 script = ExtResource("2_tylkx")
+timing = 2
 triggers = Array[ExtResource("2_7cwqx")]([SubResource("Resource_pyfda")])
 cosmetic_text = "Play a Lead card of any Suit with a weight of Regular or higher."
 metadata/_custom_type_script = "uid://bf620hd5oskmx"
@@ -24,16 +26,29 @@ metadata/_custom_type_script = "uid://ynqdoxtoejnr"
 
 [sub_resource type="Resource" id="Resource_74p5e"]
 script = ExtResource("2_tylkx")
+timing = 2
 triggers = Array[ExtResource("2_7cwqx")]([SubResource("Resource_tmjpw")])
 cosmetic_text = "Play an Honest move 3 times."
 completion_amount = 3
+metadata/_custom_type_script = "uid://bf620hd5oskmx"
+
+[sub_resource type="Resource" id="Resource_srujj"]
+script = ExtResource("6_74p5e")
+operator = 3
+target_value = 2
+metadata/_custom_type_script = "uid://duqy0m4jqs06j"
+
+[sub_resource type="Resource" id="Resource_7bahs"]
+script = ExtResource("2_tylkx")
+triggers = Array[ExtResource("2_7cwqx")]([SubResource("Resource_srujj")])
+cosmetic_text = "Let the House Bank accumulate 2 points."
 metadata/_custom_type_script = "uid://bf620hd5oskmx"
 
 [resource]
 script = ExtResource("1_tylkx")
 difficulty = "Hard"
 reward = "1,000 Tokens"
-subtasks = Array[ExtResource("2_tylkx")]([SubResource("Resource_tylkx"), SubResource("Resource_74p5e")])
+subtasks = Array[ExtResource("2_tylkx")]([SubResource("Resource_tylkx"), SubResource("Resource_74p5e"), SubResource("Resource_7bahs")])
 token_reward = 1000
 id = &"test_contract"
 display_name = "Test Contract"

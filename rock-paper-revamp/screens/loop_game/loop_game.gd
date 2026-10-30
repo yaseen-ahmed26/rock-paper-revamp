@@ -89,6 +89,7 @@ func start_round() -> void:
 	game_stats.reset_round()
 
 	_apply_modifiers(ModifierBase.ApplyAt.ROUND_START)
+	PlayerManager.check_contract_completion(game_stats, ModifierBase.ApplyAt.ROUND_START)
 	
 	# Test stuff
 	if test_mode:
@@ -134,6 +135,7 @@ func submit_moves(p_move: ChosenCards, a_move: ChosenCards = null) -> void:
 
 func end_round() -> void:
 	_apply_modifiers(ModifierBase.ApplyAt.PRE_EVALUATION)
+	PlayerManager.check_contract_completion(game_stats, ModifierBase.ApplyAt.PRE_EVALUATION)
 	
 	var resolution: Dictionary = _evaluate_round(
 		game_stats.house_suit,
@@ -150,18 +152,19 @@ func end_round() -> void:
 	game_stats.record_round_stats()
 	
 	_apply_modifiers(ModifierBase.ApplyAt.ROUND_END)
+	PlayerManager.check_contract_completion(game_stats, ModifierBase.ApplyAt.ROUND_END)
 
 	_post_round_effects()
 	game_stats.advance_house_suit()
 
-	print("--------------------------------------------------")
-	print("Summary > " + game_stats.last_round_summary)
-	print("Banks > Player: %d (Def: %d, OS: %d) | AI: %d (Def: %d, OS: %d) | House: %d" % [
-		game_stats.player_state.bank, game_stats.player_state.defense, game_stats.player_state.overshield,
-		game_stats.computer_state.bank, game_stats.computer_state.defense, game_stats.computer_state.overshield,
-		game_stats.house_bank
-	])
-	print("--------------------------------------------------")
+	#print("--------------------------------------------------")
+	#print("Summary > " + game_stats.last_round_summary)
+	#print("Banks > Player: %d (Def: %d, OS: %d) | AI: %d (Def: %d, OS: %d) | House: %d" % [
+		#game_stats.player_state.bank, game_stats.player_state.defense, game_stats.player_state.overshield,
+		#game_stats.computer_state.bank, game_stats.computer_state.defense, game_stats.computer_state.overshield,
+		#game_stats.house_bank
+	#])
+	#print("--------------------------------------------------")
 
 	# round_resolved.emit(game_stats.outcome, game_stats.last_scenario, game_stats.last_round_summary)
 	
