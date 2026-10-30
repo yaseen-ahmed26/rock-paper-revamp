@@ -50,30 +50,30 @@ func _load_resources(path: String, target_dict: Dictionary) -> void:
 		
 		file_name = directory.get_next()
 
-func get_modifier_resource(id: String) -> ModifierBase:	
+func get_modifier_resource(id: StringName) -> ModifierBase:	
 	if not modifiers.has(id):
-		print("No modifier found with ID of '%s'" % id)
+		print("No Modifier found with ID of '%s'" % str(id))
 		return
 		
 	return modifiers.get(id)
 	
-func get_gamemode_resource(id: String) -> GamemodeBase:	
+func get_gamemode_resource(id: StringName) -> GamemodeBase:	
 	if not gamemodes.has(id):
-		print("No gamemode found with ID of '%s'" % id)
+		print("No Gamemode found with ID of '%s'" % str(id))
 		return
 	
 	return gamemodes.get(id)
 	
-func get_computer_resource(id: String) -> ComputerBase:	
+func get_computer_resource(id: StringName) -> ComputerBase:	
 	if not computers.has(id):
-		print("No computer found with ID of '%s'" % id)
+		print("No Computer found with ID of '%s'" % str(id))
 		return
 	
 	return computers.get(id)
 	
-func get_challenge_resource(id: String) -> ChallengeBase:	
+func get_challenge_resource(id: StringName) -> ChallengeBase:	
 	if not challenges.has(id):
-		print("No challenge found with ID of '%s'" % id)
+		print("No Challenge found with ID of '%s'" % str(id))
 		return
 	
 	return challenges.get(id)
