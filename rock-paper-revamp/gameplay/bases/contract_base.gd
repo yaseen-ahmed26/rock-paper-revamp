@@ -10,12 +10,10 @@ const SHOW_IF = {
 @export var difficulty: String 
 ## The cosmetic reward of this contract.
 @export var reward: String 
-## The cosmetic steps shown on UI for this contract.
-@export var steps: Array[String]
 
 @export_group("General")
 ## The specific tasks for this contract.
-@export var subtasks: Array[GameplayTrigger]
+@export var subtasks: Array[ContractSubtask]
 
 @export_group("Flags")
 ## If true, this contract awards Tokens when completed.
