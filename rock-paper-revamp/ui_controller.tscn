@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_7bahs"]
 [ext_resource type="PackedScene" uid="uid://ccm4a7a08yi6q" path="res://screens/splash_screen/splash_screen.tscn" id="3_dgec0"]
 [ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://screens/main_menu/main_menu.tscn" id="4_lab58"]
-[ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://screens/profile_screen/profile_screen.tscn" id="5_4vu88"]
 [ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://screens/credits_screen/credits_screen.tscn" id="6_srujj"]
 [ext_resource type="PackedScene" uid="uid://de3gb1xfyou76" path="res://screens/settings_screen/settings_screen.tscn" id="7_7bahs"]
 [ext_resource type="PackedScene" uid="uid://p2wna505btbi" path="res://screens/contracts_screen/contracts_screen.tscn" id="7_dgec0"]
@@ -123,9 +122,6 @@ color = Color(0, 0.23529412, 0.37254903, 1)
 mouse_filter = 2
 
 [node name="main_menu" parent="CanvasLayer" unique_id=771054830 instance=ExtResource("4_lab58")]
-visible = false
-
-[node name="profile_screen" parent="CanvasLayer" unique_id=849068084 instance=ExtResource("5_4vu88")]
 visible = false
 
 [node name="credits_screen" parent="CanvasLayer" unique_id=1581726153 instance=ExtResource("6_srujj")]
