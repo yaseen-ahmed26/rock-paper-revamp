@@ -70,6 +70,6 @@ func _on_start_btn_pressed() -> void:
 	)
 
 func on_screen_change(_args):
-	tokens.get_node("Label").text = str(int(SaveManager.local_saved_data.get("tokens")))		
+	# tokens.get_node("Label").text = str(int(SaveManager.local_saved_data.get("tokens")))		
 		
 	$Modifiers.check_unlocks()
