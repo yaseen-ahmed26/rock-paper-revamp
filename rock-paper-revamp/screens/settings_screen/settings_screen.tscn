@@ -2,8 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_theme"]
 [ext_resource type="StyleBox" uid="uid://bof34ag6ttno6" path="res://screens/settings_screen/ui_resources/tab_selected_btn.tres" id="2_51ot8"]
-[ext_resource type="StyleBox" uid="uid://xohovlaokuyr" path="res://screens/settings_screen/ui_resources/option_panel.tres" id="2_urhf5"]
-[ext_resource type="StyleBox" uid="uid://dv7a413xxcty6" path="res://screens/settings_screen/ui_resources/option_selected_panel.tres" id="3_51ot8"]
+[ext_resource type="Script" uid="uid://u2w3w2ssg578" path="res://screens/settings_screen/settings_screen.gd" id="2_t3f6d"]
+[ext_resource type="StyleBox" uid="uid://xohovlaokuyr" path="res://screens/settings_screen/ui_resources/option_normal_btn.tres" id="2_urhf5"]
 [ext_resource type="StyleBox" uid="uid://tlq20m2hkd56" path="res://screens/settings_screen/ui_resources/tab_normal_btn.tres" id="3_lm2ns"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgls2"]
@@ -117,30 +117,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tooltip_popup"]
-bg_color = Color(0.0431373, 0.0352941, 0.0784314, 0.96)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_checkbox_box"]
-bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_bg"]
 content_margin_top = 6.0
 content_margin_bottom = 6.0
@@ -158,6 +134,18 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_checkbox_box"]
+bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_danger_normal"]
 bg_color = Color(0.258824, 0.0705882, 0.121569, 1)
@@ -224,6 +212,56 @@ corner_radius_bottom_left = 10
 shadow_color = Color(0.576471, 0.2, 0.917647, 0.18)
 shadow_size = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3flk"]
+bg_color = Color(0.137255, 0.0980392, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.658824, 0.333333, 0.968627, 0.16)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6tnk"]
+bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.160784, 0.34902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo7ch"]
+bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.160784, 0.34902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m81f2"]
+bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.203922, 0.160784, 0.34902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="settings_screen" type="Control" unique_id=2075803792]
 layout_mode = 3
 anchors_preset = 15
@@ -232,6 +270,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_theme")
+script = ExtResource("2_t3f6d")
 
 [node name="Background" type="ColorRect" parent="." unique_id=892210108]
 layout_mode = 1
@@ -365,8 +404,73 @@ offset_right = 1240.0
 offset_bottom = 976.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pgls2")
 
-[node name="Display" type="Control" parent="SettingsHolder" unique_id=99929463]
+[node name="Template" type="Button" parent="SettingsHolder" unique_id=368693129]
 visible = false
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 76.0
+offset_right = 1200.0
+offset_bottom = 172.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_lm2ns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t3f6d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6w40j")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/Template" unique_id=1247557368]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 72.0
+offset_bottom = 24.0
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/Template" unique_id=31427484]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 18.0
+offset_right = 624.0
+offset_bottom = 79.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ffffff]WINDOW MODE[/color]
+[font_size=13][color=#94a3b8]Switch between Fullscreen, Windowed, and Borderless modes.[/color][/font_size]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="SelectedOption" type="Panel" parent="SettingsHolder/Template" unique_id=1162947443]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_28us6")
+metadata/Open = false
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/Template/SelectedOption" unique_id=980247045]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -12.5
+offset_right = 275.0
+offset_bottom = 12.5
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
+bbcode_enabled = true
+text = "Fullscreen"
+scroll_active = false
+
+[node name="Display" type="Control" parent="SettingsHolder" unique_id=99929463]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -386,7 +490,7 @@ bbcode_enabled = true
 text = "[color=#a855f7]DISPLAY[/color]  •  [color=#94a3b8]View options for window types, framerate and others.[/color]"
 scroll_active = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/Display" unique_id=1840730912]
+[node name="Holder" type="VBoxContainer" parent="SettingsHolder/Display" unique_id=1840730912]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 68.0
@@ -394,67 +498,7 @@ offset_right = 1200.0
 offset_bottom = 920.0
 theme_override_constants/separation = 16
 
-[node name="window_type" type="Button" parent="SettingsHolder/Display/VBoxContainer" unique_id=368693129]
-custom_minimum_size = Vector2(0, 96)
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_lm2ns")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_t3f6d")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6w40j")
-
-[node name="Icon" type="TextureRect" parent="SettingsHolder/Display/VBoxContainer/window_type" unique_id=1247557368]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = -24.0
-offset_right = 72.0
-offset_bottom = 24.0
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/Display/VBoxContainer/window_type" unique_id=31427484]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 18.0
-offset_right = 624.0
-offset_bottom = 79.0
-mouse_filter = 2
-bbcode_enabled = true
-text = "[color=#ffffff]WINDOW MODE[/color]
-[font_size=13][color=#94a3b8]Switch between Fullscreen, Windowed, and Borderless modes.[/color][/font_size]"
-scroll_active = false
-vertical_alignment = 1
-
-[node name="SelectedOption" type="Panel" parent="SettingsHolder/Display/VBoxContainer/window_type" unique_id=1162947443]
-layout_mode = 0
-offset_left = 816.0
-offset_top = 22.0
-offset_right = 1148.0
-offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_28us6")
-metadata/Open = false
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/Display/VBoxContainer/window_type/SelectedOption" unique_id=980247045]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -12.5
-offset_right = 275.0
-offset_bottom = 12.5
-grow_vertical = 2
-mouse_filter = 2
-theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
-bbcode_enabled = true
-text = "Fullscreen"
-scroll_active = false
-
-[node name="PreferencesTab" type="Control" parent="SettingsHolder" unique_id=1786689603]
+[node name="Preferences" type="Control" parent="SettingsHolder" unique_id=1786689603]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -465,238 +509,23 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/PreferencesTab" unique_id=1551290462]
+[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/Preferences" unique_id=1551290462]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 24.0
 offset_right = 1200.0
 offset_bottom = 56.0
 bbcode_enabled = true
-text = "[color=#a855f7]INTERFACE & GAMEPLAY PREFERENCES[/color]  •  [color=#94a3b8]Customize animations, startup flow, and HUD helpers[/color]"
+text = "[color=#a855f7]INTERFACE & GAMEPLAY PREFERENCES[/color]  •  [color=#94a3b8]Customize animations, startup options.[/color]"
 scroll_active = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/PreferencesTab" unique_id=1057185577]
+[node name="Holder" type="VBoxContainer" parent="SettingsHolder/Preferences" unique_id=1057185577]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 68.0
 offset_right = 1200.0
 offset_bottom = 920.0
 theme_override_constants/separation = 16
-
-[node name="icon_waterfall" type="Panel" parent="SettingsHolder/PreferencesTab/VBoxContainer" unique_id=1355359382]
-custom_minimum_size = Vector2(0, 96)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall" unique_id=1595610563]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 20.0
-offset_right = 640.0
-offset_bottom = 78.0
-bbcode_enabled = true
-text = "[color=#ffffff]MAIN MENU ICON WATERFALL[/color]
-[font_size=13][color=#94a3b8]Spawn falling suit icons in the background of the main menu.[/color][/font_size]"
-scroll_active = false
-
-[node name="DescriptionButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall" unique_id=88828817]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 28.0
-offset_right = 800.0
-offset_bottom = 68.0
-theme_override_styles/normal = ExtResource("2_urhf5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
-
-[node name="Icon" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/DescriptionButton" unique_id=380726527]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 32.0
-offset_bottom = 32.0
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/DescriptionButton" unique_id=1342019612]
-visible = false
-layout_mode = 0
-offset_left = -320.0
-offset_top = -54.0
-offset_right = 40.0
-offset_bottom = -6.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_tooltip_popup")
-bbcode_enabled = true
-text = "[center]Disable for a cleaner, static main menu background.[/center]"
-scroll_active = false
-
-[node name="ToggleButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall" unique_id=365200428]
-layout_mode = 0
-offset_left = 1096.0
-offset_top = 22.0
-offset_right = 1148.0
-offset_bottom = 74.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
-
-[node name="Tick" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/ToggleButton" unique_id=378255923]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 42.0
-offset_bottom = 42.0
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/ToggleButton" unique_id=2095427695]
-layout_mode = 0
-offset_left = -120.0
-offset_top = 14.0
-offset_right = -12.0
-offset_bottom = 40.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
-scroll_active = false
-
-[node name="skip_splash" type="Panel" parent="SettingsHolder/PreferencesTab/VBoxContainer" unique_id=2129437415]
-custom_minimum_size = Vector2(0, 96)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash" unique_id=975665189]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 20.0
-offset_right = 640.0
-offset_bottom = 78.0
-bbcode_enabled = true
-text = "[color=#ffffff]SKIP STARTUP SPLASH SCREEN[/color]
-[font_size=13][color=#94a3b8]Boot directly into the Main Menu when launching the game.[/color][/font_size]"
-scroll_active = false
-
-[node name="DescriptionButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash" unique_id=102136654]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 28.0
-offset_right = 800.0
-offset_bottom = 68.0
-theme_override_styles/normal = ExtResource("2_urhf5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
-
-[node name="Icon" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/DescriptionButton" unique_id=136673313]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 32.0
-offset_bottom = 32.0
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/DescriptionButton" unique_id=2140607887]
-visible = false
-layout_mode = 0
-offset_left = -320.0
-offset_top = -54.0
-offset_right = 40.0
-offset_bottom = -6.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_tooltip_popup")
-bbcode_enabled = true
-text = "[center]Bypasses the intro splash animation on boot.[/center]"
-scroll_active = false
-
-[node name="ToggleButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash" unique_id=1518577158]
-layout_mode = 0
-offset_left = 1096.0
-offset_top = 22.0
-offset_right = 1148.0
-offset_bottom = 74.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
-
-[node name="Tick" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/ToggleButton" unique_id=1688915563]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 42.0
-offset_bottom = 42.0
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/ToggleButton" unique_id=2130799563]
-layout_mode = 0
-offset_left = -120.0
-offset_top = 14.0
-offset_right = -12.0
-offset_bottom = 40.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
-scroll_active = false
-
-[node name="honest_move_hints" type="Panel" parent="SettingsHolder/PreferencesTab/VBoxContainer" unique_id=1849900878]
-custom_minimum_size = Vector2(0, 96)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints" unique_id=1937229157]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 20.0
-offset_right = 640.0
-offset_bottom = 78.0
-bbcode_enabled = true
-text = "[color=#ffffff]SHOW HONEST COUNTER TAGS[/color]
-[font_size=13][color=#94a3b8]Highlight cards in your hand that honestly counter the current House Suit.[/color][/font_size]"
-scroll_active = false
-
-[node name="ToggleButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints" unique_id=680232271]
-layout_mode = 0
-offset_left = 1096.0
-offset_top = 22.0
-offset_right = 1148.0
-offset_bottom = 74.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
-
-[node name="Tick" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints/ToggleButton" unique_id=1374215475]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 42.0
-offset_bottom = 42.0
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints/ToggleButton" unique_id=1075922378]
-layout_mode = 0
-offset_left = -120.0
-offset_top = 14.0
-offset_right = -12.0
-offset_bottom = 40.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 14
-bbcode_enabled = true
-text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
-scroll_active = false
 
 [node name="AudioTab" type="Control" parent="SettingsHolder" unique_id=351891548]
 visible = false
@@ -1208,7 +1037,7 @@ offset_bottom = 111.0
 theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "AVAILABLE OPTIONS"
+text = "OPTIONS"
 scroll_active = false
 
 [node name="Holder" type="VBoxContainer" parent="SelectedSetting" unique_id=1347676303]
@@ -1219,14 +1048,14 @@ offset_right = 597.0
 offset_bottom = 400.0
 theme_override_constants/separation = 10
 
-[node name="Option0" type="Button" parent="SelectedSetting/Holder" unique_id=1419106128]
+[node name="0" type="Button" parent="SelectedSetting/Holder" unique_id=1419106128]
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
-theme_override_styles/normal = ExtResource("3_51ot8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k3flk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
 
-[node name="Icon" type="TextureRect" parent="SelectedSetting/Holder/Option0" unique_id=303986582]
+[node name="Icon" type="TextureRect" parent="SelectedSetting/Holder/0" unique_id=303986582]
 visible = false
 layout_mode = 0
 offset_left = 16.0
@@ -1238,7 +1067,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="SelectedSetting/Holder/Option0" unique_id=1554955677]
+[node name="Label" type="RichTextLabel" parent="SelectedSetting/Holder/0" unique_id=1554955677]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -1254,7 +1083,7 @@ text = "[color=#ffffff]Fullscreen Exclusive"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="ActiveBadge" type="RichTextLabel" parent="SelectedSetting/Holder/Option0" unique_id=1507812342]
+[node name="ActiveBadge" type="RichTextLabel" parent="SelectedSetting/Holder/0" unique_id=1507812342]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1275,8 +1104,245 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="SelectBadge" type="RichTextLabel" parent="SelectedSetting/Holder/Option0" unique_id=530572417]
+[node name="SelectBadge" type="RichTextLabel" parent="SelectedSetting/Holder/0" unique_id=530572417]
 visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#64748b]○ SELECT"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="1" type="Button" parent="SelectedSetting/Holder" unique_id=1201151878]
+visible = false
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6tnk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="SelectedSetting/Holder/1" unique_id=1972366415]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SelectedSetting/Holder/1" unique_id=1877254980]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -14.0
+offset_right = 288.0
+offset_bottom = 14.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ffffff]Fullscreen Exclusive"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ActiveBadge" type="RichTextLabel" parent="SelectedSetting/Holder/1" unique_id=2057703842]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#34d399]● ACTIVE[/color]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SelectBadge" type="RichTextLabel" parent="SelectedSetting/Holder/1" unique_id=1976451165]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#64748b]○ SELECT"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="2" type="Button" parent="SelectedSetting/Holder" unique_id=136733958]
+visible = false
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mo7ch")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="SelectedSetting/Holder/2" unique_id=76831109]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SelectedSetting/Holder/2" unique_id=1559605243]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -14.0
+offset_right = 288.0
+offset_bottom = 14.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ffffff]Fullscreen Exclusive"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ActiveBadge" type="RichTextLabel" parent="SelectedSetting/Holder/2" unique_id=1586635993]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#34d399]● ACTIVE[/color]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SelectBadge" type="RichTextLabel" parent="SelectedSetting/Holder/2" unique_id=1728050756]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#64748b]○ SELECT"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="3" type="Button" parent="SelectedSetting/Holder" unique_id=435150992]
+visible = false
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m81f2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="SelectedSetting/Holder/3" unique_id=2132891663]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SelectedSetting/Holder/3" unique_id=2005558569]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -14.0
+offset_right = 288.0
+offset_bottom = 14.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ffffff]Fullscreen Exclusive"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ActiveBadge" type="RichTextLabel" parent="SelectedSetting/Holder/3" unique_id=1383781163]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#34d399]● ACTIVE[/color]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SelectBadge" type="RichTextLabel" parent="SelectedSetting/Holder/3" unique_id=696349522]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -1323,10 +1389,12 @@ offset_left = 20.0
 offset_top = 18.0
 offset_right = 551.0
 offset_bottom = 283.0
-theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[color=#cbd5e1]Setting summary here.
 
 [color=#a855f7]• Option 1:[/color] Desc
 [color=#a855f7]• Option 2:[/color] Desc"
 scroll_active = false
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

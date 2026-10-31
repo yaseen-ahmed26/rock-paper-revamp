@@ -40,10 +40,10 @@ const DEFAULT_DEVICE_CFG = {
 const DEFAULT_DEVICE_SETTINGS_CFG = {
 	"window_type": 0,
 	"resolution": 2,
-	"v_sync": false,
+	"v_sync": 1,
 	"max_framerate": 2,
-	"icon_waterfall": true,
-	"skip_splash": false
+	"icon_waterfall": 0,
+	"skip_splash": 1
 }
 
 # ui_controller.gd
