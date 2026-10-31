@@ -1,7 +1,32 @@
 {
-	"contract": {
-		"id": "",
-		"tasks": {},
-		"reward_claimied": false
-	}
+  "tokens": 0,
+  "points_won": 0,
+  "points_lost": 0,
+  "rounds_played": 0,
+  "matches_played": 0,
+  "total_wins": 0,
+  "total_losses": 0,
+  "total_draws": 0,
+
+  "played_rock": 0,
+  "played_paper": 0,
+  "played_scissors": 0,
+  "played_lizard": 0,
+  "played_spock": 0,
+
+  "gamemodes": {},
+  "opponents": {},
+  "modifiers": {},
+
+  "bought_modifiers": [],
+  "completed_challenges": [],
+  "completed_tasks": [],
+  "completed_contracts": [],
+  "completed_achievements": [],
+
+  "contract": {
+	"id": "",
+	"tasks": {},
+	"reward_claimed": false
+  }
 }

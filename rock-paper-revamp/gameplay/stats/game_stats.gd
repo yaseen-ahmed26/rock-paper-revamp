@@ -102,6 +102,14 @@ var modifier_usage_count: Dictionary[StringName, int] = {}
 var current_round: RoundStats
 var previous_rounds: Array[RoundStats] = []
 
+var played_moves: Dictionary = {
+	"rock": 0,
+	"paper": 0,
+	"scissors": 0,
+	"lizard": 0,
+	"spock": 0,
+}
+
 func _init() -> void:
 	house_suit = pick_random_suit()
 	next_house_suit = pick_random_suit()
@@ -154,6 +162,18 @@ func apply_stat_change(stat_change: StatChange) -> void:
 
 func record_round_stats() -> void:
 	previous_rounds.append(current_round)
+	
+	match current_round.player_lead_card.suit:
+		CardBase.Suit.ROCK:
+			played_moves["rock"] += 1
+		CardBase.Suit.PAPER:
+			played_moves["paper"] += 1
+		CardBase.Suit.SCISSORS:
+			played_moves["scissors"] += 1
+		CardBase.Suit.LIZARD:
+			played_moves["lizard"] += 1
+		CardBase.Suit.SPOCK:
+			played_moves["spock"] += 1
 
 func get_lower_stat(stat_name):
 	return StatNames.keys()[stat_name].to_lower()

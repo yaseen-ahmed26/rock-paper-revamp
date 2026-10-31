@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://screens/credits_screen/credits_screen.tscn" id="6_srujj"]
 [ext_resource type="PackedScene" uid="uid://de3gb1xfyou76" path="res://screens/settings_screen/settings_screen.tscn" id="7_7bahs"]
 [ext_resource type="PackedScene" uid="uid://p2wna505btbi" path="res://screens/contracts_screen/contracts_screen.tscn" id="7_dgec0"]
+[ext_resource type="PackedScene" uid="uid://cxsvia2fkvinn" path="res://screens/profile_screen/profile_screen.tscn" id="8_dgec0"]
 [ext_resource type="PackedScene" uid="uid://cfo70do7yw2jn" path="res://screens/rps_selection/rps_selection.tscn" id="8_mm5gi"]
 [ext_resource type="PackedScene" uid="uid://blnyfekenvkrv" path="res://screens/challenge_selection/challenge_selection.tscn" id="9_6crn1"]
 [ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://screens/rps_game/rps_game.tscn" id="10_8pwax"]
@@ -131,6 +132,9 @@ visible = false
 visible = false
 
 [node name="settings_screen" parent="CanvasLayer" unique_id=2075803792 instance=ExtResource("7_7bahs")]
+visible = false
+
+[node name="profile_screen" parent="CanvasLayer" unique_id=421719358 instance=ExtResource("8_dgec0")]
 visible = false
 
 [node name="rps_selection" parent="CanvasLayer" unique_id=2029808321 instance=ExtResource("8_mm5gi")]

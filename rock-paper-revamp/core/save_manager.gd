@@ -118,11 +118,15 @@ func record_match(
 		"played_rock": stats.played_moves.get("rock", 0),
 		"played_paper": stats.played_moves.get("paper", 0),
 		"played_scissors": stats.played_moves.get("scissors", 0),
+		"played_lizard": stats.played_moves.get("lizard", 0),
+		"played_spock": stats.played_moves.get("spock", 0),
 		"gamemodes": {},
 		"opponents": {},
 		"modifiers": {},
 		"completed_tasks": [],
-		"completed_challenges": []
+		"completed_challenges": [],
+		"completed_achievements": local_saved_data.get("completed_achievements"),
+		"completed_contracts": local_saved_data.get("completed_contracts"),
 	}
 
 	if gamemode:
