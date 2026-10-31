@@ -42,8 +42,8 @@ const DEFAULT_DEVICE_SETTINGS_CFG = {
 	"resolution": 2,
 	"v_sync": 1,
 	"max_framerate": 2,
-	"icon_waterfall": 0,
-	"skip_splash": 1
+	"icon_waterfall": 1,
+	"skip_splash": 0
 }
 
 # ui_controller.gd
@@ -72,8 +72,4 @@ const SCENE_INFO: Dictionary = {
 		"title": "Credits",
 		"description": "[color=green]Asset [color=white]and [color=green]Creator [color=white]credits.",
 	},
-	"settings_screen": {
-		"title": "Settings",
-		"description": "Change your [color=green]preferences [color=white]here.",
-	}
 }

@@ -79,31 +79,31 @@ var settings: Dictionary = {
 		"icon": null,
 		"description": "Skip the splash screen automatically when the game starts up.",
 		"options": [
-			"Enabled", "Disabled"
+			"Disabled", "Enabled"
 		],
 		"data": [
-			true, false
+			false, true
 		],
 		"summary": "[color=#a855f7]• Enabled:[/color] Skips the splash screen when the game starts automatically.\n[color=#a855f7]• Disabled:[/color] Plays the entire sequence unless manually skipped.",
 		"callback": _skip_splash_setting_changed,
 		"parent": "preferences",
-		"current_option": 1,
-		"default_option": 1,
+		"current_option": 0,
+		"default_option": 0,
 	},
 	"icon_waterfall": {
 		"icon": null,
 		"description": "Show icons falling on the main menu.",
 		"options": [
-			"Enabled", "Disabled"
+			"Disabled", "Enabled"
 		],
 		"data": [
-			true, false
+			false, true
 		],
 		"summary": "",
 		"callback": _icon_waterfall_setting_changed,
 		"parent": "preferences",
-		"current_option": 0,
-		"default_option": 0,
+		"current_option": 1,
+		"default_option": 1,
 	},
 }
 const OPTION_NORMAL_BTN = preload("uid://xohovlaokuyr")

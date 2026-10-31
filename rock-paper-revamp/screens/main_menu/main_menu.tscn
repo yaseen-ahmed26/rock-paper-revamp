@@ -420,7 +420,7 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("30_qk1ns")
+texture = ExtResource("32_t7u00")
 expand_mode = 1
 
 [node name="Label" type="RichTextLabel" parent="MenuButtons/Challenges" unique_id=1764302296]
@@ -439,6 +439,55 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 28
 text = "CHALLENGES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contracts" type="Button" parent="MenuButtons" unique_id=401028808]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="MenuButtons/Contracts" unique_id=389230257]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_qk1ns")
+expand_mode = 1
+
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Contracts" unique_id=1428489505]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -20.0
+offset_right = 118.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "CONTRACTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 

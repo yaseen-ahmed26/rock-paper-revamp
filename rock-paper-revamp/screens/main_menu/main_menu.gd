@@ -8,6 +8,7 @@ extends Control
 const MENU_BTNS: Dictionary = {
 	"Play": "rps_selection",
 	"Challenges": "challenge_selection",
+	"Contracts": "contracts_screen",
 	"Profile": "profile_screen",
 	"Settings": "settings_screen"
 }
