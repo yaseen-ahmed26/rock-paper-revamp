@@ -61,7 +61,8 @@ func _generate_stat_achievements() -> void:
 			"Play %s" % str(suit).capitalize(),
 			&"played_%s" % suit,
 			&"",
-			[10, 50, 100]
+			[10, 50, 100],
+			"Play matches using %s cards %d times."
 		)
 
 	# 2. Gamemode achievements
@@ -73,26 +74,47 @@ func _generate_stat_achievements() -> void:
 			"Play %s" % gamemode.display_name,
 			&"gamemodes",
 			gamemode_id,
-			[5, 15, 30]
+			[5, 15, 30],
+			"Play matches in the %s gamemode %d times." % [gamemode.display_name, 0]
+		)
+
+	for computer_id in computers.keys():
+		var computer = computers[computer_id]
+		_register_achievement(
+			&"comp_%s" % computer_id,
+			"Defeat %s" % computer.display_name,
+			&"opponents",
+			computer_id,
+			[5, 15, 30],
+			"Play matches against %s %d times." % [computer.display_name, 0]
 		)
 
 	for modifier_id in modifiers.keys():
 		var modifier = modifiers[modifier_id]
 		_register_achievement(
-			&"mod_%s" % modifiers[modifier_id],
+			&"mod_%s" % modifier_id,
 			"Master %s" % modifier.display_name,
 			&"modifiers",
 			modifier_id,
-			[5, 15, 30]
+			[5, 15, 30],
+			"Play matches with %s active %d times." % [modifier.display_name, 0]
 		)
 
-func _register_achievement(id: StringName, title: String, key: StringName, target: StringName, steps: Array[int]):
+func _register_achievement(
+	id: StringName, 
+	title: String, 
+	key: StringName, 
+	target: StringName, 
+	steps: Array[int],
+	description: String
+):
 	var new := AchievementBase.new()
 	new.id = id
 	new.display_name = title
 	new.stat_key = key
 	new.target_id = target
 	new.thresholds = steps
+	new.description = description
 	achievements[id] = new
 
 func get_modifier_resource(id: StringName) -> ModifierBase:	
