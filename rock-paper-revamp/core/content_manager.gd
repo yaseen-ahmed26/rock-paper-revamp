@@ -5,6 +5,7 @@ var gamemodes: Dictionary[StringName, GamemodeBase] = {}
 var computers: Dictionary[StringName, ComputerBase] = {}
 var challenges: Dictionary[StringName, ChallengeBase] = {}
 var contracts: Dictionary[StringName, ContractBase]
+var achievements: Dictionary[StringName, AchievementBase] = {}
 
 var cards: Dictionary[StringName, CardBase] = {}
 
@@ -15,6 +16,8 @@ func _ready() -> void:
 	_load_resources("res://content/challenges/", challenges)
 	_load_resources("res://content/cards/", cards)
 	_load_resources("res://content/contracts/", contracts)
+
+	_generate_stat_achievements()
 
 func _load_resources(path: String, target_dict: Dictionary) -> void:	
 	var directory = DirAccess.open(path)	
@@ -50,6 +53,47 @@ func _load_resources(path: String, target_dict: Dictionary) -> void:
 		
 		file_name = directory.get_next()
 
+func _generate_stat_achievements() -> void:
+	for suit in [&"rock", &"paper", &"scissors", &"lizard", &"spock"]:
+		_register_achievement(
+			&"play_%s" % suit,
+			"Play %s" % str(suit).capitalize(),
+			&"played_%s" % suit,
+			&"",
+			[10, 50, 100]
+		)
+
+	# 2. Gamemode achievements
+	for gamemode_id in gamemodes.keys():
+		var gamemode = gamemodes[gamemode_id]
+		
+		_register_achievement(
+			&"mode_%s" % gamemode_id,
+			"Play %s" % gamemode.display_name,
+			&"gamemodes",
+			gamemode_id,
+			[5, 15, 30]
+		)
+
+	for modifier_id in modifiers.keys():
+		var modifier = modifiers[modifier_id]
+		_register_achievement(
+			&"mod_%s" % modifiers[modifier_id],
+			"Master %s" % modifier.display_name,
+			&"modifiers",
+			modifier_id,
+			[5, 15, 30]
+		)
+
+func _register_achievement(id: StringName, title: String, key: StringName, target: StringName, steps: Array[int]):
+	var new := AchievementBase.new()
+	new.id = id
+	new.display_name = title
+	new.stat_key = key
+	new.target_id = target
+	new.thresholds = steps
+	achievements[id] = new
+
 func get_modifier_resource(id: StringName) -> ModifierBase:	
 	if not modifiers.has(id):
 		print("No Modifier found with ID of '%s'" % str(id))
@@ -84,3 +128,10 @@ func get_contract_resource(id: StringName) -> ContractBase:
 		return
 	
 	return contracts.get(id)
+
+func get_achivement_resource(id: StringName) -> ContractBase:
+	if not achievements.has(id):
+		print("No Achivement found with ID of '%s'" % str(id))
+		return
+	
+	return achievements.get(id)
