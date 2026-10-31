@@ -37,212 +37,233 @@
 [ext_resource type="Texture2D" uid="uid://dcqwwok80jrnc" path="res://assets/icons/exit.png" id="34_08nat"]
 
 [sub_resource type="Gradient" id="Gradient_vlony"]
-offsets = PackedFloat32Array(0, 0.95454544, 1)
-colors = PackedColorArray(1, 1, 1, 0.3529412, 0.43529412, 0.43529412, 0.43529412, 0, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(0.658824, 0.333333, 0.968627, 0.38, 0.345098, 0.109804, 0.529412, 0.12, 0.0431373, 0.0352941, 0.0784314, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_l7yjw"]
 gradient = SubResource("Gradient_vlony")
-fill = 1
+fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_conbw"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pv4yd"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.2, 0.39215687, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jtit"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.2, 0.39215687, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p01wi"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqfm"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.18000486, 0.1800049, 0.1800048, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk1ns"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.18000486, 0.1800049, 0.1800048, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlony"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wd0k"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8745098, 0, 0.13725491, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7u00"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.8745098, 0, 0.13725491, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_backdrop"]
+bg_color = Color(0.07058824, 0.05882353, 0.11372549, 0.7529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.168627, 0.133333, 0.278431, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ss24"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
+bg_color = Color(0.0862745, 0.0666667, 0.152941, 0.95)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.576471, 0.2, 0.917647, 0.18)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pv4yd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jtit"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.494118, 0.133333, 0.807843, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0.705882, 0.996078, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.658824, 0.333333, 0.968627, 0.28)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_conbw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.105882, 0.0823529, 0.188235, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.282353, 0.207843, 0.478431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p01wi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0862745, 0.0666667, 0.152941, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25098, 0.192157, 0.419608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqfm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk1ns"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.658824, 0.333333, 0.968627, 0.22)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlony"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.105882, 0.0627451, 0.113725, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.380392, 0.14902, 0.247059, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wd0k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.380392, 0.0823529, 0.14902, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.972549, 0.443137, 0.443137, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7u00"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.258824, 0.0705882, 0.121569, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.937255, 0.266667, 0.266667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.937255, 0.266667, 0.266667, 0.22)
+shadow_size = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q0ab"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mm0i4"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.27387273, 0.27387273, 0.27387273, 0.6)
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 5
+border_color = Color(0.85098, 0.705882, 0.996078, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.658824, 0.333333, 0.968627, 0.25)
+shadow_size = 14
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_peck"]
+size = Vector2(28, 28)
 
 [node name="main_menu" type="Control" unique_id=771054830]
 layout_mode = 3
@@ -261,10 +282,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.020838426, 0.07526652, 1)
+color = Color(0.0431373, 0.0352941, 0.0784314, 1)
 
 [node name="Light" type="TextureRect" parent="Background" unique_id=1303351577]
-modulate = Color(1, 1, 1, 0.43529412)
+modulate = Color(1, 1, 1, 0.65)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -288,17 +309,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("3_6at21")
 icons = Array[Texture2D]([ExtResource("4_g1omr"), ExtResource("5_kwfav"), ExtResource("6_n70vs"), ExtResource("7_tr6y3"), ExtResource("8_l18n7"), ExtResource("9_conbw"), ExtResource("10_pv4yd"), ExtResource("11_6jtit"), ExtResource("12_p01wi"), ExtResource("13_koqfm"), ExtResource("14_qk1ns"), ExtResource("15_vlony"), ExtResource("16_8wd0k"), ExtResource("17_t7u00"), ExtResource("18_08nat"), ExtResource("19_pjjpu"), ExtResource("20_td1kt"), ExtResource("21_v8p65"), ExtResource("22_5dxmf"), ExtResource("23_vpnst"), ExtResource("24_ihep4"), ExtResource("25_eqsep")])
 
 [node name="IconTemplate" type="TextureRect" parent="IconWaterfall" unique_id=419135703]
-modulate = Color(1, 1, 1, 0.5882353)
+modulate = Color(0.752941, 0.517647, 0.988235, 0.28)
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
 pivot_offset = Vector2(40, 40)
 mouse_filter = 2
 expand_mode = 1
+
+[node name="MenuBackdrop" type="Panel" parent="." unique_id=433256834]
+modulate = Color(1, 1, 1, 0.36078432)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = -256.0
+offset_right = 286.0
+offset_bottom = 398.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_backdrop")
+
+[node name="Tip" type="RichTextLabel" parent="." unique_id=1228271541]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -455.0
+offset_top = -490.0
+offset_right = 455.0
+offset_bottom = -456.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.65882355, 0.33333334, 0.96862745, 1)
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+scroll_active = false
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=723658857]
 layout_mode = 1
@@ -307,14 +366,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -455.0
-offset_top = -480.0
-offset_right = 455.0
-offset_bottom = -342.0
+offset_left = -480.0
+offset_top = -476.0
+offset_right = 480.0
+offset_bottom = -338.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.494118, 0.133333, 0.807843, 0.55)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 6
 theme_override_font_sizes/normal_font_size = 62
-text = "ROCK PAPER REVAMPED"
+bbcode_enabled = true
+text = "ROCK [color=#c084fc]PAPER[/color] REVAMPED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -324,9 +389,12 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 140.0
 offset_top = -4.0
+offset_right = -140.0
 grow_horizontal = 2
 grow_vertical = 0
+color = Color(0.658824, 0.333333, 0.968627, 1)
 
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=2015590246]
 layout_mode = 1
@@ -336,28 +404,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -247.0
-offset_top = -192.0
+offset_top = -222.0
 offset_right = 249.0
-offset_bottom = 122.0
+offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 14
 alignment = 1
 
 [node name="Play" type="Button" parent="MenuButtons" unique_id=969999681]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ss24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Play" unique_id=634581777]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.752941, 0.517647, 0.988235, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -381,20 +449,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -118.0
+offset_left = -140.0
 offset_top = -20.0
-offset_right = 118.0
+offset_right = 140.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
-text = "PLAY"
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=#ffffff]PLAY[/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Challenges" type="Button" parent="MenuButtons" unique_id=952264082]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
@@ -406,56 +475,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Challenges" unique_id=2111818084]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("32_t7u00")
-expand_mode = 1
-
-[node name="Label" type="RichTextLabel" parent="MenuButtons/Challenges" unique_id=1764302296]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -118.0
-offset_top = -20.0
-offset_right = 118.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
-text = "CHALLENGES"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Contracts" type="Button" parent="MenuButtons" unique_id=401028808]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Icon" type="TextureRect" parent="MenuButtons/Contracts" unique_id=389230257]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.752941, 0.517647, 0.988235, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -472,6 +492,55 @@ mouse_filter = 2
 texture = ExtResource("30_qk1ns")
 expand_mode = 1
 
+[node name="Label" type="RichTextLabel" parent="MenuButtons/Challenges" unique_id=1764302296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -20.0
+offset_right = 140.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "CHALLENGES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contracts" type="Button" parent="MenuButtons" unique_id=401028808]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_conbw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pv4yd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6jtit")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Icon" type="TextureRect" parent="MenuButtons/Contracts" unique_id=389230257]
+modulate = Color(0.752941, 0.517647, 0.988235, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_t7u00")
+expand_mode = 1
+
 [node name="Label" type="RichTextLabel" parent="MenuButtons/Contracts" unique_id=1428489505]
 layout_mode = 1
 anchors_preset = 8
@@ -479,20 +548,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -118.0
+offset_left = -140.0
 offset_top = -20.0
-offset_right = 118.0
+offset_right = 140.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 24
 text = "CONTRACTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Profile" type="Button" parent="MenuButtons" unique_id=1561342830]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
@@ -504,7 +573,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Profile" unique_id=2031972859]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.752941, 0.517647, 0.988235, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -528,20 +597,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -118.0
+offset_left = -140.0
 offset_top = -20.0
-offset_right = 118.0
+offset_right = 140.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 24
 text = "PROFILE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Settings" type="Button" parent="MenuButtons" unique_id=1556280080]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
@@ -553,7 +622,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Settings" unique_id=1890769464]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.752941, 0.517647, 0.988235, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -577,20 +646,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -118.0
+offset_left = -140.0
 offset_top = -20.0
-offset_right = 118.0
+offset_right = 140.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 24
 text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Extra" type="Button" parent="MenuButtons" unique_id=1474572039]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
@@ -608,19 +677,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -118.0
+offset_left = -140.0
 offset_top = -20.0
-offset_right = 118.0
+offset_right = 140.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
-text = "EXTRA"
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=#c084fc]EXTRA[/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="MenuButtons/Extra" unique_id=849656020]
+modulate = Color(0.752941, 0.517647, 0.988235, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -643,9 +714,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -246.0
-offset_top = 133.0
+offset_top = 174.0
 offset_right = 246.0
-offset_bottom = 208.0
+offset_bottom = 249.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -661,6 +732,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
 
 [node name="Icon" type="TextureRect" parent="ExtraButtons/About" unique_id=460780208]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -686,6 +758,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
 
 [node name="Icon" type="TextureRect" parent="ExtraButtons/Update" unique_id=496415610]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -711,6 +784,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
 
 [node name="Icon" type="TextureRect" parent="ExtraButtons/Credits" unique_id=221558569]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -737,6 +811,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
 
 [node name="Icon" type="TextureRect" parent="ExtraButtons/Eyes" unique_id=288293552]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -754,12 +829,12 @@ texture = ExtResource("33_08nat")
 expand_mode = 1
 
 [node name="Quit" type="Button" parent="." unique_id=1094470860]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 0
 offset_left = 713.0
 offset_top = 859.0
 offset_right = 1209.0
-offset_bottom = 909.0
+offset_bottom = 911.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
@@ -770,6 +845,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="Icon" type="TextureRect" parent="Quit" unique_id=994092095]
+modulate = Color(0.972549, 0.443137, 0.443137, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -797,7 +873,9 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 28
+theme_override_colors/default_color = Color(0.9882353, 0.64705884, 0.64705884, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -807,39 +885,68 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 26.0
-offset_top = -84.0
-offset_right = 235.0
-offset_bottom = -33.0
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 264.0
+offset_bottom = -32.0
 grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ss24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8q0ab")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mm0i4")
-text = "Peck"
+
+[node name="Icon" type="TextureRect" parent="PeckButton" unique_id=938779131]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -14.0
+offset_right = 44.0
+offset_bottom = 14.0
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_peck")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="PeckButton" unique_id=918774399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "PECK"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Version" type="RichTextLabel" parent="." unique_id=1887183576]
-modulate = Color(1, 1, 1, 0.39607844)
+modulate = Color(0.752941, 0.517647, 0.988235, 0.6)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -131.0
+offset_left = -221.0
 offset_top = -68.0
-offset_right = -5.0
-offset_bottom = -35.0
+offset_right = -32.0
+offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/normal_font_size = 20
-text = "v3.0.0"
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "VERSION // v3.0.0"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExtraHoverLabel" type="RichTextLabel" parent="." unique_id=283251932]
+modulate = Color(0.752941, 0.517647, 0.988235, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -847,13 +954,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -210.0
-offset_top = 225.0
+offset_top = 248.0
 offset_right = 210.0
-offset_bottom = 276.0
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 

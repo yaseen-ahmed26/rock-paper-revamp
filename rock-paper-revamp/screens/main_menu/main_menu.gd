@@ -19,8 +19,8 @@ const SIDE_BTNS: Dictionary = {
 	"Eyes": preload("res://content/modals/the_loop_explained.tres")
 }
 
-const EXTRA_MENU_OPEN_POSITION := Vector2(714, 673)
-const EXTRA_MENU_HIDDEN_POSITION := Vector2(714, 613)
+const EXTRA_MENU_OPEN_POSITION := Vector2(714, 714)
+const EXTRA_MENU_HIDDEN_POSITION := Vector2(714, 636)
 
 const MENU_BTN_ICON_VISIBLE := Vector2(9, 9)
 
@@ -69,14 +69,14 @@ func _tween_background_light():
 	var pulse_tween: Tween = create_tween().set_loops()
 	pulse_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-	pulse_tween.tween_property(light, "modulate:a", randf_range(0.1, 0.3), 2.5)
-	pulse_tween.tween_property(light, "modulate:a", randf_range(0.4, 0.7), 2.5)
+	pulse_tween.tween_property(light, "modulate:a", randf_range(0.3, 0.5), 2.0)
+	pulse_tween.tween_property(light, "modulate:a", randf_range(0.6, 0.9), 2.0)
 	
 	var move_tween: Tween = create_tween().set_loops()
 	move_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
-	move_tween.tween_property(light, "position", Vector2(25, 75), 1.5).as_relative()
-	move_tween.tween_property(light, "position", Vector2(-25, -75), 1.5).as_relative()
+	move_tween.tween_property(light, "position", Vector2(45, 85), 1.5).as_relative()
+	move_tween.tween_property(light, "position", Vector2(-45, -85), 1.5).as_relative()
 
 # Button Connections
 # Misc
