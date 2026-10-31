@@ -70,6 +70,7 @@ func _load_local():
 func _merge_delta(delta):
 	for k in local_saved_data:
 		if k == "bought_modifiers": continue
+		if k == "contract": continue
 				
 		var saved_v = local_saved_data[k]
 		var delta_v = delta[k]

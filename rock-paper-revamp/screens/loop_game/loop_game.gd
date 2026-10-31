@@ -156,6 +156,14 @@ func end_round() -> void:
 
 	_post_round_effects()
 	game_stats.advance_house_suit()
+	
+	SaveManager.record_match(
+		game_stats,
+		gamemode,
+		computer,
+		modifiers,
+		0
+	)
 
 	#print("--------------------------------------------------")
 	#print("Summary > " + game_stats.last_round_summary)
