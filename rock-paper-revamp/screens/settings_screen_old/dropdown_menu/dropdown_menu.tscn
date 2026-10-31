@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqm8icokphh3r"]
 
-[ext_resource type="Script" uid="uid://54wankvdp0km" path="res://screens/settings_screen/dropdown_menu/dropdown_menu.gd" id="1_0osqh"]
+[ext_resource type="Script" uid="uid://54wankvdp0km" path="res://screens/settings_screen_old/dropdown_menu/dropdown_menu.gd" id="1_0osqh"]
 [ext_resource type="Texture2D" uid="uid://d3quoedwu8g3t" path="res://assets/icons/info.png" id="6_1gf75"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntf0g"]

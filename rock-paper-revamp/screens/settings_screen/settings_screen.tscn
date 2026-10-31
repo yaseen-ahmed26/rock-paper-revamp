@@ -1,145 +1,1332 @@
-[gd_scene format=3 uid="uid://cs1od7kqjht1k"]
+[gd_scene format=3 uid="uid://de3gb1xfyou76"]
 
-[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_fqeiw"]
-[ext_resource type="Script" uid="uid://c13poh6shdcuh" path="res://screens/settings_screen/settings_screen.gd" id="2_hfw7f"]
-[ext_resource type="PackedScene" uid="uid://dqm8icokphh3r" path="res://screens/settings_screen/dropdown_menu/dropdown_menu.tscn" id="3_8rung"]
-[ext_resource type="PackedScene" uid="uid://bnd00gogv861d" path="res://screens/settings_screen/checkbox/checkbox.tscn" id="4_fqeiw"]
+[ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_theme"]
+[ext_resource type="StyleBox" uid="uid://bof34ag6ttno6" path="res://screens/settings_screen/ui_resources/tab_selected_btn.tres" id="2_51ot8"]
+[ext_resource type="StyleBox" uid="uid://xohovlaokuyr" path="res://screens/settings_screen/ui_resources/option_panel.tres" id="2_urhf5"]
+[ext_resource type="StyleBox" uid="uid://dv7a413xxcty6" path="res://screens/settings_screen/ui_resources/option_selected_panel.tres" id="3_51ot8"]
+[ext_resource type="StyleBox" uid="uid://tlq20m2hkd56" path="res://screens/settings_screen/ui_resources/tab_normal_btn.tres" id="3_lm2ns"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mij3r"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgls2"]
+bg_color = Color(0.0705882, 0.0588235, 0.113725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.168627, 0.133333, 0.278431, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_pressed"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_hover"]
+bg_color = Color(0.576471, 0.2, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.913725, 0.835294, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_secondary_hover"]
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rung"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.29954746, 0.29954746, 0.29954743, 0.6)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm2ns"]
+bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.8745098, 0, 0.13725491, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+border_color = Color(0.309804, 0.231373, 0.529412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqeiw"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3f6d"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w40j"]
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.87426054, 0, 0.13865358, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
-[node name="settings_sreen" type="Control" unique_id=1983250911]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_icon"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28us6"]
+bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.309804, 0.231373, 0.529412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_setting_row"]
+bg_color = Color(0.105882, 0.0823529, 0.188235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25098, 0.192157, 0.419608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tooltip_popup"]
+bg_color = Color(0.0431373, 0.0352941, 0.0784314, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_checkbox_box"]
+bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_bg"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_fill"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_danger_normal"]
+bg_color = Color(0.258824, 0.0705882, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.937255, 0.266667, 0.266667, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjdym"]
+bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.309804, 0.231373, 0.529412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gre5"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq3be"]
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cb7id"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op5ss"]
+bg_color = Color(0.0862745, 0.0666667, 0.152941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.576471, 0.2, 0.917647, 0.18)
+shadow_size = 16
+
+[node name="settings_screen" type="Control" unique_id=2075803792]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_fqeiw")
-script = ExtResource("2_hfw7f")
+theme = ExtResource("1_theme")
 
-[node name="Background" type="ColorRect" parent="." unique_id=554026063]
+[node name="Background" type="ColorRect" parent="." unique_id=892210108]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.020838426, 0.07526652, 1)
+mouse_filter = 2
+color = Color(0.0431373, 0.0352941, 0.0784314, 1)
 
-[node name="VBoxContainer" type="GridContainer" parent="." unique_id=1201192906]
+[node name="InformationBanner" type="Panel" parent="." unique_id=1720439269]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 998.0
+offset_right = 1240.0
+offset_bottom = 1058.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgls2")
+
+[node name="Label" type="RichTextLabel" parent="InformationBanner" unique_id=553481614]
+visible = false
+layout_mode = 0
+offset_left = 729.0
+offset_top = 12.0
+offset_right = 955.0
+offset_bottom = 47.0
+bbcode_enabled = true
+text = "[color=#94a3b8]COMPLETED:[/color] [color=#34d399]4 / 18[/color]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ResetDefaultsBtn" type="Button" parent="InformationBanner" unique_id=1870083098]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -613.0
-offset_top = -220.0
-offset_right = 613.0
-offset_bottom = 220.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -690.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 70
-theme_override_constants/v_separation = 70
-columns = 2
+theme_override_styles/normal = ExtResource("2_51ot8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
 
-[node name="v_sync" parent="VBoxContainer" unique_id=165660727 instance=ExtResource("4_fqeiw")]
-layout_mode = 2
-label_text = "VSync"
-description = "Syncs your GPU's frame rate with your monitor's refresh rate."
-
-[node name="window_type" parent="VBoxContainer" unique_id=2111200621 instance=ExtResource("3_8rung")]
-layout_mode = 2
-label_text = "Window Type"
-description = "Set the window type of the game."
-menu_options = Array[String](["Fullscreen", "Windowed", "Borderless Window", "Borderless Fullscreen"])
-
-[node name="icon_waterfall" parent="VBoxContainer" unique_id=1181931009 instance=ExtResource("4_fqeiw")]
-layout_mode = 2
-label_text = "Icon Waterfall"
-description = "Enable/disable the icon waterfall on the main menu."
-
-[node name="resolution" parent="VBoxContainer" unique_id=482083628 instance=ExtResource("3_8rung")]
-layout_mode = 2
-label_text = "Resolution"
-description = "Set the size of the window."
-menu_options = Array[String](["1152 x 648", "1280 x 720", "1920 x 1080"])
-menu_correspondants = [Vector2i(1152, 648), Vector2i(1280, 720), Vector2i(1920, 1080)]
-
-[node name="skip_splash" parent="VBoxContainer" unique_id=1667180580 instance=ExtResource("4_fqeiw")]
-layout_mode = 2
-size_flags_horizontal = 3
-label_text = "Skip Splash"
-description = "Automatically skip the splash screen when loading the game."
-
-[node name="max_framerate" parent="VBoxContainer" unique_id=1385803673 instance=ExtResource("3_8rung")]
-layout_mode = 2
-label_text = "Max Framerate"
-description = "Set the max amount of framerate. Note this is disabled when VSync is on."
-menu_options = Array[String](["Unlimited", "30", "60", "120", "144", "240"])
-menu_correspondants = [0, 30, 60, 120, 144, 240]
-
-[node name="ReturnButton" type="Button" parent="." unique_id=1619264839]
+[node name="Label" type="RichTextLabel" parent="InformationBanner/ResetDefaultsBtn" unique_id=1713409052]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.033854168
-anchor_top = 0.91018516
-anchor_right = 0.21197917
-anchor_bottom = 0.9675926
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_mij3r")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8rung")
-theme_override_styles/hover = SubResource("StyleBoxFlat_fqeiw")
-text = "[ RETURN ]"
-metadata/_edit_use_anchors_ = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "RESTORE DEFAULTS"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
+[node name="TopBar" type="Panel" parent="." unique_id=2074329568]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 1240.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgls2")
+
+[node name="Tabs" type="HBoxContainer" parent="TopBar" unique_id=1945238820]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 1194.0
+offset_bottom = 52.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Display" type="Button" parent="TopBar/Tabs" unique_id=1960686358]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("2_51ot8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Label" type="RichTextLabel" parent="TopBar/Tabs/Display" unique_id=2095046055]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "01 // DISPLAY"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Preferences" type="Button" parent="TopBar/Tabs" unique_id=515915185]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = ExtResource("3_lm2ns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
+
+[node name="Label" type="RichTextLabel" parent="TopBar/Tabs/Preferences" unique_id=1618030460]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "02 // PREFERENCES"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsHolder" type="Panel" parent="." unique_id=786930703]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 100.0
+offset_right = 1240.0
+offset_bottom = 976.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgls2")
+
+[node name="Display" type="Control" parent="SettingsHolder" unique_id=99929463]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/Display" unique_id=697315970]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 1200.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[color=#a855f7]DISPLAY[/color]  •  [color=#94a3b8]View options for window types, framerate and others.[/color]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/Display" unique_id=1840730912]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 1200.0
+offset_bottom = 920.0
+theme_override_constants/separation = 16
+
+[node name="window_type" type="Button" parent="SettingsHolder/Display/VBoxContainer" unique_id=368693129]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lm2ns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t3f6d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6w40j")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/Display/VBoxContainer/window_type" unique_id=1247557368]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -24.0
+offset_right = 72.0
+offset_bottom = 24.0
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/Display/VBoxContainer/window_type" unique_id=31427484]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 18.0
+offset_right = 624.0
+offset_bottom = 79.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ffffff]WINDOW MODE[/color]
+[font_size=13][color=#94a3b8]Switch between Fullscreen, Windowed, and Borderless modes.[/color][/font_size]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="SelectedOption" type="Panel" parent="SettingsHolder/Display/VBoxContainer/window_type" unique_id=1162947443]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_28us6")
+metadata/Open = false
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/Display/VBoxContainer/window_type/SelectedOption" unique_id=980247045]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -12.5
+offset_right = 275.0
+offset_bottom = 12.5
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
+bbcode_enabled = true
+text = "Fullscreen"
+scroll_active = false
+
+[node name="PreferencesTab" type="Control" parent="SettingsHolder" unique_id=1786689603]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/PreferencesTab" unique_id=1551290462]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 1200.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[color=#a855f7]INTERFACE & GAMEPLAY PREFERENCES[/color]  •  [color=#94a3b8]Customize animations, startup flow, and HUD helpers[/color]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/PreferencesTab" unique_id=1057185577]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 1200.0
+offset_bottom = 920.0
+theme_override_constants/separation = 16
+
+[node name="icon_waterfall" type="Panel" parent="SettingsHolder/PreferencesTab/VBoxContainer" unique_id=1355359382]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall" unique_id=1595610563]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]MAIN MENU ICON WATERFALL[/color]
+[font_size=13][color=#94a3b8]Spawn falling suit icons in the background of the main menu.[/color][/font_size]"
+scroll_active = false
+
+[node name="DescriptionButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall" unique_id=88828817]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 28.0
+offset_right = 800.0
+offset_bottom = 68.0
+theme_override_styles/normal = ExtResource("2_urhf5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/DescriptionButton" unique_id=380726527]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/DescriptionButton" unique_id=1342019612]
+visible = false
+layout_mode = 0
+offset_left = -320.0
+offset_top = -54.0
+offset_right = 40.0
+offset_bottom = -6.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_tooltip_popup")
+bbcode_enabled = true
+text = "[center]Disable for a cleaner, static main menu background.[/center]"
+scroll_active = false
+
+[node name="ToggleButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall" unique_id=365200428]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Tick" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/ToggleButton" unique_id=378255923]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/icon_waterfall/ToggleButton" unique_id=2095427695]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
+scroll_active = false
+
+[node name="skip_splash" type="Panel" parent="SettingsHolder/PreferencesTab/VBoxContainer" unique_id=2129437415]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash" unique_id=975665189]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]SKIP STARTUP SPLASH SCREEN[/color]
+[font_size=13][color=#94a3b8]Boot directly into the Main Menu when launching the game.[/color][/font_size]"
+scroll_active = false
+
+[node name="DescriptionButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash" unique_id=102136654]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 28.0
+offset_right = 800.0
+offset_bottom = 68.0
+theme_override_styles/normal = ExtResource("2_urhf5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/DescriptionButton" unique_id=136673313]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/DescriptionButton" unique_id=2140607887]
+visible = false
+layout_mode = 0
+offset_left = -320.0
+offset_top = -54.0
+offset_right = 40.0
+offset_bottom = -6.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_tooltip_popup")
+bbcode_enabled = true
+text = "[center]Bypasses the intro splash animation on boot.[/center]"
+scroll_active = false
+
+[node name="ToggleButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash" unique_id=1518577158]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Tick" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/ToggleButton" unique_id=1688915563]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/skip_splash/ToggleButton" unique_id=2130799563]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
+scroll_active = false
+
+[node name="honest_move_hints" type="Panel" parent="SettingsHolder/PreferencesTab/VBoxContainer" unique_id=1849900878]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints" unique_id=1937229157]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]SHOW HONEST COUNTER TAGS[/color]
+[font_size=13][color=#94a3b8]Highlight cards in your hand that honestly counter the current House Suit.[/color][/font_size]"
+scroll_active = false
+
+[node name="ToggleButton" type="Button" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints" unique_id=680232271]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Tick" type="TextureRect" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints/ToggleButton" unique_id=1374215475]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/PreferencesTab/VBoxContainer/honest_move_hints/ToggleButton" unique_id=1075922378]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
+scroll_active = false
+
+[node name="AudioTab" type="Control" parent="SettingsHolder" unique_id=351891548]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/AudioTab" unique_id=1186245729]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 1200.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[color=#a855f7]AUDIO & MIXER[/color]  •  [color=#94a3b8]Adjust master output, music levels, and UI/Card sound effects[/color]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/AudioTab" unique_id=2051703113]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 1200.0
+offset_bottom = 920.0
+theme_override_constants/separation = 16
+
+[node name="master_volume" type="Panel" parent="SettingsHolder/AudioTab/VBoxContainer" unique_id=154623622]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AudioTab/VBoxContainer/master_volume" unique_id=107974284]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]MASTER VOLUME[/color]
+[font_size=13][color=#94a3b8]Global audio output level across the entire game.[/color][/font_size]"
+scroll_active = false
+
+[node name="ValueLabel" type="RichTextLabel" parent="SettingsHolder/AudioTab/VBoxContainer/master_volume" unique_id=2046106857]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 34.0
+offset_right = 796.0
+offset_bottom = 66.0
+bbcode_enabled = true
+text = "[right][color=#c084fc]80%[/color][/right]"
+scroll_active = false
+
+[node name="Slider" type="HSlider" parent="SettingsHolder/AudioTab/VBoxContainer/master_volume" unique_id=1882074289]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 32.0
+offset_right = 1148.0
+offset_bottom = 64.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+value = 80.0
+
+[node name="music_volume" type="Panel" parent="SettingsHolder/AudioTab/VBoxContainer" unique_id=1057010911]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AudioTab/VBoxContainer/music_volume" unique_id=1180345948]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]MUSIC VOLUME[/color]
+[font_size=13][color=#94a3b8]Background soundtrack and Loop match intensity tracks.[/color][/font_size]"
+scroll_active = false
+
+[node name="ValueLabel" type="RichTextLabel" parent="SettingsHolder/AudioTab/VBoxContainer/music_volume" unique_id=1981444777]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 34.0
+offset_right = 796.0
+offset_bottom = 66.0
+bbcode_enabled = true
+text = "[right][color=#c084fc]70%[/color][/right]"
+scroll_active = false
+
+[node name="Slider" type="HSlider" parent="SettingsHolder/AudioTab/VBoxContainer/music_volume" unique_id=919466614]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 32.0
+offset_right = 1148.0
+offset_bottom = 64.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+value = 70.0
+
+[node name="sfx_volume" type="Panel" parent="SettingsHolder/AudioTab/VBoxContainer" unique_id=1137131822]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AudioTab/VBoxContainer/sfx_volume" unique_id=1438557298]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]SFX & UI VOLUME[/color]
+[font_size=13][color=#94a3b8]Card flips, shield breaks, modifier triggers, and button clicks.[/color][/font_size]"
+scroll_active = false
+
+[node name="ValueLabel" type="RichTextLabel" parent="SettingsHolder/AudioTab/VBoxContainer/sfx_volume" unique_id=784689081]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 34.0
+offset_right = 796.0
+offset_bottom = 66.0
+bbcode_enabled = true
+text = "[right][color=#c084fc]90%[/color][/right]"
+scroll_active = false
+
+[node name="Slider" type="HSlider" parent="SettingsHolder/AudioTab/VBoxContainer/sfx_volume" unique_id=2015660654]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 32.0
+offset_right = 1148.0
+offset_bottom = 64.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+value = 90.0
+
+[node name="AccessibilityTab" type="Control" parent="SettingsHolder" unique_id=1522547844]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab" unique_id=723566437]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 1200.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[color=#a855f7]ACCESSIBILITY & READABILITY[/color]  •  [color=#94a3b8]Visual contrast, motion reduction, and display assistance[/color]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/AccessibilityTab" unique_id=806959686]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 1200.0
+offset_bottom = 920.0
+theme_override_constants/separation = 16
+
+[node name="high_contrast_ui" type="Panel" parent="SettingsHolder/AccessibilityTab/VBoxContainer" unique_id=1288521727]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab/VBoxContainer/high_contrast_ui" unique_id=2014267248]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]HIGH CONTRAST UI[/color]
+[font_size=13][color=#94a3b8]Enhances card borders, icon silhouettes, and increases background black levels.[/color][/font_size]"
+scroll_active = false
+
+[node name="ToggleButton" type="Button" parent="SettingsHolder/AccessibilityTab/VBoxContainer/high_contrast_ui" unique_id=1164540856]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Tick" type="TextureRect" parent="SettingsHolder/AccessibilityTab/VBoxContainer/high_contrast_ui/ToggleButton" unique_id=1311219213]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab/VBoxContainer/high_contrast_ui/ToggleButton" unique_id=710474867]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
+scroll_active = false
+
+[node name="screen_shake" type="Panel" parent="SettingsHolder/AccessibilityTab/VBoxContainer" unique_id=1152132977]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab/VBoxContainer/screen_shake" unique_id=116522851]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 640.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]SCREEN SHAKE & FLASH EFFECTS[/color]
+[font_size=13][color=#94a3b8]Enables camera shake and screen flashes on shield breaks and heavy card clashes.[/color][/font_size]"
+scroll_active = false
+
+[node name="ToggleButton" type="Button" parent="SettingsHolder/AccessibilityTab/VBoxContainer/screen_shake" unique_id=11076937]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_checkbox_box")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Tick" type="TextureRect" parent="SettingsHolder/AccessibilityTab/VBoxContainer/screen_shake/ToggleButton" unique_id=1953319025]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab/VBoxContainer/screen_shake/ToggleButton" unique_id=350781471]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 14.0
+offset_right = -12.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[right][color=#94a3b8]TOGGLE[/color][/right]"
+scroll_active = false
+
+[node name="colorblind_mode" type="Panel" parent="SettingsHolder/AccessibilityTab/VBoxContainer" unique_id=1905540845]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab/VBoxContainer/colorblind_mode" unique_id=1727793743]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 78.0
+bbcode_enabled = true
+text = "[color=#ffffff]COLORBLIND ASSISTANCE[/color]
+[font_size=13][color=#94a3b8]Adjusts status colors (Defense, Shield, Honest Moves) for visual clarity.[/color][/font_size]"
+scroll_active = false
+
+[node name="MenuButton" type="Button" parent="SettingsHolder/AccessibilityTab/VBoxContainer/colorblind_mode" unique_id=171949023]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 22.0
+offset_right = 1148.0
+offset_bottom = 74.0
+theme_override_styles/normal = ExtResource("3_lm2ns")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/AccessibilityTab/VBoxContainer/colorblind_mode/MenuButton" unique_id=836298991]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 14.0
+offset_right = 316.0
+offset_bottom = 38.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/AccessibilityTab/VBoxContainer/colorblind_mode/MenuButton" unique_id=1222580607]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 280.0
+offset_bottom = 40.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#c084fc]None (Standard)[/color]"
+scroll_active = false
+
+[node name="DataTab" type="Control" parent="SettingsHolder" unique_id=218824163]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabHeader" type="RichTextLabel" parent="SettingsHolder/DataTab" unique_id=1232524854]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 1200.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "[color=#a855f7]PECK CLOUD & SAVE DATA[/color]  •  [color=#94a3b8]Manage your linked Peck account and local save files[/color]"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsHolder/DataTab" unique_id=1798682879]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 68.0
+offset_right = 1200.0
+offset_bottom = 920.0
+theme_override_constants/separation = 16
+
+[node name="PeckAccountRow" type="Panel" parent="SettingsHolder/DataTab/VBoxContainer" unique_id=1936766139]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/DataTab/VBoxContainer/PeckAccountRow" unique_id=1048139743]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 760.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[color=#ffffff]PECK ACCOUNT SYNC[/color]
+[font_size=13][color=#94a3b8]Link your Peck account to sync save data across Windows and Linux devices.[/color][/font_size]"
+scroll_active = false
+
+[node name="ManageAccountBtn" type="Button" parent="SettingsHolder/DataTab/VBoxContainer/PeckAccountRow" unique_id=290225226]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 26.0
+offset_right = 1148.0
+offset_bottom = 82.0
+theme_override_styles/normal = ExtResource("2_51ot8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/DataTab/VBoxContainer/PeckAccountRow/ManageAccountBtn" unique_id=147355672]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 46.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/DataTab/VBoxContainer/PeckAccountRow/ManageAccountBtn" unique_id=715117472]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 316.0
+offset_bottom = 44.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center]CONNECT PECK ACCOUNT[/center]"
+scroll_active = false
+
+[node name="ResetSaveRow" type="Panel" parent="SettingsHolder/DataTab/VBoxContainer" unique_id=1753690376]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_setting_row")
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/DataTab/VBoxContainer/ResetSaveRow" unique_id=958617757]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 760.0
+offset_bottom = 88.0
+bbcode_enabled = true
+text = "[color=#f87171]RESET LOCAL SAVE DATA[/color]
+[font_size=13][color=#94a3b8]Wipes user://save.cfg back to default_save.json values. Cannot be undone.[/color][/font_size]"
+scroll_active = false
+
+[node name="ResetDataBtn" type="Button" parent="SettingsHolder/DataTab/VBoxContainer/ResetSaveRow" unique_id=1075363850]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 26.0
+offset_right = 1148.0
+offset_bottom = 82.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_danger_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="SettingsHolder/DataTab/VBoxContainer/ResetSaveRow/ResetDataBtn" unique_id=323954633]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 46.0
+offset_bottom = 42.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SettingsHolder/DataTab/VBoxContainer/ResetSaveRow/ResetDataBtn" unique_id=122372653]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 16.0
+offset_right = 316.0
+offset_bottom = 44.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][color=#fca5a5]WIPE SAVE DATA[/color][/center]"
+scroll_active = false
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1677046730]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 998.0
+offset_right = 247.0
+offset_bottom = 1058.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjdym")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7gre5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cq3be")
+
+[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=114576636]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -14.0
+offset_right = 43.0
+offset_bottom = 14.0
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_cb7id")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=241766803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]RETURN[/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedSetting" type="Panel" parent="." unique_id=1103895872]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -654.0
+offset_top = 24.0
+offset_right = -32.0
+offset_bottom = 1056.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5ss")
+
+[node name="SettingName" type="RichTextLabel" parent="SelectedSetting" unique_id=651020182]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 31.0
+offset_right = 536.0
+offset_bottom = 73.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Window Mode"
+scroll_active = false
+
+[node name="OptionsHeader" type="RichTextLabel" parent="SelectedSetting" unique_id=1757867744]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 83.0
+offset_right = 536.0
+offset_bottom = 111.0
+theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "AVAILABLE OPTIONS"
+scroll_active = false
+
+[node name="Holder" type="VBoxContainer" parent="SelectedSetting" unique_id=1347676303]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 120.0
+offset_right = 597.0
+offset_bottom = 400.0
+theme_override_constants/separation = 10
+
+[node name="Option0" type="Button" parent="SelectedSetting/Holder" unique_id=1419106128]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_51ot8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
+
+[node name="Icon" type="TextureRect" parent="SelectedSetting/Holder/Option0" unique_id=303986582]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="SelectedSetting/Holder/Option0" unique_id=1554955677]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -14.0
+offset_right = 288.0
+offset_bottom = 14.0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=#ffffff]Fullscreen Exclusive"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="ActiveBadge" type="RichTextLabel" parent="SelectedSetting/Holder/Option0" unique_id=1507812342]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#34d399]● ACTIVE[/color]"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SelectBadge" type="RichTextLabel" parent="SelectedSetting/Holder/Option0" unique_id=530572417]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -12.0
+offset_right = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "[color=#64748b]○ SELECT"
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SummaryHeader" type="RichTextLabel" parent="SelectedSetting" unique_id=413367014]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 389.0
+offset_right = 536.0
+offset_bottom = 417.0
+theme_override_colors/default_color = Color(0.7529412, 0.5176471, 0.9882353, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "SUMMARY"
+scroll_active = false
+
+[node name="Summary" type="Panel" parent="SelectedSetting" unique_id=1607692338]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 420.0
+offset_right = 597.0
+offset_bottom = 723.0
+theme_override_styles/panel = ExtResource("2_urhf5")
+
+[node name="Label" type="RichTextLabel" parent="SelectedSetting/Summary" unique_id=175408818]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 18.0
+offset_right = 551.0
+offset_bottom = 283.0
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[color=#cbd5e1]Setting summary here.
+
+[color=#a855f7]• Option 1:[/color] Desc
+[color=#a855f7]• Option 2:[/color] Desc"
+scroll_active = false

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bnd00gogv861d"]
 
-[ext_resource type="Script" uid="uid://c61r0gvb64acn" path="res://screens/settings_screen/checkbox/checkbox.gd" id="1_rtv8p"]
+[ext_resource type="Script" uid="uid://c61r0gvb64acn" path="res://screens/settings_screen_old/checkbox/checkbox.gd" id="1_rtv8p"]
 [ext_resource type="Texture2D" uid="uid://8k56aw2dmpbn" path="res://assets/icons/tick_white.png" id="2_8cdq1"]
 [ext_resource type="Texture2D" uid="uid://d3quoedwu8g3t" path="res://assets/icons/info.png" id="2_p8vl1"]
 

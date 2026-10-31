@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wj46ygbmpnl5" path="res://screens/main_menu/main_menu.tscn" id="4_lab58"]
 [ext_resource type="PackedScene" uid="uid://512nbemcbdjh" path="res://screens/profile_screen/profile_screen.tscn" id="5_4vu88"]
 [ext_resource type="PackedScene" uid="uid://8fsmpbowuv0f" path="res://screens/credits_screen/credits_screen.tscn" id="6_srujj"]
-[ext_resource type="PackedScene" uid="uid://cs1od7kqjht1k" path="res://screens/settings_screen/settings_screen.tscn" id="7_smdyi"]
+[ext_resource type="PackedScene" uid="uid://cs1od7kqjht1k" path="res://screens/settings_screen_old/settings_screen_old.tscn" id="7_smdyi"]
 [ext_resource type="PackedScene" uid="uid://cfo70do7yw2jn" path="res://screens/rps_selection/rps_selection.tscn" id="8_mm5gi"]
 [ext_resource type="PackedScene" uid="uid://blnyfekenvkrv" path="res://screens/challenge_selection/challenge_selection.tscn" id="9_6crn1"]
 [ext_resource type="PackedScene" uid="uid://beosahy8j7bes" path="res://screens/rps_game/rps_game.tscn" id="10_8pwax"]
