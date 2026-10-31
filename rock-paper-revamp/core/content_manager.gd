@@ -16,6 +16,7 @@ func _ready() -> void:
 	_load_resources("res://content/challenges/", challenges)
 	_load_resources("res://content/cards/", cards)
 	_load_resources("res://content/contracts/", contracts)
+	_load_resources("res://content/achievements/", achievements)
 
 	_generate_stat_achievements()
 
