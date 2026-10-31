@@ -1,22 +1,19 @@
 extends DescribedBase
-class_name AchivementBase
+class_name AchievementBase
 
-const SHOW_IF = {
-	"unlock_mastery": "mastery_id"
+const SHOW_IF: Dictionary = {
+	"trigger_based": ["stat_key", "target_id", "thresholds"],
+	"!trigger_based": ["timing", "triggers", "invert"]
 }
 
-@export_group("Achivement Described")
-## The cosmetic steps shown on UI for this achivement.
-@export var steps: Array[String]
-
-@export_group("General")
-## The specific goals, StringName is the ID of the gamemode/computer/modifier etc.
-@export var goals: Dictionary[StringName, int]
-
 @export_group("Flags")
-## If true, this achivement unlocks a Modifier Mastery when completed. It will be automatically added to the ContentManager.
-@export var unlock_mastery: bool = true
+## If true, then a custom array of triggers is used to evaluate this achievement. Otherwise, it uses default keys from the SaveManager.
+@export var trigger_based: bool = false
 
 @export_group("Advanced")
-## The ID of the modifier mastery to award.
-@export var mastery_id: int
+@export var stat_key: StringName
+@export var target_id: StringName
+@export var thresholds: Array[int] = []
+@export var timing: ModifierBase.ApplyAt = ModifierBase.ApplyAt.ROUND_END
+@export var triggers: Array[GameplayTrigger] = []
+@export var invert: bool = false
