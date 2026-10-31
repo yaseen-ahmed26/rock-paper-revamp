@@ -145,11 +145,11 @@ func _create_holder_btns():
 		]
 		clone.get_node("SelectedOption/Label").text = v.options.get(SaveManager.local_saved_settings.get(k))
 
-		clone.pressed.connect(_update_inspector.bind(k, v))
+		clone.pressed.connect(_update_inspector.bind(k))
 
 		v.callback.call(SaveManager.local_saved_settings.get(k))
 	
-	_update_inspector("window_type", settings.get("window_type"))
+	_update_inspector("window_type")
 
 func _update_holder_btn(setting_name: String):
 	var details = settings.get(setting_name)
@@ -165,7 +165,8 @@ func _update_holder_btn(setting_name: String):
 	if btn:
 		btn.get_node("SelectedOption/Label").text = details.options[details.current_option]
 
-func _update_inspector(setting_name: String, details: Dictionary):
+func _update_inspector(setting_name: String):
+	var details: Dictionary = settings.get(setting_name)
 	var holder: VBoxContainer = selected_setting.get_node("Holder")
 	
 	selected_setting.get_node("SettingName").text = setting_name.replace("_", " ").capitalize()
@@ -248,6 +249,9 @@ func _on_tab_btn_pressed(btn: Button):
 		current_tab.visible = false
 		found_tab.visible = true
 		current_tab = found_tab
+		
+		var first_child: String = found_tab.get_node("Holder").get_child(0).name
+		_update_inspector(first_child)
 		
 # Saving
 func _save_settings():
