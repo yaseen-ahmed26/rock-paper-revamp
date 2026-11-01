@@ -159,45 +159,6 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjdym"]
-bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.309804, 0.231373, 0.529412, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gre5"]
-bg_color = Color(0.345098, 0.109804, 0.529412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq3be"]
-bg_color = Color(0.192157, 0.14902, 0.341176, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cb7id"]
-size = Vector2(32, 32)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op5ss"]
 bg_color = Color(0.0862745, 0.0666667, 0.152941, 1)
 border_width_left = 2
@@ -262,6 +223,45 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61wvw"]
+bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.309804, 0.231373, 0.529412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4w04"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogwed"]
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aj5pn"]
+size = Vector2(32, 32)
+
 [node name="settings_screen" type="Control" unique_id=2075803792]
 layout_mode = 3
 anchors_preset = 15
@@ -284,7 +284,7 @@ color = Color(0.0431373, 0.0352941, 0.0784314, 1)
 
 [node name="InformationBanner" type="Panel" parent="." unique_id=1720439269]
 layout_mode = 0
-offset_left = 265.0
+offset_left = 313.0
 offset_top = 998.0
 offset_right = 1240.0
 offset_bottom = 1058.0
@@ -310,7 +310,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 10.0
-offset_right = -690.0
+offset_right = -662.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -965,46 +965,6 @@ bbcode_enabled = true
 text = "[center][color=#fca5a5]WIPE SAVE DATA[/color][/center]"
 scroll_active = false
 
-[node name="ReturnButton" type="Button" parent="." unique_id=1677046730]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 998.0
-offset_right = 247.0
-offset_bottom = 1058.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_kjdym")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7gre5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cq3be")
-
-[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=114576636]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -14.0
-offset_right = 43.0
-offset_bottom = 14.0
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_cb7id")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=241766803]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]RETURN[/center]"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="SelectedSetting" type="Panel" parent="." unique_id=1103895872]
 layout_mode = 1
 anchors_preset = 1
@@ -1396,5 +1356,46 @@ text = "[color=#cbd5e1]Setting summary here.
 [color=#a855f7]• Option 1:[/color] Desc
 [color=#a855f7]• Option 2:[/color] Desc"
 scroll_active = false
+
+[node name="ReturnButton" type="Button" parent="." unique_id=941245935]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 998.0
+offset_right = 307.0
+offset_bottom = 1058.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_61wvw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r4w04")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ogwed")
+
+[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=1309633794]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -17.5
+offset_right = 47.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_aj5pn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=347146977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]RETURN[/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

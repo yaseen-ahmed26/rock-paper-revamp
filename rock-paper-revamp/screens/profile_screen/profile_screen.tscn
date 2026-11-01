@@ -1217,7 +1217,7 @@ vertical_alignment = 1
 
 [node name="InformationBanner" type="Panel" parent="." unique_id=1422899724]
 layout_mode = 0
-offset_left = 265.0
+offset_left = 318.0
 offset_top = 998.0
 offset_right = 680.0
 offset_bottom = 1058.0
@@ -1243,42 +1243,45 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ReturnButton" type="Button" parent="." unique_id=791680873]
+[node name="ReturnButton" type="Button" parent="." unique_id=1951160660]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 998.0
-offset_right = 247.0
+offset_right = 307.0
 offset_bottom = 1058.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vfh65")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pdrap")
 theme_override_styles/hover = SubResource("StyleBoxFlat_w64kx")
 
-[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=1167559998]
+[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=1076657033]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -14.0
-offset_right = 43.0
-offset_bottom = 14.0
+offset_left = 12.0
+offset_top = -17.5
+offset_right = 47.0
+offset_bottom = 17.5
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_3e636")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=1573499531]
+[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=637234612]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center]RETURN[/center]"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

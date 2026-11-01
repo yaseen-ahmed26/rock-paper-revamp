@@ -213,3 +213,7 @@ func _update_career_tab():
 	$Career/Matches/Moves/Scissors/Label.text = "[right][color=#c084fc]%d times[/color][/right]" % s.get("played_scissors", 0)
 	$Career/Matches/Moves/Lizard/Label.text = "[right][color=#c084fc]%d times[/color][/right]" % s.get("played_lizard", 0)
 	$Career/Matches/Moves/Spock/Label.text = "[right][color=#c084fc]%d times[/color][/right]" % s.get("played_spock", 0)
+
+
+func _on_return_button_pressed() -> void:
+	Signals.change_screen.emit("main_menu")

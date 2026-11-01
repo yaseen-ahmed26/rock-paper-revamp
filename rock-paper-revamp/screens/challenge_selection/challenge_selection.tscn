@@ -1117,3 +1117,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Carousel/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Carousel/Next" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

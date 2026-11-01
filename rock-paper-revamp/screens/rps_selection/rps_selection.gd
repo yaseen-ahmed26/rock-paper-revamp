@@ -55,9 +55,6 @@ func _on_close_overlay_pressed() -> void:
 # Button Connections
 func _on_token_info_button_pressed():
 	show_overlay($Overlay/Tokens)
-	
-func _on_return_btn_pressed():
-	Signals.change_screen.emit("main_menu")
 
 func _on_start_btn_pressed() -> void:
 	Signals.change_screen.emit(
@@ -73,3 +70,7 @@ func on_screen_change(_args):
 	# tokens.get_node("Label").text = str(int(SaveManager.local_saved_data.get("tokens")))		
 		
 	$Modifiers.check_unlocks()
+
+
+func _on_return_button_pressed() -> void:
+	Signals.change_screen.emit("main_menu")

@@ -3,45 +3,6 @@
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_theme"]
 [ext_resource type="Script" uid="uid://d3lmxi42smokx" path="res://screens/contracts_screen/contracts_screen.gd" id="2_hlxtf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_secondary_normal"]
-bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.309804, 0.231373, 0.529412, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_pressed"]
-bg_color = Color(0.345098, 0.109804, 0.529412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_secondary_hover"]
-bg_color = Color(0.192157, 0.14902, 0.341176, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_icon"]
-size = Vector2(32, 32)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_dark"]
 bg_color = Color(0.0705882, 0.0588235, 0.113725, 1)
 border_width_left = 2
@@ -66,6 +27,18 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_pressed"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_primary_hover"]
 bg_color = Color(0.576471, 0.2, 0.917647, 1)
 border_width_left = 2
@@ -77,6 +50,33 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_icon"]
+size = Vector2(32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_secondary_normal"]
+bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.309804, 0.231373, 0.529412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_secondary_hover"]
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_SubtaskBox"]
 bg_color = Color(0.0588235, 0.0470588, 0.101961, 1)
@@ -238,6 +238,45 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfvtj"]
+bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.309804, 0.231373, 0.529412, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrnxm"]
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6b8q"]
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iolm0"]
+size = Vector2(32, 32)
+
 [node name="contracts_screen" type="Control" unique_id=422312739]
 layout_mode = 3
 anchors_preset = 15
@@ -258,60 +297,27 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.0431373, 0.0352941, 0.0784314, 1)
 
-[node name="ReturnButton" type="Button" parent="." unique_id=1526213389]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 998.0
-offset_right = 247.0
-offset_bottom = 1058.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
-
-[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=1901139067]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -14.0
-offset_right = 43.0
-offset_bottom = 14.0
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=1398045633]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "[center]RETURN[/center]"
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="InformationBanner" type="Panel" parent="." unique_id=2016521199]
 layout_mode = 0
-offset_left = 265.0
+offset_left = 320.0
 offset_top = 998.0
 offset_right = 1240.0
 offset_bottom = 1058.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
 
 [node name="Completed" type="RichTextLabel" parent="InformationBanner" unique_id=899237124]
-layout_mode = 0
-offset_left = 729.0
-offset_top = 12.0
-offset_right = 955.0
-offset_bottom = 47.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -17.5
+offset_right = -18.0
+offset_bottom = 17.5
+grow_horizontal = 0
+grow_vertical = 2
 bbcode_enabled = true
 text = "[color=#94a3b8]COMPLETED:[/color] [color=#34d399]4 / 18[/color]"
 scroll_active = false
@@ -1052,4 +1058,46 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="ReturnButton" type="Button" parent="." unique_id=1061802407]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 998.0
+offset_right = 307.0
+offset_bottom = 1058.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dfvtj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lrnxm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p6b8q")
+
+[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=396541605]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -17.5
+offset_right = 47.0
+offset_bottom = 17.5
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_iolm0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=2031674089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]RETURN[/center]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="SelectedContract/ActivateButton" to="." method="_on_activate_btn_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

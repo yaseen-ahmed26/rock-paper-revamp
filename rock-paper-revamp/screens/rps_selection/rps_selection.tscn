@@ -305,7 +305,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsykl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khelx"]
 bg_color = Color(0.121569, 0.0980392, 0.215686, 1)
 border_width_left = 1
 border_width_top = 1
@@ -317,7 +317,7 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2rmg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtvqx"]
 bg_color = Color(0.345098, 0.109804, 0.529412, 1)
 border_width_left = 2
 border_width_top = 2
@@ -329,7 +329,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feklu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4l1l"]
 bg_color = Color(0.192157, 0.14902, 0.341176, 1)
 border_width_left = 1
 border_width_top = 1
@@ -341,7 +341,7 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6qxuk"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dw6n0"]
 size = Vector2(32, 32)
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
@@ -1742,7 +1742,7 @@ text = "[ESC] CLOSE"
 
 [node name="InformationBanner" type="Panel" parent="." unique_id=1407456586]
 layout_mode = 0
-offset_left = 265.0
+offset_left = 319.0
 offset_top = 998.0
 offset_right = 1077.0
 offset_bottom = 1058.0
@@ -1761,40 +1761,41 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ReturnButton" type="Button" parent="." unique_id=2134640674]
+[node name="ReturnButton" type="Button" parent="." unique_id=473773712]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 998.0
-offset_right = 247.0
+offset_right = 307.0
 offset_bottom = 1058.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_gsykl")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i2rmg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_feklu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_khelx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rtvqx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m4l1l")
 
-[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=875609201]
+[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=835807598]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 15.0
-offset_top = -14.0
-offset_right = 43.0
-offset_bottom = 14.0
+offset_left = 12.0
+offset_top = -17.5
+offset_right = 47.0
+offset_bottom = 17.5
 grow_vertical = 2
 mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_6qxuk")
+texture = SubResource("PlaceholderTexture2D_dw6n0")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=1964790129]
+[node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=32244607]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center]RETURN[/center]"
 scroll_active = false
@@ -1814,3 +1815,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="Overlay/FilterModifiers/Holder/FilterUnlocked" to="Modifiers" method="_on_filter_unlocked_btn_pressed"]
 [connection signal="pressed" from="Overlay/FilterModifiers/Holder/ClearFilters" to="Modifiers" method="_on_clear_filters_pressed"]
 [connection signal="pressed" from="Overlay/CloseOverlay" to="." method="_on_close_overlay_pressed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

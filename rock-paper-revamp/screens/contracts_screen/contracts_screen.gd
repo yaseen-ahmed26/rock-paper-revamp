@@ -150,3 +150,7 @@ func _on_activate_btn_pressed() -> void:
 	_update_inspector(chosen_contract)
 	_set_inital()
 	_update_existing_btns()
+
+
+func _on_return_button_pressed() -> void:
+	Signals.change_screen.emit("main_menu")
