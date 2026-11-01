@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://h07yp2by5dgp" path="res://assets/icons/content/repeat_reward.svg" id="15_4oi77"]
 [ext_resource type="Texture2D" uid="uid://lm6f0ia4j30s" path="res://assets/icons/rules_white.png" id="15_yfyho"]
 [ext_resource type="Texture2D" uid="uid://cqvu352lekaaf" path="res://assets/icons/lock_white.png" id="16_duceo"]
+[ext_resource type="PackedScene" uid="uid://bmuwbdx7e5by7" path="res://components/keybind/keybind.tscn" id="16_rtvqx"]
 [ext_resource type="Texture2D" uid="uid://bdjv0oq12n010" path="res://assets/icons/page_white.png" id="17_v8b7o"]
 [ext_resource type="Script" uid="uid://blqlcyi8qir8n" path="res://screens/rps_selection/scripts/sub/template_step.gd" id="20_k2fvl"]
 
@@ -340,9 +341,6 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dw6n0"]
-size = Vector2(32, 32)
 
 [node name="rps_selection" type="Control" unique_id=2029808321]
 layout_mode = 3
@@ -809,9 +807,9 @@ scroll_active = false
 [node name="ContractTitle" type="RichTextLabel" parent="Contract" unique_id=1925503070]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 44.0
+offset_top = 40.0
 offset_right = 465.0
-offset_bottom = 74.0
+offset_bottom = 70.0
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "SHATTERED STALEMATE"
@@ -820,9 +818,9 @@ scroll_active = false
 [node name="Steps" type="Panel" parent="Contract" unique_id=446942668]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 78.0
+offset_top = 72.0
 offset_right = 465.0
-offset_bottom = 228.0
+offset_bottom = 222.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2y74n")
 
 [node name="Label" type="RichTextLabel" parent="Contract/Steps" unique_id=590175178]
@@ -846,9 +844,9 @@ scroll_active = false
 [node name="ViewContractButton" type="Button" parent="Contract" unique_id=608127718]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 240.0
+offset_top = 233.0
 offset_right = 465.0
-offset_bottom = 286.0
+offset_bottom = 293.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_g4evm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_diptw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5jjnf")
@@ -878,6 +876,18 @@ text = "VIEW FULL CONTRACT"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Keybind" parent="Contract/ViewContractButton" unique_id=1596879511 instance=ExtResource("16_rtvqx")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 7.0
+offset_top = -24.0
+offset_right = 55.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "C"
 
 [node name="Modifiers" type="Panel" parent="." unique_id=695283519]
 layout_mode = 0
@@ -953,21 +963,18 @@ disabled = true
 text = "-------"
 metadata/Position = 0
 
-[node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/1" unique_id=781184852]
+[node name="Keybind" parent="Modifiers/SelectedModifiers/1" unique_id=166307503 instance=ExtResource("16_rtvqx")]
 visible = false
 layout_mode = 1
 anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -20.0
-offset_right = 46.0
-offset_bottom = 20.0
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.752941, 0.517647, 0.988235, 1)
-text = "[1]"
-horizontal_alignment = 1
-vertical_alignment = 1
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 7.0
+offset_top = -17.0
+offset_right = 41.0
+offset_bottom = 17.0
+grow_horizontal = 1
+keybind = "1"
 
 [node name="2" type="Button" parent="Modifiers/SelectedModifiers" unique_id=133237072]
 custom_minimum_size = Vector2(0, 48)
@@ -980,21 +987,18 @@ disabled = true
 text = "-------"
 metadata/Position = 1
 
-[node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/2" unique_id=1646596519]
+[node name="Keybind" parent="Modifiers/SelectedModifiers/2" unique_id=1559800574 instance=ExtResource("16_rtvqx")]
 visible = false
 layout_mode = 1
 anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -20.0
-offset_right = 46.0
-offset_bottom = 20.0
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.752941, 0.517647, 0.988235, 1)
-text = "[2]"
-horizontal_alignment = 1
-vertical_alignment = 1
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 7.0
+offset_top = -17.0
+offset_right = 41.0
+offset_bottom = 17.0
+grow_horizontal = 1
+keybind = "2"
 
 [node name="3" type="Button" parent="Modifiers/SelectedModifiers" unique_id=1531368587]
 custom_minimum_size = Vector2(0, 48)
@@ -1007,21 +1011,18 @@ disabled = true
 text = "-------"
 metadata/Position = 2
 
-[node name="NumberLabel" type="RichTextLabel" parent="Modifiers/SelectedModifiers/3" unique_id=22906680]
+[node name="Keybind" parent="Modifiers/SelectedModifiers/3" unique_id=1310544395 instance=ExtResource("16_rtvqx")]
 visible = false
 layout_mode = 1
 anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -20.0
-offset_right = 46.0
-offset_bottom = 20.0
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.752941, 0.517647, 0.988235, 1)
-text = "[3]"
-horizontal_alignment = 1
-vertical_alignment = 1
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 7.0
+offset_top = -17.0
+offset_right = 41.0
+offset_bottom = 17.0
+grow_horizontal = 1
+keybind = "3"
 
 [node name="ModifierHelp" type="Panel" parent="Modifiers" unique_id=1199873102]
 layout_mode = 0
@@ -1331,8 +1332,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_btn_start_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_2y74n")
 text = "[ START MATCH ]"
 
+[node name="Keybind" parent="StartButton" unique_id=219643884 instance=ExtResource("16_rtvqx")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 7.0
+offset_top = -24.0
+offset_right = 55.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "enter"
+
 [node name="Overlay" type="ColorRect" parent="." unique_id=1501518141]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -1738,7 +1750,19 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_g4evm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_diptw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5jjnf")
-text = "[ESC] CLOSE"
+text = "CLOSE"
+
+[node name="Keybind" parent="Overlay/CloseOverlay" unique_id=43779629 instance=ExtResource("16_rtvqx")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 5.0
+offset_top = -24.0
+offset_right = 53.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "ESC"
 
 [node name="InformationBanner" type="Panel" parent="." unique_id=1407456586]
 layout_mode = 0
@@ -1771,27 +1795,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_khelx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rtvqx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m4l1l")
 
-[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=835807598]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = -17.5
-offset_right = 47.0
-offset_bottom = 17.5
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_dw6n0")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=32244607]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 46.0
+offset_left = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -1801,6 +1810,18 @@ text = "[center]RETURN[/center]"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Keybind" parent="ReturnButton" unique_id=134297289 instance=ExtResource("16_rtvqx")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 7.0
+offset_top = -24.0
+offset_right = 55.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "Q"
 
 [connection signal="pressed" from="TokenInfoButton" to="." method="_on_token_info_button_pressed"]
 [connection signal="pressed" from="Gamemodes/Card/TasksButton" to="Gamemodes" method="_on_tasks_button_pressed"]

@@ -5,7 +5,7 @@ extends Panel
 @onready var key: RichTextLabel = $Key
 
 func _ready() -> void:
-	key.text = keybind
+	key.text = keybind.to_upper()
 	
 	if keybind.length() >= 4:
 		key.add_theme_font_size_override("normal_font_size", 14)

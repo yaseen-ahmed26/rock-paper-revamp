@@ -2,6 +2,7 @@ extends Control
 
 @onready var overlay: ColorRect = $Overlay
 @onready var tokens: Panel = $Tokens
+@onready var modifiers: Panel = $Modifiers
 
 var current_overlay: Panel
 
@@ -15,7 +16,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_ESCAPE:
 				if current_overlay and overlay.visible:				
 					_on_close_overlay_pressed()
-
+			KEY_ENTER: _on_start_btn_pressed()
+			KEY_1: modifiers.on_modifier_info_btn_pressed("1")
+			KEY_2: modifiers.on_modifier_info_btn_pressed("2")
+			KEY_3: modifiers.on_modifier_info_btn_pressed("3")
+			KEY_Q: _on_return_button_pressed()
+			KEY_C: Signals.change_screen.emit("contracts_screen")
+			
+			
 # Overlay
 func show_overlay(screen: Panel):
 	if current_overlay:

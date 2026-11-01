@@ -20,7 +20,7 @@ func _ready() -> void:
 	_sort_modifiers()
 	
 	for btn in $SelectedModifiers.get_children():
-		btn.pressed.connect(_on_modifier_info_btn_pressed.bind(btn))
+		btn.pressed.connect(on_modifier_info_btn_pressed.bind(btn.name))
 
 func _create_btn(modifier: ModifierBase, parent):
 	var clone: Button = template_button.duplicate(true)
@@ -78,7 +78,7 @@ func _update_info_btns():
 		if (btn_position + 1) > selected_modifier_btns.size():
 			btn.text = "-------"
 			btn.disabled = true
-			btn.get_node("NumberLabel").visible = false
+			btn.get_node("Keybind").visible = false
 			
 			continue
 			
@@ -88,7 +88,7 @@ func _update_info_btns():
 		btn.text = info.display_name
 		btn.disabled = false
 		
-		btn.get_node("NumberLabel").visible = true
+		btn.get_node("Keybind").visible = true
 		btn.set_meta("ModifierBase", info)
 
 	var total_modifiers: int = selected_modifier_btns.size()
@@ -205,8 +205,11 @@ func _on_buy_modifier_pressed(btn: Button) -> void:
 		await tween.finished
 		purchase.visible = false
 
-func _on_modifier_info_btn_pressed(btn: Button):
+func on_modifier_info_btn_pressed(btn_name: String):
+	if int(btn_name) - 1 >= selected_modifier_btns.size(): return
+	
 	var modifier_screen: Panel = $"../Overlay/Modifier"
+	var btn: Button = $SelectedModifiers.get_node(btn_name)
 	
 	modifier_screen.get_node("Title").text = btn.get_meta("ModifierBase").display_name
 	modifier_screen.get_node("Description").text = btn.get_meta("ModifierBase").description
