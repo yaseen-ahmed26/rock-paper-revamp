@@ -15,7 +15,7 @@ const MENU_BTNS: Dictionary = {
 const SIDE_BTNS: Dictionary = {
 	"About": preload("res://content/modals/why_revamped.tres"),
 	"Update": preload("res://content/modals/latest_update.tres"),
-	# "Credits": "profile_screen",
+	"Credits": preload("res://content/modals/credits.tres"),
 	"Eyes": preload("res://content/modals/the_loop_explained.tres")
 }
 
@@ -140,11 +140,6 @@ func _on_side_btn_mouse_exited(_btn: Button):
 	$ExtraHoverLabel.visible = false
 	
 func _on_side_btn_pressed(btn: Button):
-	# Temporary exception
-	if btn.name == "Credits":
-		Signals.change_screen.emit("credits_screen")
-		return
-		
 	var modal = SIDE_BTNS.get(btn.name)
 	Signals.show_modal.emit(modal)
 

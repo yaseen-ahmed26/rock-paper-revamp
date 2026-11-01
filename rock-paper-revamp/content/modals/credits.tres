@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ModalBase" format=3 uid="uid://cy4cho73m2enk"]
+
+[ext_resource type="Script" uid="uid://denwbd5pg8uov" path="res://gameplay/bases/modal_base.gd" id="1_dprn6"]
+
+[resource]
+script = ExtResource("1_dprn6")
+modal_id = "credits"
+title = "CREDITS"
+primary_text = "Majority of the icons used in the game from these websites."
+secondary_text = "[color=green]Modifier Icons[/color] were sourced from [color=gold][url=https://game-icons.net/]game-icons.net[/url][/color]. [color=green]Menu Icons[/color] were sourced from [color=gold][url=https://lucide.dev/icons/]lucide.dev[/url][/color]."
+continue_btn_text = "Close"
+metadata/_custom_type_script = "uid://denwbd5pg8uov"

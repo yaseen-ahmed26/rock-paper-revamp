@@ -60,6 +60,56 @@ corner_radius_bottom_left = 12
 shadow_color = Color(0, 0, 0, 0.45)
 shadow_size = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p01wi"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0862745, 0.0666667, 0.152941, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25098, 0.192157, 0.419608, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqfm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.345098, 0.109804, 0.529412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.517647, 0.988235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk1ns"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.192157, 0.14902, 0.341176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.658824, 0.333333, 0.968627, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.658824, 0.333333, 0.968627, 0.22)
+shadow_size = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ss24"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -127,56 +177,6 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p01wi"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.0862745, 0.0666667, 0.152941, 0.95)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.25098, 0.192157, 0.419608, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koqfm"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.345098, 0.109804, 0.529412, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.752941, 0.517647, 0.988235, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qk1ns"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.192157, 0.14902, 0.341176, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.658824, 0.333333, 0.968627, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_color = Color(0.658824, 0.333333, 0.968627, 0.22)
-shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlony"]
 content_margin_left = 4.0
@@ -395,6 +395,129 @@ offset_right = -140.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.658824, 0.333333, 0.968627, 1)
+
+[node name="ExtraButtons" type="HBoxContainer" parent="." unique_id=624887203]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = 174.0
+offset_right = 246.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="About" type="Button" parent="ExtraButtons" unique_id=1237858159]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/About" unique_id=460780208]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("30_vlony")
+expand_mode = 1
+
+[node name="Update" type="Button" parent="ExtraButtons" unique_id=1173142070]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/Update" unique_id=496415610]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("31_8wd0k")
+expand_mode = 1
+
+[node name="Credits" type="Button" parent="ExtraButtons" unique_id=401743867]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/Credits" unique_id=221558569]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32_t7u00")
+expand_mode = 1
+
+[node name="Eyes" type="Button" parent="ExtraButtons" unique_id=1600438948]
+visible = false
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
+
+[node name="Icon" type="TextureRect" parent="ExtraButtons/Eyes" unique_id=288293552]
+modulate = Color(0.85098, 0.705882, 0.996078, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("33_08nat")
+expand_mode = 1
 
 [node name="MenuButtons" type="VBoxContainer" parent="." unique_id=2015590246]
 layout_mode = 1
@@ -703,129 +826,6 @@ offset_bottom = 16.0
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("30_3ss24")
-expand_mode = 1
-
-[node name="ExtraButtons" type="HBoxContainer" parent="." unique_id=624887203]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -246.0
-offset_top = 174.0
-offset_right = 246.0
-offset_bottom = 249.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/separation = 14
-alignment = 1
-
-[node name="About" type="Button" parent="ExtraButtons" unique_id=1237858159]
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
-
-[node name="Icon" type="TextureRect" parent="ExtraButtons/About" unique_id=460780208]
-modulate = Color(0.85098, 0.705882, 0.996078, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.5
-offset_top = -17.5
-offset_right = 17.5
-offset_bottom = 17.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("30_vlony")
-expand_mode = 1
-
-[node name="Update" type="Button" parent="ExtraButtons" unique_id=1173142070]
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
-
-[node name="Icon" type="TextureRect" parent="ExtraButtons/Update" unique_id=496415610]
-modulate = Color(0.85098, 0.705882, 0.996078, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.5
-offset_top = -17.5
-offset_right = 17.5
-offset_bottom = 17.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("31_8wd0k")
-expand_mode = 1
-
-[node name="Credits" type="Button" parent="ExtraButtons" unique_id=401743867]
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
-
-[node name="Icon" type="TextureRect" parent="ExtraButtons/Credits" unique_id=221558569]
-modulate = Color(0.85098, 0.705882, 0.996078, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.5
-offset_top = -17.5
-offset_right = 17.5
-offset_bottom = 17.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("32_t7u00")
-expand_mode = 1
-
-[node name="Eyes" type="Button" parent="ExtraButtons" unique_id=1600438948]
-visible = false
-custom_minimum_size = Vector2(75, 0)
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_p01wi")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_koqfm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qk1ns")
-
-[node name="Icon" type="TextureRect" parent="ExtraButtons/Eyes" unique_id=288293552]
-modulate = Color(0.85098, 0.705882, 0.996078, 1)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.5
-offset_top = -17.5
-offset_right = 17.5
-offset_bottom = 17.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("33_08nat")
 expand_mode = 1
 
 [node name="Quit" type="Button" parent="." unique_id=1094470860]
