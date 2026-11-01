@@ -10,37 +10,20 @@ var settings: Dictionary = {
 		"icon": null,
 		"description": "Change your window type.",
 		"options": [
-			"Fullscreen", "Windowed", "Borderless Window", "Borderless Fullscreen"
+			"Fullscreen", "Windowed", "Exclusive Fullscreen"
 		],
 		"data": [
-			[DisplayServer.WINDOW_MODE_FULLSCREEN, false],
+			[DisplayServer.WINDOW_MODE_FULLSCREEN, true],
 			[DisplayServer.WINDOW_MODE_WINDOWED, false],
-			[DisplayServer.WINDOW_MODE_WINDOWED, true],
-			[DisplayServer.WINDOW_MODE_FULLSCREEN, true]
+			[DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN, false],
 		],
-		"summary": "[color=#a855f7]• Windowed:[/color] Desc goes here\n[color=#a855f7]• Fullscreen:[/color] Big screen
+		"summary": "[color=#a855f7]• Fullscreen:[/color] Fills your entire monitor.\n[color=#a855f7]• Windowed:[/color] Runs the game in a small moveable window.\n[color=#a855f7]• Exclusive Fullscreen:[/color] Takes full control of your screen.
 		",
 		"callback": _window_setting_changed,
 		"parent": "display",
 		"current_option": 0,
 		"default_option": 0,
-	},
-	"resolution": {
-		"icon": null,
-		"description": "Set the size of the window.",
-		"options": [
-			"1152 x 648", "1280 x 720", "1920 x 1080"
-		],
-		"data": [
-			Vector2(1152, 648),
-			Vector2(1280, 720),
-			Vector2(1920, 1080),
-		],
-		"summary": "",
-		"callback": _resolution_setting_changed,
-		"parent": "display",
-		"current_option": 2,
-		"default_option": 2,
+		"editor_type": "list"
 	},
 	"max_framerate": {
 		"icon": null,
@@ -56,24 +39,24 @@ var settings: Dictionary = {
 		"parent": "display",
 		"current_option": 2,
 		"default_option": 2,
+		"editor_type": "list"
 	},
 	"v_sync": {
 		"icon": null,
-		"description": "Synchronize rendered frames with your monitor's refresh rate.",
+		"description": "Prevent screen tearing by matching the game's display with your screen.",
 		"options": [
-			"Disabled", "Enabled", "Adaptive", "Mailbox"
+			"Disabled", "Enabled"
 		],
 		"data": [
 			DisplayServer.VSYNC_DISABLED,
 			DisplayServer.VSYNC_ENABLED,
-			DisplayServer.VSYNC_ADAPTIVE,
-			DisplayServer.VSYNC_MAILBOX
 		],
-		"summary": "[color=#a855f7]• Disabled:[/color] Lowest input lag, may cause screen tearing.\n[color=#a855f7]• Enabled:[/color] Smooth frame delivery, eliminates tearing.\n[color=#a855f7]• Adaptive:[/color] Enables VSync at high framerates, turns off if FPS drops below refresh rate.\n[color=#a855f7]• Mailbox:[/color] Renders unconstrained while always presenting the newest frame (ultra-low latency, no tear).",
+		"summary": "[color=#a855f7]• Disabled:[/color] Lowest input lag, may cause screen tearing.\n[color=#a855f7]• Enabled:[/color] Framerate delivery with no tearing.",
 		"callback": _vsync_setting_changed,
 		"parent": "display",
 		"current_option": 0,
 		"default_option": 0,
+		"editor_type": "list"
 	},
 	"skip_splash": {
 		"icon": null,
@@ -84,26 +67,28 @@ var settings: Dictionary = {
 		"data": [
 			false, true
 		],
-		"summary": "[color=#a855f7]• Enabled:[/color] Skips the splash screen when the game starts automatically.\n[color=#a855f7]• Disabled:[/color] Plays the entire sequence unless manually skipped.",
+		"summary": "[color=#a855f7]• Disabled:[/color] Plays the entire sequence unless manually skipped.\n[color=#a855f7]• Enabled:[/color] Skips the splash screen when the game starts automatically.",
 		"callback": _skip_splash_setting_changed,
 		"parent": "preferences",
 		"current_option": 0,
 		"default_option": 0,
+		"editor_type": "list"
 	},
 	"icon_waterfall": {
 		"icon": null,
-		"description": "Show icons falling on the main menu.",
+		"description": "Show icons falling on the main menu. Note that is is disabled when you are not on the main menu.",
 		"options": [
 			"Disabled", "Enabled"
 		],
 		"data": [
 			false, true
 		],
-		"summary": "",
+		"summary": "[color=#a855f7]• Disabled:[/color] Icons won't show falling on the main menu.\n[color=#a855f7]• Enabled:[/color] Icons will fall whilst on the main menu.",
 		"callback": _icon_waterfall_setting_changed,
 		"parent": "preferences",
 		"current_option": 1,
 		"default_option": 1,
+		"editor_type": "list"
 	},
 }
 const OPTION_NORMAL_BTN = preload("uid://xohovlaokuyr")
@@ -216,10 +201,6 @@ func _window_setting_changed(chosen_index: int):
 	
 	DisplayServer.window_set_mode(info[0])
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, info[1])
-
-func _resolution_setting_changed(chosen_index: int):
-	var details: Dictionary = settings.get("resolution")
-	DisplayServer.window_set_size(details.data.get(chosen_index))
 
 func _max_framerate_setting_changed(chosen_index: int):
 	var details: Dictionary = settings.get("max_framerate")
