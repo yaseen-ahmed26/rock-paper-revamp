@@ -1055,6 +1055,7 @@ anchor_right = 0.0
 offset_left = 21.0
 offset_top = -28.0
 offset_right = 77.0
+offset_bottom = 24.0
 grow_horizontal = 1
 keybind = "T"
 
