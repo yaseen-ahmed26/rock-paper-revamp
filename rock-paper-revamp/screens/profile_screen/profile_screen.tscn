@@ -291,7 +291,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CareerStatsView" type="Control" parent="." unique_id=1223745280]
+[node name="Career" type="Control" parent="." unique_id=1223745280]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -300,14 +300,14 @@ offset_top = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Matches" type="Panel" parent="CareerStatsView" unique_id=838153663]
+[node name="Matches" type="Panel" parent="Career" unique_id=838153663]
 layout_mode = 0
 offset_left = 32.0
 offset_right = 680.0
 offset_bottom = 871.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
 
-[node name="Wins" type="Panel" parent="CareerStatsView/Matches" unique_id=1546749439]
+[node name="Wins" type="Panel" parent="Career/Matches" unique_id=1546749439]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 26.0
@@ -315,7 +315,7 @@ offset_right = 216.0
 offset_bottom = 146.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_inner")
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Wins" unique_id=583561282]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Wins" unique_id=583561282]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -328,7 +328,7 @@ text = "[center][color=#94a3b8]WINS[/color]
 [font_size=28][color=#34d399]128[/color][/font_size][/center]"
 scroll_active = false
 
-[node name="Losses" type="Panel" parent="CareerStatsView/Matches" unique_id=169109343]
+[node name="Losses" type="Panel" parent="Career/Matches" unique_id=169109343]
 layout_mode = 0
 offset_left = 228.0
 offset_top = 26.0
@@ -336,7 +336,7 @@ offset_right = 420.0
 offset_bottom = 146.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_inner")
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Losses" unique_id=901803368]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Losses" unique_id=901803368]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -349,7 +349,7 @@ text = "[center][color=#94a3b8]LOSSES[/color]
 [font_size=28][color=#f87171]84[/color][/font_size][/center]"
 scroll_active = false
 
-[node name="Draws" type="Panel" parent="CareerStatsView/Matches" unique_id=293906021]
+[node name="Draws" type="Panel" parent="Career/Matches" unique_id=293906021]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 26.0
@@ -357,7 +357,7 @@ offset_right = 624.0
 offset_bottom = 146.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_inner")
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Draws" unique_id=67310907]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Draws" unique_id=67310907]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -370,7 +370,7 @@ text = "[center][color=#94a3b8]DRAWS[/color]
 [font_size=28][color=#c084fc]31[/color][/font_size][/center]"
 scroll_active = false
 
-[node name="PointsBox" type="Panel" parent="CareerStatsView/Matches" unique_id=54532966]
+[node name="PointsBox" type="Panel" parent="Career/Matches" unique_id=54532966]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 161.0
@@ -378,7 +378,7 @@ offset_right = 624.0
 offset_bottom = 281.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Points" type="RichTextLabel" parent="CareerStatsView/Matches/PointsBox" unique_id=1399220150]
+[node name="Points" type="RichTextLabel" parent="Career/Matches/PointsBox" unique_id=1399220150]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 18.0
@@ -389,7 +389,7 @@ text = "[color=#94a3b8]BANK[/color]
 [font_size=20]Won [color=#facc15]640[/color]  •  [color=#94a3b8]412[/color] Lost[/font_size]"
 scroll_active = false
 
-[node name="PointsRatioBar" type="ProgressBar" parent="CareerStatsView/Matches/PointsBox" unique_id=415819231]
+[node name="PointsRatioBar" type="ProgressBar" parent="Career/Matches/PointsBox" unique_id=415819231]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 86.0
@@ -401,7 +401,7 @@ max_value = 1052.0
 value = 640.0
 show_percentage = false
 
-[node name="RoundsPlayed" type="Panel" parent="CareerStatsView/Matches" unique_id=128311833]
+[node name="RoundsPlayed" type="Panel" parent="Career/Matches" unique_id=128311833]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 298.0
@@ -409,7 +409,7 @@ offset_right = 316.0
 offset_bottom = 382.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/RoundsPlayed" unique_id=478179387]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/RoundsPlayed" unique_id=478179387]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 16.0
@@ -420,7 +420,7 @@ text = "[color=#94a3b8]ROUNDS PLAYED[/color]
 [font_size=22][color=#ffffff]1,420[/color][/font_size]"
 scroll_active = false
 
-[node name="MatchesPlayed" type="Panel" parent="CareerStatsView/Matches" unique_id=212454496]
+[node name="MatchesPlayed" type="Panel" parent="Career/Matches" unique_id=212454496]
 layout_mode = 0
 offset_left = 332.0
 offset_top = 298.0
@@ -428,7 +428,7 @@ offset_right = 624.0
 offset_bottom = 382.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/MatchesPlayed" unique_id=546477635]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/MatchesPlayed" unique_id=546477635]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 16.0
@@ -439,7 +439,7 @@ text = "[color=#94a3b8]MATCHES PLAYED[/color]
 [font_size=22][color=#ffffff]243[/color][/font_size]"
 scroll_active = false
 
-[node name="Moves" type="VBoxContainer" parent="CareerStatsView/Matches" unique_id=696519337]
+[node name="Moves" type="VBoxContainer" parent="Career/Matches" unique_id=696519337]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 415.0
@@ -447,12 +447,12 @@ offset_right = 624.0
 offset_bottom = 843.0
 theme_override_constants/separation = 12
 
-[node name="Rock" type="Panel" parent="CareerStatsView/Matches/Moves" unique_id=1499174627]
+[node name="Rock" type="Panel" parent="Career/Matches/Moves" unique_id=1499174627]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="CareerStatsView/Matches/Moves/Rock" unique_id=401508910]
+[node name="Icon" type="TextureRect" parent="Career/Matches/Moves/Rock" unique_id=401508910]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 14.0
@@ -462,7 +462,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SuitTitle" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Rock" unique_id=2071126057]
+[node name="SuitTitle" type="RichTextLabel" parent="Career/Matches/Moves/Rock" unique_id=2071126057]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 22.0
@@ -472,7 +472,7 @@ bbcode_enabled = true
 text = "[color=#ffffff]ROCK[/color]"
 scroll_active = false
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Rock" unique_id=879866713]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Moves/Rock" unique_id=879866713]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 22.0
@@ -482,12 +482,12 @@ bbcode_enabled = true
 text = "[right][color=#c084fc]342 times[/color][/right]"
 scroll_active = false
 
-[node name="Paper" type="Panel" parent="CareerStatsView/Matches/Moves" unique_id=966845091]
+[node name="Paper" type="Panel" parent="Career/Matches/Moves" unique_id=966845091]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="CareerStatsView/Matches/Moves/Paper" unique_id=370091567]
+[node name="Icon" type="TextureRect" parent="Career/Matches/Moves/Paper" unique_id=370091567]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 14.0
@@ -497,7 +497,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SuitTitle" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Paper" unique_id=1737417880]
+[node name="SuitTitle" type="RichTextLabel" parent="Career/Matches/Moves/Paper" unique_id=1737417880]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 22.0
@@ -507,7 +507,7 @@ bbcode_enabled = true
 text = "[color=#ffffff]PAPER[/color]"
 scroll_active = false
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Paper" unique_id=480562463]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Moves/Paper" unique_id=480562463]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 22.0
@@ -517,12 +517,12 @@ bbcode_enabled = true
 text = "[right][color=#c084fc]298 times[/color][/right]"
 scroll_active = false
 
-[node name="Scissors" type="Panel" parent="CareerStatsView/Matches/Moves" unique_id=1085340322]
+[node name="Scissors" type="Panel" parent="Career/Matches/Moves" unique_id=1085340322]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="CareerStatsView/Matches/Moves/Scissors" unique_id=1633968200]
+[node name="Icon" type="TextureRect" parent="Career/Matches/Moves/Scissors" unique_id=1633968200]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 14.0
@@ -532,7 +532,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SuitTitle" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Scissors" unique_id=1805715300]
+[node name="SuitTitle" type="RichTextLabel" parent="Career/Matches/Moves/Scissors" unique_id=1805715300]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 22.0
@@ -542,7 +542,7 @@ bbcode_enabled = true
 text = "[color=#ffffff]SCISSORS[/color]"
 scroll_active = false
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Scissors" unique_id=704145229]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Moves/Scissors" unique_id=704145229]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 22.0
@@ -552,12 +552,12 @@ bbcode_enabled = true
 text = "[right][color=#c084fc]310 times[/color][/right]"
 scroll_active = false
 
-[node name="Lizard" type="Panel" parent="CareerStatsView/Matches/Moves" unique_id=650000442]
+[node name="Lizard" type="Panel" parent="Career/Matches/Moves" unique_id=650000442]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="CareerStatsView/Matches/Moves/Lizard" unique_id=596597318]
+[node name="Icon" type="TextureRect" parent="Career/Matches/Moves/Lizard" unique_id=596597318]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 14.0
@@ -567,7 +567,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SuitTitle" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Lizard" unique_id=597142566]
+[node name="SuitTitle" type="RichTextLabel" parent="Career/Matches/Moves/Lizard" unique_id=597142566]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 22.0
@@ -577,7 +577,7 @@ bbcode_enabled = true
 text = "[color=#ffffff]LIZARD[/color]"
 scroll_active = false
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Lizard" unique_id=316251882]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Moves/Lizard" unique_id=316251882]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 22.0
@@ -587,12 +587,12 @@ bbcode_enabled = true
 text = "[right][color=#c084fc]215 times[/color][/right]"
 scroll_active = false
 
-[node name="Spock" type="Panel" parent="CareerStatsView/Matches/Moves" unique_id=506212116]
+[node name="Spock" type="Panel" parent="Career/Matches/Moves" unique_id=506212116]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="CareerStatsView/Matches/Moves/Spock" unique_id=1562062608]
+[node name="Icon" type="TextureRect" parent="Career/Matches/Moves/Spock" unique_id=1562062608]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 14.0
@@ -602,7 +602,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SuitTitle" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Spock" unique_id=1780022093]
+[node name="SuitTitle" type="RichTextLabel" parent="Career/Matches/Moves/Spock" unique_id=1780022093]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 22.0
@@ -612,7 +612,7 @@ bbcode_enabled = true
 text = "[color=#ffffff]SPOCK[/color]"
 scroll_active = false
 
-[node name="Label" type="RichTextLabel" parent="CareerStatsView/Matches/Moves/Spock" unique_id=1560667987]
+[node name="Label" type="RichTextLabel" parent="Career/Matches/Moves/Spock" unique_id=1560667987]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 22.0
@@ -622,21 +622,21 @@ bbcode_enabled = true
 text = "[right][color=#c084fc]255 times[/color][/right]"
 scroll_active = false
 
-[node name="ContentUsage" type="Panel" parent="CareerStatsView" unique_id=677669575]
+[node name="ContentUsage" type="Panel" parent="Career" unique_id=677669575]
 layout_mode = 0
 offset_left = 704.0
 offset_right = 1888.0
 offset_bottom = 948.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
 
-[node name="General" type="Control" parent="CareerStatsView/ContentUsage" unique_id=1154432255]
+[node name="General" type="Control" parent="Career/ContentUsage" unique_id=1154432255]
 anchors_preset = 0
 offset_left = 24.0
 offset_top = 20.0
 offset_right = 564.0
 offset_bottom = 924.0
 
-[node name="GamemodesTitle" type="RichTextLabel" parent="CareerStatsView/ContentUsage/General" unique_id=1663081604]
+[node name="GamemodesTitle" type="RichTextLabel" parent="Career/ContentUsage/General" unique_id=1663081604]
 layout_mode = 0
 offset_right = 540.0
 offset_bottom = 30.0
@@ -645,14 +645,14 @@ bbcode_enabled = true
 text = "GAMEMODES"
 scroll_active = false
 
-[node name="GamemodesHolder" type="VBoxContainer" parent="CareerStatsView/ContentUsage/General" unique_id=2091389688]
+[node name="GamemodesHolder" type="VBoxContainer" parent="Career/ContentUsage/General" unique_id=2091389688]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 540.0
 offset_bottom = 320.0
 theme_override_constants/separation = 8
 
-[node name="OpponentsTitle" type="RichTextLabel" parent="CareerStatsView/ContentUsage/General" unique_id=1471807376]
+[node name="OpponentsTitle" type="RichTextLabel" parent="Career/ContentUsage/General" unique_id=1471807376]
 layout_mode = 0
 offset_top = 340.0
 offset_right = 540.0
@@ -662,21 +662,21 @@ bbcode_enabled = true
 text = "OPPONENTS"
 scroll_active = false
 
-[node name="OpponentsHolder" type="VBoxContainer" parent="CareerStatsView/ContentUsage/General" unique_id=1554676359]
+[node name="OpponentsHolder" type="VBoxContainer" parent="Career/ContentUsage/General" unique_id=1554676359]
 layout_mode = 0
 offset_top = 378.0
 offset_right = 540.0
 offset_bottom = 620.0
 theme_override_constants/separation = 8
 
-[node name="Modifiers" type="Control" parent="CareerStatsView/ContentUsage" unique_id=835597741]
+[node name="Modifiers" type="Control" parent="Career/ContentUsage" unique_id=835597741]
 anchors_preset = 0
 offset_left = 596.0
 offset_top = 20.0
 offset_right = 1160.0
 offset_bottom = 924.0
 
-[node name="Title" type="RichTextLabel" parent="CareerStatsView/ContentUsage/Modifiers" unique_id=724218578]
+[node name="Title" type="RichTextLabel" parent="Career/ContentUsage/Modifiers" unique_id=724218578]
 layout_mode = 0
 offset_right = 564.0
 offset_bottom = 30.0
@@ -685,24 +685,24 @@ bbcode_enabled = true
 text = "MODIFIERSq"
 scroll_active = false
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CareerStatsView/ContentUsage/Modifiers" unique_id=2020621660]
+[node name="ScrollContainer" type="ScrollContainer" parent="Career/ContentUsage/Modifiers" unique_id=2020621660]
 layout_mode = 0
 offset_top = 38.0
 offset_right = 564.0
 offset_bottom = 904.0
 horizontal_scroll_mode = 0
 
-[node name="Holder" type="VBoxContainer" parent="CareerStatsView/ContentUsage/Modifiers/ScrollContainer" unique_id=2111478271]
+[node name="Holder" type="VBoxContainer" parent="Career/ContentUsage/Modifiers/ScrollContainer" unique_id=2111478271]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Template" type="Panel" parent="CareerStatsView/ContentUsage/Modifiers/ScrollContainer/Holder" unique_id=1942699064]
+[node name="Template" type="Panel" parent="Career/ContentUsage/Modifiers/ScrollContainer/Holder" unique_id=1942699064]
 custom_minimum_size = Vector2(556, 52)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="CareerStatsView/ContentUsage/Modifiers/ScrollContainer/Holder/Template" unique_id=1865059181]
+[node name="Icon" type="TextureRect" parent="Career/ContentUsage/Modifiers/ScrollContainer/Holder/Template" unique_id=1865059181]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 10.0
@@ -712,7 +712,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="NameLabel" type="RichTextLabel" parent="CareerStatsView/ContentUsage/Modifiers/ScrollContainer/Holder/Template" unique_id=1946933863]
+[node name="NameLabel" type="RichTextLabel" parent="Career/ContentUsage/Modifiers/ScrollContainer/Holder/Template" unique_id=1946933863]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -728,7 +728,7 @@ text = "Copy Cat"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Amount" type="RichTextLabel" parent="CareerStatsView/ContentUsage/Modifiers/ScrollContainer/Holder/Template" unique_id=332383002]
+[node name="Amount" type="RichTextLabel" parent="Career/ContentUsage/Modifiers/ScrollContainer/Holder/Template" unique_id=332383002]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 14.0
@@ -742,7 +742,7 @@ scroll_active = false
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="AchievementsView" type="Control" parent="." unique_id=786515917]
+[node name="Achievements" type="Control" parent="." unique_id=786515917]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -752,14 +752,14 @@ offset_top = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FilterSortBar" type="Panel" parent="AchievementsView" unique_id=561739325]
+[node name="Filters" type="Panel" parent="Achievements" unique_id=561739325]
 layout_mode = 0
 offset_left = 32.0
 offset_right = 1888.0
 offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
 
-[node name="Filters" type="HBoxContainer" parent="AchievementsView/FilterSortBar" unique_id=1591519848]
+[node name="Holder" type="HBoxContainer" parent="Achievements/Filters" unique_id=1591519848]
 layout_mode = 0
 offset_left = 14.0
 offset_top = 12.0
@@ -767,14 +767,14 @@ offset_right = 920.0
 offset_bottom = 52.0
 theme_override_constants/separation = 8
 
-[node name="All" type="Button" parent="AchievementsView/FilterSortBar/Filters" unique_id=1669448915]
+[node name="All" type="Button" parent="Achievements/Filters/Holder" unique_id=1669448915]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_primary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_primary_hover")
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Filters/All" unique_id=688870003]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Holder/All" unique_id=688870003]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -789,14 +789,14 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Modifiers" type="Button" parent="AchievementsView/FilterSortBar/Filters" unique_id=1621004558]
+[node name="Modifiers" type="Button" parent="Achievements/Filters/Holder" unique_id=1621004558]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Filters/Modifiers" unique_id=1874191986]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Holder/Modifiers" unique_id=1874191986]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -811,14 +811,14 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gamemodes" type="Button" parent="AchievementsView/FilterSortBar/Filters" unique_id=2002765582]
+[node name="Gamemodes" type="Button" parent="Achievements/Filters/Holder" unique_id=2002765582]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Filters/Gamemodes" unique_id=1082193245]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Holder/Gamemodes" unique_id=1082193245]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -833,14 +833,14 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Opponents" type="Button" parent="AchievementsView/FilterSortBar/Filters" unique_id=711542133]
+[node name="Opponents" type="Button" parent="Achievements/Filters/Holder" unique_id=711542133]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Filters/Opponents" unique_id=752482476]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Holder/Opponents" unique_id=752482476]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -855,14 +855,14 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Suits" type="Button" parent="AchievementsView/FilterSortBar/Filters" unique_id=157707785]
+[node name="Suits" type="Button" parent="Achievements/Filters/Holder" unique_id=157707785]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Filters/Suits" unique_id=1200349813]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Holder/Suits" unique_id=1200349813]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -877,7 +877,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sort" type="HBoxContainer" parent="AchievementsView/FilterSortBar" unique_id=426349851]
+[node name="Sort" type="HBoxContainer" parent="Achievements/Filters" unique_id=426349851]
 visible = false
 layout_mode = 0
 offset_left = 1084.0
@@ -886,14 +886,14 @@ offset_right = 1544.0
 offset_bottom = 52.0
 theme_override_constants/separation = 8
 
-[node name="SortProgressBtn" type="Button" parent="AchievementsView/FilterSortBar/Sort" unique_id=245667213]
+[node name="SortProgressBtn" type="Button" parent="Achievements/Filters/Sort" unique_id=245667213]
 custom_minimum_size = Vector2(210, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
 
-[node name="Icon" type="TextureRect" parent="AchievementsView/FilterSortBar/Sort/SortProgressBtn" unique_id=195884467]
+[node name="Icon" type="TextureRect" parent="Achievements/Filters/Sort/SortProgressBtn" unique_id=195884467]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
@@ -904,7 +904,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Sort/SortProgressBtn" unique_id=562133841]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Sort/SortProgressBtn" unique_id=562133841]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 10.0
@@ -916,14 +916,14 @@ bbcode_enabled = true
 text = "[center]SORT: PROGRESS %[/center]"
 scroll_active = false
 
-[node name="SortNameBtn" type="Button" parent="AchievementsView/FilterSortBar/Sort" unique_id=1877712927]
+[node name="SortNameBtn" type="Button" parent="Achievements/Filters/Sort" unique_id=1877712927]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_secondary_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_primary_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_secondary_hover")
 
-[node name="Icon" type="TextureRect" parent="AchievementsView/FilterSortBar/Sort/SortNameBtn" unique_id=1492961325]
+[node name="Icon" type="TextureRect" parent="Achievements/Filters/Sort/SortNameBtn" unique_id=1492961325]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
@@ -934,7 +934,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/FilterSortBar/Sort/SortNameBtn" unique_id=669528657]
+[node name="Label" type="RichTextLabel" parent="Achievements/Filters/Sort/SortNameBtn" unique_id=669528657]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 10.0
@@ -946,7 +946,7 @@ bbcode_enabled = true
 text = "[center]SORT: A - Z[/center]"
 scroll_active = false
 
-[node name="SearchBar" type="LineEdit" parent="AchievementsView/FilterSortBar" unique_id=849301500]
+[node name="SearchBar" type="LineEdit" parent="Achievements/Filters" unique_id=849301500]
 layout_mode = 0
 offset_left = 937.0
 offset_top = 12.0
@@ -956,15 +956,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_row_subtle")
 placeholder_text = "Search achievements..."
 alignment = 1
 
-[node name="List" type="Panel" parent="AchievementsView" unique_id=943670009]
+[node name="List" type="Panel" parent="Achievements" unique_id=943670009]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 80.0
 offset_right = 1888.0
-offset_bottom = 948.0
+offset_bottom = 877.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel_dark")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="AchievementsView/List" unique_id=1869613993]
+[node name="ScrollContainer" type="ScrollContainer" parent="Achievements/List" unique_id=1869613993]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -977,17 +977,18 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="Holder" type="VBoxContainer" parent="AchievementsView/List/ScrollContainer" unique_id=512855496]
+[node name="Holder" type="VBoxContainer" parent="Achievements/List/ScrollContainer" unique_id=512855496]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="TemplateStatic" type="Panel" parent="AchievementsView/List/ScrollContainer/Holder" unique_id=1724848491]
+[node name="TemplateStatic" type="Panel" parent="Achievements/List/ScrollContainer/Holder" unique_id=1724848491]
+visible = false
 custom_minimum_size = Vector2(0, 136)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_inner")
 
-[node name="Icon" type="TextureRect" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=1359209704]
+[node name="Icon" type="TextureRect" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=1359209704]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 28.0
@@ -997,7 +998,7 @@ texture = SubResource("PlaceholderTexture2D_badge")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Title" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=1254287982]
+[node name="Title" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=1254287982]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 20.0
@@ -1008,7 +1009,7 @@ bbcode_enabled = true
 text = "ACHIEVEMENT NAME"
 scroll_active = false
 
-[node name="Step" type="Panel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=2088670792]
+[node name="Step" type="Panel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=2088670792]
 layout_mode = 0
 offset_left = 414.0
 offset_top = 16.0
@@ -1016,7 +1017,7 @@ offset_right = 552.0
 offset_bottom = 44.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_badge_purple")
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic/Step" unique_id=21199421]
+[node name="Label" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic/Step" unique_id=21199421]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1031,7 +1032,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=1476034257]
+[node name="Description" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=1476034257]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 56.0
@@ -1042,7 +1043,7 @@ bbcode_enabled = true
 text = "[color=#cbd5e1]TASK: Play matches with the [color=#c084fc]Copy Cat[/color] modifier active 25 times.[/color]"
 scroll_active = false
 
-[node name="ProgressBar" type="ProgressBar" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=1956319404]
+[node name="ProgressBar" type="ProgressBar" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=1956319404]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 96.0
@@ -1054,7 +1055,7 @@ max_value = 25.0
 value = 18.0
 show_percentage = false
 
-[node name="ProgressCounter" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=1613719201]
+[node name="ProgressCounter" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=1613719201]
 layout_mode = 0
 offset_left = 1052.0
 offset_top = 89.0
@@ -1066,7 +1067,7 @@ text = "[color=#c084fc]18 / 25[/color] [color=#94a3b8](72%)[/color]"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Reward" type="Panel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic" unique_id=215985567]
+[node name="Reward" type="Panel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic" unique_id=215985567]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1078,7 +1079,7 @@ offset_bottom = 118.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic/Reward" unique_id=614009442]
+[node name="Icon" type="TextureRect" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic/Reward" unique_id=614009442]
 visible = false
 layout_mode = 0
 offset_left = 18.0
@@ -1089,7 +1090,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateStatic/Reward" unique_id=748765386]
+[node name="Label" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateStatic/Reward" unique_id=748765386]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1104,7 +1105,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Completed" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder" unique_id=1114553719]
+[node name="Completed" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder" unique_id=1114553719]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 24
@@ -1114,12 +1115,13 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TemplateCompleted" type="Panel" parent="AchievementsView/List/ScrollContainer/Holder" unique_id=1029357880]
+[node name="TemplateCompleted" type="Panel" parent="Achievements/List/ScrollContainer/Holder" unique_id=1029357880]
+visible = false
 custom_minimum_size = Vector2(0, 136)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card_completed")
 
-[node name="Icon" type="TextureRect" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted" unique_id=2005508344]
+[node name="Icon" type="TextureRect" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted" unique_id=2005508344]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 28.0
@@ -1129,7 +1131,7 @@ texture = SubResource("PlaceholderTexture2D_badge")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Title" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted" unique_id=1020783958]
+[node name="Title" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted" unique_id=1020783958]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 20.0
@@ -1140,7 +1142,7 @@ bbcode_enabled = true
 text = "[color=#cbd5e1]SURVIVAL SPECIALIST[/color]"
 scroll_active = false
 
-[node name="Description" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted" unique_id=1786374961]
+[node name="Description" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted" unique_id=1786374961]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 56.0
@@ -1151,7 +1153,7 @@ bbcode_enabled = true
 text = "[color=#94a3b8]TASK: Complete 20 matches in the [color=#34d399]Survival[/color] gamemode.[/color]"
 scroll_active = false
 
-[node name="ProgressBar" type="ProgressBar" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted" unique_id=2068333274]
+[node name="ProgressBar" type="ProgressBar" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted" unique_id=2068333274]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 96.0
@@ -1163,7 +1165,7 @@ max_value = 20.0
 value = 20.0
 show_percentage = false
 
-[node name="ProgressCounter" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted" unique_id=1452010289]
+[node name="ProgressCounter" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted" unique_id=1452010289]
 layout_mode = 0
 offset_left = 1052.0
 offset_top = 89.0
@@ -1175,7 +1177,7 @@ text = "[color=#34d399]20 / 20 (100%)"
 scroll_active = false
 vertical_alignment = 1
 
-[node name="Reward" type="Panel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted" unique_id=363178918]
+[node name="Reward" type="Panel" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted" unique_id=363178918]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1187,7 +1189,7 @@ offset_bottom = 118.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_row_subtle")
 
-[node name="Icon" type="TextureRect" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted/Reward" unique_id=747290723]
+[node name="Icon" type="TextureRect" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted/Reward" unique_id=747290723]
 visible = false
 layout_mode = 0
 offset_left = 18.0
@@ -1198,7 +1200,7 @@ texture = SubResource("PlaceholderTexture2D_icon")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="AchievementsView/List/ScrollContainer/Holder/TemplateCompleted/Reward" unique_id=694695545]
+[node name="Label" type="RichTextLabel" parent="Achievements/List/ScrollContainer/Holder/TemplateCompleted/Reward" unique_id=694695545]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1222,16 +1224,23 @@ offset_bottom = 1058.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3e636")
 
 [node name="Label" type="RichTextLabel" parent="InformationBanner" unique_id=637137691]
-visible = false
-layout_mode = 0
-offset_left = 729.0
-offset_top = 12.0
-offset_right = 955.0
-offset_bottom = 47.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -17.5
+offset_right = 113.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[color=#94a3b8]COMPLETED:[/color] [color=#34d399]4 / 18[/color]"
 scroll_active = false
-horizontal_alignment = 2
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="." unique_id=791680873]
