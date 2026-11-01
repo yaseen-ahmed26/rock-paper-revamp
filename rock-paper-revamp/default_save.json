@@ -14,7 +14,9 @@
 	"played_lizard": 0,
 	"played_spock": 0,
 
-	"gamemodes": {},
+	"gamemodes": {
+		"test_gamemode": 0
+	},
 	"opponents": {
 		"loop_test": 0
 	},

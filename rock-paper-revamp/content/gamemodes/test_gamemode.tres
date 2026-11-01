@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GamemodeBase" format=3 uid="uid://nddjcxv5v0u5"]
+
+[ext_resource type="Script" uid="uid://c0lrubhbf7mss" path="res://gameplay/bases/gamemode_base.gd" id="1_r0nor"]
+[ext_resource type="Script" uid="uid://8r4n2kkpcmj0" path="res://gameplay/stats/stat_change.gd" id="2_btpnk"]
+[ext_resource type="Script" uid="uid://dh4tpgw57t5e7" path="res://gameplay/bases/task_base.gd" id="3_ri4ya"]
+
+[resource]
+script = ExtResource("1_r0nor")
+id = &"test_gamemode"
+display_name = "Test Gamemode"
+description = "A gamemode for testing"
+metadata/_custom_type_script = "uid://c0lrubhbf7mss"

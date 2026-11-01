@@ -1,9 +1,7 @@
 extends Control
 
-signal round_resolved(outcome: GameStats.RoundOutcome, scenario: GameStats.ResolutionScenario, summary: String)
 signal loser_must_tutor_card(loser_is_player: bool, must_discard_first: bool)
 signal empty_hand_reward_requested(is_player: bool)
-signal match_ended(player_won: bool, reason: String)
 
 enum Scenarios {
 	SCENARIO_A,
