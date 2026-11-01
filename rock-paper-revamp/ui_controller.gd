@@ -9,6 +9,11 @@ extends Control
 var current_screen: Control
 
 func _ready() -> void:		
+	for screen in $CanvasLayer.get_children():
+		if screen.name in ["Background", "Fade", "Modal"]: continue
+		
+		screen.set_process_unhandled_input(false)
+
 	current_screen = $CanvasLayer/main_menu
 	
 	continue_button.pressed.connect(_on_option_btn_pressed.bind(continue_button))
@@ -31,7 +36,10 @@ func _on_change_screen(to_show: String, arguments: Variant = null):
 	await tween_in.finished
 
 	current_screen.visible = false
+	current_screen.set_process_unhandled_input(false)
+	
 	new_screen.visible = true
+	new_screen.set_process_unhandled_input(true)
 	
 	if new_screen.has_method("on_screen_change"):
 		new_screen.call("on_screen_change", arguments)

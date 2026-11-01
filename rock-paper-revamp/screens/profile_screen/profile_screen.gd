@@ -36,7 +36,14 @@ func _ready() -> void:
 	current_filter = $Achievements/Filters/Holder/All
 
 	on_screen_change({})
-	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_pressed() and not event.is_echo():
+		match event.keycode:
+			KEY_Q: _on_return_button_pressed()
+			
+		get_viewport().set_input_as_handled()
+
 func _change_tab(btn: Button):
 	if current_tab:
 		var old_tab: Control = get_node(str(current_tab.name))

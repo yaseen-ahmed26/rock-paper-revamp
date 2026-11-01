@@ -22,8 +22,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_3: modifiers.on_modifier_info_btn_pressed("3")
 			KEY_Q: _on_return_button_pressed()
 			KEY_C: Signals.change_screen.emit("contracts_screen")
-			
-			
+		
+		get_viewport().set_input_as_handled()
+		
 # Overlay
 func show_overlay(screen: Panel):
 	if current_overlay:
