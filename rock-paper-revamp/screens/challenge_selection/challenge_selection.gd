@@ -1,7 +1,7 @@
 extends Control
 
 @onready var card: Panel = $Challenge
-@onready var carosuel_indicator: HBoxContainer = $CarosuelIndicator
+@onready var carosuel_indicator: HBoxContainer = $Carousel/Indicators
 @onready var modifier_template_button: Button = $Challenge/ModifierInfo/TemplateButton
 @onready var overlay: ColorRect = $Overlay
 
@@ -34,7 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_ENTER: _on_start_button_pressed()
 
 func _create_carosuel():
-	var template: Panel = $CarosuelIndicator/Template
+	var template: Panel = carosuel_indicator.get_node("Template")
 	
 	for dot in indicator_dots:
 		dot.queue_free()
