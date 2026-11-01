@@ -8,6 +8,8 @@ extends Control
 
 var current_screen: Control
 
+var modal_open: bool = false
+
 func _ready() -> void:		
 	for screen in $CanvasLayer.get_children():
 		if screen.name in ["Background", "Fade", "Modal"]: continue
@@ -21,7 +23,20 @@ func _ready() -> void:
 	
 	Signals.change_screen.connect(_on_change_screen)
 	Signals.show_modal.connect(_on_show_modal)
-	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_pressed() and not event.is_echo():
+		match event.keycode:
+			KEY_Q:
+				if not modal_open: return
+				if not cancel_button.visible: return
+				
+				_on_option_btn_pressed(cancel_button)
+			KEY_ESCAPE:
+				if not modal_open: return
+				
+				_on_option_btn_pressed(continue_button)
+
 func _on_change_screen(to_show: String, arguments: Variant = null):
 	fade.mouse_filter = MouseFilter.MOUSE_FILTER_STOP
 	
@@ -55,6 +70,8 @@ func _on_change_screen(to_show: String, arguments: Variant = null):
 	fade.mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
 
 func _on_show_modal(modal_base: ModalBase, details: Array = []):
+	modal_open = true
+	
 	modal.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	modal.get_node("Background/Title").text = modal_base.title
@@ -82,6 +99,8 @@ func _on_option_btn_pressed(btn: Button):
 		Signals.modal_response.emit(true)
 	else:
 		Signals.modal_response.emit(false)
+	
+	modal_open = false
 	
 	var tween_out: Tween = create_tween()
 	tween_out.tween_property(modal, "modulate:a", 0.0, 0.5)

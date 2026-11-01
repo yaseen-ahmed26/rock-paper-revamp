@@ -272,7 +272,7 @@ offset_top = -24.0
 offset_right = 55.0
 offset_bottom = 24.0
 grow_horizontal = 1
-keybind = "ESC"
+keybind = "Q"
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer/Modal/Background/Buttons" unique_id=1208132390]
 layout_mode = 2
@@ -294,6 +294,6 @@ offset_top = -24.0
 offset_right = 55.0
 offset_bottom = 24.0
 grow_horizontal = 1
-keybind = "enter"
+keybind = "esc"
 
 [connection signal="meta_clicked" from="CanvasLayer/Modal/Background/Secondary" to="." method="_on_secondary_meta_clicked"]
