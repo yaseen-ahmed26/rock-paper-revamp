@@ -19,10 +19,19 @@ var current_index: int = 0
 
 var indicator_dots: Array[Control] = []
 
+# Godot Specific
 func _ready() -> void:
 	_create_carosuel()
 	# _update_card()
 	# _update_carosuel()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_pressed() and not event.is_echo():
+		match event.keycode:
+			KEY_Q: _on_return_button_pressed()
+			KEY_R: _on_previous_pressed()
+			KEY_T: _on_next_pressed()
+			KEY_ENTER: _on_start_button_pressed()
 
 func _create_carosuel():
 	var template: Panel = $CarosuelIndicator/Template

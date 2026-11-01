@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://8r63dxl4p6ct" path="res://ui/themes/standard.tres" id="1_584du"]
 [ext_resource type="Script" uid="uid://cw30lbe636f34" path="res://screens/challenge_selection/challenge_selection.gd" id="1_uj304"]
+[ext_resource type="PackedScene" uid="uid://bmuwbdx7e5by7" path="res://components/keybind/keybind.tscn" id="5_1drir"]
 [ext_resource type="Texture2D" uid="uid://dkhjweifjshym" path="res://assets/icons/reset_white.png" id="5_6b2la"]
 [ext_resource type="Texture2D" uid="uid://h07yp2by5dgp" path="res://assets/icons/content/repeat_reward.svg" id="7_1sq0s"]
 
@@ -302,9 +303,6 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rj2je"]
-size = Vector2(32, 32)
 
 [node name="challenge_selection" type="Control" unique_id=573053736]
 layout_mode = 3
@@ -833,27 +831,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41hw2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_84c67")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bnnb7")
 
-[node name="Icon" type="TextureRect" parent="Carousel/Previous" unique_id=1989555940]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 127.0
-offset_top = -16.0
-offset_right = 159.0
-offset_bottom = 16.0
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="Label" type="RichTextLabel" parent="Carousel/Previous" unique_id=1870479435]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -43.0
+offset_right = -55.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -864,6 +847,18 @@ text = "PREV"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="keybind" parent="Carousel/Previous" unique_id=1596879511 instance=ExtResource("5_1drir")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 114.0
+offset_top = -24.0
+offset_right = 162.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "R"
 
 [node name="Next" type="Button" parent="Carousel" unique_id=581285585]
 layout_mode = 1
@@ -882,27 +877,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_41hw2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_84c67")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bnnb7")
 
-[node name="Icon" type="TextureRect" parent="Carousel/Next" unique_id=2108245890]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 10.0
-offset_top = -16.0
-offset_right = 42.0
-offset_bottom = 16.0
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_icon")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="Label" type="RichTextLabel" parent="Carousel/Next" unique_id=1605295146]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 42.0
+offset_left = 57.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -914,6 +894,18 @@ text = "NEXT"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="keybind" parent="Carousel/Next" unique_id=1819019851 instance=ExtResource("5_1drir")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 9.0
+offset_top = -24.0
+offset_right = 57.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "T"
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=294033152]
 visible = false
@@ -1033,6 +1025,18 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_jo3lw")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_kfrs6")
 text = "[ START MATCH ]"
 
+[node name="keybind" parent="StartButton" unique_id=782539746 instance=ExtResource("5_1drir")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "ENTER"
+
 [node name="InformationBanner" type="Panel" parent="." unique_id=935706911]
 layout_mode = 0
 offset_left = 314.0
@@ -1084,20 +1088,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_edh5q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12tfs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vtbln")
 
-[node name="Icon" type="TextureRect" parent="ReturnButton" unique_id=1309985921]
+[node name="keybind" parent="ReturnButton" unique_id=1061947125 instance=ExtResource("5_1drir")]
 layout_mode = 1
 anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = -17.5
-offset_right = 47.0
-offset_bottom = 17.5
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("PlaceholderTexture2D_rj2je")
-expand_mode = 1
-stretch_mode = 5
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 56.0
+offset_bottom = 24.0
+grow_horizontal = 1
+keybind = "Q"
 
 [node name="Label" type="RichTextLabel" parent="ReturnButton" unique_id=932560630]
 layout_mode = 1
