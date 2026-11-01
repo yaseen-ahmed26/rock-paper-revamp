@@ -45,23 +45,3 @@ const DEFAULT_DEVICE_SETTINGS_CFG = {
 	"icon_waterfall": 1,
 	"skip_splash": 0
 }
-
-# ui_controller.gd
-const SCENE_INFO: Dictionary = {
-	"challenge_selection": {
-		"title": "Challenge Selection",
-		"description": "[color=green]Challenges [color=white]are preset levels. You cannot choose the Gamemode, Opponent or Modifiers. Once you complete a Challenge, you unlock a [color=green]Modifier[color=white].",
-	},
-	"rps_results": {
-		"title": "Match Results",
-		"description": "View how well you did against your opponent. Did badly? [color=green]Retry[color=white], or [color=green]start a new game[color=white].",
-	},
-	"connect_account": {
-		"title": "Connect Peck Account",
-		"description": "Connect your [color=green]Peck [color=white]account to save your data and [color=green]play from other devices[color=white].",
-	},
-	"credits_screen": {
-		"title": "Credits",
-		"description": "[color=green]Asset [color=white]and [color=green]Creator [color=white]credits.",
-	},
-}

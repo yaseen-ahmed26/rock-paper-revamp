@@ -5,15 +5,10 @@ extends Control
 @onready var continue_button: Button = $CanvasLayer/Modal/Background/Buttons/ContinueButton
 @onready var cancel_button: Button = $CanvasLayer/Modal/Background/Buttons/CancelButton
 @onready var modal: Panel = $CanvasLayer/Modal
-@onready var title: RichTextLabel = $CanvasLayer/Title
-@onready var description: RichTextLabel = $CanvasLayer/Description
 
 var current_screen: Control
 
-func _ready() -> void:	
-	title.visible = false
-	description.visible = false
-	
+func _ready() -> void:		
 	current_screen = $CanvasLayer/main_menu
 	
 	continue_button.pressed.connect(_on_option_btn_pressed.bind(continue_button))
@@ -37,17 +32,6 @@ func _on_change_screen(to_show: String, arguments: Variant = null):
 
 	current_screen.visible = false
 	new_screen.visible = true
-	
-	if Constants.SCENE_INFO.has(to_show):
-		var info = Constants.SCENE_INFO.get(to_show)
-		title.text = info.get("title")
-		description.text = info.get("description")
-		
-		title.visible = true
-		description.visible = true
-	else:
-		title.visible = false
-		description.visible = false
 	
 	if new_screen.has_method("on_screen_change"):
 		new_screen.call("on_screen_change", arguments)
