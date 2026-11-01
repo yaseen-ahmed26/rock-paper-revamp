@@ -105,7 +105,12 @@ func _ready() -> void:
 	current_tab = display_settings_holder
 	
 	_create_holder_btns()
-	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_pressed() and not event.is_echo():
+		match event.keycode:
+			KEY_Q: _on_return_button_pressed()
+
 func _create_holder_btns():
 	for k in settings:
 		var v = settings[k]

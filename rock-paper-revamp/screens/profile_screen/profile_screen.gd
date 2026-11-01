@@ -42,8 +42,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		match event.keycode:
 			KEY_Q: _on_return_button_pressed()
 			
-		get_viewport().set_input_as_handled()
-
 func _change_tab(btn: Button):
 	if current_tab:
 		var old_tab: Control = get_node(str(current_tab.name))
