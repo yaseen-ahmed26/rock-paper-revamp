@@ -10,7 +10,13 @@ var chosen_contract: ContractBase
 func _ready() -> void:
 	_set_inital()
 	_create_btns()
-	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_pressed() and not event.is_echo():
+		match event.keycode:
+			KEY_Q: _on_return_button_pressed()
+			KEY_T: _on_activate_btn_pressed()
+
 func _set_inital():
 	information_banner.get_node("Completed").text = "[color=#94a3b8]COMPLETED:[/color] [color=#34d399]0 / %d[/color]" % [ContentManager.contracts.size()]
 	
@@ -110,14 +116,16 @@ func _update_inspector(contract: ContractBase):
 	
 	if contract == PlayerManager.active_contract.base:
 		selected_contract.get_node("ActivateButton").disabled = true
-		selected_contract.get_node("ActivateButton").text = "ACTIVE"
+		selected_contract.get_node("ActivateButton/Label").text = "ACTIVE"
+		selected_contract.get_node("ActivateButton/Keybind").visible = false
 		selected_contract.get_node("StatusBadge").visible = true
 		selected_contract.get_node("SubtasksHeader").text = "[color=#c084fc]SUBTASKS[/color] [color=#94a3b8](%d/%d COMPLETED)[/color]" % [PlayerManager.get_total_completed_tasks(), contract.subtasks.size()]
 		
 		_update_inspector_subtasks(contract, true)
 	else:
 		selected_contract.get_node("ActivateButton").disabled = false
-		selected_contract.get_node("ActivateButton").text = "ACTIVATE CONTRACT"
+		selected_contract.get_node("ActivateButton/Label").text = "TAKE CONTRACT"
+		selected_contract.get_node("ActivateButton/Keybind").visible = true
 		selected_contract.get_node("StatusBadge").visible = false
 		selected_contract.get_node("SubtasksHeader").text = "[color=#c084fc]SUBTASKS[/color] [color=#94a3b8](0/%d COMPLETED)[/color]" % contract.subtasks.size()
 	
@@ -150,7 +158,6 @@ func _on_activate_btn_pressed() -> void:
 	_update_inspector(chosen_contract)
 	_set_inital()
 	_update_existing_btns()
-
 
 func _on_return_button_pressed() -> void:
 	Signals.change_screen.emit("main_menu")
